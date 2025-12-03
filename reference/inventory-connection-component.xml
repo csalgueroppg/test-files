@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceConnection name="InventoryDBConnection" type="database">
+    <metadata>
+        <name>InventoryDBConnection</name>
+        <description>Connection to inventory management database</description>
+        <type>Database Connection</type>
+        <createdDate>2024-01-10</createdDate>
+    </metadata>
+    
+    <properties>
+        <property name="databaseType">PostgreSQL</property>
+        <property name="host">inventory-db.company.com</property>
+        <property name="port">5432</property>
+        <property name="database">inventory</property>
+        <property name="useSSL">true</property>
+        <property name="authenticationType">Basic</property>
+    </properties>
+    
+    <connection>
+        <name>InventoryDBConnection</name>
+        <type>database</type>
+        <databaseType>PostgreSQL</databaseType>
+        <property name="username">inventory_user</property>
+        <property name="password">${INVENTORY_PASSWORD}</property>
+    </connection>
+</serviceConnection>

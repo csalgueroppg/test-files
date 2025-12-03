@@ -1,0 +1,112 @@
+# Sample Document with SWIMM Tags
+
+This is a sample document to test SWIMM custom HTML elements support in the document viewer.
+
+## Introduction
+
+This document demonstrates various SWIMM tags that can be used in your documentation. SWIMM tags are custom HTML elements that provide enhanced formatting and functionality.
+
+## SWIMM Tags Examples
+
+### Tags
+
+You can use <swimm-tag>Important</swimm-tag> tags to highlight key information inline with your text. You can also use the shorter prefix: <swm-tag>Quick Tag</swm-tag>.
+
+### Notes
+
+<swimm-note>
+This is a note using the swimm-note tag. Notes are great for providing additional context or explanations that are helpful but not critical.
+</swimm-note>
+
+<swm-note>
+This note uses the shorter swm-note prefix. Both formats work identically.
+</swm-note>
+
+### Warnings
+
+<swimm-warning>
+This is a warning message. Use warnings to alert users about potential issues or important considerations they should be aware of.
+</swimm-warning>
+
+<swm-warning>
+This warning uses the swm-warning prefix. Warnings are displayed with an orange color scheme to draw attention.
+</swm-warning>
+
+### Info Boxes
+
+<swimm-info>
+Info boxes are perfect for sharing useful information, tips, or best practices. They use a blue color scheme to distinguish them from warnings.
+</swimm-info>
+
+<swm-info>
+This info box uses the shorter swm-info prefix. Info boxes help users understand concepts better.
+</swm-info>
+
+### Code Blocks
+
+<swimm-code>
+function example() {
+  console.log("This is a code block using swimm-code");
+  return "SWIMM tags are working!";
+}
+</swimm-code>
+
+<swm-code>
+const swimmTags = ['tag', 'note', 'warning', 'info', 'code', 'link'];
+swimmTags.forEach(tag => console.log(`<swm-${tag}>`));
+</swm-code>
+
+### Links
+
+You can create styled links using <swimm-link href="https://swimm.io">SWIMM's website</swimm-link> or <swm-link href="https://example.com">any other link</swm-link>.
+
+## Mixed Content
+
+Here's an example with multiple SWIMM tags in one paragraph:
+
+This is a paragraph with an <swimm-tag>inline tag</swimm-tag> and a <swimm-link href="https://swimm.io">link to SWIMM</swimm-link>. You can combine different tags as needed.
+
+<swimm-note>
+You can also nest content within SWIMM tags. For example, you can include <swimm-tag>tags</swimm-tag> inside notes, or add <swimm-link href="https://example.com">links</swimm-link> to provide additional resources.
+</swimm-note>
+
+## Code Examples with SWIMM Tags
+
+Here's a code example with SWIMM tags:
+
+```javascript
+// Regular markdown code block
+function regularCode() {
+  return "This is a regular code block"
+}
+```
+
+<swimm-code>
+// SWIMM code block
+function swimmCode() {
+  return "This is a SWIMM code block";
+}
+</swimm-code>
+
+## Best Practices
+
+<swimm-info>
+**Tip:** Use SWIMM tags consistently throughout your documentation to maintain a professional and organized appearance.
+</swimm-info>
+
+<swimm-warning>
+**Important:** Make sure to test your SWIMM tags after making changes to ensure they render correctly.
+</swimm-warning>
+
+## Conclusion
+
+This sample document demonstrates all the SWIMM tags that are currently supported:
+
+- <swimm-tag>swimm-tag</swimm-tag> / <swm-tag>swm-tag</swm-tag>
+- <swimm-note>swimm-note</swimm-note> / <swm-note>swm-note</swm-note>
+- <swimm-warning>swimm-warning</swimm-warning> / <swm-warning>swm-warning</swm-warning>
+- <swimm-info>swimm-info</swimm-info> / <swm-info>swm-info</swm-info>
+- <swimm-code>swimm-code</swimm-code> / <swm-code>swm-code</swm-code>
+- <swimm-link href="#">swimm-link</swimm-link> / <swm-link href="#">swm-link</swm-link>
+
+All tags support both the `swimm-` and `swm-` prefixes for flexibility.

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<integration name="OrderProcessingIntegration" version="1.0">
+    <metadata>
+        <name>OrderProcessingIntegration</name>
+        <description>Processes customer orders and updates inventory</description>
+        <version>1.0</version>
+        <createdDate>2024-01-15</createdDate>
+    </metadata>
+    
+    <process name="ProcessOrders">
+        <description>Main process for handling order processing</description>
+        
+        <!-- This process references a Connection Component defined in another file -->
+        <connector name="DatabaseConnector" type="database">
+            <connectionName>SalesforceDBConnection</connectionName>
+            <configuration>
+                <property name="query">SELECT * FROM Orders WHERE status = 'pending'</property>
+            </configuration>
+        </connector>
+        
+        <transformation name="TransformOrderData">
+            <input>
+                <source connectionName="SalesforceDBConnection"/>
+            </input>
+            <output>
+                <target connectionName="InventoryDBConnection"/>
+            </output>
+        </transformation>
+        
+        <!-- Another reference to a connection component -->
+        <connector name="InventoryUpdater" type="database">
+            <connectionName>InventoryDBConnection</connectionName>
+            <configuration>
+                <property name="operation">UPDATE</property>
+            </configuration>
+        </connector>
+    </process>
+    
+    <flow name="OrderFlow">
+        <step name="FetchOrders" type="connector">
+            <connectionName>SalesforceDBConnection</connectionName>
+        </step>
+        <step name="UpdateInventory" type="connector">
+            <connectionName>InventoryDBConnection</connectionName>
+        </step>
+    </flow>
+</integration>

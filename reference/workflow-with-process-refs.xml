@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow name="DataProcessingWorkflow" version="1.0">
+    <metadata>
+        <name>DataProcessingWorkflow</name>
+        <description>Workflow that orchestrates multiple processes</description>
+        <version>1.0</version>
+    </metadata>
+    
+    <!-- This workflow references processes defined in other files -->
+    <task name="ProcessOrdersTask" type="process">
+        <processName>OrderProcessingIntegration</processName>
+        <description>Execute order processing integration</description>
+    </task>
+    
+    <task name="ProcessCustomersTask" type="process">
+        <processName>CustomerDataMapping</processName>
+        <description>Execute customer data mapping</description>
+    </task>
+    
+    <task name="FinalTask" type="notification">
+        <description>Send completion notification</description>
+    </task>
+    
+    <dependencies>
+        <dependency>
+            <from>ProcessOrdersTask</from>
+            <to>ProcessCustomersTask</to>
+        </dependency>
+        <dependency>
+            <from>ProcessCustomersTask</from>
+            <to>FinalTask</to>
+        </dependency>
+    </dependencies>
+</workflow>

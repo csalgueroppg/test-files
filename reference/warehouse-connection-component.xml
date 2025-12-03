@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connection name="WarehouseDBConnection" type="database">
+    <metadata>
+        <name>WarehouseDBConnection</name>
+        <description>Connection to warehouse database</description>
+        <type>Database Connection</type>
+    </metadata>
+    
+    <properties>
+        <property name="databaseType">Oracle</property>
+        <property name="host">warehouse-db.company.com</property>
+        <property name="port">1521</property>
+        <property name="database">warehouse</property>
+        <property name="useSSL">true</property>
+    </properties>
+    
+    <connection>
+        <name>WarehouseDBConnection</name>
+        <type>database</type>
+        <databaseType>Oracle</databaseType>
+        <property name="username">warehouse_user</property>
+        <property name="password">${WAREHOUSE_PASSWORD}</property>
+    </connection>
+</connection>

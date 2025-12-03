@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping name="CustomerDataMapping" version="1.0">
+    <metadata>
+        <name>CustomerDataMapping</name>
+        <description>Maps customer data from source to target</description>
+        <version>1.0</version>
+    </metadata>
+    
+    <!-- Source that references a connection component -->
+    <source name="CustomerSource" type="database">
+        <connection>
+            <name>CustomerDBConnection</name>
+        </connection>
+        <fields>
+            <field name="customer_id" datatype="string"/>
+            <field name="customer_name" datatype="string"/>
+            <field name="email" datatype="string"/>
+        </fields>
+    </source>
+    
+    <!-- Target that references a connection component -->
+    <target name="CustomerTarget" type="database">
+        <connection>
+            <name>WarehouseDBConnection</name>
+        </connection>
+        <fields>
+            <field name="id" datatype="string"/>
+            <field name="name" datatype="string"/>
+            <field name="email_address" datatype="string"/>
+        </fields>
+    </target>
+    
+    <transformation name="CustomerTransform" type="Expression">
+        <input>
+            <port name="customer_id" datatype="string"/>
+            <port name="customer_name" datatype="string"/>
+            <port name="email" datatype="string"/>
+        </input>
+        <output>
+            <port name="id" datatype="string"/>
+            <port name="name" datatype="string"/>
+            <port name="email_address" datatype="string"/>
+        </output>
+        <expression>
+            id = customer_id;
+            name = customer_name;
+            email_address = email;
+        </expression>
+    </transformation>
+</mapping>

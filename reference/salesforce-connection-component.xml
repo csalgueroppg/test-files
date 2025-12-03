@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceConnection name="SalesforceDBConnection" type="database">
+    <metadata>
+        <name>SalesforceDBConnection</name>
+        <description>Connection to Salesforce database for order data</description>
+        <type>Database Connection</type>
+        <createdDate>2024-01-10</createdDate>
+    </metadata>
+    
+    <properties>
+        <property name="databaseType">Salesforce</property>
+        <property name="host">salesforce-instance.salesforce.com</property>
+        <property name="port">443</property>
+        <property name="useSSL">true</property>
+        <property name="authenticationType">OAuth2</property>
+    </properties>
+    
+    <connection>
+        <name>SalesforceDBConnection</name>
+        <type>database</type>
+        <databaseType>Salesforce</databaseType>
+        <property name="username">${SF_USERNAME}</property>
+        <property name="password">${SF_PASSWORD}</property>
+        <property name="securityToken">${SF_TOKEN}</property>
+    </connection>
+</serviceConnection>

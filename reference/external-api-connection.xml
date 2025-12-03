@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="ExternalAPIConnection" type="connection" id="ext-api-conn-001">
+    <metadata>
+        <name>ExternalAPIConnection</name>
+        <description>Connection to external REST API</description>
+        <type>REST API Connection</type>
+    </metadata>
+    
+    <properties>
+        <property name="connectionType">REST</property>
+        <property name="baseURL">https://api.external.com</property>
+        <property name="authenticationType">APIKey</property>
+        <property name="apiKey">${EXTERNAL_API_KEY}</property>
+    </properties>
+    
+    <connection>
+        <name>ExternalAPIConnection</name>
+        <type>rest</type>
+        <property name="timeout">30000</property>
+        <property name="retryCount">3</property>
+    </connection>
+</component>

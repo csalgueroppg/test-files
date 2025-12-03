@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connection name="CustomerDBConnection" type="database">
+    <metadata>
+        <name>CustomerDBConnection</name>
+        <description>Connection to customer database</description>
+        <type>Database Connection</type>
+    </metadata>
+    
+    <properties>
+        <property name="databaseType">MySQL</property>
+        <property name="host">customer-db.company.com</property>
+        <property name="port">3306</property>
+        <property name="database">customers</property>
+        <property name="useSSL">true</property>
+    </properties>
+    
+    <connection>
+        <name>CustomerDBConnection</name>
+        <type>database</type>
+        <databaseType>MySQL</databaseType>
+        <property name="username">customer_user</property>
+        <property name="password">${CUSTOMER_PASSWORD}</property>
+    </connection>
+</connection>

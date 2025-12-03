@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<integration name="CompositeIntegration" version="1.0">
+    <metadata>
+        <name>CompositeIntegration</name>
+        <description>Integration that uses multiple connection components</description>
+        <version>1.0</version>
+    </metadata>
+    
+    <process name="CompositeProcess">
+        <description>Process that references multiple connection components</description>
+        
+        <!-- Reference to a connection component by name -->
+        <componentRef name="SalesforceDBConnection" type="connection"/>
+        
+        <!-- Another component reference -->
+        <componentRef name="InventoryDBConnection" type="connection"/>
+        
+        <!-- Reference using componentId attribute -->
+        <connector name="APIConnector" type="rest">
+            <componentId>ExternalAPIConnection</componentId>
+            <configuration>
+                <endpoint>https://api.external.com/v1/data</endpoint>
+            </configuration>
+        </connector>
+        
+        <!-- Reference using componentName attribute -->
+        <transformation name="DataTransform">
+            <input componentName="SalesforceDBConnection"/>
+            <output componentName="InventoryDBConnection"/>
+        </transformation>
+    </process>
+</integration>
