@@ -1,0 +1,493 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>6DfYLnzYLnzYLnz-gt-67877774-2023-10-16T18:55:25.924Z::pd.xml</types1:EntryId>
+      <types1:Name>SUtiGenerateTicketP2P</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>@source=OnTap, @operation= invoke, @dataType=ErrorLogEpro, @target=Alemba , @additionalText= General process to generate Infra tickets P2P, @prcRunOn= SDCAMDMSA01</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>RPRodriguez.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2023-10-16T18:55:26Z</types1:CreationDate>
+      <types1:ModifiedBy>RPRodriguez.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-08-11T18:18:59Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>RPRodriguez.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-08-11T18:19:35Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SUtiGenerateTicketP2P/SUtiGenerateTicketP2P.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="8MUWngZhLIJbQmFN910YEW"
+                  displayName="SUtiGenerateTicketP2P"
+                  name="SUtiGenerateTicketP2P"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>@source=OnTap, @operation= invoke, @dataType=ErrorLogEpro, @target=Alemba , @additionalText= General process to generate Infra tickets P2P, @prcRunOn= SDCAMDMSA01</description>
+            <tags>.agent:SDCAMDMSA01</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="fileEvent" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">Conn-File-LogP2P:PlainFileContent</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">9V9E9DTP4bgbhmf8BZPwmW</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="vTempMessageIICS" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempGroupIICS" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempMessageEpro" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCostumer" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCredentialsIICS" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempService" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempConfigItem" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempType" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempImpact" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempUrgency" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempUsername" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempPassword" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempHotstame" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempUsernamevFireEpro" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempPasswordvFireEpro" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempProject" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCredentialsCostumer" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempGroupePro" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempActiveIICS" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempActiveePro" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEndPoint" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempProjectTicket" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempParameters" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempUsernamevFireIICS" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempPasswordvFireIICS" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCredentialsEpro" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="normal">
+               <targetLocation>SDCAMDMSA01</targetLocation>
+               <event eventSource="Conn-File-LogP2P:getFileLog"/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="lnt99rrk" targetId="lnt99rrj"/>
+               </start>
+               <assignment id="lnt99rrj">
+                  <title>assignErrorMessage</title>
+                  <operation source="formula" to="temp.vTempMessageIICS">
+                     <expression language="XQuery">fn:substring-before($input.fileEvent[1]/content/text(),'PipeMessage')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempMessageEpro">
+                     <expression language="XQuery">fn:substring-after($input.fileEvent[1]/content/text(),'PipeMessage')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempProjectTicket">
+                     <expression language="XQuery">fn:tokenize($input.fileEvent[1]/fileInfo[1]/fullName ,'_')[2]</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempParameters">
+                     <expression language="XQuery">util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() ='DataAlemba-eProP2P-Ticket']/*:value/*</expression>
+                  </operation>
+                  <link id="lnw0b60z" targetId="lnw0b60y"/>
+               </assignment>
+               <assignment id="lnw0b60y">
+                  <title>assignFileParametersP2P</title>
+                  <operation source="formula" to="temp.vTempCostumer">
+                     <expression language="XQuery">$temp.vTempParameters/*:customer/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempService">
+                     <expression language="XQuery">$temp.vTempParameters/*:service/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempConfigItem">
+                     <expression language="XQuery">$temp.vTempParameters/*:configItem/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempType">
+                     <expression language="XQuery">$temp.vTempParameters/*:type/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempImpact">
+                     <expression language="XQuery">$temp.vTempParameters/*:impact/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempUrgency">
+                     <expression language="XQuery">$temp.vTempParameters/*:urgency/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempGroupIICS">
+                     <expression language="XQuery">$temp.vTempParameters/*:groups/*:iics/*:group/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempGroupePro">
+                     <expression language="XQuery">$temp.vTempParameters/*:groups/*:ePro/*:group[@name=fn:lower-case($temp.vTempProjectTicket)]/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempCredentialsEpro">
+                     <expression language="XQuery">util:base64Decode(util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() ='IICS-P2P-Ticket']/*:value/text(),'UTF-8')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempCredentialsIICS">
+                     <expression language="XQuery">util:base64Decode(util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() ='IICSGlobal-Ticket' ]/*:value/text(),'UTF-8')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempCredentialsCostumer">
+                     <expression language="XQuery">util:base64Decode(util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() ='Consumer-P2P-Ticket' ]/*:value/text(),'UTF-8')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempUsername">
+                     <expression language="XQuery">fn:tokenize($temp.vTempCredentialsCostumer  ,':')[1]</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempPassword">
+                     <expression language="XQuery">fn:tokenize($temp.vTempCredentialsCostumer  ,':')[2]</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempHotstame">
+                     <expression language="XQuery">$temp.vTempParameters/*:hostTicket/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempUsernamevFireEpro">
+                     <expression language="XQuery">fn:tokenize($temp.vTempCredentialsEpro ,':')[1]</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempPasswordvFireEpro">
+                     <expression language="XQuery">fn:tokenize($temp.vTempCredentialsEpro ,':')[2]</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempProject">
+                     <expression language="XQuery">$temp.vTempProjectTicket </expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempActiveIICS">
+                     <expression language="XQuery">$temp.vTempParameters/*:GenerateTicket/*:iics/*:active/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempActiveePro">
+                     <expression language="XQuery">$temp.vTempParameters/*:GenerateTicket/*:ePro/*:active[@name=fn:lower-case($temp.vTempProjectTicket)]/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempEndPoint">
+                     <expression language="XQuery">$temp.vTempParameters/*:endpointTicket/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempUsernamevFireIICS">
+                     <expression language="XQuery">fn:tokenize($temp.vTempCredentialsIICS ,':')[1]</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempPasswordvFireIICS">
+                     <expression language="XQuery">fn:tokenize($temp.vTempCredentialsIICS ,':')[2]</expression>
+                  </operation>
+                  <link id="lnw9cnyl" targetId="lnw9cnyk"/>
+               </assignment>
+               <container id="lnw9cnyk" type="parallel">
+                  <title>IICS and ePro</title>
+                  <flow id="lnw9cnyo">
+                     <container id="lnw9cnz3" type="exclusive">
+                        <title>ActiveIICS</title>
+                        <flow id="lnw9cnz5">
+                           <eventContainer id="lnw9cp7n">
+                              <subflow id="lnw9co1d">
+                                 <title>SUtiFiltervFireTicketIICS</title>
+                                 <subflowGUID>7ihksYLBjark7Fh1KLCDmM</subflowGUID>
+                                 <subflowPath>SUtiFiltervFireTicket</subflowPath>
+                                 <runForEach>false</runForEach>
+                                 <input>
+                                    <parameter name="in_PrcCustomer" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempCostumer </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcService" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempService </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcConfigItem" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempConfigItem </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcType" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempType </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcImpact" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempImpact </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcUrgency" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempUrgency </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcDescription" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempMessageIICS </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcGroup" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempGroupIICS </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcEndpoint" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempEndPoint </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcUsername" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempUsername </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcPassword" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempPassword </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcHotstame" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempHotstame </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcUsernamevFire" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempUsernamevFireIICS</expression>
+                                    </parameter>
+                                    <parameter name="in_PrcPasswordvFire" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempPasswordvFireIICS</expression>
+                                    </parameter>
+                                    <parameter name="in_PrcProject" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempProject </expression>
+                                    </parameter>
+                                 </input>
+                                 <outputDef>
+                                    <field name="out_PrcTicket" type="string">
+                                       <options>
+                                          <option name="required">false</option>
+                                       </options>
+                                    </field>
+                                 </outputDef>
+                              </subflow>
+                              <flow id="lnw9cp7p">
+                                 <link id="lnw9cp7q" targetId="lnw9cp7n" type="containerLink"/>
+                              </flow>
+                              <flow id="lnw9cp7s">
+                                 <throw id="lnw9cp8k">
+                                    <title>ThrowSUtiFiltervFireTicketIICS</title>
+                                    <throwInput>
+                                       <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                                       <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                                       <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                                    </throwInput>
+                                 </throw>
+                              </flow>
+                              <link id="lnw9cp7o" targetId="lnw9cp7p" type="containerLink"/>
+                              <events>
+                                 <catch faultField="faultInfo" id="lnw9cp6n" interrupting="true">
+                                    <link id="lnw9cp7r" targetId="lnw9cp7s" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <link id="lnw9cnz6" targetId="lnw9cnz3" type="containerLink"/>
+                        </flow>
+                        <flow id="lnw9cnz8">
+                           <link id="lnw9cnz9" targetId="lnw9cnz3" type="containerLink"/>
+                        </flow>
+                        <link id="lnw9cnz4" targetId="lnw9cnz5" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$temp.vTempActiveIICS}</arg>
+                                 <arg name="right">Y</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lnw9cnz7" targetId="lnw9cnz8" type="containerLink"/>
+                     </container>
+                     <link id="lnw9cnyp" targetId="lnw9cnyk" type="containerLink"/>
+                  </flow>
+                  <flow id="lnw9cnyr">
+                     <container id="lnw9co02" type="exclusive">
+                        <title>ActiveePro</title>
+                        <flow id="lnw9co04">
+                           <eventContainer id="lnw9cpii">
+                              <subflow id="lnw9cpim">
+                                 <title>SUtiFiltervFireTicketePro</title>
+                                 <subflowGUID>7ihksYLBjark7Fh1KLCDmM</subflowGUID>
+                                 <subflowPath>SUtiFiltervFireTicket</subflowPath>
+                                 <runForEach>false</runForEach>
+                                 <input>
+                                    <parameter name="in_PrcCustomer" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempCostumer </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcService" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempService </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcConfigItem" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempConfigItem </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcType" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempType </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcImpact" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempImpact </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcUrgency" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempUrgency </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcDescription" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempMessageEpro </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcGroup" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempGroupePro </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcEndpoint" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempEndPoint </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcUsername" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempUsername </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcPassword" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempPassword </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcHotstame" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempHotstame </expression>
+                                    </parameter>
+                                    <parameter name="in_PrcUsernamevFire" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempUsernamevFireEpro</expression>
+                                    </parameter>
+                                    <parameter name="in_PrcPasswordvFire" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempPasswordvFireEpro</expression>
+                                    </parameter>
+                                    <parameter name="in_PrcProject" source="formula" updatable="true">
+                                       <expression language="XQuery">$temp.vTempProject </expression>
+                                    </parameter>
+                                 </input>
+                                 <outputDef>
+                                    <field name="out_PrcTicket" type="string">
+                                       <options>
+                                          <option name="required">false</option>
+                                       </options>
+                                    </field>
+                                 </outputDef>
+                              </subflow>
+                              <flow id="lnw9cpij">
+                                 <link id="lnw9cpip" targetId="lnw9cpii" type="containerLink"/>
+                              </flow>
+                              <flow id="lnw9cpik">
+                                 <throw id="lnw9cpil">
+                                    <title>ThrowSUtiFiltervFireTicketePro</title>
+                                    <throwInput>
+                                       <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                                       <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                                       <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                                    </throwInput>
+                                 </throw>
+                              </flow>
+                              <link id="lnw9cpin" targetId="lnw9cpij" type="containerLink"/>
+                              <events>
+                                 <catch faultField="faultInfo" id="lnw9cp6n" interrupting="true">
+                                    <link id="lnw9cpio" targetId="lnw9cpik" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <link id="lnw9co05" targetId="lnw9co02" type="containerLink"/>
+                        </flow>
+                        <flow id="lnw9co07">
+                           <link id="lnw9co08" targetId="lnw9co02" type="containerLink"/>
+                        </flow>
+                        <link id="lnw9co03" targetId="lnw9co04" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$temp.vTempActiveePro}</arg>
+                                 <arg name="right">Y</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lnw9co06" targetId="lnw9co07" type="containerLink"/>
+                     </container>
+                     <link id="lnw9cnys" targetId="lnw9cnyk" type="containerLink"/>
+                  </flow>
+                  <link id="lnw9cnyn" targetId="lnw9cnyo" type="containerLink"/>
+                  <link id="lnw9cnyq" targetId="lnw9cnyr" type="containerLink"/>
+                  <link id="lnw9cnym" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>8MUWngZhLIJbQmFN910YEW</types1:GUID>
+      <types1:DisplayName>SUtiGenerateTicketP2P</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-08-11T18:23:30.919Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
