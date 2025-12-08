@@ -1,0 +1,216 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>jE7pppppppppppp-gt-42525371-2025-01-16T21:19:56.158Z::svc.xml</types1:EntryId>
+      <types1:Name>SC-PPGNotify</types1:Name>
+      <types1:ParentFlowIds>qCaaa-gt-42495378-2025-01-17T00:18:42.273Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>@scType=REST and SOAP, @application=PPG Notify Notification API</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>davehernandezr.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2025-01-16T21:19:56Z</types1:CreationDate>
+      <types1:ModifiedBy>davehernandezr.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-03-18T07:09:26Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>davehernandezr.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-03-18T07:17:19Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/SC_PPGNotify/SC_PPGNotify_svcDef.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="SC-PPGNotify"
+                            label=""
+                            name="SC-PPGNotify"
+                            uuid="cc3e8409-55c6-459a-b62f-cc12b94b9776">
+            <description>@scType=REST and SOAP, @application=PPG Notify Notification API</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="getToken"
+                       maxRedirects="100"
+                       name="getToken"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Obtains the Bearer token</description>
+                  <input>
+                     <parameter description="URL endpoint"
+                                label="in_scURL"
+                                name="in_scURL"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Grant Type"
+                                label="in_scGrantType"
+                                name="in_scGrantType"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Resource"
+                                label="in_scResource"
+                                name="in_scResource"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Application Id"
+                                label="in_scApplicationId"
+                                name="in_scApplicationId"
+                                nogen="true"
+                                required="true"
+                                testWith="1"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$in_scURL}" verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <otherParams>
+                           <otherParam inheritance="" name="grant_type">{$in_scGrantType}</otherParam>
+                           <otherParam inheritance="" name="resource">{$in_scResource}</otherParam>
+                           <otherParam inheritance="" name="client_id">{util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() ='Auth_OT_PPGNotify']/*:value/*:application[app_id = $in_scApplicationId ]/*:client_id/text()}</otherParam>
+                           <otherParam inheritance="" name="client_secret">{util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() ='Auth_OT_PPGNotify']/*:value/*:application[app_id = $in_scApplicationId ]/*:client_secret/text()}</otherParam>
+                        </otherParams>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/x-www-form-urlencoded</header>
+                        </httpHeaders>
+                        <body generateUsing="Form"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Bearer token"
+                            name="out_scToken"
+                            property="access_token"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="false"
+                       label="senNotification"
+                       maxRedirects="100"
+                       name="senNotification"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Send notification using the PPG Notify notification API</description>
+                  <input>
+                     <parameter description="URL endpoint"
+                                label="in_scURL"
+                                name="in_scURL"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Emails"
+                                label="in_scEmails"
+                                name="in_scEmails"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Email body"
+                                label="in_scEmailMessage"
+                                name="in_scEmailMessage"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Email subject"
+                                label="in_scEmailSubject"
+                                name="in_scEmailSubject"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Bearer token"
+                                label="in_scToken"
+                                name="in_scToken"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Push subject"
+                                label="in_scPushSubject"
+                                name="in_scPushSubject"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Push message"
+                                label="in_scPushMessage"
+                                name="in_scPushMessage"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Notification channels"
+                                label="in_scChannels"
+                                name="in_scChannels"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Text message"
+                                label="in_scTextMessage"
+                                name="in_scTextMessage"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$in_scURL}" verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Authorization">{$in_scToken}</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">text/xml</header>
+                        </httpHeaders>
+                        <body>{{
+    "recipients": { $in_scEmails } ,
+    "emailSubject": "{$in_scEmailSubject}",
+    "emailBody": "{$in_scEmailMessage }",
+    "pushSubject": "{$in_scPushSubject }",
+    "pushBody": "{$in_scPushMessage }",
+    "textBody": "{$in_scTextMessage }",
+    "channels": {$in_scChannels }
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Notification response"
+                            entireResponse="true"
+                            name="out_scResponseNotification"
+                            type="reference">
+                        <options>
+                           <option name="relationshipName">Child</option>
+                           <option name="referenceTo">$po:$any</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>0Xa6tcPdIf4loGGapDVFMn</types1:GUID>
+      <types1:DisplayName>SC-PPGNotify</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-07-01T20:12:21.273Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
