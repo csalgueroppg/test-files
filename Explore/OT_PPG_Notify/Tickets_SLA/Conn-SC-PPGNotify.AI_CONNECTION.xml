@@ -1,0 +1,44 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>qCaaa-gt-42495378-2025-01-17T00:18:42.273Z::conn.xml</types1:EntryId>
+      <types1:Name>Conn-SC-PPGNotify</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>@appType= Service Connector, @application= PPG Notify Notification API, @additionalText=This App connection invokes the service connector SC-PPGNotify, @appSCName=SC-PPGNotify</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>davehernandezr.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2025-01-17T00:18:42Z</types1:CreationDate>
+      <types1:ModifiedBy>davehernandezr.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-03-18T07:17:51Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>davehernandezr.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-03-18T07:18:06Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Conn-SC-PPGNotify/Conn-SC-PPGNotify.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Conn-SC-PPGNotify"
+                     label="Conn-SC-PPGNotify"
+                     name="Conn-SC-PPGNotify">
+            <description>@appType= Service Connector, @application= PPG Notify Notification API, @additionalText=This App connection invokes the service connector SC-PPGNotify, @appSCName=SC-PPGNotify</description>
+            <tags>.agent:SDCAMDMSA01</tags>
+            <agent>SDCAMDMSA01</agent>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SC_PPGNotify/SC_PPGNotify_svcDef.xml"
+                               guid="0Xa6tcPdIf4loGGapDVFMn"
+                               name="SC-PPGNotify"
+                               supportsConnectionTest="false"
+                               uuid="cc3e8409-55c6-459a-b62f-cc12b94b9776">
+               <description>@scType=REST and SOAP, @application=PPG Notify Notification API</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>1RYRH2k6dLoiSwCB7am4Ax</types1:GUID>
+      <types1:DisplayName>Conn-SC-PPGNotify</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-03-18T07:18:47.936Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
