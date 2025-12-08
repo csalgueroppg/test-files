@@ -1,0 +1,560 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>DquCMLkZlkZ2sBs-gt-54409952-2021-08-06T16:24:48Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_MAT_00_MDM_Ongoing_NA_One</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description>@source= Oracle NA Src, @operation= send Material from Oracle NA to MDM, @dataType= Materials, @target= MDM Tgt, @additionalText= This Taskflow recalculates executions every health restart, tfLocalPath= /Products/P360_OG_OracleNA</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>RPRodriguez.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2021-08-06T16:24:48Z</types1:CreationDate>
+      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-08-11T19:21:33Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-08-11T19:21:42Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_MAT_00_MDM_Ongoing_NA_One/tf_MAT_00_MDM_Ongoing_NA_One.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_MAT_00_MDM_Ongoing_NA_One"
+                   name="tf_MAT_00_MDM_Ongoing_NA_One"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>@source= Oracle NA Src, @operation= send Material from Oracle NA to MDM, @dataType= Materials, @target= MDM Tgt, @additionalText= This Taskflow recalculates executions every health restart, tfLocalPath= /Products/P360_OG_OracleNA</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="vTempPathISL" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempECode" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEDetail" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEReason" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempMaxRetries" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempRetries" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempWairRetries" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-MAT-00-MDM-Ongoing-NA-DeltaRecalculate-7VTBHKHRriMjKkt7WItosQ</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEProcess" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_TicketErrorDeltaRecalculate"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_UpdateDeltaParams" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEnv" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tf_MAT_01_MDM_Ongoing_NA" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:InternalInfaSubTaskflowField</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="kqge9sn8" targetId="kqge9sn7"/>
+               </start>
+               <assignment id="kqge9sn7">
+                  <title>AssignSettings</title>
+                  <operation source="constant" to="temp.vTempEnv">Dev</operation>
+                  <operation source="formula" to="temp.vTempPathISL">
+                     <expression language="XQuery">fn:concat('//nac.ppg.com/dfs/wu1/nas/it/IICS/',$temp.vTempEnv ,'/etl_work/cmd/Products/')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempFileName">
+                     <expression language="XQuery">fn:concat('OnGoing_P360_NA_',fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT5H")),"[Y0001][M01][D01][H01][m01][s01]"))</expression>
+                  </operation>
+                  <operation source="constant" to="temp.vTempMaxRetries">3</operation>
+                  <operation source="constant" to="temp.vTempRetries">0</operation>
+                  <operation source="constant" to="temp.vTempWairRetries">10</operation>
+                  <link id="kqge9snm" targetId="kqge9snl"/>
+               </assignment>
+               <wait id="kqge9snl">
+                  <title>WaitStart</title>
+                  <duration source="formula">
+                     <function name="duration_expression">
+                        <arg name="value">30</arg>
+                        <arg name="scale">S</arg>
+                        <arg name="businessDays"/>
+                     </function>
+                  </duration>
+                  <link id="kqge9so7" targetId="kqge9soc"/>
+               </wait>
+               <eventContainer id="kqge9soc">
+                  <service id="kqge9so6">
+                     <title>dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">7VTBHKHRriMjKkt7WItosQ</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field"
+                                      to="mt-MAT-00-MDM-Ongoing-NA-DeltaRecalculate-7VTBHKHRriMjKkt7WItosQ">temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Object_Name">Object Name</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Run_Id">Run Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/inout/p_LastUpdateDate">p_LastUpdateDate</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/inout/p_ProcessTimeMin">p_ProcessTimeMin</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/inout/p_Path">p_Path</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/inout/p_MaxRetries">p_MaxRetries</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/inout/p_DefaultTimeToWaitSeg">p_DefaultTimeToWaitSeg</operation>
+                        <operation source="field"
+                                   to="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/inout/p_ParamName">p_ParamName</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="kqge9soy">
+                     <assignment id="kqge9t3k">
+                        <title>AssignCleanRetries</title>
+                        <operation source="constant" to="temp.vTempRetries">0</operation>
+                        <link id="kqge9t51" targetId="kqge9t2h"/>
+                     </assignment>
+                     <eventContainer id="kqge9t2h">
+                        <service id="kqge9t23">
+                           <title>CT_UpdateDeltaParams</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_UpdateDeltaParams</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000004:SDCAMDMSA01</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="formula">
+                                 <expression language="XQuery">fn:concat($temp.vTempPathISL ,'P360_OG_NA.bat')</expression>
+                              </parameter>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9ew81IGCjUshOwChB1zgWT</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_UpdateDeltaParams</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                    <expression language="XQuery">fn:concat($temp.vTempPathISL ,'P360_OG_NA.bat')</expression>
+                                 </operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="kqge9t34">
+                           <link id="kqge9t35" targetId="kqge9t2h" type="containerLink"/>
+                        </flow>
+                        <flow id="kqge9t37">
+                           <assignment id="kqge9t5e">
+                              <title>AssignRetries1</title>
+                              <operation source="formula" to="temp.vTempRetries">
+                                 <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                              </operation>
+                              <link id="kqge9t5v" targetId="kqge9t5u"/>
+                           </assignment>
+                           <container id="kqge9t5u" type="exclusive">
+                              <title>d_RetriesCTUpdateDelta</title>
+                              <flow id="kqge9t5x">
+                                 <throw id="kqge9t7b">
+                                    <title>ThrowCTUpdateDelta</title>
+                                    <throwInput>
+                                       <parameter name="code" source="constant" updatable="true">'Error '</parameter>
+                                       <parameter name="detail" source="constant" updatable="true">'CT Update Delta NA'</parameter>
+                                       <parameter name="reason" source="formula" updatable="true">
+                                          <expression language="XQuery">fn:concat('CT Update Delta NA ',', Item Timestamp (EST): ',fn:substring-after($temp.vTempFileName ,'NA_'))</expression>
+                                       </parameter>
+                                    </throwInput>
+                                 </throw>
+                              </flow>
+                              <flow id="kqge9t60">
+                                 <wait id="kqge9t6s">
+                                    <title>WaitUpdateDelta</title>
+                                    <duration source="formula">
+                                       <function name="duration_expression">
+                                          <arg name="value">{$temp.vTempWairRetries}</arg>
+                                          <arg name="scale">S</arg>
+                                          <arg name="businessDays"/>
+                                       </function>
+                                    </duration>
+                                    <link id="kqge9t6t" targetId="kqge9t6b"/>
+                                 </wait>
+                                 <jumpTo id="kqge9t6b">
+                                    <link id="kqge9t6c" targetId="kqge9t2h"/>
+                                 </jumpTo>
+                              </flow>
+                              <link id="kqge9t5w" targetId="kqge9t5x" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="equals">
+                                       <arg name="left">{$temp.vTempMaxRetries}</arg>
+                                       <arg name="right">{$temp.vTempRetries }</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="kqge9t5z" targetId="kqge9t60" type="containerLink"/>
+                           </container>
+                        </flow>
+                        <link id="kqge9t33" targetId="kqge9t34" type="containerLink"/>
+                        <link id="kqge9t24" targetId="kqge9szb"/>
+                        <events>
+                           <catch faultField="temp.CT_UpdateDeltaParams/fault"
+                                  id="kqge9t2g"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="kqge9t36" targetId="kqge9t37" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <container id="kqge9szb" type="exclusive">
+                        <title>d_FlagDelta</title>
+                        <flow id="kqge9szd">
+                           <subflow id="kqge9t09">
+                              <title>tf_MAT_01_MDM_Ongoing_NA</title>
+                              <subflowGUID>7NXBEfcvMZheAAikATjrGJ</subflowGUID>
+                              <subflowPath>tf_MAT_01_MDM_Ongoing_NA</subflowPath>
+                              <runForEach>false</runForEach>
+                              <input/>
+                              <outputDef/>
+                              <link id="ks18i92h" targetId="kqge9t1j"/>
+                           </subflow>
+                           <jumpTo id="kqge9t1j">
+                              <link id="kqge9t1k" targetId="kqge9soc"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="kqge9szg">
+                           <link id="kqge9szh" targetId="kqge9szb" type="containerLink"/>
+                        </flow>
+                        <link id="kqge9szc" targetId="kqge9szd" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate[1]/output[1]/Success_Target_Rows}</arg>
+                                 <arg name="right">{2}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kqge9szf" targetId="kqge9szg" type="containerLink"/>
+                     </container>
+                     <link id="kqge9soz" targetId="kqge9soc" type="containerLink"/>
+                  </flow>
+                  <flow id="kqge9sp1">
+                     <assignment id="kqge9spc">
+                        <title>AssignRetries</title>
+                        <operation source="formula" to="temp.vTempRetries">
+                           <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                        </operation>
+                        <link id="kqge9spu" targetId="kqge9spt"/>
+                     </assignment>
+                     <container id="kqge9spt" type="exclusive">
+                        <title>d_RetriesNA</title>
+                        <flow id="kqge9spw">
+                           <assignment id="kqge9ssf">
+                              <title>AssignErrorDeltaVars</title>
+                              <operation source="formula" to="temp.vTempEProcess">
+                                 <expression language="XQuery">fn:concat('Delta Recalculate NA',', Item Timestamp (EST): ',fn:substring-after($temp.vTempFileName ,'NA_'))</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempECode">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempEDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempEReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <link id="kqge9ssg" targetId="kqge9svm"/>
+                           </assignment>
+                           <eventContainer id="kqge9svm">
+                              <service id="kqge9ss2">
+                                 <title>CT_TicketErrorDeltaRecalculate</title>
+                                 <serviceName>ICSExecuteCommandTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Task Name" source="constant">CT_TicketErrorDeltaRecalculate</parameter>
+                                    <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                    <parameter name="Runtime Environment" source="constant">010T4725000000000004:SDCAMDMSA01</parameter>
+                                    <parameter name="Max Wait" source="constant">86400</parameter>
+                                    <parameter name="Script Name" source="formula">
+                                       <expression language="XQuery">fn:concat($temp.vTempPathISL ,'script_error_OG_P360.cmd')</expression>
+                                    </parameter>
+                                    <parameter name="Input Arguments" source="formula">
+                                       <expression language="XQuery">fn:concat('"','Oracle NA','"',',','"','tf_P360_Ongoing_NA_One','"',',','"',$temp.vTempEProcess,'"',',','"',$temp.vTempECode,'"',',','"',$temp.vTempEDetail,'"',',','"',$temp.vTempEReason,'"',',','"','ORCNA','"')</expression>
+                                    </parameter>
+                                    <parameter name="Work Directory" source="constant"/>
+                                    <parameter name="RuntimeEnvGUID" source="constant">9ew81IGCjUshOwChB1zgWT</parameter>
+                                    <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="INFA-commandTask">temp.CT_TicketErrorDeltaRecalculate</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                       <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                          <expression language="XQuery">fn:concat($temp.vTempPathISL ,'script_error_OG_P360.cmd')</expression>
+                                       </operation>
+                                       <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                                          <expression language="XQuery">fn:concat('"','Oracle NA','"',',','"','tf_MAT_00_MDM_Ongoing_NA_One','"',',','"',$temp.vTempEProcess,'"',',','"',$temp.vTempECode,'"',',','"',$temp.vTempEDetail,'"',',','"',$temp.vTempEReason,'"',',','"','ORCNA','"')</expression>
+                                       </operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.CT_TicketErrorDeltaRecalculate/output/Run_Id">Run Id</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaRecalculate/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.CT_TicketErrorDeltaRecalculate/output/End_Time">End Time</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaRecalculate/output/Exit_Code">Exit Code</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaRecalculate/output/Execution_Status">Execution Status</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaRecalculate/output/Std_Error">Std Error</operation>
+                                 </serviceOutput>
+                              </service>
+                              <flow id="ks012e4s">
+                                 <link id="ks012e4t" targetId="kqge9svm" type="containerLink"/>
+                              </flow>
+                              <flow id="ks012e4v">
+                                 <link id="ks012e4w" targetId="kqge9svm" type="containerLink"/>
+                              </flow>
+                              <link id="ks012e4r" targetId="ks012e4s" type="containerLink"/>
+                              <link id="kqge9sy0" targetId="kqge9sxz"/>
+                              <events>
+                                 <catch faultField="temp.CT_TicketErrorDeltaRecalculate/fault"
+                                        id="kqge9svl"
+                                        interrupting="true"
+                                        name="error">
+                                    <link id="ks012e4u" targetId="ks012e4v" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <throw id="kqge9sxz">
+                              <title>ThrowDeltaRecalculate</title>
+                              <throwInput>
+                                 <parameter name="code" source="constant" updatable="true">'Error '</parameter>
+                                 <parameter name="detail" source="constant" updatable="true">'Delta Recalculate NA MAP'</parameter>
+                                 <parameter name="reason" source="formula" updatable="true">
+                                    <expression language="XQuery">fn:concat('Delta Recalculate NA MAP',', Item Timestamp (EST): ',fn:substring-after($temp.vTempFileName ,'NA_'))</expression>
+                                 </parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <flow id="kqge9spz">
+                           <wait id="kqge9sql">
+                              <title>WaitRetryDelta</title>
+                              <duration source="formula">
+                                 <function name="duration_expression">
+                                    <arg name="value">{$temp.vTempWairRetries}</arg>
+                                    <arg name="scale">S</arg>
+                                    <arg name="businessDays"/>
+                                 </function>
+                              </duration>
+                              <link id="kqge9srj" targetId="kqge9srh"/>
+                           </wait>
+                           <jumpTo id="kqge9srh">
+                              <link id="kqge9sri" targetId="kqge9soc"/>
+                           </jumpTo>
+                        </flow>
+                        <link id="kqge9spv" targetId="kqge9spw" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.vTempMaxRetries}</arg>
+                                 <arg name="right">{$temp.vTempRetries }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kqge9spy" targetId="kqge9spz" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <link id="kqge9sox" targetId="kqge9soy" type="containerLink"/>
+                  <link id="kqge9so8" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/fault"
+                            id="kqge9soa"
+                            interrupting="true"
+                            name="error">
+                        <link id="kqge9sp0" targetId="kqge9sp1" type="containerLink"/>
+                     </catch>
+                     <catch faultField="temp.dt_MAT_00_MDM_Ongoing_NA_DeltaRecalculate/fault"
+                            id="kqge9sob"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-MAT-00-MDM-Ongoing-NA-DeltaRecalculate-7VTBHKHRriMjKkt7WItosQ"
+                              isByCopy="true"
+                              name="mt-MAT-00-MDM-Ongoing-NA-DeltaRecalculate-7VTBHKHRriMjKkt7WItosQ">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>3H8J1bdPx8eboNiENusLyr</types1:GUID>
+      <types1:DisplayName>tf_MAT_00_MDM_Ongoing_NA_One</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-08-11T19:27:43.211Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
