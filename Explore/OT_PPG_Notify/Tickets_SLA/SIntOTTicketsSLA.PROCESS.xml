@@ -1,135 +1,85 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>UDKYsGuDoWn2sqe-gt-14053513-2025-01-30T07:53:20.751Z::pd.xml</types1:EntryId>
-      <types1:Name>SIntOTTicketsSLA</types1:Name>
+      <types1:EntryId>WoAXUCZ4nzYLnzY-gt-42623490-2025-01-17T00:19:17.776Z::pd.xml</types1:EntryId>
+      <types1:Name>SUtiPPGNotify</types1:Name>
+      <types1:ParentFlowIds>UDKYsGuDoWn2sqe-gt-14053513-2025-01-30T07:53:20.751Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>@source= Azure DevOps, @operation= notify, @dataType= SLA of the tickets, @target= operation team mails, @additionalText= This process is scheduled, it runs 2 times every hour, @prcRunOn= Cloud, @prcAllowedGroups= Allow anonymous access</types1:Description>
+      <types1:Description>@source= PPG Notify, @operation= invoke, @dataType= API Notification, @target= Process IICS, @additionalText= Common IICS process for notification, @prcRunOn= Cloud, @prcAllowedGroups= ServiceConsumer, ServiceConsumerCMX</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.anonymous</types1:Tags>
+      <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>davehernandezr.dev@ppg.com</types1:CreatedBy>
-      <types1:CreationDate>2025-01-30T07:53:21Z</types1:CreationDate>
-      <types1:ModifiedBy>RPRodriguez.dev@ppg.com</types1:ModifiedBy>
-      <types1:ModificationDate>2025-04-10T21:44:36Z</types1:ModificationDate>
+      <types1:CreationDate>2025-01-17T00:19:18Z</types1:CreationDate>
+      <types1:ModifiedBy>davehernandezr.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-03-18T05:34:09Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>RPRodriguez.dev@ppg.com</types1:PublishedBy>
-      <types1:PublicationDate>2025-04-10T21:45:01Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/spi.SIntOTTicketsSLA/SIntOTTicketsSLA.pd.xml</types1:PublishedContributionId>
+      <types1:PublishedBy>davehernandezr.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-03-18T07:18:32Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SUtiPPGNotify/SUtiPPGNotify.pd.xml</types1:PublishedContributionId>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
                   xmlns:list="urn:activevos:spi:list:functions"
-                  GUID="7ShbSC0bDVmgomqxe3RtQ8"
-                  displayName="SIntOTTicketsSLA"
-                  name="SIntOTTicketsSLA"
-                  overrideAPIName="true">
+                  GUID="cBGeKZzzAuofMUyG0yPB44"
+                  displayName="SUtiPPGNotify"
+                  name="SUtiPPGNotify"
+                  overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>@source= Azure DevOps, @operation= notify, @dataType= SLA of the tickets, @target= operation team mails, @additionalText= This process is scheduled, it runs 2 times every hour, @prcRunOn= Cloud, @prcAllowedGroups= Allow anonymous access</description>
-            <tags>.anonymous</tags>
+            <description>@source= PPG Notify, @operation= invoke, @dataType= API Notification, @target= Process IICS, @additionalText= Common IICS process for notification, @prcRunOn= Cloud, @prcAllowedGroups= ServiceConsumer, ServiceConsumerCMX</description>
+            <tags/>
             <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="Application ID"
+                          name="application_id"
+                          required="true"
+                          type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Email message" name="email_body" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Push message" name="push_body" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Text Message" name="text_body" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
             <output>
-               <field description="Code error" name="code_error" type="int">
+               <field description="Notify response"
+                      name="responseNotification"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="Process code" name="codePrc" type="int">
                   <options>
                      <option name="required">false</option>
                   </options>
                </field>
-               <field description="Output message" name="message" type="string">
+               <field description="Process message" name="msgPrc" type="string">
                   <options>
                      <option name="required">false</option>
                   </options>
                </field>
             </output>
             <tempFields>
-               <field description="" name="vTempApplicationId" type="int">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempParameters" type="xml">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempMinor" type="double">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempMajor" type="double">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempWorkItemList" type="xml">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempContWorkItem" type="int">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempTotalWorkItems" type="int">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempADONumber" type="string">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempResultset" type="xml">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempFilterResulset" type="xml">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempParameterNotification" type="xml">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempEmailBody" type="string">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempPushBody" type="string">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempTextBody" type="string">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempContFilterResultset" type="int">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempWorkItemsMessageEmail" type="string">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempContRetries" type="int">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="vTempDelay" type="int">
+               <field description="" name="vTempGeneralParameters" type="xml">
                   <options>
                      <option name="required">false</option>
                   </options>
@@ -139,17 +89,17 @@
                      <option name="required">false</option>
                   </options>
                </field>
-               <field description="" name="vTempWorkItemsMessageSMS" type="string">
+               <field description="" name="vTempContRetries" type="int">
                   <options>
                      <option name="required">false</option>
                   </options>
                </field>
-               <field description="" name="vTempWorkItemsMessagePush" type="string">
+               <field description="" name="vTempAppParameters" type="xml">
                   <options>
                      <option name="required">false</option>
                   </options>
                </field>
-               <field description="" name="vTempType" type="string">
+               <field description="" name="vTempDelay" type="int">
                   <options>
                      <option name="required">false</option>
                   </options>
@@ -158,7 +108,10 @@
             <notes/>
             <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
                <rest>
-                  <allowAnonymousAccess/>
+                  <allowedGroups>
+                     <group>ServiceConsumer</group>
+                     <group>ServiceConsumerCMX</group>
+                  </allowedGroups>
                </rest>
             </deployment>
             <extData>
@@ -167,488 +120,189 @@
             </extData>
             <flow id="a">
                <start id="b">
-                  <link id="m74eq9ja" targetId="m72bfs09"/>
+                  <link id="m726j5zj" targetId="m726j5zi"/>
                </start>
-               <assignment id="m72bfs09">
-                  <title>AssignInitialValues</title>
-                  <operation source="formula" to="temp.vTempApplicationId">
-                     <expression language="XQuery">1</expression>
+               <assignment id="m726j5zi">
+                  <title>AssignParameters</title>
+                  <operation source="formula" to="temp.vTempGeneralParameters">
+                     <expression language="XQuery">&lt;Parameter&gt;
+{
+	util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() ='Data_OT_PPGNotify']/*:value/*
+}
+&lt;/Parameter&gt;</expression>
                   </operation>
-                  <operation source="formula" to="temp.vTempContWorkItem">
-                     <expression language="XQuery">1</expression>
+                  <operation source="formula" to="temp.vTempAppParameters">
+                     <expression language="XQuery">&lt;Parameter&gt;
+{
+$temp.vTempGeneralParameters/*:application[*:app_id = $input.application_id] 
+}
+&lt;/Parameter&gt;</expression>
+                  </operation>
+                  <link id="m789ursh" targetId="m789ursg"/>
+               </assignment>
+               <assignment id="m789ursg">
+                  <title>AssignInitialValues</title>
+                  <operation source="formula" to="temp.vTempNRetries">
+                     <expression language="XQuery">$temp.vTempAppParameters/*:application/*:retries/*:n_retry/text()</expression>
                   </operation>
                   <operation source="formula" to="temp.vTempContRetries">
                      <expression language="XQuery">0</expression>
                   </operation>
-                  <link id="m74eq9jn" targetId="m74eq9jm"/>
-               </assignment>
-               <assignment id="m74eq9jm">
-                  <title>AssignParameters</title>
-                  <operation source="formula" to="temp.vTempParameters">
-                     <expression language="XQuery">&lt;Parameter&gt;
-{
-	util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() ='Data_IICS_AzureDevOps']/*:value/*
-}
-&lt;/Parameter&gt;</expression>
-                  </operation>
-                  <operation source="formula" to="temp.vTempParameterNotification">
-                     <expression language="XQuery">&lt;Parameter&gt;
-{
-util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() ='Data_OT_PPGNotify']/*:value/*:application[app_id = $temp.vTempApplicationId]
-}
-&lt;/Parameter&gt;</expression>
-                  </operation>
-                  <operation source="formula" to="temp.vTempMinor">
-                     <expression language="XQuery">$temp.vTempParameters/*:slaRange/*:minor/text()</expression>
-                  </operation>
-                  <operation source="formula" to="temp.vTempMajor">
-                     <expression language="XQuery">$temp.vTempParameters/*:slaRange/*:major/text()</expression>
-                  </operation>
                   <operation source="formula" to="temp.vTempDelay">
-                     <expression language="XQuery">$temp.vTempParameters/*:retries/*:delay/text()</expression>
+                     <expression language="XQuery">$temp.vTempAppParameters/*:application/*:retries/*:delay/text()</expression>
                   </operation>
-                  <operation source="formula" to="temp.vTempNRetries">
-                     <expression language="XQuery">$temp.vTempParameters/*:retries/*:n_retry/text()</expression>
-                  </operation>
-                  <operation source="formula" to="temp.vTempType">
-                     <expression language="XQuery">$temp.vTempParameters/*:type/text()</expression>
-                  </operation>
-                  <link id="m74eq9jo" targetId="m6lc6sgq"/>
+                  <link id="m789ursi" targetId="m600if5x"/>
                </assignment>
-               <eventContainer id="m6lc6sgq">
-                  <service id="m6lc6sgj">
-                     <title>svcGetWorkItems</title>
-                     <serviceName>Conn-SC-AzureDevOpsToPPGNotify:getADOs</serviceName>
-                     <serviceGUID>0tLnq05PkUbeHmHRTPPWIX</serviceGUID>
+               <eventContainer id="m600if5x">
+                  <service id="m600egpa">
+                     <title>svcGetToken</title>
+                     <serviceName>Conn-SC-PPGNotify:getToken</serviceName>
+                     <serviceGUID>1RYRH2k6dLoiSwCB7am4Ax</serviceGUID>
                      <serviceInput>
                         <parameter name="in_scURL" source="formula">
-                           <expression language="XQuery">$temp.vTempParameters/*:apiWorkItemsList_url/text()</expression>
+                           <expression language="XQuery">$temp.vTempGeneralParameters/*:apiToken_url/text()</expression>
+                        </parameter>
+                        <parameter name="in_scGrantType" source="formula">
+                           <expression language="XQuery">$temp.vTempAppParameters/*:application/*:grant_type/text()</expression>
+                        </parameter>
+                        <parameter name="in_scResource" source="formula">
+                           <expression language="XQuery">$temp.vTempAppParameters/*:application/*:resource/text()</expression>
+                        </parameter>
+                        <parameter name="in_scApplicationId" source="formula">
+                           <expression language="XQuery">$input.application_id </expression>
                         </parameter>
                      </serviceInput>
                   </service>
-                  <flow id="m6lc6sgs">
-                     <assignment id="m72e3qwa">
-                        <title>AssignWorkItemList</title>
-                        <operation source="formula" to="temp.vTempWorkItemList">
-                           <expression language="XQuery">let $ListADO :=&lt;workItems&gt;
-				{
-					for $ADOsList in $output.out_scADOS/*:workItems
-                    return
-                    &lt;workItem&gt;
-                    	&lt;id&gt;{$ADOsList/*:id/text()}&lt;/id&gt;
-                    &lt;/workItem&gt;
-				}
-				&lt;/workItems&gt;
-            
-return $ListADO</expression>
+                  <flow id="m600if5z">
+                     <assignment id="m78awp0h">
+                        <title>AssignResetContRetries</title>
+                        <operation source="formula" to="temp.vTempContRetries">
+                           <expression language="XQuery">0</expression>
                         </operation>
-                        <operation source="formula" to="temp.vTempTotalWorkItems">
-                           <expression language="XQuery">fn:count($temp.vTempWorkItemList/*:workItem)</expression>
-                        </operation>
-                        <link id="m72eqw1e" targetId="m72eqw1d"/>
+                        <link id="m78awp0i" targetId="m600if73"/>
                      </assignment>
-                     <container id="m72eqw1d" type="exclusive">
-                        <title>ExistsWorkItems</title>
-                        <flow id="m72eqw1h">
-                           <assignment id="m789zgoy">
-                              <title>AssignResetContRetries</title>
-                              <operation source="formula" to="temp.vTempContRetries">
+                     <eventContainer id="m600if73">
+                        <service id="m600if6i">
+                           <title>svcSendNotify</title>
+                           <serviceName>Conn-SC-PPGNotify:senNotification</serviceName>
+                           <serviceGUID>1RYRH2k6dLoiSwCB7am4Ax</serviceGUID>
+                           <serviceInput>
+                              <parameter name="in_scURL" source="formula">
+                                 <expression language="XQuery">$temp.vTempGeneralParameters/*:apiNotification_url/text()</expression>
+                              </parameter>
+                              <parameter name="in_scEmails" source="formula">
+                                 <expression language="XQuery">$temp.vTempAppParameters/*:application/*:emails/text()</expression>
+                              </parameter>
+                              <parameter name="in_scEmailMessage" source="formula">
+                                 <expression language="XQuery">$input.email_body </expression>
+                              </parameter>
+                              <parameter name="in_scEmailSubject" source="formula">
+                                 <expression language="XQuery">$temp.vTempAppParameters/*:application/*:emailSubject/text()</expression>
+                              </parameter>
+                              <parameter name="in_scToken" source="formula">
+                                 <expression language="XQuery">concat('Bearer ',$output.out_scToken )</expression>
+                              </parameter>
+                              <parameter name="in_scPushSubject" source="formula">
+                                 <expression language="XQuery">$temp.vTempAppParameters/*:application/*:pushSubject/text()</expression>
+                              </parameter>
+                              <parameter name="in_scPushMessage" source="formula">
+                                 <expression language="XQuery">$input.push_body </expression>
+                              </parameter>
+                              <parameter name="in_scChannels" source="formula">
+                                 <expression language="XQuery">$temp.vTempAppParameters/*:application/*:channels/text()</expression>
+                              </parameter>
+                              <parameter name="in_scTextMessage" source="formula">
+                                 <expression language="XQuery">$input.text_body </expression>
+                              </parameter>
+                           </serviceInput>
+                        </service>
+                        <flow id="m600if75">
+                           <assignment id="m600if7x">
+                              <title>AssignResponse</title>
+                              <operation source="formula" to="output.responseNotification">
+                                 <expression language="XQuery">$output.out_scResponseNotification </expression>
+                              </operation>
+                              <operation source="formula" to="output.codePrc">
                                  <expression language="XQuery">0</expression>
                               </operation>
-                              <link id="m789zgoz" targetId="m72j8qhk"/>
-                           </assignment>
-                           <assignment id="m72j8qhk">
-                              <title>AssignSelectWorkItem</title>
-                              <operation source="formula" to="temp.vTempADONumber">
-                                 <expression language="XQuery">$temp.vTempWorkItemList/*:workItem[$temp.vTempContWorkItem]/*:id/text()</expression>
+                              <operation source="formula" to="output.msgPrc">
+                                 <expression language="XQuery">'Success'</expression>
                               </operation>
-                              <link id="m78elkop" targetId="m78ell5t"/>
                            </assignment>
-                           <eventContainer id="m78ell5t">
-                              <subflow id="m78elkoo">
-                                 <title>subPRCWorkItemDetail</title>
-                                 <subflowGUID>58510STzYesjdb4bIgRBmZ</subflowGUID>
-                                 <subflowPath>PRC_WorkItemDetail</subflowPath>
-                                 <runForEach>false</runForEach>
-                                 <input>
-                                    <parameter name="url" source="formula" updatable="true">
-                                       <expression language="XQuery">fn:replace($temp.vTempParameters/*:apiWorkItemDetail_url/text(),'@adoNumber',$temp.vTempADONumber)</expression>
-                                    </parameter>
-                                 </input>
-                                 <outputDef>
-                                    <field name="adoDetailXML" type="xml">
-                                       <options>
-                                          <option name="required">false</option>
-                                       </options>
-                                    </field>
-                                    <field name="sub_CodError" type="int">
-                                       <options>
-                                          <option name="required">false</option>
-                                       </options>
-                                    </field>
-                                    <field name="sub_Message" type="string">
-                                       <options>
-                                          <option name="required">false</option>
-                                       </options>
-                                    </field>
-                                 </outputDef>
-                              </subflow>
-                              <flow id="m78ell5v">
-                                 <container id="m78ell76" type="exclusive">
-                                    <title>ErrorWorkItemDetail</title>
-                                    <flow id="m78ell77">
-                                       <assignment id="m78ell78">
-                                          <title>AssignResultset</title>
-                                          <operation source="formula" to="temp.vTempResultset">
-                                             <expression language="XQuery">$temp.vTempResultset, $output.adoDetailXML</expression>
-                                          </operation>
-                                          <link id="m78ell81" targetId="m78ell79"/>
-                                       </assignment>
-                                       <container id="m78ell79" type="exclusive">
-                                          <title>vTempContWorkItem</title>
-                                          <flow id="m78ell7a">
-                                             <assignment id="m78ell7b">
-                                                <title>AssignCont</title>
-                                                <operation source="formula" to="temp.vTempContWorkItem">
-                                                   <expression language="XQuery">$temp.vTempContWorkItem + 1</expression>
-                                                </operation>
-                                                <link id="m78ell84" targetId="m78ell7c"/>
-                                             </assignment>
-                                             <jumpTo id="m78ell7c">
-                                                <link id="m78ell85" targetId="m72j8qhk"/>
-                                             </jumpTo>
-                                          </flow>
-                                          <flow id="m78ell7d">
-                                             <assignment id="m78ell7e">
-                                                <title>AssignFilterResulset</title>
-                                                <operation source="formula" to="temp.vTempFilterResulset">
-                                                   <expression language="XQuery">let $nRootWorkItems := &lt;Root&gt;{$temp.vTempResultset}&lt;/Root&gt;
-
-let $tZone := fn:implicit-timezone()
-
-let $l_minor := util:toDecimal($temp.vTempMinor,2)
-let $l_major := util:toDecimal($temp.vTempMajor,2)
-
-let $l_filterResultset := &lt;WorkItems&gt;
-                          {
-						  
-                          for $workItem in $nRootWorkItems/*:WorkItem[*:type=$temp.vTempType ]
-                          let $edaTZone := fn:adjust-dateTime-to-timezone(xs:dateTime($workItem/*:custom_eda/text()),xs:dayTimeDuration($tZone))
-                          let $createdDateTZone := fn:adjust-dateTime-to-timezone(xs:dateTime($workItem/*:created_date/text()),xs:dayTimeDuration($tZone))
-                          let $sysdateTZone := fn:adjust-dateTime-to-timezone(fn:current-dateTime(),xs:dayTimeDuration($tZone))
-						  let $edaNull := date:addToDate($createdDateTZone, 'HH24', 1)
-                          let $l_sla := if($workItem/*:custom_eda/text()) then (
-                                    	date:dateDiff($edaTZone , $createdDateTZone ,'MI')
-                                        ) else ( date:dateDiff($edaNull , $createdDateTZone ,'MI') )
-                                         
-                          let $l_time := date:dateDiff($sysdateTZone , $createdDateTZone ,'MI')
-                          let $l_calculate := $l_sla - $l_time
-                          where 1 = 1
-						  and ($l_calculate ge $l_minor  and $l_calculate le $l_major )
-                          return
-                            &lt;WorkItem&gt;
-                              &lt;id&gt;{$workItem/*:id/text()}&lt;/id&gt;
-                              &lt;created_date&gt;{$workItem/*:created_date/text()}&lt;/created_date&gt;
-                              &lt;custom_eda&gt;{if($workItem/*:custom_eda/text()) then (
-                                         $workItem/*:custom_eda/text()
-                                                     ) else (
-                                    	     $edaNull
-                                        )}&lt;/custom_eda&gt;
-                              &lt;custom_edc&gt;{$workItem/*:custom_edc/text()}&lt;/custom_edc&gt;
-                              &lt;timeRemainingSLA&gt;{fn:concat(fn:round($l_calculate,2), 'Min~')}&lt;/timeRemainingSLA&gt;
-                            &lt;/WorkItem&gt;
-                          }
-                          &lt;/WorkItems&gt;
-                        
-return $l_filterResultset
-
-</expression>
-                                                </operation>
-                                                <operation source="formula" to="temp.vTempContFilterResultset">
-                                                   <expression language="XQuery">fn:count($temp.vTempFilterResulset/*:WorkItem)</expression>
-                                                </operation>
-                                                <link id="m78ell87" targetId="m78ell7f"/>
-                                             </assignment>
-                                             <container id="m78ell7f" type="exclusive">
-                                                <title>NotEmpty</title>
-                                                <flow id="m78ell7g">
-                                                   <assignment id="m78ell7h">
-                                                      <title>AssignGenerateMessage</title>
-                                                      <operation source="formula" to="temp.vTempWorkItemsMessageEmail">
-                                                         <expression language="XQuery">let $headers := '&lt;br/&gt;&lt;br/&gt;&lt;table&gt; &lt;tr&gt; &lt;td&gt; &lt;b&gt;ADO Number&lt;/b&gt;&lt;/td&gt; &lt;td&gt;&lt;b&gt;Created Date&lt;/b&gt;&lt;/td&gt; &lt;td&gt;&lt;b&gt;SLA Date&lt;/b&gt;&lt;/td&gt; &lt;td&gt;&lt;b&gt;Time remaining for activation&lt;/b&gt;&lt;/td&gt; &lt;/tr&gt;'
-
-let $rows := for $workItem in $temp.vTempFilterResulset/*:WorkItem
-             return string-join(('&lt;tr&gt;',
-			                        '&lt;td&gt; ',$workItem/*:id/text(), ' &lt;/td&gt; &lt;td&gt; '
-									       ,$workItem/*:created_date/text(),' &lt;/td&gt; &lt;td&gt;'
-										   ,$workItem/*:custom_eda/text(),' &lt;/td&gt; &lt;td&gt;'
-										   ,$workItem/*:timeRemainingSLA/text(),' &lt;/td&gt;&lt;/tr&gt;'),'')
-                    
-let $message := string-join(($headers, $rows, '&lt;/table&gt;'), '')	
-
-return $message</expression>
-                                                      </operation>
-                                                      <operation source="formula" to="temp.vTempWorkItemsMessagePush">
-                                                         <expression language="XQuery">let $headers := '&lt;br/&gt;&lt;br/&gt;&lt;table&gt; &lt;tr&gt; &lt;td&gt; &lt;b&gt;ADO Number&lt;/b&gt;&lt;/td&gt; &lt;td&gt;&lt;b&gt;Created Date&lt;/b&gt;&lt;/td&gt; &lt;td&gt;&lt;b&gt;SLA Date&lt;/b&gt;&lt;/td&gt; &lt;td&gt;&lt;b&gt;Time remaining for activation&lt;/b&gt;&lt;/td&gt; &lt;/tr&gt;'
-
-let $rows := for $workItem in $temp.vTempFilterResulset/*:WorkItem
-             return string-join(('&lt;tr&gt;',
-			                        '&lt;td&gt; ',$workItem/*:id/text(), ' &lt;/td&gt; &lt;td&gt; '
-									       ,$workItem/*:created_date/text(),' &lt;/td&gt; &lt;td&gt;'
-										   ,$workItem/*:custom_eda/text(),' &lt;/td&gt; &lt;td&gt;'
-										   ,$workItem/*:timeRemainingSLA/text(),' &lt;/td&gt;&lt;/tr&gt;'),'')
-                    
-let $message := fn:string-join(($headers, $rows, '&lt;/table&gt;'),'')	
-
-return $message</expression>
-                                                      </operation>
-                                                      <operation source="formula" to="temp.vTempWorkItemsMessageSMS">
-                                                         <expression language="XQuery">let $rows := for $workItem in $temp.vTempFilterResulset/*:WorkItem
-             return string-join(('[','ADO Number: '  ,$workItem/*:id/text(), ' ',
-							  'Created Date: ',$workItem/*:created_date/text(),' ',
-							  'SLA Date: '	  ,$workItem/*:custom_eda/text(),']'
-                              ),'')
-
-return $rows</expression>
-                                                      </operation>
-                                                      <operation source="formula" to="temp.vTempEmailBody">
-                                                         <expression language="XQuery">string-join(($temp.vTempParameterNotification/*:application/*:emailMessage/text(), ': &lt;br/&gt;',$temp.vTempWorkItemsMessageEmail),'')</expression>
-                                                      </operation>
-                                                      <operation source="formula" to="temp.vTempTextBody">
-                                                         <expression language="XQuery">$temp.vTempWorkItemsMessageSMS</expression>
-                                                      </operation>
-                                                      <operation source="formula" to="temp.vTempPushBody">
-                                                         <expression language="XQuery">string-join(($temp.vTempParameterNotification/*:application/*:pushMessage/text(), ': &lt;br/&gt;',$temp.vTempWorkItemsMessagePush ), '')</expression>
-                                                      </operation>
-                                                      <link id="m78ell8b" targetId="m78ell7i"/>
-                                                   </assignment>
-                                                   <eventContainer id="m78ell7i">
-                                                      <subflow id="m78ell7n">
-                                                         <title>subSUtiPPGNotify</title>
-                                                         <subflowGUID>cBGeKZzzAuofMUyG0yPB44</subflowGUID>
-                                                         <subflowPath>SUtiPPGNotify</subflowPath>
-                                                         <runForEach>false</runForEach>
-                                                         <input>
-                                                            <parameter name="application_id" source="formula" updatable="true">
-                                                               <expression language="XQuery">$temp.vTempApplicationId </expression>
-                                                            </parameter>
-                                                            <parameter name="email_body" source="formula" updatable="true">
-                                                               <expression language="XQuery">$temp.vTempEmailBody </expression>
-                                                            </parameter>
-                                                            <parameter name="push_body" source="formula" updatable="true">
-                                                               <expression language="XQuery">$temp.vTempPushBody </expression>
-                                                            </parameter>
-                                                            <parameter name="text_body" source="formula" updatable="true">
-                                                               <expression language="XQuery">$temp.vTempTextBody </expression>
-                                                            </parameter>
-                                                         </input>
-                                                         <outputDef>
-                                                            <field name="responseNotification" type="reference">
-                                                               <options>
-                                                                  <option name="referenceTo">$po:$any</option>
-                                                                  <option name="required">false</option>
-                                                                  <option name="isCopy">true</option>
-                                                               </options>
-                                                            </field>
-                                                            <field name="codePrc" type="int">
-                                                               <options>
-                                                                  <option name="required">false</option>
-                                                               </options>
-                                                            </field>
-                                                            <field name="msgPrc" type="string">
-                                                               <options>
-                                                                  <option name="required">false</option>
-                                                               </options>
-                                                            </field>
-                                                         </outputDef>
-                                                      </subflow>
-                                                      <flow id="m78ell7j">
-                                                         <assignment id="m78ell7k">
-                                                            <title>AssignResponseTickets</title>
-                                                            <operation source="formula" to="output.code_error">
-                                                               <expression language="XQuery">0</expression>
-                                                            </operation>
-                                                            <operation source="formula" to="output.message">
-                                                               <expression language="XQuery">string-join(('Success, Id transaction: ',$output.responseNotification/*:transactionId/text()),'')</expression>
-                                                            </operation>
-                                                         </assignment>
-                                                         <link id="m78ell8e" targetId="m78ell7i" type="containerLink"/>
-                                                      </flow>
-                                                      <flow id="m78ell7l">
-                                                         <throw id="m78ell7m">
-                                                            <title>ThrowFaultPPGNotify</title>
-                                                            <throwInput>
-                                                               <parameter name="code" source="constant" updatable="true">{$output.faultSUtiPPGNotify[1]/code}</parameter>
-                                                               <parameter name="detail" source="constant" updatable="true">{$output.faultSUtiPPGNotify[1]/detail}</parameter>
-                                                               <parameter name="reason" source="constant" updatable="true">{$output.faultSUtiPPGNotify[1]/reason}</parameter>
-                                                            </throwInput>
-                                                         </throw>
-                                                      </flow>
-                                                      <link id="m78ell8c" targetId="m78ell7j" type="containerLink"/>
-                                                      <events>
-                                                         <catch faultField="faultSUtiPPGNotify" id="m74eq8vo" interrupting="true">
-                                                            <link id="m78ell8d" targetId="m78ell7l" type="containerLink"/>
-                                                         </catch>
-                                                      </events>
-                                                   </eventContainer>
-                                                   <link id="m78ell8a" targetId="m78ell7f" type="containerLink"/>
-                                                </flow>
-                                                <flow id="m78ell7o">
-                                                   <assignment id="m78ell7p">
-                                                      <title>AssignEmpty</title>
-                                                      <operation source="formula" to="output.code_error">
-                                                         <expression language="XQuery">0</expression>
-                                                      </operation>
-                                                      <operation source="formula" to="output.message">
-                                                         <expression language="XQuery">"Resultset empty"</expression>
-                                                      </operation>
-                                                   </assignment>
-                                                   <link id="m78ell8f" targetId="m78ell7f" type="containerLink"/>
-                                                </flow>
-                                                <link id="m78ell88" targetId="m78ell7g" type="containerLink">
-                                                   <condition source="formula">
-                                                      <function name="greater-than">
-                                                         <arg name="left">{$temp.vTempContFilterResultset}</arg>
-                                                         <arg name="right">{0}</arg>
-                                                      </function>
-                                                   </condition>
-                                                </link>
-                                                <link id="m78ell89" targetId="m78ell7o" type="containerLink"/>
-                                             </container>
-                                             <link id="m78ell86" targetId="m78ell79" type="containerLink"/>
-                                          </flow>
-                                          <link id="m78ell82" targetId="m78ell7a" type="containerLink">
-                                             <condition source="formula">
-                                                <function name="less-than">
-                                                   <arg name="left">{$temp.vTempContWorkItem}</arg>
-                                                   <arg name="right">{$temp.vTempTotalWorkItems }</arg>
-                                                </function>
-                                             </condition>
-                                          </link>
-                                          <link id="m78ell83" targetId="m78ell7d" type="containerLink"/>
-                                       </container>
-                                       <link id="m78ell80" targetId="m78ell76" type="containerLink"/>
-                                    </flow>
-                                    <flow id="m78ell7q">
-                                       <container id="m78ell7r" type="exclusive">
-                                          <title>RetriesWorkItemDetail</title>
-                                          <flow id="m78ell7s">
-                                             <assignment id="m78ell7t">
-                                                <title>AssignContWorkItemDetail</title>
-                                                <operation source="formula" to="temp.vTempContRetries">
-                                                   <expression language="XQuery">$temp.vTempContRetries + 1</expression>
-                                                </operation>
-                                                <link id="m78ell8j" targetId="m78ell7u"/>
-                                             </assignment>
-                                             <wait id="m78ell7u">
-                                                <title>WaitDelayWorkItemDetail</title>
-                                                <duration source="formula">
-                                                   <function name="duration_expression">
-                                                      <arg name="value">{$temp.vTempDelay} </arg>
-                                                      <arg name="scale">S</arg>
-                                                      <arg name="businessDays"/>
-                                                   </function>
-                                                </duration>
-                                                <link id="m78ell8k" targetId="m78ell7v"/>
-                                             </wait>
-                                             <jumpTo id="m78ell7v">
-                                                <link id="m78ell8l" targetId="m78ell5t"/>
-                                             </jumpTo>
-                                          </flow>
-                                          <flow id="m78ell7w">
-                                             <assignment id="m79e3kr5">
-                                                <title>AssignResponse</title>
-                                                <operation source="formula" to="output.code_error">
-                                                   <expression language="XQuery">$output.sub_CodError </expression>
-                                                </operation>
-                                                <operation source="formula" to="output.message">
-                                                   <expression language="XQuery">$output.sub_Message </expression>
-                                                </operation>
-                                             </assignment>
-                                             <link id="m78ell8m" targetId="m78ell7r" type="containerLink"/>
-                                          </flow>
-                                          <link id="m78ell8h" targetId="m78ell7s" type="containerLink">
-                                             <condition source="formula">
-                                                <function name="less-than">
-                                                   <arg name="left">{$temp.vTempContRetries}</arg>
-                                                   <arg name="right">{$temp.vTempNRetries }</arg>
-                                                </function>
-                                             </condition>
-                                          </link>
-                                          <link id="m78ell8i" targetId="m78ell7w" type="containerLink"/>
-                                       </container>
-                                       <link id="m78ell8g" targetId="m78ell76" type="containerLink"/>
-                                    </flow>
-                                    <link id="m78ell7y" targetId="m78ell77" type="containerLink">
-                                       <condition source="formula">
-                                          <function name="equals">
-                                             <arg name="left">{$output.sub_CodError}</arg>
-                                             <arg name="right">{0}</arg>
-                                          </function>
-                                       </condition>
-                                    </link>
-                                    <link id="m78ell7z" targetId="m78ell7q" type="containerLink"/>
-                                 </container>
-                                 <link id="m78ell5w" targetId="m78ell5t" type="containerLink"/>
-                              </flow>
-                              <flow id="m78ell5y">
-                                 <throw id="m78ell9n">
-                                    <title>ThrowSubWorkItemDetail</title>
-                                    <throwInput>
-                                       <parameter name="code" source="constant" updatable="true">{$output.faultSubWorkItemDetail[1]/code}</parameter>
-                                       <parameter name="detail" source="constant" updatable="true">{$output.faultSubWorkItemDetail[1]/detail}</parameter>
-                                       <parameter name="reason" source="constant" updatable="true">{$output.faultSubWorkItemDetail[1]/reason}</parameter>
-                                    </throwInput>
-                                 </throw>
-                              </flow>
-                              <link id="m78ell5u" targetId="m78ell5v" type="containerLink"/>
-                              <events>
-                                 <catch faultField="faultSubWorkItemDetail"
-                                        id="m78ell5n"
-                                        interrupting="true">
-                                    <link id="m78ell5x" targetId="m78ell5y" type="containerLink"/>
-                                 </catch>
-                              </events>
-                           </eventContainer>
-                           <link id="m72eqw1i" targetId="m72eqw1d" type="containerLink"/>
+                           <link id="m600if76" targetId="m600if73" type="containerLink"/>
                         </flow>
-                        <flow id="m72eqw1k">
-                           <assignment id="m72eqw4v">
-                              <title>AssignmNoWorkItems</title>
-                              <operation source="formula" to="output.code_error">
-                                 <expression language="XQuery">0</expression>
-                              </operation>
-                              <operation source="formula" to="output.message">
-                                 <expression language="XQuery">'No exists work items'</expression>
-                              </operation>
-                           </assignment>
-                           <link id="m72eqw1l" targetId="m72eqw1d" type="containerLink"/>
+                        <flow id="m600if78">
+                           <container id="m78awp1a" type="exclusive">
+                              <title>RetriesNotify</title>
+                              <flow id="m78awp1d">
+                                 <assignment id="m78awp2d">
+                                    <title>AssignmContRetryNotify</title>
+                                    <operation source="formula" to="temp.vTempContRetries">
+                                       <expression language="XQuery">$temp.vTempContRetries + 1</expression>
+                                    </operation>
+                                    <link id="m78awp3o" targetId="m78awp3n"/>
+                                 </assignment>
+                                 <wait id="m78awp3n">
+                                    <title>WaitDelayNotify</title>
+                                    <duration source="formula">
+                                       <function name="duration_expression">
+                                          <arg name="value">{$temp.vTempDelay} </arg>
+                                          <arg name="scale">S</arg>
+                                          <arg name="businessDays"/>
+                                       </function>
+                                    </duration>
+                                    <link id="m78awp3x" targetId="m78awp3v"/>
+                                 </wait>
+                                 <jumpTo id="m78awp3v">
+                                    <link id="m78awp3w" targetId="m600if73"/>
+                                 </jumpTo>
+                              </flow>
+                              <flow id="m78awp1g">
+                                 <assignment id="m7awzh0l">
+                                    <title>AssignFaultNotify</title>
+                                    <operation source="formula" to="output.codePrc">
+                                       <expression language="XQuery">-1</expression>
+                                    </operation>
+                                    <operation source="formula" to="output.msgPrc">
+                                       <expression language="XQuery">fn:concat('Code error: ', $output.faultNotification[1]/code , ' Detail: ', $output.faultNotification[1]/detail ,' Reason: ', $output.faultNotification[1]/reason  )</expression>
+                                    </operation>
+                                 </assignment>
+                                 <link id="m7awzh0x" targetId="m78awp1a" type="containerLink"/>
+                              </flow>
+                              <link id="m78awp1c" targetId="m78awp1d" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="less-than">
+                                       <arg name="left">{$temp.vTempContRetries}</arg>
+                                       <arg name="right">{$temp.vTempNRetries }</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="m78awp1f" targetId="m78awp1g" type="containerLink"/>
+                           </container>
+                           <link id="m7awzh0y" targetId="m600if73" type="containerLink"/>
                         </flow>
-                        <link id="m72eqw1g" targetId="m72eqw1h" type="containerLink">
-                           <condition source="formula">
-                              <function name="greater-than">
-                                 <arg name="left">{$temp.vTempTotalWorkItems}</arg>
-                                 <arg name="right">{0}</arg>
-                              </function>
-                           </condition>
-                        </link>
-                        <link id="m72eqw1j" targetId="m72eqw1k" type="containerLink"/>
-                     </container>
-                     <link id="m6lc6sgt" targetId="m6lc6sgq" type="containerLink"/>
+                        <link id="m600if74" targetId="m600if75" type="containerLink"/>
+                        <events>
+                           <catch faultField="faultNotification" id="m600if6l" interrupting="true">
+                              <link id="m600if77" targetId="m600if78" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="m600if60" targetId="m600if5x" type="containerLink"/>
                   </flow>
-                  <flow id="m6lc6sgv">
-                     <container id="m789zg7h" type="exclusive">
-                        <title>RetriesWorkItemList</title>
-                        <flow id="m789zg7k">
-                           <assignment id="m789zgem">
-                              <title>AssignContWorkItemList</title>
+                  <flow id="m600if62">
+                     <container id="m78awowv" type="exclusive">
+                        <title>RetriesToken</title>
+                        <flow id="m78awowy">
+                           <assignment id="m78awox9">
+                              <title>AssignmContRetryToken</title>
                               <operation source="formula" to="temp.vTempContRetries">
                                  <expression language="XQuery">$temp.vTempContRetries + 1</expression>
                               </operation>
-                              <link id="m789zgf4" targetId="m789zgf3"/>
+                              <link id="m78awozv" targetId="m78awozu"/>
                            </assignment>
-                           <wait id="m789zgf3">
-                              <title>WaitDelayWorkItemList</title>
+                           <wait id="m78awozu">
+                              <title>WaitDelayToken</title>
                               <duration source="formula">
                                  <function name="duration_expression">
                                     <arg name="value">{$temp.vTempDelay} </arg>
@@ -656,23 +310,25 @@ return $rows</expression>
                                     <arg name="businessDays"/>
                                  </function>
                               </duration>
-                              <link id="m789zgk8" targetId="m789zgk6"/>
+                              <link id="m78awozw" targetId="m78awozl"/>
                            </wait>
-                           <jumpTo id="m789zgk6">
-                              <link id="m789zgk7" targetId="m6lc6sgq"/>
+                           <jumpTo id="m78awozl">
+                              <link id="m78awozm" targetId="m600if5x"/>
                            </jumpTo>
                         </flow>
-                        <flow id="m789zg7n">
-                           <throw id="m789zg85">
-                              <title>ThrowWorkItemsList</title>
-                              <throwInput>
-                                 <parameter name="code" source="constant" updatable="true">{$output.faultWorkItemsList[1]/code}</parameter>
-                                 <parameter name="detail" source="constant" updatable="true">{$output.faultWorkItemsList[1]/detail}</parameter>
-                                 <parameter name="reason" source="constant" updatable="true">{$output.faultWorkItemsList[1]/reason}</parameter>
-                              </throwInput>
-                           </throw>
+                        <flow id="m78awox1">
+                           <assignment id="m7awzgyn">
+                              <title>AssignFaultToken</title>
+                              <operation source="formula" to="output.codePrc">
+                                 <expression language="XQuery">-1</expression>
+                              </operation>
+                              <operation source="formula" to="output.msgPrc">
+                                 <expression language="XQuery">fn:concat('Code error: ', $output.faultToken[1]/code, ' Detail: ', $output.faultToken[1]/detail,' Reason: ',$output.faultToken[1]/reason )</expression>
+                              </operation>
+                           </assignment>
+                           <link id="m7awzh0d" targetId="m78awowv" type="containerLink"/>
                         </flow>
-                        <link id="m789zg7j" targetId="m789zg7k" type="containerLink">
+                        <link id="m78awowx" targetId="m78awowy" type="containerLink">
                            <condition source="formula">
                               <function name="less-than">
                                  <arg name="left">{$temp.vTempContRetries}</arg>
@@ -680,34 +336,24 @@ return $rows</expression>
                               </function>
                            </condition>
                         </link>
-                        <link id="m789zg7m" targetId="m789zg7n" type="containerLink"/>
+                        <link id="m78awox0" targetId="m78awox1" type="containerLink"/>
                      </container>
+                     <link id="m7awzh0e" targetId="m600if5x" type="containerLink"/>
                   </flow>
-                  <link id="m6lc6sgr" targetId="m6lc6sgs" type="containerLink"/>
-                  <link id="m6lc6sgl" targetId="c"/>
+                  <link id="m600if5y" targetId="m600if5z" type="containerLink"/>
+                  <link id="m600egpc" targetId="c"/>
                   <events>
-                     <catch faultField="faultWorkItemsList" id="m6lc6sgp" interrupting="true">
-                        <link id="m6lc6sgu" targetId="m6lc6sgv" type="containerLink"/>
+                     <catch faultField="faultToken" id="m600if5w" interrupting="true">
+                        <link id="m600if61" targetId="m600if62" type="containerLink"/>
                      </catch>
                   </events>
                </eventContainer>
                <end id="c"/>
             </flow>
          </process>
-         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
-            <ns1:SampleData>
-               <ns1:Id>bace7e5a-345e-4a7b-9ecb-2bda9188f41a</ns1:Id>
-               <ns1:Name>prueba</ns1:Name>
-               <ns1:CreatedBy>RPRodriguez.dev@ppg.com</ns1:CreatedBy>
-               <ns1:CreationDate>2025-04-08T23:11:07Z</ns1:CreationDate>
-               <ns1:ModifiedBy>RPRodriguez.dev@ppg.com</ns1:ModifiedBy>
-               <ns1:ModificationDate>2025-04-08T23:11:07Z</ns1:ModificationDate>
-               <ns1:Data format="json">{}</ns1:Data>
-            </ns1:SampleData>
-         </ns1:sample-data-sets>
       </types1:Entry>
-      <types1:GUID>7ShbSC0bDVmgomqxe3RtQ8</types1:GUID>
-      <types1:DisplayName>SIntOTTicketsSLA</types1:DisplayName>
+      <types1:GUID>cBGeKZzzAuofMUyG0yPB44</types1:GUID>
+      <types1:DisplayName>SUtiPPGNotify</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2025-04-11T03:45:48.693Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2025-03-18T07:18:47.985Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
