@@ -1,0 +1,44 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>3kgf3yD7tyGoQwg-gt-13844246-2025-11-12T21:54:54.878Z::conn.xml</types1:EntryId>
+      <types1:Name>Conn-SC-SapS4China-ZAPIBP</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>@appType= Service Connector, @application= SapS4China, @additionalText= Connection for SapS4China, @appSCName= SC-SapS4China-ZAPIBP</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2025-11-12T21:54:55Z</types1:CreationDate>
+      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-11-19T17:03:18Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-11-21T07:14:21Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Conn-SC-SapS4China-ZAPIBP/Conn-SC-SapS4China-ZAPIBP.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Conn-SC-SapS4China-ZAPIBP"
+                     label="Conn-SC-SapS4China-ZAPIBP"
+                     name="Conn-SC-SapS4China-ZAPIBP">
+            <description>@appType= Service Connector, @application= SapS4China, @additionalText= Connection for SapS4China, @appSCName= SC-SapS4China-ZAPIBP</description>
+            <tags>.agent:SDCAMDMSA01</tags>
+            <agent>SDCAMDMSA01</agent>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SC_SapS4China_ZAPIBP/SC_SapS4China_ZAPIBP_svcDef.xml"
+                               guid="6inemg10kUAlDx8u2F3xae"
+                               name="SC-SapS4China-ZAPIBP"
+                               supportsConnectionTest="false"
+                               uuid="b6648b1f-a2d1-472e-8818-c71820c71e60">
+               <description>@scType=REST, @application= SapS4, @additionalText=Connection in charge of communication with SapS4</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>8AoxLowR5uvgDra9vXMDS9</types1:GUID>
+      <types1:DisplayName>Conn-SC-SapS4China-ZAPIBP</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-11-21T08:11:23.16Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

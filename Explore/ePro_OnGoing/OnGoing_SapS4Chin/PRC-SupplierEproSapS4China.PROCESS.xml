@@ -1,0 +1,2992 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>BomsvE3C7snSDg8-gt-2672377-2025-11-21T06:59:02.438Z::pd.xml</types1:EntryId>
+      <types1:Name>PRC-SupplierEproSapS4China</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>@source= EPRO, @operation= SendSupplier, @dataType= XMLSupplier, @target= ERP-S4- EPRO - MDM, @prcRunOn= SDCAMDMSA01, @prcAllowedGroups= Allow anonymous access, @additionalText= Process in charge of sending the supplier to ERP-S4 and generating the RT in Epro and MDM</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2025-11-21T06:59:02Z</types1:CreationDate>
+      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-11-21T07:34:16Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-11-21T07:34:59Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.PRC-SupplierEproSapS4China/PRC-SupplierEproSapS4China.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="lMoodcIh0oRekT1H6UlfIu"
+                  displayName="PRC-SupplierEproSapS4China"
+                  name="PRC-SupplierEproSapS4China"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>@source= EPRO, @operation= SendSupplier, @dataType= XMLSupplier, @target= ERP-S4- EPRO - MDM, @prcRunOn= SDCAMDMSA01, @prcAllowedGroups= Allow anonymous access, @additionalText= Process in charge of sending the supplier to ERP-S4 and generating the RT in Epro and MDM</description>
+            <tags>.agent:SDCAMDMSA01,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="XML" name="in_XML" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="FileName"
+                          name="in_FileName"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="LIFNR"
+                          name="in_LIFNR"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="LocPosition"
+                          name="in_LocPosition"
+                          required="true"
+                          type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="IsChanged"
+                          name="in_IsChanged"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="SendBankExt"
+                          name="in_SendBankExt"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="LIFNR" name="out_LIFNR" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="InstanceID" name="out_InstanceID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="ErpName" name="out_ErpName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Step" name="out_Step" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Code" name="out_Code" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Message" name="out_Message" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="ADRRequest" name="out_ADRRequest" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="ADRResponse" name="out_ADRResponse" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="TRDPRequest" name="out_TRDPRequest" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="TRDPResponse" name="out_TRDPResponse" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="vTempPath" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempAgent" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempStep" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCode" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempErrorMessage" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempErrorMessageEpro" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempProcessTitle" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempTicket" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEpro_XML" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempTicketFile" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempTicketMessage" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempImportJ1Supplier_XML_Input" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempFault" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempAddPosition" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempBuildXML_XML_Input" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempBuildXML_XML_Output" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempBuildXML_code" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCount" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="vTempDelay_I" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempRetries_I" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempRoundTripMDM_XML" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempBapi300_XML_Output" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="vTempImportJ1Supplier_XML_Output"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempErpName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempImportJ1Supplier_returnStatus" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempSupplierType" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempNameValidation_XML_Input" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempNameValidation_XML_Output" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempValidationStatus" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempGetET_XML_Input" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempGetET_XML_Output" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCallTRDP" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCallADR" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCallMDM" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="vTempAddPositionTRDP" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempJsonADR" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempJsonTRDP" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempLength" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempJsonADR_Aux" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempJsonTRDP_Aux" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCountS4Error" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempRoundTripEproADR_XML" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempRoundTripEproTRDP_XML" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempTRDP_XML_Output" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempADR_XML_Output" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempGetInfoRef_XML_Input" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempGetInfoRef_XML_Output" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempGetInfoRef_code" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempGetInfoRef_data" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempGetInfoRefData_XML" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCountGetInfoRefData" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempGetInfoRef_data_XML" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempRoundTripMdmADR_XML" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempRoundTripMdmTRDP_XML" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempQuery" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="untitled1" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempAddTRDP_" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempAddADR" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempBPADR" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempParameterList" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:PO-ParameterList</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">87hwLnkbzfmcGCn5QJbiu8</option>
+                  </options>
+               </field>
+               <field description="" name="vTempNameFileSFTP" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="vTempImportJ1SupplierADR_XML_Input"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="vTempImportJ1SupplierADR_XML_Output"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempADR_Json_Fault" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempTRDP_Json_Fault" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>SDCAMDMSA01</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="kurmmliz" targetId="kurmmliy"/>
+               </start>
+               <assignment id="kurmmliy">
+                  <title>AssignParameters</title>
+                  <operation source="formula" to="temp.vTempAgent">
+                     <expression language="XQuery">util:resolveURN('urn:agent')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempPath">
+                     <expression language="XQuery">util:resolveURN('urn:host-ontap')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempEpro_XML">
+                     <expression language="XQuery">util:parseXML($input.in_XML)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempProcessTitle">
+                     <expression language="XQuery">if($temp.vTempEpro_XML/*:JIData/*:erpNumber/text()) then(
+	ipd:setProcessTitle(fn:concat('PRC-SupplierEproSapS4-', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text())))
+else()</expression>
+                  </operation>
+                  <operation source="formula" to="output.out_InstanceID">
+                     <expression language="XQuery">util:getProcessId()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempDelay_I">
+                     <expression language="XQuery">util:resolveURN('urn:delay_I')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempRetries_I">
+                     <expression language="XQuery">util:resolveURN('urn:retries_I')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempAddPosition">
+                     <expression language="XQuery">let $internalIdAA := fn:concat($temp.vTempEpro_XML/JIData/locationList/location[$input.in_LocPosition]/associatedAddressList/associatedAddress/addressRef/internalId/text()[../../../type/text() = 'fulfillment'], '')
+let $tmp := 
+&lt;root&gt;
+	{
+	if($internalIdAA != '') then(
+		for $i in (1 to count($temp.vTempEpro_XML/JIData/addressList/address))
+		return
+		let $address := $temp.vTempEpro_XML/JIData/addressList/address[$i]
+		return
+		if($address[./type/text() = 'fulfillment' and ./internalId/text() = $internalIdAA]) then(
+			&lt;i&gt;{$i}&lt;/i&gt;)
+		else())
+	else()
+	}
+&lt;/root&gt;
+return
+if($tmp/*:i/text()) then(
+	$tmp/*:i[1]/text())
+else(0)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempSupplierType">
+                     <expression language="XQuery">let $locationList := $temp.vTempEpro_XML/*:JIData/*:locationList
+let $locPosition as xs:int := $input.in_LocPosition/text() cast as xs:int
+let $tmp_ := fn:concat($locationList/location[$locPosition]/thirdPartyRefNumber/text(), '')
+let $tmp2_ := fn:concat($locationList/location[$locPosition]/customElementList/customElement/customElementValueList/customElementValue/text()[../../../customElementIdentifier/text() = 'Supplier_Type'], '')
+return
+if($tmp_ = 'EINK' or $tmp2_ = 'EINK') then(
+	1)
+else(0)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempNameFileSFTP">
+                     <expression language="XQuery">fn:concat($input.in_LocPosition, '_', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), '_',
+fn:tokenize($input.in_FileName, '_')[2])</expression>
+                  </operation>
+                  <link id="lsdfpd0l" targetId="lsdfpd0k"/>
+               </assignment>
+               <assignment id="lsdfpd0k">
+                  <title>AssignGetInfoRef_XML_Input</title>
+                  <operation source="formula" to="temp.vTempGetInfoRef_XML_Input">
+                     <expression language="XQuery">let $location := $temp.vTempEpro_XML//JIData/*:locationList/location[$input.in_LocPosition]
+let $schema := 'dbo'
+return
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.ppg.com/xsd/GetInfoRef"&gt;
+	&lt;soapenv:Header/&gt;
+	&lt;soapenv:Body&gt;
+		&lt;get:getInfoRefRequest&gt;
+		&lt;!--1 or more repetitions:--&gt;
+		{
+			if ($location/assignedBusinessUnitsList/assignedBusinessUnit[1]/businessUnitInternalName/text() != '') then
+				(
+				let $businessUnit := $location/assignedBusinessUnitsList/assignedBusinessUnit[1]/businessUnitInternalName/text()
+				let $query :=
+					&lt;get:query statementId="{fn:concat($input.in_LocPosition ,'|org_id_ongoing')}"&gt;
+						{fn:concat('SELECT * FROM ',$schema,'.org_id_ongoing WHERE org_Id=',"'",$businessUnit,"'",' and erp_name = ',"'",'S4',"'")}&lt;/get:query&gt;
+				return
+				$query)
+			else ()
+		}
+		&lt;/get:getInfoRefRequest&gt;
+	&lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</expression>
+                  </operation>
+                  <link id="lsdfpd0m" targetId="lsdfpd9m"/>
+               </assignment>
+               <assignment id="l1ktilmh">
+                  <title>AssignNameValidation_XML_Input</title>
+                  <operation source="formula" to="temp.vTempNameValidation_XML_Input">
+                     <expression language="XQuery">let $vendorName:= if(fn:concat($temp.vTempEpro_XML/*:JIData/*:locationList/*:location[$input.in_LocPosition]/*:customElementList/*:customElement/*:customElementValueList/*:customElementValue/text()[../../../customElementIdentifier/text() = 'ERP_Supplier_Name'],'') != '')then(
+$temp.vTempEpro_XML/*:JIData/*:locationList/*:location[$input.in_LocPosition]/*:customElementList/*:customElement/*:customElementValueList/*:customElementValue/text()[../../../customElementIdentifier/text() = 'ERP_Supplier_Name'])
+else($temp.vTempEpro_XML/*:JIData/*:name/text())
+return
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://www.informatica.com/dis/ws/"&gt;
+	&lt;soapenv:Header/&gt;
+	&lt;soapenv:Body&gt;
+		&lt;ws:mplt_custom_Oracle_source_VendorName_Validation_mdm_load_Operation&gt;
+			&lt;ws:Group&gt;
+				&lt;ws:Vendor_Name&gt;{$vendorName}&lt;/ws:Vendor_Name&gt;
+				&lt;ws:Vendor_Id&gt;{$temp.vTempEpro_XML/*:J1Data/*:id/text()}&lt;/ws:Vendor_Id&gt;
+				&lt;ws:Sys_Date&gt;{fn:current-dateTime()}&lt;/ws:Sys_Date&gt;
+				&lt;ws:Hub_State_Ind&gt;1&lt;/ws:Hub_State_Ind&gt;
+			&lt;/ws:Group&gt;
+		&lt;/ws:mplt_custom_Oracle_source_VendorName_Validation_mdm_load_Operation&gt;
+	&lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</expression>
+                  </operation>
+                  <link id="l1ktilp4" targetId="l1ktimj5"/>
+               </assignment>
+               <eventContainer id="lsdfpd9m">
+                  <service id="lsdfpcng">
+                     <title>SvcGetInfoRef</title>
+                     <serviceName>Conn-SC-SDasQueryRefMultiEpro:getInfoRef</serviceName>
+                     <serviceGUID>406SeVSHAD1dqKdEcfWg2d</serviceGUID>
+                     <serviceInput>
+                        <parameter name="in_scRequest" source="field" updatable="true">temp.vTempGetInfoRef_XML_Input</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="lsdfpd9o">
+                     <assignment id="lsdfpfi6">
+                        <title>AssignGetInfoRef_XML_Output</title>
+                        <operation source="formula" to="temp.vTempGetInfoRef_XML_Output">
+                           <expression language="XQuery">util:parseXML($output.out_scResponse)</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempGetInfoRef_code">
+                           <expression language="XQuery">$temp.vTempGetInfoRef_XML_Output/*:Body/*:getInfoRefResponse/*:code/text()</expression>
+                        </operation>
+                        <link id="lsdfpfi7" targetId="lsdfpfcb"/>
+                     </assignment>
+                     <container id="lsdfpfcb" type="exclusive">
+                        <title>D_GetInfoRef_code</title>
+                        <flow id="lsdfpfce">
+                           <assignment id="lsdfpfoh">
+                              <title>AssignGetInfoRefData</title>
+                              <operation source="formula" to="temp.vTempGetInfoRef_data">
+                                 <expression language="XQuery">$temp.vTempGetInfoRef_XML_Output/*:Body/*:getInfoRefResponse /*:data/text()</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempGetInfoRefData_XML">
+                                 <expression language="XQuery">util:parseXML($temp.vTempGetInfoRef_data )</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempCountGetInfoRefData">
+                                 <expression language="XQuery">fn:count($temp.vTempGetInfoRefData_XML//*:row )</expression>
+                              </operation>
+                           </assignment>
+                           <link id="lsdfpfcf" targetId="lsdfpfcb" type="containerLink"/>
+                        </flow>
+                        <flow id="lsdfpfch">
+                           <assignment id="lsdfpgbo">
+                              <title>AssignError</title>
+                              <operation source="formula" to="temp.vTempErpName">
+                                 <expression language="XQuery">'SAPS4'</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempStep">
+                                 <expression language="XQuery">'GetInfoRef'</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempCode">
+                                 <expression language="XQuery">$temp.vTempGetInfoRef_XML_Output/*:Body/*:getInfoRefResponse /*:code/text()</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                 <expression language="XQuery">$temp.vTempGetInfoRef_XML_Output/*:Body/*:getInfoRefResponse /*:message/text()</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempErrorMessage">
+                                 <expression language="XQuery">$temp.vTempErrorMessageEpro </expression>
+                              </operation>
+                              <link id="lsdfph8i" targetId="lsdfph8g"/>
+                           </assignment>
+                           <jumpTo id="lsdfph8g">
+                              <link id="lsdfph8h" targetId="lqcsrpr5"/>
+                           </jumpTo>
+                        </flow>
+                        <link id="lsdfpfcd" targetId="lsdfpfce" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.vTempGetInfoRef_code}</arg>
+                                 <arg name="right">{0}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lsdfpfcg" targetId="lsdfpfch" type="containerLink"/>
+                        <link id="lsdfphcw" targetId="lsdfphcv"/>
+                     </container>
+                     <container id="lsdfphcv" type="exclusive">
+                        <title>D_CountData</title>
+                        <flow id="lsdfphcy">
+                           <link id="lsdfphcz" targetId="lsdfphcv" type="containerLink"/>
+                        </flow>
+                        <flow id="lsdfphd1">
+                           <assignment id="lsdfphr6">
+                              <title>AssignError</title>
+                              <operation source="formula" to="temp.vTempStep">
+                                 <expression language="XQuery">'GetInfoRef'</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempCode">
+                                 <expression language="XQuery">-1</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                 <expression language="XQuery">'No records found in ePro Xref'</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempErrorMessage">
+                                 <expression language="XQuery">$temp.vTempErrorMessageEpro </expression>
+                              </operation>
+                              <link id="lsdfphyy" targetId="lsdfphyw"/>
+                           </assignment>
+                           <jumpTo id="lsdfphyw">
+                              <link id="lsdfphyx" targetId="lqcsrpr5"/>
+                           </jumpTo>
+                        </flow>
+                        <link id="lsdfphcx" targetId="lsdfphcy" type="containerLink">
+                           <condition source="formula">
+                              <function name="greater-than">
+                                 <arg name="left">{$temp.vTempCountGetInfoRefData}</arg>
+                                 <arg name="right">{0}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lsdfphd0" targetId="lsdfphd1" type="containerLink"/>
+                     </container>
+                     <link id="lsdfpd9p" targetId="lsdfpd9m" type="containerLink"/>
+                  </flow>
+                  <flow id="lsdfpd9r">
+                     <assignment id="lsdfpdfo">
+                        <title>AssignError</title>
+                        <operation source="formula" to="temp.vTempErpName">
+                           <expression language="XQuery">'SAPS4'</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempStep">
+                           <expression language="XQuery">'GetInfoRef'</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempCode">
+                           <expression language="XQuery">$output.faultSvcGetInfoRef[1]/code</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempFault">
+                           <expression language="XQuery">let $detail := fn:concat($output.faultSvcGetInfoRef[1]/detail/text(), '')
+let $reason := fn:concat($output.faultSvcGetInfoRef[1]/reason/text(), '')
+return
+if($detail != '' and $reason != '') then(
+	fn:concat('Detail: ', $detail, '. Reason: ', $reason))
+else if($detail != '') then(
+	fn:concat('Detail: ', $detail))
+else if($reason != '') then(
+	fn:concat('Reason: ', $reason))
+else()</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempErrorMessageEpro">
+                           <expression language="XQuery">fn:concat('Failed when trying to invoke the SDasQueryRefMultiEpro service: ', $temp.vTempFault)</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempErrorMessage">
+                           <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
+                        </operation>
+                        <link id="lsdfpf6z" targetId="lsdfpf6x"/>
+                     </assignment>
+                     <jumpTo id="lsdfpf6x">
+                        <link id="lsdfpf6y" targetId="lqcsrpr5"/>
+                     </jumpTo>
+                  </flow>
+                  <link id="lsdfpd9n" targetId="lsdfpd9o" type="containerLink"/>
+                  <link id="lsdfpcni" targetId="l1ktilmh"/>
+                  <events>
+                     <catch faultField="faultSvcGetInfoRef" id="lsdfpd9l" interrupting="true">
+                        <link id="lsdfpd9q" targetId="lsdfpd9r" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="l1ktimj5">
+                  <service id="l1ktilp3">
+                     <title>SvcNameValidationIDQ</title>
+                     <serviceName>Conn-SC-DQ-NameValidation:mplt_custom_Oracle_source_VendorName_Validation_mdm_load_Operation</serviceName>
+                     <serviceGUID>15CZy6oxiCxjxIZexNpVGC</serviceGUID>
+                     <serviceInput>
+                        <parameter name="in_scRequest" source="formula">
+                           <expression language="XQuery">util:toXML($temp.vTempNameValidation_XML_Input)</expression>
+                        </parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="l1ktimj7">
+                     <assignment id="l1ktimsi">
+                        <title>AssignNameValidation_XML_Output</title>
+                        <operation source="formula" to="temp.vTempNameValidation_XML_Output">
+                           <expression language="XQuery">util:parseXML($output.out_scResponse)</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempValidationStatus">
+                           <expression language="XQuery">$temp.vTempNameValidation_XML_Output/*:Body/*:mplt_custom_Oracle_source_VendorName_Validation_mdm_load_OperationResponse/*:NEWOUTPUT/*:Vendorname_Validation_Status/text()</expression>
+                        </operation>
+                        <link id="l1ktimy0" targetId="l1ktimxz"/>
+                     </assignment>
+                     <container id="l1ktimxz" type="exclusive">
+                        <title>D_ValidationStatus</title>
+                        <flow id="l1ktimy2">
+                           <assignment id="m3z2lbxz">
+                              <title>AssignmentCallADR</title>
+                              <operation source="formula" to="temp.vTempAddPositionTRDP">
+                                 <expression language="XQuery">let $internalIdAA := fn:concat($temp.vTempEpro_XML/JIData/locationList/location[$input.in_LocPosition]/associatedAddressList/associatedAddress/addressRef/internalId/text()[../../../type/text() = 'remitto'], '')
+let $tmp := 
+&lt;root&gt;
+	{
+	if($internalIdAA != '') then(
+		for $i in (1 to count($temp.vTempEpro_XML/JIData/addressList/address))
+		return
+		let $address := $temp.vTempEpro_XML/JIData/addressList/address[$i]
+		return
+		if($address[./type/text() = 'remitto' and ./internalId/text() = $internalIdAA]) then(
+			&lt;i&gt;{$i}&lt;/i&gt;)
+		else())
+	else()
+	}
+&lt;/root&gt;
+return
+if($tmp/*:i/text()) then(
+	$tmp/*:i[1]/text())
+else(0)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempAddPosition">
+                                 <expression language="XQuery">let $internalIdAA := fn:concat($temp.vTempEpro_XML/JIData/locationList/location[$input.in_LocPosition]/associatedAddressList/associatedAddress/addressRef/internalId/text()[../../../type/text() = 'fulfillment'], '')
+let $tmp := 
+&lt;root&gt;
+	{
+	if($internalIdAA != '') then(
+		for $i in (1 to count($temp.vTempEpro_XML/JIData/addressList/address))
+		return
+		let $address := $temp.vTempEpro_XML/JIData/addressList/address[$i]
+		return
+		if($address[./type/text() = 'fulfillment' and ./internalId/text() = $internalIdAA]) then(
+			&lt;i&gt;{$i}&lt;/i&gt;)
+		else())
+	else()
+	}
+&lt;/root&gt;
+return
+if($tmp/*:i/text()) then(
+	$tmp/*:i[1]/text())
+else(0)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempAddADR">
+                                 <expression language="XQuery">$temp.vTempGetInfoRefData_XML/*:result/*:row[1]/*:erp_value/text()</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempAddTRDP_">
+                                 <expression language="XQuery">let $addressR := $temp.vTempEpro_XML/JIData/addressList/address[$temp.vTempAddPositionTRDP]
+
+
+                
+let $strigAddressR := fn:concat($addressR/addressLine1/text(),'|',$addressR/city/text(),'|',$addressR/state/text(),'|',$addressR/postalCode/text(),'|',$addressR/isoCountryCode/text())
+return 
+ $strigAddressR</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempCallADR">
+                                 <expression language="XQuery">let $S4_PartnerFunction := $temp.vTempEpro_XML/JIData/locationList/location[$input.in_LocPosition]/customElementList/customElement/customElementValueList/customElementValue/text()[../../../customElementIdentifier/text() = 'S4_PartnerFunction']
+
+let $S100 :=if($temp.vTempAddPosition &gt;0)then(
+if($S4_PartnerFunction = 'OA' or $S4_PartnerFunction= 'GS' )then(
+   1)
+else(0))
+else(0)
+
+return
+$S100</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempCallTRDP">
+                                 <expression language="XQuery">let $S200 := 1
+return
+$S200</expression>
+                              </operation>
+                              <link id="m3z2lc3g" targetId="m3z2lc19"/>
+                           </assignment>
+                           <assignment id="md4wkxfi">
+                              <title>AssigParameterList</title>
+                              <operation source="formula" to="temp.vTempParameterList">
+                                 <expression language="XQuery">&lt;PO-ParameterList&gt;
+	{if(fn:concat($temp.vTempJsonADR,'')!= '')then(
+	    &lt;Parameter&gt;
+			&lt;name&gt;{fn:concat('S4_ADR_Request_', $temp.vTempNameFileSFTP, '.json')}&lt;/name&gt;
+			&lt;value&gt;{$temp.vTempJsonADR}&lt;/value&gt;
+		&lt;/Parameter&gt;
+	)
+	else()
+	}
+    {
+	if(fn:concat($output.out_ADRResponse,'')!= '')then(
+	     &lt;Parameter&gt;
+			&lt;name&gt;{fn:concat('S4_ADR_Response_', $temp.vTempNameFileSFTP, '.json')}&lt;/name&gt;
+			&lt;value&gt;{$output.out_ADRResponse}&lt;/value&gt;
+		&lt;/Parameter&gt;
+	)
+	else()
+	}
+    {
+	if(fn:concat($temp.vTempADR_Json_Fault,'') != '')then(
+		&lt;Parameter&gt;
+			&lt;name&gt;{fn:concat('S4_ADR_Response_', $temp.vTempNameFileSFTP, '.json')}&lt;/name&gt;
+			&lt;value&gt;{$temp.vTempADR_Json_Fault}&lt;/value&gt;
+		&lt;/Parameter&gt;)
+	else()
+	}
+    {
+	if(fn:concat($temp.vTempImportJ1SupplierADR_XML_Input,'') != '')then(
+	 &lt;Parameter&gt;
+		&lt;name&gt;{fn:concat('S4_ADR_RT_Request_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+		&lt;value&gt;{util:toXML($temp.vTempImportJ1SupplierADR_XML_Input)}&lt;/value&gt;
+	&lt;/Parameter&gt;)
+	else()
+	}
+    {
+	if(fn:concat($temp.vTempImportJ1SupplierADR_XML_Output,'') != '')then(
+		&lt;Parameter&gt;
+			&lt;name&gt;{fn:concat('S4_ADR_RT_Response_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+			&lt;value&gt;{util:toXML($temp.vTempImportJ1SupplierADR_XML_Output)}&lt;/value&gt;
+		&lt;/Parameter&gt;)
+	else()
+	}
+    {
+	if(fn:concat($temp.vTempJsonTRDP,'') != '')then(
+		&lt;Parameter&gt;
+			&lt;name&gt;{fn:concat('S4_TRDP_Request_', $temp.vTempNameFileSFTP, '.json')}&lt;/name&gt;
+			&lt;value&gt;{$temp.vTempJsonTRDP}&lt;/value&gt;
+		&lt;/Parameter&gt;)
+    else()
+	}
+    {
+	if(fn:concat($output.out_TRDPResponse,'') != '')then(
+		&lt;Parameter&gt;
+			&lt;name&gt;{fn:concat('S4_TRDP_Response_', $temp.vTempNameFileSFTP, '.json')}&lt;/name&gt;
+			&lt;value&gt;{$output.out_TRDPResponse }&lt;/value&gt;
+		&lt;/Parameter&gt;)
+	else()
+	}
+    {
+	if(fn:concat($temp.vTempTRDP_Json_Fault,'') != '')then(
+		&lt;Parameter&gt;
+			&lt;name&gt;{fn:concat('S4_TRDP_Response_', $temp.vTempNameFileSFTP, '.json')}&lt;/name&gt;
+			&lt;value&gt;{$temp.vTempTRDP_Json_Fault}&lt;/value&gt;
+		&lt;/Parameter&gt;)
+	else()
+	}
+	{
+	if(fn:concat($temp.vTempRoundTripEproTRDP_XML,'') != '')then(
+		&lt;Parameter&gt;
+			&lt;name&gt;{fn:concat('S4_TRDP_RT_Request_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+			&lt;value&gt;{util:toXML($temp.vTempRoundTripEproTRDP_XML)}&lt;/value&gt;
+		&lt;/Parameter&gt;)
+	else()
+	}
+    {
+	if(fn:concat($output.RoundTripEproResponse,'') != '')then(
+		&lt;Parameter&gt;
+			&lt;name&gt;{fn:concat('S4_TRDP_RT_Response_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+			&lt;value&gt;{$output.RoundTripEproResponse}&lt;/value&gt;
+		&lt;/Parameter&gt;)
+	else()
+    }
+    {
+    if(fn:concat($temp.vTempImportJ1Supplier_XML_Input,'') != '')then(
+		if($temp.vTempTRDP_XML_Output != '')then(
+			&lt;Parameter&gt;
+				&lt;name&gt;{fn:concat('S4_TRDP_RT_Request_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+				&lt;value&gt;{util:toXML($temp.vTempImportJ1Supplier_XML_Input)}&lt;/value&gt;
+			&lt;/Parameter&gt;)
+		else if($temp.vTempADR_XML_Output != '')then(
+			&lt;Parameter&gt;
+				&lt;name&gt;{fn:concat('S4_ADR_RT_Request_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+				&lt;value&gt;{util:toXML($temp.vTempImportJ1Supplier_XML_Input)}&lt;/value&gt;
+			&lt;/Parameter&gt;)
+		else(
+			&lt;Parameter&gt;
+				&lt;name&gt;{fn:concat('S4_RT_Request_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+				&lt;value&gt;{util:toXML($temp.vTempImportJ1Supplier_XML_Input)}&lt;/value&gt;
+			&lt;/Parameter&gt;))
+		else()
+    }
+    {
+    if(fn:concat($temp.vTempImportJ1Supplier_XML_Output,'') != '')then(
+		if($temp.vTempTRDP_XML_Output != '')then(
+			&lt;Parameter&gt;
+				&lt;name&gt;{fn:concat('S4_TRDP_RT_Response_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+				&lt;value&gt;{util:toXML($temp.vTempImportJ1Supplier_XML_Output)}&lt;/value&gt;
+			&lt;/Parameter&gt;)
+		else if($temp.vTempADR_XML_Output != '')then(
+			&lt;Parameter&gt;
+				&lt;name&gt;{fn:concat('S4_ADR_RT_Response_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+				&lt;value&gt;{util:toXML($temp.vTempImportJ1Supplier_XML_Output)}&lt;/value&gt;
+			&lt;/Parameter&gt;)
+		else(
+			&lt;Parameter&gt;
+				&lt;name&gt;{fn:concat('S4_RT_Response_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+				&lt;value&gt;{util:toXML($temp.vTempImportJ1Supplier_XML_Output)}&lt;/value&gt;
+			&lt;/Parameter&gt;))
+	else()
+    }
+&lt;/PO-ParameterList&gt;</expression>
+                              </operation>
+                           </assignment>
+                           <container id="m3z2lc19" type="exclusive">
+                              <title>D_CallADR</title>
+                              <flow id="m3z2lc1a">
+                                 <assignment id="m3z2lc1b">
+                                    <title>AssignBuildXML_XML_Input</title>
+                                    <operation source="formula" to="temp.vTempAddPosition">
+                                       <expression language="XQuery">let $internalIdAA := fn:concat($temp.vTempEpro_XML/JIData/locationList/location[$input.in_LocPosition]/associatedAddressList/associatedAddress/addressRef/internalId/text()[../../../type/text() = 'fulfillment'], '')
+let $tmp := 
+&lt;root&gt;
+	{
+	if($internalIdAA != '') then(
+		for $i in (1 to count($temp.vTempEpro_XML/JIData/addressList/address))
+		return
+		let $address := $temp.vTempEpro_XML/JIData/addressList/address[$i]
+		return
+		if($address[./type/text() = 'fulfillment' and ./internalId/text() = $internalIdAA]) then(
+			&lt;i&gt;{$i}&lt;/i&gt;)
+		else())
+	else()
+	}
+&lt;/root&gt;
+return
+if($tmp/*:i/text()) then(
+	$tmp/*:i[1]/text())
+else(0)</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vTempBuildXML_XML_Input">
+                                       <expression language="XQuery">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:buil="http://www.ppg.com/xsd/BuildXML"&gt;
+	&lt;soapenv:Header/&gt;
+	&lt;soapenv:Body&gt;
+		&lt;buil:buildXMLRequest&gt;
+			&lt;buil:xml&gt;{$input.in_XML}&lt;/buil:xml&gt;
+			&lt;buil:BPADR&gt;&lt;/buil:BPADR&gt;
+			&lt;buil:locPosition&gt;{$input.in_LocPosition}&lt;/buil:locPosition&gt;
+			&lt;buil:addPosition&gt;{$temp.vTempAddPosition}&lt;/buil:addPosition&gt;
+			&lt;buil:charactersHTML&gt;&lt;/buil:charactersHTML&gt;
+            &lt;buil:accountGroup&gt;ADR&lt;/buil:accountGroup&gt;
+		&lt;/buil:buildXMLRequest&gt;
+	&lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vTempJsonADR">
+                                       <expression language="XQuery">util:toJSON($temp.vTempBuildXML_XML_Input) </expression>
+                                    </operation>
+                                    <link id="m3z2lc2g" targetId="m3z2lc1c"/>
+                                 </assignment>
+                                 <eventContainer id="m3z2lc1c">
+                                    <service id="m3z2lc2b">
+                                       <title>SvcBuildXML</title>
+                                       <serviceName>Conn-SC-SBusSupplierEproSapS4China:buildXML</serviceName>
+                                       <serviceGUID>8CRsNR2N7h7fZhGRTxeLms</serviceGUID>
+                                       <serviceInput>
+                                          <parameter name="in_scRequest" source="formula">
+                                             <expression language="XQuery">util:toXML($temp.vTempBuildXML_XML_Input)</expression>
+                                          </parameter>
+                                       </serviceInput>
+                                    </service>
+                                    <flow id="m3z2lc1d">
+                                       <assignment id="m3z2lc1e">
+                                          <title>AssignBuildXML_XML_Output</title>
+                                          <operation source="formula" to="temp.vTempBuildXML_XML_Output">
+                                             <expression language="XQuery">util:parseXML($output.out_scResponse)</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempBuildXML_code">
+                                             <expression language="XQuery">let $code := fn:concat($temp.vTempBuildXML_XML_Output/*:Body/*:buildXMLResponse/*:code/text(), '')
+return
+if($code = '0') then(
+	1)
+else(0)</expression>
+                                          </operation>
+                                          <link id="m3z2lc2k" targetId="m3z2lc1f"/>
+                                       </assignment>
+                                       <container id="m3z2lc1f" type="exclusive">
+                                          <title>D_code</title>
+                                          <flow id="m3z2lc1g">
+                                             <assignment id="m3z2lc1h">
+                                                <title>AssignBapiS4_XML_Input</title>
+                                                <operation source="formula" to="temp.vTempJsonADR_Aux">
+                                                   <expression language="XQuery">util:toJSON(util:parseXML($temp.vTempBuildXML_XML_Output/*:Body/*:buildXMLResponse/*:xmlBapi/text())) </expression>
+                                                </operation>
+                                                <operation source="formula" to="temp.vTempLength">
+                                                   <expression language="XQuery">fn:string-length(fn:substring-after($temp.vTempJsonADR_Aux  ,'{"root":'))</expression>
+                                                </operation>
+                                                <operation source="formula" to="temp.vTempJsonADR">
+                                                   <expression language="XQuery">fn:replace(fn:replace(fn:replace(fn:replace(fn:substring(fn:substring-after( $temp.vTempJsonADR_Aux ,'{"root":'), 0,$temp.vTempLength), ',"֎"', ''),'"֎"',''), '"true֎"', 'true'), '"false֎"', 'false')</expression>
+                                                </operation>
+                                                <operation source="formula" to="output.out_ADRRequest">
+                                                   <expression language="XQuery">$temp.vTempJsonADR </expression>
+                                                </operation>
+                                                <link id="m3z2lc2o" targetId="m3z2lc1i"/>
+                                             </assignment>
+                                             <eventContainer id="m3z2lc1i">
+                                                <subflow id="m3z2lc26">
+                                                   <title>SubSIntImportSupplierSapS4</title>
+                                                   <subflowGUID>8kqlRLiy414jghh7kRnPqp</subflowGUID>
+                                                   <subflowPath>SIntImportSupplierSapS4China</subflowPath>
+                                                   <runForEach>false</runForEach>
+                                                   <input>
+                                                      <parameter name="jsonInput" source="formula" updatable="true">
+                                                         <expression language="XQuery">$temp.vTempJsonADR</expression>
+                                                      </parameter>
+                                                   </input>
+                                                   <outputDef>
+                                                      <field name="jsonOutput" type="string">
+                                                         <options>
+                                                            <option name="required">false</option>
+                                                         </options>
+                                                      </field>
+                                                   </outputDef>
+                                                </subflow>
+                                                <flow id="m3z2lc1j">
+                                                   <assignment id="m3z2lc1k">
+                                                      <title>AssignADRS4_XML_Output</title>
+                                                      <operation source="formula" to="temp.vTempADR_XML_Output">
+                                                         <expression language="XQuery">&lt;root&gt;{util:parseJSON($output.jsonOutput )}&lt;/root&gt;</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempCountS4Error">
+                                                         <expression language="XQuery">fn:count($temp.vTempADR_XML_Output/*:error/* )</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="output.out_ADRResponse">
+                                                         <expression language="XQuery">$output.jsonOutput</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempBPADR">
+                                                         <expression language="XQuery">$temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text()</expression>
+                                                      </operation>
+                                                      <link id="m3z2lc2s" targetId="m3z2lc1l"/>
+                                                   </assignment>
+                                                   <container id="m3z2lc1l" type="exclusive">
+                                                      <title>D_CountErrorADRS4</title>
+                                                      <flow id="m3z2lc1m">
+                                                         <assignment id="m3z2lc1n">
+                                                            <title>AssignRoundTripADR</title>
+                                                            <operation source="formula" to="temp.vTempRoundTripEproADR_XML">
+                                                               <expression language="XQuery">let $J1Data := $temp.vTempEpro_XML/*:J1Data
+let $JIData := $temp.vTempEpro_XML/*:JIData
+let $locationList := $temp.vTempEpro_XML/*:JIData/*:locationList
+let $addressList := $temp.vTempEpro_XML/*:JIData/*:addressList
+let $contactList := $temp.vTempEpro_XML/*:JIData/*:contactList
+let $customElementList := $temp.vTempEpro_XML/*:JIData/*:customElementList
+let $accountsPayableList := $temp.vTempEpro_XML/*:JIData/*:accountsPayableList
+let $locPosition as xs:int := $input.in_LocPosition/text() cast as xs:int
+let $internalId := $locationList/location[$locPosition]/internalId/text()
+let $erpNumber := $locationList/location[$locPosition]/erpNumber/text()
+let $bpIdADR := fn:concat($locationList/location[$locPosition]/associatedAddressList/associatedAddress/addressRef/thirdPartyRefNumber/text()[../../../type/text() = 'fulfillment'], '')
+let $erpName := 'S4'
+let $addressIDADR := $temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text()
+let $approvedForERPSync := if($customElementList/customElement/customElementValueList/customElementValue/text()[../../../customElementIdentifier/text() = 'Supplier_Status'] = 'Deactivate') then(
+    'false')
+else('true')
+
+let $erp_value := $temp.vTempGetInfoRefData_XML/*:result/*:row[1]/*:erp_value/text()
+
+let $BusinessPartner := $temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text()
+
+let $PurchasingIsBlocked := $temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/*:to_Supplier/d/to_SupplierPurchasingOrg/results/PurchasingIsBlockedForSupplier/text()
+
+return
+&lt;supplier&gt;
+    &lt;operation&gt;
+    	&lt;code&gt;UPDATE&lt;/code&gt;
+        &lt;identificationField&gt;j1id&lt;/identificationField&gt;
+        &lt;identificationValue&gt;{$JIData/thirdPartyRefNumber/text()}&lt;/identificationValue&gt;
+    &lt;/operation&gt;
+    &lt;J1Data/&gt;
+    &lt;JIData&gt;
+        &lt;erpNumber&gt;{$JIData/erpNumber/text()}&lt;/erpNumber&gt;
+        &lt;thirdPartyRefNumber&gt;{$JIData/thirdPartyRefNumber/text()}&lt;/thirdPartyRefNumber&gt;
+        &lt;approvedForERPSync&gt;{$approvedForERPSync}&lt;/approvedForERPSync&gt;
+			&lt;locationList&gt;
+				&lt;location&gt;
+					{
+					if($locationList/location[$locPosition]/erpNumber/text() != '')then(
+						&lt;erpNumber&gt;{$locationList/location[$locPosition]/erpNumber/text()}&lt;/erpNumber&gt;)
+					else(
+						&lt;erpNumber&gt;{fn:concat($erpName, '|', $erp_value, '||', $BusinessPartner)}&lt;/erpNumber&gt;)
+					}
+					&lt;internalId&gt;{$internalId}&lt;/internalId&gt;
+					&lt;supportsOrderFulfillment&gt;Yes&lt;/supportsOrderFulfillment&gt;
+					{
+						if($PurchasingIsBlocked = 'true') then(
+							&lt;active&gt;false&lt;/active&gt;)
+						else(&lt;active&gt;true&lt;/active&gt;)
+					}
+					&lt;customElementList&gt;
+						&lt;customElement&gt;
+							&lt;customElementIdentifier&gt;ERPNUMBER_FULFILLMENT&lt;/customElementIdentifier&gt;
+							&lt;customElementValueList&gt;
+								&lt;customElementValue&gt;{fn:concat($erpName, '|', $BusinessPartner, '|', $addressIDADR)}&lt;/customElementValue&gt;
+							&lt;/customElementValueList&gt;
+						&lt;/customElement&gt;
+						&lt;customElement&gt;
+							&lt;customElementIdentifier&gt;IntegrationStatus&lt;/customElementIdentifier&gt;
+							&lt;customElementValueList&gt;
+								&lt;customElementValue/&gt;
+							&lt;/customElementValueList&gt;
+						&lt;/customElement&gt;
+						&lt;customElement&gt;
+							&lt;customElementIdentifier&gt;ErrorLog&lt;/customElementIdentifier&gt;
+							&lt;customElementValueList&gt;
+								&lt;customElementValue/&gt;
+							&lt;/customElementValueList&gt;
+						&lt;/customElement&gt;
+						
+					&lt;/customElementList&gt;
+				&lt;/location&gt;
+			&lt;/locationList&gt;
+			&lt;customElementList&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_Company_Code&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_LayoutSortingRule&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_ReconciliationAccount&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_CashPlanningGroup&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_SupplierClerkIDBySupplier&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_AlternativePayeeAccountNumber&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_PaymentMethodsList&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_ClearCustomerSupplier&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_PaymentIsToBeSentByEDI&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_ZZ1_ZAHLS_sco&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_ZZ1_SPERR_sco&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_Class_Vendor_Non_PO_Exceptions&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_integrationstarttime&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_integrationstatus&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;S4_errorhandling&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;	
+	    &lt;/customElementList&gt;
+	&lt;/JIData&gt;
+&lt;/supplier&gt;</expression>
+                                                            </operation>
+                                                            <operation source="formula" to="temp.vTempImportJ1SupplierADR_XML_Input">
+                                                               <expression language="XQuery">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:j1s="http://host.bs.com/common/webservice/J1Supplier/"&gt;
+	&lt;soapenv:Header/&gt;
+	&lt;soapenv:Body&gt;
+		&lt;j1s:importJ1SupplierRequestMSG&gt;
+			{
+            $temp.vTempRoundTripEproADR_XML
+            }
+		&lt;/j1s:importJ1SupplierRequestMSG&gt;
+	&lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</expression>
+                                                            </operation>
+                                                            <link id="m3z2lc2w" targetId="m3z2lc1o"/>
+                                                         </assignment>
+                                                         <eventContainer id="m3z2lc1o">
+                                                            <service id="m3z2lc1u">
+                                                               <title>SvcImportJ1SupplierEpro</title>
+                                                               <serviceName>Conn-SC-ePro-J1Supplier:importJ1Supplier</serviceName>
+                                                               <serviceGUID>hnnCljE7RWkjiD80Ha4SiK</serviceGUID>
+                                                               <serviceInput>
+                                                                  <parameter name="in_scRequest" source="formula">
+                                                                     <expression language="XQuery">util:toXML($temp.vTempImportJ1SupplierADR_XML_Input)</expression>
+                                                                  </parameter>
+                                                               </serviceInput>
+                                                            </service>
+                                                            <flow id="m3z2lc1p">
+                                                               <assignment id="m3z2lc1q">
+                                                                  <title>AssignImportJ1Supplier_XML_Output</title>
+                                                                  <operation source="formula" to="temp.vTempImportJ1SupplierADR_XML_Output">
+                                                                     <expression language="XQuery">util:parseXML($output.out_scResponse)</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempImportJ1Supplier_returnStatus">
+                                                                     <expression language="XQuery">let $returnStatus := fn:concat($temp.vTempImportJ1SupplierADR_XML_Output/*:Body/*:importJ1SupplierResponseMSG/*:returnStatus/text(), '')
+return
+if($returnStatus = '0') then(
+	1)
+else(0)</expression>
+                                                                  </operation>
+                                                               </assignment>
+                                                               <link id="m3z2lc30" targetId="m3z2lc1o" type="containerLink"/>
+                                                            </flow>
+                                                            <flow id="m3z2lc1r">
+                                                               <assignment id="m3z2lc1s">
+                                                                  <title>AssignError</title>
+                                                                  <operation source="formula" to="temp.vTempErpName">
+                                                                     <expression language="XQuery">'SAPS4'</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempStep">
+                                                                     <expression language="XQuery">'RoundTrip ADR'</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempCode">
+                                                                     <expression language="XQuery">$output.faultSvcImportJ1SupplierEpro[1]/code</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempFault">
+                                                                     <expression language="XQuery">let $detail := fn:concat($output.faultSvcImportJ1SupplierEpro[1]/detail/text(), '')
+let $reason := fn:concat($output.faultSvcImportJ1SupplierEpro[1]/reason/text(), '')
+return
+if($detail != '' and $reason != '') then(
+	fn:concat('Detail: ', $detail, '. Reason: ', $reason))
+else if($detail != '') then(
+	fn:concat('Detail: ', $detail))
+else if($reason != '') then(
+	fn:concat('Reason: ', $reason))
+else()</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                                                     <expression language="XQuery">fn:concat('Failed when trying to invoke the J1Supplier service: ', $temp.vTempFault)</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempErrorMessage">
+                                                                     <expression language="XQuery">$temp.vTempErrorMessageEpro </expression>
+                                                                  </operation>
+                                                                  <link id="m3z2lc31" targetId="m3z2lc1t"/>
+                                                               </assignment>
+                                                               <jumpTo id="m3z2lc1t">
+                                                                  <link id="m3z2lc32" targetId="lqcsrpr5"/>
+                                                               </jumpTo>
+                                                            </flow>
+                                                            <link id="m3z2lc2x" targetId="m3z2lc1p" type="containerLink"/>
+                                                            <link id="m3z2lc2z" targetId="m3z2lc1v"/>
+                                                            <events>
+                                                               <catch faultField="faultSvcImportJ1SupplierEpro"
+                                                                      id="lacyo0vg"
+                                                                      interrupting="true">
+                                                                  <link id="m3z2lc2y" targetId="m3z2lc1r" type="containerLink"/>
+                                                               </catch>
+                                                            </events>
+                                                         </eventContainer>
+                                                         <container id="m3z2lc1v" type="exclusive">
+                                                            <title>D_returnStatus</title>
+                                                            <flow id="m3z2lc1w">
+                                                               <link id="m3z2lc35" targetId="m3z2lc1v" type="containerLink"/>
+                                                            </flow>
+                                                            <flow id="m3z2lc1x">
+                                                               <assignment id="m3z2lc1y">
+                                                                  <title>AssignError</title>
+                                                                  <operation source="formula" to="temp.vTempErpName">
+                                                                     <expression language="XQuery">'SAPS4'</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempStep">
+                                                                     <expression language="XQuery">'RoundTrip ADR'</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempCode">
+                                                                     <expression language="XQuery">$temp.vTempImportJ1Supplier_XML_Output/*:Body/*:importJ1SupplierResponseMSG/*:returnStatus/text()</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                                                     <expression language="XQuery">for $message in $temp.vTempImportJ1Supplier_XML_Output/*:Body/*:importJ1SupplierResponseMSG/*:messages/*:message
+return
+'[dataModel: ' || $message/*:dataModel/text() || ', text: ' || $message/*:text/text() || ']'</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempErrorMessage">
+                                                                     <expression language="XQuery">$temp.vTempErrorMessageEpro </expression>
+                                                                  </operation>
+                                                                  <link id="m3z2lc36" targetId="m3z2lc1z"/>
+                                                               </assignment>
+                                                               <jumpTo id="m3z2lc1z">
+                                                                  <link id="m3z2lc37" targetId="lqcsrpr5"/>
+                                                               </jumpTo>
+                                                            </flow>
+                                                            <link id="m3z2lc33" targetId="m3z2lc1w" type="containerLink">
+                                                               <condition source="formula">
+                                                                  <function name="equals">
+                                                                     <arg name="left">{$temp.vTempImportJ1Supplier_returnStatus}</arg>
+                                                                     <arg name="right">{1}</arg>
+                                                                  </function>
+                                                               </condition>
+                                                            </link>
+                                                            <link id="m3z2lc34" targetId="m3z2lc1x" type="containerLink"/>
+                                                         </container>
+                                                         <link id="m3z2lc2v" targetId="m3z2lc1l" type="containerLink"/>
+                                                      </flow>
+                                                      <flow id="m3z2lc20">
+                                                         <assignment id="m3z2lc21">
+                                                            <title>AssignError</title>
+                                                            <operation source="formula" to="temp.vTempErpName">
+                                                               <expression language="XQuery">'SAPS4'</expression>
+                                                            </operation>
+                                                            <operation source="formula" to="temp.vTempStep">
+                                                               <expression language="XQuery">'BAPI_ADR'</expression>
+                                                            </operation>
+                                                            <operation source="formula" to="temp.vTempCode">
+                                                               <expression language="XQuery">'-1'</expression>
+                                                            </operation>
+                                                            <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                                               <expression language="XQuery">$temp.vTempADR_XML_Output/*:error/*:message/*:value/text()</expression>
+                                                            </operation>
+                                                            <operation source="formula" to="temp.vTempErrorMessage">
+                                                               <expression language="XQuery">$temp.vTempErrorMessageEpro </expression>
+                                                            </operation>
+                                                            <link id="m3z2lc38" targetId="m3z2lc22"/>
+                                                         </assignment>
+                                                         <jumpTo id="m3z2lc22">
+                                                            <link id="m3z2lc39" targetId="lqcsrpr5"/>
+                                                         </jumpTo>
+                                                      </flow>
+                                                      <link id="m3z2lc2t" targetId="m3z2lc1m" type="containerLink">
+                                                         <condition source="formula">
+                                                            <function name="equals">
+                                                               <arg name="left">{$temp.vTempCountS4Error}</arg>
+                                                               <arg name="right">{0}</arg>
+                                                            </function>
+                                                         </condition>
+                                                      </link>
+                                                      <link id="m3z2lc2u" targetId="m3z2lc20" type="containerLink"/>
+                                                   </container>
+                                                   <link id="m3z2lc2r" targetId="m3z2lc1i" type="containerLink"/>
+                                                </flow>
+                                                <flow id="m3z2lc23">
+                                                   <assignment id="m3z2lc24">
+                                                      <title>AssignError</title>
+                                                      <operation source="formula" to="temp.vTempErpName">
+                                                         <expression language="XQuery">'SAPS4'</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempStep">
+                                                         <expression language="XQuery">'SIntImportSupplierSapS4_ADR'</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempCode">
+                                                         <expression language="XQuery">$output.faultSubSIntImportSupplierSapS4[1]/code</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempFault">
+                                                         <expression language="XQuery">let $ADR_XML_Output := if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":')) then(
+	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'}'))/*:error/*:message/*:value/text())
+else('')
+
+let $detail := fn:concat($output.faultSubSIntImportSupplierSapS4[1]/detail/text(), '')
+let $reason := fn:concat($output.faultSubSIntImportSupplierSapS4[1]/reason/text(), '')
+return
+if($ADR_XML_Output != '')then(
+	$ADR_XML_Output)
+else(
+if($detail != '' and $reason != '') then(
+	fn:concat('Detail: ', $detail, '. Reason: ', $reason))
+else if($detail != '') then(
+	fn:concat('Detail: ', $detail))
+else if($reason != '') then(
+	fn:concat('Reason: ', $reason))
+else())</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":')) then(
+ $temp.vTempFault)
+else(
+fn:concat('Failed when trying to invoke the SIntImportSupplierSapS4 service: ', $temp.vTempFault))</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempErrorMessage">
+                                                         <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempADR_XML_Output">
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"value":"Success Standard Process"')) then(
+	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'}')))
+else('')</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempADR_Json_Fault">
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"value":"Success Standard Process"')) then(
+$output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'}')
+else('')</expression>
+                                                      </operation>
+                                                      <link id="m3z2lc3a" targetId="m3z2lc25"/>
+                                                   </assignment>
+                                                   <jumpTo id="m3z2lc25">
+                                                      <link id="m3z2lc3b" targetId="lqcsrpr5"/>
+                                                   </jumpTo>
+                                                </flow>
+                                                <link id="m3z2lc2p" targetId="m3z2lc1j" type="containerLink"/>
+                                                <events>
+                                                   <catch faultField="faultSubSIntImportSupplierSapS4"
+                                                          id="lqfda3ry"
+                                                          interrupting="true">
+                                                      <link id="m3z2lc2q" targetId="m3z2lc23" type="containerLink"/>
+                                                   </catch>
+                                                </events>
+                                             </eventContainer>
+                                             <link id="m3z2lc2n" targetId="m3z2lc1f" type="containerLink"/>
+                                          </flow>
+                                          <flow id="m3z2lc27">
+                                             <link id="m3z2lc3c" targetId="m3z2lc1f" type="containerLink"/>
+                                          </flow>
+                                          <link id="m3z2lc2l" targetId="m3z2lc1g" type="containerLink">
+                                             <condition source="formula">
+                                                <function name="equals">
+                                                   <arg name="left">{$temp.vTempBuildXML_code}</arg>
+                                                   <arg name="right">{1}</arg>
+                                                </function>
+                                             </condition>
+                                          </link>
+                                          <link id="m3z2lc2m" targetId="m3z2lc27" type="containerLink"/>
+                                       </container>
+                                       <link id="m3z2lc2j" targetId="m3z2lc1c" type="containerLink"/>
+                                    </flow>
+                                    <flow id="m3z2lc28">
+                                       <assignment id="m3z2lc29">
+                                          <title>AssignError</title>
+                                          <operation source="formula" to="temp.vTempErpName">
+                                             <expression language="XQuery">'SAPS4'</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempStep">
+                                             <expression language="XQuery">'SBusSupplierEproSapS4'</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempCode">
+                                             <expression language="XQuery">$output.faultSvcBuildXML[1]/code</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempFault">
+                                             <expression language="XQuery">let $detail := fn:concat($output.faultSvcBuildXML[1]/detail/text(), '')
+let $reason := fn:concat($output.faultSvcBuildXML[1]/reason/text(), '')
+return
+if($detail != '' and $reason != '') then(
+	fn:concat('Detail: ', $detail, '. Reason: ', $reason))
+else if($detail != '') then(
+	fn:concat('Detail: ', $detail))
+else if($reason != '') then(
+	fn:concat('Reason: ', $reason))
+else()</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                             <expression language="XQuery">fn:concat('Failed when trying to invoke the SBusSupplierEproSapS4 service: ', $temp.vTempFault)</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempErrorMessage">
+                                             <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
+                                          </operation>
+                                          <link id="m3z2lc3d" targetId="m3z2lc2a"/>
+                                       </assignment>
+                                       <jumpTo id="m3z2lc2a">
+                                          <link id="m3z2lc3e" targetId="lqcsrpr5"/>
+                                       </jumpTo>
+                                    </flow>
+                                    <link id="m3z2lc2h" targetId="m3z2lc1d" type="containerLink"/>
+                                    <events>
+                                       <catch faultField="faultSvcBuildXML" id="lqcv9olx" interrupting="true">
+                                          <link id="m3z2lc2i" targetId="m3z2lc28" type="containerLink"/>
+                                       </catch>
+                                    </events>
+                                 </eventContainer>
+                                 <link id="m3z2lc2f" targetId="m3z2lc19" type="containerLink"/>
+                              </flow>
+                              <flow id="m3z2lc2c">
+                                 <link id="m3z2lc3f" targetId="m3z2lc19" type="containerLink"/>
+                              </flow>
+                              <link id="m3z2lc2d" targetId="m3z2lc1a" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="string-equals">
+                                       <arg name="left">{$temp.vTempCallADR}</arg>
+                                       <arg name="right">1</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="m3z2lc2e" targetId="m3z2lc2c" type="containerLink"/>
+                              <link id="m3z2lc9r" targetId="m3z2lc6l"/>
+                           </container>
+                           <container id="m3z2lc6l" type="exclusive">
+                              <title>D_Call_TRDP</title>
+                              <flow id="m3z2lc6m">
+                                 <assignment id="m3z2lc6n">
+                                    <title>AssignBuildXML_XML_Input</title>
+                                    <operation source="formula" to="temp.vTempAddPositionTRDP">
+                                       <expression language="XQuery">let $internalIdAA := fn:concat($temp.vTempEpro_XML/JIData/locationList/location[$input.in_LocPosition]/associatedAddressList/associatedAddress/addressRef/internalId/text()[../../../type/text() = 'remitto'], '')
+let $tmp := 
+&lt;root&gt;
+	{
+	if($internalIdAA != '') then(
+		for $i in (1 to count($temp.vTempEpro_XML/JIData/addressList/address))
+		return
+		let $address := $temp.vTempEpro_XML/JIData/addressList/address[$i]
+		return
+		if($address[./type/text() = 'remitto' and ./internalId/text() = $internalIdAA]) then(
+			&lt;i&gt;{$i}&lt;/i&gt;)
+		else())
+	else()
+	}
+&lt;/root&gt;
+return
+if($tmp/*:i/text()) then(
+	$tmp/*:i[1]/text())
+else(0)</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vTempBuildXML_XML_Input">
+                                       <expression language="XQuery">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:buil="http://www.ppg.com/xsd/BuildXML"&gt;
+	&lt;soapenv:Header/&gt;
+	&lt;soapenv:Body&gt;
+		&lt;buil:buildXMLRequest&gt;
+			&lt;buil:xml&gt;{$input.in_XML}&lt;/buil:xml&gt;
+			&lt;buil:BPADR&gt;{$temp.vTempBPADR}&lt;/buil:BPADR&gt;
+			&lt;buil:locPosition&gt;{$input.in_LocPosition}&lt;/buil:locPosition&gt;
+			&lt;buil:addPosition&gt;{$temp.vTempAddPositionTRDP }&lt;/buil:addPosition&gt;
+			&lt;buil:charactersHTML&gt;{util:resolveURN('urn:charactersHTML')}&lt;/buil:charactersHTML&gt;
+            &lt;buil:accountGroup&gt;TRDP&lt;/buil:accountGroup&gt;
+		&lt;/buil:buildXMLRequest&gt;
+	&lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</expression>
+                                    </operation>
+                                    <link id="m3z2lc89" targetId="m3z2lc6o"/>
+                                 </assignment>
+                                 <eventContainer id="m3z2lc6o">
+                                    <service id="m3z2lc84">
+                                       <title>SvcBuildXML</title>
+                                       <serviceName>Conn-SC-SBusSupplierEproSapS4China:buildXML</serviceName>
+                                       <serviceGUID>8CRsNR2N7h7fZhGRTxeLms</serviceGUID>
+                                       <serviceInput>
+                                          <parameter name="in_scRequest" source="formula">
+                                             <expression language="XQuery">util:toXML($temp.vTempBuildXML_XML_Input)</expression>
+                                          </parameter>
+                                       </serviceInput>
+                                    </service>
+                                    <flow id="m3z2lc6p">
+                                       <assignment id="m3z2lc6q">
+                                          <title>AssignBuildXML_XML_Output</title>
+                                          <operation source="formula" to="temp.vTempBuildXML_XML_Output">
+                                             <expression language="XQuery">util:parseXML($output.out_scResponse)</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempBuildXML_code">
+                                             <expression language="XQuery">let $code := fn:concat($temp.vTempBuildXML_XML_Output/*:Body/*:buildXMLResponse/*:code/text(), '')
+return
+if($code = '0') then(
+	1)
+else(0)</expression>
+                                          </operation>
+                                          <link id="m3z2lc8d" targetId="m3z2lc6r"/>
+                                       </assignment>
+                                       <container id="m3z2lc6r" type="exclusive">
+                                          <title>D_code</title>
+                                          <flow id="m3z2lc6s">
+                                             <assignment id="m3z2lc6t">
+                                                <title>AssignBapiS4_XML_Input</title>
+                                                <operation source="formula" to="temp.vTempJsonTRDP_Aux">
+                                                   <expression language="XQuery">util:toJSON(util:parseXML($temp.vTempBuildXML_XML_Output/*:Body/*:buildXMLResponse/*:xmlBapi/text()))</expression>
+                                                </operation>
+                                                <operation source="formula" to="temp.vTempLength">
+                                                   <expression language="XQuery">fn:string-length(fn:substring-after($temp.vTempJsonTRDP_Aux  ,'{"root":'))</expression>
+                                                </operation>
+                                                <operation source="formula" to="temp.vTempJsonTRDP">
+                                                   <expression language="XQuery">let $json := fn:replace(fn:replace(fn:replace(fn:replace(fn:substring(fn:substring-after( $temp.vTempJsonTRDP_Aux ,'{"root":'), 0,$temp.vTempLength),',"֎"',''),'"֎"',''), '"true֎"', 'true'), '"false֎"', 'false')
+return 
+$json</expression>
+                                                </operation>
+                                                <operation source="formula" to="output.out_TRDPRequest">
+                                                   <expression language="XQuery">$temp.vTempJsonTRDP</expression>
+                                                </operation>
+                                                <link id="m3z2lc8h" targetId="m3z2lc6u"/>
+                                             </assignment>
+                                             <eventContainer id="m3z2lc6u">
+                                                <subflow id="m3z2lc7z">
+                                                   <title>SubSIntImportSupplierSapS4</title>
+                                                   <subflowGUID>8kqlRLiy414jghh7kRnPqp</subflowGUID>
+                                                   <subflowPath>SIntImportSupplierSapS4China</subflowPath>
+                                                   <runForEach>false</runForEach>
+                                                   <input>
+                                                      <parameter name="jsonInput" source="formula" updatable="true">
+                                                         <expression language="XQuery">$temp.vTempJsonTRDP</expression>
+                                                      </parameter>
+                                                   </input>
+                                                   <outputDef>
+                                                      <field name="jsonOutput" type="string">
+                                                         <options>
+                                                            <option name="required">false</option>
+                                                         </options>
+                                                      </field>
+                                                   </outputDef>
+                                                </subflow>
+                                                <flow id="m3z2lc6v">
+                                                   <assignment id="m3z2lc6w">
+                                                      <title>AssignTRDPS4_XML_Output</title>
+                                                      <operation source="formula" to="temp.vTempTRDP_XML_Output">
+                                                         <expression language="XQuery">&lt;root&gt;{util:parseJSON($output.jsonOutput )}&lt;/root&gt;</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempCountS4Error">
+                                                         <expression language="XQuery">fn:count($temp.vTempTRDP_XML_Output/*:error/* )</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="output.out_TRDPResponse">
+                                                         <expression language="XQuery">$output.jsonOutput</expression>
+                                                      </operation>
+                                                      <link id="m3z2lc8l" targetId="m3z2lc6x"/>
+                                                   </assignment>
+                                                   <container id="m3z2lc6x" type="exclusive">
+                                                      <title>D_CountErrorTRDPS4</title>
+                                                      <flow id="m3z2lc6y">
+                                                         <assignment id="m3z2lc6z">
+                                                            <title>AssignRoundTripTRDP</title>
+                                                            <operation source="formula" to="temp.vTempRoundTripEproTRDP_XML">
+                                                               <expression language="XQuery">let $locPosition as xs:int := $input.in_LocPosition/text() cast as xs:int
+let $J1Data := $temp.vTempEpro_XML/*:J1Data
+let $JIData := $temp.vTempEpro_XML/*:JIData
+let $locationList := $temp.vTempEpro_XML/*:JIData/*:locationList 
+let $addressList := $temp.vTempEpro_XML/*:JIData/*:addressList
+let $customElementList := $temp.vTempEpro_XML/*:JIData/*:customElementList
+let $accountsPayableList := $temp.vTempEpro_XML/*:JIData/*:accountsPayableList
+let $internalId := $locationList/location[$locPosition]/internalId/text()
+let $erpNumber := $locationList/location[$locPosition]/erpNumber/text()
+let $bpIdADR := $locationList/location[$locPosition]/associatedAddressList/associatedAddress[type/text() = 'fulfillment']/addressRef/thirdPartyRefNumber/text()
+let $bpIdTRDP := fn:concat($locationList/location[$locPosition]/associatedAddressList/associatedAddress[type/text() = 'remitto']/addressRef/thirdPartyRefNumber/text(), '')
+let $erpName := 'S4'
+let $OABpId := if ($bpIdADR != $bpIdTRDP) then ($bpIdADR)
+else('')
+let $purchasingOrg := if($temp.vTempGetInfoRefData_XML/*:result[@statementId = fn:concat($locPosition , '|org_id_ongoing')]/*:row/erp_value/text() != '' ) then (
+$temp.vTempGetInfoRefData_XML/*:result[@statementId = fn:concat($locPosition , '|org_id_ongoing')]/*:row/erp_value/text())
+else('')
+let $AddressIDTRDP := $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results/*:AddressID/text()
+let $approvedForERPSync := if($customElementList/customElement/customElementValueList/customElementValue/text()[../../../customElementIdentifier/text() = 'Supplier_Status'] = 'Deactivate') then(
+    'false')
+else('true')
+
+let $OABpId-1	:= fn:concat('', $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_Supplier/*:d/*:to_SupplierPurchasingOrg/*:results/*:to_PartnerFunction/*:results[./PartnerFunction ='OA' or ./PartnerFunction ='GS'][1]/*:Supplier/text())
+
+let $erp_value := $temp.vTempGetInfoRefData_XML/*:result/*:row[1]/*:erp_value/text()
+
+let $BusinessPartner := $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text()
+
+let $PurchasingIsBlocked := $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_Supplier/d/to_SupplierPurchasingOrg/results/PurchasingIsBlockedForSupplier/text()
+		
+let $validation1 := for $custom at $i in $locationList/location[$locPosition]/customElementList/customElement[./customElementIdentifier/text() = 'bank_account_id']/customElementValueList/customElementValue
+					let $account := $accountsPayableList/accountsPayable[./erpNumber/text() = $custom]
+					where $account/erpNumber/text() = $custom and
+					$account/active/text() = 'false'
+					return	
+					'1'
+		
+return
+&lt;supplier&gt;
+	&lt;operation&gt;
+		&lt;code&gt;UPDATE&lt;/code&gt;
+		&lt;identificationField&gt;j1id&lt;/identificationField&gt;
+		&lt;identificationValue&gt;{$JIData/thirdPartyRefNumber/text()}&lt;/identificationValue&gt;
+	&lt;/operation&gt;
+	&lt;J1Data/&gt;
+	&lt;JIData&gt;
+		&lt;erpNumber&gt;{$JIData/erpNumber/text()}&lt;/erpNumber&gt;
+		&lt;thirdPartyRefNumber&gt;{$JIData/thirdPartyRefNumber/text()}&lt;/thirdPartyRefNumber&gt;
+		&lt;approvedForERPSync&gt;{$approvedForERPSync}&lt;/approvedForERPSync&gt;
+		&lt;locationList&gt;
+			&lt;location&gt;
+				&lt;erpNumber&gt;
+				{
+					if ($OABpId-1 != '') then (
+						fn:concat($erpName,'|',$erp_value,'|',$BusinessPartner,'|',$OABpId-1))
+					else (
+						fn:concat($erpName,'|',$erp_value,'|',$BusinessPartner))
+				}
+				&lt;/erpNumber&gt;
+				&lt;internalId&gt;{$internalId}&lt;/internalId&gt;
+				&lt;supportsOrderFulfillment&gt;Yes&lt;/supportsOrderFulfillment&gt;
+				{
+					if($PurchasingIsBlocked = 'true') then(
+						&lt;active&gt;false&lt;/active&gt;)
+					else(&lt;active&gt;true&lt;/active&gt;)
+				}
+                &lt;customElementList&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;ERPNUMBER_REMITTANCE&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;{fn:concat($erpName,'|',$BusinessPartner,'|',$AddressIDTRDP)}&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					{
+						if($temp.vTempCallADR = 0)then(
+						&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;ERPNUMBER_FULFILLMENT&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;{fn:concat($erpName,'|',$BusinessPartner,'|',$AddressIDTRDP)}&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;)
+					else()
+					}
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;Resend_Supplier&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;
+							{
+								if($locationList/location[$locPosition]/*:customElementList/*:customElement[customElementIdentifier/text() = 'Resend_Supplier']) then(
+									'No')
+								else('')
+							}
+							&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;IntegrationStatus&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue/&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;ErrorLog&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue/&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;
+					
+					{
+					for $bankResult in $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerBank/*:results
+					let $S4BankID := fn:tokenize($bankResult/*:BankIdentification/text(), '\|')[1]
+					let $eProInternalID := fn:tokenize($bankResult/*:BankIdentification/text(), '\|')[2]
+					let $accountsPayable := $accountsPayableList/accountsPayable[internalId/text() = $eProInternalID ]
+					let $erpNumberAP := fn:concat($accountsPayable/erpNumber/text(), '_ID')
+					let $valueBankID := fn:tokenize($locationList/location[$locPosition]/customElementList/customElement[customElementIdentifier/text() = $erpNumberAP]/customElementValueList/customElementValue/text(),'\|')[3]
+					let $valueStartDate := fn:tokenize($locationList/location[$locPosition]/customElementList/customElement[customElementIdentifier/text() = $erpNumberAP]/customElementValueList/customElementValue/text(),'\|')[4]
+					let $valueEndDate := fn:tokenize($locationList/location[$locPosition]/customElementList/customElement[customElementIdentifier/text() = $erpNumberAP]/customElementValueList/customElementValue/text(),'\|')[5]
+					where $eProInternalID != ''
+					and fn:concat($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:BusinessPartner/text(), '') != ''
+					return
+						if ($S4BankID =  $valueBankID and $bankResult/*:ValidityStartDate/text() = $valueStartDate 
+							and $bankResult/*:ValidityEndDate/text() = $valueEndDate) then ()
+						else(
+							&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;{$erpNumberAP}&lt;/customElementIdentifier&gt;
+						&lt;customElementValueList&gt;
+							&lt;customElementValue&gt;{fn:concat($erpName,'|',$temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:BusinessPartner/text(),'|',$S4BankID,'|',$bankResult/*:ValidityStartDate/text(),'|',$bankResult/*:ValidityEndDate/text())}&lt;/customElementValue&gt;
+						&lt;/customElementValueList&gt;
+					&lt;/customElement&gt;)
+					}
+					{
+						if(fn:count($validation1) &gt; 0) then(
+							&lt;customElement&gt;
+						&lt;customElementIdentifier&gt;bank_account_id&lt;/customElementIdentifier&gt;
+								{
+								let $values := for $custom at $i in $locationList/location[$locPosition]/customElementList/customElement[./customElementIdentifier/text() = 'bank_account_id']/customElementValueList/customElementValue
+									let $account := $accountsPayableList/accountsPayable[./erpNumber/text() = $custom]
+									where $account/erpNumber/text() = $custom and
+									$account/active/text() = 'true'
+									return	
+									&lt;customElementValue&gt;{$custom/text()}&lt;/customElementValue&gt;
+								return
+								if(fn:count($values) &gt; 0) then(
+								&lt;customElementValueList&gt;
+								{
+									$values
+								}
+								&lt;/customElementValueList&gt;)
+								else()
+								}
+							&lt;/customElement&gt;)
+						else()
+					}
+				&lt;/customElementList&gt;
+			&lt;/location&gt;
+		&lt;/locationList&gt;
+		&lt;customElementList&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_Company_Code&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_LayoutSortingRule&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_ReconciliationAccount&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_CashPlanningGroup&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_SupplierClerkIDBySupplier&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_AlternativePayeeAccountNumber&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_PaymentMethodsList&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_ClearCustomerSupplier&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_PaymentIsToBeSentByEDI&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_ZZ1_ZAHLS_sco&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue&gt;&lt;/customElementValue&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_ZZ1_SPERR_sco&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_Class_Vendor_Non_PO_Exceptions&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_integrationstarttime&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_integrationstatus&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+			&lt;customElement&gt;
+				&lt;customElementIdentifier&gt;S4_errorhandling&lt;/customElementIdentifier&gt;
+				&lt;customElementValueList&gt;
+					&lt;customElementValue/&gt;
+				&lt;/customElementValueList&gt;
+			&lt;/customElement&gt;
+		&lt;/customElementList&gt;
+	&lt;/JIData&gt;
+&lt;/supplier&gt;</expression>
+                                                            </operation>
+                                                            <link id="m3z2lc8p" targetId="m3z2lc70"/>
+                                                         </assignment>
+                                                         <eventContainer id="m3z2lc70">
+                                                            <subflow id="m3z2lc7f">
+                                                               <title>SubSBusSupplierRoundTripMDM</title>
+                                                               <subflowGUID>1UuFTqkhgephZBaiCsmTwH</subflowGUID>
+                                                               <subflowPath>SBusSupplierRoundTripMDM</subflowPath>
+                                                               <runForEach>false</runForEach>
+                                                               <input>
+                                                                  <parameter name="EproXML" source="constant" updatable="true">{$input.in_XML}</parameter>
+                                                                  <parameter name="locPosition" source="constant" updatable="true">{$input.in_LocPosition}</parameter>
+                                                                  <parameter name="responseERP" source="formula" updatable="true">
+                                                                     <expression language="XQuery">&lt;ParameterList&gt;
+	{
+	if(fn:concat($temp.vTempCallADR, '') = '1') then(
+		&lt;Parameter&gt;
+			&lt;name&gt;ADR&lt;/name&gt;
+			&lt;value&gt;{$output.out_ADRResponse}&lt;/value&gt;
+		&lt;/Parameter&gt;)
+	else()
+	}
+	{
+	if(fn:concat($temp.vTempCallTRDP, '') = '1') then(
+		&lt;Parameter&gt;
+			&lt;name&gt;TRDP&lt;/name&gt;
+			&lt;value&gt;{$output.out_TRDPResponse}&lt;/value&gt;
+		&lt;/Parameter&gt;)
+	else()
+	} 
+&lt;/ParameterList&gt;</expression>
+                                                                  </parameter>
+                                                                  <parameter name="systemName" source="formula" updatable="true">
+                                                                     <expression language="XQuery">'SAPS4'</expression>
+                                                                  </parameter>
+                                                               </input>
+                                                               <outputDef>
+                                                                  <field name="instanceId" type="int">
+                                                                     <options>
+                                                                        <option name="required">false</option>
+                                                                     </options>
+                                                                  </field>
+                                                                  <field name="roundTripMdmXML" type="reference">
+                                                                     <options>
+                                                                        <option name="referenceTo">$po:PO-ParameterList</option>
+                                                                        <option name="required">false</option>
+                                                                        <option name="isCopy">true</option>
+                                                                        <option name="guid">87hwLnkbzfmcGCn5QJbiu8</option>
+                                                                     </options>
+                                                                  </field>
+                                                               </outputDef>
+                                                            </subflow>
+                                                            <flow id="m3z2lc71">
+                                                               <assignment id="m3z2lc72">
+                                                                  <title>AssignRoundTripMDM_XML</title>
+                                                                  <operation source="formula" to="temp.vTempRoundTripMDM_XML">
+                                                                     <expression language="XQuery">&lt;root&gt;
+	{
+    for $i in (1 to count($output.roundTripMdmXML/Parameter))
+    return
+	&lt;item bpGrpng="{$output.roundTripMdmXML/Parameter[$i]/name/text()}"&gt;
+		{
+        $output.roundTripMdmXML/Parameter[$i]/value/text()
+        }
+	&lt;/item&gt;
+    }
+&lt;/root&gt;</expression>
+                                                                  </operation>
+                                                                  <operation source="formula" to="temp.vTempParameterList">
+                                                                     <expression language="XQuery">list:append($temp.vTempParameterList , &lt;Parameter&gt;
+&lt;name&gt;{fn:concat('S4_TRDP_RT_Request_', $temp.vTempNameFileSFTP, '.xml')}&lt;/name&gt;
+&lt;value&gt;{util:toXML($temp.vTempRoundTripEproTRDP_XML)}&lt;/value&gt;
+&lt;/Parameter&gt;)
+</expression>
+                                                                  </operation>
+                                                                  <link id="m3z2lc8t" targetId="m3z2lc73"/>
+                                                               </assignment>
+                                                               <eventContainer id="m3z2lc73">
+                                                                  <subflow id="m3z2lc7d">
+                                                                     <title>SubSIntSupplierRoundTrip</title>
+                                                                     <subflowGUID>5Y0XWupAhIvcG15BztLy6n</subflowGUID>
+                                                                     <subflowPath>SIntSupplierRoundTrip</subflowPath>
+                                                                     <runForEach>false</runForEach>
+                                                                     <input>
+                                                                        <parameter name="requestXMLImportJINT" source="formula" updatable="true">
+                                                                           <expression language="XQuery">util:toXML($temp.vTempRoundTripEproTRDP_XML)</expression>
+                                                                        </parameter>
+                                                                        <parameter name="requestXMLImportRoundtrip" source="formula" updatable="true">
+                                                                           <expression language="XQuery">util:toXML($temp.vTempRoundTripMDM_XML)</expression>
+                                                                        </parameter>
+                                                                        <parameter name="MDM_ID" source="formula" updatable="true">
+                                                                           <expression language="XQuery">$temp.vTempEpro_XML/*:JIData/*:erpNumber/text()</expression>
+                                                                        </parameter>
+                                                                        <parameter name="erpName" source="formula" updatable="true">
+                                                                           <expression language="XQuery">'SAPS4'</expression>
+                                                                        </parameter>
+                                                                     </input>
+                                                                     <outputDef>
+                                                                        <field name="status" type="string">
+                                                                           <options>
+                                                                              <option name="required">false</option>
+                                                                           </options>
+                                                                        </field>
+                                                                        <field name="message" type="string">
+                                                                           <options>
+                                                                              <option name="required">false</option>
+                                                                           </options>
+                                                                        </field>
+                                                                        <field name="RoundTripEproResponse" type="string">
+                                                                           <options>
+                                                                              <option name="required">false</option>
+                                                                           </options>
+                                                                        </field>
+                                                                     </outputDef>
+                                                                  </subflow>
+                                                                  <flow id="m3z2lc74">
+                                                                     <container id="m3z2lc75" type="exclusive">
+                                                                        <title>D_status</title>
+                                                                        <flow id="m3z2lc76">
+                                                                           <assignment id="m3z2lc77">
+                                                                              <title>AssignOutput</title>
+                                                                              <operation source="formula" to="output.out_Code">
+                                                                                 <expression language="XQuery">'0'</expression>
+                                                                              </operation>
+                                                                              <operation source="formula" to="output.out_Message">
+                                                                                 <expression language="XQuery">'Success'</expression>
+                                                                              </operation>
+                                                                           </assignment>
+                                                                           <link id="m3z2lc8z" targetId="m3z2lc75" type="containerLink"/>
+                                                                        </flow>
+                                                                        <flow id="m3z2lc78">
+                                                                           <assignment id="m3z2lc79">
+                                                                              <title>AssignOutput</title>
+                                                                              <operation source="formula" to="output.out_Code">
+                                                                                 <expression language="XQuery">'1'</expression>
+                                                                              </operation>
+                                                                              <operation source="formula" to="output.out_Message">
+                                                                                 <expression language="XQuery">$output.message</expression>
+                                                                              </operation>
+                                                                           </assignment>
+                                                                           <link id="m3z2lc90" targetId="m3z2lc75" type="containerLink"/>
+                                                                        </flow>
+                                                                        <link id="m3z2lc8x" targetId="m3z2lc76" type="containerLink">
+                                                                           <condition source="formula">
+                                                                              <function name="string-equals">
+                                                                                 <arg name="left">{$output.status}</arg>
+                                                                                 <arg name="right">OK</arg>
+                                                                              </function>
+                                                                           </condition>
+                                                                        </link>
+                                                                        <link id="m3z2lc8y" targetId="m3z2lc78" type="containerLink"/>
+                                                                     </container>
+                                                                     <link id="m3z2lc8w" targetId="m3z2lc73" type="containerLink"/>
+                                                                  </flow>
+                                                                  <flow id="m3z2lc7a">
+                                                                     <assignment id="m3z2lc7b">
+                                                                        <title>AssignError</title>
+                                                                        <operation source="formula" to="temp.vTempErpName">
+                                                                           <expression language="XQuery">'SAPS4'</expression>
+                                                                        </operation>
+                                                                        <operation source="formula" to="temp.vTempStep">
+                                                                           <expression language="XQuery">'SIntSupplierRoundTrip'</expression>
+                                                                        </operation>
+                                                                        <operation source="formula" to="temp.vTempCode">
+                                                                           <expression language="XQuery">$output.faultSubSIntSupplierRoundTrip[1]/code</expression>
+                                                                        </operation>
+                                                                        <operation source="formula" to="temp.vTempFault">
+                                                                           <expression language="XQuery">let $detail := fn:concat($output.faultSubSIntSupplierRoundTrip[1]/detail/text(), '')
+let $reason := fn:concat($output.faultSubSIntSupplierRoundTrip[1]/reason/text(), '')
+return
+if($detail != '' and $reason != '') then(
+	fn:concat('Detail: ', $detail, '. Reason: ', $reason))
+else if($detail != '') then(
+	fn:concat('Detail: ', $detail))
+else if($reason != '') then(
+	fn:concat('Reason: ', $reason))
+else()</expression>
+                                                                        </operation>
+                                                                        <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                                                           <expression language="XQuery">fn:concat('Failed when trying to invoke the SIntSupplierRoundTrip service: ', $temp.vTempFault)</expression>
+                                                                        </operation>
+                                                                        <operation source="formula" to="temp.vTempErrorMessage">
+                                                                           <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
+                                                                        </operation>
+                                                                        <link id="m3z2lc91" targetId="m3z2lc7c"/>
+                                                                     </assignment>
+                                                                     <jumpTo id="m3z2lc7c">
+                                                                        <link id="m3z2lc92" targetId="lqcsrpr5"/>
+                                                                     </jumpTo>
+                                                                  </flow>
+                                                                  <link id="m3z2lc8u" targetId="m3z2lc74" type="containerLink"/>
+                                                                  <events>
+                                                                     <catch faultField="faultSubSIntSupplierRoundTrip"
+                                                                            id="ky7ll32f"
+                                                                            interrupting="true">
+                                                                        <link id="m3z2lc8v" targetId="m3z2lc7a" type="containerLink"/>
+                                                                     </catch>
+                                                                  </events>
+                                                               </eventContainer>
+                                                               <link id="m3z2lc8s" targetId="m3z2lc70" type="containerLink"/>
+                                                            </flow>
+                                                            <flow id="m3z2lc7e">
+                                                               <link id="m3z2lc93" targetId="m3z2lc70" type="containerLink"/>
+                                                            </flow>
+                                                            <link id="m3z2lc8q" targetId="m3z2lc71" type="containerLink"/>
+                                                            <events>
+                                                               <catch faultField="faultSubSBusSupplierRoundTripMDM"
+                                                                      id="lwhgkgma"
+                                                                      interrupting="true">
+                                                                  <link id="m3z2lc8r" targetId="m3z2lc7e" type="containerLink"/>
+                                                               </catch>
+                                                            </events>
+                                                         </eventContainer>
+                                                         <link id="m3z2lc8o" targetId="m3z2lc6x" type="containerLink"/>
+                                                      </flow>
+                                                      <flow id="m3z2lc7g">
+                                                         <assignment id="m3z2lc7h">
+                                                            <title>AssignCode</title>
+                                                            <operation source="formula" to="temp.untitled1">
+                                                               <expression language="XQuery">if($temp.vTempTRDP_XML_Output/*:success/*:message/value/text() = 'Success Standard Process') then(
+	1)
+else(0)</expression>
+                                                            </operation>
+                                                            <link id="m3z2lc94" targetId="m3z2lc7i"/>
+                                                         </assignment>
+                                                         <assignment id="m3z2lc7u">
+                                                            <title>AssignError</title>
+                                                            <operation source="formula" to="temp.vTempErpName">
+                                                               <expression language="XQuery">'SAPS4'</expression>
+                                                            </operation>
+                                                            <operation source="formula" to="temp.vTempStep">
+                                                               <expression language="XQuery">'BAPI_TRDP'</expression>
+                                                            </operation>
+                                                            <operation source="formula" to="temp.vTempCode">
+                                                               <expression language="XQuery">'-1'</expression>
+                                                            </operation>
+                                                            <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                                               <expression language="XQuery">$temp.vTempTRDP_XML_Output/*:error/*:message/*:value/text()</expression>
+                                                            </operation>
+                                                            <operation source="formula" to="temp.vTempErrorMessage">
+                                                               <expression language="XQuery">$temp.vTempErrorMessageEpro </expression>
+                                                            </operation>
+                                                            <link id="m3z2lc9j" targetId="m3z2lc7v"/>
+                                                         </assignment>
+                                                         <container id="m3z2lc7i" type="exclusive">
+                                                            <title>D_Code</title>
+                                                            <flow id="m3z2lc7j">
+                                                               <eventContainer id="m3z2lc7k">
+                                                                  <subflow id="m3z2lc7s">
+                                                                     <title>SubSBusSupplierRoundTripMDM</title>
+                                                                     <subflowGUID>1UuFTqkhgephZBaiCsmTwH</subflowGUID>
+                                                                     <subflowPath>SBusSupplierRoundTripMDM</subflowPath>
+                                                                     <runForEach>false</runForEach>
+                                                                     <input>
+                                                                        <parameter name="EproXML" source="constant" updatable="true">{$input.in_XML}</parameter>
+                                                                        <parameter name="locPosition" source="constant" updatable="true">{$input.in_LocPosition}</parameter>
+                                                                        <parameter name="responseERP" source="formula" updatable="true">
+                                                                           <expression language="XQuery">&lt;ParameterList&gt;
+	{
+	if(fn:concat($temp.vTempCallADR, '') = '1') then(
+		&lt;Parameter&gt;
+			&lt;name&gt;ADR&lt;/name&gt;
+			&lt;value&gt;{$output.out_ADRResponse}&lt;/value&gt;
+		&lt;/Parameter&gt;)
+	else()
+	}
+	{
+	if(fn:concat($temp.vTempCallTRDP, '') = '1') then(
+		&lt;Parameter&gt;
+			&lt;name&gt;TRDP&lt;/name&gt;
+			&lt;value&gt;{$output.out_TRDPResponse}&lt;/value&gt;
+		&lt;/Parameter&gt;)
+	else()
+	} 
+&lt;/ParameterList&gt;</expression>
+                                                                        </parameter>
+                                                                        <parameter name="systemName" source="formula" updatable="true">
+                                                                           <expression language="XQuery">'SAPS4'</expression>
+                                                                        </parameter>
+                                                                     </input>
+                                                                     <outputDef>
+                                                                        <field name="instanceId" type="int">
+                                                                           <options>
+                                                                              <option name="required">false</option>
+                                                                           </options>
+                                                                        </field>
+                                                                        <field name="roundTripMdmXML" type="reference">
+                                                                           <options>
+                                                                              <option name="referenceTo">$po:PO-ParameterList</option>
+                                                                              <option name="required">false</option>
+                                                                              <option name="isCopy">true</option>
+                                                                              <option name="guid">87hwLnkbzfmcGCn5QJbiu8</option>
+                                                                           </options>
+                                                                        </field>
+                                                                     </outputDef>
+                                                                  </subflow>
+                                                                  <flow id="m3z2lc7l">
+                                                                     <assignment id="m3z2lc7m">
+                                                                        <title>AssignRoundTripMDM_XML</title>
+                                                                        <operation source="formula" to="temp.vTempRoundTripMDM_XML">
+                                                                           <expression language="XQuery">&lt;root&gt;
+	{
+    for $i in (1 to count($output.roundTripMdmXML/Parameter))
+    return
+	&lt;item bpGrpng="{$output.roundTripMdmXML/Parameter[$i]/name/text()}"&gt;
+		{
+        $output.roundTripMdmXML/Parameter[$i]/value/text()
+        }
+	&lt;/item&gt;
+    }
+&lt;/root&gt;</expression>
+                                                                        </operation>
+                                                                        <link id="m3z2lc9c" targetId="m3z2lc7n"/>
+                                                                     </assignment>
+                                                                     <eventContainer id="m3z2lc7n">
+                                                                        <service id="m3z2lc7q">
+                                                                           <title>SvcSIntSupplierERPMDM</title>
+                                                                           <serviceName>Conn-SC-SIntSupplierERPMDM:SIntSupplierERPMDM</serviceName>
+                                                                           <serviceGUID>i1OJTYn5uuvgnSqEGvL02C</serviceGUID>
+                                                                           <serviceInput>
+                                                                              <parameter name="in_scRequest" source="formula">
+                                                                                 <expression language="XQuery">&lt;root&gt;
+	&lt;xml&gt;{util:toXML($temp.vTempRoundTripMDM_XML)}&lt;/xml&gt;
+    &lt;sourceSystem&gt;SAPS4&lt;/sourceSystem&gt;
+    &lt;MdmId&gt;{$temp.vTempEpro_XML/*:JIData/*:erpNumber/text()}&lt;/MdmId&gt;
+    &lt;EproId&gt;{$temp.vTempEpro_XML/*:J1Data/*:id/text()}&lt;/EproId&gt;
+&lt;/root&gt;</expression>
+                                                                              </parameter>
+                                                                           </serviceInput>
+                                                                        </service>
+                                                                        <flow id="m3z2lc7o">
+                                                                           <link id="m3z2lc9f" targetId="m3z2lc7n" type="containerLink"/>
+                                                                        </flow>
+                                                                        <flow id="m3z2lc7p">
+                                                                           <link id="m3z2lc9g" targetId="m3z2lc7n" type="containerLink"/>
+                                                                        </flow>
+                                                                        <link id="m3z2lc9d" targetId="m3z2lc7o" type="containerLink"/>
+                                                                        <events>
+                                                                           <catch faultField="faultSIntSupplierERPMDM"
+                                                                                  id="lwhidf1h"
+                                                                                  interrupting="true">
+                                                                              <link id="m3z2lc9e" targetId="m3z2lc7p" type="containerLink"/>
+                                                                           </catch>
+                                                                        </events>
+                                                                     </eventContainer>
+                                                                     <link id="m3z2lc9b" targetId="m3z2lc7k" type="containerLink"/>
+                                                                  </flow>
+                                                                  <flow id="m3z2lc7r">
+                                                                     <link id="m3z2lc9h" targetId="m3z2lc7k" type="containerLink"/>
+                                                                  </flow>
+                                                                  <link id="m3z2lc99" targetId="m3z2lc7l" type="containerLink"/>
+                                                                  <events>
+                                                                     <catch faultField="faultSubSBusSupplierRoundTripMDM"
+                                                                            id="lwhiddhu"
+                                                                            interrupting="true">
+                                                                        <link id="m3z2lc9a" targetId="m3z2lc7r" type="containerLink"/>
+                                                                     </catch>
+                                                                  </events>
+                                                               </eventContainer>
+                                                               <link id="m3z2lc98" targetId="m3z2lc7i" type="containerLink"/>
+                                                            </flow>
+                                                            <flow id="m3z2lc7t">
+                                                               <link id="m3z2lc9i" targetId="m3z2lc7i" type="containerLink"/>
+                                                            </flow>
+                                                            <link id="m3z2lc95" targetId="m3z2lc7j" type="containerLink">
+                                                               <condition source="formula">
+                                                                  <function name="equals">
+                                                                     <arg name="left">{$temp.untitled1}</arg>
+                                                                     <arg name="right">{1}</arg>
+                                                                  </function>
+                                                               </condition>
+                                                            </link>
+                                                            <link id="m3z2lc96" targetId="m3z2lc7t" type="containerLink"/>
+                                                            <link id="m3z2lc97" targetId="m3z2lc7u"/>
+                                                         </container>
+                                                         <jumpTo id="m3z2lc7v">
+                                                            <link id="m3z2lc9k" targetId="lqcsrpr5"/>
+                                                         </jumpTo>
+                                                      </flow>
+                                                      <link id="m3z2lc8m" targetId="m3z2lc6y" type="containerLink">
+                                                         <condition source="formula">
+                                                            <function name="equals">
+                                                               <arg name="left">{$temp.vTempCountS4Error}</arg>
+                                                               <arg name="right">{0}</arg>
+                                                            </function>
+                                                         </condition>
+                                                      </link>
+                                                      <link id="m3z2lc8n" targetId="m3z2lc7g" type="containerLink"/>
+                                                   </container>
+                                                   <link id="m3z2lc8k" targetId="m3z2lc6u" type="containerLink"/>
+                                                </flow>
+                                                <flow id="m3z2lc7w">
+                                                   <assignment id="m3z2lc7x">
+                                                      <title>AssignError</title>
+                                                      <operation source="formula" to="temp.vTempErpName">
+                                                         <expression language="XQuery">'SAPS4'</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempStep">
+                                                         <expression language="XQuery">'SIntImportSupplierSapS4_TRDP'</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempCode">
+                                                         <expression language="XQuery">$output.faultSubSIntImportSupplierSapS4[1]/code</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempFault">
+                                                         <expression language="XQuery">let $TRDP_XML_Output := if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":')) then(
+	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'}'))/*:error/*:message/*:value/text())
+else('')
+
+let $detail := fn:concat($output.faultSubSIntImportSupplierSapS4[1]/detail/text(), '')
+let $reason := fn:concat($output.faultSubSIntImportSupplierSapS4[1]/reason/text(), '')
+return
+if($TRDP_XML_Output != '')then(
+	$TRDP_XML_Output)
+else(
+if($detail != '' and $reason != '') then(
+	fn:concat('Detail: ', $detail, '. Reason: ', $reason))
+else if($detail != '') then(
+	fn:concat('Detail: ', $detail))
+else if($reason != '') then(
+	fn:concat('Reason: ', $reason))
+else())</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":')) then(
+$temp.vTempFault)
+else(fn:concat('Failed when trying to invoke the SIntImportSupplierSapS4 service: ', $temp.vTempFault))</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempErrorMessage">
+                                                         <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempTRDP_XML_Output">
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"value":"Success Standard Process"')) then(
+	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'}')))
+else('')</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempParameterList">
+                                                         <expression language="XQuery">if($temp.vTempTRDP_XML_Output != '')then(
+list:append($temp.vTempParameterList , &lt;Parameter&gt;
+&lt;name&gt;{fn:concat('S4_TRDP_Response_', $temp.vTempNameFileSFTP, '.json')}&lt;/name&gt;
+&lt;value&gt;{$output.faultSubSIntImportSupplierSapS4[1]/reason/text()}&lt;/value&gt;
+&lt;/Parameter&gt;))
+else($temp.vTempParameterList)</expression>
+                                                      </operation>
+                                                      <operation source="formula" to="temp.vTempTRDP_Json_Fault">
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"value":"Success Standard Process"')) then(
+	$output.faultSubSIntImportSupplierSapS4[1]/reason/text())
+else('')</expression>
+                                                      </operation>
+                                                      <link id="m3z2lc9l" targetId="m3z2lc7y"/>
+                                                   </assignment>
+                                                   <jumpTo id="m3z2lc7y">
+                                                      <link id="m3z2lc9m" targetId="lqcsrpr5"/>
+                                                   </jumpTo>
+                                                </flow>
+                                                <link id="m3z2lc8i" targetId="m3z2lc6v" type="containerLink"/>
+                                                <events>
+                                                   <catch faultField="faultSubSIntImportSupplierSapS4"
+                                                          id="lqfda4fe"
+                                                          interrupting="true">
+                                                      <link id="m3z2lc8j" targetId="m3z2lc7w" type="containerLink"/>
+                                                   </catch>
+                                                </events>
+                                             </eventContainer>
+                                             <link id="m3z2lc8g" targetId="m3z2lc6r" type="containerLink"/>
+                                          </flow>
+                                          <flow id="m3z2lc80">
+                                             <link id="m3z2lc9n" targetId="m3z2lc6r" type="containerLink"/>
+                                          </flow>
+                                          <link id="m3z2lc8e" targetId="m3z2lc6s" type="containerLink">
+                                             <condition source="formula">
+                                                <function name="equals">
+                                                   <arg name="left">{$temp.vTempBuildXML_code}</arg>
+                                                   <arg name="right">{1}</arg>
+                                                </function>
+                                             </condition>
+                                          </link>
+                                          <link id="m3z2lc8f" targetId="m3z2lc80" type="containerLink"/>
+                                       </container>
+                                       <link id="m3z2lc8c" targetId="m3z2lc6o" type="containerLink"/>
+                                    </flow>
+                                    <flow id="m3z2lc81">
+                                       <assignment id="m3z2lc82">
+                                          <title>AssignError</title>
+                                          <operation source="formula" to="temp.vTempErpName">
+                                             <expression language="XQuery">'SAPS4'</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempStep">
+                                             <expression language="XQuery">'SBusSupplierEproSapS4'</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempCode">
+                                             <expression language="XQuery">$output.faultSvcBuildXML[1]/code</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempFault">
+                                             <expression language="XQuery">let $detail := fn:concat($output.faultSvcBuildXML[1]/detail/text(), '')
+let $reason := fn:concat($output.faultSvcBuildXML[1]/reason/text(), '')
+return
+if($detail != '' and $reason != '') then(
+	fn:concat('Detail: ', $detail, '. Reason: ', $reason))
+else if($detail != '') then(
+	fn:concat('Detail: ', $detail))
+else if($reason != '') then(
+	fn:concat('Reason: ', $reason))
+else()</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                             <expression language="XQuery">fn:concat('Failed when trying to invoke the SBusSupplierEproSapS4 service: ', $temp.vTempFault)</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vTempErrorMessage">
+                                             <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
+                                          </operation>
+                                          <link id="m3z2lc9o" targetId="m3z2lc83"/>
+                                       </assignment>
+                                       <jumpTo id="m3z2lc83">
+                                          <link id="m3z2lc9p" targetId="lqcsrpr5"/>
+                                       </jumpTo>
+                                    </flow>
+                                    <link id="m3z2lc8a" targetId="m3z2lc6p" type="containerLink"/>
+                                    <events>
+                                       <catch faultField="faultSvcBuildXML" id="lqcv9olx" interrupting="true">
+                                          <link id="m3z2lc8b" targetId="m3z2lc81" type="containerLink"/>
+                                       </catch>
+                                    </events>
+                                 </eventContainer>
+                                 <link id="m3z2lc88" targetId="m3z2lc6l" type="containerLink"/>
+                              </flow>
+                              <flow id="m3z2lc85">
+                                 <link id="m3z2lc9q" targetId="m3z2lc6l" type="containerLink"/>
+                              </flow>
+                              <link id="m3z2lc86" targetId="m3z2lc6m" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="string-equals">
+                                       <arg name="left">{$temp.vTempCallTRDP}</arg>
+                                       <arg name="right">1</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="m3z2lc87" targetId="m3z2lc85" type="containerLink"/>
+                              <link id="md397zbj" targetId="lqcsrpr3"/>
+                           </container>
+                           <container id="lqcsrpr3" type="exclusive">
+                              <title>D_Ticket</title>
+                              <flow id="lqcsrpr4">
+                                 <assignment id="lqcsrpr5">
+                                    <title>AssignTicket</title>
+                                    <operation source="formula" to="temp.vTempTicketFile">
+                                       <expression language="XQuery">fn:concat('Log_OnGoing_SAPS4_', fn:translate(fn:substring(fn:string(fn:current-dateTime()), 0, 24), '-T:.', ''), '_', util:generate-random-string(4), '.txt')</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vTempTicketMessage">
+                                       <expression language="XQuery">let $erpName := if(fn:concat($temp.vTempErpName, '') != '') then(
+	fn:concat($temp.vTempErpName, '. '))
+else()
+return
+fn:concat('InstanceID: ', util:getProcessId(), ', Agent: ', $temp.vTempAgent, ', ERP: SAPS4, Process: PRC-SupplierEproSapS4', ', MDM ID: ', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), ', Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $erpName, $temp.vTempErrorMessageEpro, ' PipeMessage InstanceID: ', util:getProcessId(), ', Agent: ', $temp.vTempAgent, ', ERP: SAPS4, Process: PRC-SupplierEproSapS4', ', MDM ID: ', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), ', Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $erpName, $temp.vTempErrorMessage)</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vTempGetET_XML_Input">
+                                       <expression language="XQuery">let $locationList := $temp.vTempEpro_XML/*:JIData/*:locationList
+let $locPosition as xs:int := $input.in_LocPosition/text() cast as xs:int
+let $erpName := fn:concat($temp.vTempErpName, '')
+let $step := fn:concat($temp.vTempStep, '')
+return
+&lt;root&gt;
+    &lt;mdmID&gt;{$temp.vTempEpro_XML/*:JIData/*:erpNumber/text()}&lt;/mdmID&gt;
+    &lt;erpName&gt;SAPS4&lt;/erpName&gt;
+    &lt;erpNumber&gt;{$locationList/location[$locPosition]/erpNumber/text()}&lt;/erpNumber&gt;
+    &lt;messages&gt;
+		{
+		if($step = 'BAPI_ADR') then(
+			 &lt;message&gt;{$temp.vTempADR_XML_Output/*:error/*:message/value/text() }&lt;/message&gt;)
+		else if ($step = 'BAPI_TRDP') then(
+             &lt;message&gt;{$temp.vTempADR_XML_Output/*:error/*:message/value/text() }&lt;/message&gt;)
+        else(&lt;message&gt;{$temp.vTempErrorMessageEpro}&lt;/message&gt;)
+		}
+    &lt;/messages&gt;
+&lt;/root&gt;</expression>
+                                    </operation>
+                                    <link id="lqcsrprr" targetId="lqcsrpr6"/>
+                                 </assignment>
+                                 <assignment id="lqcsrprm">
+                                    <title>AssignError</title>
+                                    <operation source="formula" to="output.out_ErpName">
+                                       <expression language="XQuery">$temp.vTempErpName</expression>
+                                    </operation>
+                                    <operation source="formula" to="output.out_Step">
+                                       <expression language="XQuery">$temp.vTempStep</expression>
+                                    </operation>
+                                    <operation source="formula" to="output.out_Code">
+                                       <expression language="XQuery">let $step := fn:concat($temp.vTempStep, '')
+return
+if($step = 'RoundTrip ADR') then(
+	'1')
+else($temp.vTempCode)</expression>
+                                    </operation>
+                                 </assignment>
+                                 <container id="lqcsrpr6" type="parallel">
+                                    <title>Parallel Paths ErrorTicket</title>
+                                    <flow id="lqcsrpr7">
+                                       <eventContainer id="lqcsrpr8">
+                                          <service id="lqcsrprg">
+                                             <title>SvcGetET</title>
+                                             <serviceName>Conn-SC-SDasSupplierErrorTranslation:getET</serviceName>
+                                             <serviceGUID>3Jo1YRxxECXj2jUeuoJJex</serviceGUID>
+                                             <serviceInput>
+                                                <parameter name="in_scRequest" source="formula">
+                                                   <expression language="XQuery">util:toXML($temp.vTempGetET_XML_Input)</expression>
+                                                </parameter>
+                                             </serviceInput>
+                                          </service>
+                                          <flow id="lqcsrpr9">
+                                             <assignment id="lqcsrpra">
+                                                <title>AssignImportJ1Supplier_XML_Input</title>
+                                                <operation source="formula" to="temp.vTempGetET_XML_Output">
+                                                   <expression language="XQuery">util:parseXML($output.out_scResponse)</expression>
+                                                </operation>
+                                                <operation source="formula" to="output.out_Message">
+                                                   <expression language="XQuery">let $erpName := fn:concat($temp.vTempErpName, '')
+let $step := fn:concat($temp.vTempStep, '')
+return
+if($step = 'BAPI_ADR') then(
+		$temp.vTempADR_XML_Output/*:error/*:message/text() )
+	else if ($step = 'BAPI_TRDP') then(
+    $temp.vTempTRDP_XML_Output/*:error/*:message/text() ) 
+    else ($temp.vTempGetET_XML_Output/*:messages/message[1]/text())</expression>
+                                                </operation>
+                                                <operation source="formula" to="temp.vTempImportJ1Supplier_XML_Input">
+                                                   <expression language="XQuery">
+let $locPosition as xs:int := $input.in_LocPosition/text() cast as xs:int
+let $locationList:= $temp.vTempEpro_XML/*:JIData/*:locationList
+let $customElementList := $temp.vTempEpro_XML/*:JIData/*:customElementList
+let $addressList := $temp.vTempEpro_XML/*:JIData/*:addressList
+let $accountsPayableList := $temp.vTempEpro_XML/*:JIData/*:accountsPayableList
+let $approvedForERPSync := if($customElementList/customElement/customElementValueList/customElementValue/text()[../../../customElementIdentifier/text() = 'Supplier_Status'] = 'Deactivate') then(
+    'false')
+else('true')
+let $step := fn:concat($temp.vTempStep, '')
+let $erpName := 'S4'
+let $purchasingOrg := if($temp.vTempGetInfoRefData_XML/*:result[@statementId = fn:concat($locPosition, '|org_id_ongoing')]/*:row/erp_value/text() != '' ) then ($temp.vTempGetInfoRefData_XML/*:result[@statementId = fn:concat($locPosition , '|org_id_ongoing')]/*:row/erp_value/text())
+else('')
+
+
+let $bpIdADR := $temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text()
+
+let $bpIdTRDP := $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text()
+
+let $OABpId := if ($bpIdADR = $bpIdTRDP) then ($bpIdTRDP)
+else($bpIdADR)
+
+let $vendor := if($step = 'BAPI_TRDP' or $step = 'SIntImportSupplierSapS4_TRDP' or $step = 'SIntSupplierRoundTrip')then(
+	$bpIdTRDP)
+else if ($step = 'BAPI_ADR' or $step = 'SIntImportSupplierSapS4_ADR' or $step ='RoundTrip ADR')then(
+	$bpIdADR)
+else('')
+
+let $addressIDADR := if(($step = 'BAPI_ADR' or $step = 'SIntImportSupplierSapS4_ADR') and $temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text() != '' ) then(
+				$temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text())
+                else ('')
+let $addressIDTRDP := if(($step = 'BAPI_TRDP' or $step = 'SIntImportSupplierSapS4_TRDP') and $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text() != '' ) then(
+                $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text())
+                else ('')           
+return
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:j1s="http://host.bs.com/common/webservice/J1Supplier/"&gt;
+	&lt;soapenv:Header/&gt;
+	&lt;soapenv:Body&gt;
+		&lt;j1s:importJ1SupplierRequestMSG&gt;
+			&lt;supplier&gt;
+				&lt;operation&gt;
+					&lt;code&gt;UPDATE&lt;/code&gt;
+					&lt;identificationField&gt;j1id&lt;/identificationField&gt;
+					&lt;identificationValue&gt;{$temp.vTempEpro_XML/*:JIData/*:thirdPartyRefNumber/text()}&lt;/identificationValue&gt;
+				&lt;/operation&gt;
+				&lt;J1Data/&gt;
+				&lt;JIData&gt;
+					&lt;erpNumber&gt;{$temp.vTempEpro_XML/*:JIData/*:erpNumber/text()}&lt;/erpNumber&gt;
+					&lt;thirdPartyRefNumber&gt;{$temp.vTempEpro_XML/*:JIData/*:thirdPartyRefNumber/text()}&lt;/thirdPartyRefNumber&gt;
+					&lt;approvedForERPSync&gt;{$approvedForERPSync}&lt;/approvedForERPSync&gt;
+					&lt;locationList&gt;
+						&lt;location&gt;
+							{
+							if($temp.vTempTRDP_XML_Output/*:success/*:message/value/text() = 'Success Standard Process' or 
+								$temp.vTempADR_XML_Output/*:success/*:message/value/text() = 'Success Standard Process') then (
+								let $BusinessPartnerGroupingTRDP := if($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartnerGrouping/text() = 'TRDP')then(
+									if(fn:concat($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_Supplier/*:d/*:to_SupplierPurchasingOrg/*:results/*:to_PartnerFunction/*:results[1]/*:Supplier/text(), '') != '')then(
+										fn:concat(if($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text() != '1') then(
+												     $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text())
+												else(''),'|',$temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_Supplier/*:d/*:to_SupplierPurchasingOrg/*:results/*:to_PartnerFunction/*:results[1]/*:Supplier/text()))
+									else(
+										if($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text() != '1') then(
+											$temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text())
+										else('')))
+								else('')
+								
+								let $BusinessPartnerGroupingADR := if($temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/BusinessPartnerGrouping/text() = 'ADR')then(
+									if($temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text() != '1')then(
+									$temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text())
+									else('')
+								)
+								else('')
+								
+								let $erpNumber := if($BusinessPartnerGroupingTRDP != '') then(
+								fn:concat($erpName,'|',$purchasingOrg, '|', $BusinessPartnerGroupingTRDP))
+								else(fn:concat($erpName,'|',$purchasingOrg, '|','|', $BusinessPartnerGroupingADR))
+								return
+								&lt;erpNumber&gt;{$erpNumber}&lt;/erpNumber&gt;
+							)
+							else if(fn:concat($locationList/location[$locPosition]/erpNumber/text(), '') = '') then(
+								if($step = 'BAPI_TRDP' or $step = 'SIntImportSupplierSapS4_TRDP' or $step = 'SIntSupplierRoundTrip')then(
+									if(fn:concat($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_Supplier/*:d/*:to_SupplierPurchasingOrg/*:results/*:to_PartnerFunction/*:results/*:Supplier/text(), '') != '')then(
+										&lt;erpNumber&gt;{fn:concat($erpName,'|',$purchasingOrg, '|', if($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text() != '1') then(
+												     $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text())
+												else(''), '|', $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_Supplier/*:d/*:to_SupplierPurchasingOrg/*:results/*:to_PartnerFunction/*:results/*:Supplier/text())}&lt;/erpNumber&gt;
+									)else(
+										&lt;erpNumber&gt;{fn:concat($erpName,'|',$purchasingOrg, '|', if($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text() != '1') then(
+												     $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text())
+												else(''))}&lt;/erpNumber&gt;)	
+									
+								)else if ($step = 'BAPI_ADR' or $step = 'SIntImportSupplierSapS4_ADR' or $step ='RoundTrip ADR')then(
+									&lt;erpNumber&gt;{fn:concat($erpName,'|',$purchasingOrg, '||', if($temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text() != '1')then(
+																							     $temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text())
+																							 else(''))}&lt;/erpNumber&gt;)
+								else(
+										&lt;erpNumber&gt;{fn:concat($erpName,'|',$purchasingOrg)}&lt;/erpNumber&gt;
+								)
+							)
+							else(
+								&lt;erpNumber&gt;{$locationList/location[$locPosition]/erpNumber/text()}&lt;/erpNumber&gt;)
+							}
+							&lt;internalId&gt;{$locationList/location[$locPosition]/internalId/text()}&lt;/internalId&gt;
+							&lt;supportsOrderFulfillment&gt;Yes&lt;/supportsOrderFulfillment&gt;
+							&lt;customElementList&gt;
+			                {
+							if($addressIDADR != '') then (
+								&lt;customElement&gt;
+									&lt;customElementIdentifier&gt;ERPNUMBER_FULFILLMENT&lt;/customElementIdentifier&gt;
+									&lt;customElementValueList&gt;
+										&lt;customElementValue&gt;{fn:concat($erpName,'|',$bpIdADR,'|',$addressIDADR)}&lt;/customElementValue&gt;
+									&lt;/customElementValueList&gt;
+								&lt;/customElement&gt;)
+                             else()
+                             }
+                             {
+                             if($addressIDTRDP != '') then(
+								&lt;customElement&gt;
+									&lt;customElementIdentifier&gt;ERPNUMBER_REMITTANCE&lt;/customElementIdentifier&gt;
+									&lt;customElementValueList&gt;
+										&lt;customElementValue&gt;{fn:concat($erpName,'|',$bpIdTRDP,'|',$addressIDTRDP)}&lt;/customElementValue&gt;
+									&lt;/customElementValueList&gt;
+								&lt;/customElement&gt;)
+							else()
+							}
+							{
+							for $bankResult in $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerBank/*:results
+							let $S4BankID := fn:tokenize($bankResult/*:BankIdentification/text(), '\|')[1]
+							let $tmpS4BankID := if (matches(substring($S4BankID,3,2),'0[1-9]|[1-9]|9[0-9]')) then ($S4BankID) else('')
+							let $eProInternalID := fn:tokenize($bankResult/*:BankIdentification/text(), '\|')[2]
+							let $accountsPayable := $accountsPayableList/accountsPayable[internalId/text() = $eProInternalID ]
+							let $erpNumberAP := fn:concat($accountsPayable/erpNumber/text(), '_ID')
+							let $valueBankID := fn:tokenize($locationList/location[$locPosition]/customElementList/customElement[customElementIdentifier/text() = $erpNumberAP]/customElementValueList/customElementValue/text(),'\|')[3]
+							let $valueStartDate := fn:tokenize($locationList/location[$locPosition]/customElementList/customElement[customElementIdentifier/text() = $erpNumberAP]/customElementValueList/customElementValue/text(),'\|')[4]
+							let $valueEndDate := fn:tokenize($locationList/location[$locPosition]/customElementList/customElement[customElementIdentifier/text() = $erpNumberAP]/customElementValueList/customElementValue/text(),'\|')[5]
+							where $eProInternalID != '' and $tmpS4BankID != '' and $accountsPayable/erpNumber/text() != ''
+							and fn:concat($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:BusinessPartner/text(), '') != ''
+							return
+								if ($S4BankID =  $valueBankID and $bankResult/*:ValidityStartDate/text() = $valueStartDate 
+									and $bankResult/*:ValidityEndDate/text() = $valueEndDate) then ()
+								else(
+									&lt;customElement&gt;
+									&lt;customElementIdentifier&gt;{$erpNumberAP}&lt;/customElementIdentifier&gt;
+									&lt;customElementValueList&gt;
+										&lt;customElementValue&gt;{fn:concat($erpName,'|',$temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:BusinessPartner/text(),'|',$S4BankID,'|',$bankResult/*:ValidityStartDate/text(),'|',$bankResult/*:ValidityEndDate/text())}&lt;/customElementValue&gt;
+									&lt;/customElementValueList&gt;
+								&lt;/customElement&gt;)
+							}
+							
+							&lt;customElement&gt;
+									&lt;customElementIdentifier&gt;IntegrationStatus&lt;/customElementIdentifier&gt;
+									&lt;customElementValueList&gt;
+										&lt;customElementValue&gt;Error&lt;/customElementValue&gt;
+									&lt;/customElementValueList&gt;
+								&lt;/customElement&gt;
+								&lt;customElement&gt;
+									&lt;customElementIdentifier&gt;ErrorLog&lt;/customElementIdentifier&gt;
+									&lt;customElementValueList&gt;
+										&lt;customElementValue&gt;{
+											if ($temp.vTempGetET_XML_Output/*:messages/message[1]/text() != '') then(
+												fn:substring($temp.vTempGetET_XML_Output/*:messages/message[1]/text(),1,100))
+											else(fn:substring($temp.vTempTRDP_XML_Output/*:error/*:message/*:value/text(),1,100))}
+										&lt;/customElementValue&gt;
+									&lt;/customElementValueList&gt;
+								&lt;/customElement&gt;
+							&lt;/customElementList&gt;
+						&lt;/location&gt;
+					&lt;/locationList&gt;
+					&lt;customElementList&gt;
+						&lt;customElement&gt;
+							&lt;customElementIdentifier&gt;S4_errorhandling&lt;/customElementIdentifier&gt;
+							&lt;customElementValueList&gt;
+								&lt;customElementValue&gt;{fn:substring(fn:concat('VENDOR: ',$vendor, ' Purchasing Org: ', $purchasingOrg, ' ', $temp.vTempGetET_XML_Output/*:messages/message[1]/text()),1,500)}&lt;/customElementValue&gt;
+							&lt;/customElementValueList&gt;
+						&lt;/customElement&gt;
+					&lt;/customElementList&gt;
+				&lt;/JIData&gt;
+			&lt;/supplier&gt;
+		&lt;/j1s:importJ1SupplierRequestMSG&gt;
+	&lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</expression>
+                                                </operation>
+                                                <link id="lqcsrprz" targetId="lqcsrprb"/>
+                                             </assignment>
+                                             <eventContainer id="lqcsrprb">
+                                                <service id="lqcsrpre">
+                                                   <title>SvcImportJ1SupplierEpro</title>
+                                                   <serviceName>Conn-SC-ePro-J1Supplier:importJ1Supplier</serviceName>
+                                                   <serviceGUID>hnnCljE7RWkjiD80Ha4SiK</serviceGUID>
+                                                   <serviceInput>
+                                                      <parameter name="in_scRequest" source="formula">
+                                                         <expression language="XQuery">util:toXML($temp.vTempImportJ1Supplier_XML_Input)</expression>
+                                                      </parameter>
+                                                   </serviceInput>
+                                                </service>
+                                                <flow id="lqcsrprc">
+                                                   <assignment id="md3ilrq3">
+                                                      <title>AssignImportJ1Supplier_XML_Output</title>
+                                                      <operation source="formula" to="temp.vTempImportJ1Supplier_XML_Output">
+                                                         <expression language="XQuery">util:parseXML($output.out_scResponse)</expression>
+                                                      </operation>
+                                                   </assignment>
+                                                   <link id="lqcsrps2" targetId="lqcsrprb" type="containerLink"/>
+                                                </flow>
+                                                <flow id="lqcsrprd">
+                                                   <link id="lqcsrps3" targetId="lqcsrprb" type="containerLink"/>
+                                                </flow>
+                                                <link id="lqcsrps0" targetId="lqcsrprc" type="containerLink"/>
+                                                <events>
+                                                   <catch faultField="faultSvcImportJ1SupplierEpro"
+                                                          id="lacyo0vg"
+                                                          interrupting="true">
+                                                      <link id="lqcsrps1" targetId="lqcsrprd" type="containerLink"/>
+                                                   </catch>
+                                                </events>
+                                             </eventContainer>
+                                             <link id="lqcsrpry" targetId="lqcsrpr8" type="containerLink"/>
+                                          </flow>
+                                          <flow id="lqcsrprf">
+                                             <link id="lqcsrps4" targetId="lqcsrpr8" type="containerLink"/>
+                                          </flow>
+                                          <link id="lqcsrprw" targetId="lqcsrpr9" type="containerLink"/>
+                                          <events>
+                                             <catch faultField="faultSvcGetET" id="lak0fcpc" interrupting="true">
+                                                <link id="lqcsrprx" targetId="lqcsrprf" type="containerLink"/>
+                                             </catch>
+                                          </events>
+                                       </eventContainer>
+                                       <link id="lqcsrprv" targetId="lqcsrpr6" type="containerLink"/>
+                                    </flow>
+                                    <flow id="lqcsrprh">
+                                       <eventContainer id="lqcsrpri">
+                                          <service id="lqcsrprl">
+                                             <title>SvcFilePutTicket</title>
+                                             <serviceName>Conn-File-SuppSapS4China:putTicket</serviceName>
+                                             <serviceGUID>2OM7MmBwFlSgSYsmvX8lE8</serviceGUID>
+                                             <serviceInput>
+                                                <parameter name="fileWriteTask" source="formula">
+                                                   <expression language="XQuery">&lt;FileWriteTask&gt;
+	&lt;fileName&gt;{$temp.vTempTicketFile}&lt;/fileName&gt;
+	&lt;format&gt;{'PlainText'}&lt;/format&gt;
+	&lt;content&gt;{$temp.vTempTicketMessage}&lt;/content&gt;
+&lt;/FileWriteTask&gt;</expression>
+                                                </parameter>
+                                             </serviceInput>
+                                          </service>
+                                          <flow id="lqcsrprj">
+                                             <link id="lqcsrps8" targetId="lqcsrpri" type="containerLink"/>
+                                          </flow>
+                                          <flow id="lqcsrprk">
+                                             <link id="lqcsrps9" targetId="lqcsrpri" type="containerLink"/>
+                                          </flow>
+                                          <link id="lqcsrps6" targetId="lqcsrprj" type="containerLink"/>
+                                          <events>
+                                             <catch faultField="faultSvcFilePutTicket"
+                                                    id="kusl0zda"
+                                                    interrupting="true">
+                                                <link id="lqcsrps7" targetId="lqcsrprk" type="containerLink"/>
+                                             </catch>
+                                          </events>
+                                       </eventContainer>
+                                       <link id="lqcsrps5" targetId="lqcsrpr6" type="containerLink"/>
+                                    </flow>
+                                    <link id="lqcsrprs" targetId="lqcsrpr7" type="containerLink"/>
+                                    <link id="lqcsrprt" targetId="lqcsrprh" type="containerLink"/>
+                                    <link id="lqcsrpru" targetId="lqcsrprm"/>
+                                 </container>
+                                 <link id="lqcsrprq" targetId="lqcsrpr3" type="containerLink"/>
+                              </flow>
+                              <flow id="lqcsrprn">
+                                 <link id="lqcsrpsa" targetId="lqcsrpr3" type="containerLink"/>
+                              </flow>
+                              <link id="lqcsrpro" targetId="lqcsrpr4" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="greater-than">
+                                       <arg name="left">{$temp.vTempTicket}</arg>
+                                       <arg name="right">{0}</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="lqcsrprp" targetId="lqcsrprn" type="containerLink"/>
+                              <link id="md4wkxfj" targetId="md4wkxfi"/>
+                           </container>
+                           <link id="l1ktimy3" targetId="l1ktimxz" type="containerLink"/>
+                        </flow>
+                        <flow id="l1ktimy5">
+                           <assignment id="l1ktinro">
+                              <title>AssignError</title>
+                              <operation source="formula" to="temp.vTempStep">
+                                 <expression language="XQuery">'NameValidationIDQ'</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempCode">
+                                 <expression language="XQuery">'-1'</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempErrorMessageEpro">
+                                 <expression language="XQuery">$temp.vTempNameValidation_XML_Output/*:Body/*:mplt_custom_Oracle_source_VendorName_Validation_mdm_load_OperationResponse/*:NEWOUTPUT/*:Out_Message/text()</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempErrorMessage">
+                                 <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
+                              </operation>
+                              <link id="l1ktinzx" targetId="l1ktinzv"/>
+                           </assignment>
+                           <jumpTo id="l1ktinzv">
+                              <link id="l1ktinzw" targetId="lqcsrpr5"/>
+                           </jumpTo>
+                        </flow>
+                        <link id="l1ktimy1" targetId="l1ktimy2" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$temp.vTempValidationStatus}</arg>
+                                 <arg name="right">Valid</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="l1ktimy4" targetId="l1ktimy5" type="containerLink"/>
+                        <link id="md397zha" targetId="md397zm2"/>
+                     </container>
+                     <eventContainer id="md397zm2">
+                        <subflow id="md397zh9">
+                           <title>SubSDasSendPayloadsToOntapSupp</title>
+                           <subflowGUID>3hgi0WsCW7acJT0Xtb5j2z</subflowGUID>
+                           <subflowPath>SDasSendPayloadsToOntapSupp</subflowPath>
+                           <runForEach>false</runForEach>
+                           <input>
+                              <parameter name="in_PayloadList" source="formula" updatable="true">
+                                 <expression language="XQuery">$temp.vTempParameterList
+</expression>
+                              </parameter>
+                           </input>
+                           <outputDef/>
+                        </subflow>
+                        <flow id="md397zm4">
+                           <link id="md397zm5" targetId="md397zm2" type="containerLink"/>
+                        </flow>
+                        <flow id="md397zm7">
+                           <link id="md397zm8" targetId="md397zm2" type="containerLink"/>
+                        </flow>
+                        <link id="md397zm3" targetId="md397zm4" type="containerLink"/>
+                        <events>
+                           <catch faultField="faultSubSDasSendPayloadsToOntapSupp"
+                                  id="md397zlt"
+                                  interrupting="true">
+                              <link id="md397zm6" targetId="md397zm7" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="l1ktimj8" targetId="l1ktimj5" type="containerLink"/>
+                  </flow>
+                  <flow id="l1ktimja">
+                     <assignment id="l1ktinac">
+                        <title>AssignError</title>
+                        <operation source="formula" to="temp.vTempStep">
+                           <expression language="XQuery">'NameValidationIDQ'</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempCode">
+                           <expression language="XQuery">$output.faultSvcNameValidationIDQ[1]/code</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempFault">
+                           <expression language="XQuery">let $detail := fn:concat($output.faultSvcNameValidationIDQ[1]/detail/text(), '')
+let $reason := fn:concat($output.faultSvcNameValidationIDQ[1]/reason/text(), '')
+return
+if($detail != '' and $reason != '') then(
+	fn:concat('Detail: ', $detail, '. Reason: ', $reason))
+else if($detail != '') then(
+	fn:concat('Detail: ', $detail))
+else if($reason != '') then(
+	fn:concat('Reason: ', $reason))
+else()</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempErrorMessageEpro">
+                           <expression language="XQuery">fn:concat('Failed when trying to invoke the NameValidationDQ service: ', $temp.vTempFault)</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempErrorMessage">
+                           <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
+                        </operation>
+                        <link id="l1ktinkg" targetId="l1ktinke"/>
+                     </assignment>
+                     <jumpTo id="l1ktinke">
+                        <link id="l1ktinkf" targetId="lqcsrpr5"/>
+                     </jumpTo>
+                  </flow>
+                  <link id="l1ktimj6" targetId="l1ktimj7" type="containerLink"/>
+                  <link id="l1ktioce" targetId="c"/>
+                  <events>
+                     <catch faultField="faultSvcNameValidationIDQ"
+                            id="l1ktimhy"
+                            interrupting="true">
+                        <link id="l1ktimj9" targetId="l1ktimja" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>lMoodcIh0oRekT1H6UlfIu</types1:GUID>
+      <types1:DisplayName>PRC-SupplierEproSapS4China</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-11-21T08:11:24.35Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

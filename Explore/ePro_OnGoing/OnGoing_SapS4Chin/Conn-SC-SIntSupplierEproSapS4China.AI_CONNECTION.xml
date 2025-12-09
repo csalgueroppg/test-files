@@ -1,0 +1,44 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>p6vNljLYqBGZkL0-gt-13822904-2025-11-12T21:54:54.243Z::conn.xml</types1:EntryId>
+      <types1:Name>Conn-SC-SIntSupplierEproSapS4China</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>@appType=App Connection, @application=SapS4China, @additionalText=Connection in charge of communication with SapS4China</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2025-11-12T21:54:54Z</types1:CreationDate>
+      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-11-19T17:24:16Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-11-21T07:14:15Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Conn-SC-SIntSupplierEproSapS4China/Conn-SC-SIntSupplierEproSapS4China.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Conn-SC-SIntSupplierEproSapS4China"
+                     label="Conn-SC-SIntSupplierEproSapS4China"
+                     name="Conn-SC-SIntSupplierEproSapS4China">
+            <description>@appType=App Connection, @application=SapS4China, @additionalText=Connection in charge of communication with SapS4China</description>
+            <tags/>
+            <agent/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SC_SIntSupplierEproSapS4China/SC_SIntSupplierEproSapS4China_svcDef.xml"
+                               guid="1qSgsKpwEtZlBllj7Pfa0x"
+                               name="SC-SIntSupplierEproSapS4China"
+                               supportsConnectionTest="false"
+                               uuid="48c99bb7-12b9-4141-a91c-4c9cc30bda5b">
+               <description>@scType=REST, @application= SapS4China, @additionalText=Connection in charge of communication with SapS4China</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>5Q5QqkwW4XJeyqWFzSsIse</types1:GUID>
+      <types1:DisplayName>Conn-SC-SIntSupplierEproSapS4China</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-11-21T08:11:23.178Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
