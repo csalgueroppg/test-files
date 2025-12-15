@@ -14,10 +14,10 @@
       <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
       <types1:CreationDate>2025-11-12T21:54:57Z</types1:CreationDate>
       <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
-      <types1:ModificationDate>2025-11-20T22:15:40Z</types1:ModificationDate>
+      <types1:ModificationDate>2025-11-28T08:51:16Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
-      <types1:PublicationDate>2025-11-20T22:15:51Z</types1:PublicationDate>
+      <types1:PublicationDate>2025-11-28T08:53:17Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/SC_SIntSupplierEproSapS4China/SC_SIntSupplierEproSapS4China_svcDef.xml</types1:PublishedContributionId>
       <types1:Entry>
          <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
@@ -50,7 +50,7 @@
                   </input>
                   <binding>
                      <restSimpleBinding multiUsing="semicolonSeparated"
-                                        url="{fn:concat(util:resolveURN('urn:host-https'), '/process-engine/services/SIntSupplierEproSapS4?wsdl')}"
+                                        url="{fn:concat(util:resolveURN('urn:host-https'), '/process-engine/services/SIntSupplierEproSapS4China?wsdl')}"
                                         verb="POST">
                         <mutualAuth enabled="false">
                            <keyStore mode="file"/>
@@ -72,5 +72,5 @@
       <types1:GUID>1qSgsKpwEtZlBllj7Pfa0x</types1:GUID>
       <types1:DisplayName>SC-SIntSupplierEproSapS4China</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2025-11-21T08:11:22.565Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2025-12-01T20:05:54.008Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

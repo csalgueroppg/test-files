@@ -14,10 +14,10 @@ send the supplier to ERP-S4 and generate the RT in Epro and MDM</types1:Descript
       <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
       <types1:CreationDate>2025-11-20T15:43:58Z</types1:CreationDate>
       <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
-      <types1:ModificationDate>2025-11-21T06:43:57Z</types1:ModificationDate>
+      <types1:ModificationDate>2025-11-28T07:57:22Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
-      <types1:PublicationDate>2025-11-21T06:45:49Z</types1:PublicationDate>
+      <types1:PublicationDate>2025-11-28T07:59:39Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SIntOnGoingSupplierEproSapS4China/SIntOnGoingSupplierEproSapS4China.pd.xml</types1:PublishedContributionId>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -152,7 +152,7 @@ send the supplier to ERP-S4 and generate the RT in Epro and MDM</description>
                   </operation>
                   <operation source="formula" to="temp.vTempProcessTitle">
                      <expression language="XQuery">if($temp.vTempEpro_XML/*:JIData/*:erpNumber/text()) then(
-	ipd:setProcessTitle(fn:concat('SIntOnGoingSupplierEproSapS4-', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text())))
+	ipd:setProcessTitle(fn:concat('SIntOnGoingSupplierEproSapS4China-', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text())))
 else()</expression>
                   </operation>
                   <link id="md39bq4v" targetId="l1ktic8t"/>
@@ -190,15 +190,15 @@ else()</expression>
                            <assignment id="l1kticb2">
                               <title>AssignTicket</title>
                               <operation source="formula" to="temp.vTempTicketFile">
-                                 <expression language="XQuery">fn:concat('Log_OnGoing_SAP300_', fn:translate(fn:substring(fn:string(fn:current-dateTime()), 0, 24), '-T:.', ''), '_', util:generate-random-string(4), '.txt')</expression>
+                                 <expression language="XQuery">fn:concat('Log_OnGoing_SAPS4China_', fn:translate(fn:substring(fn:string(fn:current-dateTime()), 0, 24), '-T:.', ''), '_', util:generate-random-string(4), '.txt')</expression>
                               </operation>
                               <operation source="formula" to="temp.vTempTicketMessage">
-                                 <expression language="XQuery">fn:concat('InstanceID: ', util:getProcessId(), ', Agent: ', $temp.vTempAgent, ', ERP: SAP300, Process: SIntOnGoingSupplierEproSap300', ', MDM ID: ', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), ', Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $temp.vTempErrorMessageEpro, ' PipeMessage InstanceID: ', util:getProcessId(), ', Agent: ', $temp.vTempAgent, ', ERP: SAP300, Process: SIntOnGoingSupplierEproSap300', ', MDM ID: ', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), ', Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $temp.vTempErrorMessage)</expression>
+                                 <expression language="XQuery">fn:concat('InstanceID: ', util:getProcessId(), ', Agent: ', $temp.vTempAgent, ', ERP: SAPS4China, Process: SIntOnGoingSupplierEproSapS4China', ', MDM ID: ', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), ', Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $temp.vTempErrorMessageEpro, ' PipeMessage InstanceID: ', util:getProcessId(), ', Agent: ', $temp.vTempAgent, ', ERP: SAPS4China, Process: SIntOnGoingSupplierEproSapS4China', ', MDM ID: ', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), ', Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $temp.vTempErrorMessage)</expression>
                               </operation>
                               <operation source="formula" to="temp.vTempGetET_XML_Input">
                                  <expression language="XQuery">&lt;root&gt;
 	&lt;mdmID&gt;{$temp.vTempEpro_XML/*:JIData/*:erpNumber/text()}&lt;/mdmID&gt;
-	&lt;erpName&gt;SAP300&lt;/erpName&gt;
+	&lt;erpName&gt;S4_GC&lt;/erpName&gt;
 	&lt;erpNumber&gt;&lt;/erpNumber&gt;
 	&lt;messages&gt;
 		&lt;message&gt;{$temp.vTempErrorMessageEpro}&lt;/message&gt;
@@ -280,13 +280,13 @@ return
 					&lt;/locationList&gt;
 					&lt;customElementList&gt;
 						&lt;customElement&gt;
-							&lt;customElementIdentifier&gt;SAP300_IntegrationStatus&lt;/customElementIdentifier&gt;
+							&lt;customElementIdentifier&gt;SAPS4China_IntegrationStatus&lt;/customElementIdentifier&gt;
 							&lt;customElementValueList&gt;
 								&lt;customElementValue&gt;Error&lt;/customElementValue&gt;
 							&lt;/customElementValueList&gt;
 						&lt;/customElement&gt;
 						&lt;customElement&gt;
-							&lt;customElementIdentifier&gt;SAP300_ErrorLog&lt;/customElementIdentifier&gt;
+							&lt;customElementIdentifier&gt;SAPS4China_ErrorLog&lt;/customElementIdentifier&gt;
 							&lt;customElementValueList&gt;
 								&lt;customElementValue&gt;{fn:substring(fn:concat('Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $temp.vTempGetET_XML_Output/*:messages/message[1]/text()), 1, 500)}&lt;/customElementValue&gt;
 							&lt;/customElementValueList&gt;
@@ -443,7 +443,7 @@ return
                      <assignment id="l1ktic9y">
                         <title>AssignError</title>
                         <operation source="formula" to="temp.vTempStep">
-                           <expression language="XQuery">'SIntSupplierEproSap300'</expression>
+                           <expression language="XQuery">'SIntSupplierEproSapS4China'</expression>
                         </operation>
                         <operation source="formula" to="temp.vTempCode">
                            <expression language="XQuery">$output.faultSvcProcess[1]/code</expression>
@@ -461,7 +461,7 @@ else if($reason != '') then(
 else()</expression>
                         </operation>
                         <operation source="formula" to="temp.vTempErrorMessageEpro">
-                           <expression language="XQuery">fn:concat('Failed when trying to invoke the SIntSupplierEproSap300 service: ', $temp.vTempFault)</expression>
+                           <expression language="XQuery">fn:concat('Failed when trying to invoke the SIntSupplierEproSapS4China service: ', $temp.vTempFault)</expression>
                         </operation>
                         <operation source="formula" to="temp.vTempErrorMessage">
                            <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
@@ -487,5 +487,5 @@ else()</expression>
       <types1:GUID>3lKaPCFSr51lQA2Jk7Fkar</types1:GUID>
       <types1:DisplayName>SIntOnGoingSupplierEproSapS4China</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2025-11-21T08:11:23.759Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2025-12-01T20:05:55.246Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

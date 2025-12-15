@@ -12,11 +12,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
       <types1:CreationDate>2025-11-21T06:59:02Z</types1:CreationDate>
-      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
-      <types1:ModificationDate>2025-11-21T07:34:16Z</types1:ModificationDate>
+      <types1:ModifiedBy>Castillo.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-12-01T13:57:34Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
-      <types1:PublicationDate>2025-11-21T07:34:59Z</types1:PublicationDate>
+      <types1:PublishedBy>Castillo.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-12-01T13:58:02Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.PRC-SupplierEproSapS4China/PRC-SupplierEproSapS4China.pd.xml</types1:PublishedContributionId>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -498,7 +498,7 @@
                   </operation>
                   <operation source="formula" to="temp.vTempProcessTitle">
                      <expression language="XQuery">if($temp.vTempEpro_XML/*:JIData/*:erpNumber/text()) then(
-	ipd:setProcessTitle(fn:concat('PRC-SupplierEproSapS4-', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text())))
+	ipd:setProcessTitle(fn:concat('PRC-SupplierEproSapS4China-', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text())))
 else()</expression>
                   </operation>
                   <operation source="formula" to="output.out_InstanceID">
@@ -564,7 +564,7 @@ return
 				let $businessUnit := $location/assignedBusinessUnitsList/assignedBusinessUnit[1]/businessUnitInternalName/text()
 				let $query :=
 					&lt;get:query statementId="{fn:concat($input.in_LocPosition ,'|org_id_ongoing')}"&gt;
-						{fn:concat('SELECT * FROM ',$schema,'.org_id_ongoing WHERE org_Id=',"'",$businessUnit,"'",' and erp_name = ',"'",'S4',"'")}&lt;/get:query&gt;
+						{fn:concat('SELECT * FROM ',$schema,'.org_id_ongoing WHERE org_Id=',"'",$businessUnit,"'",' and erp_name = ',"'",'S4_GC',"'")}&lt;/get:query&gt;
 				return
 				$query)
 			else ()
@@ -639,7 +639,7 @@ return
                            <assignment id="lsdfpgbo">
                               <title>AssignError</title>
                               <operation source="formula" to="temp.vTempErpName">
-                                 <expression language="XQuery">'SAPS4'</expression>
+                                 <expression language="XQuery">'SAPS4China'</expression>
                               </operation>
                               <operation source="formula" to="temp.vTempStep">
                                  <expression language="XQuery">'GetInfoRef'</expression>
@@ -712,7 +712,7 @@ return
                      <assignment id="lsdfpdfo">
                         <title>AssignError</title>
                         <operation source="formula" to="temp.vTempErpName">
-                           <expression language="XQuery">'SAPS4'</expression>
+                           <expression language="XQuery">'SAPS4China'</expression>
                         </operation>
                         <operation source="formula" to="temp.vTempStep">
                            <expression language="XQuery">'GetInfoRef'</expression>
@@ -1071,7 +1071,7 @@ else(0)</expression>
                                              </assignment>
                                              <eventContainer id="m3z2lc1i">
                                                 <subflow id="m3z2lc26">
-                                                   <title>SubSIntImportSupplierSapS4</title>
+                                                   <title>SubSIntImportSupplierSapS4China</title>
                                                    <subflowGUID>8kqlRLiy414jghh7kRnPqp</subflowGUID>
                                                    <subflowPath>SIntImportSupplierSapS4China</subflowPath>
                                                    <runForEach>false</runForEach>
@@ -1122,7 +1122,7 @@ let $locPosition as xs:int := $input.in_LocPosition/text() cast as xs:int
 let $internalId := $locationList/location[$locPosition]/internalId/text()
 let $erpNumber := $locationList/location[$locPosition]/erpNumber/text()
 let $bpIdADR := fn:concat($locationList/location[$locPosition]/associatedAddressList/associatedAddress/addressRef/thirdPartyRefNumber/text()[../../../type/text() = 'fulfillment'], '')
-let $erpName := 'S4'
+let $erpName := 'S4_GC'
 let $addressIDADR := $temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text()
 let $approvedForERPSync := if($customElementList/customElement/customElementValueList/customElementValue/text()[../../../customElementIdentifier/text() = 'Supplier_Status'] = 'Deactivate') then(
     'false')
@@ -1326,7 +1326,7 @@ else(0)</expression>
                                                                <assignment id="m3z2lc1s">
                                                                   <title>AssignError</title>
                                                                   <operation source="formula" to="temp.vTempErpName">
-                                                                     <expression language="XQuery">'SAPS4'</expression>
+                                                                     <expression language="XQuery">'SAPS4China'</expression>
                                                                   </operation>
                                                                   <operation source="formula" to="temp.vTempStep">
                                                                      <expression language="XQuery">'RoundTrip ADR'</expression>
@@ -1377,7 +1377,7 @@ else()</expression>
                                                                <assignment id="m3z2lc1y">
                                                                   <title>AssignError</title>
                                                                   <operation source="formula" to="temp.vTempErpName">
-                                                                     <expression language="XQuery">'SAPS4'</expression>
+                                                                     <expression language="XQuery">'SAPS4China'</expression>
                                                                   </operation>
                                                                   <operation source="formula" to="temp.vTempStep">
                                                                      <expression language="XQuery">'RoundTrip ADR'</expression>
@@ -1415,7 +1415,7 @@ return
                                                          <assignment id="m3z2lc21">
                                                             <title>AssignError</title>
                                                             <operation source="formula" to="temp.vTempErpName">
-                                                               <expression language="XQuery">'SAPS4'</expression>
+                                                               <expression language="XQuery">'SAPS4China'</expression>
                                                             </operation>
                                                             <operation source="formula" to="temp.vTempStep">
                                                                <expression language="XQuery">'BAPI_ADR'</expression>
@@ -1451,21 +1451,21 @@ return
                                                    <assignment id="m3z2lc24">
                                                       <title>AssignError</title>
                                                       <operation source="formula" to="temp.vTempErpName">
-                                                         <expression language="XQuery">'SAPS4'</expression>
+                                                         <expression language="XQuery">'SAPS4China'</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempStep">
-                                                         <expression language="XQuery">'SIntImportSupplierSapS4_ADR'</expression>
+                                                         <expression language="XQuery">'SIntImportSupplierSapS4China_ADR'</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempCode">
-                                                         <expression language="XQuery">$output.faultSubSIntImportSupplierSapS4[1]/code</expression>
+                                                         <expression language="XQuery">$output.faultSubSIntImportSupplierSapS4China[1]/code</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempFault">
-                                                         <expression language="XQuery">let $ADR_XML_Output := if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":')) then(
-	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'}'))/*:error/*:message/*:value/text())
+                                                         <expression language="XQuery">let $ADR_XML_Output := if(fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"error":')) then(
+	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'}'))/*:error/*:message/*:value/text())
 else('')
 
-let $detail := fn:concat($output.faultSubSIntImportSupplierSapS4[1]/detail/text(), '')
-let $reason := fn:concat($output.faultSubSIntImportSupplierSapS4[1]/reason/text(), '')
+let $detail := fn:concat($output.faultSubSIntImportSupplierSapS4China[1]/detail/text(), '')
+let $reason := fn:concat($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(), '')
 return
 if($ADR_XML_Output != '')then(
 	$ADR_XML_Output)
@@ -1479,22 +1479,22 @@ else if($reason != '') then(
 else())</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempErrorMessageEpro">
-                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":')) then(
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"error":')) then(
  $temp.vTempFault)
 else(
-fn:concat('Failed when trying to invoke the SIntImportSupplierSapS4 service: ', $temp.vTempFault))</expression>
+fn:concat('Failed when trying to invoke the SIntImportSupplierSapS4China service: ', $temp.vTempFault))</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempErrorMessage">
                                                          <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempADR_XML_Output">
-                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"value":"Success Standard Process"')) then(
-	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'}')))
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"value":"Success Standard Process"')) then(
+	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'}')))
 else('')</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempADR_Json_Fault">
-                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"value":"Success Standard Process"')) then(
-$output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'}')
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"value":"Success Standard Process"')) then(
+$output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'}')
 else('')</expression>
                                                       </operation>
                                                       <link id="m3z2lc3a" targetId="m3z2lc25"/>
@@ -1505,7 +1505,7 @@ else('')</expression>
                                                 </flow>
                                                 <link id="m3z2lc2p" targetId="m3z2lc1j" type="containerLink"/>
                                                 <events>
-                                                   <catch faultField="faultSubSIntImportSupplierSapS4"
+                                                   <catch faultField="faultSubSIntImportSupplierSapS4China"
                                                           id="lqfda3ry"
                                                           interrupting="true">
                                                       <link id="m3z2lc2q" targetId="m3z2lc23" type="containerLink"/>
@@ -1533,10 +1533,10 @@ else('')</expression>
                                        <assignment id="m3z2lc29">
                                           <title>AssignError</title>
                                           <operation source="formula" to="temp.vTempErpName">
-                                             <expression language="XQuery">'SAPS4'</expression>
+                                             <expression language="XQuery">'SAPS4China'</expression>
                                           </operation>
                                           <operation source="formula" to="temp.vTempStep">
-                                             <expression language="XQuery">'SBusSupplierEproSapS4'</expression>
+                                             <expression language="XQuery">'SBusSupplierEproSapS4China'</expression>
                                           </operation>
                                           <operation source="formula" to="temp.vTempCode">
                                              <expression language="XQuery">$output.faultSvcBuildXML[1]/code</expression>
@@ -1554,7 +1554,7 @@ else if($reason != '') then(
 else()</expression>
                                           </operation>
                                           <operation source="formula" to="temp.vTempErrorMessageEpro">
-                                             <expression language="XQuery">fn:concat('Failed when trying to invoke the SBusSupplierEproSapS4 service: ', $temp.vTempFault)</expression>
+                                             <expression language="XQuery">fn:concat('Failed when trying to invoke the SBusSupplierEproSapS4China service: ', $temp.vTempFault)</expression>
                                           </operation>
                                           <operation source="formula" to="temp.vTempErrorMessage">
                                              <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
@@ -1680,7 +1680,7 @@ $json</expression>
                                              </assignment>
                                              <eventContainer id="m3z2lc6u">
                                                 <subflow id="m3z2lc7z">
-                                                   <title>SubSIntImportSupplierSapS4</title>
+                                                   <title>SubSIntImportSupplierSapS4China</title>
                                                    <subflowGUID>8kqlRLiy414jghh7kRnPqp</subflowGUID>
                                                    <subflowPath>SIntImportSupplierSapS4China</subflowPath>
                                                    <runForEach>false</runForEach>
@@ -1728,7 +1728,7 @@ let $internalId := $locationList/location[$locPosition]/internalId/text()
 let $erpNumber := $locationList/location[$locPosition]/erpNumber/text()
 let $bpIdADR := $locationList/location[$locPosition]/associatedAddressList/associatedAddress[type/text() = 'fulfillment']/addressRef/thirdPartyRefNumber/text()
 let $bpIdTRDP := fn:concat($locationList/location[$locPosition]/associatedAddressList/associatedAddress[type/text() = 'remitto']/addressRef/thirdPartyRefNumber/text(), '')
-let $erpName := 'S4'
+let $erpName := 'S4_GC'
 let $OABpId := if ($bpIdADR != $bpIdTRDP) then ($bpIdADR)
 else('')
 let $purchasingOrg := if($temp.vTempGetInfoRefData_XML/*:result[@statementId = fn:concat($locPosition , '|org_id_ongoing')]/*:row/erp_value/text() != '' ) then (
@@ -2125,7 +2125,7 @@ return
                                                                      <assignment id="m3z2lc7b">
                                                                         <title>AssignError</title>
                                                                         <operation source="formula" to="temp.vTempErpName">
-                                                                           <expression language="XQuery">'SAPS4'</expression>
+                                                                           <expression language="XQuery">'SAPS4China'</expression>
                                                                         </operation>
                                                                         <operation source="formula" to="temp.vTempStep">
                                                                            <expression language="XQuery">'SIntSupplierRoundTrip'</expression>
@@ -2195,7 +2195,7 @@ else(0)</expression>
                                                          <assignment id="m3z2lc7u">
                                                             <title>AssignError</title>
                                                             <operation source="formula" to="temp.vTempErpName">
-                                                               <expression language="XQuery">'SAPS4'</expression>
+                                                               <expression language="XQuery">'SAPS4China'</expression>
                                                             </operation>
                                                             <operation source="formula" to="temp.vTempStep">
                                                                <expression language="XQuery">'BAPI_TRDP'</expression>
@@ -2362,21 +2362,21 @@ else(0)</expression>
                                                    <assignment id="m3z2lc7x">
                                                       <title>AssignError</title>
                                                       <operation source="formula" to="temp.vTempErpName">
-                                                         <expression language="XQuery">'SAPS4'</expression>
+                                                         <expression language="XQuery">'SAPS4China'</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempStep">
-                                                         <expression language="XQuery">'SIntImportSupplierSapS4_TRDP'</expression>
+                                                         <expression language="XQuery">'SIntImportSupplierSapS4China_TRDP'</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempCode">
-                                                         <expression language="XQuery">$output.faultSubSIntImportSupplierSapS4[1]/code</expression>
+                                                         <expression language="XQuery">$output.faultSubSIntImportSupplierSapS4China[1]/code</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempFault">
-                                                         <expression language="XQuery">let $TRDP_XML_Output := if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":')) then(
-	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'}'))/*:error/*:message/*:value/text())
+                                                         <expression language="XQuery">let $TRDP_XML_Output := if(fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"error":')) then(
+	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'}'))/*:error/*:message/*:value/text())
 else('')
 
-let $detail := fn:concat($output.faultSubSIntImportSupplierSapS4[1]/detail/text(), '')
-let $reason := fn:concat($output.faultSubSIntImportSupplierSapS4[1]/reason/text(), '')
+let $detail := fn:concat($output.faultSubSIntImportSupplierSapS4China[1]/detail/text(), '')
+let $reason := fn:concat($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(), '')
 return
 if($TRDP_XML_Output != '')then(
 	$TRDP_XML_Output)
@@ -2390,29 +2390,29 @@ else if($reason != '') then(
 else())</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempErrorMessageEpro">
-                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":')) then(
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"error":')) then(
 $temp.vTempFault)
-else(fn:concat('Failed when trying to invoke the SIntImportSupplierSapS4 service: ', $temp.vTempFault))</expression>
+else(fn:concat('Failed when trying to invoke the SIntImportSupplierSapS4China service: ', $temp.vTempFault))</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempErrorMessage">
                                                          <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempTRDP_XML_Output">
-                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"value":"Success Standard Process"')) then(
-	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'}')))
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"value":"Success Standard Process"')) then(
+	util:parseJSON(fn:concat('{"root":',$output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'}')))
 else('')</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempParameterList">
                                                          <expression language="XQuery">if($temp.vTempTRDP_XML_Output != '')then(
 list:append($temp.vTempParameterList , &lt;Parameter&gt;
 &lt;name&gt;{fn:concat('S4_TRDP_Response_', $temp.vTempNameFileSFTP, '.json')}&lt;/name&gt;
-&lt;value&gt;{$output.faultSubSIntImportSupplierSapS4[1]/reason/text()}&lt;/value&gt;
+&lt;value&gt;{$output.faultSubSIntImportSupplierSapS4China[1]/reason/text()}&lt;/value&gt;
 &lt;/Parameter&gt;))
 else($temp.vTempParameterList)</expression>
                                                       </operation>
                                                       <operation source="formula" to="temp.vTempTRDP_Json_Fault">
-                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4[1]/reason/text(),'"value":"Success Standard Process"')) then(
-	$output.faultSubSIntImportSupplierSapS4[1]/reason/text())
+                                                         <expression language="XQuery">if(fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"error":') or fn:contains($output.faultSubSIntImportSupplierSapS4China[1]/reason/text(),'"value":"Success Standard Process"')) then(
+	$output.faultSubSIntImportSupplierSapS4China[1]/reason/text())
 else('')</expression>
                                                       </operation>
                                                       <link id="m3z2lc9l" targetId="m3z2lc7y"/>
@@ -2423,7 +2423,7 @@ else('')</expression>
                                                 </flow>
                                                 <link id="m3z2lc8i" targetId="m3z2lc6v" type="containerLink"/>
                                                 <events>
-                                                   <catch faultField="faultSubSIntImportSupplierSapS4"
+                                                   <catch faultField="faultSubSIntImportSupplierSapS4China"
                                                           id="lqfda4fe"
                                                           interrupting="true">
                                                       <link id="m3z2lc8j" targetId="m3z2lc7w" type="containerLink"/>
@@ -2451,10 +2451,10 @@ else('')</expression>
                                        <assignment id="m3z2lc82">
                                           <title>AssignError</title>
                                           <operation source="formula" to="temp.vTempErpName">
-                                             <expression language="XQuery">'SAPS4'</expression>
+                                             <expression language="XQuery">'SAPS4China'</expression>
                                           </operation>
                                           <operation source="formula" to="temp.vTempStep">
-                                             <expression language="XQuery">'SBusSupplierEproSapS4'</expression>
+                                             <expression language="XQuery">'SBusSupplierEproSapS4China'</expression>
                                           </operation>
                                           <operation source="formula" to="temp.vTempCode">
                                              <expression language="XQuery">$output.faultSvcBuildXML[1]/code</expression>
@@ -2472,7 +2472,7 @@ else if($reason != '') then(
 else()</expression>
                                           </operation>
                                           <operation source="formula" to="temp.vTempErrorMessageEpro">
-                                             <expression language="XQuery">fn:concat('Failed when trying to invoke the SBusSupplierEproSapS4 service: ', $temp.vTempFault)</expression>
+                                             <expression language="XQuery">fn:concat('Failed when trying to invoke the SBusSupplierEproSapS4China service: ', $temp.vTempFault)</expression>
                                           </operation>
                                           <operation source="formula" to="temp.vTempErrorMessage">
                                              <expression language="XQuery">$temp.vTempErrorMessageEpro</expression>
@@ -2512,14 +2512,14 @@ else()</expression>
                                  <assignment id="lqcsrpr5">
                                     <title>AssignTicket</title>
                                     <operation source="formula" to="temp.vTempTicketFile">
-                                       <expression language="XQuery">fn:concat('Log_OnGoing_SAPS4_', fn:translate(fn:substring(fn:string(fn:current-dateTime()), 0, 24), '-T:.', ''), '_', util:generate-random-string(4), '.txt')</expression>
+                                       <expression language="XQuery">fn:concat('Log_OnGoing_SAPS4China_', fn:translate(fn:substring(fn:string(fn:current-dateTime()), 0, 24), '-T:.', ''), '_', util:generate-random-string(4), '.txt')</expression>
                                     </operation>
                                     <operation source="formula" to="temp.vTempTicketMessage">
                                        <expression language="XQuery">let $erpName := if(fn:concat($temp.vTempErpName, '') != '') then(
 	fn:concat($temp.vTempErpName, '. '))
 else()
 return
-fn:concat('InstanceID: ', util:getProcessId(), ', Agent: ', $temp.vTempAgent, ', ERP: SAPS4, Process: PRC-SupplierEproSapS4', ', MDM ID: ', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), ', Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $erpName, $temp.vTempErrorMessageEpro, ' PipeMessage InstanceID: ', util:getProcessId(), ', Agent: ', $temp.vTempAgent, ', ERP: SAPS4, Process: PRC-SupplierEproSapS4', ', MDM ID: ', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), ', Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $erpName, $temp.vTempErrorMessage)</expression>
+fn:concat('InstanceID: ', util:getProcessId(), ', Agent: ', $temp.vTempAgent, ', ERP: SAPS4China, Process: PRC-SupplierEproSapS4China', ', MDM ID: ', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), ', Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $erpName, $temp.vTempErrorMessageEpro, ' PipeMessage InstanceID: ', util:getProcessId(), ', Agent: ', $temp.vTempAgent, ', ERP: SAPS4China, Process: PRC-SupplierEproSapS4China', ', MDM ID: ', $temp.vTempEpro_XML/*:JIData/*:erpNumber/text(), ', Step: ', $temp.vTempStep, ', Code: ', $temp.vTempCode, ', Error Message: ', $erpName, $temp.vTempErrorMessage)</expression>
                                     </operation>
                                     <operation source="formula" to="temp.vTempGetET_XML_Input">
                                        <expression language="XQuery">let $locationList := $temp.vTempEpro_XML/*:JIData/*:locationList
@@ -2529,7 +2529,7 @@ let $step := fn:concat($temp.vTempStep, '')
 return
 &lt;root&gt;
     &lt;mdmID&gt;{$temp.vTempEpro_XML/*:JIData/*:erpNumber/text()}&lt;/mdmID&gt;
-    &lt;erpName&gt;SAPS4&lt;/erpName&gt;
+    &lt;erpName&gt;S4_GC&lt;/erpName&gt;
     &lt;erpNumber&gt;{$locationList/location[$locPosition]/erpNumber/text()}&lt;/erpNumber&gt;
     &lt;messages&gt;
 		{
@@ -2601,7 +2601,7 @@ let $approvedForERPSync := if($customElementList/customElement/customElementValu
     'false')
 else('true')
 let $step := fn:concat($temp.vTempStep, '')
-let $erpName := 'S4'
+let $erpName := 'S4_GC'
 let $purchasingOrg := if($temp.vTempGetInfoRefData_XML/*:result[@statementId = fn:concat($locPosition, '|org_id_ongoing')]/*:row/erp_value/text() != '' ) then ($temp.vTempGetInfoRefData_XML/*:result[@statementId = fn:concat($locPosition , '|org_id_ongoing')]/*:row/erp_value/text())
 else('')
 
@@ -2613,16 +2613,16 @@ let $bpIdTRDP := $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/Business
 let $OABpId := if ($bpIdADR = $bpIdTRDP) then ($bpIdTRDP)
 else($bpIdADR)
 
-let $vendor := if($step = 'BAPI_TRDP' or $step = 'SIntImportSupplierSapS4_TRDP' or $step = 'SIntSupplierRoundTrip')then(
+let $vendor := if($step = 'BAPI_TRDP' or $step = 'SIntImportSupplierSapS4China_TRDP' or $step = 'SIntSupplierRoundTrip')then(
 	$bpIdTRDP)
-else if ($step = 'BAPI_ADR' or $step = 'SIntImportSupplierSapS4_ADR' or $step ='RoundTrip ADR')then(
+else if ($step = 'BAPI_ADR' or $step = 'SIntImportSupplierSapS4China_ADR' or $step ='RoundTrip ADR')then(
 	$bpIdADR)
 else('')
 
-let $addressIDADR := if(($step = 'BAPI_ADR' or $step = 'SIntImportSupplierSapS4_ADR') and $temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text() != '' ) then(
+let $addressIDADR := if(($step = 'BAPI_ADR' or $step = 'SIntImportSupplierSapS4China_ADR') and $temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text() != '' ) then(
 				$temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text())
                 else ('')
-let $addressIDTRDP := if(($step = 'BAPI_TRDP' or $step = 'SIntImportSupplierSapS4_TRDP') and $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text() != '' ) then(
+let $addressIDTRDP := if(($step = 'BAPI_TRDP' or $step = 'SIntImportSupplierSapS4China_TRDP') and $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text() != '' ) then(
                 $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_BusinessPartnerAddress/*:results[1]/*:AddressID/text())
                 else ('')           
 return
@@ -2671,7 +2671,7 @@ return
 								&lt;erpNumber&gt;{$erpNumber}&lt;/erpNumber&gt;
 							)
 							else if(fn:concat($locationList/location[$locPosition]/erpNumber/text(), '') = '') then(
-								if($step = 'BAPI_TRDP' or $step = 'SIntImportSupplierSapS4_TRDP' or $step = 'SIntSupplierRoundTrip')then(
+								if($step = 'BAPI_TRDP' or $step = 'SIntImportSupplierSapS4China_TRDP' or $step = 'SIntSupplierRoundTrip')then(
 									if(fn:concat($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/*:to_Supplier/*:d/*:to_SupplierPurchasingOrg/*:results/*:to_PartnerFunction/*:results/*:Supplier/text(), '') != '')then(
 										&lt;erpNumber&gt;{fn:concat($erpName,'|',$purchasingOrg, '|', if($temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text() != '1') then(
 												     $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text())
@@ -2681,7 +2681,7 @@ return
 												     $temp.vTempTRDP_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text())
 												else(''))}&lt;/erpNumber&gt;)	
 									
-								)else if ($step = 'BAPI_ADR' or $step = 'SIntImportSupplierSapS4_ADR' or $step ='RoundTrip ADR')then(
+								)else if ($step = 'BAPI_ADR' or $step = 'SIntImportSupplierSapS4China_ADR' or $step ='RoundTrip ADR')then(
 									&lt;erpNumber&gt;{fn:concat($erpName,'|',$purchasingOrg, '||', if($temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text() != '1')then(
 																							     $temp.vTempADR_XML_Output/*:input/*:A_BusinessPartner/BusinessPartner/text())
 																							 else(''))}&lt;/erpNumber&gt;)
@@ -2988,5 +2988,5 @@ else()</expression>
       <types1:GUID>lMoodcIh0oRekT1H6UlfIu</types1:GUID>
       <types1:DisplayName>PRC-SupplierEproSapS4China</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2025-11-21T08:11:24.35Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2025-12-02T00:43:56.472Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

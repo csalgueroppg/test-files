@@ -16,7 +16,7 @@
       <types1:ModificationDate>2025-11-19T17:24:16Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
-      <types1:PublicationDate>2025-11-21T07:14:15Z</types1:PublicationDate>
+      <types1:PublicationDate>2025-11-28T16:56:35Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/Conn-SC-SIntSupplierEproSapS4China/Conn-SC-SIntSupplierEproSapS4China.conn.xml</types1:PublishedContributionId>
       <types1:Entry>
          <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
@@ -40,5 +40,5 @@
       <types1:GUID>5Q5QqkwW4XJeyqWFzSsIse</types1:GUID>
       <types1:DisplayName>Conn-SC-SIntSupplierEproSapS4China</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2025-11-21T08:11:23.178Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2025-12-01T20:05:54.652Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
