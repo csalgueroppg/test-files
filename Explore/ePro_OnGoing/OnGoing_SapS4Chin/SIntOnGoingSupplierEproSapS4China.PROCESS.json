@@ -1,0 +1,147 @@
+{
+  "objectInfo" : {
+    "id" : "3lKaPCFSr51lQA2Jk7Fkar",
+    "name" : "SIntOnGoingSupplierEproSapS4China",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "ISHCwkNmumf6S3w-gt-1492421-2025-11-20T15:43:57.55Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@source= EPRO, @operation= SendSupplier, @dataType= XMLSupplier, @target= ERP-S4 - EPRO - MDM, @prcRunOn= SDCAMDMSA01, @prcAllowedGroups= Allow anonymous access, @additionalText= Process in charge of calling the bpel that iterates the location and validates that it has to be processed \nsend the supplier to ERP-S4 and generate the RT in Epro and MDM",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-12-01T20:05:56.564Z",
+  "objectRefs" : [ {
+    "id" : "5Q5QqkwW4XJeyqWFzSsIse",
+    "name" : "Conn-SC-SIntSupplierEproSapS4China",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "p6vNljLYqBGZkL0-gt-13822904-2025-11-12T21:54:54.243Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@appType=App Connection, @application=SapS4China, @additionalText=Connection in charge of communication with SapS4China",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ePro_OnGoing/OnGoing_SapS4China"
+  }, {
+    "id" : "hnnCljE7RWkjiD80Ha4SiK",
+    "name" : "Conn-SC-ePro-J1Supplier",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "ZoSRnCKwKBqRi92-gt-4932153-2021-10-15T00:16:15.832Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@appType= Service Connector, @application= ePro J1 Supplier, @additionalText= Connection for Service Connector SC-ePro-J1Supplier, @appSCName= SC-ePro-J1Supplier",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ePro_OnGoing/Utilities"
+  }, {
+    "id" : "87hwLnkbzfmcGCn5QJbiu8",
+    "name" : "PO-ParameterList",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "8NpET1cnFKi9zhF-gt-21183059-2021-08-30T04:33:42.957Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@operation= receive, @dataType= any data list, @application= utility",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Utilerias2/Ongoing"
+  }, {
+    "id" : "3Jo1YRxxECXj2jUeuoJJex",
+    "name" : "Conn-SC-SDasSupplierErrorTranslation",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3jFIMeINciZBpDU-gt-102386859-2022-11-11T22:41:25.878Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@appType= Service Connector, @application= SDasSupplierErrorTranslation Service, @additionalText= Connection for Service Connector SC-SDasSupplierErrorTranslation, @appSCName= SC-SDasSupplierErrorTranslation",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ePro_OnGoing/Utilities"
+  }, {
+    "id" : "2OM7MmBwFlSgSYsmvX8lE8",
+    "name" : "Conn-File-SuppSapS4China",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "m9pNz6HKoJBUhty-gt-1221404-2025-11-20T22:46:31.199Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@appType= FileOntap, @application= OnGoingSapS4China , @additionalText= Connection for Ontap",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ePro_OnGoing/OnGoing_SapS4China"
+  }, {
+    "id" : "3hgi0WsCW7acJT0Xtb5j2z",
+    "name" : "SDasSendPayloadsToOntapSupp",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "zaaaa-gt-56806809-2025-06-20T22:43:40.412Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@source= IICS Process, @operation= SendPayloads, @dataType= PayloadSupplier, @target= Ontap IICS, @prcRunOn= SDCAMDMSA01, @prcAllowedGroups= Allow anonymous access",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ePro_OnGoing/Utilities"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

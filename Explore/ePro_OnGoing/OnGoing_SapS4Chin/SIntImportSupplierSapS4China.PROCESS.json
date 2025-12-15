@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "8kqlRLiy414jghh7kRnPqp",
+    "name" : "SIntImportSupplierSapS4China",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "KNf4TsrT2htghGZ-gt-13871864-2025-11-12T21:54:56.588Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@source= EPRO, @operation= SendSupplier, @dataType= XMLSupplier, @target= ERP-S4, @prcRunOn= SDCAMDMSA01, @prcAllowedGroups= ServiceConsumer @additionalText= Process in charge of sending the supplier to ERP-S4",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-12-01T20:05:56.561Z",
+  "objectRefs" : [ {
+    "id" : "8AoxLowR5uvgDra9vXMDS9",
+    "name" : "Conn-SC-SapS4China-ZAPIBP",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3kgf3yD7tyGoQwg-gt-13844246-2025-11-12T21:54:54.878Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@appType= Service Connector, @application= SapS4China, @additionalText= Connection for SapS4China, @appSCName= SC-SapS4China-ZAPIBP",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ePro_OnGoing/OnGoing_SapS4China"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

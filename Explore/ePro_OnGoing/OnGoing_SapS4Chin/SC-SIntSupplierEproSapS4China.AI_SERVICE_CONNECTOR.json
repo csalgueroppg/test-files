@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "1qSgsKpwEtZlBllj7Pfa0x",
+    "name" : "SC-SIntSupplierEproSapS4China",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "T7dwcnPCOkSSHCw-gt-13822971-2025-11-12T21:54:56.734Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@scType=REST, @application= SapS4China, @additionalText=Connection in charge of communication with SapS4China",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-12-01T20:05:56.565Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "5Q5QqkwW4XJeyqWFzSsIse",
+    "name" : "Conn-SC-SIntSupplierEproSapS4China",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "p6vNljLYqBGZkL0-gt-13822904-2025-11-12T21:54:54.243Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@appType=App Connection, @application=SapS4China, @additionalText=Connection in charge of communication with SapS4China",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-12-01T20:05:56.562Z",
+  "objectRefs" : [ {
+    "id" : "1qSgsKpwEtZlBllj7Pfa0x",
+    "name" : "SC-SIntSupplierEproSapS4China",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "T7dwcnPCOkSSHCw-gt-13822971-2025-11-12T21:54:56.734Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@scType=REST, @application= SapS4China, @additionalText=Connection in charge of communication with SapS4China",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ePro_OnGoing/OnGoing_SapS4China"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

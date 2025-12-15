@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "6inemg10kUAlDx8u2F3xae",
+    "name" : "SC-SapS4China-ZAPIBP",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "xWq9bdsreK8ZAZf-gt-14896723-2025-10-31T21:43:24.384Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@scType=REST, @application= SapS4China, @additionalText=Connection in charge of communication with SapS4China",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-12-01T20:05:56.565Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
