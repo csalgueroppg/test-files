@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process
+    name="Sample_Order_Process"
+    targetNamespace="http://example.com/iics/sample"
+    xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+    xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+    xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+    xmlns:tns="http://example.com/iics/sample"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!-- ================================================= -->
+    <!-- Partner Links -->
+    <!-- ================================================= -->
+    <bpel:partnerLinks>
+        <bpel:partnerLink
+            name="Client"
+            partnerLinkType="tns:ClientPLT"
+            myRole="ClientRole"/>
+        <bpel:partnerLink
+            name="OrderService"
+            partnerLinkType="tns:OrderServicePLT"
+            partnerRole="ServiceRole"/>
+    </bpel:partnerLinks>
+
+    <!-- ================================================= -->
+    <!-- Variables -->
+    <!-- ================================================= -->
+    <bpel:variables>
+        <bpel:variable name="OrderRequest"
+                       messageType="tns:OrderRequestMessage"/>
+        <bpel:variable name="OrderResponse"
+                       messageType="tns:OrderResponseMessage"/>
+    </bpel:variables>
+
+    <!-- ================================================= -->
+    <!-- Main Process Flow -->
+    <!-- ================================================= -->
+    <bpel:sequence name="MainSequence">
+
+        <bpel:receive
+            name="ReceiveOrder"
+            partnerLink="Client"
+            operation="submitOrder"
+            variable="OrderRequest"
+            createInstance="yes"/>
+
+        <bpel:assign name="AssignStatus">
+            <bpel:copy>
+                <bpel:from>'RECEIVED'</bpel:from>
+                <bpel:to variable="OrderResponse" part="status"/>
+            </bpel:copy>
+        </bpel:assign>
+
+        <bpel:invoke
+            name="InvokeOrderService"
+            partnerLink="OrderService"
+            operation="processOrder"
+            inputVariable="OrderRequest"
+            outputVariable="OrderResponse"/>
+
+        <bpel:reply
+            name="ReplyToClient"
+            partnerLink="Client"
+            operation="submitOrder"
+            variable="OrderResponse"/>
+
+    </bpel:sequence>
+
+    <!-- ================================================= -->
+    <!-- BPMN Diagram Information (IICS UI Metadata) -->
+    <!-- ================================================= -->
+    <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+        <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Sample_Order_Process">
+
+            <bpmndi:BPMNShape id="ReceiveOrderShape" bpmnElement="ReceiveOrder">
+                <dc:Bounds x="100" y="100" width="36" height="36"/>
+            </bpmndi:BPMNShape>
+
+            <bpmndi:BPMNShape id="InvokeOrderServiceShape" bpmnElement="InvokeOrderService">
+                <dc:Bounds x="200" y="100" width="36" height="36"/>
+            </bpmndi:BPMNShape>
+
+            <bpmndi:BPMNShape id="ReplyToClientShape" bpmnElement="ReplyToClient">
+                <dc:Bounds x="300" y="100" width="36" height="36"/>
+            </bpmndi:BPMNShape>
+
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+
+</bpel:process>
