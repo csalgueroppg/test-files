@@ -1,0 +1,272 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>HH0thJ6gaabclvA-gt-161452962-2024-07-04T16:36:30.534Z::svc.xml</types1:EntryId>
+      <types1:Name>SC-TransactionsPIMS4</types1:Name>
+      <types1:ParentFlowIds>99WvbeGoQwg74Rp-gt-165611285-2024-07-10T20:42:53.969Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>@scType=DAS, @application=PIM/S4</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>giovaniperez.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-07-04T16:36:31Z</types1:CreationDate>
+      <types1:ModifiedBy>JARangel.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-08-25T16:26:17Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>JARangel.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-08-25T22:41:21Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/SC_TransactionsPIMS4/SC_TransactionsPIMS4_svcDef.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="SC-TransactionsPIMS4"
+                            label=""
+                            name="SC-TransactionsPIMS4"
+                            uuid="899bd014-3e19-4e5d-aad5-20aaea8b072d">
+            <description>@scType=DAS, @application=PIM/S4</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="createMDMMaterial"
+                       maxRedirects="100"
+                       name="createMDMMaterial"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter description=""
+                                label=""
+                                name="in_scCreateMDMMaterial"
+                                nogen="true"
+                                required="false"
+                                testWith="{&#xA;    &#34;_container&#34;: &#34;'MASTER'&#34;,&#xA;    &#34;_data&#34;: {&#xA;        &#34;identifier&#34;: &#34;614011M1105&#34;,&#xA;        &#34;product2glangsalesorg&#34;: [&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-CA&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-PR&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-US&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-AU&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-GB&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-CA&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-PR&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-US&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-AU&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-GB&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-CA&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-PR&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-US&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-AU&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-GB&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            }&#xA;        ],&#xA;        &#34;product2gsalesorg&#34;: {&#xA;            &#34;_qualification&#34;: {&#xA;                &#34;salesorg&#34;: {&#xA;                    &#34;_code&#34;: &#34;KR0201&#34;&#xA;                }&#xA;            },&#xA;            &#34;MaterialGroupId1&#34;: &#34;104&#34;,&#xA;            &#34;MaterialGroupId2&#34;: &#34;&#34;,&#xA;            &#34;MaterialGroupId3&#34;: &#34;&#34;&#xA;        }&#xA;    },&#xA;    &#34;_entity&#34;: &#34;Product2G&#34;,&#xA;    &#34;_updateIfExists&#34;: &#34;true&#34;&#xA;}"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $URL := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:urlPIM/text() &#xA;let $Param := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:s4APIParam3/text() &#xA;return&#xA;fn:concat($URL,$Param)}"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Authorization">{util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() = 'authorization-PIM-API-PDT']/*:value/text() }</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body>{$in_scCreateMDMMaterial}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="out_scCreateMDMMaterial"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="getMaterialLanguage"
+                       maxRedirects="100"
+                       name="getMaterialLanguage"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>with this operation we can get all the available languages of the PIM system.</description>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $URL := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:urlPIM/text() &#xA;return&#xA;fn:concat($URL,':1512/rest/V1.0/enum/Enum.Language','')}"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Connection">keep-alive</header>
+                           <header name="Authorization">{util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() = 'authorization-PIM-API-PDT']/*:value/text() 
+}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="out_scGetLanguage"
+                            type="xml"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="getS4Material"
+                       maxRedirects="100"
+                       name="getS4Material"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter description=""
+                                label=""
+                                name="in_scS4API"
+                                nogen="true"
+                                required="false"
+                                testWith="30000315"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $URL := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:urlAPIS4/text() &#xA;let $param1 := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:s4APIParam1/text() &#xA;let $param2:= util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:s4APIParam2/text() &#xA;return&#xA;fn:concat($URL,$param1,&#34;('&#34;, $in_scS4API , &#34;')&#34;,$param2,'')}"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Authorization">{ util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() = 'authorization-S4-API-PDT']/*:value/text() 
+}</header>
+                           <header name="x-api-key">{util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:APIKeyS4/text() 
+}</header>
+                           <header name="Accept-Encoding">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="out_scS4API"
+                            type="xml"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="updateS4Material"
+                       maxRedirects="100"
+                       name="updateS4Material"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter description=""
+                                label=""
+                                name="in_scUpdateS4Material"
+                                nogen="true"
+                                required="false"
+                                testWith="{&#xA;    &#34;_container&#34;: &#34;'MASTER'&#34;,&#xA;    &#34;_data&#34;: {&#xA;        &#34;identifier&#34;: &#34;614011M1105&#34;,&#xA;        &#34;product2glangsalesorg&#34;: [&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-CA&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-PR&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-US&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-AU&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-GB&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-CA&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-PR&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-US&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-AU&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-GB&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-CA&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-PR&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-US&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-AU&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-GB&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            }&#xA;        ],&#xA;        &#34;product2gsalesorg&#34;: {&#xA;            &#34;_qualification&#34;: {&#xA;                &#34;salesorg&#34;: {&#xA;                    &#34;_code&#34;: &#34;KR0201&#34;&#xA;                }&#xA;            },&#xA;            &#34;MaterialGroupId1&#34;: &#34;104&#34;,&#xA;            &#34;MaterialGroupId2&#34;: &#34;&#34;,&#xA;            &#34;MaterialGroupId3&#34;: &#34;&#34;&#xA;        }&#xA;    },&#xA;    &#34;_entity&#34;: &#34;Product2G&#34;,&#xA;    &#34;_updateIfExists&#34;: &#34;true&#34;&#xA;}"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $URL := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:urlPIM/text() &#xA;let $Param := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:s4APIParam4/text() &#xA;return&#xA;fn:concat($URL,$Param)}"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Authorization">{ util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() = 'authorization-PIM-API-PDT']/*:value/text()}</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body>{$in_scUpdateS4Material}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="out_scUpdateS4Material"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="updateMDMMaterial"
+                       maxRedirects="100"
+                       name="updateMDMMaterial"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter description=""
+                                label=""
+                                name="in_scUpdateMDMMaterial"
+                                nogen="true"
+                                required="false"
+                                testWith="{&#xA;    &#34;_container&#34;: &#34;'MASTER'&#34;,&#xA;    &#34;_data&#34;: {&#xA;        &#34;identifier&#34;: &#34;614011M1105&#34;,&#xA;        &#34;product2glangsalesorg&#34;: [&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-CA&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-PR&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-US&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-AU&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-GB&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-CA&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-PR&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-US&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-AU&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-GB&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-CA&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-PR&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-US&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-AU&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            },&#xA;            {&#xA;                &#34;_qualification&#34;: {&#xA;                    &#34;language&#34;: {&#xA;                        &#34;_code&#34;: &#34;en-GB&#34;&#xA;                    },&#xA;                    &#34;salesorg&#34;: {&#xA;                        &#34;_code&#34;: &#34;KR0201&#34;&#xA;                    }&#xA;                },&#xA;                &#34;materialGroupName1&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName2&#34;: &#34;&#34;,&#xA;                &#34;materialGroupName3&#34;: &#34;&#34;&#xA;            }&#xA;        ],&#xA;        &#34;product2gsalesorg&#34;: {&#xA;            &#34;_qualification&#34;: {&#xA;                &#34;salesorg&#34;: {&#xA;                    &#34;_code&#34;: &#34;KR0201&#34;&#xA;                }&#xA;            },&#xA;            &#34;MaterialGroupId1&#34;: &#34;104&#34;,&#xA;            &#34;MaterialGroupId2&#34;: &#34;&#34;,&#xA;            &#34;MaterialGroupId3&#34;: &#34;&#34;&#xA;        }&#xA;    },&#xA;    &#34;_entity&#34;: &#34;Product2G&#34;,&#xA;    &#34;_updateIfExists&#34;: &#34;true&#34;&#xA;}"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $URL := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:urlPIM/text() &#xA;let $Param := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:s4APIParam5/text() &#xA;return&#xA;fn:concat($URL,$Param)}"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Authorization">{util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() = 'authorization-PIM-API-PDT']/*:value/text()}</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body>{$in_scUpdateMDMMaterial}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="out_scUpdateMDMMaterial"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="getMaterialTerritory"
+                       maxRedirects="100"
+                       name="getMaterialTerritory"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $URL := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:urlPIM/text() &#xA;return&#xA;fn:concat($URL,':1512/rest/V1.0/enum/Enum.Territory','')}"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Connection">keep-alive</header>
+                           <header name="Authorization">{util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() = 'authorization-PIM-API-PDT']/*:value/text()}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="out_scGetTerritory"
+                            type="xml"/>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>54EVqmD2PMViwyWuCZqSkB</types1:GUID>
+      <types1:DisplayName>SC-TransactionsPIMS4</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-08-26T19:52:55.861Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

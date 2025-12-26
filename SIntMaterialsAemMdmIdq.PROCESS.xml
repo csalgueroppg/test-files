@@ -1,0 +1,242 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Hv4nzCZcjKsJlv5-gt-156715677-2024-06-27T23:42:38.532Z::pd.xml</types1:EntryId>
+      <types1:Name>SIntMaterialsAemMdmIdq</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>JARangel.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-06-27T23:42:39Z</types1:CreationDate>
+      <types1:ModifiedBy>JARangel.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-02-05T02:01:53Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>JARangel.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-02-05T02:02:20Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SIntMaterialsAemMdmIdq/SIntMaterialsAemMdmIdq.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="anHHUMJPNGxhtB5lCGgpM9"
+                  displayName="SIntMaterialsAemMdmIdq"
+                  name="SIntMaterialsAemMdmIdq"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:SDCAMDMSA01</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="event" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">Conn-AMQP-IDQ-ConnectPPG-PDT:AMQPMessage</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">k12x6eMy6uMd9eAgj2MNiy</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="temp_Code" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Detail" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Reason" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Process" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_LogError" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_errorlog" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_FileLogName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Input" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_JSON_to_XML" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_ErrorDecision" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Logs" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_ProcessName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>SDCAMDMSA01</targetLocation>
+               <event eventSource="Conn-AMQP-IDQ-ConnectPPG-PDT:dequeue-AMQP-IDQ-ConnectPPGM"/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="lxxwq20m" targetId="lxxwq20l"/>
+               </start>
+               <assignment id="lxxwq20l">
+                  <title>Assign_Inputs</title>
+                  <operation source="formula" to="temp.temp_Input">
+                     <expression language="XQuery">util:parseJSON(fn:replace(fn:replace($input.event[1]/*:body/text(),"'","''"),'&amp;#xd;',''))</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_FileLogName">
+                     <expression language="XQuery">fn:concat('Log_OnGoing_PDT_S4_',fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT5H")),"[Y0001][M01][D01][H01][m01][s01]"),'.txt')
+</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_Logs">
+                     <expression language="XQuery">let $v_Log := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:materialsLogs/text() 
+return
+$v_Log</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_ProcessName">
+                     <expression language="XQuery">if(fn:concat($temp.temp_Input[1]/*:product/text(),'') != '') then(
+
+ipd:setProcessTitle(fn:concat('SIntMaterialsAemMdmIdq-', $temp.temp_Input[1]/*:product/text(),'-',$input.event [1]/*:headers[name/text() = 'JMSCorrelationID']/*:value/text())))
+
+else()</expression>
+                  </operation>
+                  <link id="ly55gzc7" targetId="lxxwq1xt"/>
+               </assignment>
+               <eventContainer id="lxxwq1xt">
+                  <subflow id="lxxwq1x0">
+                     <title>SubPRCInsertIDQ</title>
+                     <subflowGUID>0l3cxIbzC3ndLsIKgnvbqc</subflowGUID>
+                     <subflowPath>PRC-InsertIDQ</subflowPath>
+                     <runForEach>false</runForEach>
+                     <input>
+                        <parameter name="Input" source="formula" updatable="true">
+                           <expression language="XQuery">$temp.temp_Input </expression>
+                        </parameter>
+                     </input>
+                     <outputDef>
+                        <field name="outProductId" type="string">
+                           <options>
+                              <option name="required">false</option>
+                           </options>
+                        </field>
+                     </outputDef>
+                  </subflow>
+                  <flow id="lxxwq1xv">
+                     <end id="m6r9ipjj">
+                        <title>End</title>
+                     </end>
+                  </flow>
+                  <flow id="lxxwq1xy">
+                     <assignment id="lxxwq1zj">
+                        <title>Assign_Error</title>
+                        <operation source="formula" to="temp.temp_Process">
+                           <expression language="XQuery">fn:substring-after(fn:substring-before($temp.temp_FileLogName, '.txt'),'S4_')
+</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_errorlog">
+                           <expression language="XQuery">fn:concat('ERP:',' S4',',',' Process:',' SIntMaterialsAemMdmIdq - Step1 AEM_to_IDQ',',','Materil Id: ', $temp.temp_Input[1]/*:product/text(),',',' Item Timestamp: ',$temp.temp_Process,',',' Code: ',$output.faultInfo[1]/code ,',',' DetailError: ',$output.faultInfo[1]/reason )</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_LogError">
+                           <expression language="XQuery">fn:concat($temp.temp_errorlog ,' PipeMessage ' , $temp.temp_errorlog  )</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_ErrorDecision">
+                           <expression language="XQuery">1</expression>
+                        </operation>
+                        <link id="lxzlerf7" targetId="lxzlerf6"/>
+                     </assignment>
+                     <service id="lxzlerf6">
+                        <title>Svc_FileWriter</title>
+                        <serviceName>Conn-File-WriteTicket-Azure:FileWriter</serviceName>
+                        <serviceGUID>9JYb6cT1Be8hPSeN0fV5kS</serviceGUID>
+                        <serviceInput>
+                           <parameter name="fileWriteTask" source="formula">
+                              <expression language="XQuery">&lt;FileWriteTask&gt;
+	&lt;fileName&gt;{$temp.temp_FileLogName}&lt;/fileName&gt;
+	&lt;format&gt;{'PlainText'}&lt;/format&gt;
+	&lt;content&gt;{$temp.temp_LogError}&lt;/content&gt;
+&lt;/FileWriteTask&gt;</expression>
+                           </parameter>
+                        </serviceInput>
+                        <link id="m6r9ipic" targetId="m6r9ipib"/>
+                     </service>
+                     <throw id="m6r9ipib">
+                        <title>ThrowIdq</title>
+                        <throwInput>
+                           <parameter name="code" source="constant" updatable="true">{$output.faultInfo[1]/code}</parameter>
+                           <parameter name="detail" source="constant" updatable="true">{$output.faultInfo[1]/detail}</parameter>
+                           <parameter name="reason" source="constant" updatable="true">{$output.faultInfo[1]/reason}</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="lxxwq1xu" targetId="lxxwq1xv" type="containerLink"/>
+                  <events>
+                     <catch faultField="faultInfo" id="lxxwq1x3" interrupting="true">
+                        <link id="lxxwq1xx" targetId="lxxwq1xy" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>069797be-8ebe-438f-aad6-c47c525c178c</ns1:Id>
+               <ns1:Name>qa</ns1:Name>
+               <ns1:CreatedBy>JARangel.dev@ppg.com</ns1:CreatedBy>
+               <ns1:CreationDate>2025-02-04T16:43:22Z</ns1:CreationDate>
+               <ns1:ModifiedBy>JARangel.dev@ppg.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2025-02-04T16:43:22Z</ns1:ModificationDate>
+               <ns1:Data format="xml">&lt;root&gt;
+&lt;event&gt;
+   &lt;headers&gt;
+      &lt;name&gt;a&lt;/name&gt;
+      &lt;value&gt;a&lt;/value&gt;
+   &lt;/headers&gt;
+   &lt;body&gt;{ "MATERIAL":[{"product":"000000000000150057","productExternalId":"150057","productType":"FERT","createdByUser":"Z802983","lastChangedByUser":"H905196","lastChangeDate":"2025-02-03","lastChangeDateTime":20250203094552.0000000,"ismarkedForDeletion":"","crossPlantStatus":"ZG","productOldId":"TESTCATOLD","grossWeight":24.900,"purchaseOrderQuantityUnit":"","weightUnit":"KG","productGroup":"614009","baseUnit":"ST","netWeight":23.320,"productHierarchy":"1000600110002001","productHierarchy1":"10","productHierarchy2":"006","productHierarchy3":"0011","productHierarchy4":"0002","productHierarchy5":"001","productHierarchy6":"","division":"PC","volumeUnit":"L","materialVolume":16.400,"productStandardId":"8716242933694","productIsConfigurable":"","externalProductGroup":"614009M0915","crossPlantConfigurablePrdct":"","baseUnitSpecificPrdctLngth":0,"baseUnitSpecificPrdctWidth":0,"baseUnitSpecificPrdctHeigh":0,"productMeasurementUnit":"","packingReferenceProduct":"","basicMaterial":"","productDocumentNumber":"","productHierarchyText":[{"language":"EN","productHierarchy":"1000600110002001","productHierarchyText":"FG/Lq SB/Topcoats SB/2K/Epoxy"}],"productHierarchy1Text":[{"language":"EN","productHierarchy":"10","productHierarchyText":"Finished Goods (FG)"}],"productHierarchy2Text":[],"productHierarchy3Text":[],"productHierarchy4Text":[],"productHierarchy5Text":[],"productHierarchy6Text":[],"plantData":[{"plant":"BE01","maintenanceStatusName":"DLGABVQ","mrpController":"500","lotSizing":"EX","procurementType":"E","materialSafetyStockQty":4000.000,"minimumLotSize":0,"productionTime":1,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"BEA1","maintenanceStatusName":"VDLBEG","mrpController":"500","lotSizing":"EX","procurementType":"E","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":1,"materialAbcClassification":"C","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"80","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"BEA2","maintenanceStatusName":"VEBGLDPAFSQ","mrpController":"500","lotSizing":"EX","procurementType":"E","materialSafetyStockQty":0,"minimumLotSize":1.000,"productionTime":1,"materialAbcClassification":"B","plannedDelivery":1,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"80","maximumLotSize":150.000,"fixedLotSize":0,"materialStatus":"","replenishTime":0,"planningTime":10,"serviceLevel":0},{"plant":"CN01","maintenanceStatusName":"VEDALBGQ","mrpController":"500","lotSizing":"EX","procurementType":"E","materialSafetyStockQty":0,"minimumLotSize":1.000,"productionTime":1,"materialAbcClassification":"C","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"","maximumLotSize":150.000,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":10,"serviceLevel":0},{"plant":"CN98","maintenanceStatusName":"EG","mrpController":"","lotSizing":"","procurementType":"","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CN99","maintenanceStatusName":"EG","mrpController":"","lotSizing":"","procurementType":"","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNA1","maintenanceStatusName":"EDALBGVQ","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":600.000,"minimumLotSize":1.000,"productionTime":1,"materialAbcClassification":"B","plannedDelivery":1,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"20","maximumLotSize":150.000,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":10,"serviceLevel":0},{"plant":"CNA3","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"C","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNA4","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"C","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNA5","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"B","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNA6","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"20","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNA7","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AI","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNA8","maintenanceStatusName":"EBQGVD","mrpController":"000","lotSizing":"EX","procurementType":"X","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":1,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNA9","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNB1","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNB2","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"C","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNB3","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"C","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNB4","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AP","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNB5","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"C","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNB6","maintenanceStatusName":"EBQDGVL","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"C","plannedDelivery":1,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AK","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNB7","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AM","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNB8","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"A","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNB9","maintenanceStatusName":"VEDLBQG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":1,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AQ","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNC1","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"B","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNC2","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AO","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"CNC3","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"C","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AH","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":0,"serviceLevel":0},{"plant":"HKA1","maintenanceStatusName":"EBQDG","mrpController":"500","lotSizing":"EX","procurementType":"F","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"C","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"AS","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"ZG","replenishTime":0,"planningTime":3,"serviceLevel":0},{"plant":"IDA1","maintenanceStatusName":"VBG","mrpController":"","lotSizing":"","procurementType":"","materialSafetyStockQty":0,"minimumLotSize":0,"productionTime":0,"materialAbcClassification":"","plannedDelivery":0,"maxStockLevel":0,"minStockLevel":0,"zMaterialGoodsRcptDuration":0,"specialProcurementType":"","maximumLotSize":0,"fixedLotSize":0,"materialStatus":"","replenishTime":0,"planningTime":0,"serviceLevel":0}],"unitsOfMeasure":[{"alternativeUnit":"KG","quantityNumerator":100,"quantityDenominator":2332},{"alternativeUnit":"L","quantityNumerator":10,"quantityDenominator":164},{"alternativeUnit":"ST","quantityNumerator":1,"quantityDenominator":1}],"materialDescriptions":[{"materialLanguage":"Z1","materialName":"D S'COVER 456 BAS DISPENSER XXXXCCCN2164"},{"materialLanguage":"JA","materialName":"D S'COVER 456 BAS DISPENSER XXXXCCCN2164"},{"materialLanguage":"EN","materialName":" S'COVER 456 BAS DISPENSER XXXXCCCN2164"},{"materialLanguage":"ZH","materialName":"D ???456 BAS DISPENSER      XXXXCCCN2164"}],"materialGroupNameDesc":[{"language":"EN","materialgroupname":"6-SIGMACOVER","materialgrouptext":""}],"externalMaterialDescriptions":[{"externalProductGroupLang":"ZH","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"TH","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"KO","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"RO","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"MS","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"AR","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"CS","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"DE","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"EN","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"FR","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"EL","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"HU","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"IT","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"JA","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"DA","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"PL","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"NL","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"PT","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"RU","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"ES","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"TR","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"BG","externalProductGroupName":"SIGMACOVER 456"},{"externalProductGroupLang":"VI","externalProductGroupName":"SIGMACOVER 456"}],"salesData":[{"productSalesOrg":"BE04","productDistributionChnl":"01","minimumOrderQuantity":0,"supplyingPlant":"","deliveryNoteProcminDelivqty":0,"itemCategoryGroup":"ZFMT","deliveryQuantityUnit":"","deliveryQuantity":0,"salesMeasureUnit":"","productSalesStatus":"","roundingProfile":"","salesText":[],"firstSalesSpecProductGroup":"","secondSalesSpcProductGroup":"","thirdSalesSpcProductGroup":"","fourthSalesSpcProductGroup":"","fifthSalesSpcProductGroup":"","distrCntrListingStartDate":"","distrCntrListingEndDate":"","storeSaleStartDate":"","storeSaleEndDate":"","distrCntrSaleStartDate":"","distrCntrSaleEndDate":"","materialGroup1Text":[],"materialGroup2Text":[{"additionalMaterialGroup2":"","language":"EN","additionalMaterialGroup2name":""}],"materialGroup3Text":[],"materialGroup4Text":[],"materialGroup5Text":[]},{"productSalesOrg":"CN01","productDistributionChnl":"01","minimumOrderQuantity":0,"supplyingPlant":"CNA1","deliveryNoteProcminDelivqty":0,"itemCategoryGroup":"ZFMT","deliveryQuantityUnit":"","deliveryQuantity":0,"salesMeasureUnit":"","productSalesStatus":"","roundingProfile":"","salesText":[],"firstSalesSpecProductGroup":"","secondSalesSpcProductGroup":"","thirdSalesSpcProductGroup":"","fourthSalesSpcProductGroup":"","fifthSalesSpcProductGroup":"","distrCntrListingStartDate":"","distrCntrListingEndDate":"","storeSaleStartDate":"","storeSaleEndDate":"","distrCntrSaleStartDate":"","distrCntrSaleEndDate":"","materialGroup1Text":[],"materialGroup2Text":[{"additionalMaterialGroup2":"","language":"EN","additionalMaterialGroup2name":""}],"materialGroup3Text":[],"materialGroup4Text":[],"materialGroup5Text":[]},{"productSalesOrg":"CN02","productDistributionChnl":"01","minimumOrderQuantity":0,"supplyingPlant":"","deliveryNoteProcminDelivqty":0,"itemCategoryGroup":"ZBAS","deliveryQuantityUnit":"","deliveryQuantity":0,"salesMeasureUnit":"","productSalesStatus":"","roundingProfile":"","salesText":[],"firstSalesSpecProductGroup":"","secondSalesSpcProductGroup":"","thirdSalesSpcProductGroup":"","fourthSalesSpcProductGroup":"","fifthSalesSpcProductGroup":"","distrCntrListingStartDate":"","distrCntrListingEndDate":"","storeSaleStartDate":"","storeSaleEndDate":"","distrCntrSaleStartDate":"","distrCntrSaleEndDate":"","materialGroup1Text":[],"materialGroup2Text":[{"additionalMaterialGroup2":"","language":"EN","additionalMaterialGroup2name":""}],"materialGroup3Text":[],"materialGroup4Text":[],"materialGroup5Text":[]},{"productSalesOrg":"ID01","productDistributionChnl":"01","minimumOrderQuantity":0,"supplyingPlant":"","deliveryNoteProcminDelivqty":0,"itemCategoryGroup":"NORM","deliveryQuantityUnit":"","deliveryQuantity":0,"salesMeasureUnit":"","productSalesStatus":"","roundingProfile":"","salesText":[],"firstSalesSpecProductGroup":"","secondSalesSpcProductGroup":"","thirdSalesSpcProductGroup":"","fourthSalesSpcProductGroup":"","fifthSalesSpcProductGroup":"","distrCntrListingStartDate":"","distrCntrListingEndDate":"","storeSaleStartDate":"","storeSaleEndDate":"","distrCntrSaleStartDate":"","distrCntrSaleEndDate":"","materialGroup1Text":[],"materialGroup2Text":[{"additionalMaterialGroup2":"","language":"EN","additionalMaterialGroup2name":""}],"materialGroup3Text":[],"materialGroup4Text":[],"materialGroup5Text":[]},{"productSalesOrg":"KR02","productDistributionChnl":"01","minimumOrderQuantity":0,"supplyingPlant":"","deliveryNoteProcminDelivqty":0,"itemCategoryGroup":"NORM","deliveryQuantityUnit":"","deliveryQuantity":0,"salesMeasureUnit":"","productSalesStatus":"","roundingProfile":"","salesText":[],"firstSalesSpecProductGroup":"","secondSalesSpcProductGroup":"","thirdSalesSpcProductGroup":"","fourthSalesSpcProductGroup":"","fifthSalesSpcProductGroup":"","distrCntrListingStartDate":"","distrCntrListingEndDate":"","storeSaleStartDate":"","storeSaleEndDate":"","distrCntrSaleStartDate":"","distrCntrSaleEndDate":"","materialGroup1Text":[],"materialGroup2Text":[{"additionalMaterialGroup2":"","language":"EN","additionalMaterialGroup2name":""}],"materialGroup3Text":[],"materialGroup4Text":[],"materialGroup5Text":[]},{"productSalesOrg":"VN01","productDistributionChnl":"01","minimumOrderQuantity":0,"supplyingPlant":"","deliveryNoteProcminDelivqty":0,"itemCategoryGroup":"NORM","deliveryQuantityUnit":"","deliveryQuantity":0,"salesMeasureUnit":"","productSalesStatus":"","roundingProfile":"","salesText":[],"firstSalesSpecProductGroup":"","secondSalesSpcProductGroup":"","thirdSalesSpcProductGroup":"","fourthSalesSpcProductGroup":"","fifthSalesSpcProductGroup":"","distrCntrListingStartDate":"","distrCntrListingEndDate":"","storeSaleStartDate":"","storeSaleEndDate":"","distrCntrSaleStartDate":"","distrCntrSaleEndDate":"","materialGroup1Text":[],"materialGroup2Text":[{"additionalMaterialGroup2":"","language":"EN","additionalMaterialGroup2name":""}],"materialGroup3Text":[],"materialGroup4Text":[],"materialGroup5Text":[]}],"characteristics":[]}]}&lt;/body&gt;
+&lt;/event&gt;
+&lt;/root&gt;</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>anHHUMJPNGxhtB5lCGgpM9</types1:GUID>
+      <types1:DisplayName>SIntMaterialsAemMdmIdq</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-02-05T18:30:58.282Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

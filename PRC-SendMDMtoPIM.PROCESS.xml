@@ -1,0 +1,1195 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>fP4tciSrZMSPfXB-gt-163274286-2024-07-08T22:48:40.081Z::pd.xml</types1:EntryId>
+      <types1:Name>PRC-SendMDMtoPIM</types1:Name>
+      <types1:ParentFlowIds>Ei4tciSrZMSPfXB-gt-8837282-2024-08-09T15:31:22.491Z::pd.xml,lHV8F4MTD86CjqF-gt-2028114-2024-12-13T18:36:50.188Z::pd.xml,qig0zFMi4tciSrZ-gt-8583879-2024-08-07T22:32:29.267Z::pd.xml,rlAXhNUdyOoMdtl-gt-163009505-2024-07-08T15:16:47.286Z::pd.xml,V60S24FsWTzIf6r-gt-170215162-2024-07-17T06:16:54.761Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>@source= SAPS4 and MDM, @operation= CreateUpdate Materials, @dataType=Materials, @target= PIM System, @additionalText= Process forConnectPPG Materials, @prcRunOn= SDCAMDMSA01</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>JARangel.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-07-08T22:48:40Z</types1:CreationDate>
+      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-08-25T16:07:55Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>JARangel.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-08-25T22:44:17Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.PRC-SendMDMtoPIM/PRC-SendMDMtoPIM.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="0nY3O60JnFpbRF2JQksYag"
+                  displayName="PRC-SendMDMtoPIM"
+                  name="PRC-SendMDMtoPIM"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>@source= SAPS4 and MDM, @operation= CreateUpdate Materials, @dataType=Materials, @target= PIM System, @additionalText= Process forConnectPPG Materials, @prcRunOn= SDCAMDMSA01</description>
+            <tags>.agent:SDCAMDMSA01,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="Input" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_EventType" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="vTempProductXML" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempArticleXML" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempProductJSON" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempPdtJSON" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempArtJSON" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempArticleJSON" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempResponseLanguage" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempResponseS4" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEventType" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempMaterialFilter" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempResponseTerritory" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempDataTerritory" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCountSalesData" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCountTerritory" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempDelay" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempnRetries" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempRetryCounter" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">1</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="normal">
+               <targetLocation>SDCAMDMSA01</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="lz8ucxbv" targetId="lz8ucxbu"/>
+               </start>
+               <assignment id="lz8ucxbu">
+                  <title>AssignParameters</title>
+                  <operation source="formula" to="temp.vTempEventType">
+                     <expression language="XQuery">if($input.in_EventType = util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:dequeueCreatedMDM/value[text() = $input.in_EventType]/text()) 
+then('created') 
+else if($input.in_EventType = util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:dequeueChangedMDM/value[text() = $input.in_EventType]/text()) 
+then('changed')
+else($input.in_EventType)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempMaterialFilter">
+                     <expression language="XQuery">let $ERP := $input.Input/*:srcSystmId/text()
+return
+  switch($ERP)
+    case util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:erpSystmId/SAPS4/text()
+    return 
+      if(
+      $input.Input/*:productType/text() = util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:materialType/value[text() = $input.Input/*:productType/text()]/text() and
+      fn:string-length($input.Input/*:productGroup) = 6 and
+      fn:starts-with($input.Input/*:productGroup,'6') and
+      fn:concat($input.Input/*:productHierarchy, '') != '' and
+      fn:concat($input.Input/*:externalProductGroup, '') != ''
+      )
+      then('SAPS4')
+      else('')
+    default return ''
+
+
+</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempDelay">
+                     <expression language="XQuery">util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:delay/text()
+</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempnRetries">
+                     <expression language="XQuery">util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:numberRetries/text()</expression>
+                  </operation>
+                  <link id="m1826eki" targetId="m1826ekh"/>
+               </assignment>
+               <container id="m1826ekh" type="exclusive">
+                  <title>dMaterialFilter</title>
+                  <flow id="m1826ekl">
+                     <container id="m1826el3" type="exclusive">
+                        <title>dEventType</title>
+                        <flow id="m1826el4">
+                           <assignment id="m1826el5">
+                              <title>AssignChanged</title>
+                              <operation source="formula" to="temp.vTempProductXML">
+                                 <expression language="XQuery">let $vEntity := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:entity/text() 
+let $vContainer := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:container/text() 
+let $vCode := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:code/text() 
+let $vExternalId := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:externalId/text() 
+return
+&lt;root&gt;
+	&lt;xpdt_entity&gt;{fn:tokenize($vEntity, '\|')[1]}&lt;/xpdt_entity&gt;
+	&lt;xpdt_container&gt;{fn:concat("'",$vContainer,"'")}&lt;/xpdt_container&gt;
+	&lt;xpdt_updateIfExists&gt;{fn:true()}&lt;/xpdt_updateIfExists&gt;
+&lt;xpdt_data&gt;
+		&lt;identifier&gt;{$input.Input/*:externalProductGroup/text()}&lt;/identifier&gt;
+		&lt;lang&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;language&gt;
+					&lt;xpdt_code&gt;{fn:tokenize($vCode, '\|')[1]}&lt;/xpdt_code&gt;
+				&lt;/language&gt;
+			&lt;/xpdt_qualification&gt;
+			&lt;descriptionShort&gt;{$input.Input/externalMaterialGroupName/text()}&lt;/descriptionShort&gt;
+		&lt;/lang&gt;
+		&lt;lang&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;language&gt;
+					&lt;xpdt_code&gt;{fn:tokenize($vCode, '\|')[2]}&lt;/xpdt_code&gt;
+				&lt;/language&gt;
+			&lt;/xpdt_qualification&gt;
+			&lt;descriptionShort&gt;{$input.Input/externalMaterialGroupName/text()}&lt;/descriptionShort&gt;
+		&lt;/lang&gt;
+		&lt;structureGroupMap&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;structureGroup&gt;
+					&lt;xpdt_externalId&gt;{fn:concat("'",$input.Input /*:productHierarchy/text(),"'",fn:tokenize($vExternalId, '\|')[1])}&lt;/xpdt_externalId&gt;
+				&lt;/structureGroup&gt;
+			&lt;/xpdt_qualification&gt;
+		&lt;/structureGroupMap&gt;
+		&lt;structureGroupMap&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;structureGroup&gt;
+					&lt;xpdt_externalId&gt;{fn:concat("'",$input.Input/*:productGroup/text(),"'",fn:tokenize($vExternalId, '\|')[2])}&lt;/xpdt_externalId&gt;
+				&lt;/structureGroup&gt;
+			&lt;/xpdt_qualification&gt;
+		&lt;/structureGroupMap&gt;		
+&lt;/xpdt_data&gt;
+&lt;/root&gt;</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempArticleXML">
+                                 <expression language="XQuery">let $vEntity := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:entity/text() 
+let $vContainer := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:container/text() 
+let $vCode := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:code/text() 
+return
+&lt;root&gt;
+	&lt;xpdt_entity&gt;{fn:tokenize($vEntity, '\|')[2]}&lt;/xpdt_entity&gt;
+	&lt;xpdt_container&gt;{fn:concat("'",$vContainer,"'")}&lt;/xpdt_container&gt;
+	&lt;xpdt_updateIfExists&gt;{fn:true()}&lt;/xpdt_updateIfExists&gt;
+	&lt;xpdt_data&gt;
+		&lt;identifier&gt;{$input.Input/*:product/text()}&lt;/identifier&gt;
+		&lt;oldmaterialnumber&gt;{$input.Input/*:productOldId/text()}&lt;/oldmaterialnumber&gt;
+		&lt;gtin&gt;{$input.Input/*:productStandardId/text()}&lt;/gtin&gt;		
+		&lt;lang&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;language&gt;
+					&lt;xpdt_code&gt;{fn:tokenize($vCode, '\|')[2]}&lt;/xpdt_code&gt;
+				&lt;/language&gt;
+			&lt;/xpdt_qualification&gt;
+			&lt;descriptionLong&gt;{$input.Input/materialName/text()}&lt;/descriptionLong&gt;
+		&lt;/lang&gt;
+		&lt;lang&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;language&gt;
+					&lt;xpdt_code&gt;{fn:tokenize($vCode, '\|')[1]}&lt;/xpdt_code&gt;
+				&lt;/language&gt;
+			&lt;/xpdt_qualification&gt;
+			&lt;descriptionLong&gt;{$input.Input/materialName/text()}&lt;/descriptionLong&gt;
+		&lt;/lang&gt;
+		&lt;articlePackagingCustom&gt;
+			&lt;materialtype&gt;{$input.Input/*:productType/text()}&lt;/materialtype&gt;
+            &lt;productnumberemg&gt;{$input.Input/*:externalProductGroup/text()}&lt;/productnumberemg&gt;
+		&lt;/articlePackagingCustom&gt;
+		&lt;higherLevelProduct&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;referencedIdentifier&gt;{$input.Input/*:externalProductGroup/text()}&lt;/referencedIdentifier&gt;
+			&lt;/xpdt_qualification&gt;
+		&lt;/higherLevelProduct&gt;
+		&lt;logisticExtension&gt;
+			&lt;grossWeight&gt;{$input.Input/*:grossWeight/text()}&lt;/grossWeight&gt;
+			&lt;weight&gt;{$input.Input/*:netWeight/text()}&lt;/weight&gt;
+			&lt;weightUnit&gt;
+				&lt;xpdt_code&gt;{$input.Input/*:weightUnit/text()}&lt;/xpdt_code&gt;
+			&lt;/weightUnit&gt;
+			&lt;volumeuom&gt;
+				&lt;xpdt_code&gt;{$input.Input/*:volumeUnit/text()}&lt;/xpdt_code&gt;
+			&lt;/volumeuom&gt;
+		&lt;/logisticExtension&gt;
+		&lt;articlePackagingSAP&gt;
+			&lt;volume&gt;{$input.Input/*:materialVolume/text()}&lt;/volume&gt;
+		&lt;/articlePackagingSAP&gt;
+		&lt;articleSAPCustom&gt;
+			&lt;baseuom&gt;{$input.Input/*:baseUnit/text()}&lt;/baseuom&gt;
+		&lt;/articleSAPCustom&gt;
+	&lt;/xpdt_data&gt;
+&lt;/root&gt;</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempPdtJSON">
+                                 <expression language="XQuery">util:toJSON($temp.vTempProductXML)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempProductJSON">
+                                 <expression language="XQuery">fn:substring(fn:substring-after($temp.vTempPdtJSON  ,'{"root":'), 0,fn:string-length(fn:substring-after($temp.vTempPdtJSON   ,'{"root":') ) )</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempArtJSON">
+                                 <expression language="XQuery">util:toJSON($temp.vTempArticleXML)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempArticleJSON">
+                                 <expression language="XQuery">fn:substring(fn:substring-after($temp.vTempArtJSON ,'{"root":'), 0,fn:string-length(fn:substring-after($temp.vTempArtJSON ,'{"root":') ) )</expression>
+                              </operation>
+                              <link id="m1826em7" targetId="m1826el6"/>
+                           </assignment>
+                           <assignment id="m34tn9js">
+                              <title>AssignSetRetryCounter</title>
+                              <operation source="formula" to="temp.vTempRetryCounter">
+                                 <expression language="XQuery">1</expression>
+                              </operation>
+                              <link id="m34tn9ju" targetId="m1826elb"/>
+                           </assignment>
+                           <eventContainer id="m1826el6">
+                              <service id="m1826ela">
+                                 <title>SvcProductUpd</title>
+                                 <serviceName>Conn-SC-TransactionsPIMS4:updateMDMMaterial</serviceName>
+                                 <serviceGUID>cfw9N01emSGlExEj8Amw8U</serviceGUID>
+                                 <serviceInput>
+                                    <parameter name="in_scUpdateMDMMaterial" source="formula">
+                                       <expression language="XQuery">fn:replace($temp.vTempProductJSON , 'xpdt_','_' )</expression>
+                                    </parameter>
+                                 </serviceInput>
+                              </service>
+                              <flow id="m1826el7">
+                                 <link id="m1826emb" targetId="m1826el6" type="containerLink"/>
+                              </flow>
+                              <flow id="m1826el8">
+                                 <container id="m34tn8mf" type="exclusive">
+                                    <title>dRetryPdtUpd</title>
+                                    <flow id="m34tn8mj">
+                                       <assignment id="m34tn99m">
+                                          <title>AssignRetriesPdtUpd</title>
+                                          <operation source="formula" to="temp.vTempRetryCounter">
+                                             <expression language="XQuery">$temp.vTempRetryCounter +1</expression>
+                                          </operation>
+                                          <link id="m34tn99n" targetId="m34tn98o"/>
+                                       </assignment>
+                                       <wait id="m34tn98o">
+                                          <title>WaitSecondsPdtUpd</title>
+                                          <duration source="formula">
+                                             <function name="duration_expression">
+                                                <arg name="value">{$temp.vTempDelay} </arg>
+                                                <arg name="scale">S</arg>
+                                                <arg name="businessDays"/>
+                                             </function>
+                                          </duration>
+                                          <link id="m34tn98p" targetId="m34tn934"/>
+                                       </wait>
+                                       <jumpTo id="m34tn934">
+                                          <link id="m34tn935" targetId="m1826el6"/>
+                                       </jumpTo>
+                                    </flow>
+                                    <flow id="m34tn8mm">
+                                       <throw id="m34tn920">
+                                          <title>ThrowPrdUpd</title>
+                                          <throwInput>
+                                             <parameter name="code" source="constant" updatable="true">{$output.faultProduct[1]/code}</parameter>
+                                             <parameter name="detail" source="constant" updatable="true">{$output.faultProduct[1]/detail}</parameter>
+                                             <parameter name="reason" source="constant" updatable="true">{$output.faultProduct[1]/reason}</parameter>
+                                          </throwInput>
+                                       </throw>
+                                    </flow>
+                                    <link id="m34tn8mi" targetId="m34tn8mj" type="containerLink">
+                                       <condition source="formula">
+                                          <function name="less-or-equals">
+                                             <arg name="left">{$temp.vTempRetryCounter}</arg>
+                                             <arg name="right">{$temp.vTempnRetries }</arg>
+                                          </function>
+                                       </condition>
+                                    </link>
+                                    <link id="m34tn8ml" targetId="m34tn8mm" type="containerLink"/>
+                                 </container>
+                              </flow>
+                              <link id="m1826em8" targetId="m1826el7" type="containerLink"/>
+                              <link id="m34tn9jt" targetId="m34tn9js"/>
+                              <events>
+                                 <catch faultField="faultProductUpd" id="lygcbss2" interrupting="true">
+                                    <link id="m1826em9" targetId="m1826el8" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <eventContainer id="m1826elb">
+                              <service id="m1826elf">
+                                 <title>SvcArticleUpd</title>
+                                 <serviceName>Conn-SC-TransactionsPIMS4:updateMDMMaterial</serviceName>
+                                 <serviceGUID>cfw9N01emSGlExEj8Amw8U</serviceGUID>
+                                 <serviceInput>
+                                    <parameter name="in_scUpdateMDMMaterial" source="formula">
+                                       <expression language="XQuery">fn:replace($temp.vTempArticleJSON , 'xpdt_','_' )</expression>
+                                    </parameter>
+                                 </serviceInput>
+                              </service>
+                              <flow id="m1826elc">
+                                 <link id="m1826eme" targetId="m1826elb" type="containerLink"/>
+                              </flow>
+                              <flow id="m1826eld">
+                                 <container id="m34tn9g4" type="exclusive">
+                                    <title>dRetryArtUpd</title>
+                                    <flow id="m34tn9g5">
+                                       <assignment id="m34tn9g6">
+                                          <title>AssignRetriesArtUpd</title>
+                                          <operation source="formula" to="temp.vTempRetryCounter">
+                                             <expression language="XQuery">$temp.vTempRetryCounter +1</expression>
+                                          </operation>
+                                          <link id="m34tn9ge" targetId="m34tn9g7"/>
+                                       </assignment>
+                                       <wait id="m34tn9g7">
+                                          <title>WaitSecondsArtUpd</title>
+                                          <duration source="formula">
+                                             <function name="duration_expression">
+                                                <arg name="value">{$temp.vTempDelay} </arg>
+                                                <arg name="scale">S</arg>
+                                                <arg name="businessDays"/>
+                                             </function>
+                                          </duration>
+                                          <link id="m34tn9gf" targetId="m34tn9g8"/>
+                                       </wait>
+                                       <jumpTo id="m34tn9g8">
+                                          <link id="m34tn9gg" targetId="m1826elb"/>
+                                       </jumpTo>
+                                    </flow>
+                                    <flow id="m34tn9g9">
+                                       <throw id="m34tn9ga">
+                                          <title>ThrowArtUpd</title>
+                                          <throwInput>
+                                             <parameter name="code" source="constant" updatable="true">{$output.faultProduct[1]/code}</parameter>
+                                             <parameter name="detail" source="constant" updatable="true">{$output.faultProduct[1]/detail}</parameter>
+                                             <parameter name="reason" source="constant" updatable="true">{$output.faultProduct[1]/reason}</parameter>
+                                          </throwInput>
+                                       </throw>
+                                    </flow>
+                                    <link id="m34tn9gc" targetId="m34tn9g5" type="containerLink">
+                                       <condition source="formula">
+                                          <function name="less-or-equals">
+                                             <arg name="left">{$temp.vTempRetryCounter}</arg>
+                                             <arg name="right">{$temp.vTempnRetries }</arg>
+                                          </function>
+                                       </condition>
+                                    </link>
+                                    <link id="m34tn9gd" targetId="m34tn9g9" type="containerLink"/>
+                                 </container>
+                              </flow>
+                              <link id="m1826emc" targetId="m1826elc" type="containerLink"/>
+                              <events>
+                                 <catch faultField="faultArticleUpd" id="lygcbsse" interrupting="true">
+                                    <link id="m1826emd" targetId="m1826eld" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <link id="m1826em6" targetId="m1826el3" type="containerLink"/>
+                        </flow>
+                        <flow id="m1826elg">
+                           <eventContainer id="m1826elh">
+                              <service id="m1826ell">
+                                 <title>SvcS4API</title>
+                                 <serviceName>Conn-SC-TransactionsPIMS4:getS4Material</serviceName>
+                                 <serviceGUID>cfw9N01emSGlExEj8Amw8U</serviceGUID>
+                                 <serviceInput>
+                                    <parameter name="in_scS4API" source="formula">
+                                       <expression language="XQuery">fn:replace($input.Input/*:product/text(), '/', '%2F')</expression>
+                                    </parameter>
+                                 </serviceInput>
+                              </service>
+                              <flow id="m1826eli">
+                                 <assignment id="m36g9q5w">
+                                    <title>AssignSetRetryCounterTerritory</title>
+                                    <operation source="constant" to="temp.vTempRetryCounter">1</operation>
+                                    <link id="m36g9q5x" targetId="m184pksn"/>
+                                 </assignment>
+                                 <eventContainer id="m184pksn">
+                                    <service id="m184pkqq">
+                                       <title>SvcgetMaterialTerritory</title>
+                                       <serviceName>Conn-SC-TransactionsPIMS4:getMaterialTerritory</serviceName>
+                                       <serviceGUID>cfw9N01emSGlExEj8Amw8U</serviceGUID>
+                                       <serviceInput/>
+                                    </service>
+                                    <flow id="m184pksp">
+                                       <link id="m184pksq" targetId="m184pksn" type="containerLink"/>
+                                    </flow>
+                                    <flow id="m184pkss">
+                                       <container id="m34tn9uf" type="exclusive">
+                                          <title>dRetryTerritory</title>
+                                          <flow id="m34tn9ug">
+                                             <assignment id="m34tn9uh">
+                                                <title>AssignRetriesTerritory</title>
+                                                <operation source="formula" to="temp.vTempRetryCounter">
+                                                   <expression language="XQuery">$temp.vTempRetryCounter +1</expression>
+                                                </operation>
+                                                <link id="m34tn9up" targetId="m34tn9ui"/>
+                                             </assignment>
+                                             <wait id="m34tn9ui">
+                                                <title>WaitSecondsTerritory</title>
+                                                <duration source="formula">
+                                                   <function name="duration_expression">
+                                                      <arg name="value">{$temp.vTempDelay} </arg>
+                                                      <arg name="scale">S</arg>
+                                                      <arg name="businessDays"/>
+                                                   </function>
+                                                </duration>
+                                                <link id="m34tn9uq" targetId="m34tn9uj"/>
+                                             </wait>
+                                             <jumpTo id="m34tn9uj">
+                                                <link id="m34tn9ur" targetId="m184pksn"/>
+                                             </jumpTo>
+                                          </flow>
+                                          <flow id="m34tn9uk">
+                                             <throw id="m34tn9ul">
+                                                <title>ThrowTerritory</title>
+                                                <throwInput>
+                                                   <parameter name="code" source="constant" updatable="true">{$output.faultProduct[1]/code}</parameter>
+                                                   <parameter name="detail" source="constant" updatable="true">{$output.faultProduct[1]/detail}</parameter>
+                                                   <parameter name="reason" source="constant" updatable="true">{$output.faultProduct[1]/reason}</parameter>
+                                                </throwInput>
+                                             </throw>
+                                          </flow>
+                                          <link id="m34tn9un" targetId="m34tn9ug" type="containerLink">
+                                             <condition source="formula">
+                                                <function name="less-or-equals">
+                                                   <arg name="left">{$temp.vTempRetryCounter}</arg>
+                                                   <arg name="right">{$temp.vTempnRetries }</arg>
+                                                </function>
+                                             </condition>
+                                          </link>
+                                          <link id="m34tn9uo" targetId="m34tn9uk" type="containerLink"/>
+                                       </container>
+                                    </flow>
+                                    <link id="m184pkso" targetId="m184pksp" type="containerLink"/>
+                                    <events>
+                                       <catch faultField="faultTerritory" id="m184pkr3" interrupting="true">
+                                          <link id="m184pksr" targetId="m184pkss" type="containerLink"/>
+                                       </catch>
+                                    </events>
+                                 </eventContainer>
+                                 <link id="m1826emj" targetId="m1826elh" type="containerLink"/>
+                              </flow>
+                              <flow id="m1826elj">
+                                 <container id="m36g9q27" type="exclusive">
+                                    <title>dRetryS4API</title>
+                                    <flow id="m36g9q28">
+                                       <assignment id="m36g9q29">
+                                          <title>AssignRetriesS4API</title>
+                                          <operation source="formula" to="temp.vTempRetryCounter">
+                                             <expression language="XQuery">$temp.vTempRetryCounter +1</expression>
+                                          </operation>
+                                          <link id="m36g9q2g" targetId="m36g9q2a"/>
+                                       </assignment>
+                                       <wait id="m36g9q2a">
+                                          <title>WaitSecondsS4API</title>
+                                          <duration source="formula">
+                                             <function name="duration_expression">
+                                                <arg name="value">{$temp.vTempDelay} </arg>
+                                                <arg name="scale">S</arg>
+                                                <arg name="businessDays"/>
+                                             </function>
+                                          </duration>
+                                          <link id="m36g9q2h" targetId="m36g9q2b"/>
+                                       </wait>
+                                       <jumpTo id="m36g9q2b">
+                                          <link id="m36g9q2i" targetId="m1826elh"/>
+                                       </jumpTo>
+                                    </flow>
+                                    <flow id="m36g9q2c">
+                                       <throw id="m36g9q2d">
+                                          <title>ThrowS4API</title>
+                                          <throwInput>
+                                             <parameter name="code" source="constant" updatable="true">{$output.faultProduct[1]/code}</parameter>
+                                             <parameter name="detail" source="constant" updatable="true">{$output.faultProduct[1]/detail}</parameter>
+                                             <parameter name="reason" source="constant" updatable="true">{$output.faultProduct[1]/reason}</parameter>
+                                          </throwInput>
+                                       </throw>
+                                    </flow>
+                                    <link id="m36g9q2e" targetId="m36g9q28" type="containerLink">
+                                       <condition source="formula">
+                                          <function name="less-or-equals">
+                                             <arg name="left">{$temp.vTempRetryCounter}</arg>
+                                             <arg name="right">{$temp.vTempnRetries }</arg>
+                                          </function>
+                                       </condition>
+                                    </link>
+                                    <link id="m36g9q2f" targetId="m36g9q2c" type="containerLink"/>
+                                 </container>
+                              </flow>
+                              <link id="m1826emg" targetId="m1826eli" type="containerLink"/>
+                              <link id="m34tna4w" targetId="m34tna4v"/>
+                              <events>
+                                 <catch faultField="faultS4API" id="lz2cwpuu" interrupting="true">
+                                    <link id="m1826emh" targetId="m1826elj" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <eventContainer id="m1826elm">
+                              <service id="m1826elq">
+                                 <title>SvcAPILanguage</title>
+                                 <serviceName>Conn-SC-TransactionsPIMS4:getMaterialLanguage</serviceName>
+                                 <serviceGUID>cfw9N01emSGlExEj8Amw8U</serviceGUID>
+                                 <serviceInput/>
+                              </service>
+                              <flow id="m1826eln">
+                                 <link id="m1826emn" targetId="m1826elm" type="containerLink"/>
+                              </flow>
+                              <flow id="m1826elo">
+                                 <container id="m34tna1p" type="exclusive">
+                                    <title>dRetryLanguage</title>
+                                    <flow id="m34tna1q">
+                                       <assignment id="m34tna1r">
+                                          <title>AssignRetriesLanguage</title>
+                                          <operation source="formula" to="temp.vTempRetryCounter">
+                                             <expression language="XQuery">$temp.vTempRetryCounter +1</expression>
+                                          </operation>
+                                          <link id="m34tna1z" targetId="m34tna1s"/>
+                                       </assignment>
+                                       <wait id="m34tna1s">
+                                          <title>WaitSecondsLanguage</title>
+                                          <duration source="formula">
+                                             <function name="duration_expression">
+                                                <arg name="value">{$temp.vTempDelay} </arg>
+                                                <arg name="scale">S</arg>
+                                                <arg name="businessDays"/>
+                                             </function>
+                                          </duration>
+                                          <link id="m34tna20" targetId="m34tna1t"/>
+                                       </wait>
+                                       <jumpTo id="m34tna1t">
+                                          <link id="m34tna21" targetId="m1826elm"/>
+                                       </jumpTo>
+                                    </flow>
+                                    <flow id="m34tna1u">
+                                       <throw id="m34tna1v">
+                                          <title>ThrowLanguage</title>
+                                          <throwInput>
+                                             <parameter name="code" source="constant" updatable="true">{$output.faultProduct[1]/code}</parameter>
+                                             <parameter name="detail" source="constant" updatable="true">{$output.faultProduct[1]/detail}</parameter>
+                                             <parameter name="reason" source="constant" updatable="true">{$output.faultProduct[1]/reason}</parameter>
+                                          </throwInput>
+                                       </throw>
+                                    </flow>
+                                    <link id="m34tna1x" targetId="m34tna1q" type="containerLink">
+                                       <condition source="formula">
+                                          <function name="less-or-equals">
+                                             <arg name="left">{$temp.vTempRetryCounter}</arg>
+                                             <arg name="right">{$temp.vTempnRetries }</arg>
+                                          </function>
+                                       </condition>
+                                    </link>
+                                    <link id="m34tna1y" targetId="m34tna1u" type="containerLink"/>
+                                 </container>
+                              </flow>
+                              <link id="m1826emk" targetId="m1826eln" type="containerLink"/>
+                              <link id="m1826emm" targetId="m1826elr"/>
+                              <events>
+                                 <catch faultField="faultAPILanguage" id="lz2cwpvh" interrupting="true">
+                                    <link id="m1826eml" targetId="m1826elo" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <assignment id="m34tna4v">
+                              <title>AssignSetRetryCounterLanguage</title>
+                              <operation source="formula" to="temp.vTempRetryCounter">
+                                 <expression language="XQuery">1</expression>
+                              </operation>
+                              <link id="m34tna4x" targetId="m1826elm"/>
+                           </assignment>
+                           <assignment id="m1826elr">
+                              <title>AssignCreated</title>
+                              <operation source="formula" to="temp.vTempResponseLanguage">
+                                 <expression language="XQuery">util:simplifyXml($output.out_scGetLanguage )</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempResponseS4">
+                                 <expression language="XQuery">util:simplifyXml($output.out_scS4API )
+</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempResponseTerritory">
+                                 <expression language="XQuery">util:simplifyXml($output.out_scGetTerritory)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempDataTerritory">
+                                 <expression language="XQuery">&lt;DataTerritory&gt;{
+for $salesData in $temp.vTempResponseS4/*:SalesData
+	return		
+		for $productEntries in $temp.vTempResponseTerritory/*:entries
+		where $productEntries/*:externalCode/text() = fn:concat($salesData/*:ProductSalesOrg/text(),$salesData/*:ProductDistributionChnl/text())					
+		return		
+			&lt;externalCode&gt;{$productEntries/*:externalCode/text()}&lt;/externalCode&gt;
+		}&lt;/DataTerritory&gt;</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempCountSalesData">
+                                 <expression language="XQuery">fn:count($temp.vTempResponseS4/*:SalesData)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempCountTerritory">
+                                 <expression language="XQuery">fn:count($temp.vTempDataTerritory/*:externalCode)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempProductXML">
+                                 <expression language="XQuery">let $vEntity := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:entity/text() 
+let $vContainer := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:container/text() 
+let $vCode := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:code/text() 
+let $vExternalId := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:externalId/text() 
+let $source := &lt;root&gt;
+	&lt;xpdt_entity&gt;{fn:tokenize($vEntity, '\|')[1]}&lt;/xpdt_entity&gt;
+	&lt;xpdt_container&gt;{fn:concat("'",$vContainer,"'")}&lt;/xpdt_container&gt;
+	&lt;xpdt_updateIfExists&gt;{fn:true()}&lt;/xpdt_updateIfExists&gt;
+	&lt;xpdt_data&gt;
+		&lt;identifier&gt;{$input.Input/*:externalProductGroup/text()}&lt;/identifier&gt;
+		&lt;lang&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;language&gt;
+					&lt;xpdt_code&gt;{fn:tokenize($vCode, '\|')[1]}&lt;/xpdt_code&gt;
+				&lt;/language&gt;
+			&lt;/xpdt_qualification&gt;
+			&lt;descriptionShort&gt;{$input.Input/externalMaterialGroupName/text()}&lt;/descriptionShort&gt;
+		&lt;/lang&gt;
+		&lt;lang&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;language&gt;
+					&lt;xpdt_code&gt;{fn:tokenize($vCode, '\|')[2]}&lt;/xpdt_code&gt;
+				&lt;/language&gt;
+			&lt;/xpdt_qualification&gt;
+			&lt;descriptionShort&gt;{$input.Input/externalMaterialGroupName/text()}&lt;/descriptionShort&gt;
+		&lt;/lang&gt;
+		&lt;structureGroupMap&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;structureGroup&gt;
+					&lt;xpdt_externalId&gt;{fn:concat("'",$input.Input/*:productHierarchy/text(),"'",fn:tokenize($vExternalId, '\|')[1])}&lt;/xpdt_externalId&gt;
+				&lt;/structureGroup&gt;
+			&lt;/xpdt_qualification&gt;
+		&lt;/structureGroupMap&gt;
+		&lt;structureGroupMap&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;structureGroup&gt;
+					&lt;xpdt_externalId&gt;{fn:concat("'",$input.Input/*:productGroup/text(),"'",fn:tokenize($vExternalId, '\|')[2])}&lt;/xpdt_externalId&gt;
+				&lt;/structureGroup&gt;
+			&lt;/xpdt_qualification&gt;
+		&lt;/structureGroupMap&gt;		
+		{
+		 for $product2gsalesorg in $temp.vTempResponseS4 /*:SalesData
+			return
+            	for $productEntries in $temp.vTempResponseTerritory/*:entries
+                where $productEntries/*:externalCode/text() = fn:concat($product2gsalesorg/*:ProductSalesOrg/text(),$product2gsalesorg/*:ProductDistributionChnl/text())					
+                return
+                (
+                &lt;product2gsalesorg&gt;
+                    &lt;xpdt_qualification&gt;
+                        &lt;salesorg&gt;
+                            &lt;xpdt_code&gt;{fn:concat($product2gsalesorg/ProductSalesOrg/text(),$product2gsalesorg/ProductDistributionChnl/text())}&lt;/xpdt_code&gt;
+                        &lt;/salesorg&gt;
+                    &lt;/xpdt_qualification&gt;
+                    &lt;materialgroupid1&gt;{$product2gsalesorg/FirstSalesSpecProductGroup/text()}&lt;/materialgroupid1&gt;
+                    &lt;materialgroupid2&gt;{$product2gsalesorg/SecondSalesSpecProductGroup/text()}&lt;/materialgroupid2&gt;
+                    &lt;materialgroupid3&gt;{$product2gsalesorg/ThirdSalesSpecProductGroup/text()}&lt;/materialgroupid3&gt;
+                &lt;/product2gsalesorg&gt;
+            )
+		}
+		{		
+		for $product2glangsalesorg in $temp.vTempResponseS4/*:SalesData
+			return
+            	for $productEntries in $temp.vTempResponseTerritory/*:entries
+                where $productEntries/*:externalCode/text() = fn:concat($product2glangsalesorg/*:ProductSalesOrg/text(),$product2glangsalesorg/*:ProductDistributionChnl/text())					
+                return
+                  for $materialGroupCounter in (1 to 3)
+                  return
+                      for $productLanguage in $product2glangsalesorg/*[name() = fn:concat("MaterialGroup",$materialGroupCounter,"Text")]					 
+                      return
+                          for $productEntries in $temp.vTempResponseLanguage/*:entries
+                          where fn:substring($productEntries/*:label/text(),1,2) = fn:lower-case($productLanguage/*:Language/text())	
+                          return
+                              &lt;product2glangsalesorg&gt;
+                                  &lt;xpdt_qualification&gt;
+                                      &lt;language&gt;
+                                          &lt;xpdt_code&gt;{$productEntries/*:label/text()}&lt;/xpdt_code&gt;
+                                      &lt;/language&gt;
+                                      &lt;salesorg&gt;
+                                          &lt;xpdt_code&gt;{fn:concat($product2glangsalesorg/*:ProductSalesOrg/text(),$product2glangsalesorg/*:ProductDistributionChnl/text())}&lt;/xpdt_code&gt;
+                                      &lt;/salesorg&gt;
+                                  &lt;/xpdt_qualification&gt;
+                                  &lt;materialgroupname1&gt;{if($product2glangsalesorg/*:MaterialGroup1Text/*:Language/text()) then ($product2glangsalesorg/*:MaterialGroup1Text[Language/text() = $productLanguage/*:Language/text()]/*:AdditionalMaterialGroup1Name/text()) else('')}&lt;/materialgroupname1&gt;
+                                  &lt;materialgroupname2&gt;{if($product2glangsalesorg/*:MaterialGroup2Text/*:Language/text()) then ($product2glangsalesorg/*:MaterialGroup2Text[Language/text() = $productLanguage/*:Language/text()]/*:AdditionalMaterialGroup2Name/text()) else('')}&lt;/materialgroupname2&gt;
+                                  &lt;materialgroupname3&gt;{if($product2glangsalesorg/*:MaterialGroup3Text/*:Language/text()) then ($product2glangsalesorg/*:MaterialGroup3Text[Language/text() = $productLanguage/*:Language/text()]/*:AdditionalMaterialGroup3Name/text()) else('')}&lt;/materialgroupname3&gt;								
+                              &lt;/product2glangsalesorg&gt;
+		}
+	&lt;/xpdt_data&gt;
+&lt;/root&gt;
+let $product2glangsalesorg := $source/xpdt_data/product2glangsalesorg
+
+let $uniqueItems :=
+    for $group in distinct-values(
+        for $item in $product2glangsalesorg
+        return concat(
+            $item/xpdt_qualification/language/xpdt_code, '|',
+            $item/xpdt_qualification/salesorg/xpdt_code
+        )
+    )
+    let $lang := substring-before($group, '|'),
+        $salesorg := substring-after($group, '|')
+    return
+        $product2glangsalesorg[xpdt_qualification/language/xpdt_code = $lang and xpdt_qualification/salesorg/xpdt_code = $salesorg
+        ][1]
+return 
+&lt;root&gt;
+    { $source/xpdt_entity }
+    { $source/xpdt_container }
+    { $source/xpdt_updateIfExists }
+    &lt;xpdt_data&gt;
+        { $source/xpdt_data/identifier }
+        { $source/xpdt_data/lang }
+        { $source/xpdt_data/structureGroupMap }
+        { $source/xpdt_data/product2gsalesorg }
+        { $uniqueItems }
+    &lt;/xpdt_data&gt;
+&lt;/root&gt;</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempArticleXML">
+                                 <expression language="XQuery">let $vEntity := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:entity/text() 
+let $vContainer := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:container/text() 
+let $vCode := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:code/text() 
+let $vExternalId := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:constantList/*:externalId/text() 
+return
+&lt;root&gt;
+	&lt;xpdt_entity&gt;{fn:tokenize($vEntity, '\|')[2]}&lt;/xpdt_entity&gt;
+	&lt;xpdt_container&gt;{fn:concat("'",$vContainer,"'")}&lt;/xpdt_container&gt;
+	&lt;xpdt_updateIfExists&gt;{fn:true()}&lt;/xpdt_updateIfExists&gt;
+	&lt;xpdt_data&gt;
+		&lt;gtin&gt;{$input.Input/*:productStandardId/text()}&lt;/gtin&gt;
+		&lt;oldmaterialnumber&gt;{$input.Input/*:productOldId/text()}&lt;/oldmaterialnumber&gt;
+		&lt;identifier&gt;{$input.Input/*:product/text()}&lt;/identifier&gt;
+		&lt;lang&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;language&gt;
+					&lt;xpdt_code&gt;{fn:tokenize($vCode, '\|')[2]}&lt;/xpdt_code&gt;
+				&lt;/language&gt;
+			&lt;/xpdt_qualification&gt;
+			&lt;descriptionLong&gt;{$input.Input/materialName/text()}&lt;/descriptionLong&gt;
+		&lt;/lang&gt;
+		&lt;lang&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;language&gt;
+					&lt;xpdt_code&gt;{fn:tokenize($vCode, '\|')[1]}&lt;/xpdt_code&gt;
+				&lt;/language&gt;
+			&lt;/xpdt_qualification&gt;
+			&lt;descriptionLong&gt;{$input.Input/materialName/text()}&lt;/descriptionLong&gt;
+		&lt;/lang&gt;		
+		&lt;higherLevelProduct&gt;
+			&lt;xpdt_qualification&gt;
+				&lt;referencedIdentifier&gt;{$input.Input/*:externalProductGroup/text()}&lt;/referencedIdentifier&gt;
+			&lt;/xpdt_qualification&gt;
+		&lt;/higherLevelProduct&gt;
+		&lt;articlePackagingCustom&gt;
+			&lt;materialtype&gt;{$input.Input/*:productType/text()}&lt;/materialtype&gt;
+            &lt;productnumberemg&gt;{$input.Input/*:externalProductGroup/text()}&lt;/productnumberemg&gt;
+		&lt;/articlePackagingCustom&gt;
+		&lt;logisticExtension&gt;
+			&lt;grossWeight&gt;{$input.Input/*:grossWeight/text()}&lt;/grossWeight&gt;
+			&lt;weight&gt;{$input.Input/*:netWeight/text()}&lt;/weight&gt;
+			&lt;weightUnit&gt;
+				&lt;xpdt_code&gt;{$input.Input/*:weightUnit/text()}&lt;/xpdt_code&gt;
+			&lt;/weightUnit&gt;
+			&lt;volumeuom&gt;
+				&lt;xpdt_code&gt;{$input.Input/*:volumeUnit/text()}&lt;/xpdt_code&gt;
+			&lt;/volumeuom&gt;
+		&lt;/logisticExtension&gt;
+		&lt;articlePackagingSAP&gt;
+			&lt;volume&gt;{$input.Input/*:materialVolume/text()}&lt;/volume&gt;
+		&lt;/articlePackagingSAP&gt;
+		&lt;articleSAPCustom&gt;
+			&lt;baseuom&gt;{$input.Input/*:baseUnit/text()}&lt;/baseuom&gt;
+		&lt;/articleSAPCustom&gt;
+		{
+		 for $structureGroupMap in $temp.vTempResponseS4/*:SalesData
+			return
+            	for $productEntries in $temp.vTempResponseTerritory/*:entries
+                where $productEntries/*:externalCode/text() = fn:concat($structureGroupMap/*:ProductSalesOrg/text(),$structureGroupMap/*:ProductDistributionChnl/text())					
+                return
+                &lt;structureGroupMap&gt;
+                    &lt;xpdt_qualification&gt;
+                        &lt;structureGroup&gt;
+                            &lt;xpdt_externalId&gt;{fn:concat("'",$structureGroupMap/ProductSalesOrg/text(),$structureGroupMap/*:ProductDistributionChnl/text(),"'",fn:tokenize($vExternalId, '\|')[3])}&lt;/xpdt_externalId&gt;
+                        &lt;/structureGroup&gt;
+                    &lt;/xpdt_qualification&gt;
+                &lt;/structureGroupMap&gt;
+            
+		}
+		&lt;!--{
+		 for $articleSAPCustom in $temp.vTempResponseS4/*:SalesData
+			return
+            	for $productEntries in $temp.vTempResponseTerritory/*:entries
+                where $productEntries/*:externalCode/text() = fn:concat($articleSAPCustom/*:ProductSalesOrg/text(),$articleSAPCustom/*:ProductDistributionChnl/text())					
+                return
+                &lt;articleSAPCustom&gt;				
+                    &lt;minimumorderquantity&gt;{$articleSAPCustom/MinimumOrderQuantity/text()}&lt;/minimumorderquantity&gt;		
+                    &lt;minimumdeliveryquantity&gt;{$articleSAPCustom/DeliveryNoteProcminDelivqty/text()}&lt;/minimumdeliveryquantity&gt;
+                &lt;/articleSAPCustom&gt;
+		}--&gt;
+		{
+		 for $articleSAPSalesOrg in $temp.vTempResponseS4 /*:SalesData
+			return
+            	for $productEntries in $temp.vTempResponseTerritory/*:entries
+                where $productEntries/*:externalCode/text() = fn:concat($articleSAPSalesOrg/*:ProductSalesOrg/text(),$articleSAPSalesOrg/*:ProductDistributionChnl/text())					
+                return
+                &lt;articleSAPSalesOrg&gt;
+                    &lt;xpdt_qualification&gt;
+                        &lt;salesorg&gt;
+                            &lt;xpdt_code&gt;{fn:concat($articleSAPSalesOrg/ProductSalesOrg/text(),$articleSAPSalesOrg/ProductDistributionChnl/text())}&lt;/xpdt_code&gt;
+                        &lt;/salesorg&gt;
+                    &lt;/xpdt_qualification&gt;
+                    &lt;flaggedfordeletion&gt;{$temp.vTempResponseS4/IsMarkedForDeletion/text()}&lt;/flaggedfordeletion&gt;
+                    &lt;materialstatus&gt;{$articleSAPSalesOrg/ProductSalesStatus/text()}&lt;/materialstatus&gt;
+                    &lt;minimumorderquantityconsumerunit&gt;{if(fn:concat($articleSAPSalesOrg/DeliveryQuantity/text(),'') != '')then($articleSAPSalesOrg/DeliveryQuantity/text())else('0')}
+                    &lt;/minimumorderquantityconsumerunit&gt;
+                    {
+                    	if(fn:concat($articleSAPSalesOrg/DeliveryQuantityUnit/text(), '') != '')
+                   		then( 
+                        	&lt;minimumorderquantitycustomeruom&gt;
+                        		&lt;xpdt_code&gt;{$articleSAPSalesOrg/DeliveryQuantityUnit/text()}&lt;/xpdt_code&gt;
+                    		&lt;/minimumorderquantitycustomeruom&gt;
+                        )
+                    	else()
+                    }		
+                    &lt;salesuom&gt;{$articleSAPSalesOrg/SalesMeasureUnit/text()}&lt;/salesuom&gt;		
+
+
+                &lt;/articleSAPSalesOrg&gt;
+		}
+		{
+		 for $articleLangSalesOrg in $temp.vTempResponseS4/*:SalesData
+			return
+            	for $productEntries in $temp.vTempResponseTerritory/*:entries
+                where $productEntries/*:externalCode/text() = fn:concat($articleLangSalesOrg/*:ProductSalesOrg/text(),$articleLangSalesOrg/*:ProductDistributionChnl/text())					
+                return
+                  for $salesText in $articleLangSalesOrg/*:SalesText			
+                      return
+                      for $productLanguage in $temp.vTempResponseLanguage/*:entries
+                          where fn:substring($productLanguage/*:label/text(),1,2) = fn:lower-case($salesText/*:Language/text())			
+                          return
+                          &lt;articleLangSalesOrg&gt;
+                              &lt;xpdt_qualification&gt;
+                                  &lt;salesorg&gt;
+                                      &lt;xpdt_code&gt;{fn:concat($articleLangSalesOrg/*:ProductSalesOrg/text(),$articleLangSalesOrg/*:ProductDistributionChnl/text())}&lt;/xpdt_code&gt;
+                                  &lt;/salesorg&gt;
+                                  &lt;language&gt;
+                                      &lt;xpdt_code&gt;{$productLanguage/*:label/text()}&lt;/xpdt_code&gt;
+                                  &lt;/language&gt;
+                              &lt;/xpdt_qualification&gt;
+                              &lt;salestext&gt;{$salesText/*:SalesText/text()}&lt;/salestext&gt;	
+                          &lt;/articleLangSalesOrg&gt;	
+		}		
+	&lt;/xpdt_data&gt;
+&lt;/root&gt;</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempPdtJSON">
+                                 <expression language="XQuery">util:toJSON($temp.vTempProductXML)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempArtJSON">
+                                 <expression language="XQuery">util:toJSON($temp.vTempArticleXML)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempProductJSON">
+                                 <expression language="XQuery">fn:substring(fn:substring-after($temp.vTempPdtJSON  ,'{"root":'), 0,fn:string-length(fn:substring-after($temp.vTempPdtJSON   ,'{"root":') ) )</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempArticleJSON">
+                                 <expression language="XQuery">fn:substring(fn:substring-after($temp.vTempArtJSON ,'{"root":'), 0,fn:string-length(fn:substring-after($temp.vTempArtJSON ,'{"root":') ) )</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempRetryCounter">
+                                 <expression language="XQuery">1</expression>
+                              </operation>
+                              <link id="m184plxg" targetId="m184plx0"/>
+                           </assignment>
+                           <container id="m184plx0" type="exclusive">
+                              <title>dSalesData</title>
+                              <flow id="m184plx1">
+                                 <container id="m184plx2" type="exclusive">
+                                    <title>dTerritory</title>
+                                    <flow id="m184plx3">
+                                       <eventContainer id="m184plyg">
+                                          <service id="m184plyk">
+                                             <title>SvcProductCreation</title>
+                                             <serviceName>Conn-SC-TransactionsPIMS4:createMDMMaterial</serviceName>
+                                             <serviceGUID>cfw9N01emSGlExEj8Amw8U</serviceGUID>
+                                             <serviceInput>
+                                                <parameter name="in_scCreateMDMMaterial" source="formula">
+                                                   <expression language="XQuery">fn:replace($temp.vTempProductJSON , 'xpdt_','_' )</expression>
+                                                </parameter>
+                                             </serviceInput>
+                                          </service>
+                                          <flow id="m184plyh">
+                                             <assignment id="m34tnam5">
+                                                <title>AssignSetRetryCounterArtC</title>
+                                                <operation source="formula" to="temp.vTempRetryCounter">
+                                                   <expression language="XQuery">1</expression>
+                                                </operation>
+                                                <link id="m34tnam6" targetId="m184plzl"/>
+                                             </assignment>
+                                             <eventContainer id="m184plzl">
+                                                <service id="m184plzp">
+                                                   <title>SvcArticleCreation</title>
+                                                   <serviceName>Conn-SC-TransactionsPIMS4:createMDMMaterial</serviceName>
+                                                   <serviceGUID>cfw9N01emSGlExEj8Amw8U</serviceGUID>
+                                                   <serviceInput>
+                                                      <parameter name="in_scCreateMDMMaterial" source="formula">
+                                                         <expression language="XQuery">fn:replace($temp.vTempArticleJSON , 'xpdt_','_' )</expression>
+                                                      </parameter>
+                                                   </serviceInput>
+                                                </service>
+                                                <flow id="m184plzm">
+                                                   <link id="m184plzs" targetId="m184plzl" type="containerLink"/>
+                                                </flow>
+                                                <flow id="m184plzn">
+                                                   <container id="m34tnaij" type="exclusive">
+                                                      <title>dRetryArtC</title>
+                                                      <flow id="m34tnaik">
+                                                         <assignment id="m34tnail">
+                                                            <title>AssignRetriesArtC</title>
+                                                            <operation source="formula" to="temp.vTempRetryCounter">
+                                                               <expression language="XQuery">$temp.vTempRetryCounter +1</expression>
+                                                            </operation>
+                                                            <link id="m34tnait" targetId="m34tnaim"/>
+                                                         </assignment>
+                                                         <wait id="m34tnaim">
+                                                            <title>WaitSecondsArtC</title>
+                                                            <duration source="formula">
+                                                               <function name="duration_expression">
+                                                                  <arg name="value">{$temp.vTempDelay} </arg>
+                                                                  <arg name="scale">S</arg>
+                                                                  <arg name="businessDays"/>
+                                                               </function>
+                                                            </duration>
+                                                            <link id="m34tnaiu" targetId="m34tnain"/>
+                                                         </wait>
+                                                         <jumpTo id="m34tnain">
+                                                            <link id="m34tnaiv" targetId="m184plzl"/>
+                                                         </jumpTo>
+                                                      </flow>
+                                                      <flow id="m34tnaio">
+                                                         <throw id="m34tnaip">
+                                                            <title>ThrowArtC</title>
+                                                            <throwInput>
+                                                               <parameter name="code" source="constant" updatable="true">{$output.faultProduct[1]/code}</parameter>
+                                                               <parameter name="detail" source="constant" updatable="true">{$output.faultProduct[1]/detail}</parameter>
+                                                               <parameter name="reason" source="constant" updatable="true">{$output.faultProduct[1]/reason}</parameter>
+                                                            </throwInput>
+                                                         </throw>
+                                                      </flow>
+                                                      <link id="m34tnair" targetId="m34tnaik" type="containerLink">
+                                                         <condition source="formula">
+                                                            <function name="less-or-equals">
+                                                               <arg name="left">{$temp.vTempRetryCounter}</arg>
+                                                               <arg name="right">{$temp.vTempnRetries }</arg>
+                                                            </function>
+                                                         </condition>
+                                                      </link>
+                                                      <link id="m34tnais" targetId="m34tnaio" type="containerLink"/>
+                                                   </container>
+                                                </flow>
+                                                <link id="m184plzq" targetId="m184plzm" type="containerLink"/>
+                                                <events>
+                                                   <catch faultField="faultArticleCreation" id="lz2wqalb" interrupting="true">
+                                                      <link id="m184plzr" targetId="m184plzn" type="containerLink"/>
+                                                   </catch>
+                                                </events>
+                                             </eventContainer>
+                                             <link id="m184plyn" targetId="m184plyg" type="containerLink"/>
+                                          </flow>
+                                          <flow id="m184plyi">
+                                             <container id="m34tnad4" type="exclusive">
+                                                <title>dRetryPdtC</title>
+                                                <flow id="m34tnad5">
+                                                   <assignment id="m34tnad6">
+                                                      <title>AssignRetriesPdtC</title>
+                                                      <operation source="formula" to="temp.vTempRetryCounter">
+                                                         <expression language="XQuery">$temp.vTempRetryCounter +1</expression>
+                                                      </operation>
+                                                      <link id="m34tnade" targetId="m34tnad7"/>
+                                                   </assignment>
+                                                   <wait id="m34tnad7">
+                                                      <title>WaitSecondsPdtC</title>
+                                                      <duration source="formula">
+                                                         <function name="duration_expression">
+                                                            <arg name="value">{$temp.vTempDelay} </arg>
+                                                            <arg name="scale">S</arg>
+                                                            <arg name="businessDays"/>
+                                                         </function>
+                                                      </duration>
+                                                      <link id="m34tnadf" targetId="m34tnad8"/>
+                                                   </wait>
+                                                   <jumpTo id="m34tnad8">
+                                                      <link id="m34tnadg" targetId="m184plyg"/>
+                                                   </jumpTo>
+                                                </flow>
+                                                <flow id="m34tnad9">
+                                                   <throw id="m34tnada">
+                                                      <title>ThrowPrdC</title>
+                                                      <throwInput>
+                                                         <parameter name="code" source="constant" updatable="true">{$output.faultProduct[1]/code}</parameter>
+                                                         <parameter name="detail" source="constant" updatable="true">{$output.faultProduct[1]/detail}</parameter>
+                                                         <parameter name="reason" source="constant" updatable="true">{$output.faultProduct[1]/reason}</parameter>
+                                                      </throwInput>
+                                                   </throw>
+                                                </flow>
+                                                <link id="m34tnadc" targetId="m34tnad5" type="containerLink">
+                                                   <condition source="formula">
+                                                      <function name="less-or-equals">
+                                                         <arg name="left">{$temp.vTempRetryCounter}</arg>
+                                                         <arg name="right">{$temp.vTempnRetries }</arg>
+                                                      </function>
+                                                   </condition>
+                                                </link>
+                                                <link id="m34tnadd" targetId="m34tnad9" type="containerLink"/>
+                                             </container>
+                                          </flow>
+                                          <link id="m184plyl" targetId="m184plyh" type="containerLink"/>
+                                          <events>
+                                             <catch faultField="faultProductCreation" id="lz2wqaks" interrupting="true">
+                                                <link id="m184plym" targetId="m184plyi" type="containerLink"/>
+                                             </catch>
+                                          </events>
+                                       </eventContainer>
+                                       <link id="m184plxd" targetId="m184plx2" type="containerLink"/>
+                                    </flow>
+                                    <flow id="m184plx4">
+                                       <link id="m184plxe" targetId="m184plx2" type="containerLink"/>
+                                    </flow>
+                                    <link id="m184plxb" targetId="m184plx3" type="containerLink">
+                                       <condition source="formula">
+                                          <function name="greater-than">
+                                             <arg name="left">{$temp.vTempCountTerritory}</arg>
+                                             <arg name="right">{0}</arg>
+                                          </function>
+                                       </condition>
+                                    </link>
+                                    <link id="m184plxc" targetId="m184plx4" type="containerLink"/>
+                                 </container>
+                                 <link id="m184plxa" targetId="m184plx0" type="containerLink"/>
+                              </flow>
+                              <flow id="m184plx6">
+                                 <link id="m184plxf" targetId="m184plx0" type="containerLink"/>
+                              </flow>
+                              <link id="m184plx8" targetId="m184plx1" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="greater-than">
+                                       <arg name="left">{$temp.vTempCountSalesData}</arg>
+                                       <arg name="right">{0}</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="m184plx9" targetId="m184plx6" type="containerLink"/>
+                           </container>
+                           <link id="m1826emf" targetId="m1826el3" type="containerLink"/>
+                        </flow>
+                        <flow id="m1826em2">
+                           <link id="m1826emw" targetId="m1826el3" type="containerLink"/>
+                        </flow>
+                        <link id="m1826em3" targetId="m1826el4" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$temp.vTempEventType}</arg>
+                                 <arg name="right">changed</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="m1826em4" targetId="m1826elg" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$temp.vTempEventType}</arg>
+                                 <arg name="right">created</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="m1826em5" targetId="m1826em2" type="containerLink"/>
+                     </container>
+                     <link id="m1826ekm" targetId="m1826ekh" type="containerLink"/>
+                  </flow>
+                  <flow id="m1826eko">
+                     <link id="m1826ekp" targetId="m1826ekh" type="containerLink"/>
+                  </flow>
+                  <link id="m1826ekk" targetId="m1826ekl" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.vTempMaterialFilter}</arg>
+                           <arg name="right">SAPS4</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="m1826ekn" targetId="m1826eko" type="containerLink"/>
+                  <link id="m1826el2" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>0nY3O60JnFpbRF2JQksYag</types1:GUID>
+      <types1:DisplayName>PRC-SendMDMtoPIM</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-08-26T19:52:56.485Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,75 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>QykPaaaaaaaaa-gt-25429412-2024-05-07T23:41:31.688Z::conn.xml</types1:EntryId>
+      <types1:Name>Conn-AMQP-IDQ-ConnectPPG-PDT</types1:Name>
+      <types1:ParentFlowIds>fReEaaaaaaaaaaa-gt-2051468-2024-12-13T18:37:03.408Z::pd.xml,Hv4nzCZcjKsJlv5-gt-156715677-2024-06-27T23:42:38.532Z::pd.xml,OOWIuOSSHCwkNmu-gt-13389923-2024-09-11T16:46:34.645Z::pd.xml,YWeIssjqluQgabc-gt-53542712-2025-06-19T21:23:32.817Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>giovaniperez.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-05-07T23:41:32Z</types1:CreationDate>
+      <types1:ModifiedBy>JARangel.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-08-06T22:25:46Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>JARangel.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-08-06T22:27:15Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Conn-AMQP-IDQ-ConnectPPG-PDT/Conn-AMQP-IDQ-ConnectPPG-PDT.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Conn-AMQP-IDQ-ConnectPPG-PDT"
+                     label="Conn-AMQP-IDQ-ConnectPPG-PDT"
+                     name="Conn-AMQP-IDQ-ConnectPPG-PDT">
+            <description/>
+            <tags>.agent:SDCAMDMSA01</tags>
+            <agent>SDCAMDMSA01</agent>
+            <attributes>
+               <attribute encrypted="false" name="User Name" value="iicsdev_service1"/>
+               <attribute encrypted="true" name="Password" value=""/>
+               <attribute encrypted="false" name="Virtual Host" value=""/>
+               <attribute encrypted="false"
+                          name="Host"
+                          value="ppgaemsdprv.messaging.solace.cloud"/>
+               <attribute encrypted="false" name="Port" value="5671"/>
+               <attribute encrypted="false" name="Use SSL" value="true"/>
+               <attribute encrypted="false" name="Query Parameters" value=""/>
+            </attributes>
+            <consumers>
+               <consumer enabled="true"
+                         name="dequeue-AMQP-IDQ-ConnectPPGM"
+                         typeName="AMQP Source">
+                  <description/>
+                  <attributes>
+                     <attribute encrypted="false" name="Destination Type" value="queue"/>
+                     <attribute encrypted="false" name="Destination" value="q/out/idq/iics"/>
+                     <attribute encrypted="false" name="Payload Format" value="Text"/>
+                     <attribute encrypted="false" name="Objectlist Field Name" value="object"/>
+                     <attribute encrypted="false" name="Dead Letter Queue Name" value=""/>
+                     <attribute encrypted="false" name="Other Attributes" value=""/>
+                     <attribute encrypted="false" name="loadBalance" value="true"/>
+                  </attributes>
+               </consumer>
+            </consumers>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="true"
+                           cloudOnly="false"
+                           plugin="Camel"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="false"
+                           supportsOData="false"
+                           supportsPublishSkipMetadataRefresh="false"
+                           type="AMQP"
+                           uuid="59b13626-0180-4d48-a749-38f8f33f7b18">
+               <description>Provides connections to AMQP brokers.</description>
+            </javaConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>k12x6eMy6uMd9eAgj2MNiy</types1:GUID>
+      <types1:DisplayName>Conn-AMQP-IDQ-ConnectPPG-PDT</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-08-25T22:43:15.616Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

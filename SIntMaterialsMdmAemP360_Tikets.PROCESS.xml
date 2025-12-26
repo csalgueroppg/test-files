@@ -1,0 +1,98 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>dvwhz5chspiRASm-gt-103659143-2024-05-21T19:32:27.059Z::pd.xml</types1:EntryId>
+      <types1:Name>SIntMaterialsMdmAemP360_Tikets</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-05-21T19:32:27Z</types1:CreationDate>
+      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-05-22T00:12:52Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-05-22T00:13:01Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SIntMaterialsMdmAemP360_Tikets/SIntMaterialsMdmAemP360_Tikets.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SIntMaterialsMdmAemP360_Tikets"
+                  name="SIntMaterialsMdmAemP360_Tikets"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:SDCAMDMSA01</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="s3Event" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">Conn-AmazonS3-Grp-ConnectPPG-PDT:S3MonitorEventPlainContent</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">eyXTPCbACc9c4tEmmjPjyA</option>
+                  </options>
+               </parameter>
+            </input>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>SDCAMDMSA01</targetLocation>
+               <event eventSource="Conn-AmazonS3-Grp-ConnectPPG-PDT:AwsS3Monitor"/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="lwgtaap6" targetId="lwh0e8ya"/>
+               </start>
+               <eventContainer id="lwh0e8ya">
+                  <service id="lwgtaap5">
+                     <title>SvcAmazonS3GrpConnectPpgPdt</title>
+                     <serviceName>Conn-File-WriteTicket:FileWriter</serviceName>
+                     <serviceGUID>5Yw6U5jD4BjitLTZfuTpSR</serviceGUID>
+                     <serviceInput>
+                        <parameter name="fileWriteTask" source="formula">
+                           <expression language="XQuery">&lt;FileWriteTask&gt;
+	&lt;fileName&gt;{fn:substring-after($input.s3Event[1]/s3ObjectInfo[1]/s3Key,'IICS_PDT/Tickets/')}&lt;/fileName&gt;
+	&lt;format&gt;{'PlainText'}&lt;/format&gt;
+	&lt;content&gt;{$input.s3Event[1]/content}&lt;/content&gt;
+&lt;/FileWriteTask&gt;</expression>
+                        </parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="lwh0e8yc">
+                     <link id="lwh0e8yd" targetId="lwh0e8ya" type="containerLink"/>
+                  </flow>
+                  <flow id="lwh0e8yf">
+                     <throw id="lwh0e8yp">
+                        <title>ThrowFault</title>
+                        <throwInput>
+                           <parameter name="code" source="constant" updatable="true">{$output.faultSvcAmazonS3GrpConnectPpgPdt[1]/code}</parameter>
+                           <parameter name="detail" source="constant" updatable="true">{$output.faultSvcAmazonS3GrpConnectPpgPdt[1]/detail}</parameter>
+                           <parameter name="reason" source="constant" updatable="true">{$output.faultSvcAmazonS3GrpConnectPpgPdt[1]/reason}</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="lwh0e8yb" targetId="lwh0e8yc" type="containerLink"/>
+                  <link id="lwgtaap7" targetId="c"/>
+                  <events>
+                     <catch faultField="faultSvcAmazonS3GrpConnectPpgPdt"
+                            id="lwh0e8y9"
+                            interrupting="true">
+                        <link id="lwh0e8ye" targetId="lwh0e8yf" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>adLk5t0E5nEk49bt97rEsK</types1:GUID>
+      <types1:DisplayName>SIntMaterialsMdmAemP360_Tikets</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-09-11T01:21:41.788Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

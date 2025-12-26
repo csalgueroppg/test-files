@@ -1,0 +1,143 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>NXHVOJ2oTVMTonQ-gt-85071919-2024-05-18T00:03:26.308Z::pd.xml</types1:EntryId>
+      <types1:Name>PRC-MaterialsSendTicket</types1:Name>
+      <types1:ParentFlowIds>AWtHww43dtQR6kb-gt-29333694-2024-05-08T15:17:01.942Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:ip-10-17-246-40.ec2.internal,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-05-18T00:03:26Z</types1:CreationDate>
+      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-05-21T23:02:06Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-09-05T21:13:09Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.PRC-MaterialsSendTicket/PRC-MaterialsSendTicket.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="PRC-MaterialsSendTicket"
+                  name="PRC-MaterialsSendTicket"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:ip-10-17-246-40.ec2.internal,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_input" type="reference">
+                  <options>
+                     <option name="referenceTo">Conn-AmazonS3-Hst-ConnectPPG-PDT:StoreS3ObjectParameters Conn-AmazonS3-Hst-ConnectPPG-PDT:StoreS3ObjectRequest Conn-AmazonS3-Hst-ConnectPPG-PDT:StoredS3ObjectInformation</option>
+                     <option name="required">false</option>
+                     <option name="guid">267ClYK31UekcqfgvY4Dew</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="temp_status" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_code" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_reason" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_detail" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>ip-10-17-246-40.ec2.internal</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="lwfam8qb" targetId="lwfa7w3j"/>
+               </start>
+               <eventContainer id="lwfa7w3j">
+                  <service id="lwfa7w3a">
+                     <title>SvcAmazonS3ConnectPpgPdt</title>
+                     <serviceName>Conn-AmazonS3-Hst-ConnectPPG-PDT:AwsS3Writer</serviceName>
+                     <serviceGUID>267ClYK31UekcqfgvY4Dew</serviceGUID>
+                     <serviceInput>
+                        <parameter name="storeS3ObjectRequest" source="field" updatable="true">input.in_input</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="lwfa7w3l">
+                     <assignment id="lwfam8qp">
+                        <title>AssignSuccess</title>
+                        <operation source="constant" to="temp.temp_code">0</operation>
+                        <operation source="constant" to="temp.temp_detail">0</operation>
+                        <operation source="constant" to="temp.temp_reason">0</operation>
+                        <operation source="constant" to="temp.temp_status">0</operation>
+                     </assignment>
+                     <link id="lwfa7w3m" targetId="lwfa7w3j" type="containerLink"/>
+                  </flow>
+                  <flow id="lwfa7w3o">
+                     <assignment id="lwfam8qu">
+                        <title>AssignFault</title>
+                        <operation source="constant" to="temp.temp_code">{$output.faultSvcAmazonS3ConnectPpgPdt[1]/code}</operation>
+                        <operation source="constant" to="temp.temp_detail">{$output.faultSvcAmazonS3ConnectPpgPdt[1]/detail}</operation>
+                        <operation source="constant" to="temp.temp_reason">{$output.faultSvcAmazonS3ConnectPpgPdt[1]/reason}</operation>
+                        <operation source="constant" to="temp.temp_status">1</operation>
+                     </assignment>
+                     <link id="lwfa7w3p" targetId="lwfa7w3j" type="containerLink"/>
+                  </flow>
+                  <link id="lwfa7w3k" targetId="lwfa7w3l" type="containerLink"/>
+                  <link id="lwfa7w3c" targetId="c"/>
+                  <events>
+                     <catch faultField="faultSvcAmazonS3ConnectPpgPdt"
+                            id="lwfa7w3i"
+                            interrupting="true">
+                        <link id="lwfa7w3n" targetId="lwfa7w3o" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>bcc0dc96-3ef2-440a-9db7-52046fb1cfec</ns1:Id>
+               <ns1:Name>test</ns1:Name>
+               <ns1:CreatedBy>OGalicia.dev@ppg.com</ns1:CreatedBy>
+               <ns1:CreationDate>2024-05-18T00:05:43Z</ns1:CreationDate>
+               <ns1:ModifiedBy>OGalicia.dev@ppg.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-05-18T00:05:43Z</ns1:ModificationDate>
+               <ns1:Data format="json">{}</ns1:Data>
+            </ns1:SampleData>
+            <ns1:SampleData>
+               <ns1:Id>f366a1a2-31c4-48cb-a46c-bdc1902814b7</ns1:Id>
+               <ns1:Name>test2</ns1:Name>
+               <ns1:CreatedBy>OGalicia.dev@ppg.com</ns1:CreatedBy>
+               <ns1:CreationDate>2024-05-18T00:39:47Z</ns1:CreationDate>
+               <ns1:ModifiedBy>OGalicia.dev@ppg.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-05-18T00:39:47Z</ns1:ModificationDate>
+               <ns1:Data format="json">{}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>4dxXMEsjQkFkyirYTv57GX</types1:GUID>
+      <types1:DisplayName>PRC-MaterialsSendTicket</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-09-11T01:21:41.766Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

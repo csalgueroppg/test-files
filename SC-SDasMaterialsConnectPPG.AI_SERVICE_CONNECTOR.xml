@@ -1,0 +1,87 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>sWOVGuDoWn2sqeE-gt-70801439-2024-05-15T18:49:50.296Z::svc.xml</types1:EntryId>
+      <types1:Name>SC-SDasMaterialsConnectPPG</types1:Name>
+      <types1:ParentFlowIds>IKjtmuOSSHCwkNm-gt-71902916-2024-05-15T23:00:57.562Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>JARangel.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-05-15T18:49:50Z</types1:CreationDate>
+      <types1:ModifiedBy>JARangel.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-05-23T17:42:32Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>JARangel.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-06-17T12:11:52Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/SC_SDasMaterialsConnectPPG/SC_SDasMaterialsConnectPPG_svcDef.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="SC-SDasMaterialsConnectPPG"
+                            label=""
+                            name="SC-SDasMaterialsConnectPPG"
+                            uuid="701bc879-2d09-4325-aedf-434817931e99">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="InsertIDQ"
+                       maxRedirects="100"
+                       name="InsertIDQ"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter description=""
+                                label=""
+                                name="in_XML"
+                                nogen="true"
+                                required="false"
+                                testWith="&lt;soapenv:Envelope xmlns:soapenv=&#34;http://schemas.xmlsoap.org/soap/envelope/&#34; xmlns:ins=&#34;http://www.ppg.com/xsd/InsertIDQ&#34;&gt;&#xA;&#x9;&lt;soapenv:Header/&gt;&#xA;&#x9;&lt;soapenv:Body&gt;&#xA;&#x9;&#x9;&lt;ins:InsertIDQRequest&gt;&#xA;&#x9;&#x9;&#x9;&lt;!--1 or more repetitions:--&gt;&#xA;&#x9;&#x9;&#x9;&lt;ins:query&gt;INSERT INTO ERPs_Products (SourceFileName,LoadTimestamp,SourceSystemId,ItemSKey,ProductIdentifier,ItemTypeId,ChampCode,TechnologyGroup,ProductHierarchy,BaseUomId,Bu,SbuId,StatusId,OriginatingId,ItemExistsInSource)values('QUE AEM', '2024-05-08 18:48:57', '107', '000000000004000267|107', '000000000004000267', 'FERT', '000000000004000267', 'DMM165-001', '00001', 'ST', 'AU', 'AU', 'ZC', '000000000004000267', 'True')&#xA;&lt;/ins:query&gt;&#xA;&#x9;&#x9;&#x9;&lt;ins:query&gt;INSERT INTO ERPs_Products (SourceFileName,LoadTimestamp,SourceSystemId,ItemSKey,ProductIdentifier,ItemTypeId,ChampCode,TechnologyGroup,ProductHierarchy,BaseUomId,Bu,SbuId,StatusId,OriginatingId,ItemExistsInSource)values('QUE AEM', '2024-05-08 18:48:57', '107', '000000000004000267|107', '000000000004000267', 'FERT', '000000000004000267', 'DMM165-001', '00001', 'ST', 'AU', 'AU', 'ZC', '000000000004000267', 'True')&#xA;&lt;/ins:query&gt;&#xA;&#x9;&#x9;&lt;/ins:InsertIDQRequest&gt;&#xA;&#x9;&lt;/soapenv:Body&gt;&#xA;&lt;/soapenv:Envelope&gt;"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{fn:concat(util:resolveURN('urn:host-https'),'/process-engine/services/InsertIDQXSD?wsdl')}"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Content-Type">text/xml;charset=utf-8</header>
+                           <header name="Authorization">{let $authorization := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() = 'authorization-Materials']/*:value/text() return $authorization	}</header>
+                        </httpHeaders>
+                        <body>{$in_XML}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="out_Response"
+                            type="objectlist">
+                        <options>
+                           <option name="relationshipName">Child</option>
+                           <option name="referenceTo">$po:$any</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>kz2YQ1IdkS3l0vSXbzUlya</types1:GUID>
+      <types1:DisplayName>SC-SDasMaterialsConnectPPG</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-01-03T14:09:44.509Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

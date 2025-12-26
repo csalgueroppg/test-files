@@ -1,0 +1,174 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>P38nXxpr1Iw8jIw-gt-76806110-2024-05-16T17:24:37.66Z::svc.xml</types1:EntryId>
+      <types1:Name>SC-SDasMaterialsAemAPIs</types1:Name>
+      <types1:ParentFlowIds>VFSJsJGD4ARW8UB-gt-76913684-2024-05-16T17:49:03.376Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-05-16T17:24:38Z</types1:CreationDate>
+      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-08-07T17:14:03Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-08-07T17:14:07Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/SC_SDasMaterialsAemAPIs/SC_SDasMaterialsAemAPIs_svcDef.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="SC-SDasMaterialsAemAPIs"
+                            label=""
+                            name="SC-SDasMaterialsAemAPIs"
+                            uuid="701bc879-2d09-4325-aedf-434817931e99">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="postMaterialsMdmAem"
+                       maxRedirects="100"
+                       name="postMaterialsMdmAem"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter description=""
+                                label=""
+                                name="in_json"
+                                nogen="true"
+                                required="false"
+                                testWith="{&#34;mtrlIdlPckg&#34;:{&#34;bsUntMsr&#34;:&#34;EACH&#34;,&#34;ntWght&#34;:&#34;0.000&#34;,&#34;hubStateInd&#34;:&#34;1&#34;,&#34;vlmUnt&#34;:&#34;NO UOM&#34;,&#34;grssWght&#34;:&#34;0.000&#34;,&#34;brand&#34;:&#34;PR-1422â„¢ B-2 &amp; B-1\/2&#34;,&#34;mtrlTyp&#34;:&#34;FINISHED GOODS&#34;,&#34;pckngUnt&#34;:&#34;PRODUCT&#34;,&#34;createDate&#34;:&#34;2023-03-25T00:09:10.019Z&#34;,&#34;prntcdHsind&#34;:&#34;1&#34;,&#34;lgstcHsind&#34;:&#34;1&#34;,&#34;dvsn&#34;:&#34;AEROSPACE&#34;,&#34;lastUpdateDate&#34;:&#34;2023-08-03T00:20:06.308Z&#34;,&#34;brndHsind&#34;:&#34;1&#34;,&#34;mtrlIdntfr&#34;:&#34;1422B1\/2IKOO5PL&#34;,&#34;itmExstSrc&#34;:&#34;Yes&#34;,&#34;prdctCtgr&#34;:&#34;FINISHED GOODS - ENGINEERED MATERIALS - &#34;,&#34;mtrlNmbr&#34;:&#34;4407491&#34;,&#34;langKey&#34;:&#34;ENGLISH&#34;,&#34;sbuDvsn&#34;:&#34;AEROSPACE&#34;,&#34;statusCd&#34;:&#34;ACTIVE&#34;,&#34;rowidObject&#34;:&#34;411221 &#34;,&#34;dscrHsind&#34;:&#34;1&#34;,&#34;vlm&#34;:&#34;0.000&#34;,&#34;untWght&#34;:&#34;NO UOM&#34;,&#34;srcSystmId&#34;:&#34;GLOBAL QAD&#34;,&#34;orgntngId&#34;:&#34;1422B1\/2IKOO5PL|ASCCH&#34;,&#34;mtrlDscr&#34;:&#34;PRC\/DMS2082\/DHMS S3.1CMS 552-05 1422B1\/2 PAIL&#34;,&#34;ovrllMtrlTyp&#34;:&#34;FINISHED GOODS&#34;}}"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_host"
+                                nogen="true"
+                                required="false"
+                                testWith="https://mr-connection-yfvmnkk8o3s.messaging.solace.cloud:9443"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_EventType"
+                                nogen="true"
+                                required="false"
+                                testWith="created"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_SourceInstance"
+                                nogen="true"
+                                required="false"
+                                testWith="dev"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_MtrlIdntfr"
+                                nogen="true"
+                                required="false"
+                                testWith="1422B1-2IKOO5PL"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_Timestamp"
+                                nogen="true"
+                                required="false"
+                                testWith="1715885811"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_MessageId"
+                                nogen="true"
+                                required="false"
+                                testWith="II-MATE-202405161856517090000"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_CorrelationId"
+                                nogen="true"
+                                required="false"
+                                testWith="MD-MATE-202402132327486860000"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_DeliveryMode"
+                                nogen="true"
+                                required="false"
+                                testWith="&#x9;Persistent"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_PpgEntity"
+                                nogen="true"
+                                required="false"
+                                testWith="material"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_PpgAction"
+                                nogen="true"
+                                required="false"
+                                testWith="created"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_PpgSourceSystem"
+                                nogen="true"
+                                required="false"
+                                testWith="mdmhub"
+                                type="string"/>
+                     <parameter description=""
+                                label=""
+                                name="in_PpgVersion"
+                                nogen="true"
+                                required="false"
+                                testWith="v2"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{fn:concat( $in_host ,'/data/public/mdm/master/material/',$in_PpgAction,'/v2/mdmhub/', $in_SourceInstance ,'/json/', $in_MtrlIdntfr ,'/', $in_Timestamp ,'/yes')}"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Authorization">{let $authorization := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-users'))/*:Parameter[name/text() = 'authorization-AEM-API']/*:value/text() return $authorization}</header>
+                           <header name="Solace-DMQ-Eligible">true</header>
+                           <header name="Solace-Message-ID">{$in_MessageId}</header>
+                           <header name="Solace-Correlation-ID">{$in_CorrelationId}</header>
+                           <header name="Solace-Delivery-Mode">{$in_DeliveryMode}</header>
+                           <header name="Solace-Timestamp">{$in_Timestamp}</header>
+                           <header name="Solace-User-Property-ppg_entity">{$in_PpgEntity}</header>
+                           <header name="Solace-User-Property-ppg_action">{$in_PpgAction}</header>
+                           <header name="Solace-User-Property-ppg_sourcesystem">{$in_PpgSourceSystem}</header>
+                           <header name="Solace-User-Property-ppg_version">{$in_PpgVersion}</header>
+                        </httpHeaders>
+                        <body>{$in_json}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="out_Response"
+                            type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>2uoWLpGRP9TenzippnTWI1</types1:GUID>
+      <types1:DisplayName>SC-SDasMaterialsAemAPIs</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-09-11T01:21:41.809Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

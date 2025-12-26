@@ -1,0 +1,1953 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>SjrabcmWR7hsAVR-gt-101073724-2024-05-21T08:27:50.715Z::pd.xml</types1:EntryId>
+      <types1:Name>PRC-InsertIDQ</types1:Name>
+      <types1:ParentFlowIds>5Ku8QhxOSM8NciZ-gt-39131741-2024-11-15T21:43:00.091Z::pd.xml,fReEaaaaaaaaaaa-gt-2051468-2024-12-13T18:37:03.408Z::pd.xml,Hv4nzCZcjKsJlv5-gt-156715677-2024-06-27T23:42:38.532Z::pd.xml,OOWIuOSSHCwkNmu-gt-13389923-2024-09-11T16:46:34.645Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>JARangel.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-05-21T08:27:51Z</types1:CreationDate>
+      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-12-26T21:06:57Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>JARangel.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-12-27T15:47:47Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.PRC-InsertIDQ/PRC-InsertIDQ.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="0l3cxIbzC3ndLsIKgnvbqc"
+                  displayName="PRC-InsertIDQ"
+                  name="PRC-InsertIDQ"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:SDCAMDMSA01,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="Input" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="outProductId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="temp_JSON_to_XML" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_InsertProducts" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_InsertTexts" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_LanguageFilter" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_InsertParentCode" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_InsertProductHierarchies" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_InsertLogistics" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_InsertBrands" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_InsertAltIdentifiers" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_FileLogName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_errorlog" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_RutaIsilon" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Code" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Detail" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Reason" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Process" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_LogError" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_VolumeUnit" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_WeightUomId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_S4Id" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Domain" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_SourceFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_ItemExistsInSource" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>SDCAMDMSA01</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="lvy3jya9" targetId="lvy3jya8"/>
+               </start>
+               <assignment id="lvy3jya8">
+                  <title>Assign_Inputs</title>
+                  <operation source="formula" to="temp.temp_VolumeUnit">
+                     <expression language="XQuery">util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:volumeUnit/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_S4Id">
+                     <expression language="XQuery">util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:S4Id/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_SourceFileName">
+                     <expression language="XQuery">util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:sourceFileName/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_ItemExistsInSource">
+                     <expression language="XQuery">util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:itemExistsInSource/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_Domain">
+                     <expression language="XQuery">util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:domain/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_JSON_to_XML">
+                     <expression language="XQuery">$input.Input 
+
+(:util:parseJSON(fn:replace($input.Input/*:body/text(),"'","''")):)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_LanguageFilter">
+                     <expression language="XQuery">let $v_Language := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:Language/text() 
+return
+
+if($temp.temp_JSON_to_XML/materialDescriptions[materialLanguage/text()=$v_Language]/materialLanguage/text())
+then(1)
+else(0)
+</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_InsertProducts">
+                     <expression language="XQuery">fn:concat(' INSERT INTO Landing.ERPs_Products
+', fn:concat('(SourceFileName,','LoadTimestamp,','SourceSystemId,',
+'ItemSKey,','ProductIdentifier,','ItemTypeId,','ChampCode,','TechnologyGroup,',
+'ProductHierarchy,','BaseUomId,','Bu,','SbuId,','StatusId,','OriginatingId,'
+,'ItemExistsInSource'
+,')'),
+'values',
+fn:concat('(&amp;apos;',$temp.temp_SourceFileName ,'&amp;apos;,
+			&amp;apos;',fn:format-dateTime(fn:current-dateTime(),"[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]"),'&amp;apos;,
+			&amp;apos;',$temp.temp_S4Id ,'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:product/text(),'|',$temp.temp_S4Id ,'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:product/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productType/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:product/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:externalProductGroup/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productHierarchy/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:baseUnit/text(),'&amp;apos;,		
+			&amp;apos;',$temp.temp_JSON_to_XML/*:division/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:division/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:crossPlantStatus/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:product/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_ItemExistsInSource ,'&amp;apos;)')
+)
+</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_InsertTexts">
+                     <expression language="XQuery">let $v_Language := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:Language/text() 
+return
+if($temp.temp_JSON_to_XML/materialDescriptions[materialLanguage/text()=$v_Language]/materialLanguage/text())
+then(fn:concat(' INSERT INTO Landing.ERPs_Texts
+', fn:concat('(ItemSKey,','SourceFileName,','LoadTimeStamp,',
+'SourceSystemId,','ItemExistsInSource,','ItemTypeId,','SbuId,','Language,',
+'ProductDescription'
+,')'),
+'values',
+fn:concat('(&amp;apos;',$temp.temp_JSON_to_XML/*:product/text(),'|',$temp.temp_S4Id ,'&amp;apos;,
+			&amp;apos;',$temp.temp_SourceFileName ,'&amp;apos;,
+			&amp;apos;',fn:format-dateTime(fn:current-dateTime(),"[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]"),'&amp;apos;,
+			&amp;apos;',$temp.temp_S4Id ,'&amp;apos;,			
+			&amp;apos;',$temp.temp_ItemExistsInSource ,'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productType/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:division/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/materialDescriptions[materialLanguage/text()=$v_Language]/materialLanguage/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/materialDescriptions[materialLanguage/text()=$v_Language]/materialName/text(),'&amp;apos;
+			)')))
+else()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_InsertParentCode">
+                     <expression language="XQuery">let $v_extMat := $temp.temp_JSON_to_XML/*:externalProductGroup
+return
+if(some $PD in $v_extMat satisfies (string-length(normalize-space($PD))&gt;0))
+then(let $v_campos := fn:concat(' INSERT INTO Landing.ERPs_ParentCodes
+', fn:concat('(ItemSKey,','SourceFileName,','LoadTimeStamp,',
+'SourceSystemId,','ParentCode,','ParentCodeName'
+,')'),
+'values')	
+let $v_ERPs_ParentCodes := for $v_ERPs_ParentCode in $temp.temp_JSON_to_XML/*:externalProductGroup
+
+                                where 1 = 1 
+                              return $v_ERPs_ParentCode
+
+let $v_values :=           
+for $v_ERPs_ParentCode at $counter_ERPs_Code in $v_ERPs_ParentCodes
+return
+		
+fn:concat('(&amp;apos;',$temp.temp_JSON_to_XML/*:product/text(),'|',$temp.temp_S4Id ,'&amp;apos;,
+			&amp;apos;',$temp.temp_SourceFileName,'&amp;apos;,
+			&amp;apos;',fn:format-dateTime(fn:current-dateTime(),"[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]"),'&amp;apos;,
+			&amp;apos;',$temp.temp_S4Id,'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:externalProductGroup/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:externalMaterialDescriptions[$counter_ERPs_Code]/externalProductGroupName/text(),'&amp;apos;
+			),')
+return fn:concat($v_campos,  fn:string-join($v_values)))
+else()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_InsertProductHierarchies">
+                     <expression language="XQuery">let $v_Language := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:Language/text() 
+return
+fn:concat(' INSERT INTO Landing.ERPs_ProductHierarchies
+', fn:concat('(ItemSKey,','SourceFileName,','LoadTimeStamp,',
+'SourceSystemId,','HierarchyL1,','HierarchyL2,','HierarchyL3,','HierarchyL4,',
+'HierarchyL5,','HierarchyL6,','LanguageKey,','HierarchyID,','HierarchyName,'
+,'HierarchyN1,','HierarchyN2,','HierarchyN3,','HierarchyN4,','HierarchyN5,','HierarchyN6'
+,')'),
+'values',
+fn:concat('(&amp;apos;',$temp.temp_JSON_to_XML/*:product/text(),'|',$temp.temp_S4Id ,'&amp;apos;,
+			&amp;apos;',$temp.temp_SourceFileName ,'&amp;apos;,
+			&amp;apos;',fn:format-dateTime(fn:current-dateTime(),"[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]"),'&amp;apos;,
+			&amp;apos;',$temp.temp_S4Id ,'&amp;apos;,				
+			&amp;apos;',$temp.temp_JSON_to_XML[productHierarchy1Text/*:language/text()=$v_Language]/*:productHierarchy1/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML[productHierarchy2Text/*:language/text()=$v_Language]/*:productHierarchy2/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML[productHierarchy3Text/*:language/text()=$v_Language]/*:productHierarchy3/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML[productHierarchy4Text/*:language/text()=$v_Language]/*:productHierarchy4/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML[productHierarchy5Text/*:language/text()=$v_Language]/*:productHierarchy5/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML[productHierarchy6Text/*:language/text()=$v_Language]/*:productHierarchy6/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productHierarchyText[language/text()=$v_Language]/*:language/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productHierarchyText[language/text()=$v_Language]/*:productHierarchy/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productHierarchyText[language/text()=$v_Language]/*:productHierarchyText/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productHierarchy1Text[language/text()=$v_Language]/*:productHierarchyText/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productHierarchy2Text[language/text()=$v_Language]/*:productHierarchyText/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productHierarchy3Text[language/text()=$v_Language]/*:productHierarchyText/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productHierarchy4Text[language/text()=$v_Language]/*:productHierarchyText/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productHierarchy5Text[language/text()=$v_Language]/*:productHierarchyText/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productHierarchy6Text[language/text()=$v_Language]/*:productHierarchyText/text(),'&amp;apos;
+			)'))</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_InsertLogistics">
+                     <expression language="XQuery">let $v_quantityDenominator := $temp.temp_JSON_to_XML/*:unitsOfMeasure[alternativeUnit = $temp.temp_VolumeUnit ]/quantityDenominator
+let $v_quantityNumerator := $temp.temp_JSON_to_XML/*:unitsOfMeasure[alternativeUnit = $temp.temp_VolumeUnit ]/quantityNumerator
+let $v_Volume := if($temp.temp_JSON_to_XML/*:unitsOfMeasure[alternativeUnit = $temp.temp_VolumeUnit ] and fn:concat($v_quantityDenominator, '') != '' and fn:concat($v_quantityNumerator, '') != '') then(
+                 $v_quantityDenominator div $v_quantityNumerator )
+					else(0)
+return
+fn:concat(' INSERT INTO Landing.ERPs_Logistics
+', fn:concat('(ItemSKey,','SourceFileName,','LoadTimeStamp,',
+'SourceSystemId,','ItemExistsInSource,','PackingUnit,','ItemTypeId,','GrossWeight,',
+'WeightUomId,','NetWeight,','SbuId,','VolumeUomId,','Volume,'
+,'BarcodeValue,','PckngLgth,','PckngWdth,','PckngHght,','PcknUntFor,','PckngVlm'
+,')'),
+'values',
+
+fn:concat('(&amp;apos;',$temp.temp_JSON_to_XML/*:product/text(),'|',$temp.temp_S4Id ,'&amp;apos;,
+			&amp;apos;',$temp.temp_SourceFileName,'&amp;apos;,
+			&amp;apos;',fn:format-dateTime(fn:current-dateTime(),"[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]"),'&amp;apos;,
+			&amp;apos;',$temp.temp_S4Id ,'&amp;apos;,				
+			&amp;apos;',$temp.temp_ItemExistsInSource ,'&amp;apos;,
+			&amp;apos;',$temp.temp_Domain ,'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productType/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:grossWeight/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:weightUnit/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:netWeight/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:division/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:volumeUnit/text(),'&amp;apos;,
+			&amp;apos;',$v_Volume,'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productStandardId/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:baseUnitSpecificPrdctLngth/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:baseUnitSpecificPrdctWidth/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:baseUnitSpecificPrdctHeigh/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productMeasurementUnit/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:materialVolume/text(),'&amp;apos;
+			),'))
+</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_InsertBrands">
+                     <expression language="XQuery">fn:concat(' INSERT INTO Landing.ERPs_Brands
+', fn:concat('(ItemSKey,','SourceFileName,','LoadTimeStamp,',
+'SourceSystemId,','ItemExistsInSource,','ItemTypeId,','Brand,','SbuId,',
+'Brand_Name'
+,')'),
+'values',
+fn:concat('(&amp;apos;',$temp.temp_JSON_to_XML/*:product/text(),'|',$temp.temp_S4Id ,'&amp;apos;,
+			&amp;apos;',$temp.temp_SourceFileName ,'&amp;apos;,
+			&amp;apos;',fn:format-dateTime(fn:current-dateTime(),"[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]"),'&amp;apos;,
+			&amp;apos;',$temp.temp_S4Id ,'&amp;apos;,			
+			&amp;apos;',$temp.temp_ItemExistsInSource ,'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productType/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productGroup/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:division/text(),'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:materialGroupName/text(),'&amp;apos;
+			)'))</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_InsertAltIdentifiers">
+                     <expression language="XQuery">let $v_extAlt := $temp.temp_JSON_to_XML/*:productOldId
+return
+if(some $ALT in $v_extAlt satisfies (string-length(normalize-space($ALT))&gt;0))
+then(let $v_campos := fn:concat(' INSERT INTO Landing.ERPs_AlternateProductIdentifiers
+', fn:concat('(ItemSKey,','SourceFileName,','LoadTimeStamp,',
+'SourceSystemId,','AlternateProductIdentifier'
+,')'),
+'values')
+let $v_ERPs_AltIdentifiers := for $v_ERPs_AltIdentifier in $temp.temp_JSON_to_XML/*:productOldId
+                                where 1 = 1
+                              return $v_ERPs_AltIdentifier
+
+
+   
+let $v_values :=           
+for $v_ERPs_AltIdentifier at $counter_ERPs_Alt in $v_ERPs_AltIdentifiers
+return			
+fn:concat('(&amp;apos;',$temp.temp_JSON_to_XML/*:product/text(),'|',$temp.temp_S4Id,'&amp;apos;,
+			&amp;apos;',$temp.temp_SourceFileName,'&amp;apos;,
+			&amp;apos;',fn:format-dateTime(fn:current-dateTime(),"[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]"),'&amp;apos;,
+			&amp;apos;',$temp.temp_S4Id,'&amp;apos;,
+			&amp;apos;',$temp.temp_JSON_to_XML/*:productOldId[$counter_ERPs_Alt]/text(),'&amp;apos;
+			),')
+return fn:concat($v_campos, fn:string-join($v_values)))
+else()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_FileLogName">
+                     <expression language="XQuery">fn:concat('Log_OnGoing_PDT_S4_',fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT5H")),"[Y0001][M01][D01][H01][m01][s01]"),'.txt')
+</expression>
+                  </operation>
+                  <operation source="formula" to="output.outProductId">
+                     <expression language="XQuery">$temp.temp_JSON_to_XML/*:product/text()</expression>
+                  </operation>
+                  <link id="lw8jaqp9" targetId="lw8jaqp8"/>
+               </assignment>
+               <container id="lw8jaqp8" type="exclusive">
+                  <title>d_Language</title>
+                  <flow id="lw8jaqpc">
+                     <eventContainer id="lwb5q2fv">
+                        <service id="lw8jaqpl">
+                           <title>Svc_InsertIDQ</title>
+                           <serviceName>Conn-SC-SDasMaterialsConnectPPG:InsertIDQ</serviceName>
+                           <serviceGUID>8jdKeI95CQ2jim0SeRpmUX</serviceGUID>
+                           <serviceInput>
+                              <parameter name="in_XML" source="formula">
+                                 <expression language="XQuery">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins="http://www.ppg.com/xsd/InsertIDQ"&gt;
+	&lt;soapenv:Header/&gt;
+	&lt;soapenv:Body&gt;
+		&lt;ins:InsertIDQRequest&gt;
+			&lt;!--1 or more repetitions:--&gt;
+            {if($temp.temp_InsertProducts)then(&lt;ins:query&gt;{$temp.temp_InsertProducts}&lt;/ins:query&gt;)else(),
+            if($temp.temp_InsertTexts)then(&lt;ins:query&gt;{$temp.temp_InsertTexts}&lt;/ins:query&gt;)else(),
+			if($temp.temp_InsertParentCode)then(&lt;ins:query&gt;{fn:substring($temp.temp_InsertParentCode   , 0, fn:string-length($temp.temp_InsertParentCode))}&lt;/ins:query&gt;)else(),
+            if($temp.temp_InsertProductHierarchies)then(&lt;ins:query&gt;{$temp.temp_InsertProductHierarchies}&lt;/ins:query&gt;)else(),            
+            if($temp.temp_InsertLogistics)then(&lt;ins:query&gt;{fn:substring($temp.temp_InsertLogistics    , 0, fn:string-length($temp.temp_InsertLogistics ))}&lt;/ins:query&gt;)else(),
+            if($temp.temp_InsertBrands)then(&lt;ins:query&gt;{$temp.temp_InsertBrands}&lt;/ins:query&gt;)else(),
+            if($temp.temp_InsertAltIdentifiers)then(&lt;ins:query&gt;{fn:substring($temp.temp_InsertAltIdentifiers , 0, fn:string-length($temp.temp_InsertAltIdentifiers))}&lt;/ins:query&gt;)else()
+            }                                
+		&lt;/ins:InsertIDQRequest&gt;
+	&lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</expression>
+                              </parameter>
+                           </serviceInput>
+                        </service>
+                        <flow id="lwb5q2fx">
+                           <link id="lwb5q2fy" targetId="lwb5q2fv" type="containerLink"/>
+                        </flow>
+                        <flow id="lwb5q2g0">
+                           <assignment id="lwb5q2g8">
+                              <title>AssignErrorVar</title>
+                              <operation source="constant" to="temp.temp_Code">{$output.faultInfo[1]/code}</operation>
+                              <operation source="constant" to="temp.temp_Detail">{$output.faultInfo[1]/detail}</operation>
+                              <operation source="formula" to="temp.temp_Reason">
+                                 <expression language="XQuery">util:simplifyXml(util:parseXML($output.faultInfo[1]/reason)
+)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.temp_Process">
+                                 <expression language="XQuery">fn:substring-after(fn:substring-before($temp.temp_FileLogName, '.txt'),'S4_')
+</expression>
+                              </operation>
+                              <operation source="formula" to="temp.temp_errorlog">
+                                 <expression language="XQuery">fn:concat('ERP:',' S4',',',' Process:',' SIntMaterialsAemMdmIdq - Step1 AEM_to_IDQ',',',' Item Timestamp: ',$temp.temp_Process,',',' Code: ',$temp.temp_Code ,',',' DetailError: ',$temp.temp_Reason)
+
+</expression>
+                              </operation>
+                              <operation source="formula" to="temp.temp_LogError">
+                                 <expression language="XQuery">fn:concat($temp.temp_errorlog ,' PipeMessage ' , $temp.temp_errorlog  )</expression>
+                              </operation>
+                              <link id="ly55folo" targetId="lxtg1zfy"/>
+                           </assignment>
+                           <throw id="lxtg1zfy">
+                              <title>trwInsertIDQ</title>
+                              <throwInput>
+                                 <parameter name="code" source="constant" updatable="true">{$output.faultInfo[1]/code}</parameter>
+                                 <parameter name="detail" source="constant" updatable="true">{$output.faultInfo[1]/detail}</parameter>
+                                 <parameter name="reason" source="constant" updatable="true">{$output.faultInfo[1]/reason}</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="lwb5q2fw" targetId="lwb5q2fx" type="containerLink"/>
+                        <events>
+                           <catch faultField="faultInfo" id="lwb5q2fu" interrupting="true">
+                              <link id="lwb5q2fz" targetId="lwb5q2g0" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="lw8jaqpd" targetId="lw8jaqp8" type="containerLink"/>
+                  </flow>
+                  <flow id="lw8jaqpf">
+                     <link id="lw8jaqpg" targetId="lw8jaqp8" type="containerLink"/>
+                  </flow>
+                  <link id="lw8jaqpb" targetId="lw8jaqpc" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.temp_LanguageFilter}</arg>
+                           <arg name="right">1</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lw8jaqpe" targetId="lw8jaqpf" type="containerLink"/>
+                  <link id="lxzkoq4n" targetId="lxzkoq4m"/>
+               </container>
+               <end id="lxzkoq4m">
+                  <title>End 1</title>
+               </end>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>dc404361-4e9b-48d9-9944-09f3fe88a81a</ns1:Id>
+               <ns1:Name>1</ns1:Name>
+               <ns1:CreatedBy>JARangel.dev@ppg.com</ns1:CreatedBy>
+               <ns1:CreationDate>2024-05-21T08:27:51Z</ns1:CreationDate>
+               <ns1:ModifiedBy>JARangel.dev@ppg.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-05-21T08:27:51Z</ns1:ModificationDate>
+               <ns1:Data format="xml">&lt;root&gt;
+&lt;input&gt;&lt;![CDATA[&lt;AMQPMessage xmlns="" xmlns:ns2="http://schemas.informatica.com/spi/types/2013/12/spi-interface/" xmlns:ns3="http://schemas.active-endpoints.com/appmodules/screenflow/2011/07/avosCommon.xsd" xmlns:ns4="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&gt;
+	&lt;headers&gt;
+		&lt;name&gt;CamelMessageTimestamp&lt;/name&gt;
+		&lt;value&gt;1713881527947&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSCorrelationID&lt;/name&gt;
+		&lt;value&gt;S4-WBSE-202404231412079453430&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSDeliveryMode&lt;/name&gt;
+		&lt;value&gt;2&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSDestination&lt;/name&gt;
+		&lt;value&gt;data/public/finance/master/wbse/batchsubmitted/v2/s4hana/gtd505/json/1713881527947/yes/s4-wbse-202404231412079453430&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSExpiration&lt;/name&gt;
+		&lt;value&gt;0&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSMessageID&lt;/name&gt;
+		&lt;value&gt;ID:AMQP_NO_PREFIX:S4-WBSE-202404231412079453430&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSPriority&lt;/name&gt;
+		&lt;value&gt;4&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSRedelivered&lt;/name&gt;
+		&lt;value&gt;false&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSTimestamp&lt;/name&gt;
+		&lt;value&gt;1713881527947&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSXDeliveryCount&lt;/name&gt;
+		&lt;value&gt;1&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;ppg_action&lt;/name&gt;
+		&lt;value&gt;batchsubmitted&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;ppg_entity&lt;/name&gt;
+		&lt;value&gt;wbse&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;ppg_sourcesystem&lt;/name&gt;
+		&lt;value&gt;s4hana&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;ppg_topic&lt;/name&gt;
+		&lt;value&gt;data/public/finance/master/wbse/batchsubmitted/v2/s4hana/GTD505/json/1713881527947/yes/S4-WBSE-202404231412079453430&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;ppg_version&lt;/name&gt;
+		&lt;value&gt;v2&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;body&gt;{
+	"MATERIAL": [
+		{
+			"product": "000000000004000267",
+			"productExternalId": "4000267",
+			"productType": "FERT",
+			"createdByUser": "L764930",
+			"LastChangedByUser": "L764930",
+			"lastChangeDate": "2024-04-16",
+			"lastChangeDateTime": 20240416080818,
+			"ismarkedForDeletion": "",
+			"crossPlantStatus": "ZC",
+			"productOldId": "TEST_OLD_MAT_NO",
+			"grossWeight": 0.558,
+			"purchaseOrderQuantityUnit": "",
+			"weightUnit": "KG",
+			"productGroup": "01",
+			"baseUnit": "ST",
+			"netWeight": 0.558,
+			"productHierarchy": "00001",
+			"productHierarchy1": "00",
+			"productHierarchy2": "001",
+			"productHierarchy3": "",
+			"productHierarchy4": "",
+			"productHierarchy5": "",
+			"productHierarchy6": "",
+			"division": "AU",
+			"volumeUnit": "L",
+			"materialVolume": 0.299,
+			"productStandardId": "8716242002376",
+			"productisConfigurable": "",
+			"externalProductGroup": "DMM165-001",
+			"crossPlantConfigurablePrdct": "",
+			"baseUnitSpecificPrdctLngth": 25,
+			"baseUnitSpecificPrdctWidth": 25,
+			"baseUnitSpecificPrdctHeigh": 25,
+			"productMeasurementUnit": "CM",
+			"packingReferenceProduct": "EWM_23000019",
+			"basicMaterial": "",
+			"productDocumentNumber": "",
+			"materialGroupName": "",
+			"productHierarchyText": [
+				{
+					"language": "E",
+					"productHierarchy": "00001",
+					"productHierarchyText": "Tools"
+				}
+			],
+			"productHierarchy1Text": [],
+			"productHierarchy2Text": [],
+			"productHierarchy3Text": [],
+			"productHierarchy4Text": [],
+			"productHierarchy5Text": [],
+			"productHierarchy6Text": [],
+			"plantData": [
+				{
+					"plant": "BE01",
+					"maintenanceStatusName": "VELBGDPAFSQ",
+					"mrpController": "100",
+					"lotSizing": "EX",
+					"procurementType": "F",
+					"materialSafetyStockQty": 0,
+					"minimumLotSize": 0,
+					"productionTime": 1,
+					"materialAbcClassification": "",
+					"plannedDelivery": 80,
+					"maxStockLevel": 0,
+					"minStockLevel": 0,
+					"zMaterialGoodsRcptDuration": 0,
+					"specialProcurementType": "",
+					"maximumLotSize": 0,
+					"fixedLotSize": 0,
+					"materialStatus": "",
+					"replenishTime": 0,
+					"planningTime": 0,
+					"serviceLevel": 0
+				}
+			],
+			"unitsOfMeasure": [
+				{
+					"alternativeUnit": "GLL",
+					"quantityNumerator": 13519,
+					"quantityDenominator": 67596
+				}
+			],
+			"materialDescriptions": [
+				{
+					"materialLanguage": "E",
+					"materialName": "(FTP) PP INT LTX FLT WPB 12-110XI B500."
+				}
+			],
+			"materialGroupNameDesc": [
+				{
+					"Language": "E",
+					"MaterialGroupName": "100137",
+					"MaterialGroupText": "100137"
+				}
+			],
+			"externalMaterialDescriptions": [
+				{
+					"externalProductGroupLang": "E",
+					"externalProductGroupName": "DMM165-001"
+				}
+			],
+			"salesData": [
+				{
+					"productSalesOrg": "US04",
+					"productDistributionChnl": "01",
+					"minimumOrderQuantity": 0,
+					"supplyingPlant": "",
+					"deliveryNoteProcminDelivqty": 0,
+					"itemCategoryGroup": "NORM",
+					"deliveryQuantityUnit": "",
+					"deliveryQuantity": 0,
+					"salesMeasureUnit": "EA",
+					"productSalesStatus": "",
+					"firstSalesSpecProductGroup": "106",
+					"secondSalesSpcProductGroup": "107",
+					"thirdSalesSpcProductGroup": "133",
+					"fourthSalesSpcProductGroup": "241",
+					"fifthSalesSpcProductGroup": "160",
+					"distrCntrListingStartDate": "",
+					"distrCntrListingEndDate": "",
+					"storeSaleStartDate": "",
+					"storeSaleEndDate": "",
+					"distrCntrSaleStartDate": "",
+					"distrCntrSaleEndDate": "",
+					"materialGroup1Text": [
+						{
+							"spras": "E",
+							"bezei": "ACEMC"
+						}
+					],
+					"materialGroup2Text": [
+						{
+							"spras": "E",
+							"bezei": "0302 AMERCOAT"
+						}
+					],
+					"materialGroup3Text": [
+						{
+							"spras": "E",
+							"bezei": "FLAT"
+						}
+					],
+					"materialGroup4Text": [
+						{
+							"spras": "E",
+							"bezei": "INTERIOR FLAT"
+						}
+					],
+					"materialGroup5Text": [
+						{
+							"spras": "E",
+							"bezei": "WATERBORNE LATEX"
+						}
+					]
+				}
+			]
+		}
+	]
+}&lt;/body&gt;
+&lt;/AMQPMessage&gt;
+]]&gt;&lt;/input&gt;
+&lt;/root&gt;</ns1:Data>
+            </ns1:SampleData>
+            <ns1:SampleData>
+               <ns1:Id>844eeccf-b4af-4dbc-9a6f-c62fd28787cc</ns1:Id>
+               <ns1:Name>2</ns1:Name>
+               <ns1:CreatedBy>JARangel.dev@ppg.com</ns1:CreatedBy>
+               <ns1:CreationDate>2024-05-21T08:27:51Z</ns1:CreationDate>
+               <ns1:ModifiedBy>JARangel.dev@ppg.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-05-21T08:27:51Z</ns1:ModificationDate>
+               <ns1:Data format="xml">&lt;root&gt;
+&lt;input&gt;
+&lt;AMQPMessage&gt;
+	&lt;headers&gt;
+		&lt;name&gt;CamelMessageTimestamp&lt;/name&gt;
+		&lt;value&gt;0&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSCorrelationID&lt;/name&gt;
+		&lt;value&gt;S4-MATE-202405171425153867480&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSDeliveryMode&lt;/name&gt;
+		&lt;value&gt;2&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSDestination&lt;/name&gt;
+		&lt;value&gt;data/public/mdm/master/material/changed/v3/s4hana/gtd505/json/000000000004000122/1715955915358/yes/FERT/01/---/---/N&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSExpiration&lt;/name&gt;
+		&lt;value&gt;0&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSMessageID&lt;/name&gt;
+		&lt;value&gt;ID:AMQP_NO_PREFIX:S4-MATE-202405171425153867480&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSPriority&lt;/name&gt;
+		&lt;value&gt;4&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSRedelivered&lt;/name&gt;
+		&lt;value&gt;false&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSTimestamp&lt;/name&gt;
+		&lt;value&gt;0&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;JMSXDeliveryCount&lt;/name&gt;
+		&lt;value&gt;1&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;ppg_action&lt;/name&gt;
+		&lt;value&gt;changed&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;ppg_entity&lt;/name&gt;
+		&lt;value&gt;material&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;ppg_sourcesystem&lt;/name&gt;
+		&lt;value&gt;s4hana&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;headers&gt;
+		&lt;name&gt;ppg_version&lt;/name&gt;
+		&lt;value&gt;v3&lt;/value&gt;
+	&lt;/headers&gt;
+	&lt;body&gt;{
+	"MATERIAL": [
+		{
+			"PPG_ROUTE": [
+				{
+					"PPG_LEVEL": "/PMC/EMEA/",
+					"PPG_DATA": [
+						"BE01",
+						"BEA1",
+						"DKA1",
+						"ITA1",
+						"PLA1"
+					]
+				}
+			],
+			"product": "000000000004000122",
+			"productExternalId": "4000122",
+			"productType": "FERT",
+			"createdByUser": "D730916",
+			"lastChangedByUser": "K706847",
+			"lastChangeDate": "2024-05-17",
+			"lastChangeDateTime": 20240517142515.0,
+			"ismarkedForDeletion": "",
+			"crossPlantStatus": "",
+			"productOldId": "",
+			"grossWeight": 4703.0,
+			"purchaseOrderQuantityUnit": "",
+			"weightUnit": "KG",
+			"productGroup": "01",
+			"baseUnit": "ST",
+			"netWeight": 4463.0,
+			"productHierarchy": "",
+			"productHierarchy1": "",
+			"productHierarchy2": "",
+			"productHierarchy3": "",
+			"productHierarchy4": "",
+			"productHierarchy5": "",
+			"productHierarchy6": "",
+			"division": "PM",
+			"volumeUnit": "L",
+			"materialVolume": 3200.0,
+			"productStandardId": "8716242241782",
+			"productisConfigurable": "",
+			"externalProductGroup": "",
+			"crossPlantConfigurablePrdct": "",
+			"baseUnitSpecificPrdctLngth": 0,
+			"baseUnitSpecificPrdctWidth": 0,
+			"baseUnitSpecificPrdctHeigh": 0,
+			"productMeasurementUnit": "",
+			"packingReferenceProduct": "",
+			"basicMaterial": "",
+			"productDocumentNumber": "7416",
+			"productHierarchyText": [],
+			"productHierarchy1Text": [],
+			"productHierarchy2Text": [],
+			"productHierarchy3Text": [],
+			"productHierarchy4Text": [],
+			"productHierarchy5Text": [],
+			"productHierarchy6Text": [],
+			"plantData": [
+				{
+					"plant": "BE01",
+					"maintenanceStatusName": "DABGLEV",
+					"mrpController": "500",
+					"lotSizing": "EX",
+					"procurementType": "F",
+					"materialSafetyStockQty": 0,
+					"minimumLotSize": 0,
+					"productionTime": 0,
+					"materialAbcClassification": "B",
+					"plannedDelivery": 0,
+					"maxStockLevel": 0,
+					"minStockLevel": 0,
+					"zMaterialGoodsRcptDuration": 0,
+					"specialProcurementType": "",
+					"maximumLotSize": 0,
+					"fixedLotSize": 0,
+					"materialStatus": "",
+					"replenishTime": 0,
+					"planningTime": 0,
+					"serviceLevel": 0
+				},
+				{
+					"plant": "BEA1",
+					"maintenanceStatusName": "VEDLB",
+					"mrpController": "",
+					"lotSizing": "",
+					"procurementType": "X",
+					"materialSafetyStockQty": 0,
+					"minimumLotSize": 0,
+					"productionTime": 0,
+					"materialAbcClassification": "",
+					"plannedDelivery": 0,
+					"maxStockLevel": 0,
+					"minStockLevel": 0,
+					"zMaterialGoodsRcptDuration": 0,
+					"specialProcurementType": "",
+					"maximumLotSize": 0,
+					"fixedLotSize": 0,
+					"materialStatus": "",
+					"replenishTime": 0,
+					"planningTime": 0,
+					"serviceLevel": 0
+				},
+				{
+					"plant": "DKA1",
+					"maintenanceStatusName": "VLB",
+					"mrpController": "",
+					"lotSizing": "",
+					"procurementType": "X",
+					"materialSafetyStockQty": 0,
+					"minimumLotSize": 0,
+					"productionTime": 0,
+					"materialAbcClassification": "",
+					"plannedDelivery": 0,
+					"maxStockLevel": 0,
+					"minStockLevel": 0,
+					"zMaterialGoodsRcptDuration": 0,
+					"specialProcurementType": "",
+					"maximumLotSize": 0,
+					"fixedLotSize": 0,
+					"materialStatus": "",
+					"replenishTime": 0,
+					"planningTime": 0,
+					"serviceLevel": 0
+				},
+				{
+					"plant": "FR16",
+					"maintenanceStatusName": "EVBGQ",
+					"mrpController": "",
+					"lotSizing": "",
+					"procurementType": "",
+					"materialSafetyStockQty": 0,
+					"minimumLotSize": 0,
+					"productionTime": 0,
+					"materialAbcClassification": "",
+					"plannedDelivery": 0,
+					"maxStockLevel": 0,
+					"minStockLevel": 0,
+					"zMaterialGoodsRcptDuration": 0,
+					"specialProcurementType": "",
+					"maximumLotSize": 0,
+					"fixedLotSize": 0,
+					"materialStatus": "",
+					"replenishTime": 0,
+					"planningTime": 0,
+					"serviceLevel": 0
+				},
+				{
+					"plant": "ITA1",
+					"maintenanceStatusName": "VBE",
+					"mrpController": "",
+					"lotSizing": "",
+					"procurementType": "X",
+					"materialSafetyStockQty": 0,
+					"minimumLotSize": 0,
+					"productionTime": 0,
+					"materialAbcClassification": "",
+					"plannedDelivery": 0,
+					"maxStockLevel": 0,
+					"minStockLevel": 0,
+					"zMaterialGoodsRcptDuration": 0,
+					"specialProcurementType": "",
+					"maximumLotSize": 0,
+					"fixedLotSize": 0,
+					"materialStatus": "",
+					"replenishTime": 0,
+					"planningTime": 0,
+					"serviceLevel": 0
+				},
+				{
+					"plant": "PLA1",
+					"maintenanceStatusName": "VEDLB",
+					"mrpController": "100",
+					"lotSizing": "EX",
+					"procurementType": "X",
+					"materialSafetyStockQty": 0,
+					"minimumLotSize": 0,
+					"productionTime": 5,
+					"materialAbcClassification": "",
+					"plannedDelivery": 15,
+					"maxStockLevel": 0,
+					"minStockLevel": 0,
+					"zMaterialGoodsRcptDuration": 1,
+					"specialProcurementType": "",
+					"maximumLotSize": 0,
+					"fixedLotSize": 0,
+					"materialStatus": "",
+					"replenishTime": 0,
+					"planningTime": 0,
+					"serviceLevel": 0
+				},
+				{
+					"plant": "US01",
+					"maintenanceStatusName": "VELBG",
+					"mrpController": "",
+					"lotSizing": "",
+					"procurementType": "",
+					"materialSafetyStockQty": 0,
+					"minimumLotSize": 0,
+					"productionTime": 0,
+					"materialAbcClassification": "",
+					"plannedDelivery": 0,
+					"maxStockLevel": 0,
+					"minStockLevel": 0,
+					"zMaterialGoodsRcptDuration": 0,
+					"specialProcurementType": "",
+					"maximumLotSize": 0,
+					"fixedLotSize": 0,
+					"materialStatus": "",
+					"replenishTime": 0,
+					"planningTime": 0,
+					"serviceLevel": 0
+				},
+				{
+					"plant": "USA9",
+					"maintenanceStatusName": "VEDLBG",
+					"mrpController": "500",
+					"lotSizing": "EX",
+					"procurementType": "X",
+					"materialSafetyStockQty": 0,
+					"minimumLotSize": 0,
+					"productionTime": 0,
+					"materialAbcClassification": "",
+					"plannedDelivery": 0,
+					"maxStockLevel": 0,
+					"minStockLevel": 0,
+					"zMaterialGoodsRcptDuration": 0,
+					"specialProcurementType": "",
+					"maximumLotSize": 0,
+					"fixedLotSize": 0,
+					"materialStatus": "",
+					"replenishTime": 0,
+					"planningTime": 0,
+					"serviceLevel": 0
+				}
+			],
+			"unitsOfMeasure": [
+				{
+					"alternativeUnit": "KG",
+					"quantityNumerator": 1000,
+					"quantityDenominator": 4463
+				},
+				{
+					"alternativeUnit": "L",
+					"quantityNumerator": 10,
+					"quantityDenominator": 32
+				},
+				{
+					"alternativeUnit": "PAL",
+					"quantityNumerator": 75,
+					"quantityDenominator": 1
+				},
+				{
+					"alternativeUnit": "ST",
+					"quantityNumerator": 1,
+					"quantityDenominator": 1
+				}
+			],
+			"materialDescriptions": [
+				{
+					"materialLanguage": "E",
+					"materialName": "S'PRIME 200 BAS GREY        951505EU1320"
+				}
+			],
+			"materialGroupNameDesc": [
+				{
+					"language": "1",
+					"materialgroupname": "物料组1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "2",
+					"materialgroupname": "กลุ่มวัสดุ 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "3",
+					"materialgroupname": "자재그룹 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "4",
+					"materialgroupname": "Grup materiale 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "7",
+					"materialgroupname": "Kumpulan bahan 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "C",
+					"materialgroupname": "Skup.mater. 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "D",
+					"materialgroupname": "Warengruppe 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "E",
+					"materialgroupname": "Material group 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "F",
+					"materialgroupname": "Groupe marchand. 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "H",
+					"materialgroupname": "1. anyagcsoport",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "I",
+					"materialgroupname": "Gruppo merci 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "J",
+					"materialgroupname": "品目グループ 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "K",
+					"materialgroupname": "Varegruppe 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "L",
+					"materialgroupname": "Grupa materiałowa 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "N",
+					"materialgroupname": "Goederengroep 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "P",
+					"materialgroupname": "Grp.mercadorias 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "R",
+					"materialgroupname": "Группа материалов 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "S",
+					"materialgroupname": "Grupo de artículos 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "T",
+					"materialgroupname": "Mal grubu 1",
+					"materialgrouptext": ""
+				},
+				{
+					"language": "쁩",
+					"materialgroupname": "Nhóm vật tư 1",
+					"materialgrouptext": ""
+				}
+			],
+			"externalMaterialDescriptions": [
+				{
+					"externalProductGroupLang": "E",
+					"externalProductGroupName": "DMM165-001"
+				},
+                                {
+					"externalProductGroupLang": "F",
+					"externalProductGroupName": "DMM165-002"
+				}
+			],
+			"salesData": [
+				{
+					"productSalesOrg": "FR16",
+					"productDistributionChnl": "01",
+					"minimumOrderQuantity": 0,
+					"supplyingPlant": "",
+					"deliveryNoteProcminDelivqty": 0,
+					"itemCategoryGroup": "NORM",
+					"deliveryQuantityUnit": "",
+					"deliveryQuantity": 0,
+					"salesMeasureUnit": "",
+					"productSalesStatus": "",
+					"roundingProfile": "",
+					"salesText": [],
+					"firstSalesSpecProductGroup": "",
+					"secondSalesSpcProductGroup": "",
+					"thirdSalesSpcProductGroup": "",
+					"fourthSalesSpcProductGroup": "",
+					"fifthSalesSpcProductGroup": "",
+					"distrCntrListingStartDate": "",
+					"distrCntrListingEndDate": "",
+					"storeSaleStartDate": "",
+					"storeSaleEndDate": "",
+					"distrCntrSaleStartDate": "",
+					"distrCntrSaleEndDate": "",
+					"materialGroup1Text": [],
+					"materialGroup2Text": [
+						{
+							"spras": "E",
+							"bezei": ""
+						}
+					],
+					"materialGroup3Text": [],
+					"materialGroup4Text": [],
+					"materialGroup5Text": []
+				},
+				{
+					"productSalesOrg": "NL03",
+					"productDistributionChnl": "01",
+					"minimumOrderQuantity": 0,
+					"supplyingPlant": "",
+					"deliveryNoteProcminDelivqty": 0,
+					"itemCategoryGroup": "NORM",
+					"deliveryQuantityUnit": "",
+					"deliveryQuantity": 0,
+					"salesMeasureUnit": "",
+					"productSalesStatus": "",
+					"roundingProfile": "",
+					"salesText": [],
+					"firstSalesSpecProductGroup": "",
+					"secondSalesSpcProductGroup": "",
+					"thirdSalesSpcProductGroup": "",
+					"fourthSalesSpcProductGroup": "",
+					"fifthSalesSpcProductGroup": "",
+					"distrCntrListingStartDate": "",
+					"distrCntrListingEndDate": "",
+					"storeSaleStartDate": "",
+					"storeSaleEndDate": "",
+					"distrCntrSaleStartDate": "",
+					"distrCntrSaleEndDate": "",
+					"materialGroup1Text": [],
+					"materialGroup2Text": [
+						{
+							"spras": "E",
+							"bezei": ""
+						}
+					],
+					"materialGroup3Text": [],
+					"materialGroup4Text": [],
+					"materialGroup5Text": []
+				},
+				{
+					"productSalesOrg": "US04",
+					"productDistributionChnl": "01",
+					"minimumOrderQuantity": 0,
+					"supplyingPlant": "",
+					"deliveryNoteProcminDelivqty": 0,
+					"itemCategoryGroup": "BANS",
+					"deliveryQuantityUnit": "",
+					"deliveryQuantity": 0,
+					"salesMeasureUnit": "",
+					"productSalesStatus": "",
+					"roundingProfile": "",
+					"salesText": [],
+					"firstSalesSpecProductGroup": "",
+					"secondSalesSpcProductGroup": "",
+					"thirdSalesSpcProductGroup": "",
+					"fourthSalesSpcProductGroup": "",
+					"fifthSalesSpcProductGroup": "",
+					"distrCntrListingStartDate": "",
+					"distrCntrListingEndDate": "",
+					"storeSaleStartDate": "",
+					"storeSaleEndDate": "",
+					"distrCntrSaleStartDate": "",
+					"distrCntrSaleEndDate": "",
+					"materialGroup1Text": [],
+					"materialGroup2Text": [
+						{
+							"spras": "E",
+							"bezei": ""
+						}
+					],
+					"materialGroup3Text": [],
+					"materialGroup4Text": [],
+					"materialGroup5Text": []
+				}
+			],
+			"characteristics": []
+		}
+	]
+}&lt;/body&gt;
+&lt;/AMQPMessage&gt;
+
+&lt;/input&gt;
+&lt;/root&gt;</ns1:Data>
+            </ns1:SampleData>
+            <ns1:SampleData>
+               <ns1:Id>b721cb2d-63eb-4825-a3c0-203a69eb35da</ns1:Id>
+               <ns1:Name>3</ns1:Name>
+               <ns1:CreatedBy>JARangel.dev@ppg.com</ns1:CreatedBy>
+               <ns1:CreationDate>2024-11-15T21:39:13Z</ns1:CreationDate>
+               <ns1:ModifiedBy>JARangel.dev@ppg.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-11-15T21:39:13Z</ns1:ModificationDate>
+               <ns1:Data format="json">{
+	 "Input": ""
+}</ns1:Data>
+            </ns1:SampleData>
+            <ns1:SampleData>
+               <ns1:Id>a0ec9862-56ce-4b64-99bd-26b200301d2a</ns1:Id>
+               <ns1:Name>sasa</ns1:Name>
+               <ns1:CreatedBy>JARangel.dev@ppg.com</ns1:CreatedBy>
+               <ns1:CreationDate>2024-11-15T21:39:27Z</ns1:CreationDate>
+               <ns1:ModifiedBy>JARangel.dev@ppg.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-11-15T21:39:39Z</ns1:ModificationDate>
+               <ns1:Data format="xml">&lt;root&gt;
+&lt;Input&gt;&lt;MATERIAL xmlns=""&gt;
+   &lt;productMeasurementUnit/&gt;
+  
+   &lt;productStandardId/&gt;
+  
+   &lt;crossPlantConfigurablePrdct/&gt;
+  
+   &lt;packingReferenceProduct/&gt;
+  
+   &lt;basicMaterial&gt;AB-15-6181&lt;/basicMaterial&gt;  
+   &lt;productHierarchy3Text/&gt;
+  
+   &lt;division&gt;GE&lt;/division&gt;  
+   &lt;productHierarchy2Text/&gt;
+  
+   &lt;baseUnit&gt;KG&lt;/baseUnit&gt;  
+   &lt;ismarkedForDeletion/&gt;
+  
+   &lt;baseUnitSpecificPrdctLngth&gt;0&lt;/baseUnitSpecificPrdctLngth&gt;  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;EN&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;NL&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;FR&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;KO&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;PL&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;ZH&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;DE&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;ES&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;PT&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;HU&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;DA&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;CS&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;materialDescriptions&gt;
+    &lt;materialName&gt;DOWANOL PNB/N-BUTOXYPROPANOL PNB 180KG&lt;/materialName&gt;   
+    &lt;materialLanguage&gt;IT&lt;/materialLanguage&gt;   &lt;/materialDescriptions&gt;
+  
+   &lt;productHierarchy6/&gt;
+  
+   &lt;productHierarchy1Text/&gt;
+  
+   &lt;salesData&gt;
+    &lt;firstSalesSpecProductGroup/&gt;
+   
+    &lt;minimumOrderQuantity&gt;0&lt;/minimumOrderQuantity&gt;   
+    &lt;fifthSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrListingStartDate/&gt;
+   
+    &lt;itemCategoryGroup&gt;NORM&lt;/itemCategoryGroup&gt;   
+    &lt;materialGroup2Text&gt;
+     &lt;language&gt;EN&lt;/language&gt;    
+     &lt;additionalMaterialGroup2/&gt;
+    
+     &lt;additionalMaterialGroup2name/&gt;
+    &lt;/materialGroup2Text&gt;
+   
+    &lt;materialGroup3Text/&gt;
+   
+    &lt;deliveryQuantityUnit/&gt;
+   
+    &lt;deliveryQuantity&gt;1&lt;/deliveryQuantity&gt;   
+    &lt;secondSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrSaleEndDate/&gt;
+   
+    &lt;supplyingPlant/&gt;
+   
+    &lt;fourthSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrListingEndDate/&gt;
+   
+    &lt;salesMeasureUnit/&gt;
+   
+    &lt;salesText/&gt;
+   
+    &lt;thirdSalesSpcProductGroup/&gt;
+   
+    &lt;storeSaleEndDate/&gt;
+   
+    &lt;roundingProfile/&gt;
+   
+    &lt;productSalesStatus/&gt;
+   
+    &lt;materialGroup4Text/&gt;
+   
+    &lt;deliveryNoteProcminDelivqty&gt;0&lt;/deliveryNoteProcminDelivqty&gt;   
+    &lt;productDistributionChnl&gt;01&lt;/productDistributionChnl&gt;   
+    &lt;productSalesOrg&gt;CN01&lt;/productSalesOrg&gt;   
+    &lt;materialGroup1Text/&gt;
+   
+    &lt;storeSaleStartDate/&gt;
+   
+    &lt;distrCntrSaleStartDate/&gt;
+   
+    &lt;materialGroup5Text/&gt;
+   &lt;/salesData&gt;
+  
+   &lt;salesData&gt;
+    &lt;firstSalesSpecProductGroup/&gt;
+   
+    &lt;minimumOrderQuantity&gt;0&lt;/minimumOrderQuantity&gt;   
+    &lt;fifthSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrListingStartDate/&gt;
+   
+    &lt;itemCategoryGroup&gt;NORM&lt;/itemCategoryGroup&gt;   
+    &lt;materialGroup2Text&gt;
+     &lt;language&gt;EN&lt;/language&gt;    
+     &lt;additionalMaterialGroup2/&gt;
+    
+     &lt;additionalMaterialGroup2name/&gt;
+    &lt;/materialGroup2Text&gt;
+   
+    &lt;materialGroup3Text/&gt;
+   
+    &lt;deliveryQuantityUnit/&gt;
+   
+    &lt;deliveryQuantity&gt;1&lt;/deliveryQuantity&gt;   
+    &lt;secondSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrSaleEndDate/&gt;
+   
+    &lt;supplyingPlant/&gt;
+   
+    &lt;fourthSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrListingEndDate/&gt;
+   
+    &lt;salesMeasureUnit/&gt;
+   
+    &lt;salesText/&gt;
+   
+    &lt;thirdSalesSpcProductGroup/&gt;
+   
+    &lt;storeSaleEndDate/&gt;
+   
+    &lt;roundingProfile/&gt;
+   
+    &lt;productSalesStatus/&gt;
+   
+    &lt;materialGroup4Text/&gt;
+   
+    &lt;deliveryNoteProcminDelivqty&gt;0&lt;/deliveryNoteProcminDelivqty&gt;   
+    &lt;productDistributionChnl&gt;01&lt;/productDistributionChnl&gt;   
+    &lt;productSalesOrg&gt;CN02&lt;/productSalesOrg&gt;   
+    &lt;materialGroup1Text/&gt;
+   
+    &lt;storeSaleStartDate/&gt;
+   
+    &lt;distrCntrSaleStartDate/&gt;
+   
+    &lt;materialGroup5Text/&gt;
+   &lt;/salesData&gt;
+  
+   &lt;salesData&gt;
+    &lt;firstSalesSpecProductGroup/&gt;
+   
+    &lt;minimumOrderQuantity&gt;0&lt;/minimumOrderQuantity&gt;   
+    &lt;fifthSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrListingStartDate/&gt;
+   
+    &lt;itemCategoryGroup&gt;NORM&lt;/itemCategoryGroup&gt;   
+    &lt;materialGroup2Text&gt;
+     &lt;language&gt;EN&lt;/language&gt;    
+     &lt;additionalMaterialGroup2/&gt;
+    
+     &lt;additionalMaterialGroup2name/&gt;
+    &lt;/materialGroup2Text&gt;
+   
+    &lt;materialGroup3Text/&gt;
+   
+    &lt;deliveryQuantityUnit/&gt;
+   
+    &lt;deliveryQuantity&gt;1&lt;/deliveryQuantity&gt;   
+    &lt;secondSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrSaleEndDate/&gt;
+   
+    &lt;supplyingPlant/&gt;
+   
+    &lt;fourthSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrListingEndDate/&gt;
+   
+    &lt;salesMeasureUnit/&gt;
+   
+    &lt;salesText/&gt;
+   
+    &lt;thirdSalesSpcProductGroup/&gt;
+   
+    &lt;storeSaleEndDate/&gt;
+   
+    &lt;roundingProfile/&gt;
+   
+    &lt;productSalesStatus/&gt;
+   
+    &lt;materialGroup4Text/&gt;
+   
+    &lt;deliveryNoteProcminDelivqty&gt;0&lt;/deliveryNoteProcminDelivqty&gt;   
+    &lt;productDistributionChnl&gt;01&lt;/productDistributionChnl&gt;   
+    &lt;productSalesOrg&gt;ID01&lt;/productSalesOrg&gt;   
+    &lt;materialGroup1Text/&gt;
+   
+    &lt;storeSaleStartDate/&gt;
+   
+    &lt;distrCntrSaleStartDate/&gt;
+   
+    &lt;materialGroup5Text/&gt;
+   &lt;/salesData&gt;
+  
+   &lt;salesData&gt;
+    &lt;firstSalesSpecProductGroup/&gt;
+   
+    &lt;minimumOrderQuantity&gt;0&lt;/minimumOrderQuantity&gt;   
+    &lt;fifthSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrListingStartDate/&gt;
+   
+    &lt;itemCategoryGroup&gt;NORM&lt;/itemCategoryGroup&gt;   
+    &lt;materialGroup2Text&gt;
+     &lt;language&gt;EN&lt;/language&gt;    
+     &lt;additionalMaterialGroup2/&gt;
+    
+     &lt;additionalMaterialGroup2name/&gt;
+    &lt;/materialGroup2Text&gt;
+   
+    &lt;materialGroup3Text/&gt;
+   
+    &lt;deliveryQuantityUnit/&gt;
+   
+    &lt;deliveryQuantity&gt;1&lt;/deliveryQuantity&gt;   
+    &lt;secondSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrSaleEndDate/&gt;
+   
+    &lt;supplyingPlant/&gt;
+   
+    &lt;fourthSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrListingEndDate/&gt;
+   
+    &lt;salesMeasureUnit/&gt;
+   
+    &lt;salesText/&gt;
+   
+    &lt;thirdSalesSpcProductGroup/&gt;
+   
+    &lt;storeSaleEndDate/&gt;
+   
+    &lt;roundingProfile/&gt;
+   
+    &lt;productSalesStatus/&gt;
+   
+    &lt;materialGroup4Text/&gt;
+   
+    &lt;deliveryNoteProcminDelivqty&gt;0&lt;/deliveryNoteProcminDelivqty&gt;   
+    &lt;productDistributionChnl&gt;01&lt;/productDistributionChnl&gt;   
+    &lt;productSalesOrg&gt;MY01&lt;/productSalesOrg&gt;   
+    &lt;materialGroup1Text/&gt;
+   
+    &lt;storeSaleStartDate/&gt;
+   
+    &lt;distrCntrSaleStartDate/&gt;
+   
+    &lt;materialGroup5Text/&gt;
+   &lt;/salesData&gt;
+  
+   &lt;salesData&gt;
+    &lt;firstSalesSpecProductGroup/&gt;
+   
+    &lt;minimumOrderQuantity&gt;0&lt;/minimumOrderQuantity&gt;   
+    &lt;fifthSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrListingStartDate/&gt;
+   
+    &lt;itemCategoryGroup&gt;NORM&lt;/itemCategoryGroup&gt;   
+    &lt;materialGroup2Text&gt;
+     &lt;language&gt;EN&lt;/language&gt;    
+     &lt;additionalMaterialGroup2/&gt;
+    
+     &lt;additionalMaterialGroup2name/&gt;
+    &lt;/materialGroup2Text&gt;
+   
+    &lt;materialGroup3Text/&gt;
+   
+    &lt;deliveryQuantityUnit/&gt;
+   
+    &lt;deliveryQuantity&gt;1&lt;/deliveryQuantity&gt;   
+    &lt;secondSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrSaleEndDate/&gt;
+   
+    &lt;supplyingPlant/&gt;
+   
+    &lt;fourthSalesSpcProductGroup/&gt;
+   
+    &lt;distrCntrListingEndDate/&gt;
+   
+    &lt;salesMeasureUnit/&gt;
+   
+    &lt;salesText/&gt;
+   
+    &lt;thirdSalesSpcProductGroup/&gt;
+   
+    &lt;storeSaleEndDate/&gt;
+   
+    &lt;roundingProfile/&gt;
+   
+    &lt;productSalesStatus/&gt;
+   
+    &lt;materialGroup4Text/&gt;
+   
+    &lt;deliveryNoteProcminDelivqty&gt;0&lt;/deliveryNoteProcminDelivqty&gt;   
+    &lt;productDistributionChnl&gt;01&lt;/productDistributionChnl&gt;   
+    &lt;productSalesOrg&gt;TH01&lt;/productSalesOrg&gt;   
+    &lt;materialGroup1Text/&gt;
+   
+    &lt;storeSaleStartDate/&gt;
+   
+    &lt;distrCntrSaleStartDate/&gt;
+   
+    &lt;materialGroup5Text/&gt;
+   &lt;/salesData&gt;
+  
+   &lt;productHierarchyText/&gt;
+  
+   &lt;productIsConfigurable/&gt;
+  
+   &lt;externalMaterialDescriptions/&gt;
+  
+   &lt;netWeight&gt;1&lt;/netWeight&gt;  
+   &lt;materialVolume&gt;1.143&lt;/materialVolume&gt;  
+   &lt;productHierarchy1/&gt;
+  
+   &lt;baseUnitSpecificPrdctHeigh&gt;0&lt;/baseUnitSpecificPrdctHeigh&gt;  
+   &lt;productHierarchy5/&gt;
+  
+   &lt;productHierarchy4/&gt;
+  
+   &lt;productHierarchy3/&gt;
+  
+   &lt;weightUnit&gt;KG&lt;/weightUnit&gt;  
+   &lt;productHierarchy2/&gt;
+  
+   &lt;createdByUser&gt;K455232&lt;/createdByUser&gt;  
+   &lt;crossPlantStatus&gt;ZG&lt;/crossPlantStatus&gt;  
+   &lt;volumeUnit&gt;L&lt;/volumeUnit&gt;  
+   &lt;lastChangedByUser&gt;RFC-CIS-GTQ&lt;/lastChangedByUser&gt;  
+   &lt;baseUnitSpecificPrdctWidth&gt;0&lt;/baseUnitSpecificPrdctWidth&gt;  
+   &lt;productDocumentNumber/&gt;
+  
+   &lt;productHierarchy/&gt;
+  
+   &lt;purchaseOrderQuantityUnit/&gt;
+  
+   &lt;PPG_ROUTE&gt;
+    &lt;PPG_DATA&gt;BE01&lt;/PPG_DATA&gt;   
+    &lt;PPG_LEVEL&gt;/PMC/EMEA/&lt;/PPG_LEVEL&gt;   &lt;/PPG_ROUTE&gt;
+  
+   &lt;plantData&gt;
+    &lt;materialStatus/&gt;
+   
+    &lt;materialAbcClassification/&gt;
+   
+    &lt;zMaterialGoodsRcptDuration&gt;0&lt;/zMaterialGoodsRcptDuration&gt;   
+    &lt;mrpController&gt;100&lt;/mrpController&gt;   
+    &lt;materialSafetyStockQty&gt;0&lt;/materialSafetyStockQty&gt;   
+    &lt;plannedDelivery&gt;0&lt;/plannedDelivery&gt;   
+    &lt;minimumLotSize&gt;480&lt;/minimumLotSize&gt;   
+    &lt;serviceLevel&gt;0&lt;/serviceLevel&gt;   
+    &lt;maxStockLevel&gt;0&lt;/maxStockLevel&gt;   
+    &lt;planningTime&gt;0&lt;/planningTime&gt;   
+    &lt;specialProcurementType&gt;20&lt;/specialProcurementType&gt;   
+    &lt;maximumLotSize&gt;960&lt;/maximumLotSize&gt;   
+    &lt;replenishTime&gt;0&lt;/replenishTime&gt;   
+    &lt;plant&gt;BE01&lt;/plant&gt;   
+    &lt;lotSizing&gt;EX&lt;/lotSizing&gt;   
+    &lt;maintenanceStatusName&gt;BEVDG&lt;/maintenanceStatusName&gt;   
+    &lt;fixedLotSize&gt;0&lt;/fixedLotSize&gt;   
+    &lt;productionTime&gt;0&lt;/productionTime&gt;   
+    &lt;minStockLevel&gt;0&lt;/minStockLevel&gt;   
+    &lt;procurementType&gt;F&lt;/procurementType&gt;   &lt;/plantData&gt;
+  
+   &lt;productExternalId&gt;2100755/180KG&lt;/productExternalId&gt;  
+   &lt;lastChangeDateTime&gt;20241115201435&lt;/lastChangeDateTime&gt;  
+   &lt;productType&gt;ROH&lt;/productType&gt;  
+   &lt;productHierarchy6Text/&gt;
+  
+   &lt;productOldId/&gt;
+  
+   &lt;product&gt;2100755/180KG&lt;/product&gt;  
+   &lt;characteristics&gt;
+    &lt;charcValue&gt;UNKNOWN&lt;/charcValue&gt;   
+    &lt;validityStartDate/&gt;
+   
+    &lt;clfnObjectTable&gt;MARA&lt;/clfnObjectTable&gt;   
+    &lt;charcInternalId&gt;810&lt;/charcInternalId&gt;   
+    &lt;clfnObjectInternalId&gt;699490&lt;/clfnObjectInternalId&gt;   
+    &lt;charcFromNumericValueUnit/&gt;
+   
+    &lt;charcValueIntervalType&gt;1&lt;/charcValueIntervalType&gt;   
+    &lt;clfnObjectType&gt;O&lt;/clfnObjectType&gt;   
+    &lt;validityEndDate&gt;9999-12-31&lt;/validityEndDate&gt;   
+    &lt;characteristic&gt;Z_PACKAGING_CODE_SNGL&lt;/characteristic&gt;   
+    &lt;charcToNumericValue&gt;0&lt;/charcToNumericValue&gt;   
+    &lt;characteristicAuthor/&gt;
+   
+    &lt;charcValuePositionNumber&gt;1&lt;/charcValuePositionNumber&gt;   
+    &lt;clfnObjectId&gt;2100755/180KG&lt;/clfnObjectId&gt;   
+    &lt;isDeleted/&gt;
+   
+    &lt;charcToNumericValueUnit/&gt;
+   
+    &lt;charcValueSortPosition&gt;0&lt;/charcValueSortPosition&gt;   
+    &lt;lastChangeDateTime&gt;20241101092519.254&lt;/lastChangeDateTime&gt;   
+    &lt;charcFromNumericValue&gt;0&lt;/charcFromNumericValue&gt;   
+    &lt;changeNumber/&gt;
+   
+    &lt;timeIntervalNumber&gt;0&lt;/timeIntervalNumber&gt;   
+    &lt;charcValueDependency&gt;1&lt;/charcValueDependency&gt;   
+    &lt;classType&gt;001&lt;/classType&gt;   &lt;/characteristics&gt;
+  
+   &lt;characteristics&gt;
+    &lt;charcValue&gt;00&lt;/charcValue&gt;   
+    &lt;validityStartDate/&gt;
+   
+    &lt;clfnObjectTable&gt;MARA&lt;/clfnObjectTable&gt;   
+    &lt;charcInternalId&gt;869&lt;/charcInternalId&gt;   
+    &lt;clfnObjectInternalId&gt;699490&lt;/clfnObjectInternalId&gt;   
+    &lt;charcFromNumericValueUnit/&gt;
+   
+    &lt;charcValueIntervalType&gt;1&lt;/charcValueIntervalType&gt;   
+    &lt;clfnObjectType&gt;O&lt;/clfnObjectType&gt;   
+    &lt;validityEndDate&gt;9999-12-31&lt;/validityEndDate&gt;   
+    &lt;characteristic&gt;ZSK_MARKETING_PREDECO&lt;/characteristic&gt;   
+    &lt;charcToNumericValue&gt;0&lt;/charcToNumericValue&gt;   
+    &lt;characteristicAuthor/&gt;
+   
+    &lt;charcValuePositionNumber&gt;1&lt;/charcValuePositionNumber&gt;   
+    &lt;clfnObjectId&gt;2100755/180KG&lt;/clfnObjectId&gt;   
+    &lt;isDeleted/&gt;
+   
+    &lt;charcToNumericValueUnit/&gt;
+   
+    &lt;charcValueSortPosition&gt;0&lt;/charcValueSortPosition&gt;   
+    &lt;lastChangeDateTime&gt;20241101092519.254&lt;/lastChangeDateTime&gt;   
+    &lt;charcFromNumericValue&gt;0&lt;/charcFromNumericValue&gt;   
+    &lt;changeNumber/&gt;
+   
+    &lt;timeIntervalNumber&gt;0&lt;/timeIntervalNumber&gt;   
+    &lt;charcValueDependency&gt;1&lt;/charcValueDependency&gt;   
+    &lt;classType&gt;001&lt;/classType&gt;   &lt;/characteristics&gt;
+  
+   &lt;characteristics&gt;
+    &lt;charcValue&gt;12000000&lt;/charcValue&gt;   
+    &lt;validityStartDate/&gt;
+   
+    &lt;clfnObjectTable&gt;MARA&lt;/clfnObjectTable&gt;   
+    &lt;charcInternalId&gt;880&lt;/charcInternalId&gt;   
+    &lt;clfnObjectInternalId&gt;699490&lt;/clfnObjectInternalId&gt;   
+    &lt;charcFromNumericValueUnit/&gt;
+   
+    &lt;charcValueIntervalType&gt;1&lt;/charcValueIntervalType&gt;   
+    &lt;clfnObjectType&gt;O&lt;/clfnObjectType&gt;   
+    &lt;validityEndDate&gt;9999-12-31&lt;/validityEndDate&gt;   
+    &lt;characteristic&gt;UNSPSC_CODE&lt;/characteristic&gt;   
+    &lt;charcToNumericValue&gt;0&lt;/charcToNumericValue&gt;   
+    &lt;characteristicAuthor/&gt;
+   
+    &lt;charcValuePositionNumber&gt;1&lt;/charcValuePositionNumber&gt;   
+    &lt;clfnObjectId&gt;2100755/180KG&lt;/clfnObjectId&gt;   
+    &lt;isDeleted/&gt;
+   
+    &lt;charcToNumericValueUnit/&gt;
+   
+    &lt;charcValueSortPosition&gt;0&lt;/charcValueSortPosition&gt;   
+    &lt;lastChangeDateTime&gt;20241101092519.254&lt;/lastChangeDateTime&gt;   
+    &lt;charcFromNumericValue&gt;0&lt;/charcFromNumericValue&gt;   
+    &lt;changeNumber/&gt;
+   
+    &lt;timeIntervalNumber&gt;0&lt;/timeIntervalNumber&gt;   
+    &lt;charcValueDependency&gt;1&lt;/charcValueDependency&gt;   
+    &lt;classType&gt;001&lt;/classType&gt;   &lt;/characteristics&gt;
+  
+   &lt;characteristics&gt;
+    &lt;charcValue&gt;UNKNOWN&lt;/charcValue&gt;   
+    &lt;validityStartDate/&gt;
+   
+    &lt;clfnObjectTable&gt;MARA&lt;/clfnObjectTable&gt;   
+    &lt;charcInternalId&gt;885&lt;/charcInternalId&gt;   
+    &lt;clfnObjectInternalId&gt;699490&lt;/clfnObjectInternalId&gt;   
+    &lt;charcFromNumericValueUnit/&gt;
+   
+    &lt;charcValueIntervalType&gt;1&lt;/charcValueIntervalType&gt;   
+    &lt;clfnObjectType&gt;O&lt;/clfnObjectType&gt;   
+    &lt;validityEndDate&gt;9999-12-31&lt;/validityEndDate&gt;   
+    &lt;characteristic&gt;Z_PACKAGING_CODE_OUTER&lt;/characteristic&gt;   
+    &lt;charcToNumericValue&gt;0&lt;/charcToNumericValue&gt;   
+    &lt;characteristicAuthor/&gt;
+   
+    &lt;charcValuePositionNumber&gt;1&lt;/charcValuePositionNumber&gt;   
+    &lt;clfnObjectId&gt;2100755/180KG&lt;/clfnObjectId&gt;   
+    &lt;isDeleted/&gt;
+   
+    &lt;charcToNumericValueUnit/&gt;
+   
+    &lt;charcValueSortPosition&gt;0&lt;/charcValueSortPosition&gt;   
+    &lt;lastChangeDateTime&gt;20241101092519.254&lt;/lastChangeDateTime&gt;   
+    &lt;charcFromNumericValue&gt;0&lt;/charcFromNumericValue&gt;   
+    &lt;changeNumber/&gt;
+   
+    &lt;timeIntervalNumber&gt;0&lt;/timeIntervalNumber&gt;   
+    &lt;charcValueDependency&gt;1&lt;/charcValueDependency&gt;   
+    &lt;classType&gt;001&lt;/classType&gt;   &lt;/characteristics&gt;
+  
+   &lt;characteristics&gt;
+    &lt;charcValue&gt;KG&lt;/charcValue&gt;   
+    &lt;validityStartDate/&gt;
+   
+    &lt;clfnObjectTable&gt;MARA&lt;/clfnObjectTable&gt;   
+    &lt;charcInternalId&gt;1091&lt;/charcInternalId&gt;   
+    &lt;clfnObjectInternalId&gt;699490&lt;/clfnObjectInternalId&gt;   
+    &lt;charcFromNumericValueUnit/&gt;
+   
+    &lt;charcValueIntervalType&gt;1&lt;/charcValueIntervalType&gt;   
+    &lt;clfnObjectType&gt;O&lt;/clfnObjectType&gt;   
+    &lt;validityEndDate&gt;9999-12-31&lt;/validityEndDate&gt;   
+    &lt;characteristic&gt;Z_PACKAGING_CODE_OUTER_UOM&lt;/characteristic&gt;   
+    &lt;charcToNumericValue&gt;0&lt;/charcToNumericValue&gt;   
+    &lt;characteristicAuthor/&gt;
+   
+    &lt;charcValuePositionNumber&gt;1&lt;/charcValuePositionNumber&gt;   
+    &lt;clfnObjectId&gt;2100755/180KG&lt;/clfnObjectId&gt;   
+    &lt;isDeleted/&gt;
+   
+    &lt;charcToNumericValueUnit/&gt;
+   
+    &lt;charcValueSortPosition&gt;0&lt;/charcValueSortPosition&gt;   
+    &lt;lastChangeDateTime&gt;20241101092519.254&lt;/lastChangeDateTime&gt;   
+    &lt;charcFromNumericValue&gt;0&lt;/charcFromNumericValue&gt;   
+    &lt;changeNumber/&gt;
+   
+    &lt;timeIntervalNumber&gt;0&lt;/timeIntervalNumber&gt;   
+    &lt;charcValueDependency&gt;1&lt;/charcValueDependency&gt;   
+    &lt;classType&gt;001&lt;/classType&gt;   &lt;/characteristics&gt;
+  
+   &lt;lastChangeDate&gt;2024-11-15&lt;/lastChangeDate&gt;  
+   &lt;externalProductGroup/&gt;
+  
+   &lt;productHierarchy5Text/&gt;
+  
+   &lt;grossWeight&gt;1&lt;/grossWeight&gt;  
+   &lt;materialGroupNameDesc&gt;
+    &lt;materialgroupname&gt;SOLVENT&lt;/materialgroupname&gt;   
+    &lt;language&gt;EN&lt;/language&gt;   
+    &lt;materialgrouptext/&gt;
+   &lt;/materialGroupNameDesc&gt;
+  
+   &lt;materialGroupNameDesc&gt;
+    &lt;materialgroupname&gt;SOLVANT&lt;/materialgroupname&gt;   
+    &lt;language&gt;FR&lt;/language&gt;   
+    &lt;materialgrouptext/&gt;
+   &lt;/materialGroupNameDesc&gt;
+  
+   &lt;materialGroupNameDesc&gt;
+    &lt;materialgroupname&gt;SOLVENTE&lt;/materialgroupname&gt;   
+    &lt;language&gt;ES&lt;/language&gt;   
+    &lt;materialgrouptext/&gt;
+   &lt;/materialGroupNameDesc&gt;
+  
+   &lt;productGroup&gt;R-S1-0001&lt;/productGroup&gt;  
+   &lt;unitsOfMeasure&gt;
+    &lt;quantityDenominator&gt;1&lt;/quantityDenominator&gt;   
+    &lt;alternativeUnit&gt;KG&lt;/alternativeUnit&gt;   
+    &lt;quantityNumerator&gt;1&lt;/quantityNumerator&gt;   &lt;/unitsOfMeasure&gt;
+  
+   &lt;unitsOfMeasure&gt;
+    &lt;quantityDenominator&gt;1140&lt;/quantityDenominator&gt;   
+    &lt;alternativeUnit&gt;L&lt;/alternativeUnit&gt;   
+    &lt;quantityNumerator&gt;1000&lt;/quantityNumerator&gt;   &lt;/unitsOfMeasure&gt;
+  
+   &lt;unitsOfMeasure&gt;
+    &lt;quantityDenominator&gt;71701&lt;/quantityDenominator&gt;   
+    &lt;alternativeUnit&gt;LB&lt;/alternativeUnit&gt;   
+    &lt;quantityNumerator&gt;32523&lt;/quantityNumerator&gt;   &lt;/unitsOfMeasure&gt;
+  
+   &lt;unitsOfMeasure&gt;
+    &lt;quantityDenominator&gt;1&lt;/quantityDenominator&gt;   
+    &lt;alternativeUnit&gt;ST&lt;/alternativeUnit&gt;   
+    &lt;quantityNumerator&gt;180&lt;/quantityNumerator&gt;   &lt;/unitsOfMeasure&gt;
+  
+   &lt;productHierarchy4Text/&gt;
+  &lt;/MATERIAL&gt;&lt;/Input&gt;
+&lt;/root&gt;</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>0l3cxIbzC3ndLsIKgnvbqc</types1:GUID>
+      <types1:DisplayName>PRC-InsertIDQ</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-01-03T14:07:10.663Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

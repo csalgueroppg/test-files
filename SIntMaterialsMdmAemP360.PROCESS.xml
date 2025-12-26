@@ -1,0 +1,586 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>AWtHww43dtQR6kb-gt-29333694-2024-05-08T15:17:01.942Z::pd.xml</types1:EntryId>
+      <types1:Name>SIntMaterialsMdmAemP360</types1:Name>
+      <types1:ParentFlowIds>VL3C7snSDg8SOlA-gt-13513476-2024-08-15T18:56:20.765Z::pd.xml,zAZf5kck8jKBmeK-gt-15133882-2024-10-23T20:04:39.417Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:ip-10-17-246-40.ec2.internal,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-05-08T15:17:02Z</types1:CreationDate>
+      <types1:ModifiedBy>JARangel.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-10-23T23:06:03Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>JARangel.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-10-24T14:27:00Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SIntMaterialsMdmAemP360/SIntMaterialsMdmAemP360.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="04m6oaqy8AaeuXHFowhuSL"
+                  displayName="SIntMaterialsMdmAemP360"
+                  name="SIntMaterialsMdmAemP360"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:ip-10-17-246-40.ec2.internal,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_input " type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="temp_input" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_eventType" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_fullRequestAEM" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_epoch" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_date21char" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_mtrlIdntfr" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_enviroment" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_messageDate" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_status" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_sourceinstance" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_code" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_detail" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_reason" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_host" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_requestTicket" type="reference">
+                  <options>
+                     <option name="referenceTo">Conn-AmazonS3-Hst-ConnectPPG-PDT:StoreS3ObjectParameters Conn-AmazonS3-Hst-ConnectPPG-PDT:StoreS3ObjectRequest Conn-AmazonS3-Hst-ConnectPPG-PDT:StoredS3ObjectInformation</option>
+                     <option name="required">false</option>
+                     <option name="guid">267ClYK31UekcqfgvY4Dew</option>
+                  </options>
+               </field>
+               <field description="" name="temp_reasonTicket" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_codeTicket" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_detailTicket" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_errorLog" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_stepProcess" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_fileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_bodyJsonConvert" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_InstanceName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_bodyXml" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_validationData" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_currentTime" type="datetime">
+                  <options>
+                     <option name="thirtyMinutesIncrement">true</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>ip-10-17-246-40.ec2.internal</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload inputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="lwhyeixc" targetId="lvy4ruyi"/>
+               </start>
+               <assignment id="lvy4ruyi">
+                  <title>AssignDataMsgJms</title>
+                  <operation source="formula" to="temp.temp_currentTime">
+                     <expression language="XQuery">fn:current-dateTime()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_input">
+                     <expression language="XQuery">util:simplifyXml($input.in_input )</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_eventType">
+                     <expression language="XQuery">if($temp.temp_input/*:eventMetadata/*:eventType/text() = util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:enqueueCreatedMDM/value[text() = $temp.temp_input/*:eventMetadata/*:eventType/text()]/text()) 
+then('created') 
+else if($temp.temp_input/*:eventMetadata/*:eventType/text() = util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:enqueueChangedMDM/value[text() = $temp.temp_input/*:eventMetadata/*:eventType/text()]/text()) 
+then('changed')
+else($temp.temp_input/*:eventMetadata/*:eventType/text())</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_epoch">
+                     <expression language="XQuery">if(fn:contains($temp.temp_currentTime  , ".")) 
+then((xs:dateTime(fn:substring-before(fn:string($temp.temp_currentTime ), '.')) - xs:dateTime("1970-01-01T00:00:00-00:00")) div xs:dayTimeDuration("PT0.001S"))
+else((xs:dateTime(fn:substring-before(fn:string($temp.temp_currentTime ), 'Z')) - xs:dateTime("1970-01-01T00:00:00-00:00")) div xs:dayTimeDuration("PT0.001S"))</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_date21char">
+                     <expression language="XQuery">fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("PT0H")),"[Y0001][M01][D01][H01][m01][s01][f0000001]")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_enviroment">
+                     <expression language="XQuery">let $l_enviroment := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:enviroment/text()
+return $l_enviroment</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_messageDate">
+                     <expression language="XQuery">
+fn:format-dateTime(fn:adjust-dateTime-to-timezone($temp.temp_input/*:eventMetadata/*:messageDate/text(), xs:dayTimeDuration("PT0H")),"[Y0001][M01][D01][H01][m01][s01][f0000001]")
+</expression>
+                  </operation>
+                  <operation source="constant" to="temp.temp_status">0</operation>
+                  <operation source="formula" to="temp.temp_sourceinstance">
+                     <expression language="XQuery">let $l_enviroment := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:enviroment/text()
+return $l_enviroment</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_host">
+                     <expression language="XQuery">let $l_host := util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:host/text()
+return $l_host</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_fileName">
+                     <expression language="XQuery">fn:concat('Log_OnGoing_PDT_S4_',fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT5H")),"[Y0001][M01][D01][H01][m01][s01]"),'.txt')</expression>
+                  </operation>
+                  <link id="lvy4ruyr" targetId="lvy4ruyq"/>
+               </assignment>
+               <assignment id="lzjxeb9u">
+                  <title>AssignMapAPI</title>
+                  <operation source="formula" to="temp.temp_bodyXml">
+                     <expression language="XQuery">for $mtrlJmsCnnctr in $temp.temp_input//*:mtrlJmsCnnctr
+  where 1 = 1 
+  	and ($mtrlJmsCnnctr/*:c1/text() = '1' or fn:concat($mtrlJmsCnnctr/*:c1/text(),'') = '')
+    and ($mtrlJmsCnnctr/*:c2/text() = '1' or fn:concat($mtrlJmsCnnctr/*:c2/text(),'') = '')
+    and ($mtrlJmsCnnctr/*:c3/text() = '1' or fn:concat($mtrlJmsCnnctr/*:c3/text(),'') = '')
+    and ($mtrlJmsCnnctr/*:c4/text() = '1' or fn:concat($mtrlJmsCnnctr/*:c4/text(),'') = '')
+    and ($mtrlJmsCnnctr/*:c5/text() = '1' or fn:concat($mtrlJmsCnnctr/*:c5/text(),'') = '')
+return
+&lt;mtrlJmsCnnctr&gt;
+	&lt;srcSystmId&gt;{$mtrlJmsCnnctr/*:srcSystmId/text()}&lt;/srcSystmId&gt;
+	&lt;product&gt;{$mtrlJmsCnnctr/*:mtrlIdntfr/text()}&lt;/product&gt;
+	&lt;materialNumber&gt;{$mtrlJmsCnnctr/*:mtrlNmbr/text()}&lt;/materialNumber&gt;
+	&lt;createDate&gt;{$mtrlJmsCnnctr/*:createDate/text()}&lt;/createDate&gt;
+	&lt;lastUpdateDate&gt;{$mtrlJmsCnnctr/*:lastUpdateDate/text()}&lt;/lastUpdateDate&gt;
+	&lt;materialName&gt;{$mtrlJmsCnnctr/*:mtrlDscr/text()}&lt;/materialName&gt;
+	&lt;overallMaterialType&gt;{$mtrlJmsCnnctr/*:ovrllMtrlTyp/text()}&lt;/overallMaterialType&gt;
+	&lt;productType&gt;{$mtrlJmsCnnctr/*:mtrlTyp/text()}&lt;/productType&gt;
+	&lt;division&gt;{$mtrlJmsCnnctr/*:dvsn/text()}&lt;/division&gt;
+	&lt;crossPlantStatus&gt;{$mtrlJmsCnnctr/*:statusCd/text()}&lt;/crossPlantStatus&gt;	
+	&lt;sbuDivision&gt;{$mtrlJmsCnnctr/*:sbuDvsn/text()}&lt;/sbuDivision&gt;
+	&lt;champCode&gt;{$mtrlJmsCnnctr/*:champCd/text()}&lt;/champCode&gt;
+	&lt;baseUnit&gt;{$mtrlJmsCnnctr/*:bsUntMsr/text()}&lt;/baseUnit&gt;
+	&lt;technologyGroup&gt;{$mtrlJmsCnnctr/*:tchnlgGrp/text()}&lt;/technologyGroup&gt;
+	&lt;originatingID&gt;{$mtrlJmsCnnctr/*:orgntngId/text()}&lt;/originatingID&gt;
+	&lt;newProductLaunchDate&gt;{$mtrlJmsCnnctr/*:nwPrdctLnchDt/text()}&lt;/newProductLaunchDate&gt;
+	&lt;itemExistinSource&gt;{$mtrlJmsCnnctr/*:itmExstSrc/text()}&lt;/itemExistinSource&gt;
+	&lt;packingUnit&gt;{$mtrlJmsCnnctr/*:pckngUnt/text()}&lt;/packingUnit&gt;
+	&lt;productGroup&gt;{$mtrlJmsCnnctr/*:brand/text()}&lt;/productGroup&gt;
+	&lt;materialGroupText&gt;{$mtrlJmsCnnctr/*:brandName/text()}&lt;/materialGroupText&gt;
+	&lt;grossWeight&gt;{$mtrlJmsCnnctr/*:grssWght/text()}&lt;/grossWeight&gt;
+	&lt;netWeight&gt;{$mtrlJmsCnnctr/*:ntWght/text()}&lt;/netWeight&gt;
+	&lt;weightUnit&gt;{$mtrlJmsCnnctr/*:untWght/text()}&lt;/weightUnit&gt;
+	&lt;materialVolume&gt;{$mtrlJmsCnnctr/*:vlm/text()}&lt;/materialVolume&gt;
+	&lt;volumeUnit&gt;{$mtrlJmsCnnctr/*:vlmUnt/text()}&lt;/volumeUnit&gt;
+	&lt;materialLanguage&gt;{$mtrlJmsCnnctr/*:langKey/text()}&lt;/materialLanguage&gt;
+	&lt;externalProductGroup&gt;{$mtrlJmsCnnctr/*:parentCode/text()}&lt;/externalProductGroup&gt;
+	&lt;externalMaterialGroupName&gt;{$mtrlJmsCnnctr/*:parentCodeName/text()}&lt;/externalMaterialGroupName&gt;
+	&lt;productOldId&gt;{$mtrlJmsCnnctr/*:prdctAltId/text()}&lt;/productOldId&gt;
+	&lt;language&gt;{$mtrlJmsCnnctr/*:langKey/text()}&lt;/language&gt;
+	&lt;productHierarchy&gt;{fn:normalize-space($mtrlJmsCnnctr/*:prdctHrchyId/text())}&lt;/productHierarchy&gt;
+	&lt;productHierarchyNumber1&gt;{fn:normalize-space($mtrlJmsCnnctr/*:prdctHrchyL1/text())}&lt;/productHierarchyNumber1&gt;
+	&lt;productHierarchyNumber2&gt;{fn:normalize-space($mtrlJmsCnnctr/*:prdctHrchyL2/text())}&lt;/productHierarchyNumber2&gt;
+	&lt;productHierarchyNumber3&gt;{fn:normalize-space($mtrlJmsCnnctr/*:prdctHrchyL3/text())}&lt;/productHierarchyNumber3&gt;
+	&lt;productHierarchyNumber4&gt;{fn:normalize-space($mtrlJmsCnnctr/*:prdctHrchyL4/text())}&lt;/productHierarchyNumber4&gt;
+	&lt;productHierarchyNumber5&gt;{fn:normalize-space($mtrlJmsCnnctr/*:prdctHrchyL5/text())}&lt;/productHierarchyNumber5&gt;
+	&lt;productHierarchyNumber6&gt;{fn:normalize-space($mtrlJmsCnnctr/*:prdctHrchyL6/text())}&lt;/productHierarchyNumber6&gt;
+	&lt;productHierarchyText&gt;{$mtrlJmsCnnctr/*:prdctHrchyNm/text()}&lt;/productHierarchyText&gt;
+	&lt;productHierarchyName1&gt;{$mtrlJmsCnnctr/*:prdctHrchyN1/text()}&lt;/productHierarchyName1&gt;
+	&lt;productHierarchyName2&gt;{$mtrlJmsCnnctr/*:prdctHrchyN2/text()}&lt;/productHierarchyName2&gt;
+	&lt;productHierarchyName3&gt;{$mtrlJmsCnnctr/*:prdctHrchyN3/text()}&lt;/productHierarchyName3&gt;
+	&lt;productHierarchyName4&gt;{$mtrlJmsCnnctr/*:prdctHrchyN4/text()}&lt;/productHierarchyName4&gt;
+	&lt;productHierarchyName5&gt;{$mtrlJmsCnnctr/*:prdctHrchyN5/text()}&lt;/productHierarchyName5&gt;
+	&lt;productHierarchyName6&gt;{$mtrlJmsCnnctr/*:prdctHrchyN6/text()}&lt;/productHierarchyName6&gt;
+	&lt;baseUnitSpecificPrdctLngth&gt;{$mtrlJmsCnnctr/*:pckngUntLngth/text()}&lt;/baseUnitSpecificPrdctLngth&gt;
+	&lt;baseUnitSpecificPrdctWidth&gt;{$mtrlJmsCnnctr/*:pckngWdth/text()}&lt;/baseUnitSpecificPrdctWidth&gt;
+	&lt;baseUnitSpecificPrdctHeigh&gt;{$mtrlJmsCnnctr/*:pckngHght/text()}&lt;/baseUnitSpecificPrdctHeigh&gt;
+	&lt;theHeightOfThePackingUnitHight&gt;{$mtrlJmsCnnctr/*:pckngVlm/text()}&lt;/theHeightOfThePackingUnitHight&gt;
+	&lt;productMeasurementUnit&gt;{$mtrlJmsCnnctr/*:pckngUntFor/text()}&lt;/productMeasurementUnit&gt;
+&lt;/mtrlJmsCnnctr&gt;
+</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_mtrlIdntfr">
+                     <expression language="XQuery">$temp.temp_bodyXml/*:product/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_validationData">
+                     <expression language="XQuery">fn:count($temp.temp_bodyXml)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_InstanceName">
+                     <expression language="XQuery">if($temp.temp_mtrlIdntfr) 
+then(ipd:setProcessTitle(fn:concat('SIntMaterialsMdmAemP360-', $temp.temp_mtrlIdntfr,'-',fn:count($temp.temp_input//*:mtrlJmsCnnctr))))
+else()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.temp_bodyJsonConvert">
+                     <expression language="XQuery">util:toJSON($temp.temp_bodyXml)</expression>
+                  </operation>
+                  <link id="lzx4cxx3" targetId="lzx4cxwv"/>
+               </assignment>
+               <container id="lvy4ruyq" type="exclusive">
+                  <title>D_ValidateEventType</title>
+                  <flow id="lvy4ruyu">
+                     <link id="lvy4ruyv" targetId="lvy4ruyq" type="containerLink"/>
+                  </flow>
+                  <flow id="lvy4ruzw">
+                     <link id="lvy4ruzx" targetId="lvy4ruyq" type="containerLink"/>
+                  </flow>
+                  <flow id="lvy4ruyx">
+                     <assignment id="lwhyeixv">
+                        <title>AssignFaultValidateEventType</title>
+                        <operation source="constant" to="temp.temp_status">1</operation>
+                        <operation source="formula" to="temp.temp_reason">
+                           <expression language="XQuery">'Validation error'</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_detail">
+                           <expression language="XQuery">fn:concat('Error validating event type : ', $temp.temp_input/*:eventMetadata/*:eventType/text())</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_code">
+                           <expression language="XQuery">'-1'</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_stepProcess">
+                           <expression language="XQuery">fn:concat('Step : ValidateEventType ',', Item Timestamp (EST): ',fn:substring-after($temp.temp_fileName,'S4_'))</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_errorLog">
+                           <expression language="XQuery">fn:concat('ERP:',' S4',',',' Process:',' SIntMaterialsMdmAemP360',',',$temp.temp_stepProcess,',',' Code: ',$temp.temp_code,',',' DetailError: ',$temp.temp_detail  )</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_requestTicket">
+                           <expression language="XQuery">&lt;StoreS3ObjectRequest&gt;
+	&lt;!-- create S3 object metadata --&gt;
+	&lt;s3ObjectParameters&gt;
+		&lt;!-- object key, is required --&gt;
+		&lt;awsS3Key&gt;{fn:concat('IICS_PDT/Tickets/',$temp.temp_fileName)}&lt;/awsS3Key&gt;
+		&lt;!-- content type, by default text/plain type is used --&gt;
+		&lt;contentType&gt;text/plain&lt;/contentType&gt;
+	&lt;/s3ObjectParameters&gt;	
+	&lt;content&gt;{fn:concat($temp.temp_errorLog ,' PipeMessage ' , $temp.temp_errorLog)}&lt;/content&gt;
+&lt;/StoreS3ObjectRequest&gt;
+</expression>
+                        </operation>
+                        <link id="lwhyej3a" targetId="lwhyej38"/>
+                     </assignment>
+                     <jumpTo id="lwhyej38">
+                        <link id="lwhyej39" targetId="lwfas8bi"/>
+                     </jumpTo>
+                  </flow>
+                  <link id="lvy4ruyt" targetId="lvy4ruyu" type="containerLink">
+                     <condition source="formula">
+                        <function name="contains">
+                           <arg name="left">{$temp.temp_eventType}</arg>
+                           <arg name="right">created</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lvy4ruzv" targetId="lvy4ruzw" type="containerLink">
+                     <condition source="formula">
+                        <function name="contains">
+                           <arg name="left">{$temp.temp_eventType}</arg>
+                           <arg name="right">changed</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lvy4ruyw" targetId="lvy4ruyx" type="containerLink"/>
+                  <link id="lzjxeb9v" targetId="lzjxeb9u"/>
+               </container>
+               <container id="lzx4cxwv" type="exclusive">
+                  <title>D_ValidationData</title>
+                  <flow id="lzx4cxww">
+                     <eventContainer id="lzx4cxxs">
+                        <service id="lzx4cxxx">
+                           <title>SvcSDasMaterialsAemAPIs</title>
+                           <serviceName>Conn-SC-SDasMaterialsAemAPIs:postMaterialsMdmAem</serviceName>
+                           <serviceGUID>036aGNwIB2BdBPcNjNcd20</serviceGUID>
+                           <serviceInput>
+                              <parameter name="in_json" source="formula">
+                                 <expression language="XQuery">$temp.temp_bodyJsonConvert </expression>
+                              </parameter>
+                              <parameter name="in_host" source="constant">{$temp.temp_host}</parameter>
+                              <parameter name="in_EventType" source="constant">{$temp.temp_eventType}</parameter>
+                              <parameter name="in_SourceInstance" source="constant">{$temp.temp_sourceinstance}</parameter>
+                              <parameter name="in_MtrlIdntfr" source="formula">
+                                 <expression language="XQuery">fn:replace(fn:replace($temp.temp_mtrlIdntfr,'/','-'),' ','%20')</expression>
+                              </parameter>
+                              <parameter name="in_Timestamp" source="constant">{$temp.temp_epoch}</parameter>
+                              <parameter name="in_MessageId" source="formula">
+                                 <expression language="XQuery">fn:concat('II-MATE-',$temp.temp_date21char)</expression>
+                              </parameter>
+                              <parameter name="in_CorrelationId" source="formula">
+                                 <expression language="XQuery">fn:concat('MD-MATE-',$temp.temp_messageDate )</expression>
+                              </parameter>
+                              <parameter name="in_DeliveryMode" source="constant">Persistent</parameter>
+                              <parameter name="in_PpgEntity" source="constant">material</parameter>
+                              <parameter name="in_PpgAction" source="constant">{$temp.temp_eventType}</parameter>
+                              <parameter name="in_PpgSourceSystem" source="constant">mdmhub</parameter>
+                              <parameter name="in_PpgVersion" source="constant">v2</parameter>
+                           </serviceInput>
+                        </service>
+                        <flow id="lzx4cxxt">
+                           <assignment id="lzx4cxxu">
+                              <title>AssignSuccessApi</title>
+                              <operation source="constant" to="temp.temp_status">0</operation>
+                              <operation source="constant" to="temp.temp_code">0</operation>
+                              <operation source="constant" to="temp.temp_detail">0</operation>
+                              <operation source="constant" to="temp.temp_reason">0</operation>
+                           </assignment>
+                           <link id="lzx4cxy0" targetId="lzx4cxxs" type="containerLink"/>
+                        </flow>
+                        <flow id="lzx4cxxv">
+                           <assignment id="lzx4cxxw">
+                              <title>AssignFaultApi</title>
+                              <operation source="constant" to="temp.temp_status">1</operation>
+                              <operation source="constant" to="temp.temp_reason">{$output.faultSvcSDasMaterialsAemAPIs[1]/reason}</operation>
+                              <operation source="constant" to="temp.temp_detail">{$output.faultSvcSDasMaterialsAemAPIs[1]/detail}</operation>
+                              <operation source="constant" to="temp.temp_code">{$output.faultSvcSDasMaterialsAemAPIs[1]/code}</operation>
+                              <operation source="formula" to="temp.temp_stepProcess">
+                                 <expression language="XQuery">fn:concat('Step : SvcSDasMaterialsAemAPIs ',', Item Timestamp (EST): ',fn:substring-after($temp.temp_fileName,'S4_'))</expression>
+                              </operation>
+                              <operation source="formula" to="temp.temp_errorLog">
+                                 <expression language="XQuery">fn:concat('ERP:',' S4',',',' Process:',' SIntMaterialsMdmAemP360',',',$temp.temp_stepProcess,',',' Code: ',$temp.temp_code,',',' DetailError: ',$temp.temp_reason )</expression>
+                              </operation>
+                              <operation source="formula" to="temp.temp_requestTicket">
+                                 <expression language="XQuery">&lt;StoreS3ObjectRequest&gt;
+	&lt;!-- create S3 object metadata --&gt;
+	&lt;s3ObjectParameters&gt;
+		&lt;!-- object key, is required --&gt;
+		&lt;awsS3Key&gt;{fn:concat('IICS_PDT/Tickets/',$temp.temp_fileName)}&lt;/awsS3Key&gt;
+		&lt;!-- content type, by default text/plain type is used --&gt;
+		&lt;contentType&gt;text/plain&lt;/contentType&gt;
+	&lt;/s3ObjectParameters&gt;	
+	&lt;content&gt;{fn:concat($temp.temp_errorLog ,' PipeMessage ' , $temp.temp_errorLog)}&lt;/content&gt;
+&lt;/StoreS3ObjectRequest&gt;
+</expression>
+                              </operation>
+                           </assignment>
+                           <link id="lzx4cxy1" targetId="lzx4cxxs" type="containerLink"/>
+                        </flow>
+                        <link id="lzx4cxxy" targetId="lzx4cxxt" type="containerLink"/>
+                        <events>
+                           <catch faultField="faultSvcSDasMaterialsAemAPIs"
+                                  id="lwb68q37"
+                                  interrupting="true">
+                              <link id="lzx4cxxz" targetId="lzx4cxxv" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="lzx4cxx1" targetId="lzx4cxwv" type="containerLink"/>
+                  </flow>
+                  <flow id="lzx4cxwx">
+                     <assignment id="lzx4cy45">
+                        <title>AssignFaultValidationData</title>
+                        <operation source="constant" to="temp.temp_status">1</operation>
+                        <operation source="formula" to="temp.temp_reason">
+                           <expression language="XQuery">'EmptyData'</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_detail">
+                           <expression language="XQuery">'Error validating data : Check global rule G2 or JMS input'</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_code">
+                           <expression language="XQuery">'-1'</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_stepProcess">
+                           <expression language="XQuery">fn:concat('Step : D_DalidationData ',', Item Timestamp (EST): ',fn:substring-after($temp.temp_fileName,'S4_'))</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_errorLog">
+                           <expression language="XQuery">fn:concat('ERP:',' S4',',',' Process:',' SIntMaterialsMdmAemP360',',',$temp.temp_stepProcess,',',' Code: ',$temp.temp_code,',',' DetailError: ',$temp.temp_detail  )</expression>
+                        </operation>
+                        <operation source="formula" to="temp.temp_requestTicket">
+                           <expression language="XQuery">&lt;StoreS3ObjectRequest&gt;
+	&lt;!-- create S3 object metadata --&gt;
+	&lt;s3ObjectParameters&gt;
+		&lt;!-- object key, is required --&gt;
+		&lt;awsS3Key&gt;{fn:concat('IICS_PDT/Tickets/',$temp.temp_fileName)}&lt;/awsS3Key&gt;
+		&lt;!-- content type, by default text/plain type is used --&gt;
+		&lt;contentType&gt;text/plain&lt;/contentType&gt;
+	&lt;/s3ObjectParameters&gt;	
+	&lt;content&gt;{fn:concat($temp.temp_errorLog ,' PipeMessage ' , $temp.temp_errorLog)}&lt;/content&gt;
+&lt;/StoreS3ObjectRequest&gt;
+</expression>
+                        </operation>
+                     </assignment>
+                     <link id="lzx4cy9w" targetId="lzx4cxwv" type="containerLink"/>
+                  </flow>
+                  <link id="lzx4cxwz" targetId="lzx4cxww" type="containerLink">
+                     <condition source="formula">
+                        <function name="greater-than">
+                           <arg name="left">{$temp.temp_validationData}</arg>
+                           <arg name="right">{0}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lzx4cxx0" targetId="lzx4cxwx" type="containerLink"/>
+                  <link id="lzx4cxxr" targetId="lwfas8bi"/>
+               </container>
+               <container id="lwfas8bi" type="exclusive">
+                  <title>D_ValidationStatus</title>
+                  <flow id="lwfas8bm">
+                     <eventContainer id="lwfas8g0">
+                        <subflow id="lwfas8g4">
+                           <title>SubMaterialsSendTicket</title>
+                           <subflowGUID>4dxXMEsjQkFkyirYTv57GX</subflowGUID>
+                           <subflowPath>PRC-MaterialsSendTicket</subflowPath>
+                           <runForEach>false</runForEach>
+                           <input>
+                              <parameter name="in_input" source="field">temp.temp_requestTicket</parameter>
+                           </input>
+                           <outputDef/>
+                        </subflow>
+                        <flow id="lwfas8g1">
+                           <link id="lwfas8g7" targetId="lwfas8g0" type="containerLink"/>
+                        </flow>
+                        <flow id="lwfas8g2">
+                           <assignment id="lwfas8g3">
+                              <title>AssignFaultTicket</title>
+                              <operation source="constant" to="temp.temp_reasonTicket">{$output.faultSubMaterialsSendTicket[1]/reason}</operation>
+                              <operation source="constant" to="temp.temp_codeTicket">{$output.faultSubMaterialsSendTicket[1]/code}</operation>
+                              <operation source="constant" to="temp.temp_detailTicket">{$output.faultSubMaterialsSendTicket[1]/detail}</operation>
+                           </assignment>
+                           <link id="lwfas8g8" targetId="lwfas8g0" type="containerLink"/>
+                        </flow>
+                        <link id="lwfas8g5" targetId="lwfas8g1" type="containerLink"/>
+                        <events>
+                           <catch faultField="faultSubMaterialsSendTicket"
+                                  id="lwfas88x"
+                                  interrupting="true">
+                              <link id="lwfas8g6" targetId="lwfas8g2" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="lwfas8bn" targetId="lwfas8bi" type="containerLink"/>
+                  </flow>
+                  <flow id="lwfas8bp">
+                     <link id="lwfas8bq" targetId="lwfas8bi" type="containerLink"/>
+                  </flow>
+                  <link id="lwfas8bl" targetId="lwfas8bm" type="containerLink">
+                     <condition source="formula">
+                        <function name="equals">
+                           <arg name="left">{$temp.temp_status}</arg>
+                           <arg name="right">{1}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lwfas8bo" targetId="lwfas8bp" type="containerLink"/>
+                  <link id="lzx4cxwm" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>7df32450-9f1f-4da3-ae1f-ccb788375e1e</ns1:Id>
+               <ns1:Name>test</ns1:Name>
+               <ns1:CreatedBy>OGalicia.dev@ppg.com</ns1:CreatedBy>
+               <ns1:CreationDate>2024-05-16T21:28:42Z</ns1:CreationDate>
+               <ns1:ModifiedBy>OGalicia.dev@ppg.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-05-16T21:28:42Z</ns1:ModificationDate>
+               <ns1:Data format="json">{
+	 "in_input ": "test"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>04m6oaqy8AaeuXHFowhuSL</types1:GUID>
+      <types1:DisplayName>SIntMaterialsMdmAemP360</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-10-24T19:06:19.56Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

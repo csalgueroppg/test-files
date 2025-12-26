@@ -1,0 +1,211 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>rlAXhNUdyOoMdtl-gt-163009505-2024-07-08T15:16:47.286Z::pd.xml</types1:EntryId>
+      <types1:Name>SIntMaterialsAemPIM</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>@source= SAPS4, @operation= CreateUpdate Materials, @dataType=Materials, @target= PIM System, @additionalText= Process forConnectPPG Materials, @prcRunOn= SDCAMDMSA01</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>JARangel.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-07-08T15:16:47Z</types1:CreationDate>
+      <types1:ModifiedBy>JARangel.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-08-23T15:57:45Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>JARangel.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-08-21T23:28:15Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SIntMaterialsAemPIM/SIntMaterialsAemPIM.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="c5FQZ1UyssZb5etGVJGkEn"
+                  displayName="SIntMaterialsAemPIM"
+                  name="SIntMaterialsAemPIM"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>@source= SAPS4, @operation= CreateUpdate Materials, @dataType=Materials, @target= PIM System, @additionalText= Process forConnectPPG Materials, @prcRunOn= SDCAMDMSA01</description>
+            <tags>.agent:SDCAMDMSA01</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="event" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">Conn-AMQP-P360-ConnectPPG-PDT:AMQPMessage</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5XZKiT63Ss2jDY7v5GA1Ic</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="vTempInput" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempSource" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEventType" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempInstanceName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>SDCAMDMSA01</targetLocation>
+               <event eventSource="Conn-AMQP-P360-ConnectPPG-PDT:dequeueP360Message"/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="lyd4z6cu" targetId="lyd4z6ct"/>
+               </start>
+               <assignment id="lyd4z6ct">
+                  <title>AssignInputs</title>
+                  <operation source="formula" to="temp.vTempInput">
+                     <expression language="XQuery">util:parseJSON(fn:replace($input.event[1]/*:body/text(),'&amp;#xd;', ''))</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempSource">
+                     <expression language="XQuery">if($input.event[1]/*:headers[name/text() = 'ppg_sourcesystem']/*:value/text() = util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:dequeueSourceSystemMDM/value[text() = $input.event[1]/*:headers[name/text() = 'ppg_sourcesystem']/*:value/text()]/text()) 
+then('mdmhub') 
+else if($input.event[1]/*:headers[name/text() = 'ppg_sourcesystem']/*:value/text() = util:getCatalogResource(util:resolveURN('urn:ppg-catalog-parameters'))/*:Parameter[name/text() = 'Materials-s4-Mdm-Pim']/*:value/*:data/*:dequeueSourceSystemS4/value[text() = $input.event[1]/*:headers[name/text() = 'ppg_sourcesystem']/*:value/text()]/text()) 
+then('s4hana')
+else($input.event[1]/*:headers[name/text() = 'ppg_sourcesystem']/*:value/text())</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempEventType">
+                     <expression language="XQuery">$input.event[1]/*:headers[name/text() = 'ppg_action']/*:value/text()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempInstanceName">
+                     <expression language="XQuery">if($temp.vTempInput[1]/*:product/text()) 
+then(ipd:setProcessTitle(fn:concat('SIntMaterialsAemPIM-', $temp.vTempInput[1]/*:product/text(),'-',$temp.vTempSource,'-',$temp.vTempEventType   )))
+else()</expression>
+                  </operation>
+                  <link id="lyd4z6d8" targetId="lyd4z6d7"/>
+               </assignment>
+               <container id="lyd4z6d7" type="exclusive">
+                  <title>dSource</title>
+                  <flow id="lyd4z6db">
+                     <eventContainer id="lz734es8">
+                        <subflow id="lyx7espi">
+                           <title>SubSendMDMtoPIM</title>
+                           <subflowGUID>0nY3O60JnFpbRF2JQksYag</subflowGUID>
+                           <subflowPath>PRC-SendMDMtoPIM</subflowPath>
+                           <runForEach>false</runForEach>
+                           <input>
+                              <parameter name="Input" source="formula" updatable="true">
+                                 <expression language="XQuery">$temp.vTempInput </expression>
+                              </parameter>
+                              <parameter name="in_EventType" source="formula" updatable="true">
+                                 <expression language="XQuery">$temp.vTempEventType </expression>
+                              </parameter>
+                           </input>
+                           <outputDef/>
+                        </subflow>
+                        <flow id="lz734esa">
+                           <link id="lz734esb" targetId="lz734es8" type="containerLink"/>
+                        </flow>
+                        <flow id="lz734esd">
+                           <throw id="lz734ev7">
+                              <title>ThrowSendMDMtoPIM</title>
+                              <throwInput>
+                                 <parameter name="code" source="constant" updatable="true">{$output.faultSendMDMtoPIM[1]/code}</parameter>
+                                 <parameter name="detail" source="constant" updatable="true">{$output.faultSendMDMtoPIM[1]/detail}</parameter>
+                                 <parameter name="reason" source="constant" updatable="true">{$output.faultSendMDMtoPIM[1]/reason}</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="lz734es9" targetId="lz734esa" type="containerLink"/>
+                        <events>
+                           <catch faultField="faultSendMDMtoPIM" id="lz734erv" interrupting="true">
+                              <link id="lz734esc" targetId="lz734esd" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="lyd4z6dc" targetId="lyd4z6d7" type="containerLink"/>
+                  </flow>
+                  <flow id="lyd4z6de">
+                     <eventContainer id="lz734esy">
+                        <subflow id="lz734eqc">
+                           <title>SubSendS4toPIM</title>
+                           <subflowGUID>4WzWLnncDjdidHBxT8fUQp</subflowGUID>
+                           <subflowPath>PRC-SendS4toPIM</subflowPath>
+                           <runForEach>false</runForEach>
+                           <input>
+                              <parameter name="Input" source="formula" updatable="true">
+                                 <expression language="XQuery">$temp.vTempInput </expression>
+                              </parameter>
+                              <parameter name="in_EventType" source="formula" updatable="true">
+                                 <expression language="XQuery">$temp.vTempEventType </expression>
+                              </parameter>
+                           </input>
+                           <outputDef/>
+                        </subflow>
+                        <flow id="lz734et0">
+                           <link id="lz734et1" targetId="lz734esy" type="containerLink"/>
+                        </flow>
+                        <flow id="lz734et3">
+                           <throw id="lz734evk">
+                              <title>ThrowSendS4toPIM</title>
+                              <throwInput>
+                                 <parameter name="code" source="constant" updatable="true">{$output.faultSendMDMtoPIM[1]/code}</parameter>
+                                 <parameter name="detail" source="constant" updatable="true">{$output.faultSendMDMtoPIM[1]/detail}</parameter>
+                                 <parameter name="reason" source="constant" updatable="true">{$output.faultSendMDMtoPIM[1]/reason}</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="lz734esz" targetId="lz734et0" type="containerLink"/>
+                        <events>
+                           <catch faultField="faultSendMDMtoPIM" id="lz734eso" interrupting="true">
+                              <link id="lz734et2" targetId="lz734et3" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="lyd4z6df" targetId="lyd4z6d7" type="containerLink"/>
+                  </flow>
+                  <flow id="lyd4z6e4">
+                     <link id="lyd4z6e5" targetId="lyd4z6d7" type="containerLink"/>
+                  </flow>
+                  <link id="lyd4z6da" targetId="lyd4z6db" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.vTempSource}</arg>
+                           <arg name="right">mdmhub</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lyd4z6dd" targetId="lyd4z6de" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.vTempSource}</arg>
+                           <arg name="right">s4hana</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lyd4z6e3" targetId="lyd4z6e4" type="containerLink"/>
+                  <link id="lyd4z6d9" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>c5FQZ1UyssZb5etGVJGkEn</types1:GUID>
+      <types1:DisplayName>SIntMaterialsAemPIM</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-08-25T14:51:04.152Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
