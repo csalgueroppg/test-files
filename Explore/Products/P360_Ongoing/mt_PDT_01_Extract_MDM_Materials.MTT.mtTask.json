@@ -1,0 +1,414 @@
+[{
+  "@type": "mtTask",
+  "id": "@1",
+  "name": "mt_PDT_01_Extract_MDM_Materials",
+  "description": "@connectionSource= Query MDM Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output S3 bucket Tgt, @additionalText= This mapping task get all data from MDM,@sources[@ORC_HMDM_READ_MATERIALS], @targets[@S3_HMDM_V2_HostedAgent]",
+  "autoExpireObject": false,
+  "runtimeEnvironmentId": "@6QkntOpAEzblanc4S2f1cR",
+  "maxLogs": 10,
+  "verbose": false,
+  "lastRunTime": 1752179784000,
+  "mappingId": "@0bQWg9tEEctkKobcCDXBYr",
+  "frsGuid": "aMqseFP2ZgqgtjeOAHUASl",
+  "shortDescription": "@connectionSource= Query MDM Src , @transformation...",
+  "sessionPropertiesList": [],
+  "hidden": false,
+  "enableCrossSchemaPushdown": true,
+  "enableParallelRun": false,
+  "autoTunedApplied": false,
+  "autoTunedAppliedType": "NONE",
+  "paramFileType": "PARAM_FILE_LOCAL",
+  "schemaMode": "async",
+  "valid": true,
+  "schemaValidationErrorCount": -1,
+  "parameterFileEncoding": "UTF-8",
+  "serverlessProperties": {},
+  "taskProperties": [
+    {
+      "@type": "taskProperty",
+      "name": "parameterFileDir",
+      "currentValue": "",
+      "type": "STRING",
+      "label": "label.parameterFileDir",
+      "required": false
+    },
+    {
+      "@type": "taskProperty",
+      "name": "parameterFileName",
+      "currentValue": "",
+      "type": "STRING",
+      "label": "label.parameterFileName",
+      "required": false
+    },
+    {
+      "@type": "taskProperty",
+      "name": "outboundMessageUrlQueueTime",
+      "currentValue": "",
+      "type": "NUMBER",
+      "label": "label.outboundMessageUrlQueueTime",
+      "required": false
+    },
+    {
+      "@type": "taskProperty",
+      "name": "outboundMessageUrlToken",
+      "currentValue": "",
+      "type": "STRING",
+      "label": "label.outboundMessageUrlToken",
+      "required": false
+    }
+  ],
+  "optimizationPlan": "NONE",
+  "isMidstreamPreview": false,
+  "allowMaxFieldLength": false,
+  "specialCharacterSupport": false,
+  "useUserDefinedOrder": false,
+  "parameters": [
+    {
+      "@type": "mtTaskParameter",
+      "id": 288306507,
+      "name": "$Src_C_BO_PRDCT_MSTR$",
+      "type": "EXTENDED_SOURCE",
+      "label": "Conn_ORC_Read (Conn_ORC_Read)",
+      "description": "",
+      "uiProperties": {
+        "cnxtype": "Oracle",
+        "connectionParameterized": "true",
+        "paramName": "Conn_ORC_Read",
+        "paramLabel": "Conn_ORC_Read",
+        "paramType-mapping": "Connection",
+        "logcnx": "Conn_ORC_Read",
+        "isSelectDistinct": "false",
+        "isMsrcFilterParameterized": "false",
+        "isMsrcSortParameterized": "false",
+        "objlabel": "src_MTRL_CROSSREF_view",
+        "origobjlabel": "src_MTRL_CROSSREF_view",
+        "objectParameterized": "true",
+        "objDesc": "",
+        "objectParamName": "src_MTRL_CROSSREF_view",
+        "objectParamType-mapping": "DataObject",
+        "flags": "SUPPORTS_MULTI_SCHEMA",
+        "originalPath": "Src_C_BO_PRDCT_MSTR"
+      },
+      "sourceConnectionId": "@3Y631WjzyCkfEoUN5bDgqw",
+      "newFlatFile": false,
+      "newObject": false,
+      "showBusinessNames": true,
+      "naturalOrder": true,
+      "truncateTarget": false,
+      "bulkApiDBTarget": false,
+      "customFuncCfg": {
+        "@type": "customFuncConfig",
+        "id": -1,
+        "connections": [],
+        "inputMap": [],
+        "outputFields": []
+      },
+      "targetRefsV2": {},
+      "targetUpdateColumns": [],
+      "fieldOrderList": [],
+      "extendedObject": {
+        "@type": "extendedObject",
+        "singleMode": false,
+        "filters": [],
+        "sortFields": []
+      },
+      "runtimeAttrs": {
+        "Sql Override": "SELECT ROWID_OBJECT, MTRL_NMBR, MTRL_IDNTFR, MTRL_DSCR, SRC_SYTM_ID, CREATE_DATE, LAST_UPDATE_DATE FROM $$p_Schema.$$p_View"
+      },
+      "isRESTModernSource": true,
+      "customQuery": "SELECT ROWID_OBJECT, MTRL_NMBR, MTRL_IDNTFR, MTRL_DSCR, SRC_SYTM_ID, CREATE_DATE, LAST_UPDATE_DATE FROM MATERIALS_HUB.MTRL_XREF_PCKG",
+      "commandType": 0,
+      "isFileList": false,
+      "handleSpecialChars": false,
+      "handleDecimalRoundOff": false,
+      "frsAsset": false,
+      "dynamicFileName": false,
+      "excludeDynamicFileNameField": false,
+      "currentlyProcessedFileName": false,
+      "retainFieldMetadata": false,
+      "useExactSrcNames": false,
+      "userUpdated": true,
+      "tgtObjectAttributes": {},
+      "runtimeParameterData": {
+        "@type": "mtTaskRuntimeParameterData",
+        "isConnectionRuntimeParameter": false,
+        "isObjectRuntimeParameter": false,
+        "connectionParameterName": "Conn_ORC_Read",
+        "objectParameterName": "src_MTRL_CROSSREF_view"
+      },
+      "overridableProperties": [],
+      "overriddenFields": []
+    },
+    {
+      "@type": "mtTaskParameter",
+      "id": 288306508,
+      "name": "$Src_S3_PRDCT_MSTR$",
+      "type": "EXTENDED_SOURCE",
+      "label": "Src_S3_PRDCT_MSTR",
+      "uiProperties": {
+        "connectionParameterized": "false",
+        "isSelectDistinct": "false",
+        "isMsrcFilterParameterized": "false",
+        "isMsrcSortParameterized": "false",
+        "objlabel": "src_MTRL_S3",
+        "origobjlabel": "",
+        "objectParameterized": "true",
+        "objDesc": "",
+        "objectParamName": "src_MTRL_S3",
+        "objectParamType-mapping": "DataObject",
+        "originalPath": "Src_S3_PRDCT_MSTR"
+      },
+      "sourceConnectionId": "@36Nuzgkr4eDiig0O4C9u6x",
+      "newFlatFile": false,
+      "newObject": false,
+      "showBusinessNames": true,
+      "naturalOrder": true,
+      "truncateTarget": false,
+      "bulkApiDBTarget": false,
+      "customFuncCfg": {
+        "@type": "customFuncConfig",
+        "id": -1,
+        "connections": [],
+        "inputMap": [],
+        "outputFields": []
+      },
+      "targetRefsV2": {},
+      "targetUpdateColumns": [],
+      "fieldOrderList": [],
+      "extendedObject": {
+        "@type": "extendedObject",
+        "object": {
+          "@type": "mObject",
+          "name": "s3-mdm-ppg-dev-us-east-1/IICS_PDT%2F/MTRL_NGNG_PCKG3.csv",
+          "label": "MTRL_NGNG_PCKG3.csv",
+          "metadataUpdated": false,
+          "relations": [],
+          "children": []
+        },
+        "singleMode": true,
+        "objects": [
+          {
+            "@type": "mObject",
+            "name": "s3-mdm-ppg-dev-us-east-1/IICS_PDT%2F/MTRL_NGNG_PCKG3.csv",
+            "label": "MTRL_NGNG_PCKG3.csv",
+            "metadataUpdated": false,
+            "relations": [],
+            "children": []
+          }
+        ],
+        "filters": [],
+        "sortFields": []
+      },
+      "runtimeAttrs": {},
+      "isRESTModernSource": true,
+      "commandType": 0,
+      "isFileList": false,
+      "handleSpecialChars": false,
+      "handleDecimalRoundOff": false,
+      "frsAsset": false,
+      "dynamicFileName": false,
+      "excludeDynamicFileNameField": false,
+      "currentlyProcessedFileName": false,
+      "retainFieldMetadata": false,
+      "useExactSrcNames": false,
+      "userUpdated": true,
+      "tgtObjectAttributes": {},
+      "dataFormat": {
+        "@type": "dataFormat",
+        "formatId": "Flat",
+        "schema": "",
+        "dataFormatAttributes": {
+          "escapeChar": "\\",
+          "rowDelimiter": "",
+          "importColumnFromFirstLine": "true",
+          "headerLineNumber": "1",
+          "maxRowsToPreview": "0",
+          "distributionColumn": "",
+          "qualifierMode": "MINIMAL",
+          "firstDataRow": "2",
+          "generateHeader": "true",
+          "delimiter": "֎",
+          "qualifier": "",
+          "targetHeader": "With Header",
+          "disableEscapeChar": "true",
+          "codePage": "UTF-8",
+          "fixedWidthMode": "false"
+        }
+      },
+      "runtimeParameterData": {
+        "@type": "mtTaskRuntimeParameterData",
+        "isConnectionRuntimeParameter": false,
+        "isObjectRuntimeParameter": false,
+        "objectParameterName": "src_MTRL_S3"
+      },
+      "overridableProperties": [
+        {
+          "@type": "overridableProperty",
+          "id": "defaultPrecision",
+          "labelKey": "Src_S3_PRDCT_MSTR_defaultPrecision",
+          "type": "integer",
+          "hidden": false,
+          "required": false,
+          "defaultValue": "",
+          "renderingHints": {}
+        },
+        {
+          "@type": "overridableProperty",
+          "id": "dataFormat",
+          "labelKey": "Src_S3_PRDCT_MSTR_dataFormat",
+          "type": "string",
+          "hidden": false,
+          "required": false,
+          "defaultValue": "{\n  \"@type\" : \"dataFormat\",\n  \"formatId\" : \"Flat\",\n  \"schema\" : \"\",\n  \"dataFormatAttributes\" : {\n    \"escapeChar\" : \"\\\\\",\n    \"rowDelimiter\" : \"\",\n    \"importColumnFromFirstLine\" : \"true\",\n    \"headerLineNumber\" : \"1\",\n    \"maxRowsToPreview\" : \"0\",\n    \"distributionColumn\" : \"\",\n    \"qualifierMode\" : \"MINIMAL\",\n    \"firstDataRow\" : \"2\",\n    \"generateHeader\" : \"true\",\n    \"delimiter\" : \"֎\",\n    \"qualifier\" : \"\",\n    \"targetHeader\" : \"With Header\",\n    \"disableEscapeChar\" : \"true\",\n    \"codePage\" : \"UTF-8\",\n    \"fixedWidthMode\" : \"false\"\n  }\n}",
+          "renderingHints": {
+            "renderingType": "json"
+          }
+        }
+      ],
+      "overriddenFields": []
+    },
+    {
+      "@type": "mtTaskParameter",
+      "id": 288306509,
+      "name": "$Tgt_S3_CrossReference$",
+      "type": "TARGET",
+      "label": "Tgt_S3_CrossReference",
+      "uiProperties": {
+        "connectionParameterized": "false",
+        "objlabel": "tgt_MTRL_CROSSREF",
+        "origobjlabel": "tgt_MTRL_CROSSREF",
+        "objectParameterized": "true",
+        "objDesc": "",
+        "objectParamName": "tgt_MTRL_CROSSREF",
+        "objectParamType-mapping": "DataObject",
+        "defaultTargetUpdateColumns": "",
+        "supportApplyDDLChanges": "true",
+        "originalPath": "Tgt_S3_CrossReference"
+      },
+      "targetConnectionId": "@36Nuzgkr4eDiig0O4C9u6x",
+      "targetObject": "CrossReferenceMaterials.csv",
+      "targetObjectLabel": "CrossReferenceMaterials.csv",
+      "newFlatFile": false,
+      "newObject": true,
+      "showBusinessNames": true,
+      "naturalOrder": true,
+      "newObjectName": "CrossReferenceMaterials.csv",
+      "truncateTarget": false,
+      "bulkApiDBTarget": false,
+      "operationType": "Insert",
+      "customFuncCfg": {
+        "@type": "customFuncConfig",
+        "id": -1,
+        "connections": [],
+        "inputMap": [],
+        "outputFields": []
+      },
+      "targetRefsV2": {},
+      "targetUpdateColumns": [],
+      "fieldOrderList": [],
+      "extendedObject": {
+        "@type": "extendedObject",
+        "singleMode": true,
+        "filters": [],
+        "sortFields": []
+      },
+      "runtimeAttrs": {
+        "Merge Partition Files": "NO",
+        "File Name": "$$p_CR_FileName"
+      },
+      "oprRuntimeAttrs": {
+        "targetName": "$$p_CR_FileName",
+        "mergePartitionFiles": "NO"
+      },
+      "isRESTModernSource": true,
+      "commandType": 0,
+      "isFileList": false,
+      "handleSpecialChars": false,
+      "handleDecimalRoundOff": false,
+      "frsAsset": false,
+      "dynamicFileName": false,
+      "excludeDynamicFileNameField": false,
+      "currentlyProcessedFileName": false,
+      "retainFieldMetadata": false,
+      "objectName": "CrossReferenceMaterials.csv",
+      "objectLabel": "CrossReferenceMaterials.csv",
+      "useExactSrcNames": false,
+      "userUpdated": true,
+      "tgtObjectAttributes": {
+        "parent": "/IICS_PDT"
+      },
+      "dataFormat": {
+        "@type": "dataFormat",
+        "formatId": "Flat",
+        "dataFormatAttributes": {
+          "escapeChar": "\\",
+          "rowDelimiter": "",
+          "importColumnFromFirstLine": "true",
+          "headerLineNumber": "1",
+          "maxRowsToPreview": "0",
+          "distributionColumn": "",
+          "qualifierMode": "MINIMAL",
+          "firstDataRow": "2",
+          "generateHeader": "true",
+          "delimiter": "֎",
+          "qualifier": "",
+          "targetHeader": "With Header",
+          "disableEscapeChar": "true",
+          "codePage": "UTF-8",
+          "fixedWidthMode": "false"
+        }
+      },
+      "runtimeParameterData": {
+        "@type": "mtTaskRuntimeParameterData",
+        "isConnectionRuntimeParameter": false,
+        "isObjectRuntimeParameter": false,
+        "objectParameterName": "tgt_MTRL_CROSSREF"
+      },
+      "overridableProperties": [],
+      "overriddenFields": []
+    }
+  ],
+  "sequences": [],
+  "inOutParameters": [
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_Schema",
+      "description": "",
+      "initialValue": "",
+      "datatype": "STRING",
+      "precision": "100",
+      "scale": "0",
+      "retentionPolicy": "NEVER",
+      "aggregationType": "MAX",
+      "currentValue": ""
+    },
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_View",
+      "description": "",
+      "initialValue": "",
+      "datatype": "STRING",
+      "precision": "100",
+      "scale": "0",
+      "retentionPolicy": "NEVER",
+      "aggregationType": "MAX",
+      "currentValue": ""
+    },
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_CR_FileName",
+      "description": "p_CR_FileName",
+      "initialValue": "",
+      "datatype": "STRING",
+      "precision": "50",
+      "scale": "0",
+      "retentionPolicy": "NEVER",
+      "aggregationType": "MAX",
+      "currentValue": ""
+    }
+  ],
+  "connRuntimeAttrs": []
+}]

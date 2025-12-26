@@ -1,0 +1,1435 @@
+{
+  "content": {
+    "$$IID": "stringIdentity:@3",
+    "$$class": 1,
+    "annotations": [
+      {
+        "$$ID": 1,
+        "$$class": 2,
+        "body": "@connectionSource= IICS OnTap, @connectionTarget= IICS OnTap, @transformation= Set Parameters, @dataType= Paramaters, @sources=[@connection1= Conn_MDM], @targets=[@connection1= Conn_Tgt_S3]"
+      },
+      {
+        "$$ID": 2,
+        "$$class": 3,
+        "jsonBlob": "{\"Src_MDM_View\":{\"x\":100,\"y\":100},\"Exp_Assing_Parameters\":{\"x\":300,\"y\":100},\"Tgt_Csv_S3\":{\"x\":500,\"y\":100}}",
+        "templateId": ""
+      },
+      {
+        "$$ID": 3,
+        "$$class": 4,
+        "source": "TEMPLATE_SETTINGS",
+        "nameValuePairs": [
+          {
+            "$$ID": 37,
+            "$$class": 13,
+            "name": "UNIQUIFY_MAPPLET_TX_NAMES",
+            "value": {
+              "$$class": 21,
+              "value": "true"
+            }
+          }
+        ]
+      }
+    ],
+    "allowMaxFieldLength": "false",
+    "bigIntConvertType": "ONLY_BIGINT",
+    "documentType": "MAPPING",
+    "ecoSystem": "",
+    "name": "m_MAT_00_getParameters_DL",
+    "templateOrigin": "",
+    "links": [
+      {
+        "$$ID": 4,
+        "$$class": 5,
+        "name": "Expression.[object Object]",
+        "fromGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        },
+        "toGroup": {
+          "##ID": 7,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 8,
+          "$$class": 8
+        }
+      },
+      {
+        "$$ID": 9,
+        "$$class": 5,
+        "name": "Source.[object Object]",
+        "fromGroup": {
+          "##ID": 10,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 11,
+          "$$class": 9
+        },
+        "toGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        }
+      }
+    ],
+    "parameters": [
+      {
+        "$$ID": 12,
+        "$$class": 10,
+        "annotations": [
+          {
+            "$$ID": 38,
+            "$$class": 2,
+            "body": "Connection to MDM"
+          }
+        ],
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_MDM",
+        "name": "Conn_MDM",
+        "anonymousType": {
+          "$$ID": 39,
+          "$$class": 14,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "",
+          "connectionType": ""
+        }
+      },
+      {
+        "$$ID": 13,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "SrcTableName",
+        "name": "SrcTableName",
+        "anonymousType": {
+          "$$ID": 40,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 14,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_Tgt_S3",
+        "name": "Conn_Tgt_S3",
+        "anonymousType": {
+          "$$ID": 41,
+          "$$class": 14,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "",
+          "connectionType": ""
+        }
+      },
+      {
+        "$$ID": 15,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "TgtFileName",
+        "name": "TgtFileName",
+        "anonymousType": {
+          "$$ID": 42,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      }
+    ],
+    "transformations": [
+      {
+        "$$ID": 11,
+        "$$class": 9,
+        "annotations": [
+          {
+            "$$ID": 43,
+            "$$class": 2,
+            "body": "Source Dummy"
+          }
+        ],
+        "createTime": "2023-03-07T22:45:06.099Z",
+        "name": "Src_MDM_View",
+        "advancedProperties": [
+          {
+            "$$ID": 44,
+            "$$class": 16,
+            "name": "Tracing Level",
+            "value": "Normal"
+          },
+          {
+            "$$ID": 45,
+            "$$class": 16,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 46,
+            "$$class": 16,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 47,
+            "$$class": 16,
+            "name": "Sql Override",
+            "value": ""
+          },
+          {
+            "$$ID": 48,
+            "$$class": 16,
+            "name": "Output is deterministic",
+            "value": "false"
+          },
+          {
+            "$$ID": 49,
+            "$$class": 16,
+            "name": "Output is repeatable",
+            "value": ""
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 10,
+            "$$class": 6,
+            "input": "false",
+            "name": "DefaultGroup",
+            "output": "true"
+          }
+        ],
+        "generateFilenamePort": "false",
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 50,
+          "$$class": 17,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 12,
+            "$$class": 10
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 13,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "Oracle",
+          "useDynamicFileName": "false",
+          "oprRuntimeAttributes": {
+            "$$ID": 87,
+            "$$class": 22
+          },
+          "readOptions": {
+            "$$ID": 88,
+            "$$class": 23,
+            "commandType": 0,
+            "descending": "false",
+            "filterCondition": "",
+            "flatFileCommand": "",
+            "queryAll": "false",
+            "rowLimit": 0,
+            "selectDistinct": "false",
+            "userDefinedJoin": "",
+            "advancedFilterCondition": "",
+            "requestXml": "",
+            "sortFieldValues": ""
+          },
+          "runtimeAttributes": {
+            "$$ID": 89,
+            "$$class": 22
+          }
+        }
+      },
+      {
+        "$$ID": 8,
+        "$$class": 8,
+        "createTime": "2023-03-07T22:45:06.101Z",
+        "name": "Tgt_Csv_S3",
+        "advancedProperties": [
+          {
+            "$$ID": 51,
+            "$$class": 16,
+            "name": "Forward Rejected Rows",
+            "value": "true"
+          },
+          {
+            "$$ID": 52,
+            "$$class": 16,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 53,
+            "$$class": 16,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 54,
+            "$$class": 16,
+            "name": "Update Override",
+            "value": ""
+          },
+          {
+            "$$ID": 55,
+            "$$class": 16,
+            "name": "requestXmlSize",
+            "value": "1024"
+          },
+          {
+            "$$ID": 56,
+            "$$class": 16,
+            "name": "transactionControlCondition",
+            "value": ""
+          },
+          {
+            "$$ID": 57,
+            "$$class": 16,
+            "name": "Transformation Scope",
+            "value": "All Input"
+          },
+          {
+            "$$ID": 58,
+            "$$class": 16,
+            "name": "Thousand Separator",
+            "value": "None"
+          },
+          {
+            "$$ID": 59,
+            "$$class": 16,
+            "name": "Decimal Separator",
+            "value": "."
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 7,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "false",
+            "rules": [
+              {
+                "$$ID": 90,
+                "$$class": 24,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "createTarget": "false",
+        "fieldMappingMode": "BY_NAME",
+        "inputSorted": "false",
+        "schemaProviderType": "SELECTED_OBJECT",
+        "updateColumns": [],
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 60,
+          "$$class": 17,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 14,
+            "$$class": 10
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 15,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "TOOLKIT",
+          "useDynamicFileName": "false",
+          "dataFormat": {
+            "$$ID": 91,
+            "$$class": 25,
+            "compatibleEngine": "",
+            "formatId": "Flat",
+            "fwConfigId": "",
+            "saasHSchemaId": "",
+            "saasISDId": "",
+            "schema": "",
+            "validateHSchema": "false",
+            "attributes": [
+              {
+                "$$ID": 96,
+                "$$class": 27,
+                "name": "delimiter",
+                "value": ","
+              },
+              {
+                "$$ID": 97,
+                "$$class": 27,
+                "name": "escapeChar",
+                "value": "\\"
+              },
+              {
+                "$$ID": 98,
+                "$$class": 27,
+                "name": "qualifier",
+                "value": "\""
+              },
+              {
+                "$$ID": 99,
+                "$$class": 27,
+                "name": "qualifierMode",
+                "value": "MINIMAL"
+              },
+              {
+                "$$ID": 100,
+                "$$class": 27,
+                "name": "codePage",
+                "value": "UTF-8"
+              },
+              {
+                "$$ID": 101,
+                "$$class": 27,
+                "name": "headerLineNumber",
+                "value": "1"
+              },
+              {
+                "$$ID": 102,
+                "$$class": 27,
+                "name": "firstDataRow",
+                "value": "2"
+              },
+              {
+                "$$ID": 103,
+                "$$class": 27,
+                "name": "targetHeader",
+                "value": "With Header"
+              },
+              {
+                "$$ID": 104,
+                "$$class": 27,
+                "name": "importColumnFromFirstLine",
+                "value": "true"
+              },
+              {
+                "$$ID": 105,
+                "$$class": 27,
+                "name": "generateHeader",
+                "value": "true"
+              },
+              {
+                "$$ID": 106,
+                "$$class": 27,
+                "name": "distributionColumn",
+                "value": ""
+              },
+              {
+                "$$ID": 107,
+                "$$class": 27,
+                "name": "fixedWidthMode",
+                "value": "false"
+              },
+              {
+                "$$ID": 108,
+                "$$class": 27,
+                "name": "escapeCharacterDataRetained",
+                "value": "false"
+              },
+              {
+                "$$ID": 109,
+                "$$class": 27,
+                "name": "maxRowsToPreview",
+                "value": "0"
+              },
+              {
+                "$$ID": 110,
+                "$$class": 27,
+                "name": "rowDelimiter",
+                "value": ""
+              }
+            ]
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 92,
+            "$$class": 22
+          },
+          "runtimeAttributes": {
+            "$$ID": 93,
+            "$$class": 22
+          },
+          "writeOptions": {
+            "$$ID": 94,
+            "$$class": 26,
+            "batchSize": 0,
+            "bulkApi": "false",
+            "errorFileDirectory": "",
+            "errorFilePrefix": "",
+            "handleDecimalRoundOff": "false",
+            "handleSpecialChars": "false",
+            "operations": [
+              "Insert"
+            ],
+            "setFieldsToNull": "false",
+            "successFileDirectory": "",
+            "successFilePrefix": "",
+            "truncate": "false",
+            "updateStrategyExpression": "",
+            "useErrorFile": "false",
+            "useExactSrcNames": "false",
+            "useSuccessFile": "false"
+          }
+        },
+        "manualMappings": {
+          "$$ID": 61,
+          "$$class": 18
+        }
+      },
+      {
+        "$$ID": 6,
+        "$$class": 7,
+        "createTime": "2023-03-07T22:45:19.035Z",
+        "name": "Exp_Assing_Parameters",
+        "groups": [
+          {
+            "$$ID": 5,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "true",
+            "rules": [
+              {
+                "$$ID": 95,
+                "$$class": 24,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "additionalFields": "",
+        "windowConfigurationEnabled": "false",
+        "fields": [
+          {
+            "$$ID": 62,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "Shema_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$Shema",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 63,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "Schema_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_Shema_out, Shema_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 64,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_MSTR_XREF_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$C_BO_PRDCT_MSTR_XREF",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 65,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_MSTR_XREF_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_C_BO_PRDCT_MSTR_XREF_out, C_BO_PRDCT_MSTR_XREF_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 66,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_ALT_ID_XREF_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$C_BO_PRDCT_ALT_ID_XREF",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 67,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_ALT_ID_XREF_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_C_BO_PRDCT_ALT_ID_XREF_out,C_BO_PRDCT_ALT_ID_XREF_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 68,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_BRND_XREF_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$C_BO_PRDCT_BRND_XREF",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 69,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_BRND_XREF_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_C_BO_PRDCT_BRND_XREF_out,C_BO_PRDCT_BRND_XREF_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 70,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_DSCR_XREF_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$C_BO_PRDCT_DSCR_XREF",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 71,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_DSCR_XREF_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_C_BO_PRDCT_DSCR_XREF_out,C_BO_PRDCT_DSCR_XREF_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 72,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_LNKNG_XREF_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$C_BO_PRDCT_LNKNG_XREF",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 73,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_LNKNG_XREF_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_C_BO_PRDCT_LNKNG_XREF_out,C_BO_PRDCT_LNKNG_XREF_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 74,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_LGSTC_XREF_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$C_BO_PRDCT_LGSTC_XREF",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 75,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_LGSTC_XREF_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_C_BO_PRDCT_LGSTC_XREF_out,C_BO_PRDCT_LGSTC_XREF_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 76,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_PRNT_CD_XREF_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$C_BO_PRDCT_PRNT_CD_XREF",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 77,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_PRNT_CD_XREF_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_C_BO_PRDCT_PRNT_CD_XREF_out,C_BO_PRDCT_PRNT_CD_XREF_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 78,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_MSTR_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$C_BO_PRDCT_MSTR",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 79,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_MSTR_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_C_BO_PRDCT_MSTR_out,C_BO_PRDCT_MSTR_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 80,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_XREF_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$C_BO_PRDCT_XREF",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 81,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_XREF_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_C_BO_PRDCT_XREF_out,C_BO_PRDCT_XREF_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 82,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_HRCHY_XREF_in_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$C_BO_PRDCT_HRCHY_XREF",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 83,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "C_BO_PRDCT_HRCHY_XREF_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_C_BO_PRDCT_HRCHY_XREF_out,C_BO_PRDCT_HRCHY_XREF_in_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 84,
+            "$$class": 19,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "LastUpdateDate_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 30,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$LastUpdateDate",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 85,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "DateFiler_out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_DateFilter,LastUpdateDate_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          }
+        ],
+        "windowSpec": {
+          "$$ID": 86,
+          "$$class": 20,
+          "allRowsFollowing": "false",
+          "allRowsPreceding": "false",
+          "endOffset": 0,
+          "startOffset": 0,
+          "partitionKeys": []
+        }
+      }
+    ],
+    "variables": [
+      {
+        "$$ID": 16,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "TableSrcNameMDM",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "TableSrcNameMDM"
+      },
+      {
+        "$$ID": 17,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "FileTgtNameS3",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 10,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 18,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_C_BO_PRDCT_MSTR_XREF_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_C_BO_PRDCT_MSTR_XREF_out"
+      },
+      {
+        "$$ID": 19,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_C_BO_PRDCT_ALT_ID_XREF_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_C_BO_PRDCT_ALT_ID_XREF_out"
+      },
+      {
+        "$$ID": 20,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_C_BO_PRDCT_BRND_XREF_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_C_BO_PRDCT_BRND_XREF_out"
+      },
+      {
+        "$$ID": 21,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_C_BO_PRDCT_DSCR_XREF_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_C_BO_PRDCT_DSCR_XREF_out"
+      },
+      {
+        "$$ID": 22,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_C_BO_PRDCT_LNKNG_XREF_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_C_BO_PRDCT_LNKNG_XREF_out"
+      },
+      {
+        "$$ID": 23,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_C_BO_PRDCT_LGSTC_XREF_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_C_BO_PRDCT_LGSTC_XREF_out"
+      },
+      {
+        "$$ID": 24,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_C_BO_PRDCT_PRNT_CD_XREF_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_C_BO_PRDCT_PRNT_CD_XREF_out"
+      },
+      {
+        "$$ID": 25,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_Shema_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 50,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_Shema_out"
+      },
+      {
+        "$$ID": 26,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_FileName_PRDCT_MSTR_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_FileName_PRDCT_MSTR_out"
+      },
+      {
+        "$$ID": 27,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_FileName_PRDCT_ALT_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_FileName_PRDCT_ALT_out"
+      },
+      {
+        "$$ID": 28,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_FileName_PRDCT_BRND_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_FileName_PRDCT_BRND_out"
+      },
+      {
+        "$$ID": 29,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_FileName_PRDCT_DSCR_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_FileName_PRDCT_DSCR_out"
+      },
+      {
+        "$$ID": 30,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_FileName_PRDCT_LNKNG_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_FileName_PRDCT_LNKNG_out"
+      },
+      {
+        "$$ID": 31,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_FileName_PRDCT_PRNT_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_FileName_PRDCT_PRNT_out"
+      },
+      {
+        "$$ID": 32,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_C_BO_PRDCT_MSTR_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_C_BO_PRDCT_MSTR_out"
+      },
+      {
+        "$$ID": 33,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_C_BO_PRDCT_XREF_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 34,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_C_BO_PRDCT_HRCHY_XREF_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_C_BO_PRDCT_HRCHY_XREF_out"
+      },
+      {
+        "$$ID": 35,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_FileName_PRDCT_HRCHY_out",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_FileName_PRDCT_HRCHY_out"
+      },
+      {
+        "$$ID": 36,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_DateFilter",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      }
+    ]
+  },
+  "metadata": {
+    "$$classInfo": {
+      "1": "com.informatica.metadata.template.common.Template",
+      "2": "com.informatica.metadata.common.description.Description",
+      "3": "com.informatica.metadata.template.common.layout.LayoutAnnotation",
+      "4": "com.informatica.metadata.common.genericannotation.GenericAnnotation",
+      "5": "com.informatica.metadata.template.common.TmplLink",
+      "6": "com.informatica.metadata.template.common.TmplGroup",
+      "7": "com.informatica.metadata.template.tx.tmplexpression.TmplExpression",
+      "8": "com.informatica.metadata.template.tx.tmpltarget.TmplTarget",
+      "9": "com.informatica.metadata.template.tx.tmplsource.TmplSource",
+      "10": "com.informatica.metadata.template.common.param.TmplParam",
+      "11": "com.informatica.metadata.template.common.SessionVariable",
+      "12": "com.informatica.metadata.common.typesystem.DataType",
+      "13": "com.informatica.metadata.common.genericannotation.NameValuePair",
+      "14": "com.informatica.metadata.template.common.param.ConnectionParamType",
+      "15": "com.informatica.metadata.template.common.param.DataObjectParamType",
+      "16": "com.informatica.metadata.template.common.TxAdvancedProperty",
+      "17": "com.informatica.metadata.template.ext.da.cloud.common.BaseAdapter",
+      "18": "com.informatica.metadata.template.tx.tmpltarget.FieldMappings",
+      "19": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionField",
+      "20": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionWindowSpec",
+      "21": "com.informatica.metadata.common.types.BooleanValue",
+      "22": "com.informatica.metadata.template.ext.da.cloud.common.RuntimeAttributes",
+      "23": "com.informatica.metadata.template.ext.da.cloud.common.ReadOptions",
+      "24": "com.informatica.metadata.template.common.rule.TmplAllRule",
+      "25": "com.informatica.metadata.template.ext.da.cloud.common.DataFormat",
+      "26": "com.informatica.metadata.template.ext.da.cloud.common.WriteOptions",
+      "27": "com.informatica.metadata.template.ext.da.cloud.common.Option"
+    }
+  }
+}

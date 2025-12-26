@@ -1,0 +1,207 @@
+{
+  "objectInfo" : {
+    "id" : "1x2c1fUvl0ZhRBNMYp1zQ0",
+    "name" : "tf_PDT_01_Ongoing_MDM_to_CFIN",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "uwn2H0Fdw8jIw8j-gt-2055781-2023-02-27T19:01:38.337Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@source= MDM Src, @operation= send Material from MDM to CFIN, @dataType= Materials, @target= CFIN Tgt, @additionalText= The Tasflow send Material from MDM to CFIN, tfLocalPath= Products/P360_Ongoing",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-10-17T02:58:24.818Z",
+  "objectRefs" : [ {
+    "id" : "7RTegfzllMJdn7umHMVD06",
+    "name" : "mt_CFIN_01_PDTInsertLog",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000SAN"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Data Base MDM Tgt, @additionalText= This mapping task send the information to MDM view,@sources[@S3_HMDM_V2_HostedAgent], @targets[@FF_OTP_Output]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "a1RNrQXf1BkdZQV6w4oDgt",
+    "name" : "mt_PDT_01_CreateIDoc_MDM_to_CFIN",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NCA"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Idoc Tgt, @additionalText= This mapping task send the information to CFIN,@sources[@S3_HMDM_V2], @targets[@FF_OTP_IN_PDT_CFIN, @SAP_Items_iDocWriter_CFIN]\t",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "doFoIs1sqKFeyarpe9orQN",
+    "name" : "mt_PDT_01_getParameter_MDM_to_BAPI",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000RDI"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@connectionSource= Input Ontap Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Ontap Tgt, @additionalText= This mapping task get all parameters for the BAPI process,@sources[@FF_OTP_Input_MX], @targets[@FF_OTP_Output_MX]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "6SSyeOppDqvc6wZ9ERPmSL",
+    "name" : "mt_PDT_01_Insert_CrossReference",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NLM"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Idoc Tgt, @additionalText= This mapping task send the information to CFIN,@sources[@S3_HMDM_V2], @targets[@FF_OTP_IN_PDT_CFIN]\t",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "9zcnCGOU53FfUd0E9klVmH",
+    "name" : "mt_PDT_01_Extract_MDM_to_CFIN",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NF6"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@connectionSource= Query MDM Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output S3 bucket Tgt, @additionalText= This mapping task get all data from MDM,@sources[@ORC_HMDM_READ_MATERIALS], @targets[@S3_HMDM_V2_HostedAgent]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "jlLTpTCJN0YcDSn9pP6OgK",
+    "name" : "SDCMMDMSA01",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000006"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "3j0lzAlsHIziZb4ZRjZvCR",
+    "name" : "mt_PDT_01_InsertData_MDM_To_MDM",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000QSF"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Data Base MDM Tgt, @additionalText= This mapping task send the information to MDM view,@sources[@S3_HMDM_V2_HostedAgent], @targets[@ORC_HMDM_WRITE_MATERIALS]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "7xOCHpGbeimg4Mty8RSPWR",
+    "name" : "mt_PDT_01_getParameter_MDM_to_CFIN",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NF7"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@connectionSource= Input Ontap Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Ontap Tgt, @additionalText= This mapping task get all parameters for the CFIN process,@sources[@FF_OTP_Input_MX], @targets[@FF_OTP_Output_MX]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "aMqseFP2ZgqgtjeOAHUASl",
+    "name" : "mt_PDT_01_Extract_MDM_Materials",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NLL"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@connectionSource= Query MDM Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output S3 bucket Tgt, @additionalText= This mapping task get all data from MDM,@sources[@ORC_HMDM_READ_MATERIALS], @targets[@S3_HMDM_V2_HostedAgent]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

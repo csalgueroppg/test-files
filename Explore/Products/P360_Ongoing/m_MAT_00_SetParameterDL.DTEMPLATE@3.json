@@ -1,0 +1,769 @@
+{
+  "content": {
+    "$$IID": "stringIdentity:@3",
+    "$$class": 1,
+    "annotations": [
+      {
+        "$$ID": 1,
+        "$$class": 2,
+        "body": "@connectionSource= IICS OnTap, @connectionTarget= IICS OnTap, @transformation= Java, @dataType= Paramaters Update, @sources=[@connection1= p_ConnSrc_FF_Input], @targets=[@connection1= p_ConnTrg_FF_Output]"
+      },
+      {
+        "$$ID": 2,
+        "$$class": 3,
+        "jsonBlob": "{\"Src_FF_DummyFile\":{\"x\":100,\"y\":100},\"Exp_SetParameter\":{\"x\":300,\"y\":100},\"Trg_FF_DummyFile\":{\"x\":700,\"y\":100},\"JTX_SetParameter\":{\"x\":501,\"y\":100}}",
+        "templateId": ""
+      },
+      {
+        "$$ID": 3,
+        "$$class": 4,
+        "source": "TEMPLATE_SETTINGS",
+        "nameValuePairs": [
+          {
+            "$$ID": 20,
+            "$$class": 12,
+            "name": "UNIQUIFY_MAPPLET_TX_NAMES_OPTIONS",
+            "value": {
+              "$$class": 24,
+              "valueLiteral": "{\"nonNativeMappletTx\":true}"
+            }
+          },
+          {
+            "$$ID": 21,
+            "$$class": 12,
+            "name": "UNIQUIFY_MAPPLET_TX_NAMES",
+            "value": {
+              "$$class": 25,
+              "value": "true"
+            }
+          }
+        ]
+      }
+    ],
+    "allowMaxFieldLength": "false",
+    "bigIntConvertType": "ONLY_BIGINT",
+    "documentType": "MAPPING",
+    "ecoSystem": "",
+    "name": "m_MAT_00_SetParameterDL",
+    "templateOrigin": "",
+    "links": [
+      {
+        "$$ID": 4,
+        "$$class": 5,
+        "name": "Src_FF_DummyFile.[object Object]",
+        "fromGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        },
+        "toGroup": {
+          "##ID": 7,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 8,
+          "$$class": 8
+        }
+      },
+      {
+        "$$ID": 9,
+        "$$class": 5,
+        "name": "Exp_SetParameter.Edge",
+        "fromGroup": {
+          "##ID": 7,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 8,
+          "$$class": 8
+        },
+        "toGroup": {
+          "##ID": 10,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 11,
+          "$$class": 9
+        }
+      },
+      {
+        "$$ID": 12,
+        "$$class": 5,
+        "name": "Java.Edge",
+        "fromGroup": {
+          "##ID": 10,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 11,
+          "$$class": 9
+        },
+        "toGroup": {
+          "##ID": 13,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 14,
+          "$$class": 10
+        }
+      }
+    ],
+    "parameters": [
+      {
+        "$$ID": 15,
+        "$$class": 11,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "p_ConnSrc_FF_Input",
+        "name": "p_ConnSrc_FF_Input",
+        "anonymousType": {
+          "$$ID": 22,
+          "$$class": 13,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "CSVFile",
+          "connectionType": "CSVFile"
+        }
+      },
+      {
+        "$$ID": 16,
+        "$$class": 11,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "p_ConnTrg_FF_Output",
+        "name": "p_ConnTrg_FF_Output",
+        "anonymousType": {
+          "$$ID": 23,
+          "$$class": 13,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "CSVFile",
+          "connectionType": "CSVFile"
+        }
+      },
+      {
+        "$$ID": 17,
+        "$$class": 11,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "p_FFSrc_DummyFile",
+        "name": "p_FFSrc_DummyFile",
+        "anonymousType": {
+          "$$ID": 24,
+          "$$class": 14,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 18,
+        "$$class": 11,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "p_FFTgt_DummyFile",
+        "name": "p_FFTgt_DummyFile",
+        "anonymousType": {
+          "$$ID": 25,
+          "$$class": 14,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 19,
+        "$$class": 11,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "p_LastUpdateDate",
+        "name": "p_LastUpdateDate",
+        "anonymousType": {
+          "$$ID": 26,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      }
+    ],
+    "transformations": [
+      {
+        "$$ID": 6,
+        "$$class": 7,
+        "annotations": [
+          {
+            "$$ID": 27,
+            "$$class": 2,
+            "body": ""
+          }
+        ],
+        "createTime": "2025-05-15T00:46:41.028Z",
+        "name": "Src_FF_DummyFile",
+        "advancedProperties": [
+          {
+            "$$ID": 28,
+            "$$class": 16,
+            "name": "Tracing Level",
+            "value": "Normal"
+          },
+          {
+            "$$ID": 29,
+            "$$class": 16,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 30,
+            "$$class": 16,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 31,
+            "$$class": 16,
+            "name": "Sql Override",
+            "value": ""
+          },
+          {
+            "$$ID": 32,
+            "$$class": 16,
+            "name": "Output is deterministic",
+            "value": "false"
+          },
+          {
+            "$$ID": 33,
+            "$$class": 16,
+            "name": "Output is repeatable",
+            "value": ""
+          },
+          {
+            "$$ID": 34,
+            "$$class": 16,
+            "name": "Thousand Separator",
+            "value": "None"
+          },
+          {
+            "$$ID": 35,
+            "$$class": 16,
+            "name": "Decimal Separator",
+            "value": "."
+          },
+          {
+            "$$ID": 36,
+            "$$class": 16,
+            "name": "Datetime Format",
+            "value": ""
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 5,
+            "$$class": 6,
+            "input": "false",
+            "name": "DefaultGroup",
+            "output": "true"
+          }
+        ],
+        "generateFilenamePort": "false",
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 37,
+          "$$class": 17,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 15,
+            "$$class": 11
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 17,
+            "$$class": 11
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "",
+          "useDynamicFileName": "false",
+          "oprRuntimeAttributes": {
+            "$$ID": 61,
+            "$$class": 26
+          },
+          "readOptions": {
+            "$$ID": 62,
+            "$$class": 27,
+            "commandType": 0,
+            "descending": "false",
+            "filterCondition": "",
+            "flatFileCommand": "",
+            "queryAll": "false",
+            "rowLimit": 0,
+            "selectDistinct": "false",
+            "userDefinedJoin": "",
+            "advancedFilterCondition": "",
+            "requestXml": "",
+            "sortFieldValues": ""
+          },
+          "runtimeAttributes": {
+            "$$ID": 63,
+            "$$class": 26
+          }
+        }
+      },
+      {
+        "$$ID": 14,
+        "$$class": 10,
+        "createTime": "2025-05-15T00:46:41.030Z",
+        "name": "Trg_FF_DummyFile",
+        "advancedProperties": [
+          {
+            "$$ID": 38,
+            "$$class": 16,
+            "name": "Forward Rejected Rows",
+            "value": "true"
+          },
+          {
+            "$$ID": 39,
+            "$$class": 16,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 40,
+            "$$class": 16,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 41,
+            "$$class": 16,
+            "name": "Update Override",
+            "value": ""
+          },
+          {
+            "$$ID": 42,
+            "$$class": 16,
+            "name": "Thousand Separator",
+            "value": "None"
+          },
+          {
+            "$$ID": 43,
+            "$$class": 16,
+            "name": "Decimal Separator",
+            "value": "."
+          },
+          {
+            "$$ID": 44,
+            "$$class": 16,
+            "name": "Datetime Format",
+            "value": ""
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 13,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "false",
+            "rules": [
+              {
+                "$$ID": 64,
+                "$$class": 28,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "createTarget": "false",
+        "fieldMappingMode": "BY_NAME",
+        "inputSorted": "false",
+        "schemaProviderType": "SELECTED_OBJECT",
+        "updateColumns": [],
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 45,
+          "$$class": 17,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 16,
+            "$$class": 11
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 18,
+            "$$class": 11
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "CSVFile",
+          "useDynamicFileName": "false",
+          "bulkOptions": {
+            "$$ID": 65,
+            "$$class": 29,
+            "hardDelete": "false",
+            "maxRowsPerRequest": 0,
+            "monitorBulk": "false",
+            "monitorBulkV2": "false",
+            "pkChunkingEnabled": "false",
+            "pkChunkingSize": 0,
+            "pkChunkingStartRowId": "",
+            "serialMode": "false",
+            "useBulkApi": "false",
+            "useBulkApiV2": "false"
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 66,
+            "$$class": 26
+          },
+          "runtimeAttributes": {
+            "$$ID": 67,
+            "$$class": 26
+          },
+          "writeOptions": {
+            "$$ID": 68,
+            "$$class": 30,
+            "batchSize": 0,
+            "bulkApi": "false",
+            "errorFileDirectory": "",
+            "errorFilePrefix": "",
+            "handleDecimalRoundOff": "false",
+            "handleSpecialChars": "false",
+            "operations": [
+              "Insert"
+            ],
+            "setFieldsToNull": "false",
+            "successFileDirectory": "",
+            "successFilePrefix": "",
+            "truncate": "false",
+            "updateStrategyExpression": "",
+            "useErrorFile": "false",
+            "useExactSrcNames": "false",
+            "useSuccessFile": "false"
+          }
+        },
+        "manualMappings": {
+          "$$ID": 46,
+          "$$class": 18
+        }
+      },
+      {
+        "$$ID": 8,
+        "$$class": 8,
+        "createTime": "2025-05-15T00:47:47.820Z",
+        "name": "Exp_SetParameter",
+        "groups": [
+          {
+            "$$ID": 7,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "true",
+            "rules": [
+              {
+                "$$ID": 69,
+                "$$class": 28,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "additionalFields": "",
+        "windowConfigurationEnabled": "false",
+        "fields": [
+          {
+            "$$ID": 47,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "LastRunDate_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 20
+            },
+            "precision": 30,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "$p_LastUpdateDate$",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 48,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "ParamName_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 20
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "$$p_ParamName",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 49,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "Path_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 20
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "$$p_Path",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 50,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "Timestamp_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 20
+            },
+            "precision": 60,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SYSDATE",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 51,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "MaxRetries_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+              "$$class": 20
+            },
+            "precision": 10,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "$$p_MaxRetries",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 52,
+            "$$class": 19,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "DefaultTimeToWaitSeg_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+              "$$class": 20
+            },
+            "precision": 10,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "$$p_DefaultTimeToWaitSeg",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          }
+        ],
+        "windowSpec": {
+          "$$ID": 53,
+          "$$class": 21,
+          "allRowsFollowing": "false",
+          "allRowsPreceding": "false",
+          "endOffset": 0,
+          "startOffset": 0,
+          "partitionKeys": []
+        }
+      },
+      {
+        "$$ID": 11,
+        "$$class": 9,
+        "createTime": "2025-05-15T01:21:05.085Z",
+        "name": "JTX_SetParameter",
+        "groups": [
+          {
+            "$$ID": 10,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "true",
+            "rules": [
+              {
+                "$$ID": 70,
+                "$$class": 28,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "advancedSort": "",
+        "classPath": "",
+        "helperCodeSnippet": "// TODO: Declare static and non-static partition-level variables and functions here.\n// For example,\n//\n// static int countNullRows;   // Counts the number of output rows across all partitions that contains null values.\n// int partCountNullRows;      // Counts the number of output rows in this partition that contains null values.\n//\n// static Object lock = new Object();   // Lock to synchronize countNullRows.\n\t\n    static String pathLog = \"\";\n\tstatic String pTimeStamp = \"\";\n\tstatic int flagException= 0;\n    public static int MAX_RETRIES = 3;\n    public static int DEFAULT_TIME_TO_WAIT_SEG = 10;\n    static int countIOEx= 1;\n    static int countEx= 1;\n\n    static int countExTicket= 1;\n    static boolean flagTicket= false;\n    \n\tprivate static void createLogTicket(String ERP, String extUniqueCode, String code, String detailErrorBedrock,\n\t\t\tString detailError, String process, String pathLog) {\n\t\tTimestamp timestamp = new Timestamp(System.currentTimeMillis());\n\t\tString date = timestamp.toString().replaceAll(\"\\\\D+\", \"\");\n\t\tString LogName = \"Log_OnGoing_PDT_\" + ERP + \"_\" + date + \".txt\";\n\t\tString fileW;\n\t\tFile fileRequest;\n\t\tWriter fStream;\n\t\tBufferedWriter writer = null;\n\n\t\tString LogMessage = \"ERP: \" + ERP + \", \" + \"Process: \" + process + \", \" + \"Data Lake, Item Timestamp (EST): \" + extUniqueCode\n\t\t\t\t+ \", \" + \"Code: \" + code + \", \" + \"DetailError: \" + detailErrorBedrock + \" PipeMessage \" + \"ERP: \" + ERP\n\t\t\t\t+ \", \" + \"Process: \" + process + \", \" + \"Data Lake, Item Timestamp (EST): \" + extUniqueCode + \", \" + \"Code: \" + code\n\t\t\t\t+ \", \" + \"DetailError: \" + detailError;\n\n\t\t// write log\n\t\tfileW = pathLog + LogName;\n      for (int i = 1; i <= (MAX_RETRIES); i++) {\n\t\ttry {\n\t\t\tfileRequest = new File(fileW);\n\t\t\tfStream = new OutputStreamWriter(new FileOutputStream(fileRequest), StandardCharsets.UTF_8);\n\t\t\twriter = new BufferedWriter(fStream);\n\t\t\twriter.write(LogMessage);\n          flagTicket= true;\n\t\t} catch (IOException ex) {\n          if (countExTicket == MAX_RETRIES) {\n\t\t\t// Report\n\t\t\tex.printStackTrace();\n\t\t break;\n            \t} else {\n                    try {\n                        System.out.println(\"Reintentando creacion del ticket: \" + i); // Reintentos para la creacion del Ticket\n                        TimeUnit.SECONDS.sleep(DEFAULT_TIME_TO_WAIT_SEG);\n                        countExTicket++;\n                        continue;\n                    } catch (InterruptedException e1) {\n                        e1.printStackTrace();\n                    }\n                }\n\t\t} catch (Exception e) {\n          // Report\n\t\t\te.printStackTrace();\n          break;\n\t\t} finally {\n\t\t\ttry {\n\t\t\t\twriter.close();\n\t\t\t} catch (Exception e1) {\n\t\t\t\t/* ignore */\n\t\t\t\te1.printStackTrace();\n\t\t\t}\n            if(flagTicket)\n                break;\n\t\t}\n\t\t}\n\t}\t\n\t\n\tpublic static void updateFile(String path, String fileName, String pLastUpdateD) throws IOException {\n\t        File originalFile = new File(path+fileName+\".param\");\n\t        BufferedReader br = new BufferedReader(new FileReader(originalFile));\n\n\t        // Construct the new file that will later be renamed to the original\n\t        // filename.\n\t        File tempFile = new File(path+fileName+\".txt\");\n\t        PrintWriter pw = new PrintWriter(new FileWriter(tempFile));\n\n\t        String line = null;\n\t        // Read from the original file and write to the new\n\t        // unless content matches data to be removed.\n\t        while ((line = br.readLine()) != null) {\n\t        \t\n\t        \tif(line.contains(\"LastUpdateDate\"))\n\t        \t\tline=\"$$LastUpdateDate=\"+pLastUpdateD;\n\t        \t\n\t            pw.println(line);\n\t            pw.flush();\n\t        }\n\t        pw.close();\n\t        br.close();\n      \t\tFiles.delete(originalFile.toPath()); //borra archivo original despues de actualizar el temporal con la nueva fecha\n        \tFiles.move(tempFile.toPath(), originalFile.toPath()); // Renombra el temporal como original\n\t}\n\n\n\t/*private static void copyFile(File source, File dest) { //--UPDATE DELTA\n\t\ttry {\n\t\t\tFiles.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);\n\t\t} catch (IOException ex) {\n\t\t\tString detailErrorBedRock = \"There is an error in the ComexMDM Ongoing P360 DELTA process\";\n\t\t\tString detailError = detailErrorBedRock + \": \" + \" CopyFile Section => \" + ex.toString();\n\t\t\tcreateLogTicket(\"Comex_MDM\", pTimeStamp, \"-1\", detailErrorBedRock, detailError,\n\t\t\t\t\t\" tf_P360_Ongoing_ComexMDM \", pathLog);\n\t\t\tflagException++;\n\t\t\tSystem.err.format(\"I/O Error when copying file, \" +ex);\n\t\t}\n\t}*/\n",
+        "importPackagesSnippet": "// TODO: Enter the Java packages to be imported here.\n// For example, if you want to use Hashtable in any of the snippets, import it as shown below:\n//\n// import java.util.Hashtable;\nimport java.lang.Thread;\nimport java.util.concurrent.TimeUnit;\nimport java.io.BufferedReader;\nimport java.io.BufferedWriter;\nimport java.io.File;\nimport java.io.FileOutputStream;\nimport java.io.FileReader;\nimport java.io.FileWriter;\nimport java.io.IOException;\nimport java.io.OutputStreamWriter;\nimport java.io.PrintWriter;\nimport java.io.Writer;\nimport java.nio.charset.StandardCharsets;\nimport java.nio.file.Files;\nimport java.nio.file.StandardCopyOption;\nimport java.sql.Timestamp;\n",
+        "infaFunctionsSnippet": "",
+        "lastCompilationFailed": "false",
+        "onEndOfDataMethodSnippet": "// TODO: Enter the code that executes after the transformation receives all of the input data here.\n//\n// logInfo(\"The number of null rows for this partition is: \" + partCountNullRows);\n// synchronized(lock)\n// {\n//\t\tlogInfo(\"The total number of null rows across partitions until now is: \" +  countNullRows);\n// }\n",
+        "onInputRowMethodSnippet": "// TODO: Enter the code to process an input row here.\n// You can access input column data by referencing the input column name.\n// You can set output column data by referencing the output column name.\n// For example, if\n// input1 and input2 are input fields of type int, and\n// output1 and output2 are output fields of type int,\n// then the transformation logic might be as follows:\n//\n// if(!isNull(\"input1\") && !isNull(\"input1\"))\n// {\n//\t\toutput1 = input1 + input2;\n//\t\toutput2 = input1 - input2;\n// }\n// else\n// {\n//\t\tsetNull(\"output1\");\n//\t\tsetNull(\"output2\");\n//\t\tpartCountNullRows++;\n//\t\tsynchronized(lock)\n//\t\t{\n//\t\t\tcountNullRows++;\n//\t\t}\n// }\n        MAX_RETRIES = MaxRetries_o;\n        DEFAULT_TIME_TO_WAIT_SEG = DefaultTimeToWaitSeg_o;\n\t\tString fileName = ParamName_o;\n\n\t\tString path = Path_o.toString().trim();\n\t\tString pathConfig = path+\"config\\\\Products\\\\\";\n\t\tpathLog =path+\"output\\\\Products\\\\Ongoing\\\\Logs\\\\\";\n\n\t\tString pLastUpdateD = LastRunDate_o.toString().trim();\n\t\t//String pTZD = TZD.toString().trim();\n\t\tpTimeStamp = Timestamp_o.toString().trim();\n\t\t\n\t\tfor (int i = 1; i <= (MAX_RETRIES*2); i++) { \n\t\ttry {\n\t\t\tupdateFile(pathConfig, fileName, pLastUpdateD);\n          System.out.println(\"Ejecucion  \" + i);\n          break;\n        }\n          \t/*System.out.println(\"Temporal File Update Sucessfully!!!\");//--UPDATE DELTA\n\t\t\t\n\t\t\tFile source = new File(pathConfig+fileName+\".txt\");//--UPDATE DELTA\n\t        File dest = new File(pathConfig+fileName+\".param\");//--UPDATE DELTA\n\t        copyFile(source, dest);//--UPDATE DELTA\n\t        System.out.println(\"Comex PARAM File Update Sucessfully!!!\");//--UPDATE DELTA\n            */ \n\t\t  catch (IOException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\tif (countIOEx == MAX_RETRIES) {  \n             System.out.println(\"ticket  \" + i);\n\t\t\tString detailErrorBedRock = \"There is an error in the DL Materials process\";\n\t\t\tString detailError = detailErrorBedRock + \": \" + \" MAIN Section => \" + e.toString();\n\t\t\tcreateLogTicket(\"DL Incremental\", pTimeStamp, \"-1\", detailErrorBedRock, detailError,\n\t\t\t\t\t\" tf_MAT_02_MDM_to_DL_Incremental \", pathLog);\n          generateRow();\n\t\t\te.printStackTrace();\n              \n\t\t break;\n       }\n      else{\n        try {\n              System.out.println(\"Reintentando \" + i);\n              TimeUnit.SECONDS.sleep(DEFAULT_TIME_TO_WAIT_SEG);\n               countIOEx++;\n                continue;\n                } catch (InterruptedException e1) {\n                      // TODO Auto-generated catch block\n                   e1.printStackTrace();\n                } \n             \n        \n\t}\t}catch (Exception e1) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\tif (countEx == MAX_RETRIES) {\n\t\t\tString detailErrorBedRock = \"There is an error in the DL Materials process\";\n\t\t\tString detailError = detailErrorBedRock + \": \" + \" MAIN Section => \" + e1.toString();\n\t\t\tcreateLogTicket(\"DL_Incremental\", pTimeStamp, \"-1\", detailErrorBedRock, detailError,\n\t\t\t\t\t\" tf_MAT_01_MDM_Ongoing_Comex \", pathLog);\n          generateRow();\n\t\t\te1.printStackTrace();\n\t\tbreak;\n            } else {\n                    try {\n                        //System.out.println(\"Reintentando: \" + i);\n                        TimeUnit.SECONDS.sleep(DEFAULT_TIME_TO_WAIT_SEG);\n                        countEx++;\n                        continue;\n                    } catch (InterruptedException e3) {\n                        e3.printStackTrace();\n                    }\n            }\n\t\t}}\n\n\t\tif(flagException>0)\n\t\t\tgenerateRow();\n\ngenerateRow();\n\n",
+        "onTransactionMethodSnippet": "// TODO: Enter the code that executes when the transformation receives a transaction here.\n",
+        "runtimeEnvId": "010T4725000000000004",
+        "sorterModeJava": "SIMPLE",
+        "unmodifiedCompilation": "true",
+        "compiledInputFields": [
+          {
+            "$$ID": 54,
+            "$$class": 22,
+            "name": "LastRunDate_o",
+            "precision": 30,
+            "scale": 0,
+            "type": "string"
+          },
+          {
+            "$$ID": 55,
+            "$$class": 22,
+            "name": "ParamName_o",
+            "precision": 100,
+            "scale": 0,
+            "type": "string"
+          },
+          {
+            "$$ID": 56,
+            "$$class": 22,
+            "name": "Path_o",
+            "precision": 100,
+            "scale": 0,
+            "type": "string"
+          },
+          {
+            "$$ID": 57,
+            "$$class": 22,
+            "name": "Timestamp_o",
+            "precision": 60,
+            "scale": 0,
+            "type": "string"
+          },
+          {
+            "$$ID": 58,
+            "$$class": 22,
+            "name": "MaxRetries_o",
+            "precision": 10,
+            "scale": 0,
+            "type": "integer"
+          },
+          {
+            "$$ID": 59,
+            "$$class": 22,
+            "name": "DefaultTimeToWaitSeg_o",
+            "precision": 10,
+            "scale": 0,
+            "type": "integer"
+          }
+        ],
+        "groupByFieldsList": {
+          "$$ID": 60,
+          "$$class": 23
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "$$classInfo": {
+      "1": "com.informatica.metadata.template.common.Template",
+      "2": "com.informatica.metadata.common.description.Description",
+      "3": "com.informatica.metadata.template.common.layout.LayoutAnnotation",
+      "4": "com.informatica.metadata.common.genericannotation.GenericAnnotation",
+      "5": "com.informatica.metadata.template.common.TmplLink",
+      "6": "com.informatica.metadata.template.common.TmplGroup",
+      "7": "com.informatica.metadata.template.tx.tmplsource.TmplSource",
+      "8": "com.informatica.metadata.template.tx.tmplexpression.TmplExpression",
+      "9": "com.informatica.metadata.template.tx.tmpljava.TmplJava",
+      "10": "com.informatica.metadata.template.tx.tmpltarget.TmplTarget",
+      "11": "com.informatica.metadata.template.common.param.TmplParam",
+      "12": "com.informatica.metadata.common.genericannotation.NameValuePair",
+      "13": "com.informatica.metadata.template.common.param.ConnectionParamType",
+      "14": "com.informatica.metadata.template.common.param.DataObjectParamType",
+      "15": "com.informatica.metadata.template.common.param.StringParamType",
+      "16": "com.informatica.metadata.template.common.TxAdvancedProperty",
+      "17": "com.informatica.metadata.template.ext.da.cloud.common.BaseAdapter",
+      "18": "com.informatica.metadata.template.tx.tmpltarget.FieldMappings",
+      "19": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionField",
+      "20": "com.informatica.metadata.common.typesystem.DataType",
+      "21": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionWindowSpec",
+      "22": "com.informatica.metadata.template.tx.tmpljava.TmplJavaCompilationField",
+      "23": "com.informatica.metadata.template.tx.tmpljava.TmplJavaGroupByFields",
+      "24": "com.informatica.metadata.common.types.StringValue",
+      "25": "com.informatica.metadata.common.types.BooleanValue",
+      "26": "com.informatica.metadata.template.ext.da.cloud.common.RuntimeAttributes",
+      "27": "com.informatica.metadata.template.ext.da.cloud.common.ReadOptions",
+      "28": "com.informatica.metadata.template.common.rule.TmplAllRule",
+      "29": "com.informatica.metadata.template.ext.da.cloud.common.BulkOptions",
+      "30": "com.informatica.metadata.template.ext.da.cloud.common.WriteOptions"
+    }
+  }
+}

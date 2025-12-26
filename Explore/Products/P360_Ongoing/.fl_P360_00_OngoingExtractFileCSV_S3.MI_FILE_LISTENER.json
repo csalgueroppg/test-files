@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "0CHLKM3s1wJlcU45A9pQIp",
+    "name" : "fl_P360_00_OngoingExtractFileCSV_S3",
+    "type" : "MI_FILE_LISTENER",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "10492"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Transfer files listener in the path export S3 for load in IDQ Export",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "dat",
+  "updateTime" : "2024-12-20T21:34:00.674Z",
+  "objectRefs" : [ {
+    "id" : "jlLTpTCJN0YcDSn9pP6OgK",
+    "name" : "SDCMMDMSA01",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000006"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

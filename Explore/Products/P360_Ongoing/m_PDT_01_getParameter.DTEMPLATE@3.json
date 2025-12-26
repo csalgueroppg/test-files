@@ -1,0 +1,898 @@
+{
+  "content": {
+    "$$IID": "stringIdentity:@3",
+    "$$class": 1,
+    "annotations": [
+      {
+        "$$ID": 1,
+        "$$class": 2,
+        "jsonBlob": "{\"Src_Dummy\":{\"x\":50,\"y\":99.0000000726609},\"Exp_getParameter\":{\"x\":236,\"y\":100},\"Tgt_Dummy\":{\"x\":423,\"y\":100}}",
+        "templateId": ""
+      },
+      {
+        "$$ID": 2,
+        "$$class": 3,
+        "source": "TEMPLATE_SETTINGS",
+        "nameValuePairs": [
+          {
+            "$$ID": 22,
+            "$$class": 13,
+            "name": "UNIQUIFY_MAPPLET_TX_NAMES",
+            "value": {
+              "$$class": 22,
+              "value": "true"
+            }
+          }
+        ]
+      },
+      {
+        "$$ID": 3,
+        "$$class": 4,
+        "body": "@connectionSource= Input Ontap Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Ontap Tgt, @additionalText= This mapping get all parameters for the CFIN process,@sources[@FF_OTP_Input_MX], @targets[@FF_OTP_Output_MX]"
+      }
+    ],
+    "allowMaxFieldLength": "false",
+    "bigIntConvertType": "ONLY_BIGINT",
+    "documentType": "MAPPING",
+    "ecoSystem": "",
+    "name": "m_PDT_01_getParameter",
+    "specialCharacterSupport": "false",
+    "templateOrigin": "",
+    "links": [
+      {
+        "$$ID": 4,
+        "$$class": 5,
+        "name": "Expression.[object Object]",
+        "fromGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        },
+        "toGroup": {
+          "##ID": 7,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 8,
+          "$$class": 8
+        }
+      },
+      {
+        "$$ID": 9,
+        "$$class": 5,
+        "name": "Source.[object Object]",
+        "fromGroup": {
+          "##ID": 10,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 11,
+          "$$class": 9
+        },
+        "toGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        }
+      }
+    ],
+    "parameters": [
+      {
+        "$$ID": 12,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_ISL_Input",
+        "name": "Conn_ISL_Input",
+        "anonymousType": {
+          "$$ID": 23,
+          "$$class": 14,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "",
+          "connectionType": ""
+        }
+      },
+      {
+        "$$ID": 13,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "FlatFile_Dummy",
+        "name": "FlatFile_Dummy",
+        "anonymousType": {
+          "$$ID": 24,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 14,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_ISL_Output",
+        "name": "Conn_ISL_Output",
+        "anonymousType": {
+          "$$ID": 25,
+          "$$class": 14,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "",
+          "connectionType": ""
+        }
+      },
+      {
+        "$$ID": 15,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "FlatFile_Dummy_Output",
+        "name": "FlatFile_Dummy_Output",
+        "anonymousType": {
+          "$$ID": 26,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      }
+    ],
+    "transformations": [
+      {
+        "$$ID": 11,
+        "$$class": 9,
+        "createTime": "2023-02-28T00:44:52.840Z",
+        "name": "Src_Dummy",
+        "advancedProperties": [
+          {
+            "$$ID": 27,
+            "$$class": 16,
+            "name": "Tracing Level",
+            "value": "Normal"
+          },
+          {
+            "$$ID": 28,
+            "$$class": 16,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 29,
+            "$$class": 16,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 30,
+            "$$class": 16,
+            "name": "Sql Override",
+            "value": ""
+          },
+          {
+            "$$ID": 31,
+            "$$class": 16,
+            "name": "Output is deterministic",
+            "value": "false"
+          },
+          {
+            "$$ID": 32,
+            "$$class": 16,
+            "name": "Output is repeatable",
+            "value": ""
+          },
+          {
+            "$$ID": 33,
+            "$$class": 16,
+            "name": "Thousand Separator",
+            "value": "None"
+          },
+          {
+            "$$ID": 34,
+            "$$class": 16,
+            "name": "Decimal Separator",
+            "value": "."
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 10,
+            "$$class": 6,
+            "input": "false",
+            "name": "DefaultGroup",
+            "output": "true"
+          }
+        ],
+        "generateFilenamePort": "false",
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 35,
+          "$$class": 17,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 12,
+            "$$class": 10
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 13,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "CSVFile",
+          "useDynamicFileName": "false",
+          "oprRuntimeAttributes": {
+            "$$ID": 67,
+            "$$class": 23
+          },
+          "readOptions": {
+            "$$ID": 68,
+            "$$class": 24,
+            "commandType": 0,
+            "descending": "false",
+            "filterCondition": "",
+            "flatFileCommand": "",
+            "queryAll": "false",
+            "rowLimit": 0,
+            "selectDistinct": "false",
+            "userDefinedJoin": "",
+            "advancedFilterCondition": "",
+            "requestXml": "",
+            "sortFieldValues": ""
+          },
+          "runtimeAttributes": {
+            "$$ID": 69,
+            "$$class": 23
+          }
+        }
+      },
+      {
+        "$$ID": 8,
+        "$$class": 8,
+        "createTime": "2023-02-28T00:44:52.840Z",
+        "name": "Tgt_Dummy",
+        "advancedProperties": [
+          {
+            "$$ID": 36,
+            "$$class": 16,
+            "name": "Forward Rejected Rows",
+            "value": "true"
+          },
+          {
+            "$$ID": 37,
+            "$$class": 16,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 38,
+            "$$class": 16,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 39,
+            "$$class": 16,
+            "name": "Update Override",
+            "value": ""
+          },
+          {
+            "$$ID": 40,
+            "$$class": 16,
+            "name": "Thousand Separator",
+            "value": "None"
+          },
+          {
+            "$$ID": 41,
+            "$$class": 16,
+            "name": "Decimal Separator",
+            "value": "."
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 7,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "false",
+            "rules": [
+              {
+                "$$ID": 70,
+                "$$class": 25,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties": [
+          {
+            "$$ID": 42,
+            "$$class": 18,
+            "name": "Append if Exists",
+            "value": "NO"
+          },
+          {
+            "$$ID": 43,
+            "$$class": 18,
+            "name": "Header Options",
+            "value": "Output Field Names"
+          },
+          {
+            "$$ID": 44,
+            "$$class": 18,
+            "name": "Header Command",
+            "value": ""
+          },
+          {
+            "$$ID": 45,
+            "$$class": 18,
+            "name": "Footer Command",
+            "value": ""
+          },
+          {
+            "$$ID": 46,
+            "$$class": 18,
+            "name": "Output Type",
+            "value": "File"
+          },
+          {
+            "$$ID": 47,
+            "$$class": 18,
+            "name": "Command",
+            "value": ""
+          },
+          {
+            "$$ID": 48,
+            "$$class": 18,
+            "name": "Output file directory",
+            "value": ""
+          },
+          {
+            "$$ID": 49,
+            "$$class": 18,
+            "name": "Output filename",
+            "value": ""
+          },
+          {
+            "$$ID": 50,
+            "$$class": 18,
+            "name": "Reject file directory",
+            "value": ""
+          },
+          {
+            "$$ID": 51,
+            "$$class": 18,
+            "name": "Reject filename",
+            "value": ""
+          }
+        ],
+        "createTarget": "false",
+        "fieldMappingMode": "BY_NAME",
+        "inputSorted": "false",
+        "schemaProviderType": "SELECTED_OBJECT",
+        "targetFieldsOrdered": "false",
+        "updateColumns": [],
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 52,
+          "$$class": 17,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 14,
+            "$$class": 10
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 15,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "CSVFile",
+          "useDynamicFileName": "false",
+          "bulkOptions": {
+            "$$ID": 71,
+            "$$class": 26,
+            "hardDelete": "false",
+            "maxRowsPerRequest": 0,
+            "monitorBulk": "false",
+            "monitorBulkV2": "false",
+            "pkChunkingEnabled": "false",
+            "pkChunkingSize": 0,
+            "pkChunkingStartRowId": "",
+            "serialMode": "false",
+            "useBulkApi": "false",
+            "useBulkApiV2": "false"
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 72,
+            "$$class": 23
+          },
+          "runtimeAttributes": {
+            "$$ID": 73,
+            "$$class": 23
+          },
+          "writeOptions": {
+            "$$ID": 74,
+            "$$class": 27,
+            "batchSize": 0,
+            "bulkApi": "false",
+            "errorFileDirectory": "",
+            "errorFilePrefix": "",
+            "handleDecimalRoundOff": "false",
+            "handleSpecialChars": "false",
+            "operations": [
+              "Insert"
+            ],
+            "setFieldsToNull": "false",
+            "successFileDirectory": "",
+            "successFilePrefix": "",
+            "truncate": "false",
+            "updateStrategyExpression": "",
+            "useErrorFile": "false",
+            "useExactSrcNames": "false",
+            "useSuccessFile": "false"
+          }
+        },
+        "manualMappings": {
+          "$$ID": 53,
+          "$$class": 19
+        }
+      },
+      {
+        "$$ID": 6,
+        "$$class": 7,
+        "createTime": "2023-02-28T00:44:59.477Z",
+        "name": "Exp_getParameter",
+        "groups": [
+          {
+            "$$ID": 5,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "true",
+            "rules": [
+              {
+                "$$ID": 75,
+                "$$class": 25,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "additionalFields": "",
+        "windowConfigurationEnabled": "false",
+        "fields": [
+          {
+            "$$ID": 54,
+            "$$class": 20,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_Schema_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$p_Schema",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 55,
+            "$$class": 20,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_View_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$p_View",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 56,
+            "$$class": 20,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_LKP_Table_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$p_LKP_Table",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 57,
+            "$$class": 20,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_FileName",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 50,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$p_FileName",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 58,
+            "$$class": 20,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_CR_FileName_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$p_CR_FileName",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 59,
+            "$$class": 20,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_Filter_v",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+              "$$class": 12
+            },
+            "precision": 10,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "$$p_Filter",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 60,
+            "$$class": 20,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_Schema_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_Schema,p_Schema_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 61,
+            "$$class": 20,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_View_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_View,p_View_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 62,
+            "$$class": 20,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_LKP_Table_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_LKP_Table,p_LKP_Table_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 63,
+            "$$class": 20,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_FileName_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 50,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_FileName,p_FileName)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 64,
+            "$$class": 20,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_CR_FileName_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 12
+            },
+            "precision": 100,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_CR_FileName,p_CR_FileName_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 65,
+            "$$class": 20,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "p_Filter_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+              "$$class": 12
+            },
+            "precision": 10,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetVariable($$p_Filter,p_Filter_v)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          }
+        ],
+        "windowSpec": {
+          "$$ID": 66,
+          "$$class": 21,
+          "allRowsFollowing": "false",
+          "allRowsPreceding": "false",
+          "endOffset": 0,
+          "startOffset": 0,
+          "partitionKeys": []
+        }
+      }
+    ],
+    "variables": [
+      {
+        "$$ID": 16,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_Schema",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 17,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_View",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 18,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_LKP_Table",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 19,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_FileName",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 50,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 20,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_CR_FileName",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 100,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 21,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_Filter",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+          "$$class": 12
+        },
+        "precision": 10,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      }
+    ]
+  },
+  "metadata": {
+    "$$classInfo": {
+      "1": "com.informatica.metadata.template.common.Template",
+      "2": "com.informatica.metadata.template.common.layout.LayoutAnnotation",
+      "3": "com.informatica.metadata.common.genericannotation.GenericAnnotation",
+      "4": "com.informatica.metadata.common.description.Description",
+      "5": "com.informatica.metadata.template.common.TmplLink",
+      "6": "com.informatica.metadata.template.common.TmplGroup",
+      "7": "com.informatica.metadata.template.tx.tmplexpression.TmplExpression",
+      "8": "com.informatica.metadata.template.tx.tmpltarget.TmplTarget",
+      "9": "com.informatica.metadata.template.tx.tmplsource.TmplSource",
+      "10": "com.informatica.metadata.template.common.param.TmplParam",
+      "11": "com.informatica.metadata.template.common.SessionVariable",
+      "12": "com.informatica.metadata.common.typesystem.DataType",
+      "13": "com.informatica.metadata.common.genericannotation.NameValuePair",
+      "14": "com.informatica.metadata.template.common.param.ConnectionParamType",
+      "15": "com.informatica.metadata.template.common.param.DataObjectParamType",
+      "16": "com.informatica.metadata.template.common.TxAdvancedProperty",
+      "17": "com.informatica.metadata.template.ext.da.cloud.common.BaseAdapter",
+      "18": "com.informatica.metadata.template.common.TxSessionProperty",
+      "19": "com.informatica.metadata.template.tx.tmpltarget.FieldMappings",
+      "20": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionField",
+      "21": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionWindowSpec",
+      "22": "com.informatica.metadata.common.types.BooleanValue",
+      "23": "com.informatica.metadata.template.ext.da.cloud.common.RuntimeAttributes",
+      "24": "com.informatica.metadata.template.ext.da.cloud.common.ReadOptions",
+      "25": "com.informatica.metadata.template.common.rule.TmplAllRule",
+      "26": "com.informatica.metadata.template.ext.da.cloud.common.BulkOptions",
+      "27": "com.informatica.metadata.template.ext.da.cloud.common.WriteOptions"
+    }
+  }
+}

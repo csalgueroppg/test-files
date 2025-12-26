@@ -1,0 +1,311 @@
+[{
+  "@type": "mtTask",
+  "id": "@1",
+  "name": "mt_MAT_00_IngestDL_ALT_ID_XREF",
+  "description": "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read ALT ID from S3 Bucket and write in DL, @dataType= Alternate Id table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+  "autoExpireObject": false,
+  "runtimeEnvironmentId": "@9ew81IGCjUshOwChB1zgWT",
+  "maxLogs": 10,
+  "verbose": false,
+  "lastRunTime": 1748457967000,
+  "mappingId": "@3ifAjLA8hSxlWIibG3INsU",
+  "frsGuid": "1UQ4X56JPQycVMnQ0Iix0Y",
+  "shortDescription": "@connectionSource= S3 Bucket, @connectionTarget= D...",
+  "sessionPropertiesList": [],
+  "hidden": false,
+  "enableCrossSchemaPushdown": true,
+  "enableParallelRun": false,
+  "autoTunedApplied": false,
+  "autoTunedAppliedType": "NONE",
+  "paramFileType": "PARAM_FILE_LOCAL",
+  "schemaMode": "async",
+  "executionEngine": "SPARK",
+  "valid": true,
+  "schemaValidationErrorCount": -1,
+  "parameterFileEncoding": "UTF-8",
+  "serverlessProperties": {},
+  "taskProperties": [
+    {
+      "@type": "taskProperty",
+      "name": "parameterFileDir",
+      "currentValue": "",
+      "type": "STRING",
+      "label": "label.parameterFileDir",
+      "required": false
+    },
+    {
+      "@type": "taskProperty",
+      "name": "parameterFileName",
+      "currentValue": "",
+      "type": "STRING",
+      "label": "label.parameterFileName",
+      "required": false
+    },
+    {
+      "@type": "taskProperty",
+      "name": "outboundMessageUrlQueueTime",
+      "currentValue": "",
+      "type": "NUMBER",
+      "label": "label.outboundMessageUrlQueueTime",
+      "required": false
+    },
+    {
+      "@type": "taskProperty",
+      "name": "outboundMessageUrlToken",
+      "currentValue": "",
+      "type": "STRING",
+      "label": "label.outboundMessageUrlToken",
+      "required": false
+    }
+  ],
+  "optimizationPlan": "NONE",
+  "isMidstreamPreview": false,
+  "allowMaxFieldLength": false,
+  "parameters": [
+    {
+      "@type": "mtTaskParameter",
+      "id": 276786960,
+      "name": "$Src_S3_Bucket$",
+      "type": "EXTENDED_SOURCE",
+      "label": "Conn_src_S3 (Conn_src_S3)",
+      "description": "",
+      "uiProperties": {
+        "cnxtype": "Amazon S3 v2",
+        "connectionParameterized": "true",
+        "paramName": "Conn_src_S3",
+        "paramLabel": "Conn_src_S3",
+        "paramType-mapping": "Connection",
+        "logcnx": "Conn_src_S3",
+        "isSelectDistinct": "false",
+        "isMsrcFilterParameterized": "false",
+        "isMsrcSortParameterized": "false",
+        "objlabel": "p_FileName_S3",
+        "origobjlabel": "p_FileName_S3",
+        "objectParameterized": "true",
+        "objDesc": "",
+        "objectParamName": "p_FileName_S3",
+        "objectParamType-mapping": "DataObject",
+        "originalPath": "Src_S3_Bucket"
+      },
+      "sourceConnectionId": "@araNNncX65DkCwK89n23m3",
+      "newFlatFile": false,
+      "newObject": false,
+      "showBusinessNames": true,
+      "naturalOrder": true,
+      "truncateTarget": false,
+      "bulkApiDBTarget": false,
+      "customFuncCfg": {
+        "@type": "customFuncConfig",
+        "id": -1,
+        "connections": [],
+        "inputMap": [],
+        "outputFields": []
+      },
+      "targetRefsV2": {},
+      "targetUpdateColumns": [],
+      "extendedObject": {
+        "@type": "extendedObject",
+        "object": {
+          "@type": "mObject",
+          "name": "s3-mdm-ppg-dev-us-east-1/C_BO_PRDCT_ALT_ID_XREF.csv",
+          "label": "C_BO_PRDCT_ALT_ID_XREF.csv",
+          "metadataUpdated": false,
+          "relations": [],
+          "children": []
+        },
+        "singleMode": true,
+        "objects": [
+          {
+            "@type": "mObject",
+            "name": "s3-mdm-ppg-dev-us-east-1/C_BO_PRDCT_ALT_ID_XREF.csv",
+            "label": "C_BO_PRDCT_ALT_ID_XREF.csv",
+            "metadataUpdated": false,
+            "relations": [],
+            "children": []
+          }
+        ],
+        "filters": [],
+        "sortFields": []
+      },
+      "runtimeAttrs": {
+        "File Name": "$$p_FileName_Input",
+        "Enable Recursive Read": "NO",
+        "Allow Wildcard Characters": "NO",
+        "Incremental File Load": "NO"
+      },
+      "oprRuntimeAttrs": {
+        "enableIncrementalLoad": "NO",
+        "targetName": "$$p_FileName_Input",
+        "enableRecursiveRead": "NO",
+        "enableWildChar": "NO"
+      },
+      "isRESTModernSource": true,
+      "commandType": 0,
+      "isFileList": false,
+      "handleSpecialChars": false,
+      "handleDecimalRoundOff": false,
+      "frsAsset": false,
+      "dynamicFileName": false,
+      "excludeDynamicFileNameField": false,
+      "currentlyProcessedFileName": false,
+      "retainFieldMetadata": false,
+      "useExactSrcNames": false,
+      "userUpdated": true,
+      "fetchMode": "ORIGINAL",
+      "tgtObjectAttributes": {},
+      "dataFormat": {
+        "@type": "dataFormat",
+        "formatId": "Flat",
+        "dataFormatAttributes": {
+          "escapeChar": "\\",
+          "rowDelimiter": "",
+          "importColumnFromFirstLine": "true",
+          "headerLineNumber": "1",
+          "maxRowsToPreview": "0",
+          "distributionColumn": "",
+          "qualifierMode": "MINIMAL",
+          "firstDataRow": "2",
+          "generateHeader": "true",
+          "delimiter": "֎",
+          "qualifier": "\"",
+          "targetHeader": "With Header",
+          "escapeCharacterDataRetained": "false",
+          "codePage": "UTF-8",
+          "fixedWidthMode": "false"
+        }
+      },
+      "runtimeParameterData": {
+        "@type": "mtTaskRuntimeParameterData",
+        "isConnectionRuntimeParameter": false,
+        "isObjectRuntimeParameter": false,
+        "connectionParameterName": "Conn_src_S3",
+        "objectParameterName": "p_FileName_S3"
+      },
+      "overridableProperties": [
+        {
+          "@type": "overridableProperty",
+          "id": "defaultPrecision",
+          "labelKey": "Src_S3_Bucket_defaultPrecision",
+          "type": "integer",
+          "hidden": false,
+          "required": false,
+          "defaultValue": "",
+          "renderingHints": {}
+        },
+        {
+          "@type": "overridableProperty",
+          "id": "dataFormat",
+          "labelKey": "Src_S3_Bucket_dataFormat",
+          "type": "string",
+          "hidden": false,
+          "required": false,
+          "defaultValue": "{\n  \"@type\" : \"dataFormat\",\n  \"formatId\" : \"Flat\",\n  \"dataFormatAttributes\" : {\n    \"escapeChar\" : \"\\\\\",\n    \"rowDelimiter\" : \"\",\n    \"importColumnFromFirstLine\" : \"true\",\n    \"headerLineNumber\" : \"1\",\n    \"maxRowsToPreview\" : \"0\",\n    \"distributionColumn\" : \"\",\n    \"qualifierMode\" : \"MINIMAL\",\n    \"firstDataRow\" : \"2\",\n    \"generateHeader\" : \"true\",\n    \"delimiter\" : \"֎\",\n    \"qualifier\" : \"\\\"\",\n    \"targetHeader\" : \"With Header\",\n    \"escapeCharacterDataRetained\" : \"false\",\n    \"codePage\" : \"UTF-8\",\n    \"fixedWidthMode\" : \"false\"\n  }\n}",
+          "renderingHints": {
+            "renderingType": "json"
+          }
+        }
+      ],
+      "overriddenFields": []
+    },
+    {
+      "@type": "mtTaskParameter",
+      "id": 276786961,
+      "name": "$Trg_DL$",
+      "type": "TARGET",
+      "label": "Trg_DL",
+      "uiProperties": {
+        "connectionParameterized": "false",
+        "objlabel": "p_TgtFileName",
+        "origobjlabel": "p_TgtFileName",
+        "objectParameterized": "true",
+        "objDesc": "",
+        "objectParamName": "p_TgtFileName",
+        "objectParamType-mapping": "DataObject",
+        "defaultTargetUpdateColumns": "",
+        "supportApplyDDLChanges": "true",
+        "originalPath": "Trg_DL"
+      },
+      "targetConnectionId": "@0kZFKLFwLWGi6OuvodQdUq",
+      "targetObject": "PROD_alt_prod_id_xref.csv",
+      "targetObjectLabel": "PROD_alt_prod_id_xref.csv",
+      "newFlatFile": false,
+      "newObject": true,
+      "showBusinessNames": true,
+      "naturalOrder": true,
+      "newObjectName": "PROD_alt_prod_id_xref.csv",
+      "truncateTarget": false,
+      "bulkApiDBTarget": false,
+      "operationType": "Insert",
+      "customFuncCfg": {
+        "@type": "customFuncConfig",
+        "id": -1,
+        "connections": [],
+        "inputMap": [],
+        "outputFields": []
+      },
+      "targetRefsV2": {},
+      "targetUpdateColumns": [],
+      "extendedObject": {
+        "@type": "extendedObject",
+        "singleMode": true,
+        "filters": [],
+        "sortFields": []
+      },
+      "runtimeAttrs": {},
+      "isRESTModernSource": true,
+      "commandType": 0,
+      "isFileList": false,
+      "handleSpecialChars": false,
+      "handleDecimalRoundOff": false,
+      "frsAsset": false,
+      "dynamicFileName": false,
+      "excludeDynamicFileNameField": false,
+      "currentlyProcessedFileName": false,
+      "retainFieldMetadata": false,
+      "objectName": "PROD_alt_prod_id_xref.csv",
+      "objectLabel": "PROD_alt_prod_id_xref.csv",
+      "useExactSrcNames": false,
+      "userUpdated": true,
+      "fetchMode": "ORIGINAL",
+      "tgtObjectAttributes": {},
+      "runtimeParameterData": {
+        "@type": "mtTaskRuntimeParameterData",
+        "isConnectionRuntimeParameter": false,
+        "isObjectRuntimeParameter": false,
+        "objectParameterName": "p_TgtFileName"
+      },
+      "overridableProperties": [],
+      "overriddenFields": []
+    }
+  ],
+  "sequences": [],
+  "inOutParameters": [
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_FileName_Input",
+      "description": "p_FileName_Input",
+      "initialValue": "",
+      "datatype": "STRING",
+      "precision": "100",
+      "scale": "0",
+      "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+      "aggregationType": "MAX",
+      "currentValue": "C_BO_PRDCT_ALT_ID_XREF.csv"
+    },
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_FileName_Output",
+      "description": "p_FileName_Output",
+      "initialValue": "",
+      "datatype": "STRING",
+      "precision": "100",
+      "scale": "0",
+      "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+      "aggregationType": "MAX",
+      "currentValue": "PROD_alt_prod_id_xref_20250514221221.csv"
+    }
+  ],
+  "connRuntimeAttrs": []
+}]

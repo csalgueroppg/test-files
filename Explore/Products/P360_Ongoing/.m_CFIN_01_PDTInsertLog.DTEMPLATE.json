@@ -1,0 +1,70 @@
+{
+  "objectInfo" : {
+    "id" : "2zIN0ghL4kUktfwetD4Je9",
+    "name" : "m_CFIN_01_PDTInsertLog",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T471700000000064R"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Data Base MDM Tgt, @additionalText= This mapping send the information to MDM view,@sources[@S3_HMDM_V2_HostedAgent], @targets[@FF_OTP_Output]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-10-16T23:08:50.266Z",
+  "objectRefs" : [ {
+    "id" : "aGki7jmHRRTiFlTNnP18WK",
+    "name" : "FF_OTP_Output_MX",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000JF"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "36Nuzgkr4eDiig0O4C9u6x",
+    "name" : "S3_HMDM_V2_HostedAgent",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B00000000001E"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

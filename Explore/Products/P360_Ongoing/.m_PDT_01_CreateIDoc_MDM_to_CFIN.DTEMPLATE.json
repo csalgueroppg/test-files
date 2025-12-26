@@ -1,0 +1,50 @@
+{
+  "objectInfo" : {
+    "id" : "jIANp3xE7UckyfcCxfhPMI",
+    "name" : "m_PDT_01_CreateIDoc_MDM_to_CFIN",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000003J3"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Idoc Tgt, @additionalText= This mapping send the information to CFIN,@sources[@S3_HMDM_V2], @targets[@FF_OTP_IN_PDT_CFIN, @SAP_Items_iDocWriter_CFIN]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-10-08T14:49:46.394Z",
+  "objectRefs" : [ {
+    "id" : "2uHF4ikEFPZldcAjblyfGh",
+    "name" : "MATMAS05_Prepare_MappLet",
+    "type" : "MAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470L00000000005A"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@operation=obtain,@object=IDoc MATMAS05, @operationObject=generate, @dataObject=Materials,@additionalText=This mapplet generate the structure for send materials info to CFIN",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

@@ -1,0 +1,365 @@
+{
+  "content" : {
+    "description" : "@connectionSource= IICS OnTap, @connectionTarget= IICS OnTap, @transformation= Java, @dataType= Paramaters Update, @sources=[@connection1= p_ConnSrc_FF_Input], @targets=[@connection1= p_ConnTrg_FF_Output]",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_MAT_00_SetParameterDL",
+    "links" : [
+      {
+        "link" : "Src_FF_DummyFile -> Exp_SetParameter"
+      },
+      {
+        "link" : "Exp_SetParameter -> JTX_SetParameter"
+      },
+      {
+        "link" : "JTX_SetParameter -> Trg_FF_DummyFile"
+      }
+    ],
+    "parameters" : [
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "p_ConnSrc_FF_Input",
+        "name" : "p_ConnSrc_FF_Input",
+        "anonymousType" : {
+          "typeSystem" : "CSVFile",
+          "connectionType" : "CSVFile"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "p_ConnTrg_FF_Output",
+        "name" : "p_ConnTrg_FF_Output",
+        "anonymousType" : {
+          "typeSystem" : "CSVFile",
+          "connectionType" : "CSVFile"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "p_FFSrc_DummyFile",
+        "name" : "p_FFSrc_DummyFile"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "p_FFTgt_DummyFile",
+        "name" : "p_FFTgt_DummyFile"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "p_LastUpdateDate",
+        "name" : "p_LastUpdateDate"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-05-15T00:46:41.028Z",
+        "name" : "Src_FF_DummyFile",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "p_ConnSrc_FF_Input"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "p_FFSrc_DummyFile"
+          },
+          "objectType" : "PARAMETERIZED",
+          "useDynamicFileName" : "false",
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-05-15T00:46:41.030Z",
+        "name" : "Trg_FF_DummyFile",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "p_ConnTrg_FF_Output"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "p_FFTgt_DummyFile"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-05-15T00:47:47.820Z",
+        "name" : "Exp_SetParameter",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "LastRunDate_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 30,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$p_LastUpdateDate$"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "ParamName_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_ParamName"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "Path_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_Path"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "Timestamp_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 60,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SYSDATE"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "MaxRetries_o",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_MaxRetries"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "DefaultTimeToWaitSeg_o",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_DefaultTimeToWaitSeg"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2025-05-15T01:21:05.085Z",
+        "name" : "JTX_SetParameter",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "helperCodeSnippet" : "// TODO: Declare static and non-static partition-level variables and functions here.\n// For example,\n//\n// static int countNullRows;   // Counts the number of output rows across all partitions that contains null values.\n// int partCountNullRows;      // Counts the number of output rows in this partition that contains null values.\n//\n// static Object lock = new Object();   // Lock to synchronize countNullRows.\n\t\n    static String pathLog = \"\";\n\tstatic String pTimeStamp = \"\";\n\tstatic int flagException= 0;\n    public static int MAX_RETRIES = 3;\n    public static int DEFAULT_TIME_TO_WAIT_SEG = 10;\n    static int countIOEx= 1;\n    static int countEx= 1;\n\n    static int countExTicket= 1;\n    static boolean flagTicket= false;\n    \n\tprivate static void createLogTicket(String ERP, String extUniqueCode, String code, String detailErrorBedrock,\n\t\t\tString detailError, String process, String pathLog) {\n\t\tTimestamp timestamp = new Timestamp(System.currentTimeMillis());\n\t\tString date = timestamp.toString().replaceAll(\"\\\\D+\", \"\");\n\t\tString LogName = \"Log_OnGoing_PDT_\" + ERP + \"_\" + date + \".txt\";\n\t\tString fileW;\n\t\tFile fileRequest;\n\t\tWriter fStream;\n\t\tBufferedWriter writer = null;\n\n\t\tString LogMessage = \"ERP: \" + ERP + \", \" + \"Process: \" + process + \", \" + \"Data Lake, Item Timestamp (EST): \" + extUniqueCode\n\t\t\t\t+ \", \" + \"Code: \" + code + \", \" + \"DetailError: \" + detailErrorBedrock + \" PipeMessage \" + \"ERP: \" + ERP\n\t\t\t\t+ \", \" + \"Process: \" + process + \", \" + \"Data Lake, Item Timestamp (EST): \" + extUniqueCode + \", \" + \"Code: \" + code\n\t\t\t\t+ \", \" + \"DetailError: \" + detailError;\n\n\t\t// write log\n\t\tfileW = pathLog + LogName;\n      for (int i = 1; i <= (MAX_RETRIES); i++) {\n\t\ttry {\n\t\t\tfileRequest = new File(fileW);\n\t\t\tfStream = new OutputStreamWriter(new FileOutputStream(fileRequest), StandardCharsets.UTF_8);\n\t\t\twriter = new BufferedWriter(fStream);\n\t\t\twriter.write(LogMessage);\n          flagTicket= true;\n\t\t} catch (IOException ex) {\n          if (countExTicket == MAX_RETRIES) {\n\t\t\t// Report\n\t\t\tex.printStackTrace();\n\t\t break;\n            \t} else {\n                    try {\n                        System.out.println(\"Reintentando creacion del ticket: \" + i); // Reintentos para la creacion del Ticket\n                        TimeUnit.SECONDS.sleep(DEFAULT_TIME_TO_WAIT_SEG);\n                        countExTicket++;\n                        continue;\n                    } catch (InterruptedException e1) {\n                        e1.printStackTrace();\n                    }\n                }\n\t\t} catch (Exception e) {\n          // Report\n\t\t\te.printStackTrace();\n          break;\n\t\t} finally {\n\t\t\ttry {\n\t\t\t\twriter.close();\n\t\t\t} catch (Exception e1) {\n\t\t\t\t/* ignore */\n\t\t\t\te1.printStackTrace();\n\t\t\t}\n            if(flagTicket)\n                break;\n\t\t}\n\t\t}\n\t}\t\n\t\n\tpublic static void updateFile(String path, String fileName, String pLastUpdateD) throws IOException {\n\t        File originalFile = new File(path+fileName+\".param\");\n\t        BufferedReader br = new BufferedReader(new FileReader(originalFile));\n\n\t        // Construct the new file that will later be renamed to the original\n\t        // filename.\n\t        File tempFile = new File(path+fileName+\".txt\");\n\t        PrintWriter pw = new PrintWriter(new FileWriter(tempFile));\n\n\t        String line = null;\n\t        // Read from the original file and write to the new\n\t        // unless content matches data to be removed.\n\t        while ((line = br.readLine()) != null) {\n\t        \t\n\t        \tif(line.contains(\"LastUpdateDate\"))\n\t        \t\tline=\"$$LastUpdateDate=\"+pLastUpdateD;\n\t        \t\n\t            pw.println(line);\n\t            pw.flush();\n\t        }\n\t        pw.close();\n\t        br.close();\n      \t\tFiles.delete(originalFile.toPath()); //borra archivo original despues de actualizar el temporal con la nueva fecha\n        \tFiles.move(tempFile.toPath(), originalFile.toPath()); // Renombra el temporal como original\n\t}\n\n\n\t/*private static void copyFile(File source, File dest) { //--UPDATE DELTA\n\t\ttry {\n\t\t\tFiles.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);\n\t\t} catch (IOException ex) {\n\t\t\tString detailErrorBedRock = \"There is an error in the ComexMDM Ongoing P360 DELTA process\";\n\t\t\tString detailError = detailErrorBedRock + \": \" + \" CopyFile Section => \" + ex.toString();\n\t\t\tcreateLogTicket(\"Comex_MDM\", pTimeStamp, \"-1\", detailErrorBedRock, detailError,\n\t\t\t\t\t\" tf_P360_Ongoing_ComexMDM \", pathLog);\n\t\t\tflagException++;\n\t\t\tSystem.err.format(\"I/O Error when copying file, \" +ex);\n\t\t}\n\t}*/\n",
+        "importPackagesSnippet" : "// TODO: Enter the Java packages to be imported here.\n// For example, if you want to use Hashtable in any of the snippets, import it as shown below:\n//\n// import java.util.Hashtable;\nimport java.lang.Thread;\nimport java.util.concurrent.TimeUnit;\nimport java.io.BufferedReader;\nimport java.io.BufferedWriter;\nimport java.io.File;\nimport java.io.FileOutputStream;\nimport java.io.FileReader;\nimport java.io.FileWriter;\nimport java.io.IOException;\nimport java.io.OutputStreamWriter;\nimport java.io.PrintWriter;\nimport java.io.Writer;\nimport java.nio.charset.StandardCharsets;\nimport java.nio.file.Files;\nimport java.nio.file.StandardCopyOption;\nimport java.sql.Timestamp;\n",
+        "lastCompilationFailed" : "false",
+        "onEndOfDataMethodSnippet" : "// TODO: Enter the code that executes after the transformation receives all of the input data here.\n//\n// logInfo(\"The number of null rows for this partition is: \" + partCountNullRows);\n// synchronized(lock)\n// {\n//\t\tlogInfo(\"The total number of null rows across partitions until now is: \" +  countNullRows);\n// }\n",
+        "onInputRowMethodSnippet" : "// TODO: Enter the code to process an input row here.\n// You can access input column data by referencing the input column name.\n// You can set output column data by referencing the output column name.\n// For example, if\n// input1 and input2 are input fields of type int, and\n// output1 and output2 are output fields of type int,\n// then the transformation logic might be as follows:\n//\n// if(!isNull(\"input1\") && !isNull(\"input1\"))\n// {\n//\t\toutput1 = input1 + input2;\n//\t\toutput2 = input1 - input2;\n// }\n// else\n// {\n//\t\tsetNull(\"output1\");\n//\t\tsetNull(\"output2\");\n//\t\tpartCountNullRows++;\n//\t\tsynchronized(lock)\n//\t\t{\n//\t\t\tcountNullRows++;\n//\t\t}\n// }\n        MAX_RETRIES = MaxRetries_o;\n        DEFAULT_TIME_TO_WAIT_SEG = DefaultTimeToWaitSeg_o;\n\t\tString fileName = ParamName_o;\n\n\t\tString path = Path_o.toString().trim();\n\t\tString pathConfig = path+\"config\\\\Products\\\\\";\n\t\tpathLog =path+\"output\\\\Products\\\\Ongoing\\\\Logs\\\\\";\n\n\t\tString pLastUpdateD = LastRunDate_o.toString().trim();\n\t\t//String pTZD = TZD.toString().trim();\n\t\tpTimeStamp = Timestamp_o.toString().trim();\n\t\t\n\t\tfor (int i = 1; i <= (MAX_RETRIES*2); i++) { \n\t\ttry {\n\t\t\tupdateFile(pathConfig, fileName, pLastUpdateD);\n          System.out.println(\"Ejecucion  \" + i);\n          break;\n        }\n          \t/*System.out.println(\"Temporal File Update Sucessfully!!!\");//--UPDATE DELTA\n\t\t\t\n\t\t\tFile source = new File(pathConfig+fileName+\".txt\");//--UPDATE DELTA\n\t        File dest = new File(pathConfig+fileName+\".param\");//--UPDATE DELTA\n\t        copyFile(source, dest);//--UPDATE DELTA\n\t        System.out.println(\"Comex PARAM File Update Sucessfully!!!\");//--UPDATE DELTA\n            */ \n\t\t  catch (IOException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\tif (countIOEx == MAX_RETRIES) {  \n             System.out.println(\"ticket  \" + i);\n\t\t\tString detailErrorBedRock = \"There is an error in the DL Materials process\";\n\t\t\tString detailError = detailErrorBedRock + \": \" + \" MAIN Section => \" + e.toString();\n\t\t\tcreateLogTicket(\"DL Incremental\", pTimeStamp, \"-1\", detailErrorBedRock, detailError,\n\t\t\t\t\t\" tf_MAT_02_MDM_to_DL_Incremental \", pathLog);\n          generateRow();\n\t\t\te.printStackTrace();\n              \n\t\t break;\n       }\n      else{\n        try {\n              System.out.println(\"Reintentando \" + i);\n              TimeUnit.SECONDS.sleep(DEFAULT_TIME_TO_WAIT_SEG);\n               countIOEx++;\n                continue;\n                } catch (InterruptedException e1) {\n                      // TODO Auto-generated catch block\n                   e1.printStackTrace();\n                } \n             \n        \n\t}\t}catch (Exception e1) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\tif (countEx == MAX_RETRIES) {\n\t\t\tString detailErrorBedRock = \"There is an error in the DL Materials process\";\n\t\t\tString detailError = detailErrorBedRock + \": \" + \" MAIN Section => \" + e1.toString();\n\t\t\tcreateLogTicket(\"DL_Incremental\", pTimeStamp, \"-1\", detailErrorBedRock, detailError,\n\t\t\t\t\t\" tf_MAT_01_MDM_Ongoing_Comex \", pathLog);\n          generateRow();\n\t\t\te1.printStackTrace();\n\t\tbreak;\n            } else {\n                    try {\n                        //System.out.println(\"Reintentando: \" + i);\n                        TimeUnit.SECONDS.sleep(DEFAULT_TIME_TO_WAIT_SEG);\n                        countEx++;\n                        continue;\n                    } catch (InterruptedException e3) {\n                        e3.printStackTrace();\n                    }\n            }\n\t\t}}\n\n\t\tif(flagException>0)\n\t\t\tgenerateRow();\n\ngenerateRow();\n\n",
+        "onTransactionMethodSnippet" : "// TODO: Enter the code that executes when the transformation receives a transaction here.\n",
+        "runtimeEnvId" : "010T4725000000000004",
+        "sorterModeJava" : "SIMPLE",
+        "unmodifiedCompilation" : "true",
+        "compiledInputFields" : [
+          {
+            "name" : "LastRunDate_o",
+            "precision" : 30,
+            "scale" : 0,
+            "type" : "string"
+          },
+          {
+            "name" : "ParamName_o",
+            "precision" : 100,
+            "scale" : 0,
+            "type" : "string"
+          },
+          {
+            "name" : "Path_o",
+            "precision" : 100,
+            "scale" : 0,
+            "type" : "string"
+          },
+          {
+            "name" : "Timestamp_o",
+            "precision" : 60,
+            "scale" : 0,
+            "type" : "string"
+          },
+          {
+            "name" : "MaxRetries_o",
+            "precision" : 10,
+            "scale" : 0,
+            "type" : "integer"
+          },
+          {
+            "name" : "DefaultTimeToWaitSeg_o",
+            "precision" : 10,
+            "scale" : 0,
+            "type" : "integer"
+          }
+        ]
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-05-30 16:28:59 CST"
+}

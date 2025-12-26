@@ -1,0 +1,2562 @@
+{
+  "content": {
+    "$$IID": "stringIdentity:@3",
+    "$$class": 1,
+    "annotations": [
+      {
+        "$$ID": 1,
+        "$$class": 2,
+        "jsonBlob": "{\"src_C_BO_PRDCT_MSTR\":{\"x\":100,\"y\":100},\"exp_Passthrough\":{\"x\":300,\"y\":100},\"WS_ZBAPI_UPD_CUSTTABLE\":{\"x\":500,\"y\":100},\"exp_Fault\":{\"x\":700,\"y\":100},\"tgt_Fault\":{\"x\":900,\"y\":100},\"exp_Out_WS\":{\"x\":700,\"y\":200},\"rt_Succes_Error\":{\"x\":900,\"y\":200},\"tgt_Succes\":{\"x\":1100,\"y\":300},\"tgt_Error\":{\"x\":1100,\"y\":200}}",
+        "templateId": ""
+      },
+      {
+        "$$ID": 2,
+        "$$class": 3,
+        "source": "TEMPLATE_SETTINGS",
+        "nameValuePairs": [
+          {
+            "$$ID": 45,
+            "$$class": 15,
+            "name": "UNIQUIFY_MAPPLET_TX_NAMES",
+            "value": {
+              "$$class": 28,
+              "value": "true"
+            }
+          }
+        ]
+      },
+      {
+        "$$ID": 3,
+        "$$class": 4,
+        "body": "@connectionSource= File S3 bucket Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Idoc Tgt, @additionalText= This mapping send the information to BAPI,@sources[@S3_HMDM_V2], @targets[@FF_OTP_IN_PDT_CFIN]\t"
+      }
+    ],
+    "allowMaxFieldLength": "false",
+    "bigIntConvertType": "ONLY_BIGINT",
+    "documentType": "MAPPING",
+    "ecoSystem": "",
+    "name": "m_PDT_01_Insert_CrossReference_Materials",
+    "specialCharacterSupport": "false",
+    "templateOrigin": "",
+    "links": [
+      {
+        "$$ID": 4,
+        "$$class": 5,
+        "name": "Src_C_BO_PRDCT_MSTR.Edge",
+        "fromGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        },
+        "toGroup": {
+          "##ID": 7,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 8,
+          "$$class": 8
+        }
+      },
+      {
+        "$$ID": 9,
+        "$$class": 5,
+        "name": "exp_Passthrough.Edge",
+        "fromGroup": {
+          "##ID": 7,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 8,
+          "$$class": 8
+        },
+        "toGroup": {
+          "##ID": 10,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 11,
+          "$$class": 9
+        }
+      },
+      {
+        "$$ID": 12,
+        "$$class": 5,
+        "name": "WS_ZBAPI_UPD_CUSTTABLE.Edge",
+        "fromGroup": {
+          "##ID": 13,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 11,
+          "$$class": 9
+        },
+        "toGroup": {
+          "##ID": 14,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 15,
+          "$$class": 8
+        }
+      },
+      {
+        "$$ID": 16,
+        "$$class": 5,
+        "name": "Expression.Edge",
+        "fromGroup": {
+          "##ID": 14,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 15,
+          "$$class": 8
+        },
+        "toGroup": {
+          "##ID": 17,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 18,
+          "$$class": 10
+        }
+      },
+      {
+        "$$ID": 19,
+        "$$class": 5,
+        "name": "exp_Out_WS.[object Object]",
+        "fromGroup": {
+          "##ID": 20,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 21,
+          "$$class": 8
+        },
+        "toGroup": {
+          "##ID": 22,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 23,
+          "$$class": 11
+        }
+      },
+      {
+        "$$ID": 24,
+        "$$class": 5,
+        "name": "Router.Edge",
+        "fromGroup": {
+          "##ID": 25,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 23,
+          "$$class": 11
+        },
+        "toGroup": {
+          "##ID": 26,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 27,
+          "$$class": 10
+        }
+      },
+      {
+        "$$ID": 28,
+        "$$class": 5,
+        "name": "WS_ZBAPI_UPD_CUSTTABLE.Edge",
+        "fromGroup": {
+          "##ID": 29,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 11,
+          "$$class": 9
+        },
+        "toGroup": {
+          "##ID": 20,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 21,
+          "$$class": 8
+        }
+      },
+      {
+        "$$ID": 30,
+        "$$class": 5,
+        "name": "rt_Succes_Error.Edge",
+        "fromGroup": {
+          "##ID": 31,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 23,
+          "$$class": 11
+        },
+        "toGroup": {
+          "##ID": 32,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 33,
+          "$$class": 10
+        }
+      }
+    ],
+    "parameters": [
+      {
+        "$$ID": 34,
+        "$$class": 12,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_src_HMDM",
+        "name": "Conn_src_HMDM",
+        "anonymousType": {
+          "$$ID": 46,
+          "$$class": 16,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "",
+          "connectionType": ""
+        }
+      },
+      {
+        "$$ID": 35,
+        "$$class": 12,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "src_CrossReference",
+        "name": "src_CrossReference",
+        "anonymousType": {
+          "$$ID": 47,
+          "$$class": 17,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 36,
+        "$$class": 12,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_tgt_Error",
+        "name": "Conn_tgt_Error",
+        "anonymousType": {
+          "$$ID": 48,
+          "$$class": 16,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "CSVFile",
+          "connectionType": "CSVFile"
+        }
+      },
+      {
+        "$$ID": 37,
+        "$$class": 12,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "tgt_Error",
+        "name": "tgt_Error",
+        "anonymousType": {
+          "$$ID": 49,
+          "$$class": 17,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 38,
+        "$$class": 12,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_tgt_Succes",
+        "name": "Conn_tgt_Succes",
+        "anonymousType": {
+          "$$ID": 50,
+          "$$class": 16,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "CSVFile",
+          "connectionType": "CSVFile"
+        }
+      },
+      {
+        "$$ID": 39,
+        "$$class": 12,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "tgt_Succes",
+        "name": "tgt_Succes",
+        "anonymousType": {
+          "$$ID": 51,
+          "$$class": 17,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 40,
+        "$$class": 12,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "tgt_Fault",
+        "name": "tgt_Fault",
+        "anonymousType": {
+          "$$ID": 52,
+          "$$class": 17,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 41,
+        "$$class": 12,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_tgt_Fault",
+        "name": "Conn_tgt_Fault",
+        "anonymousType": {
+          "$$ID": 53,
+          "$$class": 16,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "CSVFile",
+          "connectionType": "CSVFile"
+        }
+      }
+    ],
+    "transformations": [
+      {
+        "$$ID": 6,
+        "$$class": 7,
+        "createTime": "2023-06-09T15:16:36.506Z",
+        "name": "src_C_BO_PRDCT_MSTR",
+        "advancedProperties": [
+          {
+            "$$ID": 54,
+            "$$class": 18,
+            "name": "Tracing Level",
+            "value": "Normal"
+          },
+          {
+            "$$ID": 55,
+            "$$class": 18,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 56,
+            "$$class": 18,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 57,
+            "$$class": 18,
+            "name": "Sql Override",
+            "value": ""
+          },
+          {
+            "$$ID": 58,
+            "$$class": 18,
+            "name": "Output is deterministic",
+            "value": "false"
+          },
+          {
+            "$$ID": 59,
+            "$$class": 18,
+            "name": "Output is repeatable",
+            "value": ""
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 5,
+            "$$class": 6,
+            "input": "false",
+            "name": "DefaultGroup",
+            "output": "true"
+          }
+        ],
+        "sessionProperties": [
+          {
+            "$$ID": 60,
+            "$$class": 19,
+            "name": "Schema Name",
+            "value": ""
+          }
+        ],
+        "generateFilenamePort": "false",
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 61,
+          "$$class": 20,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "saas:@araNNncX65DkCwK89n23m3",
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 35,
+            "$$class": 12
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "TOOLKIT",
+          "useDynamicFileName": "false",
+          "dataFormat": {
+            "$$ID": 135,
+            "$$class": 29,
+            "compatibleEngine": "",
+            "formatId": "Flat",
+            "fwConfigId": "",
+            "saasHSchemaId": "",
+            "saasISDId": "",
+            "schema": "",
+            "validateHSchema": "false",
+            "attributes": [
+              {
+                "$$ID": 169,
+                "$$class": 40,
+                "name": "delimiter",
+                "value": "֎"
+              },
+              {
+                "$$ID": 170,
+                "$$class": 40,
+                "name": "escapeChar",
+                "value": "\\"
+              },
+              {
+                "$$ID": 171,
+                "$$class": 40,
+                "name": "qualifier",
+                "value": ""
+              },
+              {
+                "$$ID": 172,
+                "$$class": 40,
+                "name": "qualifierMode",
+                "value": "MINIMAL"
+              },
+              {
+                "$$ID": 173,
+                "$$class": 40,
+                "name": "disableEscapeChar",
+                "value": "true"
+              },
+              {
+                "$$ID": 174,
+                "$$class": 40,
+                "name": "codePage",
+                "value": "UTF-8"
+              },
+              {
+                "$$ID": 175,
+                "$$class": 40,
+                "name": "headerLineNumber",
+                "value": "1"
+              },
+              {
+                "$$ID": 176,
+                "$$class": 40,
+                "name": "firstDataRow",
+                "value": "2"
+              },
+              {
+                "$$ID": 177,
+                "$$class": 40,
+                "name": "targetHeader",
+                "value": "With Header"
+              },
+              {
+                "$$ID": 178,
+                "$$class": 40,
+                "name": "importColumnFromFirstLine",
+                "value": "true"
+              },
+              {
+                "$$ID": 179,
+                "$$class": 40,
+                "name": "generateHeader",
+                "value": "true"
+              },
+              {
+                "$$ID": 180,
+                "$$class": 40,
+                "name": "distributionColumn",
+                "value": ""
+              },
+              {
+                "$$ID": 181,
+                "$$class": 40,
+                "name": "fixedWidthMode",
+                "value": "false"
+              },
+              {
+                "$$ID": 182,
+                "$$class": 40,
+                "name": "maxRowsToPreview",
+                "value": "0"
+              },
+              {
+                "$$ID": 183,
+                "$$class": 40,
+                "name": "rowDelimiter",
+                "value": ""
+              }
+            ]
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 136,
+            "$$class": 30
+          },
+          "readOptions": {
+            "$$ID": 137,
+            "$$class": 31,
+            "commandType": 0,
+            "descending": "false",
+            "filterCondition": "",
+            "flatFileCommand": "",
+            "queryAll": "false",
+            "rowLimit": 0,
+            "selectDistinct": "false",
+            "userDefinedJoin": "",
+            "advancedFilterCondition": "",
+            "requestXml": "",
+            "sortFieldValues": ""
+          },
+          "runtimeAttributes": {
+            "$$ID": 138,
+            "$$class": 30
+          }
+        }
+      },
+      {
+        "$$ID": 8,
+        "$$class": 8,
+        "createTime": "2023-06-09T15:46:51.588Z",
+        "name": "exp_Passthrough",
+        "advancedProperties": [
+          {
+            "$$ID": 62,
+            "$$class": 18,
+            "name": "Tracing Level",
+            "value": "Normal"
+          },
+          {
+            "$$ID": 63,
+            "$$class": 18,
+            "name": "Optional",
+            "value": "true"
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 7,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "true",
+            "rules": [
+              {
+                "$$ID": 139,
+                "$$class": 32,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "additionalFields": "",
+        "windowConfigurationEnabled": "false",
+        "fields": [
+          {
+            "$$ID": 64,
+            "$$class": 21,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "ProcessName_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 14
+            },
+            "precision": 10,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "$$p_ProcessName\n--'MATERIAL222'",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 65,
+            "$$class": 21,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "Create_Date_Out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 14
+            },
+            "precision": 256,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SUBSTR(LTRIM(RTRIM(CREATE_DATE)),7,4)||'-'||SUBSTR(LTRIM(RTRIM(CREATE_DATE)),1,2)||'-'||SUBSTR(LTRIM(RTRIM(CREATE_DATE)),4,2)||'T'||SUBSTR(LTRIM(RTRIM(CREATE_DATE)),12,8)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 66,
+            "$$class": 21,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "LastUpdateDate_Out",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 14
+            },
+            "precision": 256,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SUBSTR(LTRIM(RTRIM(LAST_UPDATE_DATE)),7,4)||'-'||SUBSTR(LTRIM(RTRIM(LAST_UPDATE_DATE)),1,2)||'-'||SUBSTR(LTRIM(RTRIM(LAST_UPDATE_DATE)),4,2)||'T'||SUBSTR(LTRIM(RTRIM(LAST_UPDATE_DATE)),12,8)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 67,
+            "$$class": 21,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "var",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+              "$$class": 14
+            },
+            "precision": 10,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "var + 1",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 68,
+            "$$class": 21,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "true",
+            "name": "count",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+              "$$class": 14
+            },
+            "precision": 10,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "var",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          }
+        ],
+        "windowSpec": {
+          "$$ID": 69,
+          "$$class": 22,
+          "allRowsFollowing": "false",
+          "allRowsPreceding": "false",
+          "endOffset": 0,
+          "startOffset": 0,
+          "partitionKeys": []
+        }
+      },
+      {
+        "$$ID": 27,
+        "$$class": 10,
+        "createTime": "2023-06-16T19:07:11.075Z",
+        "name": "tgt_Succes",
+        "advancedProperties": [
+          {
+            "$$ID": 70,
+            "$$class": 18,
+            "name": "Forward Rejected Rows",
+            "value": "true"
+          },
+          {
+            "$$ID": 71,
+            "$$class": 18,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 72,
+            "$$class": 18,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 73,
+            "$$class": 18,
+            "name": "Update Override",
+            "value": ""
+          },
+          {
+            "$$ID": 74,
+            "$$class": 18,
+            "name": "Thousand Separator",
+            "value": "None"
+          },
+          {
+            "$$ID": 75,
+            "$$class": 18,
+            "name": "Decimal Separator",
+            "value": "."
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 26,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "false",
+            "rules": [
+              {
+                "$$ID": 140,
+                "$$class": 32,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties": [
+          {
+            "$$ID": 76,
+            "$$class": 19,
+            "name": "Append if Exists",
+            "value": "YES"
+          },
+          {
+            "$$ID": 77,
+            "$$class": 19,
+            "name": "Create Target Directory",
+            "value": "NO"
+          },
+          {
+            "$$ID": 78,
+            "$$class": 19,
+            "name": "Header Options",
+            "value": "Output Field Names"
+          },
+          {
+            "$$ID": 79,
+            "$$class": 19,
+            "name": "Header Command",
+            "value": ""
+          },
+          {
+            "$$ID": 80,
+            "$$class": 19,
+            "name": "Footer Command",
+            "value": ""
+          },
+          {
+            "$$ID": 81,
+            "$$class": 19,
+            "name": "Output Type",
+            "value": "File"
+          },
+          {
+            "$$ID": 82,
+            "$$class": 19,
+            "name": "Command",
+            "value": ""
+          },
+          {
+            "$$ID": 83,
+            "$$class": 19,
+            "name": "Output file directory",
+            "value": ""
+          },
+          {
+            "$$ID": 84,
+            "$$class": 19,
+            "name": "Output filename",
+            "value": ""
+          },
+          {
+            "$$ID": 85,
+            "$$class": 19,
+            "name": "Reject file directory",
+            "value": ""
+          },
+          {
+            "$$ID": 86,
+            "$$class": 19,
+            "name": "Reject filename",
+            "value": ""
+          }
+        ],
+        "createTarget": "false",
+        "fieldMappingMode": "BY_NAME",
+        "inputSorted": "false",
+        "schemaProviderType": "SELECTED_OBJECT",
+        "targetFieldsOrdered": "false",
+        "updateColumns": [],
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 87,
+          "$$class": 20,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 38,
+            "$$class": 12
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 39,
+            "$$class": 12
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "CSVFile",
+          "useDynamicFileName": "false",
+          "bulkOptions": {
+            "$$ID": 141,
+            "$$class": 33,
+            "hardDelete": "false",
+            "maxRowsPerRequest": 0,
+            "monitorBulk": "false",
+            "monitorBulkV2": "false",
+            "pkChunkingEnabled": "false",
+            "pkChunkingSize": 0,
+            "pkChunkingStartRowId": "",
+            "serialMode": "false",
+            "useBulkApi": "false",
+            "useBulkApiV2": "false"
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 142,
+            "$$class": 30
+          },
+          "runtimeAttributes": {
+            "$$ID": 143,
+            "$$class": 30
+          },
+          "writeOptions": {
+            "$$ID": 144,
+            "$$class": 34,
+            "batchSize": 0,
+            "bulkApi": "false",
+            "errorFileDirectory": "",
+            "errorFilePrefix": "",
+            "handleDecimalRoundOff": "false",
+            "handleSpecialChars": "false",
+            "operations": [
+              "Insert"
+            ],
+            "setFieldsToNull": "false",
+            "successFileDirectory": "",
+            "successFilePrefix": "",
+            "truncate": "false",
+            "updateStrategyExpression": "",
+            "useErrorFile": "false",
+            "useExactSrcNames": "false",
+            "useSuccessFile": "false"
+          }
+        },
+        "manualMappings": {
+          "$$ID": 88,
+          "$$class": 23
+        }
+      },
+      {
+        "$$ID": 21,
+        "$$class": 8,
+        "createTime": "2023-12-26T21:31:17.562Z",
+        "name": "exp_Out_WS",
+        "groups": [
+          {
+            "$$ID": 20,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "true",
+            "conflictResolutions": [
+              {
+                "$$ID": 145,
+                "$$class": 35,
+                "precedingGroupName": "Envelope",
+                "precedingTxName": "WS_ZBAPI_UPD_CUSTTABLE",
+                "rule": {
+                  "$$ID": 184,
+                  "$$class": 32,
+                  "bulkRename": "true",
+                  "include": "true",
+                  "bulkRenameOption": {
+                    "$$ID": 238,
+                    "$$class": 44,
+                    "literal": "_ws",
+                    "pattern": "",
+                    "suffix": "true"
+                  }
+                }
+              }
+            ],
+            "rules": [
+              {
+                "$$ID": 146,
+                "$$class": 36,
+                "bulkRename": "false",
+                "include": "true",
+                "fieldNamesStr": "",
+                "names": [
+                  {
+                    "$$ID": 185,
+                    "$$class": 41,
+                    "inputName": "FIELD",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 186,
+                    "$$class": 41,
+                    "inputName": "ID",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 187,
+                    "$$class": 41,
+                    "inputName": "LOG_MSG_NO",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 188,
+                    "$$class": 41,
+                    "inputName": "LOG_NO",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 189,
+                    "$$class": 41,
+                    "inputName": "MESSAGE",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 190,
+                    "$$class": 41,
+                    "inputName": "MESSAGE_V1",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 191,
+                    "$$class": 41,
+                    "inputName": "MESSAGE_V2",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 192,
+                    "$$class": 41,
+                    "inputName": "MESSAGE_V3",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 193,
+                    "$$class": 41,
+                    "inputName": "MESSAGE_V4",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 194,
+                    "$$class": 41,
+                    "inputName": "NUMBER",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 195,
+                    "$$class": 41,
+                    "inputName": "PARAMETER",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 196,
+                    "$$class": 41,
+                    "inputName": "ROW",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 197,
+                    "$$class": 41,
+                    "inputName": "SYSTEM",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 198,
+                    "$$class": 41,
+                    "inputName": "TYPE",
+                    "outputName": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "additionalFields": "",
+        "windowConfigurationEnabled": "false",
+        "windowSpec": {
+          "$$ID": 89,
+          "$$class": 22,
+          "allRowsFollowing": "false",
+          "allRowsPreceding": "false",
+          "endOffset": 0,
+          "startOffset": 0,
+          "partitionKeys": []
+        }
+      },
+      {
+        "$$ID": 11,
+        "$$class": 9,
+        "createTime": "2023-12-27T08:47:47.194Z",
+        "name": "WS_ZBAPI_UPD_CUSTTABLE",
+        "advancedProperties": [
+          {
+            "$$ID": 90,
+            "$$class": 18,
+            "name": "requestXmlSize",
+            "value": "7680"
+          },
+          {
+            "$$ID": 91,
+            "$$class": 18,
+            "name": "responseXmlSize",
+            "value": "10752"
+          },
+          {
+            "$$ID": 92,
+            "$$class": 18,
+            "name": "inputFlush",
+            "value": "true"
+          },
+          {
+            "$$ID": 93,
+            "$$class": 18,
+            "name": "transactionControlCondition",
+            "value": "IIF(Mod(exp_count, $$p_Batch) = 0, TC_COMMIT_AFTER, TC_CONTINUE_TRANSACTION)"
+          },
+          {
+            "$$ID": 94,
+            "$$class": 18,
+            "name": "Transformation Scope",
+            "value": "All Input"
+          },
+          {
+            "$$ID": 95,
+            "$$class": 18,
+            "name": "performanceMode",
+            "value": "false"
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 10,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "false",
+            "conflictResolutions": [
+              {
+                "$$ID": 147,
+                "$$class": 35,
+                "precedingGroupName": "DefaultGroup",
+                "precedingTxName": "exp_Passthrough",
+                "rule": {
+                  "$$ID": 199,
+                  "$$class": 32,
+                  "bulkRename": "true",
+                  "include": "true",
+                  "bulkRenameOption": {
+                    "$$ID": 239,
+                    "$$class": 44,
+                    "literal": "exp_",
+                    "pattern": "",
+                    "suffix": "false"
+                  }
+                }
+              }
+            ],
+            "rules": [
+              {
+                "$$ID": 148,
+                "$$class": 32,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          },
+          {
+            "$$ID": 13,
+            "$$class": 6,
+            "input": "false",
+            "name": "FaultGroup",
+            "output": "true"
+          },
+          {
+            "$$ID": 96,
+            "$$class": 6,
+            "input": "false",
+            "name": "Envelope",
+            "output": "true"
+          },
+          {
+            "$$ID": 97,
+            "$$class": 6,
+            "input": "false",
+            "name": "TTP_LOAD_CUSTAB",
+            "output": "true"
+          },
+          {
+            "$$ID": 29,
+            "$$class": 6,
+            "input": "false",
+            "name": "TTP_RETURN",
+            "output": "true"
+          }
+        ],
+        "operation": "@0Ummm4ACNAJfxWI1VRIvAc@SIntInsertProductSapCFIN",
+        "serviceDefinitionId": "@0Ummm4ACNAJfxWI1VRIvAc",
+        "transactionControlCondition": "",
+        "dataAdapter": {
+          "$$ID": 98,
+          "$$class": 24,
+          "name": "",
+          "oprRuntimeAttributes": {
+            "$$ID": 149,
+            "$$class": 30
+          },
+          "runtimeAttributes": {
+            "$$ID": 150,
+            "$$class": 30
+          }
+        },
+        "fieldMap": {
+          "$$ID": 99,
+          "$$class": 25,
+          "metadataVersion": "",
+          "mappings": [
+            {
+              "$$ID": 151,
+              "$$class": 37,
+              "groupName": "exp_Passthrough",
+              "isRoot": "false",
+              "xPath": "/tns0:Envelope",
+              "xfields": [
+                {
+                  "$$ID": 200,
+                  "$$class": 42,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "exp_ProcessName_o",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 100,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Import/ITP_PROCESS_NAME"
+                },
+                {
+                  "$$ID": 201,
+                  "$$class": 42,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "exp_MTRL_NMBR",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 256,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/TARGET_ID"
+                },
+                {
+                  "$$ID": 202,
+                  "$$class": 42,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "exp_Create_Date_Out",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 19,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/CREATE_DATE"
+                },
+                {
+                  "$$ID": 203,
+                  "$$class": 42,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "exp_LastUpdateDate_Out",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 19,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/LAST_UPDATE_DATE"
+                },
+                {
+                  "$$ID": 204,
+                  "$$class": 42,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "exp_SRC_SYTM_ID",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 256,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/LGCY_SYSTEM"
+                },
+                {
+                  "$$ID": 205,
+                  "$$class": 42,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "exp_MTRL_DSCR",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 256,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/FULL_NM"
+                },
+                {
+                  "$$ID": 206,
+                  "$$class": 42,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "exp_MTRL_IDNTFR",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 256,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/PKEY_SRC_OBJECT"
+                }
+              ]
+            }
+          ]
+        },
+        "outputFieldMap": {
+          "$$ID": 100,
+          "$$class": 26,
+          "denormalized": "false",
+          "metadataVersion": "",
+          "mappings": [
+            {
+              "$$ID": 152,
+              "$$class": 38,
+              "groupName": "FaultGroup",
+              "isRoot": "false",
+              "xPath": "/tns:Envelope/tns:Body/tns:Fault",
+              "xfields": [
+                {
+                  "$$ID": 207,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "faultcode",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns:Envelope/tns:Body/tns:Fault/faultcode"
+                },
+                {
+                  "$$ID": 208,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "faultstring",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns:Envelope/tns:Body/tns:Fault/faultstring"
+                },
+                {
+                  "$$ID": 209,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "faultactor",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns:Envelope/tns:Body/tns:Fault/faultactor"
+                }
+              ]
+            },
+            {
+              "$$ID": 153,
+              "$$class": 38,
+              "groupName": "Envelope",
+              "isRoot": "false",
+              "xPath": "/tns0:Envelope",
+              "xfields": [
+                {
+                  "$$ID": 210,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "PK_Envelope",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/bigint",
+                    "$$class": 14
+                  },
+                  "precision": 19,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "true",
+                  "xPath": ""
+                }
+              ]
+            },
+            {
+              "$$ID": 154,
+              "$$class": 38,
+              "groupName": "TTP_LOAD_CUSTAB",
+              "isRoot": "false",
+              "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB",
+              "xfields": [
+                {
+                  "$$ID": 211,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "FK_Envelope",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/bigint",
+                    "$$class": 14
+                  },
+                  "precision": 19,
+                  "scale": 0,
+                  "foreignKey": "true",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": ""
+                },
+                {
+                  "$$ID": 212,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "PKEY_SRC_OBJECT",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/PKEY_SRC_OBJECT"
+                },
+                {
+                  "$$ID": 213,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "OP_UNIT",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/OP_UNIT"
+                },
+                {
+                  "$$ID": 214,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "TARGET_ID",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/TARGET_ID"
+                },
+                {
+                  "$$ID": 215,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "CREATE_DATE",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/date/time",
+                    "$$class": 14
+                  },
+                  "precision": 29,
+                  "scale": 9,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/CREATE_DATE"
+                },
+                {
+                  "$$ID": 216,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "TAX_NUM",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/TAX_NUM"
+                },
+                {
+                  "$$ID": 217,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "LGCY_SYSTEM",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/LGCY_SYSTEM"
+                },
+                {
+                  "$$ID": 218,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "FULL_NM",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/FULL_NM"
+                },
+                {
+                  "$$ID": 219,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "LAST_UPDATE_DATE",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/date/time",
+                    "$$class": 14
+                  },
+                  "precision": 29,
+                  "scale": 9,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/LAST_UPDATE_DATE"
+                }
+              ]
+            },
+            {
+              "$$ID": 155,
+              "$$class": 38,
+              "groupName": "TTP_RETURN",
+              "isRoot": "false",
+              "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN",
+              "xfields": [
+                {
+                  "$$ID": 220,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "FK_Envelope",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/bigint",
+                    "$$class": 14
+                  },
+                  "precision": 19,
+                  "scale": 0,
+                  "foreignKey": "true",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": ""
+                },
+                {
+                  "$$ID": 221,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "TYPE",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/TYPE"
+                },
+                {
+                  "$$ID": 222,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "ID",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/ID"
+                },
+                {
+                  "$$ID": 223,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "NUMBER",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/NUMBER"
+                },
+                {
+                  "$$ID": 224,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "MESSAGE",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/MESSAGE"
+                },
+                {
+                  "$$ID": 225,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "LOG_NO",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/LOG_NO"
+                },
+                {
+                  "$$ID": 226,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "LOG_MSG_NO",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/LOG_MSG_NO"
+                },
+                {
+                  "$$ID": 227,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "MESSAGE_V1",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/MESSAGE_V1"
+                },
+                {
+                  "$$ID": 228,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "MESSAGE_V2",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/MESSAGE_V2"
+                },
+                {
+                  "$$ID": 229,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "MESSAGE_V3",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/MESSAGE_V3"
+                },
+                {
+                  "$$ID": 230,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "MESSAGE_V4",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/MESSAGE_V4"
+                },
+                {
+                  "$$ID": 231,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "PARAMETER",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/PARAMETER"
+                },
+                {
+                  "$$ID": 232,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "ROW",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/ROW"
+                },
+                {
+                  "$$ID": 233,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "FIELD",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/FIELD"
+                },
+                {
+                  "$$ID": 234,
+                  "$$class": 43,
+                  "defaultValue": "",
+                  "ignoreComparison": "false",
+                  "ignoreNullInputs": "false",
+                  "isDefaultValueUpdated": "false",
+                  "name": "SYSTEM",
+                  "platformType": {
+                    "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+                    "$$class": 14
+                  },
+                  "precision": 255,
+                  "scale": 0,
+                  "foreignKey": "false",
+                  "groupRef": "",
+                  "primaryKey": "false",
+                  "xPath": "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/SYSTEM"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "$$ID": 15,
+        "$$class": 8,
+        "createTime": "2024-01-03T02:36:21.824Z",
+        "name": "exp_Fault",
+        "groups": [
+          {
+            "$$ID": 14,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "true",
+            "rules": [
+              {
+                "$$ID": 156,
+                "$$class": 36,
+                "bulkRename": "false",
+                "include": "true",
+                "fieldNamesStr": "",
+                "names": [
+                  {
+                    "$$ID": 235,
+                    "$$class": 41,
+                    "inputName": "faultactor",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 236,
+                    "$$class": 41,
+                    "inputName": "faultcode",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 237,
+                    "$$class": 41,
+                    "inputName": "faultstring",
+                    "outputName": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "additionalFields": "",
+        "windowConfigurationEnabled": "false",
+        "fields": [
+          {
+            "$$ID": 101,
+            "$$class": 21,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "v_fault",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 14
+            },
+            "precision": 2000,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "faultcode||faultcode||faultstring",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 102,
+            "$$class": 21,
+            "defaultValue": "",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "v_numCurrentFault",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+              "$$class": 14
+            },
+            "precision": 10,
+            "scale": 0,
+            "expFieldType": "VARIABLE",
+            "expression": "IIF(ISNULL(v_fault),v_numCurrentFault,v_numCurrentFault+1)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 103,
+            "$$class": 21,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "counterFault_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+              "$$class": 14
+            },
+            "precision": 10,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "SetCountVariable($$CounterFault_o)",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          }
+        ],
+        "windowSpec": {
+          "$$ID": 104,
+          "$$class": 22,
+          "allRowsFollowing": "false",
+          "allRowsPreceding": "false",
+          "endOffset": 0,
+          "startOffset": 0,
+          "partitionKeys": []
+        }
+      },
+      {
+        "$$ID": 18,
+        "$$class": 10,
+        "createTime": "2024-01-03T02:36:57.650Z",
+        "name": "tgt_Fault",
+        "advancedProperties": [
+          {
+            "$$ID": 105,
+            "$$class": 18,
+            "name": "Forward Rejected Rows",
+            "value": "true"
+          },
+          {
+            "$$ID": 106,
+            "$$class": 18,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 107,
+            "$$class": 18,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 108,
+            "$$class": 18,
+            "name": "Update Override",
+            "value": ""
+          },
+          {
+            "$$ID": 109,
+            "$$class": 18,
+            "name": "Thousand Separator",
+            "value": "None"
+          },
+          {
+            "$$ID": 110,
+            "$$class": 18,
+            "name": "Decimal Separator",
+            "value": "."
+          },
+          {
+            "$$ID": 111,
+            "$$class": 18,
+            "name": "Datetime Format",
+            "value": ""
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 17,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "false",
+            "rules": [
+              {
+                "$$ID": 157,
+                "$$class": 32,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "createTarget": "false",
+        "fieldMappingMode": "BY_NAME",
+        "inputSorted": "false",
+        "schemaProviderType": "SELECTED_OBJECT",
+        "targetFieldsOrdered": "false",
+        "updateColumns": [],
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 112,
+          "$$class": 20,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 41,
+            "$$class": 12
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 40,
+            "$$class": 12
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "CSVFile",
+          "useDynamicFileName": "false",
+          "bulkOptions": {
+            "$$ID": 158,
+            "$$class": 33,
+            "hardDelete": "false",
+            "maxRowsPerRequest": 0,
+            "monitorBulk": "false",
+            "monitorBulkV2": "false",
+            "pkChunkingEnabled": "false",
+            "pkChunkingSize": 0,
+            "pkChunkingStartRowId": "",
+            "serialMode": "false",
+            "useBulkApi": "false",
+            "useBulkApiV2": "false"
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 159,
+            "$$class": 30
+          },
+          "runtimeAttributes": {
+            "$$ID": 160,
+            "$$class": 30
+          },
+          "writeOptions": {
+            "$$ID": 161,
+            "$$class": 34,
+            "batchSize": 0,
+            "bulkApi": "false",
+            "errorFileDirectory": "",
+            "errorFilePrefix": "",
+            "handleDecimalRoundOff": "false",
+            "handleSpecialChars": "false",
+            "operations": [
+              "Insert"
+            ],
+            "setFieldsToNull": "false",
+            "successFileDirectory": "",
+            "successFilePrefix": "",
+            "truncate": "false",
+            "updateStrategyExpression": "",
+            "useErrorFile": "false",
+            "useExactSrcNames": "false",
+            "useSuccessFile": "false"
+          }
+        },
+        "manualMappings": {
+          "$$ID": 113,
+          "$$class": 23
+        }
+      },
+      {
+        "$$ID": 23,
+        "$$class": 11,
+        "createTime": "2024-01-12T00:03:31.572Z",
+        "name": "rt_Succes_Error",
+        "groups": [
+          {
+            "$$ID": 22,
+            "$$class": 6,
+            "input": "true",
+            "name": "INPUT",
+            "output": "false",
+            "rules": [
+              {
+                "$$ID": 162,
+                "$$class": 32,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          },
+          {
+            "$$ID": 31,
+            "$$class": 6,
+            "input": "false",
+            "name": "DEFAULT1",
+            "output": "true"
+          },
+          {
+            "$$ID": 25,
+            "$$class": 6,
+            "input": "false",
+            "name": "SuccessGroup",
+            "output": "true"
+          }
+        ],
+        "groupFilterConditions": [
+          {
+            "$$ID": 114,
+            "$$class": 27,
+            "advancedFilterCondition": "",
+            "name": "SuccessGroup",
+            "simpleFilterConditions": [
+              {
+                "$$ID": 163,
+                "$$class": 39,
+                "fieldName": "TYPE",
+                "filterValue": "S",
+                "operator": "="
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "$$ID": 33,
+        "$$class": 10,
+        "createTime": "2024-01-12T18:59:03.207Z",
+        "name": "tgt_Error",
+        "advancedProperties": [
+          {
+            "$$ID": 115,
+            "$$class": 18,
+            "name": "Forward Rejected Rows",
+            "value": "true"
+          },
+          {
+            "$$ID": 116,
+            "$$class": 18,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 117,
+            "$$class": 18,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 118,
+            "$$class": 18,
+            "name": "Update Override",
+            "value": ""
+          },
+          {
+            "$$ID": 119,
+            "$$class": 18,
+            "name": "Thousand Separator",
+            "value": "None"
+          },
+          {
+            "$$ID": 120,
+            "$$class": 18,
+            "name": "Decimal Separator",
+            "value": "."
+          },
+          {
+            "$$ID": 121,
+            "$$class": 18,
+            "name": "Datetime Format",
+            "value": ""
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 32,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "false",
+            "rules": [
+              {
+                "$$ID": 164,
+                "$$class": 32,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties": [
+          {
+            "$$ID": 122,
+            "$$class": 19,
+            "name": "Append if Exists",
+            "value": "NO"
+          },
+          {
+            "$$ID": 123,
+            "$$class": 19,
+            "name": "Create Target Directory",
+            "value": "NO"
+          },
+          {
+            "$$ID": 124,
+            "$$class": 19,
+            "name": "Header Options",
+            "value": "Output Field Names"
+          },
+          {
+            "$$ID": 125,
+            "$$class": 19,
+            "name": "Header Command",
+            "value": ""
+          },
+          {
+            "$$ID": 126,
+            "$$class": 19,
+            "name": "Footer Command",
+            "value": ""
+          },
+          {
+            "$$ID": 127,
+            "$$class": 19,
+            "name": "Output Type",
+            "value": "File"
+          },
+          {
+            "$$ID": 128,
+            "$$class": 19,
+            "name": "Command",
+            "value": ""
+          },
+          {
+            "$$ID": 129,
+            "$$class": 19,
+            "name": "Output file directory",
+            "value": ""
+          },
+          {
+            "$$ID": 130,
+            "$$class": 19,
+            "name": "Output filename",
+            "value": ""
+          },
+          {
+            "$$ID": 131,
+            "$$class": 19,
+            "name": "Reject file directory",
+            "value": ""
+          },
+          {
+            "$$ID": 132,
+            "$$class": 19,
+            "name": "Reject filename",
+            "value": ""
+          }
+        ],
+        "createTarget": "false",
+        "fieldMappingMode": "BY_NAME",
+        "inputSorted": "false",
+        "schemaProviderType": "SELECTED_OBJECT",
+        "targetFieldsOrdered": "false",
+        "updateColumns": [],
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 133,
+          "$$class": 20,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 36,
+            "$$class": 12
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 37,
+            "$$class": 12
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "CSVFile",
+          "useDynamicFileName": "false",
+          "bulkOptions": {
+            "$$ID": 165,
+            "$$class": 33,
+            "hardDelete": "false",
+            "maxRowsPerRequest": 0,
+            "monitorBulk": "false",
+            "monitorBulkV2": "false",
+            "pkChunkingEnabled": "false",
+            "pkChunkingSize": 0,
+            "pkChunkingStartRowId": "",
+            "serialMode": "false",
+            "useBulkApi": "false",
+            "useBulkApiV2": "false"
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 166,
+            "$$class": 30
+          },
+          "runtimeAttributes": {
+            "$$ID": 167,
+            "$$class": 30
+          },
+          "writeOptions": {
+            "$$ID": 168,
+            "$$class": 34,
+            "batchSize": 0,
+            "bulkApi": "false",
+            "errorFileDirectory": "",
+            "errorFilePrefix": "",
+            "handleDecimalRoundOff": "false",
+            "handleSpecialChars": "false",
+            "operations": [
+              "Insert"
+            ],
+            "setFieldsToNull": "false",
+            "successFileDirectory": "",
+            "successFilePrefix": "",
+            "truncate": "false",
+            "updateStrategyExpression": "",
+            "useErrorFile": "false",
+            "useExactSrcNames": "false",
+            "useSuccessFile": "false"
+          }
+        },
+        "manualMappings": {
+          "$$ID": 134,
+          "$$class": 23
+        }
+      }
+    ],
+    "variables": [
+      {
+        "$$ID": 42,
+        "$$class": 13,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_ProcessName",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 14
+        },
+        "precision": 30,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "MATERIAL",
+        "description": "p_ProcessName_o"
+      },
+      {
+        "$$ID": 43,
+        "$$class": 13,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_Batch",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/bigint",
+          "$$class": 14
+        },
+        "precision": 19,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 44,
+        "$$class": 13,
+        "aggregationType": "COUNT",
+        "expressionVariable": "false",
+        "name": "CounterFault_o",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+          "$$class": 14
+        },
+        "precision": 10,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      }
+    ]
+  },
+  "metadata": {
+    "$$classInfo": {
+      "1": "com.informatica.metadata.template.common.Template",
+      "2": "com.informatica.metadata.template.common.layout.LayoutAnnotation",
+      "3": "com.informatica.metadata.common.genericannotation.GenericAnnotation",
+      "4": "com.informatica.metadata.common.description.Description",
+      "5": "com.informatica.metadata.template.common.TmplLink",
+      "6": "com.informatica.metadata.template.common.TmplGroup",
+      "7": "com.informatica.metadata.template.tx.tmplsource.TmplSource",
+      "8": "com.informatica.metadata.template.tx.tmplexpression.TmplExpression",
+      "9": "com.informatica.metadata.template.tx.tmplhierarchy.TmplHierarchy",
+      "10": "com.informatica.metadata.template.tx.tmpltarget.TmplTarget",
+      "11": "com.informatica.metadata.template.tx.tmplrouter.TmplRouter",
+      "12": "com.informatica.metadata.template.common.param.TmplParam",
+      "13": "com.informatica.metadata.template.common.SessionVariable",
+      "14": "com.informatica.metadata.common.typesystem.DataType",
+      "15": "com.informatica.metadata.common.genericannotation.NameValuePair",
+      "16": "com.informatica.metadata.template.common.param.ConnectionParamType",
+      "17": "com.informatica.metadata.template.common.param.DataObjectParamType",
+      "18": "com.informatica.metadata.template.common.TxAdvancedProperty",
+      "19": "com.informatica.metadata.template.common.TxSessionProperty",
+      "20": "com.informatica.metadata.template.ext.da.cloud.common.BaseAdapter",
+      "21": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionField",
+      "22": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionWindowSpec",
+      "23": "com.informatica.metadata.template.tx.tmpltarget.FieldMappings",
+      "24": "com.informatica.metadata.template.ext.da.cloud.common.HierarchyAdapter",
+      "25": "com.informatica.metadata.template.tx.tmplhierarchy.XFieldMap",
+      "26": "com.informatica.metadata.template.common.field.HFieldMap",
+      "27": "com.informatica.metadata.template.tx.tmplrouter.GroupFilterCondition",
+      "28": "com.informatica.metadata.common.types.BooleanValue",
+      "29": "com.informatica.metadata.template.ext.da.cloud.common.DataFormat",
+      "30": "com.informatica.metadata.template.ext.da.cloud.common.RuntimeAttributes",
+      "31": "com.informatica.metadata.template.ext.da.cloud.common.ReadOptions",
+      "32": "com.informatica.metadata.template.common.rule.TmplAllRule",
+      "33": "com.informatica.metadata.template.ext.da.cloud.common.BulkOptions",
+      "34": "com.informatica.metadata.template.ext.da.cloud.common.WriteOptions",
+      "35": "com.informatica.metadata.template.common.ConflictResolution",
+      "36": "com.informatica.metadata.template.common.rule.TmplNameRule",
+      "37": "com.informatica.metadata.template.tx.tmplhierarchy.XFieldMapping",
+      "38": "com.informatica.metadata.template.common.field.HFieldMapping",
+      "39": "com.informatica.metadata.template.tx.tmplrouter.SimpleFilterCondition",
+      "40": "com.informatica.metadata.template.ext.da.cloud.common.Option",
+      "41": "com.informatica.metadata.template.common.rule.TmplNameRuleEntry",
+      "42": "com.informatica.metadata.template.tx.tmplhierarchy.XField",
+      "43": "com.informatica.metadata.template.common.field.HField",
+      "44": "com.informatica.metadata.template.common.BulkRenameOption"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "objectInfo" : {
+    "id" : "3dgcES5MmU8fQ8SWkkEaUi",
+    "name" : "m_MAT_00_SetParameterDL",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000005QK"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= IICS OnTap, @connectionTarget= IICS OnTap, @transformation= Java, @dataType= Paramaters Update, @sources=[@connection1= p_ConnSrc_FF_Input], @targets=[@connection1= p_ConnTrg_FF_Output]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-05-30T22:29:02.930Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

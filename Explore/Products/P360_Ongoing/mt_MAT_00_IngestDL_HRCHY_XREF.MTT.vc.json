@@ -1,0 +1,185 @@
+{
+  "name" : "mt_MAT_00_IngestDL_HRCHY_XREF",
+  "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read HRCHY from S3 Bucket and write in DL, @dataType= HCRCHY table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+  "runtimeEnvironmentId" : "@9ew81IGCjUshOwChB1zgWT",
+  "runtimeEnvironmentName" : "SDCAMDMSA01",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$Src_S3_Bucket$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "Conn_src_S3 (Conn_src_S3)",
+      "uiProperties" : {
+        "cnxtype" : "Amazon S3 v2",
+        "connectionParameterized" : "true",
+        "paramName" : "Conn_src_S3",
+        "paramLabel" : "Conn_src_S3",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "Conn_src_S3",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objlabel" : "p_FileName_S3",
+        "origobjlabel" : "p_FileName_S3",
+        "objectParameterized" : "true",
+        "objectParamName" : "p_FileName_S3",
+        "objectParamType-mapping" : "DataObject",
+        "originalPath" : "Src_S3_Bucket"
+      },
+      "sourceConnectionId" : "@araNNncX65DkCwK89n23m3",
+      "connectionName" : "S3_HMDM_V2",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "object" : {
+          "name" : "s3-mdm-ppg-dev-us-east-1/C_BO_PRDCT_HRCHY_XREF.csv",
+          "label" : "C_BO_PRDCT_HRCHY_XREF.csv",
+          "metadataUpdated" : false
+        },
+        "singleMode" : true,
+        "objects" : [
+          {
+            "name" : "s3-mdm-ppg-dev-us-east-1/C_BO_PRDCT_HRCHY_XREF.csv",
+            "label" : "C_BO_PRDCT_HRCHY_XREF.csv",
+            "metadataUpdated" : false
+          }
+        ]
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "fetchMode" : "ORIGINAL",
+      "dataFormat" : {
+        "formatId" : "Flat",
+        "dataFormatAttributes" : {
+          "escapeChar" : "\\",
+          "importColumnFromFirstLine" : "true",
+          "headerLineNumber" : "1",
+          "maxRowsToPreview" : "0",
+          "qualifierMode" : "MINIMAL",
+          "firstDataRow" : "2",
+          "generateHeader" : "true",
+          "delimiter" : "֎",
+          "qualifier" : "\"",
+          "targetHeader" : "With Header",
+          "disableEscapeChar" : "true",
+          "escapeCharacterDataRetained" : "false",
+          "codePage" : "UTF-8",
+          "fixedWidthMode" : "false"
+        }
+      },
+      "runtimeParameterData" : {
+        "connectionParameterName" : "Conn_src_S3",
+        "objectParameterName" : "p_FileName_S3",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    },
+    {
+      "name" : "$Trg_DL$",
+      "type" : "TARGET",
+      "label" : "Trg_DL",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "objlabel" : "p_TgtFileName",
+        "origobjlabel" : "p_TgtFileName",
+        "objectParameterized" : "true",
+        "objectParamName" : "p_TgtFileName",
+        "objectParamType-mapping" : "DataObject",
+        "supportApplyDDLChanges" : "true",
+        "originalPath" : "Trg_DL"
+      },
+      "targetConnectionId" : "@0kZFKLFwLWGi6OuvodQdUq",
+      "connectionName" : "FF_OTP_DL_Materials",
+      "targetObject" : "PROD_hierarchy_xref.csv",
+      "targetObjectLabel" : "PROD_hierarchy_xref.csv",
+      "newFlatFile" : false,
+      "newObject" : true,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "newObjectName" : "PROD_hierarchy_xref.csv",
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "PROD_hierarchy_xref.csv",
+      "objectLabel" : "PROD_hierarchy_xref.csv",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "objectParameterName" : "p_TgtFileName",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "lastRunTime" : 1748457967000,
+  "mappingId" : "@3ifAjLA8hSxlWIibG3INsU",
+  "mappingTemplateName" : "m_MAT_00_IngestDL",
+  "inOutParameters" : [
+    {
+      "name" : "p_FileName_Input",
+      "description" : "p_FileName_Input",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_HRCHY_XREF.csv"
+    },
+    {
+      "name" : "p_FileName_Output",
+      "description" : "p_FileName_Output",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "PROD_hierarchy_xref_20250514221221.csv"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : false,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "schemaMode" : "async",
+  "valid" : true,
+  "parameterFileEncoding" : "UTF-8",
+  "jobPriority" : "MEDIUM",
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2025-05-30 16:29:01 CST"
+}

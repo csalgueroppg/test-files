@@ -1,0 +1,30 @@
+{
+  "objectInfo" : {
+    "id" : "2ch69OKlty6imGZ3BXfJc1",
+    "name" : "m_PDT_01_Extract_MDM_to_CFIN",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000003IO"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= Query MDM Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output S3 bucket Tgt, @additionalText= This mapping get all data from MDM,@sources[@ORC_HMDM_READ_MATERIALS], @targets[@S3_HMDM_V2_HostedAgent]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-08-19T21:54:33.787Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

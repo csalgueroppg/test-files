@@ -1,0 +1,30 @@
+{
+  "objectInfo" : {
+    "id" : "8U9zyRld7ASjbkOtJviU65",
+    "name" : "m_PDT_01_getParameter",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000003KI"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= Input Ontap Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Ontap Tgt, @additionalText= This mapping get all parameters for the CFIN process,@sources[@FF_OTP_Input_MX], @targets[@FF_OTP_Output_MX]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-08-19T21:54:33.786Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

@@ -1,0 +1,133 @@
+{
+  "objectInfo" : {
+    "id" : "khW64qi0FYuffLdVoIOfi3",
+    "name" : "tf_P360_Ongoing_MDM_CFIN_One",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Fncm6S6fPAreFRq-gt-11687274-2023-06-06T17:16:24.512Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-03-10T16:42:24.153Z",
+  "objectRefs" : [ {
+    "id" : "1x2c1fUvl0ZhRBNMYp1zQ0",
+    "name" : "tf_Ongoing_MDM_to_CFIN",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "uwn2H0Fdw8jIw8j-gt-2055781-2023-02-27T19:01:38.337Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "an3l1krtwvTb1CujplNGwq",
+    "name" : "mt_P360_OG_DeltaRecalculate_MDM_CFIN",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NKZ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "7xOCHpGbeimg4Mty8RSPWR",
+    "name" : "mt_getParameter_MDM_to_CFIN",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NF7"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "7c1q20sb3whfNsuLg5C1mn",
+    "name" : "mt_P360_OG_GetTime_MDM_CFIN",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NLH"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "jlLTpTCJN0YcDSn9pP6OgK",
+    "name" : "SDCMMDMSA01",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000006"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

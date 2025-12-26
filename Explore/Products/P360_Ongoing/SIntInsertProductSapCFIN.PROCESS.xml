@@ -1,0 +1,169 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>rp3yD7tyGoQwg74-gt-7413471-2023-06-16T01:17:37.287Z::pd.xml</types1:EntryId>
+      <types1:Name>SIntInsertProductSapCFIN</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCMMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>Castillo.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2023-06-16T01:17:37Z</types1:CreationDate>
+      <types1:ModifiedBy>JARangel.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-03-06T21:26:17Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>JARangel.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-03-06T21:26:24Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SIntInsertProductSapCFIN/SIntInsertProductSapCFIN.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SIntInsertProductSapCFIN"
+                  name="SIntInsertProductSapCFIN"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:SDCMMDMSA01</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="input" required="true" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:PO-ZBAPI_UPD_CUSTTABLE</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">eOEHROXWrKthZJpE21qrcG</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="output" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:PO-ZBAPI_UPD_CUSTTABLE_OUTPUT</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">jZB2AzoDlIFjesvPuDH141</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="terse">
+               <targetLocation>SDCMMDMSA01</targetLocation>
+               <rest>
+                  <allowedGroups>
+                     <group>ServiceConsumer</group>
+                  </allowedGroups>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="lixquedx" targetId="lixquedp"/>
+               </start>
+               <eventContainer id="lixquedp">
+                  <service id="lixqueds">
+                     <title>SvcSAPBAPICFIN</title>
+                     <serviceName>Conn-SAPBAPI-PdtCFIN:ZBAPI_UPD_CUSTTABLE</serviceName>
+                     <serviceGUID>9BPgRrzPwPCegLMnjoTTMb</serviceGUID>
+                     <serviceInput>
+                        <parameter name="ZBAPI_UPD_CUSTTABLE_INPUT" source="formula">
+                           <expression language="XQuery">$input.input</expression>
+                        </parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="lixquedq">
+                     <assignment id="lqx1hms8">
+                        <title>AssignOutput</title>
+                        <operation source="formula" to="output.output">
+                           <expression language="XQuery">$output.ZBAPI_UPD_CUSTTABLE_OUTPUT</expression>
+                        </operation>
+                     </assignment>
+                     <link id="lixquedv" targetId="lixquedp" type="containerLink"/>
+                  </flow>
+                  <flow id="lixquedr">
+                     <throw id="lqwwjayt">
+                        <title>ThrowSvcSAPBAPICFIN</title>
+                        <throwInput>
+                           <parameter name="code" source="constant" updatable="true">{$output.faultSvcSAPBAPICFIN[1]/code}</parameter>
+                           <parameter name="detail" source="constant" updatable="true">{$output.faultSvcSAPBAPICFIN[1]/detail}</parameter>
+                           <parameter name="reason" source="constant" updatable="true">{$output.faultSvcSAPBAPICFIN[1]/reason}</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="lixquedt" targetId="lixquedq" type="containerLink"/>
+                  <link id="lixqueek" targetId="c"/>
+                  <events>
+                     <catch faultField="faultSvcSAPBAPICFIN" id="liw22yiw" interrupting="true">
+                        <link id="lixquedu" targetId="lixquedr" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>69b0f24c-1239-492e-80fe-15a29fd5aee9</ns1:Id>
+               <ns1:Name>1</ns1:Name>
+               <ns1:CreatedBy>Castillo.dev@ppg.com</ns1:CreatedBy>
+               <ns1:CreationDate>2023-06-16T01:17:37Z</ns1:CreationDate>
+               <ns1:ModifiedBy>JARangel.dev@ppg.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2023-08-23T16:34:18Z</ns1:ModificationDate>
+               <ns1:Data format="xml">&lt;root&gt;
+&lt;input&gt;
+   &lt;Import&gt;
+      &lt;ITP_PROCESS_NAME&gt;MATERIAL&lt;/ITP_PROCESS_NAME&gt;
+   &lt;/Import&gt;
+   &lt;Table_Input&gt;
+      &lt;TTP_LOAD_CUSTAB&gt;
+         &lt;PKEY_SRC_OBJECT&gt;4026712&lt;/PKEY_SRC_OBJECT&gt;
+         &lt;OP_UNIT&gt;&lt;/OP_UNIT&gt;
+         &lt;TARGET_ID&gt;1000004000&lt;/TARGET_ID&gt;
+         &lt;CREATE_DATE&gt;1970-01-01 00:00:00&lt;/CREATE_DATE&gt;
+         &lt;TAX_NUM&gt;&lt;/TAX_NUM&gt;
+         &lt;LGCY_SYSTEM&gt;COMEX MDM&lt;/LGCY_SYSTEM&gt;
+         &lt;FULL_NM&gt;DHMS-S3.02PR1428 B1 /2 655SK&lt;/FULL_NM&gt;
+         &lt;LAST_UPDATE_DATE&gt;1970-01-01 00:00:00&lt;/LAST_UPDATE_DATE&gt;
+      &lt;/TTP_LOAD_CUSTAB&gt;
+   &lt;/Table_Input&gt;
+&lt;/input&gt;
+&lt;/root&gt;</ns1:Data>
+            </ns1:SampleData>
+            <ns1:SampleData>
+               <ns1:Id>dccbd042-a37a-4ede-abc3-b4a3b360b7be</ns1:Id>
+               <ns1:Name>2</ns1:Name>
+               <ns1:CreatedBy>JARangel.dev@ppg.com</ns1:CreatedBy>
+               <ns1:CreationDate>2023-08-23T16:32:54Z</ns1:CreationDate>
+               <ns1:ModifiedBy>JARangel.dev@ppg.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2023-08-23T16:33:14Z</ns1:ModificationDate>
+               <ns1:Data format="xml">&lt;root&gt;
+&lt;input&gt;
+   &lt;Import&gt;
+      &lt;ITP_PROCESS_NAME&gt;MATERIAL&lt;/ITP_PROCESS_NAME&gt;
+   &lt;/Import&gt;
+   &lt;Table_Input&gt;
+      &lt;TTP_LOAD_CUSTAB&gt;
+         &lt;PKEY_SRC_OBJECT&gt;4026712&lt;/PKEY_SRC_OBJECT&gt;
+         &lt;OP_UNIT&gt;&lt;/OP_UNIT&gt;
+         &lt;TARGET_ID&gt;1000004000&lt;/TARGET_ID&gt;
+         
+         &lt;TAX_NUM&gt;&lt;/TAX_NUM&gt;
+         &lt;LGCY_SYSTEM&gt;COMEX MDM&lt;/LGCY_SYSTEM&gt;
+         &lt;FULL_NM&gt;DHMS-S3.02PR1428 B1 /2 655SK&lt;/FULL_NM&gt;
+         
+      &lt;/TTP_LOAD_CUSTAB&gt;
+   &lt;/Table_Input&gt;
+&lt;/input&gt;
+&lt;/root&gt;</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>aDmwXOI2eQWcNj1UyHb7u8</types1:GUID>
+      <types1:DisplayName>SIntInsertProductSapCFIN</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-03-08T22:44:06.636Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

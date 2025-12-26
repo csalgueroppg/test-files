@@ -1,0 +1,30 @@
+{
+  "objectInfo" : {
+    "id" : "9mpftaF8GNxc6fQ785cSi3",
+    "name" : "m_MAT_00_getParameters_DL",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000003OS"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= IICS OnTap, @connectionTarget= IICS OnTap, @transformation= Set Parameters, @dataType= Paramaters, @sources=[@connection1= Conn_MDM], @targets=[@connection1= Conn_Tgt_S3]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-05-30T22:29:02.928Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "9BPgRrzPwPCegLMnjoTTMb",
+    "name" : "Conn-SAPBAPI-PdtCFIN",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "1WFsWTzIf6riX2F-gt-7413278-2023-06-16T01:17:33.853Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

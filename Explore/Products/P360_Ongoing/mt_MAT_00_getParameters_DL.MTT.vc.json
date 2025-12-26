@@ -1,0 +1,381 @@
+{
+  "name" : "mt_MAT_00_getParameters_DL",
+  "description" : "@connectionSource= IICS OnTap, @connectionTarget= IICS OnTap, @transformation= Get parameters, @dataType= Paramaters, @sources=[@connection1= FF_OTP_IN_PDT], @targets=[@connection1= FF_OTP_OUT_PDT]",
+  "runtimeEnvironmentId" : "@9ew81IGCjUshOwChB1zgWT",
+  "runtimeEnvironmentName" : "SDCAMDMSA01",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$Src_MDM_View$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "Conn_MDM (Conn_MDM)",
+      "description" : "Connection to MDM",
+      "uiProperties" : {
+        "connectionParameterized" : "true",
+        "paramName" : "Conn_MDM",
+        "paramLabel" : "Conn_MDM",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "Conn_MDM",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objlabel" : "SrcTableName",
+        "origobjlabel" : "SrcTableName",
+        "objectParameterized" : "true",
+        "objectParamName" : "SrcTableName",
+        "objectParamType-mapping" : "DataObject",
+        "originalPath" : "Src_MDM_View"
+      },
+      "sourceConnectionId" : "@iRTOYQEHVknkkfEmXlaIOT",
+      "connectionName" : "FF_OTP_IN_PDT",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "object" : {
+          "name" : "items_dummy.txt",
+          "label" : "items_dummy.txt",
+          "metadataUpdated" : false
+        },
+        "singleMode" : true,
+        "objects" : [
+          {
+            "name" : "items_dummy.txt",
+            "label" : "items_dummy.txt",
+            "metadataUpdated" : false
+          }
+        ]
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "runtimeParameterData" : {
+        "connectionParameterName" : "Conn_MDM",
+        "objectParameterName" : "SrcTableName",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    },
+    {
+      "name" : "$Tgt_Csv_S3$",
+      "type" : "TARGET",
+      "label" : "Conn_Tgt_S3 (Conn_Tgt_S3)",
+      "uiProperties" : {
+        "connectionParameterized" : "true",
+        "paramName" : "Conn_Tgt_S3",
+        "paramLabel" : "Conn_Tgt_S3",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "Conn_Tgt_S3",
+        "objlabel" : "TgtFileName",
+        "origobjlabel" : "TgtFileName",
+        "objectParameterized" : "true",
+        "objectParamName" : "TgtFileName",
+        "objectParamType-mapping" : "DataObject",
+        "supportApplyDDLChanges" : "true",
+        "originalPath" : "Tgt_Csv_S3"
+      },
+      "targetConnectionId" : "@9w2wW3DevjqlgxoJi0l0Aq",
+      "connectionName" : "FF_OTP_OUT_PDT",
+      "targetObject" : "Dummy_DL.csv",
+      "targetObjectLabel" : "Dummy_DL.csv",
+      "newFlatFile" : false,
+      "newObject" : true,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "newObjectName" : "Dummy_DL.csv",
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "Dummy_DL.csv",
+      "objectLabel" : "Dummy_DL.csv",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "dataFormat" : {
+        "formatId" : "Flat",
+        "dataFormatAttributes" : {
+          "escapeChar" : "\\",
+          "importColumnFromFirstLine" : "true",
+          "headerLineNumber" : "1",
+          "maxRowsToPreview" : "0",
+          "qualifierMode" : "MINIMAL",
+          "firstDataRow" : "2",
+          "generateHeader" : "true",
+          "delimiter" : ",",
+          "qualifier" : "\"",
+          "targetHeader" : "With Header",
+          "escapeCharacterDataRetained" : "false",
+          "codePage" : "UTF-8",
+          "fixedWidthMode" : "false"
+        }
+      },
+      "runtimeParameterData" : {
+        "connectionParameterName" : "Conn_Tgt_S3",
+        "objectParameterName" : "TgtFileName",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "lastRunTime" : 1748457872000,
+  "mappingId" : "@9mpftaF8GNxc6fQ785cSi3",
+  "mappingTemplateName" : "m_MAT_00_getParameters_DL",
+  "sessionPropertiesList" : [
+    {
+      "name" : "Pushdown Optimization",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Context",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Fallback Option",
+      "value" : "Partial PDO"
+    }
+  ],
+  "inOutParameters" : [
+    {
+      "name" : "TableSrcNameMDM",
+      "description" : "TableSrcNameMDM",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX"
+    },
+    {
+      "name" : "FileTgtNameS3",
+      "datatype" : "STRING",
+      "precision" : "10",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX"
+    },
+    {
+      "name" : "p_C_BO_PRDCT_MSTR_XREF_out",
+      "description" : "p_C_BO_PRDCT_MSTR_XREF_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_MSTR_XREF"
+    },
+    {
+      "name" : "p_C_BO_PRDCT_ALT_ID_XREF_out",
+      "description" : "p_C_BO_PRDCT_ALT_ID_XREF_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_ALT_ID_XREF"
+    },
+    {
+      "name" : "p_C_BO_PRDCT_BRND_XREF_out",
+      "description" : "p_C_BO_PRDCT_BRND_XREF_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_BRND_XREF"
+    },
+    {
+      "name" : "p_C_BO_PRDCT_DSCR_XREF_out",
+      "description" : "p_C_BO_PRDCT_DSCR_XREF_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_DSCR_XREF"
+    },
+    {
+      "name" : "p_C_BO_PRDCT_LNKNG_XREF_out",
+      "description" : "p_C_BO_PRDCT_LNKNG_XREF_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_LNKNG_XREF"
+    },
+    {
+      "name" : "p_C_BO_PRDCT_LGSTC_XREF_out",
+      "description" : "p_C_BO_PRDCT_LGSTC_XREF_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_LGSTC_XREF"
+    },
+    {
+      "name" : "p_C_BO_PRDCT_PRNT_CD_XREF_out",
+      "description" : "p_C_BO_PRDCT_PRNT_CD_XREF_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_PRNT_CD_XREF"
+    },
+    {
+      "name" : "p_Shema_out",
+      "description" : "p_Shema_out",
+      "datatype" : "STRING",
+      "precision" : "50",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "MATERIALS_HUB"
+    },
+    {
+      "name" : "p_FileName_PRDCT_MSTR_out",
+      "description" : "p_FileName_PRDCT_MSTR_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX"
+    },
+    {
+      "name" : "p_FileName_PRDCT_ALT_out",
+      "description" : "p_FileName_PRDCT_ALT_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX"
+    },
+    {
+      "name" : "p_FileName_PRDCT_BRND_out",
+      "description" : "p_FileName_PRDCT_BRND_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX"
+    },
+    {
+      "name" : "p_FileName_PRDCT_DSCR_out",
+      "description" : "p_FileName_PRDCT_DSCR_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX"
+    },
+    {
+      "name" : "p_FileName_PRDCT_LNKNG_out",
+      "description" : "p_FileName_PRDCT_LNKNG_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX"
+    },
+    {
+      "name" : "p_FileName_PRDCT_PRNT_out",
+      "description" : "p_FileName_PRDCT_PRNT_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX"
+    },
+    {
+      "name" : "p_C_BO_PRDCT_MSTR_out",
+      "description" : "p_C_BO_PRDCT_MSTR_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_MSTR"
+    },
+    {
+      "name" : "p_C_BO_PRDCT_XREF_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_XREF"
+    },
+    {
+      "name" : "p_C_BO_PRDCT_HRCHY_XREF_out",
+      "description" : "p_C_BO_PRDCT_HRCHY_XREF_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_HRCHY_XREF"
+    },
+    {
+      "name" : "p_FileName_PRDCT_HRCHY_out",
+      "description" : "p_FileName_PRDCT_HRCHY_out",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX"
+    },
+    {
+      "name" : "p_DateFilter",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "29-05-25 00:00:00.000"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : false,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "paramFileType" : "PARAM_FILE_LOCAL",
+  "schemaMode" : "async",
+  "executionEngine" : "SPARK",
+  "valid" : true,
+  "parameterFileEncoding" : "UTF-8",
+  "jobPriority" : "MEDIUM",
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2025-05-30 16:29:00 CST"
+}

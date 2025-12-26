@@ -1,0 +1,372 @@
+[{
+  "@type": "mtTask",
+  "id": "@1",
+  "name": "mt_PDT_01_getParameter_MDM_to_CFIN",
+  "description": "@connectionSource= Input Ontap Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Ontap Tgt, @additionalText= This mapping task get all parameters for the CFIN process,@sources[@FF_OTP_Input_MX], @targets[@FF_OTP_Output_MX]",
+  "autoExpireObject": false,
+  "runtimeEnvironmentId": "@jlLTpTCJN0YcDSn9pP6OgK",
+  "maxLogs": 10,
+  "verbose": false,
+  "lastRunTime": 1752179438000,
+  "mappingId": "@8U9zyRld7ASjbkOtJviU65",
+  "frsGuid": "7xOCHpGbeimg4Mty8RSPWR",
+  "shortDescription": "@connectionSource= Input Ontap Src , @transformati...",
+  "sessionPropertiesList": [
+    {
+      "name": "Allow Temporary Sequence for Pushdown",
+      "value": "NO",
+      "recommended": false
+    },
+    {
+      "name": "Allow Temporary View for Pushdown",
+      "value": "NO",
+      "recommended": false
+    },
+    {
+      "name": "Pushdown Optimization",
+      "value": "None",
+      "recommended": false
+    },
+    {
+      "name": "Pushdown Optimization Context",
+      "value": "None",
+      "recommended": false
+    },
+    {
+      "name": "Pushdown Optimization Fallback Option",
+      "value": "Partial PDO",
+      "recommended": false
+    }
+  ],
+  "hidden": false,
+  "enableCrossSchemaPushdown": true,
+  "enableParallelRun": false,
+  "autoTunedApplied": false,
+  "autoTunedAppliedType": "NONE",
+  "paramFileType": "PARAM_FILE_LOCAL",
+  "schemaMode": "async",
+  "valid": true,
+  "schemaValidationErrorCount": -1,
+  "parameterFileEncoding": "UTF-8",
+  "serverlessProperties": {},
+  "taskProperties": [
+    {
+      "@type": "taskProperty",
+      "name": "parameterFileDir",
+      "currentValue": "",
+      "type": "STRING",
+      "label": "label.parameterFileDir",
+      "required": false
+    },
+    {
+      "@type": "taskProperty",
+      "name": "parameterFileName",
+      "currentValue": "",
+      "type": "STRING",
+      "label": "label.parameterFileName",
+      "required": false
+    },
+    {
+      "@type": "taskProperty",
+      "name": "outboundMessageUrlQueueTime",
+      "currentValue": "",
+      "type": "NUMBER",
+      "label": "label.outboundMessageUrlQueueTime",
+      "required": false
+    },
+    {
+      "@type": "taskProperty",
+      "name": "outboundMessageUrlToken",
+      "currentValue": "",
+      "type": "STRING",
+      "label": "label.outboundMessageUrlToken",
+      "required": false
+    }
+  ],
+  "optimizationPlan": "NONE",
+  "isMidstreamPreview": false,
+  "allowMaxFieldLength": false,
+  "specialCharacterSupport": false,
+  "useUserDefinedOrder": false,
+  "parameters": [
+    {
+      "@type": "mtTaskParameter",
+      "id": 288306763,
+      "name": "$Src_Dummy$",
+      "type": "EXTENDED_SOURCE",
+      "label": "Conn_ISL_Input (Conn_ISL_Input)",
+      "description": "",
+      "uiProperties": {
+        "connectionParameterized": "true",
+        "paramName": "Conn_ISL_Input",
+        "paramLabel": "Conn_ISL_Input",
+        "paramType-mapping": "Connection",
+        "logcnx": "Conn_ISL_Input",
+        "isSelectDistinct": "false",
+        "isMsrcFilterParameterized": "false",
+        "isMsrcSortParameterized": "false",
+        "objlabel": "FlatFile_Dummy",
+        "origobjlabel": "FlatFile_Dummy",
+        "objectParameterized": "true",
+        "objDesc": "",
+        "objectParamName": "FlatFile_Dummy",
+        "objectParamType-mapping": "DataObject",
+        "originalPath": "Src_Dummy"
+      },
+      "sourceConnectionId": "@elyO1liYB8ijb8eOo9ujYD",
+      "newFlatFile": false,
+      "newObject": false,
+      "showBusinessNames": true,
+      "naturalOrder": true,
+      "truncateTarget": false,
+      "bulkApiDBTarget": false,
+      "customFuncCfg": {
+        "@type": "customFuncConfig",
+        "id": -1,
+        "connections": [],
+        "inputMap": [],
+        "outputFields": []
+      },
+      "targetRefsV2": {},
+      "targetUpdateColumns": [],
+      "fieldOrderList": [],
+      "extendedObject": {
+        "@type": "extendedObject",
+        "object": {
+          "@type": "mObject",
+          "name": "items_dummy.txt",
+          "label": "items_dummy.txt",
+          "metadataUpdated": false,
+          "relations": [],
+          "children": []
+        },
+        "singleMode": true,
+        "objects": [
+          {
+            "@type": "mObject",
+            "name": "items_dummy.txt",
+            "label": "items_dummy.txt",
+            "metadataUpdated": false,
+            "relations": [],
+            "children": []
+          }
+        ],
+        "filters": [],
+        "sortFields": []
+      },
+      "runtimeAttrs": {},
+      "isRESTModernSource": true,
+      "commandType": 0,
+      "isFileList": false,
+      "handleSpecialChars": false,
+      "handleDecimalRoundOff": false,
+      "frsAsset": false,
+      "dynamicFileName": false,
+      "excludeDynamicFileNameField": false,
+      "currentlyProcessedFileName": false,
+      "retainFieldMetadata": false,
+      "useExactSrcNames": false,
+      "userUpdated": true,
+      "fetchMode": "ORIGINAL",
+      "tgtObjectAttributes": {},
+      "runtimeParameterData": {
+        "@type": "mtTaskRuntimeParameterData",
+        "isConnectionRuntimeParameter": false,
+        "isObjectRuntimeParameter": false,
+        "connectionParameterName": "Conn_ISL_Input",
+        "objectParameterName": "FlatFile_Dummy"
+      },
+      "overridableProperties": [
+        {
+          "@type": "overridableProperty",
+          "id": "defaultPrecision",
+          "labelKey": "Src_Dummy_defaultPrecision",
+          "type": "integer",
+          "hidden": false,
+          "required": false,
+          "defaultValue": "",
+          "renderingHints": {}
+        },
+        {
+          "@type": "overridableProperty",
+          "id": "defaultScale",
+          "labelKey": "Src_Dummy_defaultScale",
+          "type": "integer",
+          "hidden": false,
+          "required": false,
+          "defaultValue": "",
+          "renderingHints": {}
+        },
+        {
+          "@type": "overridableProperty",
+          "id": "defaultNativeDataType",
+          "labelKey": "Src_Dummy_defaultNativeDataType",
+          "type": "string",
+          "hidden": false,
+          "required": false,
+          "defaultValue": "",
+          "renderingHints": {}
+        }
+      ],
+      "overriddenFields": []
+    },
+    {
+      "@type": "mtTaskParameter",
+      "id": 288306764,
+      "name": "$Tgt_Dummy$",
+      "type": "TARGET",
+      "label": "Conn_ISL_Output (Conn_ISL_Output)",
+      "description": "",
+      "uiProperties": {
+        "connectionParameterized": "true",
+        "paramName": "Conn_ISL_Output",
+        "paramLabel": "Conn_ISL_Output",
+        "paramType-mapping": "Connection",
+        "logcnx": "Conn_ISL_Output",
+        "objlabel": "FlatFile_Dummy_Output",
+        "origobjlabel": "FlatFile_Dummy_Output",
+        "objectParameterized": "true",
+        "objDesc": "",
+        "objectParamName": "FlatFile_Dummy_Output",
+        "objectParamType-mapping": "DataObject",
+        "defaultTargetUpdateColumns": "",
+        "supportApplyDDLChanges": "true",
+        "originalPath": "Tgt_Dummy"
+      },
+      "targetConnectionId": "@aGki7jmHRRTiFlTNnP18WK",
+      "targetObject": "Dummy_CFIN01.txt",
+      "targetObjectLabel": "Dummy_CFIN01.txt",
+      "newFlatFile": false,
+      "newObject": false,
+      "showBusinessNames": true,
+      "naturalOrder": true,
+      "truncateTarget": false,
+      "bulkApiDBTarget": false,
+      "operationType": "Insert",
+      "customFuncCfg": {
+        "@type": "customFuncConfig",
+        "id": -1,
+        "connections": [],
+        "inputMap": [],
+        "outputFields": []
+      },
+      "targetRefsV2": {},
+      "targetUpdateColumns": [],
+      "fieldOrderList": [],
+      "extendedObject": {
+        "@type": "extendedObject",
+        "singleMode": true,
+        "filters": [],
+        "sortFields": []
+      },
+      "runtimeAttrs": {},
+      "isRESTModernSource": true,
+      "commandType": 0,
+      "isFileList": false,
+      "handleSpecialChars": false,
+      "handleDecimalRoundOff": false,
+      "frsAsset": false,
+      "dynamicFileName": false,
+      "excludeDynamicFileNameField": false,
+      "currentlyProcessedFileName": false,
+      "retainFieldMetadata": false,
+      "objectName": "Dummy_CFIN01.txt",
+      "objectLabel": "Dummy_CFIN01.txt",
+      "useExactSrcNames": false,
+      "userUpdated": true,
+      "fetchMode": "ORIGINAL",
+      "tgtObjectAttributes": {},
+      "runtimeParameterData": {
+        "@type": "mtTaskRuntimeParameterData",
+        "isConnectionRuntimeParameter": false,
+        "isObjectRuntimeParameter": false,
+        "connectionParameterName": "Conn_ISL_Output",
+        "objectParameterName": "FlatFile_Dummy_Output"
+      },
+      "overridableProperties": [],
+      "overriddenFields": []
+    }
+  ],
+  "sequences": [],
+  "inOutParameters": [
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_Schema",
+      "description": "",
+      "initialValue": "",
+      "datatype": "STRING",
+      "precision": "100",
+      "scale": "0",
+      "retentionPolicy": "NEVER",
+      "aggregationType": "MAX",
+      "currentValue": ""
+    },
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_View",
+      "description": "",
+      "initialValue": "",
+      "datatype": "STRING",
+      "precision": "100",
+      "scale": "0",
+      "retentionPolicy": "NEVER",
+      "aggregationType": "MAX",
+      "currentValue": ""
+    },
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_LKP_Table",
+      "description": "",
+      "initialValue": "",
+      "datatype": "STRING",
+      "precision": "100",
+      "scale": "0",
+      "retentionPolicy": "NEVER",
+      "aggregationType": "MAX",
+      "currentValue": ""
+    },
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_FileName",
+      "description": "",
+      "initialValue": "",
+      "datatype": "STRING",
+      "precision": "50",
+      "scale": "0",
+      "retentionPolicy": "NEVER",
+      "aggregationType": "MAX",
+      "currentValue": ""
+    },
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_CR_FileName",
+      "description": "",
+      "initialValue": "",
+      "datatype": "STRING",
+      "precision": "100",
+      "scale": "0",
+      "retentionPolicy": "NEVER",
+      "aggregationType": "MAX",
+      "currentValue": ""
+    },
+    {
+      "@type": "mtTaskInOutParameter",
+      "id": "-1",
+      "name": "p_Filter",
+      "description": "",
+      "initialValue": "",
+      "datatype": "INTEGER",
+      "precision": "10",
+      "scale": "0",
+      "retentionPolicy": "NEVER",
+      "aggregationType": "MAX",
+      "currentValue": ""
+    }
+  ],
+  "connRuntimeAttrs": []
+}]

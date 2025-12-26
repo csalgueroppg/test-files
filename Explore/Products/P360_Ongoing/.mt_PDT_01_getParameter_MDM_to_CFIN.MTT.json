@@ -1,0 +1,113 @@
+{
+  "objectInfo" : {
+    "id" : "7xOCHpGbeimg4Mty8RSPWR",
+    "name" : "mt_PDT_01_getParameter_MDM_to_CFIN",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NF7"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= Input Ontap Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Ontap Tgt, @additionalText= This mapping task get all parameters for the CFIN process,@sources[@FF_OTP_Input_MX], @targets[@FF_OTP_Output_MX]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-08-19T21:54:33.792Z",
+  "objectRefs" : [ {
+    "id" : "8U9zyRld7ASjbkOtJviU65",
+    "name" : "m_PDT_01_getParameter",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000003KI"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= Input Ontap Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Ontap Tgt, @additionalText= This mapping get all parameters for the CFIN process,@sources[@FF_OTP_Input_MX], @targets[@FF_OTP_Output_MX]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "aGki7jmHRRTiFlTNnP18WK",
+    "name" : "FF_OTP_Output_MX",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000JF"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "elyO1liYB8ijb8eOo9ujYD",
+    "name" : "FF_OTP_Input_MX",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000JE"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "jlLTpTCJN0YcDSn9pP6OgK",
+    "name" : "SDCMMDMSA01",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000006"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

@@ -1,0 +1,767 @@
+{
+  "content" : {
+    "description" : "@connectionSource= IICS OnTap, @connectionTarget= IICS OnTap, @transformation= Set Parameters, @dataType= Paramaters, @sources=[@connection1= Conn_MDM], @targets=[@connection1= Conn_Tgt_S3]",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_MAT_00_getParameters_DL",
+    "links" : [
+      {
+        "link" : "Exp_Assing_Parameters -> Tgt_Csv_S3"
+      },
+      {
+        "link" : "Src_MDM_View -> Exp_Assing_Parameters"
+      }
+    ],
+    "parameters" : [
+      {
+        "description" : "Connection to MDM",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_MDM",
+        "name" : "Conn_MDM"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "SrcTableName",
+        "name" : "SrcTableName"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_Tgt_S3",
+        "name" : "Conn_Tgt_S3"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "TgtFileName",
+        "name" : "TgtFileName"
+      }
+    ],
+    "transformations" : [
+      {
+        "description" : "Source Dummy",
+        "createTime" : "2023-03-07T22:45:06.099Z",
+        "name" : "Src_MDM_View",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_MDM"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "SrcTableName"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-03-07T22:45:06.101Z",
+        "name" : "Tgt_Csv_S3",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "requestXmlSize",
+            "value" : "1024"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "All Input"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_Tgt_S3"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "TgtFileName"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "dataFormat" : {
+            "formatId" : "Flat",
+            "validateHSchema" : "false",
+            "attributes" : [
+              {
+                "name" : "delimiter",
+                "value" : ","
+              },
+              {
+                "name" : "escapeChar",
+                "value" : "\\"
+              },
+              {
+                "name" : "qualifier",
+                "value" : "\""
+              },
+              {
+                "name" : "qualifierMode",
+                "value" : "MINIMAL"
+              },
+              {
+                "name" : "codePage",
+                "value" : "UTF-8"
+              },
+              {
+                "name" : "headerLineNumber",
+                "value" : "1"
+              },
+              {
+                "name" : "firstDataRow",
+                "value" : "2"
+              },
+              {
+                "name" : "targetHeader",
+                "value" : "With Header"
+              },
+              {
+                "name" : "importColumnFromFirstLine",
+                "value" : "true"
+              },
+              {
+                "name" : "generateHeader",
+                "value" : "true"
+              },
+              {
+                "name" : "fixedWidthMode",
+                "value" : "false"
+              },
+              {
+                "name" : "escapeCharacterDataRetained",
+                "value" : "false"
+              },
+              {
+                "name" : "maxRowsToPreview",
+                "value" : "0"
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-03-07T22:45:19.035Z",
+        "name" : "Exp_Assing_Parameters",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "Shema_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$Shema"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "Schema_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_Shema_out, Shema_in_v)"
+          },
+          {
+            "name" : "C_BO_PRDCT_MSTR_XREF_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$C_BO_PRDCT_MSTR_XREF"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "C_BO_PRDCT_MSTR_XREF_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_C_BO_PRDCT_MSTR_XREF_out, C_BO_PRDCT_MSTR_XREF_in_v)"
+          },
+          {
+            "name" : "C_BO_PRDCT_ALT_ID_XREF_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$C_BO_PRDCT_ALT_ID_XREF"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "C_BO_PRDCT_ALT_ID_XREF_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_C_BO_PRDCT_ALT_ID_XREF_out,C_BO_PRDCT_ALT_ID_XREF_in_v)"
+          },
+          {
+            "name" : "C_BO_PRDCT_BRND_XREF_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$C_BO_PRDCT_BRND_XREF"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "C_BO_PRDCT_BRND_XREF_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_C_BO_PRDCT_BRND_XREF_out,C_BO_PRDCT_BRND_XREF_in_v)"
+          },
+          {
+            "name" : "C_BO_PRDCT_DSCR_XREF_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$C_BO_PRDCT_DSCR_XREF"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "C_BO_PRDCT_DSCR_XREF_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_C_BO_PRDCT_DSCR_XREF_out,C_BO_PRDCT_DSCR_XREF_in_v)"
+          },
+          {
+            "name" : "C_BO_PRDCT_LNKNG_XREF_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$C_BO_PRDCT_LNKNG_XREF"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "C_BO_PRDCT_LNKNG_XREF_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_C_BO_PRDCT_LNKNG_XREF_out,C_BO_PRDCT_LNKNG_XREF_in_v)"
+          },
+          {
+            "name" : "C_BO_PRDCT_LGSTC_XREF_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$C_BO_PRDCT_LGSTC_XREF"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "C_BO_PRDCT_LGSTC_XREF_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_C_BO_PRDCT_LGSTC_XREF_out,C_BO_PRDCT_LGSTC_XREF_in_v)"
+          },
+          {
+            "name" : "C_BO_PRDCT_PRNT_CD_XREF_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$C_BO_PRDCT_PRNT_CD_XREF"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "C_BO_PRDCT_PRNT_CD_XREF_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_C_BO_PRDCT_PRNT_CD_XREF_out,C_BO_PRDCT_PRNT_CD_XREF_in_v)"
+          },
+          {
+            "name" : "C_BO_PRDCT_MSTR_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$C_BO_PRDCT_MSTR"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "C_BO_PRDCT_MSTR_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_C_BO_PRDCT_MSTR_out,C_BO_PRDCT_MSTR_in_v)"
+          },
+          {
+            "name" : "C_BO_PRDCT_XREF_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$C_BO_PRDCT_XREF"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "C_BO_PRDCT_XREF_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_C_BO_PRDCT_XREF_out,C_BO_PRDCT_XREF_in_v)"
+          },
+          {
+            "name" : "C_BO_PRDCT_HRCHY_XREF_in_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$C_BO_PRDCT_HRCHY_XREF"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "C_BO_PRDCT_HRCHY_XREF_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_C_BO_PRDCT_HRCHY_XREF_out,C_BO_PRDCT_HRCHY_XREF_in_v)"
+          },
+          {
+            "name" : "LastUpdateDate_v",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 30,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "$$LastUpdateDate"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "DateFiler_out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetVariable($$p_DateFilter,LastUpdateDate_v)"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      }
+    ],
+    "variables" : [
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "TableSrcNameMDM",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "TableSrcNameMDM"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "FileTgtNameS3",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 10,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_C_BO_PRDCT_MSTR_XREF_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_C_BO_PRDCT_MSTR_XREF_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_C_BO_PRDCT_ALT_ID_XREF_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_C_BO_PRDCT_ALT_ID_XREF_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_C_BO_PRDCT_BRND_XREF_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_C_BO_PRDCT_BRND_XREF_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_C_BO_PRDCT_DSCR_XREF_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_C_BO_PRDCT_DSCR_XREF_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_C_BO_PRDCT_LNKNG_XREF_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_C_BO_PRDCT_LNKNG_XREF_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_C_BO_PRDCT_LGSTC_XREF_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_C_BO_PRDCT_LGSTC_XREF_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_C_BO_PRDCT_PRNT_CD_XREF_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_C_BO_PRDCT_PRNT_CD_XREF_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_Shema_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 50,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_Shema_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_FileName_PRDCT_MSTR_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_FileName_PRDCT_MSTR_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_FileName_PRDCT_ALT_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_FileName_PRDCT_ALT_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_FileName_PRDCT_BRND_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_FileName_PRDCT_BRND_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_FileName_PRDCT_DSCR_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_FileName_PRDCT_DSCR_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_FileName_PRDCT_LNKNG_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_FileName_PRDCT_LNKNG_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_FileName_PRDCT_PRNT_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_FileName_PRDCT_PRNT_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_C_BO_PRDCT_MSTR_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_C_BO_PRDCT_MSTR_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_C_BO_PRDCT_XREF_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_C_BO_PRDCT_HRCHY_XREF_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_C_BO_PRDCT_HRCHY_XREF_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_FileName_PRDCT_HRCHY_out",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0,
+        "description" : "p_FileName_PRDCT_HRCHY_out"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_DateFilter",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-05-30 16:29:00 CST"
+}

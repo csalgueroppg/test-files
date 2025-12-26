@@ -1,0 +1,53 @@
+{
+  "objectInfo" : {
+    "id" : "0Ummm4ACNAJfxWI1VRIvAc",
+    "name" : "BS_SIntInsertProductSapCFIN",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T472700000000003K"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "010T4728000000000053",
+        "value" : "0Ummm4ACNAJfxWI1VRIvAc@SIntInsertProductSapCFIN"
+      } ],
+      "additionalInfo" : {
+        "description" : "@dataOperation=SIntInsertProductSapCFIN, @dataType=Materiales, @apiName=SIntInsertProductSapCFIN, @additionalText= This Business Service send the material info to BAPI service",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-08-19T21:55:46.248Z",
+  "objectRefs" : [ {
+    "id" : "2N7Ivbm3iUAiJhRWN7g2Ux",
+    "name" : "WS_SIntInsertProductSapCFIN",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000EV"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

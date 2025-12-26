@@ -1,0 +1,84 @@
+{
+  "objectInfo" : {
+    "id" : "5G1rkBTiMMSbI2UpwXayUt",
+    "name" : "tf_P360_01_OnGoingXmlToS3Idq",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "YEORUDv2vSx0aa-gt-28810857-2021-03-25T17:32:59.809Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "OnGoing XML Transfer from Isilon to the S3 Product Bucket and IDQ Input Folder",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "9ew81IGCjUshOwChB1zgWT",
+    "name" : "SDCAMDMSA01",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000004"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "182AF7l3BgQe7qeYCa8d4G",
+    "name" : "fl_P360_01_Ongoing_Flag_XMLS3toIDQ",
+    "type" : "MI_FILE_LISTENER",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "10489"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Transfer  XML files of ERP's Products P360",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "fnNBm2sGnW1iLR7uIDCS2n",
+    "name" : "fl_P360_02_Ongoing_XMLS3toIDQ",
+    "type" : "MI_FILE_LISTENER",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "10490"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "OnGoing XML Transfer from Isilon to the S3 Product Bucket",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  } ]
+}

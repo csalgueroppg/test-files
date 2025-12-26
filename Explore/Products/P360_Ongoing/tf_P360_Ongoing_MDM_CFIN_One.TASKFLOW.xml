@@ -1,0 +1,1150 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Fncm6S6fPAreFRq-gt-11687274-2023-06-06T17:16:24.512Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_P360_Ongoing_MDM_CFIN_One</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>JARangel.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2023-06-06T17:16:25Z</types1:CreationDate>
+      <types1:ModifiedBy>MAJuarez.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-01-23T06:18:37Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>MAJuarez.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-01-23T07:16:13Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_P360_Ongoing_MDM_CFIN_One/tf_P360_Ongoing_MDM_CFIN_One.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_P360_Ongoing_MDM_CFIN_One"
+                   name="tf_P360_Ongoing_MDM_CFIN_One"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="vTempPathISL" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempECode" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEDetail" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEReason" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempMaxRetries" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempRetries" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempWairRetries" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="dt_P360_OG_DeltaRecalculate_MDM_CFIN"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-P360-OG-DeltaRecalculate-MDM-CFIN-an3l1krtwvTb1CujplNGwq</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEProcess" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_TicketErrorDeltaRecalculate"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTemp_Env" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tf_Ongoing_MDM_to_CFIN" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:InternalInfaSubTaskflowField</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="dt_getParameters" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="untitled1" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_UpdateDeltaParams" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="dt_P360_OG_GetTime_MDM_CFIN" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-P360-OG-GetTime-MDM-CFIN-7c1q20sb3whfNsuLg5C1mn</option>
+                  </options>
+               </field>
+               <field description="" name="CT_TicketErrorDeltaGetTime" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_TicketErrorDeltaGetPaameters"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_TicketErrorDeltaUpdateCDM" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="linocnpd" targetId="kqge9sn7"/>
+               </start>
+               <assignment id="kqge9sn7">
+                  <title>AssignSettings</title>
+                  <operation source="constant" to="temp.vTempPathISL">//nac.ppg.com/dfs/wu1/nas/it/IICS/Dev/Admin/cmd/Products/</operation>
+                  <operation source="formula" to="temp.vTempFileName">
+                     <expression language="XQuery">fn:concat('OnGoing_P360_MDM_CFIN_',fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT5H")),"[Y0001][M01][D01][H01][m01][s01]"))</expression>
+                  </operation>
+                  <operation source="constant" to="temp.vTempMaxRetries">3</operation>
+                  <operation source="constant" to="temp.vTempRetries">0</operation>
+                  <operation source="constant" to="temp.vTempWairRetries">10</operation>
+                  <operation source="constant" to="temp.vTemp_Env">Dev</operation>
+                  <link id="liovkv5a" targetId="linocnqr"/>
+               </assignment>
+               <eventContainer id="linocnqr">
+                  <service id="linocnpp">
+                     <title>dt_getParameters</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_getParameter_MDM_to_CFIN</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">7xOCHpGbeimg4Mty8RSPWR</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR">temp.dt_getParameters</operation>
+                           <operation source="formula"
+                                      to="mt-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR/taskProperties[1]/parameterFileDir">
+                              <expression language="XQuery">fn:concat('\\\\nac.ppg.com\\dfs\\wu1\\nas\\it\\IICS\\', $temp.vTemp_Env, '\\etl_work\\config\\Products\\' )
+</expression>
+                           </operation>
+                           <operation source="constant"
+                                      to="mt-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR/taskProperties[1]/parameterFileName">mt_Ongoing_MDM_CFIN.param</operation>
+                           <operation source="constant"
+                                      to="mt-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR/inout[1]/p_LastUpdateDate_out">''</operation>
+                           <operation source="constant"
+                                      to="mt-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR/inout[1]/p_ProcessTimeMin_out">0</operation>
+                           <operation source="constant"
+                                      to="mt-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR/inout[1]/p_ParamName_out">''</operation>
+                           <operation source="constant"
+                                      to="mt-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR/inout[1]/p_Path_out">''</operation>
+                           <operation source="formula"
+                                      to="temp.dt_getParameters[1]/taskProperties[1]/parameterFileDir">
+                              <expression language="XQuery">fn:concat('\\\\nac.ppg.com\\dfs\\wu1\\nas\\it\\IICS\\', $temp.vTemp_Env, '\\etl_work\\config\\Products\\' )
+</expression>
+                           </operation>
+                           <operation source="constant"
+                                      to="temp.dt_getParameters[1]/taskProperties[1]/parameterFileName">mt_Ongoing_MDM_CFIN.param</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.dt_getParameters/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.dt_getParameters/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.dt_getParameters/inout/p_Condition_out">p_Condition_out</operation>
+                        <operation source="field" to="temp.dt_getParameters/inout/p_Schema_out">p_Schema_out</operation>
+                        <operation source="field" to="temp.dt_getParameters/inout/p_Table_out">p_Table_out</operation>
+                        <operation source="field" to="temp.dt_getParameters/inout/p_LKPTable_out">p_LKPTable_out</operation>
+                        <operation source="field" to="temp.dt_getParameters/inout/p_FileName_out">p_FileName_out</operation>
+                        <operation source="field" to="temp.dt_getParameters/inout/p_LastUpdateDate_out">p_LastUpdateDate_out</operation>
+                        <operation source="field" to="temp.dt_getParameters/inout/p_ProcessTimeMin_out">p_ProcessTimeMin_out</operation>
+                        <operation source="field" to="temp.dt_getParameters/inout/p_Path_out">p_Path_out</operation>
+                        <operation source="field" to="temp.dt_getParameters/inout/p_ParamName_out">p_ParamName_out</operation>
+                        <operation source="field" to="temp.dt_getParameters/inout/p_Control_sndprn_out">p_Control_sndprn_out</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="linocnqt">
+                     <link id="linocnqu" targetId="linocnqr" type="containerLink"/>
+                  </flow>
+                  <flow id="linocnqw">
+                     <assignment id="lip12muu">
+                        <title>AssignRetriesGetParameters</title>
+                        <operation source="formula" to="temp.vTempRetries">
+                           <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                        </operation>
+                        <link id="lip12muv" targetId="lip12mps"/>
+                     </assignment>
+                     <container id="lip12mps" type="exclusive">
+                        <title>d_RetriesCMX 1 1</title>
+                        <flow id="lip12mpt">
+                           <assignment id="lip12mpu">
+                              <title>AssignErrorDeltaVarsG</title>
+                              <operation source="formula" to="temp.vTempEProcess">
+                                 <expression language="XQuery">fn:concat('Recalculate GetParams MDM_CFIN',', Item Timestamp (EST): ',fn:substring-after($temp.vTempFileName ,'MDM_CFIN_'))</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempECode">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_getParameters[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempEDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_getParameters[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempEReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_getParameters[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <link id="lip12mq5" targetId="lip12mpv"/>
+                           </assignment>
+                           <eventContainer id="lip12mpv">
+                              <service id="lip12mpy">
+                                 <title>CT_TicketErrorDeltaGetPaameters</title>
+                                 <serviceName>ICSExecuteCommandTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Task Name" source="constant">CT_TicketErrorDeltaGetPaameters</parameter>
+                                    <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                    <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                                    <parameter name="Max Wait" source="constant">86400</parameter>
+                                    <parameter name="Script Name" source="formula">
+                                       <expression language="XQuery">fn:concat($temp.vTempPathISL ,'script_error_OG_P360.cmd')</expression>
+                                    </parameter>
+                                    <parameter name="Input Arguments" source="formula">
+                                       <expression language="XQuery">fn:concat('"','Comex MDM','"',',','"','tf_P360_Ongoing_ComexMDM_One','"',',','"',$temp.vTempEProcess,'"',',','"',$temp.vTempECode,'"',',','"',$temp.vTempEDetail,'"',',','"',$temp.vTempEReason,'"',',','"','Comex_MDM','"')</expression>
+                                    </parameter>
+                                    <parameter name="Work Directory" source="constant"/>
+                                    <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                                    <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="INFA-commandTask">temp.CT_TicketErrorDeltaRecalculate</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                       <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                          <expression language="XQuery">fn:concat($temp.vTempPathISL ,'script_error_OG_P360.cmd')</expression>
+                                       </operation>
+                                       <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                                          <expression language="XQuery">fn:concat('"','MDM_CFIN','"',',','"','tf_P360_Ongoing_MDM_CFIN_One','"',',','"',$temp.vTempEProcess,'"',',','"',$temp.vTempECode,'"',',','"',$temp.vTempEDetail,'"',',','"',$temp.vTempEReason,'"',',','"','MDM_CFIN','"')</expression>
+                                       </operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.CT_TicketErrorDeltaGetPaameters/output/Run_Id">Run Id</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaGetPaameters/output/Start_Time">Start Time</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaGetPaameters/output/End_Time">End Time</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaGetPaameters/output/Exit_Code">Exit Code</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaGetPaameters/output/Execution_Status">Execution Status</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaGetPaameters/output/Std_Error">Std Error</operation>
+                                 </serviceOutput>
+                              </service>
+                              <flow id="lip12mpw">
+                                 <link id="lip12mq9" targetId="lip12mpv" type="containerLink"/>
+                              </flow>
+                              <flow id="lip12mpx">
+                                 <link id="lip12mqa" targetId="lip12mpv" type="containerLink"/>
+                              </flow>
+                              <link id="lip12mq6" targetId="lip12mpw" type="containerLink"/>
+                              <link id="lip12mq8" targetId="lip12mpz"/>
+                              <events>
+                                 <catch faultField="temp.CT_TicketErrorDeltaGetPaameters/fault"
+                                        id="kqge9svl"
+                                        interrupting="true"
+                                        name="error">
+                                    <link id="lip12mq7" targetId="lip12mpx" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <throw id="lip12mpz">
+                              <title>ThrowDeltaRecalculate 1 1</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">temp.vTempECode</parameter>
+                                 <parameter name="detail" source="field" updatable="true">temp.vTempEDetail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">temp.vTempEReason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <flow id="lip12mq0">
+                           <wait id="lip12mq1">
+                              <title>WaitRetryDeltaGetParams</title>
+                              <duration source="formula">
+                                 <function name="duration_expression">
+                                    <arg name="value">{$temp.vTempWairRetries}</arg>
+                                    <arg name="scale">S</arg>
+                                    <arg name="businessDays"/>
+                                 </function>
+                              </duration>
+                              <link id="lip12mqb" targetId="lip12mq2"/>
+                           </wait>
+                           <jumpTo id="lip12mq2">
+                              <link id="lip12mqc" targetId="linocnqr"/>
+                           </jumpTo>
+                        </flow>
+                        <link id="lip12mq3" targetId="lip12mpt" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.vTempMaxRetries}</arg>
+                                 <arg name="right">{$temp.vTempRetries }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lip12mq4" targetId="lip12mq0" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <link id="linocnqs" targetId="linocnqt" type="containerLink"/>
+                  <link id="linocnpr" targetId="kqge9snl"/>
+                  <events>
+                     <catch faultField="temp.dt_getParameters/fault"
+                            id="linocnmr"
+                            interrupting="true"
+                            name="error">
+                        <link id="linocnqv" targetId="linocnqw" type="containerLink"/>
+                     </catch>
+                     <catch faultField="temp.dt_getParameters/fault"
+                            id="linocnms"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="liovkvcl">
+                  <service id="liovkvag">
+                     <title>dt_P360_OG_GetTime_MDM_CFIN</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_P360_OG_GetTime_MDM_CFIN</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">7c1q20sb3whfNsuLg5C1mn</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-P360-OG-GetTime-MDM-CFIN-7c1q20sb3whfNsuLg5C1mn">temp.dt_P360_OG_GetTime_MDM_CFIN</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_GetTime_MDM_CFIN/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.dt_P360_OG_GetTime_MDM_CFIN/inout/p_Hora">p_Hora</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="lip12m4h">
+                     <link id="lip12m4i" targetId="liovkvcl" type="containerLink"/>
+                  </flow>
+                  <flow id="lip12m4k">
+                     <assignment id="lip12mc0">
+                        <title>AssignRetriesGetTime</title>
+                        <operation source="formula" to="temp.vTempRetries">
+                           <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                        </operation>
+                        <link id="lip12mc1" targetId="lip12m8i"/>
+                     </assignment>
+                     <container id="lip12m8i" type="exclusive">
+                        <title>d_RetriesCMX 1</title>
+                        <flow id="lip12m8j">
+                           <assignment id="lip12m8k">
+                              <title>AssignErrorDeltaVars 1</title>
+                              <operation source="formula" to="temp.vTempEProcess">
+                                 <expression language="XQuery">fn:concat('Recalculate GetTime MDM_CFIN',', Item Timestamp (EST): ',fn:substring-after($temp.vTempFileName ,'MDM_CFIN_'))</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempECode">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_P360_OG_GetTime_MDM_CFIN[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempEDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_P360_OG_GetTime_MDM_CFIN[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempEReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_P360_OG_GetTime_MDM_CFIN[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <link id="lip12m8v" targetId="lip12m8l"/>
+                           </assignment>
+                           <eventContainer id="lip12m8l">
+                              <service id="lip12m8o">
+                                 <title>CT_TicketErrorDeltaGetTime</title>
+                                 <serviceName>ICSExecuteCommandTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Task Name" source="constant">CT_TicketErrorDeltaGetTime</parameter>
+                                    <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                    <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                                    <parameter name="Max Wait" source="constant">86400</parameter>
+                                    <parameter name="Script Name" source="formula">
+                                       <expression language="XQuery">fn:concat($temp.vTempPathISL ,'script_error_OG_P360.cmd')</expression>
+                                    </parameter>
+                                    <parameter name="Input Arguments" source="formula">
+                                       <expression language="XQuery">fn:concat('"','Comex MDM','"',',','"','tf_P360_Ongoing_ComexMDM_One','"',',','"',$temp.vTempEProcess,'"',',','"',$temp.vTempECode,'"',',','"',$temp.vTempEDetail,'"',',','"',$temp.vTempEReason,'"',',','"','Comex_MDM','"')</expression>
+                                    </parameter>
+                                    <parameter name="Work Directory" source="constant"/>
+                                    <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                                    <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="INFA-commandTask">temp.CT_TicketErrorDeltaRecalculate</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                       <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                          <expression language="XQuery">fn:concat($temp.vTempPathISL ,'script_error_OG_P360.cmd')</expression>
+                                       </operation>
+                                       <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                                          <expression language="XQuery">fn:concat('"','MDM_CFIN','"',',','"','tf_P360_Ongoing_MDM_CFIN_One','"',',','"',$temp.vTempEProcess,'"',',','"',$temp.vTempECode,'"',',','"',$temp.vTempEDetail,'"',',','"',$temp.vTempEReason,'"',',','"','MDM_CFIN','"')</expression>
+                                       </operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.CT_TicketErrorDeltaGetTime/output/Run_Id">Run Id</operation>
+                                    <operation source="field" to="temp.CT_TicketErrorDeltaGetTime/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.CT_TicketErrorDeltaGetTime/output/End_Time">End Time</operation>
+                                    <operation source="field" to="temp.CT_TicketErrorDeltaGetTime/output/Exit_Code">Exit Code</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaGetTime/output/Execution_Status">Execution Status</operation>
+                                    <operation source="field" to="temp.CT_TicketErrorDeltaGetTime/output/Std_Error">Std Error</operation>
+                                 </serviceOutput>
+                              </service>
+                              <flow id="lip12m8m">
+                                 <link id="lip12m8z" targetId="lip12m8l" type="containerLink"/>
+                              </flow>
+                              <flow id="lip12m8n">
+                                 <link id="lip12m90" targetId="lip12m8l" type="containerLink"/>
+                              </flow>
+                              <link id="lip12m8w" targetId="lip12m8m" type="containerLink"/>
+                              <link id="lip12m8y" targetId="lip12m8p"/>
+                              <events>
+                                 <catch faultField="temp.CT_TicketErrorDeltaGetTime/fault"
+                                        id="kqge9svl"
+                                        interrupting="true"
+                                        name="error">
+                                    <link id="lip12m8x" targetId="lip12m8n" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <throw id="lip12m8p">
+                              <title>ThrowDeltaRecalculate 1</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">temp.vTempECode</parameter>
+                                 <parameter name="detail" source="field" updatable="true">temp.vTempEDetail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">temp.vTempEReason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <flow id="lip12m8q">
+                           <wait id="lip12m8r">
+                              <title>WaitRetryDelta_GetTime</title>
+                              <duration source="formula">
+                                 <function name="duration_expression">
+                                    <arg name="value">{$temp.vTempWairRetries}</arg>
+                                    <arg name="scale">S</arg>
+                                    <arg name="businessDays"/>
+                                 </function>
+                              </duration>
+                              <link id="lip12m91" targetId="lip12m8s"/>
+                           </wait>
+                           <jumpTo id="lip12m8s">
+                              <link id="lip12m92" targetId="liovkvcl"/>
+                           </jumpTo>
+                        </flow>
+                        <link id="lip12m8t" targetId="lip12m8j" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.vTempMaxRetries}</arg>
+                                 <arg name="right">{$temp.vTempRetries }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lip12m8u" targetId="lip12m8q" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <link id="lip12m4g" targetId="lip12m4h" type="containerLink"/>
+                  <link id="liovkvai" targetId="kqge9soc"/>
+                  <events>
+                     <catch faultField="temp.dt_P360_OG_GetTime_MDM_CFIN/fault"
+                            id="liovkvcj"
+                            interrupting="true"
+                            name="error">
+                        <link id="lip12m4j" targetId="lip12m4k" type="containerLink"/>
+                     </catch>
+                     <catch faultField="temp.dt_P360_OG_GetTime_MDM_CFIN/fault"
+                            id="liovkvck"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kqge9soc">
+                  <service id="kqge9so6">
+                     <title>dt_P360_OG_DeltaRecalculate_MDM_CFIN</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_P360_OG_DeltaRecalculate_MDM_CFIN</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">an3l1krtwvTb1CujplNGwq</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-P360-OG-DeltaRecalculateCMX">temp.dt_P360_OG_DeltaRecalculateCMX</operation>
+                           <operation source="field"
+                                      to="mt-P360-OG-DeltaRecalculate-MDM-CFIN-an3l1krtwvTb1CujplNGwq/inout[1]/p_ProcessTimeMin">temp.dt_getParameters[1]/inout[1]/p_ProcessTimeMin_out</operation>
+                           <operation source="field"
+                                      to="mt-P360-OG-DeltaRecalculate-MDM-CFIN-an3l1krtwvTb1CujplNGwq/inout[1]/p_ParamName">temp.dt_getParameters[1]/inout[1]/p_ParamName_out</operation>
+                           <operation source="field"
+                                      to="mt-P360-OG-DeltaRecalculate-MDM-CFIN-an3l1krtwvTb1CujplNGwq/inout[1]/p_Path">temp.dt_getParameters[1]/inout[1]/p_Path_out</operation>
+                           <operation source="field"
+                                      to="mt-P360-OG-DeltaRecalculate-MDM-CFIN-an3l1krtwvTb1CujplNGwq/inout[1]/p_LastUpdateDate">temp.dt_getParameters[1]/inout[1]/p_LastUpdateDate_out</operation>
+                           <operation source="field"
+                                      to="mt-P360-OG-DeltaRecalculate-MDM-CFIN-an3l1krtwvTb1CujplNGwq/inout[1]/p_Hora">temp.dt_P360_OG_GetTime_MDM_CFIN[1]/inout[1]/p_Hora</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Object_Name">Object Name</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Run_Id">Run Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/inout/p_LastUpdateDate">p_LastUpdateDate</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/inout/p_ProcessTimeMin">p_ProcessTimeMin</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/inout/p_Path">p_Path</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/inout/p_MaxRetries">p_MaxRetries</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/inout/p_DefaultTimeToWaitSeg">p_DefaultTimeToWaitSeg</operation>
+                        <operation source="field"
+                                   to="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/inout/p_ParamName">p_ParamName</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="kqge9soy">
+                     <assignment id="kqge9t3k">
+                        <title>AssignCleanRetries</title>
+                        <operation source="constant" to="temp.vTempRetries">0</operation>
+                        <link id="liovkv5c" targetId="liovkv5y"/>
+                     </assignment>
+                     <eventContainer id="liovkv5y">
+                        <service id="liovkv5b">
+                           <title>CT_UpdateDeltaParams</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_UpdateDeltaParams</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="formula">
+                                 <expression language="XQuery">fn:concat($temp.vTempPathISL ,'P360_OG_Comex.bat')</expression>
+                              </parameter>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_UpdateDeltaParams</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                    <expression language="XQuery">fn:concat('//nac.ppg.com/dfs/wu1/nas/it/IICS/', $temp.vTemp_Env,'/Admin/cmd/Products/P360_OG_MDM_to_CFIN.bat')</expression>
+                                 </operation>
+                                 <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                                    <expression language="XQuery">fn:concat('"',$temp.vTemp_Env ,'"')</expression>
+                                 </operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.CT_UpdateDeltaParams/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="liovkv60">
+                           <link id="liovkv61" targetId="liovkv5y" type="containerLink"/>
+                        </flow>
+                        <flow id="liovkv63">
+                           <assignment id="lip12n5p">
+                              <title>AssignRetriesDeltaUpdateCMD</title>
+                              <operation source="formula" to="temp.vTempRetries">
+                                 <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                              </operation>
+                              <link id="lip12n6i" targetId="lip12n0u"/>
+                           </assignment>
+                           <container id="lip12n0u" type="exclusive">
+                              <title>d_RetriesCMX 1 1 1</title>
+                              <flow id="lip12n0v">
+                                 <assignment id="lip12n0w">
+                                    <title>AssignErrorDeltaVarsG 1</title>
+                                    <operation source="formula" to="temp.vTempEProcess">
+                                       <expression language="XQuery">fn:concat('Recalculate CT_UpdateDelta MDM_CFIN',', Item Timestamp (EST): ',fn:substring-after($temp.vTempFileName ,'MDM_CFIN_'))</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vTempECode">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_UpdateDeltaParams[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vTempEDetail">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_UpdateDeltaParams[1]/fault[1]/detail[1]/errOutputDetail[1]/Std_Error,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vTempEReason">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_UpdateDeltaParams[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <link id="lip12n17" targetId="lip12n0x"/>
+                                 </assignment>
+                                 <eventContainer id="lip12n0x">
+                                    <service id="lip12n10">
+                                       <title>CT_TicketErrorDeltaUpdateCDM</title>
+                                       <serviceName>ICSExecuteCommandTask</serviceName>
+                                       <serviceGUID/>
+                                       <serviceInput>
+                                          <parameter name="Task Name" source="constant">CT_TicketErrorDeltaUpdateCDM</parameter>
+                                          <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                          <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                                          <parameter name="Max Wait" source="constant">86400</parameter>
+                                          <parameter name="Script Name" source="formula">
+                                             <expression language="XQuery">fn:concat($temp.vTempPathISL ,'script_error_OG_P360.cmd')</expression>
+                                          </parameter>
+                                          <parameter name="Input Arguments" source="formula">
+                                             <expression language="XQuery">fn:concat('"','Comex MDM','"',',','"','tf_P360_Ongoing_ComexMDM_One','"',',','"',$temp.vTempEProcess,'"',',','"',$temp.vTempECode,'"',',','"',$temp.vTempEDetail,'"',',','"',$temp.vTempEReason,'"',',','"','Comex_MDM','"')</expression>
+                                          </parameter>
+                                          <parameter name="Work Directory" source="constant"/>
+                                          <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                                          <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                                          <parameter name="taskField" source="nested">
+                                             <operation source="field" to="INFA-commandTask">temp.CT_TicketErrorDeltaRecalculate</operation>
+                                             <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                             <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                                <expression language="XQuery">fn:concat($temp.vTempPathISL ,'script_error_OG_P360.cmd')</expression>
+                                             </operation>
+                                             <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                                                <expression language="XQuery">fn:concat('"','MDM_CFIN','"',',','"','tf_P360_Ongoing_MDM_CFIN_One','"',',','"',$temp.vTempEProcess,'"',',','"',$temp.vTempECode,'"',',','"',$temp.vTempEDetail,'"',',','"',$temp.vTempEReason,'"',',','"','MDM_CFIN','"')</expression>
+                                             </operation>
+                                             <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                          </parameter>
+                                       </serviceInput>
+                                       <serviceOutput>
+                                          <operation source="field" to="temp.CT_TicketErrorDeltaUpdateCDM/output/Run_Id">Run Id</operation>
+                                          <operation source="field" to="temp.CT_TicketErrorDeltaUpdateCDM/output/Start_Time">Start Time</operation>
+                                          <operation source="field" to="temp.CT_TicketErrorDeltaUpdateCDM/output/End_Time">End Time</operation>
+                                          <operation source="field" to="temp.CT_TicketErrorDeltaUpdateCDM/output/Exit_Code">Exit Code</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_TicketErrorDeltaUpdateCDM/output/Execution_Status">Execution Status</operation>
+                                          <operation source="field" to="temp.CT_TicketErrorDeltaUpdateCDM/output/Std_Error">Std Error</operation>
+                                       </serviceOutput>
+                                    </service>
+                                    <flow id="lip12n0y">
+                                       <link id="lip12n1b" targetId="lip12n0x" type="containerLink"/>
+                                    </flow>
+                                    <flow id="lip12n0z">
+                                       <link id="lip12n1c" targetId="lip12n0x" type="containerLink"/>
+                                    </flow>
+                                    <link id="lip12n18" targetId="lip12n0y" type="containerLink"/>
+                                    <link id="lip12n1a" targetId="lip12n11"/>
+                                    <events>
+                                       <catch faultField="temp.CT_TicketErrorDeltaUpdateCDM/fault"
+                                              id="kqge9svl"
+                                              interrupting="true"
+                                              name="error">
+                                          <link id="lip12n19" targetId="lip12n0z" type="containerLink"/>
+                                       </catch>
+                                    </events>
+                                 </eventContainer>
+                                 <throw id="lip12n11">
+                                    <title>ThrowDeltaRecalculate 1 1 1</title>
+                                    <throwInput>
+                                       <parameter name="code" source="field" updatable="true">temp.vTempECode</parameter>
+                                       <parameter name="detail" source="field" updatable="true">temp.vTempEDetail</parameter>
+                                       <parameter name="reason" source="field" updatable="true">temp.vTempEReason</parameter>
+                                    </throwInput>
+                                 </throw>
+                              </flow>
+                              <flow id="lip12n12">
+                                 <wait id="lip12n13">
+                                    <title>WaitRetryDeltaCT</title>
+                                    <duration source="formula">
+                                       <function name="duration_expression">
+                                          <arg name="value">{$temp.vTempWairRetries}</arg>
+                                          <arg name="scale">S</arg>
+                                          <arg name="businessDays"/>
+                                       </function>
+                                    </duration>
+                                    <link id="lip12n1d" targetId="lip12n14"/>
+                                 </wait>
+                                 <jumpTo id="lip12n14">
+                                    <link id="lip12n1e" targetId="linocnqr"/>
+                                 </jumpTo>
+                              </flow>
+                              <link id="lip12n15" targetId="lip12n0v" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="equals">
+                                       <arg name="left">{$temp.vTempMaxRetries}</arg>
+                                       <arg name="right">{$temp.vTempRetries }</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="lip12n16" targetId="lip12n12" type="containerLink"/>
+                           </container>
+                        </flow>
+                        <link id="liovkv5z" targetId="liovkv60" type="containerLink"/>
+                        <link id="liovkv5d" targetId="kqge9szb"/>
+                        <events>
+                           <catch faultField="temp.CT_UpdateDeltaParams/fault"
+                                  id="kqge9t2g"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="liovkv62" targetId="liovkv63" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <container id="kqge9szb" type="exclusive">
+                        <title>d_FlagDelta</title>
+                        <flow id="kqge9szd">
+                           <subflow id="kqge9t09">
+                              <title>tf_Ongoing_MDM_to_CFIN</title>
+                              <subflowGUID>1x2c1fUvl0ZhRBNMYp1zQ0</subflowGUID>
+                              <subflowPath>tf_Ongoing_MDM_to_CFIN</subflowPath>
+                              <runForEach>false</runForEach>
+                              <input/>
+                              <outputDef/>
+                              <link id="ks0y5udl" targetId="kqge9t1j"/>
+                           </subflow>
+                           <jumpTo id="kqge9t1j">
+                              <link id="kqge9t1k" targetId="linocnqr"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="kqge9szg">
+                           <link id="kqge9szh" targetId="kqge9szb" type="containerLink"/>
+                        </flow>
+                        <link id="kqge9szc" targetId="kqge9szd" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN[1]/output[1]/Success_Target_Rows}</arg>
+                                 <arg name="right">{2}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kqge9szf" targetId="kqge9szg" type="containerLink"/>
+                     </container>
+                     <link id="kqge9soz" targetId="kqge9soc" type="containerLink"/>
+                  </flow>
+                  <flow id="kqge9sp1">
+                     <assignment id="kqge9spc">
+                        <title>AssignRetries</title>
+                        <operation source="formula" to="temp.vTempRetries">
+                           <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                        </operation>
+                        <link id="kqge9spu" targetId="kqge9spt"/>
+                     </assignment>
+                     <container id="kqge9spt" type="exclusive">
+                        <title>d_RetriesCMX</title>
+                        <flow id="kqge9spw">
+                           <assignment id="kqge9ssf">
+                              <title>AssignErrorDeltaVars</title>
+                              <operation source="formula" to="temp.vTempEProcess">
+                                 <expression language="XQuery">fn:concat('Recalculate MDM_CFIN',', Item Timestamp (EST): ',fn:substring-after($temp.vTempFileName ,'MDM_CFIN_'))</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempECode">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempEDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempEReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <link id="kqge9ssg" targetId="kqge9svm"/>
+                           </assignment>
+                           <eventContainer id="kqge9svm">
+                              <service id="kqge9ss2">
+                                 <title>CT_TicketErrorDeltaRecalculate</title>
+                                 <serviceName>ICSExecuteCommandTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Task Name" source="constant">CT_TicketErrorDeltaRecalculate</parameter>
+                                    <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                    <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                                    <parameter name="Max Wait" source="constant">86400</parameter>
+                                    <parameter name="Script Name" source="formula">
+                                       <expression language="XQuery">fn:concat($temp.vTempPathISL ,'script_error_OG_P360.cmd')</expression>
+                                    </parameter>
+                                    <parameter name="Input Arguments" source="formula">
+                                       <expression language="XQuery">fn:concat('"','Comex MDM','"',',','"','tf_P360_Ongoing_ComexMDM_One','"',',','"',$temp.vTempEProcess,'"',',','"',$temp.vTempECode,'"',',','"',$temp.vTempEDetail,'"',',','"',$temp.vTempEReason,'"',',','"','Comex_MDM','"')</expression>
+                                    </parameter>
+                                    <parameter name="Work Directory" source="constant"/>
+                                    <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                                    <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="INFA-commandTask">temp.CT_TicketErrorDeltaRecalculate</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                       <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                          <expression language="XQuery">fn:concat($temp.vTempPathISL ,'script_error_OG_P360.cmd')</expression>
+                                       </operation>
+                                       <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                                          <expression language="XQuery">fn:concat('"','MDM_CFIN','"',',','"','tf_P360_Ongoing_MDM_CFIN_One','"',',','"',$temp.vTempEProcess,'"',',','"',$temp.vTempECode,'"',',','"',$temp.vTempEDetail,'"',',','"',$temp.vTempEReason,'"',',','"','MDM_CFIN','"')</expression>
+                                       </operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.CT_TicketErrorDeltaRecalculate/output/Run_Id">Run Id</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaRecalculate/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.CT_TicketErrorDeltaRecalculate/output/End_Time">End Time</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaRecalculate/output/Exit_Code">Exit Code</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaRecalculate/output/Execution_Status">Execution Status</operation>
+                                    <operation source="field"
+                                               to="temp.CT_TicketErrorDeltaRecalculate/output/Std_Error">Std Error</operation>
+                                 </serviceOutput>
+                              </service>
+                              <flow id="ks012e4s">
+                                 <link id="ks012e4t" targetId="kqge9svm" type="containerLink"/>
+                              </flow>
+                              <flow id="ks012e4v">
+                                 <link id="ks012e4w" targetId="kqge9svm" type="containerLink"/>
+                              </flow>
+                              <link id="ks012e4r" targetId="ks012e4s" type="containerLink"/>
+                              <link id="kqge9sy0" targetId="kqge9sxz"/>
+                              <events>
+                                 <catch faultField="temp.CT_TicketErrorDeltaRecalculate/fault"
+                                        id="kqge9svl"
+                                        interrupting="true"
+                                        name="error">
+                                    <link id="ks012e4u" targetId="ks012e4v" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <throw id="kqge9sxz">
+                              <title>ThrowDeltaRecalculate</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">temp.vTempECode</parameter>
+                                 <parameter name="detail" source="field" updatable="true">temp.vTempEDetail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">temp.vTempEReason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <flow id="kqge9spz">
+                           <wait id="kqge9sql">
+                              <title>WaitRetryDelta</title>
+                              <duration source="formula">
+                                 <function name="duration_expression">
+                                    <arg name="value">{$temp.vTempWairRetries}</arg>
+                                    <arg name="scale">S</arg>
+                                    <arg name="businessDays"/>
+                                 </function>
+                              </duration>
+                              <link id="kqge9srj" targetId="kqge9srh"/>
+                           </wait>
+                           <jumpTo id="kqge9srh">
+                              <link id="kqge9sri" targetId="kqge9soc"/>
+                           </jumpTo>
+                        </flow>
+                        <link id="kqge9spv" targetId="kqge9spw" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.vTempMaxRetries}</arg>
+                                 <arg name="right">{$temp.vTempRetries }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kqge9spy" targetId="kqge9spz" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <link id="kqge9sox" targetId="kqge9soy" type="containerLink"/>
+                  <link id="kqge9so8" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/fault"
+                            id="kqge9soa"
+                            interrupting="true"
+                            name="error">
+                        <link id="kqge9sp0" targetId="kqge9sp1" type="containerLink"/>
+                     </catch>
+                     <catch faultField="temp.dt_P360_OG_DeltaRecalculate_MDM_CFIN/fault"
+                            id="kqge9sob"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <wait id="kqge9snl">
+                  <title>WaitStart</title>
+                  <duration source="formula">
+                     <function name="duration_expression">
+                        <arg name="value">30</arg>
+                        <arg name="scale">S</arg>
+                        <arg name="businessDays"/>
+                     </function>
+                  </duration>
+                  <link id="liovkvah" targetId="liovkvcl"/>
+               </wait>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-P360-OG-DeltaRecalculate-MDM-CFIN-an3l1krtwvTb1CujplNGwq"
+                              isByCopy="true"
+                              name="mt-P360-OG-DeltaRecalculate-MDM-CFIN-an3l1krtwvTb1CujplNGwq">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="InternalInfaSubTaskflowField"
+                              isByCopy="true"
+                              name="InternalInfaSubTaskflowField">
+                  <description>This process object represents a subtaskflow type reference field.</description>
+                  <tags/>
+                  <detail/>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR"
+                              isByCopy="true"
+                              name="mt-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-P360-OG-GetTime-MDM-CFIN-7c1q20sb3whfNsuLg5C1mn"
+                              isByCopy="true"
+                              name="mt-P360-OG-GetTime-MDM-CFIN-7c1q20sb3whfNsuLg5C1mn">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>khW64qi0FYuffLdVoIOfi3</types1:GUID>
+      <types1:DisplayName>tf_P360_Ongoing_MDM_CFIN_One</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-03-10T16:42:23.754Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

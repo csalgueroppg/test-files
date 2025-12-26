@@ -1,0 +1,604 @@
+{
+  "content" : {
+    "description" : "@connectionSource= Query MDM Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output S3 bucket Tgt, @additionalText= This mapping get all data from MDM,@sources[@ORC_HMDM_READ_MATERIALS], @targets[@S3_HMDM_V2_HostedAgent]",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_PDT_01_Extract_CrossReference_Materials",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "Exp_Passthrough -> Tgt_S3_CrossReference"
+      },
+      {
+        "link" : "Src_C_BO_PRDCT_MSTR -> Srt_MTRL_NMBR"
+      },
+      {
+        "link" : "Src_S3_PRDCT_MSTR -> Srt_MTRL_NMBR_o"
+      },
+      {
+        "link" : "Srt_MTRL_NMBR -> Jnr_MTRL_NMBR",
+        "groupLink" : "DefaultGroup -> Detail"
+      },
+      {
+        "link" : "Jnr_MTRL_NMBR -> Exp_Passthrough",
+        "groupLink" : "OutputGroup -> DefaultGroup"
+      },
+      {
+        "link" : "Agg_GroupByMTRL_NMBR -> Jnr_MTRL_NMBR",
+        "groupLink" : "DefaultGroup -> Master"
+      },
+      {
+        "link" : "Srt_MTRL_NMBR_o -> Agg_GroupByMTRL_NMBR"
+      }
+    ],
+    "parameters" : [
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_ORC_Read",
+        "name" : "Conn_ORC_Read",
+        "anonymousType" : {
+          "typeSystem" : "Oracle",
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "src_MTRL_CROSSREF_view",
+        "name" : "src_MTRL_CROSSREF_view"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_HMDM_HostedAgent",
+        "name" : "Conn_HMDM_HostedAgent"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "tgt_MTRL_CROSSREF",
+        "name" : "tgt_MTRL_CROSSREF"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "name" : "src_MTRL_S3"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2023-06-09T15:16:36.506Z",
+        "name" : "Src_C_BO_PRDCT_MSTR",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_ORC_Read"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "src_MTRL_CROSSREF_view"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-06-09T15:16:36.507Z",
+        "name" : "Tgt_S3_CrossReference",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Create Target Directory",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@36Nuzgkr4eDiig0O4C9u6x",
+          "connectionName" : "S3_HMDM_V2_HostedAgent",
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "tgt_MTRL_CROSSREF"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-06-09T15:46:51.588Z",
+        "name" : "Exp_Passthrough",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "CREATE_DATE"
+                  },
+                  {
+                    "inputName" : "LAST_UPDATE_DATE"
+                  },
+                  {
+                    "inputName" : "MTRL_DSCR"
+                  },
+                  {
+                    "inputName" : "MTRL_IDNTFR"
+                  },
+                  {
+                    "inputName" : "MTRL_NMBR"
+                  },
+                  {
+                    "inputName" : "ROWID_OBJECT"
+                  },
+                  {
+                    "inputName" : "SRC_SYTM_ID"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2025-04-29T08:41:13.298Z",
+        "name" : "Src_S3_PRDCT_MSTR",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@36Nuzgkr4eDiig0O4C9u6x",
+          "connectionName" : "S3_HMDM_V2_HostedAgent",
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "src_MTRL_S3"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "dataFormat" : {
+            "formatId" : "Flat",
+            "validateHSchema" : "false",
+            "attributes" : [
+              {
+                "name" : "delimiter",
+                "value" : "֎"
+              },
+              {
+                "name" : "escapeChar",
+                "value" : "\\"
+              },
+              {
+                "name" : "qualifierMode",
+                "value" : "MINIMAL"
+              },
+              {
+                "name" : "disableEscapeChar",
+                "value" : "true"
+              },
+              {
+                "name" : "codePage",
+                "value" : "UTF-8"
+              },
+              {
+                "name" : "headerLineNumber",
+                "value" : "1"
+              },
+              {
+                "name" : "firstDataRow",
+                "value" : "2"
+              },
+              {
+                "name" : "targetHeader",
+                "value" : "With Header"
+              },
+              {
+                "name" : "importColumnFromFirstLine",
+                "value" : "true"
+              },
+              {
+                "name" : "generateHeader",
+                "value" : "true"
+              },
+              {
+                "name" : "fixedWidthMode",
+                "value" : "false"
+              },
+              {
+                "name" : "maxRowsToPreview",
+                "value" : "0"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-29T08:47:14.410Z",
+        "name" : "Srt_MTRL_NMBR",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sorterMode" : "SIMPLE",
+        "sortEntries" : [
+          {
+            "ascending" : "false",
+            "fieldName" : "MTRL_NMBR"
+          }
+        ]
+      },
+      {
+        "createTime" : "2025-04-29T08:47:31.388Z",
+        "name" : "Jnr_MTRL_NMBR",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Cache Directory",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Null ordering in master",
+            "value" : "Null is Highest Value"
+          },
+          {
+            "name" : "Null ordering in detail",
+            "value" : "Null is Higest Value"
+          },
+          {
+            "name" : "Joiner Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Joiner Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Sorted Input",
+            "value" : "true"
+          },
+          {
+            "name" : "Master Sort Order",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "All Input"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Master",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "true",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "MTRL_NMBR"
+                  }
+                ],
+                "bulkRenameOption" : {
+                  "literal" : "s3_",
+                  "suffix" : "false"
+                }
+              }
+            ]
+          },
+          {
+            "input" : "true",
+            "name" : "Detail",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "OutputGroup",
+            "output" : "true"
+          }
+        ],
+        "joinType" : "Normal Join",
+        "joinConditions" : [
+          {
+            "leftOperand" : "s3_MTRL_NMBR",
+            "operator" : "=",
+            "rightOperand" : "MTRL_NMBR"
+          }
+        ]
+      },
+      {
+        "createTime" : "2025-04-29T08:47:38.505Z",
+        "name" : "Srt_MTRL_NMBR_o",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sorterMode" : "SIMPLE",
+        "sortEntries" : [
+          {
+            "ascending" : "false",
+            "fieldName" : "MTRL_NMBR"
+          }
+        ]
+      },
+      {
+        "createTime" : "2025-04-29T08:48:26.210Z",
+        "name" : "Agg_GroupByMTRL_NMBR",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Sorted Input",
+            "value" : "true"
+          },
+          {
+            "name" : "Cache Directory",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Aggregator Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Aggregator Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "All Input"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "groupByFieldsList" : {
+          "fields" : [
+            {
+              "fieldName" : "MTRL_NMBR"
+            }
+          ]
+        }
+      }
+    ],
+    "variables" : [
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_Schema",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_View",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_CR_FileName",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 50,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0,
+        "description" : "p_CR_FileName"
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-08-19 14:54:30 PDT"
+}

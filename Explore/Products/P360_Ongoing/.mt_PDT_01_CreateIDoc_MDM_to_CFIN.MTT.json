@@ -1,0 +1,156 @@
+{
+  "objectInfo" : {
+    "id" : "a1RNrQXf1BkdZQV6w4oDgt",
+    "name" : "mt_PDT_01_CreateIDoc_MDM_to_CFIN",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NCA"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Idoc Tgt, @additionalText= This mapping task send the information to CFIN,@sources[@S3_HMDM_V2], @targets[@FF_OTP_IN_PDT_CFIN, @SAP_Items_iDocWriter_CFIN]\t",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-10-07T19:51:21.006Z",
+  "objectRefs" : [ {
+    "id" : "jIANp3xE7UckyfcCxfhPMI",
+    "name" : "m_PDT_01_CreateIDoc_MDM_to_CFIN",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000003J3"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Idoc Tgt, @additionalText= This mapping send the information to CFIN,@sources[@S3_HMDM_V2], @targets[@FF_OTP_IN_PDT_CFIN, @SAP_Items_iDocWriter_CFIN]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "2uHF4ikEFPZldcAjblyfGh",
+    "name" : "MATMAS05_Prepare_MappLet",
+    "type" : "MAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470L00000000005A"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@operation=obtain,@object=IDoc MATMAS05, @operationObject=generate, @dataObject=Materials,@additionalText=This mapplet generate the structure for send materials info to CFIN",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "araNNncX65DkCwK89n23m3",
+    "name" : "S3_HMDM_V2",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B000000000010"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "62jVIP7JDOql0rfpp5aOMJ",
+    "name" : "FF_OTP_IN_PDT_CFIN",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000JD"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "0ggkxBGF1AXhkE9UD1YIui",
+    "name" : "SAP_Items_iDocWriter_CFIN",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000DQ"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "DEST=CFD   CFIN",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "jlLTpTCJN0YcDSn9pP6OgK",
+    "name" : "SDCMMDMSA01",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000006"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

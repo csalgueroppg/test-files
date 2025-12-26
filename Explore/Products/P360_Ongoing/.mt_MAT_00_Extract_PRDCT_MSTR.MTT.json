@@ -1,0 +1,113 @@
+{
+  "objectInfo" : {
+    "id" : "8754d5jJjQqkwCYbsOnnqO",
+    "name" : "mt_MAT_00_Extract_PRDCT_MSTR",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ3"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read MSTR table from MDM and write in S3 Bucket, @dataType= MSTR table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-05-30T22:29:02.927Z",
+  "objectRefs" : [ {
+    "id" : "7kulRwSYR08jgJIM31nYGh",
+    "name" : "m_MAT_00_Extract_MDM_to_S3",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000003OR"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @transformation= Generic mapping for integration between MDM and DL, @dataType= Materials Data, @connectionTarget= S3 Bucket, @additionalText= The data extracted is loaded to DL, @sources= [@connection1= Conn_MDM], @targets=  [@connection1= Conn_tgt_DL] ",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "6QkntOpAEzblanc4S2f1cR",
+    "name" : "ip-10-17-246-40.ec2.internal",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000005"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "3Y631WjzyCkfEoUN5bDgqw",
+    "name" : "ORC_HMDM_READ_MATERIALS",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000EB"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "36Nuzgkr4eDiig0O4C9u6x",
+    "name" : "S3_HMDM_V2_HostedAgent",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B00000000001E"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

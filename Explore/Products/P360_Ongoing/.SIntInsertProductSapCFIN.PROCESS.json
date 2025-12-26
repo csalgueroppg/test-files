@@ -1,0 +1,85 @@
+{
+  "objectInfo" : {
+    "id" : "aDmwXOI2eQWcNj1UyHb7u8",
+    "name" : "SIntInsertProductSapCFIN",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "rp3yD7tyGoQwg74-gt-7413471-2023-06-16T01:17:37.287Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-03-08T22:44:08.060Z",
+  "objectRefs" : [ {
+    "id" : "eOEHROXWrKthZJpE21qrcG",
+    "name" : "PO-ZBAPI_UPD_CUSTTABLE",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "hCVf4VQT53nQciS-gt-7219190-2023-06-16T01:17:37.121Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Utilerias2/Ongoing"
+  }, {
+    "id" : "jZB2AzoDlIFjesvPuDH141",
+    "name" : "PO-ZBAPI_UPD_CUSTTABLE_OUTPUT",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "kNXHVOJ2oTVMTon-gt-151479069-2024-01-03T00:25:17.162Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Utilerias2/Ongoing"
+  }, {
+    "id" : "9BPgRrzPwPCegLMnjoTTMb",
+    "name" : "Conn-SAPBAPI-PdtCFIN",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "1WFsWTzIf6riX2F-gt-7413278-2023-06-16T01:17:33.853Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  } ]
+}

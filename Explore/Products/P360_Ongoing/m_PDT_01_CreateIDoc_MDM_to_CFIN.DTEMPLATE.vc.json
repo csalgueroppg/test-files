@@ -1,0 +1,5414 @@
+{
+  "content" : {
+    "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Idoc Tgt, @additionalText= This mapping send the information to CFIN,@sources[@S3_HMDM_V2], @targets[@FF_OTP_IN_PDT_CFIN, @SAP_Items_iDocWriter_CFIN]",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_PDT_01_CreateIDoc_MDM_to_CFIN",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "SQ_FF_MTRL_IDL_PCKG -> exp_Control"
+      },
+      {
+        "link" : "exp_Control -> agg_IDoc_Input_Group"
+      },
+      {
+        "link" : "agg_IDoc_Input_Group -> Mpt_MatMas",
+        "groupLink" : "DefaultGroup -> Control_Input_Group_For_IDoc_MATMAS05"
+      },
+      {
+        "link" : "Seq_Control -> exp_Control"
+      },
+      {
+        "link" : "Seq_Mara -> exp_Mara"
+      },
+      {
+        "link" : "Exp_MAKT -> Mpt_MatMas",
+        "groupLink" : "DefaultGroup -> E2MAKTM001"
+      },
+      {
+        "link" : "Seq_MAKT -> Exp_MAKT"
+      },
+      {
+        "link" : "SQ_FF_MTRL_IDL_PCKG -> Exp_MAKT"
+      },
+      {
+        "link" : "Exp_Output_Mppt -> Tgt_SAP_CFIN"
+      },
+      {
+        "link" : "Mpt_MatMas -> Exp_Output_Mppt",
+        "groupLink" : "IDoc_Prepare_Output_Group_For_MATMAS05 -> DefaultGroup"
+      },
+      {
+        "link" : "SQ_FF_MTRL_IDL_PCKG -> exp_Mara"
+      },
+      {
+        "link" : "exp_Mara -> Mpt_MatMas",
+        "groupLink" : "DefaultGroup -> E2MARAM009"
+      },
+      {
+        "link" : "exp_Mara -> Exp_MAKT"
+      },
+      {
+        "link" : "Mpt_MatMas -> Exp_Output_Error",
+        "groupLink" : "IDoc_Prepare_Output_Group_For_MATMAS05 -> DefaultGroup"
+      },
+      {
+        "link" : "exp_Control -> exp_Mara"
+      },
+      {
+        "link" : "Filter -> Tgt_2"
+      },
+      {
+        "link" : "Exp_Output_Error -> Filter"
+      }
+    ],
+    "parameters" : [
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "name" : "p_IdocDocumentNumber"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_src_HMDM",
+        "name" : "Conn_src_HMDM"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "src_MTRL_IDL_PCKG",
+        "name" : "src_MTRL_IDL_PCKG"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_IDoc_PSD205",
+        "name" : "Conn_IDoc_PSD205"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "tgt_SAPCFIN",
+        "name" : "tgt_SAPCFIN"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "name" : "p_Control_sndprn_in"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_ISL_Common",
+        "name" : "Conn_ISL_Common"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Tgt_Idoc_Temp",
+        "name" : "Tgt_Idoc_Temp"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "p_FlagAuditory",
+        "name" : "p_FlagAuditory",
+        "defaultValue" : {
+          "valueLiteral" : "0"
+        }
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2023-02-03T21:52:06.440Z",
+        "name" : "SQ_FF_MTRL_IDL_PCKG",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Output is repeatable",
+            "value" : "Never"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_src_HMDM"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "src_MTRL_IDL_PCKG"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "dataFormat" : {
+            "formatId" : "Flat",
+            "validateHSchema" : "false",
+            "attributes" : [
+              {
+                "name" : "delimiter",
+                "value" : "֎"
+              },
+              {
+                "name" : "escapeChar",
+                "value" : "\\"
+              },
+              {
+                "name" : "qualifier",
+                "value" : "\""
+              },
+              {
+                "name" : "qualifierMode",
+                "value" : "MINIMAL"
+              },
+              {
+                "name" : "codePage",
+                "value" : "UTF-8"
+              },
+              {
+                "name" : "headerLineNumber",
+                "value" : "1"
+              },
+              {
+                "name" : "firstDataRow",
+                "value" : "2"
+              },
+              {
+                "name" : "targetHeader",
+                "value" : "With Header"
+              },
+              {
+                "name" : "importColumnFromFirstLine",
+                "value" : "true"
+              },
+              {
+                "name" : "generateHeader",
+                "value" : "true"
+              },
+              {
+                "name" : "fixedWidthMode",
+                "value" : "false"
+              },
+              {
+                "name" : "escapeCharacterDataRetained",
+                "value" : "false"
+              },
+              {
+                "name" : "maxRowsToPreview",
+                "value" : "0"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "description" : "T",
+        "createTime" : "2023-02-03T21:52:06.441Z",
+        "name" : "Tgt_SAP_CFIN",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_IDoc_PSD205"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "tgt_SAPCFIN"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "SAP",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-02-03T21:58:35.431Z",
+        "name" : "exp_Mara",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "exp_Control",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "literal" : "ctl",
+                    "suffix" : "true"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "BS_UNT_MSR_o"
+                  },
+                  {
+                    "inputName" : "HUB_STATE_IND"
+                  },
+                  {
+                    "inputName" : "LAST_UPDATE_DATE"
+                  },
+                  {
+                    "inputName" : "MTRL_IDNTFR"
+                  },
+                  {
+                    "inputName" : "NEXTVAL"
+                  },
+                  {
+                    "inputName" : "ORGNTNG_ID"
+                  },
+                  {
+                    "inputName" : "OVRLL_MTRL_TYP_o"
+                  },
+                  {
+                    "inputName" : "PRDCT_CTGR_o"
+                  },
+                  {
+                    "inputName" : "RowIdIDocInputGroup_octl"
+                  },
+                  {
+                    "inputName" : "SRC_SYSTM_ID"
+                  },
+                  {
+                    "inputName" : "MTRL_NMBR"
+                  },
+                  {
+                    "inputName" : "DVSN"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "RowIdDataLineHeader_o",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "RowIdIDocInputGroup_octl"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "GPK_Mara",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "NEXTVAL"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "OVRLL_MTRL_TYP",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 250,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "--'FERT'\nOVRLL_MTRL_TYP_o"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "PRCT_CTGR",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 250,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "--'10102'\nPRDCT_CTGR_o"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "BS_UNIT_MSR",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 250,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "--'PCE'\nBS_UNT_MSR_o"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "Field_Null",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "''"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "MBRSH",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "'C'"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "VPSTA",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "'K'"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2023-02-07T15:44:51.142Z",
+        "name" : "Mpt_MatMas",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Control_Input_Group_For_IDoc_MATMAS05",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "true",
+            "name" : "E2MAKTM001",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "true",
+            "name" : "E2MARAM009",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "IDoc_Prepare_Error_Output_Group_For_MATMAS05",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "IDoc_Prepare_Output_Group_For_MATMAS05",
+            "output" : "true"
+          }
+        ],
+        "active" : "true",
+        "fieldMappingMode" : "MANUAL",
+        "saasMappletId" : "@2uHF4ikEFPZldcAjblyfGh",
+        "saasMappletName" : "MATMAS05_Prepare_MappLet",
+        "type" : "PC",
+        "inputGroups" : [
+          {
+            "name" : "Control_Input_Group_For_IDoc_MATMAS05",
+            "fields" : [
+              {
+                "name" : "GPK_DOCNUM",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 50,
+                "scale" : 0
+              },
+              {
+                "name" : "CONTROL_SNDPOR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "CONTROL_SNDPRT",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "CONTROL_SNDPRN",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "CONTROL_RCVPOR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "CONTROL_RCVPRT",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "CONTROL_RCVPRN",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 10,
+                "scale" : 0
+              }
+            ]
+          },
+          {
+            "name" : "E2MARAM009",
+            "fields" : [
+              {
+                "name" : "GFK_DOCNUM_E2MARAM009",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 50,
+                "scale" : 0
+              },
+              {
+                "name" : "GPK_E2MARAM009",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 50,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MSGFN",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MATNR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ERSDA",
+                "platformType" : {
+                  "name" : "date/time"
+                },
+                "precision" : 29,
+                "scale" : 9
+              },
+              {
+                "name" : "E2MARAM009_ERNAM",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 12,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_LAEDA",
+                "platformType" : {
+                  "name" : "date/time"
+                },
+                "precision" : 29,
+                "scale" : 9
+              },
+              {
+                "name" : "E2MARAM009_AENAM",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 12,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_PSTAT",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 15,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_LVORM",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MTART",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MBRSH",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MATKL",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 9,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_BISMT",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MEINS",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_BSTME",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ZEINR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 22,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ZEIAR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ZEIVR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ZEIFO",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_AESZN",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 6,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_BLATT",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_BLANZ",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_FERTH",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_FORMT",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_GROES",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 32,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_WRKST",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 14,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_NORMT",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_LABOR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_EKWSL",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_BRGEW",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 14,
+                "scale" : 3
+              },
+              {
+                "name" : "E2MARAM009_NTGEW",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 14,
+                "scale" : 3
+              },
+              {
+                "name" : "E2MARAM009_GEWEI",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_VOLUM",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 14,
+                "scale" : 3
+              },
+              {
+                "name" : "E2MARAM009_VOLEH",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_BEHVO",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_RAUBE",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_TEMPB",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_TRAGR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_STOFF",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_SPART",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_KUNNR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_WESCH",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 14,
+                "scale" : 3
+              },
+              {
+                "name" : "E2MARAM009_BWVOR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_BWSCL",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_SAISO",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ETIAR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ETIFO",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_EAN11",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_NUMTP",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_LAENG",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 14,
+                "scale" : 3
+              },
+              {
+                "name" : "E2MARAM009_BREIT",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 14,
+                "scale" : 3
+              },
+              {
+                "name" : "E2MARAM009_HOEHE",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 14,
+                "scale" : 3
+              },
+              {
+                "name" : "E2MARAM009_MEABM",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_PRDHA",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_CADKZ",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ERGEW",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 14,
+                "scale" : 3
+              },
+              {
+                "name" : "E2MARAM009_ERGEI",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ERVOL",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 14,
+                "scale" : 3
+              },
+              {
+                "name" : "E2MARAM009_ERVOE",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_GEWTO",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 3,
+                "scale" : 1
+              },
+              {
+                "name" : "E2MARAM009_VOLTO",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 3,
+                "scale" : 1
+              },
+              {
+                "name" : "E2MARAM009_VABME",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_KZKFG",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_XCHPF",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_VHART",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_FUELG",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_STFAK",
+                "platformType" : {
+                  "name" : "integer"
+                },
+                "precision" : 5,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MAGRV",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_BEGRU",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_QMPUR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_RBNRM",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 9,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MHDRZ",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 6,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MHDHB",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 6,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MHDLP",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 5,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_VPSTA",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 15,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_EXTWG",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MSTAE",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MSTAV",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MSTDE",
+                "platformType" : {
+                  "name" : "date/time"
+                },
+                "precision" : 29,
+                "scale" : 9
+              },
+              {
+                "name" : "E2MARAM009_MSTDV",
+                "platformType" : {
+                  "name" : "date/time"
+                },
+                "precision" : 29,
+                "scale" : 9
+              },
+              {
+                "name" : "E2MARAM009_KZUMW",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_KOSCH",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_NRFHG",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MFRPN",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 40,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MFRNR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_BMATN",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MPROF",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_PROFL",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_IHIVI",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ILOOS",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_KZGVH",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_XGCHP",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_COMPL",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_KZEFF",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_RDMHD",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_IPRKZ",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_PRZUS",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MTPOS_MARA",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 4,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_GEWTO_NEW",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 5,
+                "scale" : 1
+              },
+              {
+                "name" : "E2MARAM009_VOLTO_NEW",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 5,
+                "scale" : 1
+              },
+              {
+                "name" : "E2MARAM009_WRKST_NEW",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 48,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_AENNR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 12,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MATFI",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_CMREL",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_SATNR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_SLED_BBD",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_GTIN_VARIANT",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_GENNR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_SERLV",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_RMATP",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 18,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_GDS_RELEVANT",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MCOND",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_RETDELC",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_LOGLEV_RETO",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_NSNID",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 9,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_WEORA",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009__CWM_TOLGR",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 9,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009__CWM_TARA",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009__CWM_TARUM",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_PACKCODE",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_DG_PACK_STATUS",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_ANP",
+                "platformType" : {
+                  "name" : "decimal"
+                },
+                "precision" : 9,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_MATNR_LONG",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 40,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MARAM009_BISMT_LONG",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 40,
+                "scale" : 0
+              }
+            ]
+          },
+          {
+            "name" : "E2MAKTM001",
+            "fields" : [
+              {
+                "name" : "GFK_E2MARAM009_E2MAKTM001",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 50,
+                "scale" : 0
+              },
+              {
+                "name" : "GPK_E2MAKTM001",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 50,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MAKTM001_MSGFN",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 3,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MAKTM001_SPRAS",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MAKTM001_MAKTX",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 40,
+                "scale" : 0
+              },
+              {
+                "name" : "E2MAKTM001_SPRAS_ISO",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 2,
+                "scale" : 0
+              }
+            ]
+          }
+        ],
+        "outputGroups" : [
+          {
+            "name" : "IDoc_Prepare_Output_Group_For_MATMAS05",
+            "fields" : [
+              {
+                "name" : "IDocData",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1100,
+                "scale" : 0
+              }
+            ]
+          },
+          {
+            "name" : "IDoc_Prepare_Error_Output_Group_For_MATMAS05",
+            "fields" : [
+              {
+                "name" : "ErrorIDocData",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 1100,
+                "scale" : 0
+              }
+            ]
+          }
+        ],
+        "validForEngines" : [
+          "CDI"
+        ],
+        "dataAdapter" : {
+          "inputFields" : [
+            {
+              "name" : "GPK_DOCNUM",
+              "fieldType" : "CONNECTOR",
+              "label" : "GPK_DOCNUM",
+              "nativeName" : "GPK_DOCNUM",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 50,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "CONTROL_SNDPOR",
+              "fieldType" : "CONNECTOR",
+              "label" : "CONTROL_SNDPOR",
+              "nativeName" : "CONTROL_SNDPOR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "CONTROL_SNDPRT",
+              "fieldType" : "CONNECTOR",
+              "label" : "CONTROL_SNDPRT",
+              "nativeName" : "CONTROL_SNDPRT",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "CONTROL_SNDPRN",
+              "fieldType" : "CONNECTOR",
+              "label" : "CONTROL_SNDPRN",
+              "nativeName" : "CONTROL_SNDPRN",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "CONTROL_RCVPOR",
+              "fieldType" : "CONNECTOR",
+              "label" : "CONTROL_RCVPOR",
+              "nativeName" : "CONTROL_RCVPOR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "CONTROL_RCVPRT",
+              "fieldType" : "CONNECTOR",
+              "label" : "CONTROL_RCVPRT",
+              "nativeName" : "CONTROL_RCVPRT",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "CONTROL_RCVPRN",
+              "fieldType" : "CONNECTOR",
+              "label" : "CONTROL_RCVPRN",
+              "nativeName" : "CONTROL_RCVPRN",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "GFK_DOCNUM_E2MARAM009",
+              "fieldType" : "CONNECTOR",
+              "label" : "GFK_DOCNUM_E2MARAM009",
+              "nativeName" : "GFK_DOCNUM_E2MARAM009",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 50,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "GPK_E2MARAM009",
+              "fieldType" : "CONNECTOR",
+              "label" : "GPK_E2MARAM009",
+              "nativeName" : "GPK_E2MARAM009",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 50,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MSGFN",
+              "fieldType" : "CONNECTOR",
+              "label" : "Function",
+              "nativeName" : "E2MARAM009_MSGFN",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MATNR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material Number (18 Characters)",
+              "nativeName" : "E2MARAM009_MATNR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ERSDA",
+              "fieldType" : "CONNECTOR",
+              "label" : "Created On",
+              "nativeName" : "E2MARAM009_ERSDA",
+              "nativeType" : "date/time",
+              "original" : "false",
+              "precision" : 29,
+              "scale" : 9,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ERNAM",
+              "fieldType" : "CONNECTOR",
+              "label" : "Name of Person who Created the Object",
+              "nativeName" : "E2MARAM009_ERNAM",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 12,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_LAEDA",
+              "fieldType" : "CONNECTOR",
+              "label" : "Date of Last Change",
+              "nativeName" : "E2MARAM009_LAEDA",
+              "nativeType" : "date/time",
+              "original" : "false",
+              "precision" : 29,
+              "scale" : 9,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_AENAM",
+              "fieldType" : "CONNECTOR",
+              "label" : "Name of person who changed object",
+              "nativeName" : "E2MARAM009_AENAM",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 12,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_PSTAT",
+              "fieldType" : "CONNECTOR",
+              "label" : "Maintenance status",
+              "nativeName" : "E2MARAM009_PSTAT",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 15,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_LVORM",
+              "fieldType" : "CONNECTOR",
+              "label" : "Flag Material for Deletion at Client Level",
+              "nativeName" : "E2MARAM009_LVORM",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MTART",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material type",
+              "nativeName" : "E2MARAM009_MTART",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MBRSH",
+              "fieldType" : "CONNECTOR",
+              "label" : "Industry Sector",
+              "nativeName" : "E2MARAM009_MBRSH",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MATKL",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material Group",
+              "nativeName" : "E2MARAM009_MATKL",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 9,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BISMT",
+              "fieldType" : "CONNECTOR",
+              "label" : "Old Material Number (18 Characters, Compatibility Mode)",
+              "nativeName" : "E2MARAM009_BISMT",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MEINS",
+              "fieldType" : "CONNECTOR",
+              "label" : "Base Unit of Measure",
+              "nativeName" : "E2MARAM009_MEINS",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BSTME",
+              "fieldType" : "CONNECTOR",
+              "label" : "Purchase Order Unit of Measure",
+              "nativeName" : "E2MARAM009_BSTME",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ZEINR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Document number (without document management system)",
+              "nativeName" : "E2MARAM009_ZEINR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 22,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ZEIAR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Document type (without Document Management system)",
+              "nativeName" : "E2MARAM009_ZEIAR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ZEIVR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Document version (without Document Management system)",
+              "nativeName" : "E2MARAM009_ZEIVR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ZEIFO",
+              "fieldType" : "CONNECTOR",
+              "label" : "Page format of document (without Document Management system)",
+              "nativeName" : "E2MARAM009_ZEIFO",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_AESZN",
+              "fieldType" : "CONNECTOR",
+              "label" : "Document change number (without document management system)",
+              "nativeName" : "E2MARAM009_AESZN",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 6,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BLATT",
+              "fieldType" : "CONNECTOR",
+              "label" : "Page number of document (without Document Management system)",
+              "nativeName" : "E2MARAM009_BLATT",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BLANZ",
+              "fieldType" : "CONNECTOR",
+              "label" : "Number of sheets (without Document Management system)",
+              "nativeName" : "E2MARAM009_BLANZ",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_FERTH",
+              "fieldType" : "CONNECTOR",
+              "label" : "Production/inspection memo",
+              "nativeName" : "E2MARAM009_FERTH",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_FORMT",
+              "fieldType" : "CONNECTOR",
+              "label" : "Page Format of Production Memo",
+              "nativeName" : "E2MARAM009_FORMT",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_GROES",
+              "fieldType" : "CONNECTOR",
+              "label" : "Size/dimensions",
+              "nativeName" : "E2MARAM009_GROES",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 32,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_WRKST",
+              "fieldType" : "CONNECTOR",
+              "label" : "Basic material (basic constituent of a material) - obsolete",
+              "nativeName" : "E2MARAM009_WRKST",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 14,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_NORMT",
+              "fieldType" : "CONNECTOR",
+              "label" : "Industry Standard Description (such as ANSI or ISO)",
+              "nativeName" : "E2MARAM009_NORMT",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_LABOR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Laboratory/design office",
+              "nativeName" : "E2MARAM009_LABOR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_EKWSL",
+              "fieldType" : "CONNECTOR",
+              "label" : "Purchasing Value Key",
+              "nativeName" : "E2MARAM009_EKWSL",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BRGEW",
+              "fieldType" : "CONNECTOR",
+              "label" : "Gross weight",
+              "nativeName" : "E2MARAM009_BRGEW",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 14,
+              "scale" : 3,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_NTGEW",
+              "fieldType" : "CONNECTOR",
+              "label" : "Net weight",
+              "nativeName" : "E2MARAM009_NTGEW",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 14,
+              "scale" : 3,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_GEWEI",
+              "fieldType" : "CONNECTOR",
+              "label" : "Weight Unit",
+              "nativeName" : "E2MARAM009_GEWEI",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_VOLUM",
+              "fieldType" : "CONNECTOR",
+              "label" : "Volume",
+              "nativeName" : "E2MARAM009_VOLUM",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 14,
+              "scale" : 3,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_VOLEH",
+              "fieldType" : "CONNECTOR",
+              "label" : "Volume unit",
+              "nativeName" : "E2MARAM009_VOLEH",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BEHVO",
+              "fieldType" : "CONNECTOR",
+              "label" : "Container requirements",
+              "nativeName" : "E2MARAM009_BEHVO",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_RAUBE",
+              "fieldType" : "CONNECTOR",
+              "label" : "Storage conditions",
+              "nativeName" : "E2MARAM009_RAUBE",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_TEMPB",
+              "fieldType" : "CONNECTOR",
+              "label" : "Temperature conditions indicator",
+              "nativeName" : "E2MARAM009_TEMPB",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_TRAGR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Transportation Group",
+              "nativeName" : "E2MARAM009_TRAGR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_STOFF",
+              "fieldType" : "CONNECTOR",
+              "label" : "Hazardous material number (18 char.)",
+              "nativeName" : "E2MARAM009_STOFF",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_SPART",
+              "fieldType" : "CONNECTOR",
+              "label" : "Division",
+              "nativeName" : "E2MARAM009_SPART",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_KUNNR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Competitor",
+              "nativeName" : "E2MARAM009_KUNNR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_WESCH",
+              "fieldType" : "CONNECTOR",
+              "label" : "Quantity: Number of GR/GI slips to be printed",
+              "nativeName" : "E2MARAM009_WESCH",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 14,
+              "scale" : 3,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BWVOR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Procurement rule",
+              "nativeName" : "E2MARAM009_BWVOR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BWSCL",
+              "fieldType" : "CONNECTOR",
+              "label" : "Source of Supply",
+              "nativeName" : "E2MARAM009_BWSCL",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_SAISO",
+              "fieldType" : "CONNECTOR",
+              "label" : "Season Category",
+              "nativeName" : "E2MARAM009_SAISO",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ETIAR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Label type",
+              "nativeName" : "E2MARAM009_ETIAR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ETIFO",
+              "fieldType" : "CONNECTOR",
+              "label" : "Label form",
+              "nativeName" : "E2MARAM009_ETIFO",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_EAN11",
+              "fieldType" : "CONNECTOR",
+              "label" : "International Article Number (EAN/UPC)",
+              "nativeName" : "E2MARAM009_EAN11",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_NUMTP",
+              "fieldType" : "CONNECTOR",
+              "label" : "Category of International Article Number (EAN)",
+              "nativeName" : "E2MARAM009_NUMTP",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_LAENG",
+              "fieldType" : "CONNECTOR",
+              "label" : "Length",
+              "nativeName" : "E2MARAM009_LAENG",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 14,
+              "scale" : 3,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BREIT",
+              "fieldType" : "CONNECTOR",
+              "label" : "Width",
+              "nativeName" : "E2MARAM009_BREIT",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 14,
+              "scale" : 3,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_HOEHE",
+              "fieldType" : "CONNECTOR",
+              "label" : "Height",
+              "nativeName" : "E2MARAM009_HOEHE",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 14,
+              "scale" : 3,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MEABM",
+              "fieldType" : "CONNECTOR",
+              "label" : "Unit of Dimension for Length/Width/Height",
+              "nativeName" : "E2MARAM009_MEABM",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_PRDHA",
+              "fieldType" : "CONNECTOR",
+              "label" : "Product hierarchy",
+              "nativeName" : "E2MARAM009_PRDHA",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_CADKZ",
+              "fieldType" : "CONNECTOR",
+              "label" : "CAD Indicator",
+              "nativeName" : "E2MARAM009_CADKZ",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ERGEW",
+              "fieldType" : "CONNECTOR",
+              "label" : "Allowed packaging weight",
+              "nativeName" : "E2MARAM009_ERGEW",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 14,
+              "scale" : 3,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ERGEI",
+              "fieldType" : "CONNECTOR",
+              "label" : "Weight Unit",
+              "nativeName" : "E2MARAM009_ERGEI",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ERVOL",
+              "fieldType" : "CONNECTOR",
+              "label" : "Allowed packaging volume",
+              "nativeName" : "E2MARAM009_ERVOL",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 14,
+              "scale" : 3,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ERVOE",
+              "fieldType" : "CONNECTOR",
+              "label" : "Volume unit",
+              "nativeName" : "E2MARAM009_ERVOE",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_GEWTO",
+              "fieldType" : "CONNECTOR",
+              "label" : "Excess Weight Tolerance for Handling unit",
+              "nativeName" : "E2MARAM009_GEWTO",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 1,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_VOLTO",
+              "fieldType" : "CONNECTOR",
+              "label" : "Excess Volume Tolerance of the Handling Unit",
+              "nativeName" : "E2MARAM009_VOLTO",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 1,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_VABME",
+              "fieldType" : "CONNECTOR",
+              "label" : "Variable Purchase Order Unit Active",
+              "nativeName" : "E2MARAM009_VABME",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_KZKFG",
+              "fieldType" : "CONNECTOR",
+              "label" : "Configurable Material",
+              "nativeName" : "E2MARAM009_KZKFG",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_XCHPF",
+              "fieldType" : "CONNECTOR",
+              "label" : "Batch Management Requirement Indicator",
+              "nativeName" : "E2MARAM009_XCHPF",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_VHART",
+              "fieldType" : "CONNECTOR",
+              "label" : "Packaging Material Type",
+              "nativeName" : "E2MARAM009_VHART",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_FUELG",
+              "fieldType" : "CONNECTOR",
+              "label" : "Maximum level (by volume)",
+              "nativeName" : "E2MARAM009_FUELG",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_STFAK",
+              "fieldType" : "CONNECTOR",
+              "label" : "Stacking factor",
+              "nativeName" : "E2MARAM009_STFAK",
+              "nativeType" : "small integer",
+              "original" : "false",
+              "precision" : 5,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MAGRV",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material Group: Packaging Materials",
+              "nativeName" : "E2MARAM009_MAGRV",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BEGRU",
+              "fieldType" : "CONNECTOR",
+              "label" : "Authorization Group",
+              "nativeName" : "E2MARAM009_BEGRU",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_QMPUR",
+              "fieldType" : "CONNECTOR",
+              "label" : "QM in Procurement Is Active",
+              "nativeName" : "E2MARAM009_QMPUR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_RBNRM",
+              "fieldType" : "CONNECTOR",
+              "label" : "Catalog Profile",
+              "nativeName" : "E2MARAM009_RBNRM",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 9,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MHDRZ",
+              "fieldType" : "CONNECTOR",
+              "label" : "Minimum Remaining Shelf Life",
+              "nativeName" : "E2MARAM009_MHDRZ",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 6,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MHDHB",
+              "fieldType" : "CONNECTOR",
+              "label" : "Total shelf life",
+              "nativeName" : "E2MARAM009_MHDHB",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 6,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MHDLP",
+              "fieldType" : "CONNECTOR",
+              "label" : "Storage percentage",
+              "nativeName" : "E2MARAM009_MHDLP",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 5,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_VPSTA",
+              "fieldType" : "CONNECTOR",
+              "label" : "Maintenance status of complete material",
+              "nativeName" : "E2MARAM009_VPSTA",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 15,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_EXTWG",
+              "fieldType" : "CONNECTOR",
+              "label" : "External Material Group",
+              "nativeName" : "E2MARAM009_EXTWG",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MSTAE",
+              "fieldType" : "CONNECTOR",
+              "label" : "Cross-Plant Material Status",
+              "nativeName" : "E2MARAM009_MSTAE",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MSTAV",
+              "fieldType" : "CONNECTOR",
+              "label" : "Cross-distribution-chain material status",
+              "nativeName" : "E2MARAM009_MSTAV",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MSTDE",
+              "fieldType" : "CONNECTOR",
+              "label" : "Date from which the cross-plant material status is valid",
+              "nativeName" : "E2MARAM009_MSTDE",
+              "nativeType" : "date/time",
+              "original" : "false",
+              "precision" : 29,
+              "scale" : 9,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MSTDV",
+              "fieldType" : "CONNECTOR",
+              "label" : "Date from which the X-distr.-chain material status is valid",
+              "nativeName" : "E2MARAM009_MSTDV",
+              "nativeType" : "date/time",
+              "original" : "false",
+              "precision" : 29,
+              "scale" : 9,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_KZUMW",
+              "fieldType" : "CONNECTOR",
+              "label" : "Environmentally Relevant",
+              "nativeName" : "E2MARAM009_KZUMW",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_KOSCH",
+              "fieldType" : "CONNECTOR",
+              "label" : "Product allocation determination procedure",
+              "nativeName" : "E2MARAM009_KOSCH",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_NRFHG",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material qualifies for discount in kind",
+              "nativeName" : "E2MARAM009_NRFHG",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MFRPN",
+              "fieldType" : "CONNECTOR",
+              "label" : "Manufacturer Part Number",
+              "nativeName" : "E2MARAM009_MFRPN",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 40,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MFRNR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Manufacturer number",
+              "nativeName" : "E2MARAM009_MFRNR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BMATN",
+              "fieldType" : "CONNECTOR",
+              "label" : "To material number",
+              "nativeName" : "E2MARAM009_BMATN",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MPROF",
+              "fieldType" : "CONNECTOR",
+              "label" : "Mfr part profile",
+              "nativeName" : "E2MARAM009_MPROF",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_PROFL",
+              "fieldType" : "CONNECTOR",
+              "label" : "Dangerous Goods Indicator Profile",
+              "nativeName" : "E2MARAM009_PROFL",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_IHIVI",
+              "fieldType" : "CONNECTOR",
+              "label" : "Indicator: Highly Viscous",
+              "nativeName" : "E2MARAM009_IHIVI",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ILOOS",
+              "fieldType" : "CONNECTOR",
+              "label" : "Indicator: In Bulk/Liquid",
+              "nativeName" : "E2MARAM009_ILOOS",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_KZGVH",
+              "fieldType" : "CONNECTOR",
+              "label" : "Packaging Material is Closed Packaging",
+              "nativeName" : "E2MARAM009_KZGVH",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_XGCHP",
+              "fieldType" : "CONNECTOR",
+              "label" : "Approved Batch Record Required",
+              "nativeName" : "E2MARAM009_XGCHP",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_COMPL",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material completion level",
+              "nativeName" : "E2MARAM009_COMPL",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_KZEFF",
+              "fieldType" : "CONNECTOR",
+              "label" : "Assign effectivity parameter values/ override change numbers",
+              "nativeName" : "E2MARAM009_KZEFF",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_RDMHD",
+              "fieldType" : "CONNECTOR",
+              "label" : "Rounding rule for calculation of SLED",
+              "nativeName" : "E2MARAM009_RDMHD",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_IPRKZ",
+              "fieldType" : "CONNECTOR",
+              "label" : "Period Indicator for Shelf Life Expiration Date",
+              "nativeName" : "E2MARAM009_IPRKZ",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_PRZUS",
+              "fieldType" : "CONNECTOR",
+              "label" : "Indicator: Product composition printed on packaging",
+              "nativeName" : "E2MARAM009_PRZUS",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MTPOS_MARA",
+              "fieldType" : "CONNECTOR",
+              "label" : "General item category group",
+              "nativeName" : "E2MARAM009_MTPOS_MARA",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 4,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_GEWTO_NEW",
+              "fieldType" : "CONNECTOR",
+              "label" : "Excess Weight Tolerance for Handling unit",
+              "nativeName" : "E2MARAM009_GEWTO_NEW",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 5,
+              "scale" : 1,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_VOLTO_NEW",
+              "fieldType" : "CONNECTOR",
+              "label" : "Excess Volume Tolerance of the Handling Unit",
+              "nativeName" : "E2MARAM009_VOLTO_NEW",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 5,
+              "scale" : 1,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_WRKST_NEW",
+              "fieldType" : "CONNECTOR",
+              "label" : "Basic Material",
+              "nativeName" : "E2MARAM009_WRKST_NEW",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 48,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_AENNR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Change Number",
+              "nativeName" : "E2MARAM009_AENNR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 12,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MATFI",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material Is Locked",
+              "nativeName" : "E2MARAM009_MATFI",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_CMREL",
+              "fieldType" : "CONNECTOR",
+              "label" : "Relevant for Configuration Management",
+              "nativeName" : "E2MARAM009_CMREL",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_SATNR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Cross-Plant Configurable Material (18 ch compatibility mode)",
+              "nativeName" : "E2MARAM009_SATNR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_SLED_BBD",
+              "fieldType" : "CONNECTOR",
+              "label" : "Expiration Date",
+              "nativeName" : "E2MARAM009_SLED_BBD",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_GTIN_VARIANT",
+              "fieldType" : "CONNECTOR",
+              "label" : "Global Trade Item Number Variant",
+              "nativeName" : "E2MARAM009_GTIN_VARIANT",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_GENNR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material Number of the Generic Material in Prepack Materials",
+              "nativeName" : "E2MARAM009_GENNR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_SERLV",
+              "fieldType" : "CONNECTOR",
+              "label" : "Level of Explicitness for Serial Number",
+              "nativeName" : "E2MARAM009_SERLV",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_RMATP",
+              "fieldType" : "CONNECTOR",
+              "label" : "Reference material for materials packed in same way",
+              "nativeName" : "E2MARAM009_RMATP",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 18,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_GDS_RELEVANT",
+              "fieldType" : "CONNECTOR",
+              "label" : "Indicator: Global Data Synchronization-Relevant",
+              "nativeName" : "E2MARAM009_GDS_RELEVANT",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MCOND",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material Condition Management",
+              "nativeName" : "E2MARAM009_MCOND",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_RETDELC",
+              "fieldType" : "CONNECTOR",
+              "label" : "Return Code",
+              "nativeName" : "E2MARAM009_RETDELC",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_LOGLEV_RETO",
+              "fieldType" : "CONNECTOR",
+              "label" : "Return to Logistics Level",
+              "nativeName" : "E2MARAM009_LOGLEV_RETO",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_NSNID",
+              "fieldType" : "CONNECTOR",
+              "label" : "NATO Stock Number",
+              "nativeName" : "E2MARAM009_NSNID",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 9,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_WEORA",
+              "fieldType" : "CONNECTOR",
+              "label" : "Acceptance At Origin",
+              "nativeName" : "E2MARAM009_WEORA",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009__CWM_TOLGR",
+              "fieldType" : "CONNECTOR",
+              "label" : "Tolerance Group for CWM",
+              "nativeName" : "E2MARAM009__CWM_TOLGR",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 9,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009__CWM_TARA",
+              "fieldType" : "CONNECTOR",
+              "label" : "Checkbox",
+              "nativeName" : "E2MARAM009__CWM_TARA",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009__CWM_TARUM",
+              "fieldType" : "CONNECTOR",
+              "label" : "Base Unit of Measure",
+              "nativeName" : "E2MARAM009__CWM_TARUM",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_PACKCODE",
+              "fieldType" : "CONNECTOR",
+              "label" : "Packaging Code",
+              "nativeName" : "E2MARAM009_PACKCODE",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_DG_PACK_STATUS",
+              "fieldType" : "CONNECTOR",
+              "label" : "Dangerous Goods Packaging Status",
+              "nativeName" : "E2MARAM009_DG_PACK_STATUS",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_ANP",
+              "fieldType" : "CONNECTOR",
+              "label" : "ANP Code",
+              "nativeName" : "E2MARAM009_ANP",
+              "nativeType" : "decimal",
+              "original" : "false",
+              "precision" : 9,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_MATNR_LONG",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material No.",
+              "nativeName" : "E2MARAM009_MATNR_LONG",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 40,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MARAM009_BISMT_LONG",
+              "fieldType" : "CONNECTOR",
+              "label" : "Old material number (40 Characters, Technical Requirement)",
+              "nativeName" : "E2MARAM009_BISMT_LONG",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 40,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "GFK_E2MARAM009_E2MAKTM001",
+              "fieldType" : "CONNECTOR",
+              "label" : "GFK_E2MARAM009_E2MAKTM001",
+              "nativeName" : "GFK_E2MARAM009_E2MAKTM001",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 50,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "GPK_E2MAKTM001",
+              "fieldType" : "CONNECTOR",
+              "label" : "GPK_E2MAKTM001",
+              "nativeName" : "GPK_E2MAKTM001",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 50,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MAKTM001_MSGFN",
+              "fieldType" : "CONNECTOR",
+              "label" : "Function",
+              "nativeName" : "E2MAKTM001_MSGFN",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 3,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MAKTM001_SPRAS",
+              "fieldType" : "CONNECTOR",
+              "label" : "Language Key",
+              "nativeName" : "E2MAKTM001_SPRAS",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MAKTM001_MAKTX",
+              "fieldType" : "CONNECTOR",
+              "label" : "Material Description",
+              "nativeName" : "E2MAKTM001_MAKTX",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 40,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "E2MAKTM001_SPRAS_ISO",
+              "fieldType" : "CONNECTOR",
+              "label" : "2-Character SAP Language Code",
+              "nativeName" : "E2MAKTM001_SPRAS_ISO",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 2,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            }
+          ],
+          "outputFields" : [
+            {
+              "name" : "IDocData",
+              "fieldType" : "CONNECTOR",
+              "label" : "IDocData",
+              "nativeName" : "IDocData",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1100,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            },
+            {
+              "name" : "ErrorIDocData",
+              "fieldType" : "CONNECTOR",
+              "label" : "ErrorIDocData",
+              "nativeName" : "ErrorIDocData",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 1100,
+              "scale" : 0,
+              "properties" : [
+                {
+                  "name" : "parentObject",
+                  "value" : "MATMAS05_Prepare_MappLet"
+                }
+              ]
+            }
+          ]
+        },
+        "fieldMapping" : {
+          "fields" : [
+            {
+              "adapterField" : {
+                "name" : "GFK_E2MARAM009_E2MAKTM001"
+              },
+              "name" : "GFK_Mara",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "GPK_E2MAKTM001"
+              },
+              "name" : "GPK_MAKT",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MAKTM001_SPRAS"
+              },
+              "name" : "LANG_KEY_o",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "GFK_DOCNUM_E2MARAM009"
+              },
+              "name" : "RowIdDataLineHeader_o",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MSGFN"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MTART"
+              },
+              "name" : "OVRLL_MTRL_TYP",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_ERNAM"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_AENAM"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_PSTAT"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_LVORM"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_BSTME"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_ZEINR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_ZEIAR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_ZEIVR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_ZEIFO"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_AESZN"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_BLATT"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_FERTH"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_FORMT"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_WRKST"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_LABOR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_EKWSL"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_BRGEW"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_NTGEW"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_GEWEI"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_VOLEH"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_BEHVO"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_RAUBE"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_TEMPB"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_TRAGR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_STOFF"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_KUNNR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_BWVOR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_BWSCL"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_SAISO"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_ETIAR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_ETIFO"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_EAN11"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_NUMTP"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MEABM"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_PRDHA"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_CADKZ"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_ERGEI"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_ERVOE"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_VABME"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_KZKFG"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_XCHPF"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_VHART"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MAGRV"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_BEGRU"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_QMPUR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_RBNRM"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_EXTWG"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MSTAE"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MSTAV"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_KZUMW"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_KOSCH"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_NRFHG"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MFRPN"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MFRNR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_BMATN"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MPROF"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_PROFL"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_IHIVI"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_ILOOS"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_KZGVH"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_XGCHP"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_KZEFF"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_RDMHD"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_IPRKZ"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_PRZUS"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MTPOS_MARA"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_WRKST_NEW"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_AENNR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MATFI"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_CMREL"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_SATNR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_SLED_BBD"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_GTIN_VARIANT"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_GENNR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_SERLV"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_RMATP"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_GDS_RELEVANT"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MCOND"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_RETDELC"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_LOGLEV_RETO"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_NSNID"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_WEORA"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009__CWM_TOLGR"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009__CWM_TARA"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009__CWM_TARUM"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MATNR_LONG"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_BISMT_LONG"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_PACKCODE"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_DG_PACK_STATUS"
+              },
+              "name" : "Field_Null",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "GPK_E2MARAM009"
+              },
+              "name" : "GPK_Mara",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MATKL"
+              },
+              "name" : "PRCT_CTGR",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MEINS"
+              },
+              "name" : "BS_UNIT_MSR",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "GPK_DOCNUM"
+              },
+              "name" : "DocumentNumberIDocInputGroup_o",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MBRSH"
+              },
+              "name" : "MBRSH",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_VPSTA"
+              },
+              "name" : "VPSTA",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MAKTM001_MAKTX"
+              },
+              "name" : "MTRL_DSCR_o",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "CONTROL_SNDPRN"
+              },
+              "name" : "CONTROL_SNDPRN_o",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_MATNR"
+              },
+              "name" : "MTRL_NMBR",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_SPART"
+              },
+              "name" : "DVSN",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_GROES"
+              },
+              "name" : "ORGNTNG_ID",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_BISMT"
+              },
+              "name" : "MTRL_IDNTFR",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "E2MARAM009_NORMT"
+              },
+              "name" : "SRC_SYSTM_ID",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "CONTROL_RCVPRN"
+              },
+              "name" : "CONTROL_RCVPRN_o",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "CONTROL_RCVPOR"
+              },
+              "name" : "CONTROL_RCVPOR_o",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "CONTROL_SNDPOR"
+              },
+              "name" : "CONTROL_SNDPOR_o",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "CONTROL_SNDPRT"
+              },
+              "name" : "CONTROL_SNDPRT_o",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "CONTROL_RCVPRT"
+              },
+              "name" : "CONTROL_RCVPRT_o",
+              "precision" : 0,
+              "scale" : 0
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2023-02-07T21:35:16.959Z",
+        "name" : "Seq_Mara",
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "midstream" : "false",
+        "state" : {
+          "currentValue" : "1",
+          "cycle" : "false",
+          "endValue" : "9223372036854775807",
+          "incrementBy" : "1",
+          "numberOfCachedValues" : "0",
+          "reset" : "false",
+          "startValue" : "0",
+          "useSharedSequence" : "false"
+        }
+      },
+      {
+        "createTime" : "2023-02-07T23:30:35.113Z",
+        "name" : "Seq_Control",
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "midstream" : "false",
+        "state" : {
+          "currentValue" : "1",
+          "cycle" : "true",
+          "endValue" : "9223372036854775807",
+          "incrementBy" : "3000",
+          "numberOfCachedValues" : "0",
+          "reset" : "true",
+          "startValue" : "0",
+          "useSharedSequence" : "false"
+        }
+      },
+      {
+        "createTime" : "2023-02-07T23:30:46.136Z",
+        "name" : "exp_Control",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "NEXTVAL"
+                  },
+                  {
+                    "inputName" : "MTRL_IDNTFR"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "DocumentNumberIDocInputGroup_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "to_char(NEXTVAL)"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "RowIdIDocInputGroup_o",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "NEXTVAL"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "CONTROL_SNDPRN_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_Control_SNDPRN"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "CONTROL_SNDPOR_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_Control_SNDPOR"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "CONTROL_SNDPRT_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_Control_SNDPRT"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "CONTROL_RCVPRN_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_Control_RCVPRN"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "CONTROL_RCVPOR_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_Control_RCVPOR"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "CONTROL_RCVPRT_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_Control_RCVPRT"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2023-02-08T00:00:35.734Z",
+        "name" : "agg_IDoc_Input_Group",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "literal" : "_o",
+                "suffix" : "true"
+              }
+            ]
+          }
+        ],
+        "fields" : [
+          {
+            "name" : "MaxRowId",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "Min(RowIdIDocInputGroup_o)"
+          }
+        ],
+        "groupByFieldsList" : {
+          "fields" : [
+            {
+              "fieldName" : "DocumentNumberIDocInputGroup_o"
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2023-02-09T14:36:55.496Z",
+        "name" : "Exp_MAKT",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "Seq_MAKT",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "literal" : "mk",
+                    "suffix" : "false"
+                  }
+                }
+              },
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "SQ_FF_MTRL_IDL_PCKG",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "literal" : "view",
+                    "suffix" : "false"
+                  }
+                }
+              },
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "exp_Mara",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "literal" : "mara",
+                    "suffix" : "false"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "maraGPK_Mara"
+                  },
+                  {
+                    "inputName" : "viewLANG_KEY_o"
+                  },
+                  {
+                    "inputName" : "viewMTRL_DSCR"
+                  },
+                  {
+                    "inputName" : "mkNEXTVAL"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "GFK_Mara",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "maraGPK_Mara"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "GPK_MAKT",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "mkNEXTVAL"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "LANG_KEY_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "'E'\n--viewLANG_KEY_o"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "MTRL_DSCR_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "LTRIM(RTRIM(viewMTRL_DSCR))"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2023-02-09T14:38:15.777Z",
+        "name" : "Seq_MAKT",
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "midstream" : "false",
+        "state" : {
+          "currentValue" : "1",
+          "cycle" : "false",
+          "endValue" : "9223372036854775807",
+          "incrementBy" : "1",
+          "numberOfCachedValues" : "0",
+          "reset" : "false",
+          "startValue" : "0",
+          "useSharedSequence" : "false"
+        }
+      },
+      {
+        "createTime" : "2023-02-10T19:09:55.920Z",
+        "name" : "Exp_Output_Mppt",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2023-02-10T19:12:02.200Z",
+        "name" : "Exp_Output_Error",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "FlagAuditory_o",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "To_Integer($$p_FlagAuditory)"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2023-02-10T19:12:58.897Z",
+        "name" : "Tgt_2",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_ISL_Common"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "Tgt_Idoc_Temp"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-04-27T22:53:35.757Z",
+        "name" : "Filter",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "filterConditions" : [
+          {
+            "fieldName" : "FlagAuditory_o",
+            "filterValue" : "1",
+            "operator" : "="
+          }
+        ]
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-10-08 08:49:46 CST"
+}

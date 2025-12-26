@@ -1,0 +1,50 @@
+{
+  "objectInfo" : {
+    "id" : "3ifAjLA8hSxlWIibG3INsU",
+    "name" : "m_MAT_00_IngestDL",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000003OQ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @transformation= Generic mapping for integration between MDM and DL, @dataType= Materials Data, @connectionTarget= DL OnTap, @additionalText= The data extracted is loaded to DL, @sources= [@connection1= Conn_src_S3], @targets=  [@connection1= Conn_tgt_DL] ",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-05-30T22:29:02.922Z",
+  "objectRefs" : [ {
+    "id" : "0kZFKLFwLWGi6OuvodQdUq",
+    "name" : "FF_OTP_DL_Materials",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000LX"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

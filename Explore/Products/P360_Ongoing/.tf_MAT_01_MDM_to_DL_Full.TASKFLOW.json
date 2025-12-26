@@ -1,0 +1,484 @@
+{
+  "objectInfo" : {
+    "id" : "7WDH1HaWp64kQOgqsoik6r",
+    "name" : "tf_MAT_01_MDM_to_DL_Full",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "hxWPQE8jIw8jIw8-gt-1179924-2025-05-14T23:16:15.117Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@source= MDM Hosted SQL, @Operation= DL Load, @dataType= Materials, @target= DL OnTap, @tfLocalPath= Products\\P360_Ongoing, @additionalText= Taskflow MDM to DL Full Materials",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-05-30T22:29:02.924Z",
+  "objectRefs" : [ {
+    "id" : "ivcHvCsAaMtdmrb8ijDnyo",
+    "name" : "mt_MAT_00_Extract_PRDCT_LNKNG",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ1"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read LNKNG table from MDM and write in S3 Bucket, @dataType= Link table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "9ew81IGCjUshOwChB1zgWT",
+    "name" : "SDCAMDMSA01",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000004"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "5dpwVbZKfGRf6XKUXP4Jso",
+    "name" : "mt_MAT_00_IngestDL_MSTR",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ9"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read MSTR from S3 Bucket and write in DL, @dataType= MSTR table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "0o9aLOI22IocIIJx7jjkUB",
+    "name" : "mt_MAT_00_IngestDL_PRNT_CODE",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ5"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read PRNT CODE from S3 Bucket and write in DL, @dataType= Parent Code table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "9v7wBn572gscJ8avYJHoKz",
+    "name" : "mt_MAT_00_IngestDL_XREF",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NUY"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read MSTR XREF from S3 Bucket and write in DL, @dataType= MSTR XREF table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "396mnS1YMXJc2zDKyf7QKn",
+    "name" : "mt_MAT_00_IngestDL_LNKNG",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NIX"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read LNKNG from S3 Bucket and write in DL, @dataType= Link table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "6jqzpqrGJmfdNd9u6hT9Wv",
+    "name" : "mt_MAT_00_Extract_PRDCT_LGSTC",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ2"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read LGSTC table from MDM and write in S3 Bucket, @dataType= Logistic table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "59NMNkCFZhcjOAGuQgrvCU",
+    "name" : "mt_MAT_00_Extract_PRDCT_PRNT_CD",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJA"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read PRNT CD table from MDM and write in S3 Bucket, @dataType= Parent Code table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "kWkGCzdnU6rlTmeMOAswi3",
+    "name" : "mt_MAT_00_Extract_HRCHY_XREF",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000OUT"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read HRCHY table from MDM and write in S3 Bucket, @dataType= Hierarchy table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "1Ak4rJ2tNb3gISMcFE1S21",
+    "name" : "mt_MAT_00_Extract_PRDCT_XREF",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NUZ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read MSTR XREF table from MDM and write in S3 Bucket, @dataType= XREF table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "5XejZvWJbJfltDYPzDYpuK",
+    "name" : "mt_MAT_00_getParameters_DL",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ7"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= IICS OnTap, @connectionTarget= IICS OnTap, @transformation= Get parameters, @dataType= Paramaters, @sources=[@connection1= FF_OTP_IN_PDT], @targets=[@connection1= FF_OTP_OUT_PDT]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "4DxTzFCNPl2d5c4iQx3eWm",
+    "name" : "mt_MAT_00_Extract_BRND_XREF",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NIY"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read BRND table from MDM and write in S3 Bucket, @dataType= Brand table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "491rqrruWaQhAcvtVyBSeS",
+    "name" : "mt_MAT_00_IngestDL_HRCHY_XREF",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000OUU"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read HRCHY from S3 Bucket and write in DL, @dataType= HCRCHY table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "0grWAQlEWwOcBYkWWFHWIy",
+    "name" : "mt_MAT_00_Extract_PRDCT_DSCR",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ4"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read DSCR table from MDM and write in S3 Bucket, @dataType= Description table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "1UQ4X56JPQycVMnQ0Iix0Y",
+    "name" : "mt_MAT_00_IngestDL_ALT_ID_XREF",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NIW"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read ALT ID from S3 Bucket and write in DL, @dataType= Alternate Id table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "6xkyoEJNExkiq4CgLVwGc7",
+    "name" : "mt_MAT_00_IngestDL_BRND",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ0"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read BRND from S3 Bucket and write in DL, @dataType= Brand table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "kvvJHf9PiibkRxWZLF39wk",
+    "name" : "mt_MAT_00_IngestDL_LGSTC",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ6"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read LGSTC from S3 Bucket and write in DL, @dataType= Logistic table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "51GbjUrDKzxjkF6x0wqRG2",
+    "name" : "mt_MAT_00_IngestDl_DSCR_LANG",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NIZ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read DSCR from S3 Bucket and write in DL, @dataType= DSCR table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "8754d5jJjQqkwCYbsOnnqO",
+    "name" : "mt_MAT_00_Extract_PRDCT_MSTR",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ3"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read MSTR table from MDM and write in S3 Bucket, @dataType= MSTR table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "68M0xuqyPtDjevbay0bqUq",
+    "name" : "mt_MAT_00_Extract_ALT_ID_XREF",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ8"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read ALT ID table from MDM and write in S3 Bucket, @dataType= Alternate Id table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

@@ -1,0 +1,113 @@
+{
+  "objectInfo" : {
+    "id" : "491rqrruWaQhAcvtVyBSeS",
+    "name" : "mt_MAT_00_IngestDL_HRCHY_XREF",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000OUU"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @connectionTarget= DL OnTap, @transformation= Read HRCHY from S3 Bucket and write in DL, @dataType= HCRCHY table, @sources=[@connection1= S3_HMDM_V2], @targets=[@connection1= \nFF_OTP_DL_Materials], @description= Mapping task for DL Ingest",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-05-30T22:29:02.926Z",
+  "objectRefs" : [ {
+    "id" : "9ew81IGCjUshOwChB1zgWT",
+    "name" : "SDCAMDMSA01",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000004"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "3ifAjLA8hSxlWIibG3INsU",
+    "name" : "m_MAT_00_IngestDL",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000003OQ"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= S3 Bucket, @transformation= Generic mapping for integration between MDM and DL, @dataType= Materials Data, @connectionTarget= DL OnTap, @additionalText= The data extracted is loaded to DL, @sources= [@connection1= Conn_src_S3], @targets=  [@connection1= Conn_tgt_DL] ",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "0kZFKLFwLWGi6OuvodQdUq",
+    "name" : "FF_OTP_DL_Materials",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000LX"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "araNNncX65DkCwK89n23m3",
+    "name" : "S3_HMDM_V2",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B000000000010"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

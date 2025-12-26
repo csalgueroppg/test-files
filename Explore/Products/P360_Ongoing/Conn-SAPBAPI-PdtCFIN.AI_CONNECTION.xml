@@ -1,0 +1,59 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>1WFsWTzIf6riX2F-gt-7413278-2023-06-16T01:17:33.853Z::conn.xml</types1:EntryId>
+      <types1:Name>Conn-SAPBAPI-PdtCFIN</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCMMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>Castillo.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2023-06-16T01:17:34Z</types1:CreationDate>
+      <types1:ModifiedBy>Castillo.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2023-06-16T01:18:53Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>Castillo.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2023-06-16T01:19:28Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Conn-SAPBAPI-PdtCFIN/Conn-SAPBAPI-PdtCFIN.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Conn-SAPBAPI-PdtCFIN"
+                     label="Conn-SAPBAPI-PdtCFIN"
+                     name="Conn-SAPBAPI-PdtCFIN">
+            <description/>
+            <tags>.agent:SDCMMDMSA01</tags>
+            <agent>SDCMMDMSA01</agent>
+            <attributes>
+               <attribute encrypted="false" name="Username" value="RFC-IICS-DEV"/>
+               <attribute encrypted="true" name="Password" value=""/>
+               <attribute encrypted="false" name="Host Name" value="vhppgcfdci.hec.ppg.com"/>
+               <attribute encrypted="false" name="Client" value="205"/>
+               <attribute encrypted="false" name="Language" value="EN"/>
+               <attribute encrypted="false" name="System Number" value="00"/>
+               <attribute encrypted="false" name="Trace" value="true"/>
+               <attribute encrypted="false" name="SAP Additional Parameters" value=""/>
+               <attribute encrypted="false" name="Jco Trace" value="false"/>
+               <attribute encrypted="false" name="Object Filter" value="ZBAPI_UPD_CUSTTABLE"/>
+            </attributes>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="true"
+                           plugin="ICSX"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="false"
+                           supportsOData="false"
+                           supportsPublishSkipMetadataRefresh="true"
+                           type="bapi"
+                           uuid="d8072d25-f006-47f4-8bfb-0a6d75765a63">
+               <description>SAP BAPI</description>
+            </javaConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>9BPgRrzPwPCegLMnjoTTMb</types1:GUID>
+      <types1:DisplayName>Conn-SAPBAPI-PdtCFIN</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-07-04T01:49:09.703Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

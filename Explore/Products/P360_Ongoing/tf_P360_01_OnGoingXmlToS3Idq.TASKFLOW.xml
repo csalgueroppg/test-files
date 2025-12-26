@@ -1,0 +1,1401 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>YEORUDv2vSx0aa-gt-28810857-2021-03-25T17:32:59.809Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_P360_01_OnGoingXmlToS3Idq</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description>OnGoing XML Transfer from Isilon to the S3 Product Bucket and IDQ Input Folder</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>AODiaz.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2021-03-25T17:33:00Z</types1:CreationDate>
+      <types1:ModifiedBy>JARangel.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2023-04-10T22:11:56Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>JARangel.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2023-03-10T16:26:12Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_P360_01_OnGoingXmlToS3Idq/tf_P360_01_OnGoingXmlToS3Idq.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_P360_01_OnGoingXmlToS3Idq"
+                   name="tf_P360_01_OnGoingXmlToS3Idq"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>OnGoing XML Transfer from Isilon to the S3 Product Bucket and IDQ Input Folder</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="fl_P360_01_Ongoing_Flag_XMLS3toIDQ"
+                          type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">182AF7l3BgQe7qeYCa8d4G</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="count of arrive files" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="current count of arrive files" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="remaining count of arrive files" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Temp_Reintentos" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempERP" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempPath" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vRutaIsilonCMD" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Temp_MaxReintentos" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vEndedFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempOrderFiles" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_ReprocessingFolder" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="CT_XMLProcessedToIDQ1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEDetail" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempECode" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEReason" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_CreateFileFlag" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempPathProcess" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_GenerateTicketError_SendIDQ1"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_GenerateTicketError" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_GeneraTicketErrorReprocess"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEDetailCT" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempECodeCT" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEReasonCT" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempFileNameS3" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_TransferXMLFiles" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_CreateFileFlagCountFiles" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEventFiles" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempRetries" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempS3Path" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempNotS3Path" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempPathFileListener" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_CreateFileFlagErrorCT" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="fl_P360_02_Ongoing_XMLS3toIDQ"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:fl-P360-02-Ongoing-XMLS3toIDQ-fnNBm2sGnW1iLR7uIDCS2n</option>
+                  </options>
+               </field>
+               <field description="" name="CT_CreateFileFlagFLEvent" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateFileFlagFileListener"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="CT_CreateFileFlagFileList" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_XMLProcessedToIDQ" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_GenerateTicketError_SendIDQ"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="vTempEnviroment" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <event eventSource="fileListenerTask:fl_P360_01_Ongoing_Flag_XMLS3toIDQ"/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kmur4aw6" targetId="kmur4aw5"/>
+               </start>
+               <assignment id="kmur4aw5">
+                  <title>AssingPathISL</title>
+                  <operation source="constant" to="temp.vRutaIsilonCMD">//GOFIsilon01.nac.ppg.com/IICS/Dev/Admin/cmd/Products/</operation>
+                  <operation source="constant" to="temp.vTempS3Path">dev/P360Server/hotfolder/</operation>
+                  <operation source="constant" to="temp.vTempNotS3Path">dev/misc/clfmass_files/</operation>
+                  <operation source="formula" to="temp.vTempPathFileListener">
+                     <expression language="XQuery">'\\GOFIsilon01.nac.ppg.com\\IICS\\Dev\\etl_work\\input\\Products\\XML\\S3\\'</expression>
+                  </operation>
+                  <operation source="constant" to="temp.vTempRetries">0</operation>
+                  <operation source="constant" to="temp.Temp_MaxReintentos">6</operation>
+                  <operation source="constant" to="temp.vTempEnviroment">"Dev"</operation>
+                  <link id="kmur4aw7" targetId="kmp5mtca"/>
+               </assignment>
+               <assignment id="kjw83tnn">
+                  <title>AssignVariables</title>
+                  <operation source="formula" to="temp.count of arrive files">
+                     <expression language="XQuery">list:count($temp.fl_P360_02_Ongoing_XMLS3toIDQ[1]/output[1]/fileEvents)</expression>
+                  </operation>
+                  <operation source="constant" to="temp.current count of arrive files">0</operation>
+                  <operation source="formula" to="temp.remaining count of arrive files">
+                     <expression language="XQuery">$temp.countofarrivefiles - $temp.currentcountofarrivefiles </expression>
+                  </operation>
+                  <operation source="constant" to="temp.Temp_Reintentos">0</operation>
+                  <operation source="formula" to="temp.vTempOrderFiles">
+                     <expression language="XQuery">for $ordenamiento in
+$temp.fl_P360_02_Ongoing_XMLS3toIDQ[1]/output[1]/fileEvents 
+order by $ordenamiento descending
+return
+fn:concat($ordenamiento/*:fileName/text(),'~')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTempEventFiles">
+                     <expression language="XQuery">list:head($temp.fl_P360_02_Ongoing_XMLS3toIDQ[1]/output[1]/fileEvents)</expression>
+                  </operation>
+                  <link id="kmur4c6j" targetId="kmpew1d2"/>
+               </assignment>
+               <eventContainer id="kmp5mtca">
+                  <service id="kmp5mtbq">
+                     <title>CT_TransferXMLFiles</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">CT_TransferXMLFiles</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">010T4725000000000004:SDCAMDMSA01</parameter>
+                        <parameter name="Script Name" source="formula">
+                           <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"P360_OG_MVXMLFiles.bat")</expression>
+                        </parameter>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">9ew81IGCjUshOwChB1zgWT</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.CT_TransferXMLFiles</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                              <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"P360_OG_MVXMLFiles.bat")</expression>
+                           </operation>
+                           <operation source="field" to="INFA-commandTask/input[1]/script-1/inputArguments">temp.vTempEnviroment</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.CT_TransferXMLFiles/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.CT_TransferXMLFiles/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.CT_TransferXMLFiles/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.CT_TransferXMLFiles/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.CT_TransferXMLFiles/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.CT_TransferXMLFiles/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="kmur4aqg">
+                     <link id="kmur4aqh" targetId="kmp5mtca" type="containerLink"/>
+                  </flow>
+                  <flow id="kmur4aqj">
+                     <assignment id="kmur4b06">
+                        <title>AssignCountRetriesCT</title>
+                        <operation source="field" to="temp.vTempECodeCT">temp.CT_TransferXMLFiles[1]/fault[1]/code</operation>
+                        <operation source="formula" to="temp.vTempEDetailCT">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace(fn:replace(fn:replace(fn:replace($temp.CT_TransferXMLFiles[1]/fault[1]/detail,"\\\\","\\\\\\"),"\[","[ "),"\]"," ]"),'(\r?\n|\r)',""),'[&lt;&gt;,"",;,:]',""),',',"")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempEReasonCT">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace(fn:replace(fn:replace(fn:replace($temp.CT_TransferXMLFiles[1]/fault[1]/reason ,"\\\\","\\\\\\"),"\[","[ "),"\]"," ]"),'(\r?\n|\r)',""),'[&lt;&gt;,"",;,:]',""),',',"")
+</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempRetries">
+                           <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                        </operation>
+                        <link id="kmur4b07" targetId="kmur4azl"/>
+                     </assignment>
+                     <container id="kmur4azl" type="exclusive">
+                        <title>d_RetriesCTError</title>
+                        <flow id="kmur4azo">
+                           <eventContainer id="kmuzogte">
+                              <service id="kmuzogqq">
+                                 <title>CT_CreateFileFlagErrorCT</title>
+                                 <serviceName>ICSExecuteCommandTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Task Name" source="constant">CT_CreateFileFlagErrorCT</parameter>
+                                    <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                    <parameter name="Runtime Environment" source="constant">010T4725000000000004:SDCAMDMSA01</parameter>
+                                    <parameter name="Script Name" source="formula">
+                                       <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"CreateFlagXMLS3.bat")</expression>
+                                    </parameter>
+                                    <parameter name="Input Arguments" source="constant"/>
+                                    <parameter name="Work Directory" source="constant"/>
+                                    <parameter name="RuntimeEnvGUID" source="constant">9ew81IGCjUshOwChB1zgWT</parameter>
+                                    <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="INFA-commandTask">temp.CT_CreateFileFlagErrorCT</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                       <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                          <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"CreateFlagXMLS3.bat")</expression>
+                                       </operation>
+                                       <operation source="constant"
+                                                  to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.CT_CreateFileFlagErrorCT/output/Run_Id">Run Id</operation>
+                                    <operation source="field" to="temp.CT_CreateFileFlagErrorCT/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.CT_CreateFileFlagErrorCT/output/End_Time">End Time</operation>
+                                    <operation source="field" to="temp.CT_CreateFileFlagErrorCT/output/Exit_Code">Exit Code</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateFileFlagErrorCT/output/Execution_Status">Execution Status</operation>
+                                    <operation source="field" to="temp.CT_CreateFileFlagErrorCT/output/Std_Error">Std Error</operation>
+                                 </serviceOutput>
+                              </service>
+                              <flow id="kmuzogtr">
+                                 <link id="kmuzogts" targetId="kmuzogte" type="containerLink"/>
+                              </flow>
+                              <flow id="kmuzogtu">
+                                 <throw id="kmuzogub">
+                                    <title>ThrowCreateFlagCT</title>
+                                    <throwInput>
+                                       <parameter name="code" source="field" updatable="true">temp.CT_CreateFileFlagCT[1]/fault[1]/code</parameter>
+                                       <parameter name="detail" source="field" updatable="true">temp.CT_CreateFileFlagCT[1]/fault[1]/detail</parameter>
+                                       <parameter name="reason" source="field" updatable="true">temp.CT_CreateFileFlagCT[1]/fault[1]/reason</parameter>
+                                    </throwInput>
+                                 </throw>
+                              </flow>
+                              <link id="kmuzogtq" targetId="kmuzogtr" type="containerLink"/>
+                              <link id="kmuzxsvm" targetId="kmuzxsvl"/>
+                              <events>
+                                 <catch faultField="temp.CT_CreateFileFlagErrorCT/fault"
+                                        id="klh1hf0m"
+                                        interrupting="true"
+                                        name="error">
+                                    <link id="kmuzogtt" targetId="kmuzogtu" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <throw id="kmuzxsvl">
+                              <title>ThrowMoveFilesXML</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">temp.CT_TransferXMLFiles[1]/fault[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">temp.CT_TransferXMLFiles[1]/fault[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">temp.CT_TransferXMLFiles[1]/fault[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <flow id="kmur4azr">
+                           <wait id="kmur4bni">
+                              <title>WaitRetriesErrorCT</title>
+                              <duration source="formula">
+                                 <function name="duration_expression">
+                                    <arg name="value">5</arg>
+                                    <arg name="scale">M</arg>
+                                    <arg name="businessDays"/>
+                                 </function>
+                              </duration>
+                           </wait>
+                           <link id="kmur4b66" targetId="kmur4azl" type="containerLink"/>
+                        </flow>
+                        <link id="kmur4azn" targetId="kmur4azo" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.vTempRetries}</arg>
+                                 <arg name="right">{$temp.Temp_MaxReintentos }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kmur4azq" targetId="kmur4azr" type="containerLink"/>
+                        <link id="kmur4b1c" targetId="kmur4b1a"/>
+                     </container>
+                     <jumpTo id="kmur4b1a">
+                        <link id="kmur4b1b" targetId="kmp5mtca"/>
+                     </jumpTo>
+                  </flow>
+                  <link id="kmur4aqf" targetId="kmur4aqg" type="containerLink"/>
+                  <link id="kngt0n5z" targetId="kngt0n6j"/>
+                  <events>
+                     <catch faultField="temp.CT_TransferXMLFiles/fault"
+                            id="kmp5mtc9"
+                            interrupting="true"
+                            name="error">
+                        <link id="kmur4aqi" targetId="kmur4aqj" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kngt0n6j">
+                  <service id="kngt0n5y">
+                     <title>fl_P360_02_Ongoing_XMLS3toIDQ</title>
+                     <serviceName>DIExecuteServiceTaskFileWatchTaskImpl</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">fl_P360_02_Ongoing_XMLS3toIDQ</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">fnNBm2sGnW1iLR7uIDCS2n</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MI_FILE_LISTENER</parameter>
+                        <parameter name="serviceProviderId" source="constant" updatable="true">filelistener</parameter>
+                        <parameter name="serviceProviderContextPath"
+                                   source="constant"
+                                   updatable="true">filelistener/</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field"
+                                      to="fl-P360-02-Ongoing-XMLS3toIDQ-fnNBm2sGnW1iLR7uIDCS2n">temp.File Watch Task 1</operation>
+                           <operation source="constant"
+                                      to="fl-P360-02-Ongoing-XMLS3toIDQ-fnNBm2sGnW1iLR7uIDCS2n/input[1]/notifyExistingFiles">true</operation>
+                           <operation source="constant"
+                                      to="fl-P360-02-Ongoing-XMLS3toIDQ-fnNBm2sGnW1iLR7uIDCS2n/input[1]/timeOut">1</operation>
+                           <operation source="formula"
+                                      to="fl-P360-02-Ongoing-XMLS3toIDQ-fnNBm2sGnW1iLR7uIDCS2n/input[1]/CATEGORYRule[1]/CATEGORYrule-1[1]/filePattern">
+                              <expression language="XQuery">'OnGoing_P360_*.xml'</expression>
+                           </operation>
+                           <operation source="formula"
+                                      to="fl-P360-02-Ongoing-XMLS3toIDQ-fnNBm2sGnW1iLR7uIDCS2n/input[1]/CATEGORYRule[1]/CATEGORYrule-1[1]/folderPath">
+                              <expression language="XQuery">$temp.vTempPathFileListener </expression>
+                           </operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.fl_P360_02_Ongoing_XMLS3toIDQ/output/fileEvents">fileEvents</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="koawkksu">
+                     <link id="koawkksv" targetId="kngt0n6j" type="containerLink"/>
+                  </flow>
+                  <flow id="koawklfo">
+                     <eventContainer id="koawklkv">
+                        <service id="koawkljm">
+                           <title>CT_CreateFileFlagFLEvent</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_CreateFileFlagFLEvent</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000004:SDCAMDMSA01</parameter>
+                              <parameter name="Script Name" source="formula">
+                                 <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"CreateFlagXMLS3.bat")</expression>
+                              </parameter>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9ew81IGCjUshOwChB1zgWT</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_CreateFileFlagFLEvent</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                    <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"CreateFlagXMLS3.bat")</expression>
+                                 </operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.CT_CreateFileFlagFLEvent/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagFLEvent/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagFLEvent/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagFLEvent/output/Exit_Code">Exit Code</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateFileFlagFLEvent/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagFLEvent/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="koawklkx">
+                           <link id="koawklky" targetId="koawklkv" type="containerLink"/>
+                        </flow>
+                        <flow id="koawkll0">
+                           <assignment id="kod0qou1">
+                              <title>Assign_CreateFlagEvent</title>
+                              <operation source="formula" to="temp.vTempRetries">
+                                 <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                              </operation>
+                              <link id="kod0qou2" targetId="kod0qols"/>
+                           </assignment>
+                           <container id="kod0qols" type="exclusive">
+                              <title>d_RetriesCreateFlagEvent</title>
+                              <flow id="kod0qolv">
+                                 <link id="kod0qoo0" targetId="kod0qols" type="containerLink"/>
+                              </flow>
+                              <flow id="kod0qoly">
+                                 <wait id="kod0qoop">
+                                    <title>WaitRetriesEventCT</title>
+                                    <duration source="formula">
+                                       <function name="duration_expression">
+                                          <arg name="value">5</arg>
+                                          <arg name="scale">M</arg>
+                                          <arg name="businessDays"/>
+                                       </function>
+                                    </duration>
+                                    <link id="kod0qoq3" targetId="kod0qoq1"/>
+                                 </wait>
+                                 <jumpTo id="kod0qoq1">
+                                    <link id="kod0qoq2" targetId="koawklkv"/>
+                                 </jumpTo>
+                              </flow>
+                              <link id="kod0qolu" targetId="kod0qolv" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="equals">
+                                       <arg name="left">{$temp.vTempRetries}</arg>
+                                       <arg name="right">{$temp.Temp_MaxReintentos }</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="kod0qolx" targetId="kod0qoly" type="containerLink"/>
+                           </container>
+                           <link id="kod0qoq0" targetId="koawklkv" type="containerLink"/>
+                        </flow>
+                        <link id="koawklkw" targetId="koawklkx" type="containerLink"/>
+                        <link id="koawkllw" targetId="koawkllv"/>
+                        <events>
+                           <catch faultField="temp.CT_CreateFileFlagFLEvent/fault"
+                                  id="klh1hf0m"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="koawklkz" targetId="koawkll0" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <throw id="koawkllv">
+                        <title>ThrowFL_Event</title>
+                        <throwInput>
+                           <parameter name="code" source="field" updatable="true">temp.fl_P360_02_Ongoing_XMLS3toIDQ[1]/fault[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">temp.fl_P360_02_Ongoing_XMLS3toIDQ[1]/fault[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">temp.fl_P360_02_Ongoing_XMLS3toIDQ[1]/fault[1]/reason</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <flow id="koawkksx">
+                     <eventContainer id="koekm2j2">
+                        <service id="koekm2d6">
+                           <title>CT_CreateFileFlagFileList</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_CreateFileFlagFileList</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000004:SDCAMDMSA01</parameter>
+                              <parameter name="Script Name" source="formula">
+                                 <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"CreateFlagXMLS3.bat")</expression>
+                              </parameter>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9ew81IGCjUshOwChB1zgWT</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_CreateFileFlagFileList</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                    <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"CreateFlagXMLS3.bat")</expression>
+                                 </operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.CT_CreateFileFlagFileList/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagFileList/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagFileList/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagFileList/output/Exit_Code">Exit Code</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateFileFlagFileList/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagFileList/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="koekm2jn">
+                           <throw id="koekm2ln">
+                              <title>ThrowfileListener</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">temp.fl_P360_02_Ongoing_XMLS3toIDQ[1]/fault[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">temp.fl_P360_02_Ongoing_XMLS3toIDQ[1]/fault[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">temp.fl_P360_02_Ongoing_XMLS3toIDQ[1]/fault[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <flow id="koekm2jq">
+                           <assignment id="koekm2ke">
+                              <title>Assign_RetriesErrorFL</title>
+                              <operation source="formula" to="temp.vTempRetries">
+                                 <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                              </operation>
+                           </assignment>
+                           <link id="koekm2jr" targetId="koekm2j2" type="containerLink"/>
+                        </flow>
+                        <link id="koekm2jm" targetId="koekm2jn" type="containerLink"/>
+                        <link id="koekm2kd" targetId="kobuac7p"/>
+                        <events>
+                           <catch faultField="temp.CT_CreateFileFlagFileList/fault"
+                                  id="kod0qn6m"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="koekm2jp" targetId="koekm2jq" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <container id="kobuac7p" type="exclusive">
+                        <title>d_RetrieFL</title>
+                        <flow id="kobuac7t">
+                           <throw id="koekm2nh">
+                              <title>ThrowCTErrorCreateFlag</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">temp.CT_CreateFileFlagFileList[1]/fault[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">temp.CT_CreateFileFlagFileList[1]/fault[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">temp.CT_CreateFileFlagFileList[1]/fault[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <flow id="kobuac7w">
+                           <wait id="kobuac8k">
+                              <title>WaitRetrieErrorFL</title>
+                              <duration source="formula">
+                                 <function name="duration_expression">
+                                    <arg name="value">5</arg>
+                                    <arg name="scale">M</arg>
+                                    <arg name="businessDays"/>
+                                 </function>
+                              </duration>
+                              <link id="kobuacah" targetId="kobuacaf"/>
+                           </wait>
+                           <jumpTo id="kobuacaf">
+                              <link id="kobuacag" targetId="koekm2j2"/>
+                           </jumpTo>
+                        </flow>
+                        <link id="kobuac7s" targetId="kobuac7t" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.Temp_MaxReintentos}</arg>
+                                 <arg name="right">{$temp.Temp_Reintentos }</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kobuac7v" targetId="kobuac7w" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <link id="koawkkst" targetId="koawkksu" type="containerLink"/>
+                  <link id="kngt0n60" targetId="kjw83tnn"/>
+                  <events>
+                     <timer id="koawklfm" interrupting="true">
+                        <duration source="formula">
+                           <function name="duration_expression">
+                              <arg name="value">5</arg>
+                              <arg name="scale">M</arg>
+                              <arg name="businessDays"/>
+                           </function>
+                        </duration>
+                        <link id="koawklfn" targetId="koawklfo" type="containerLink"/>
+                     </timer>
+                     <catch faultField="temp.fl_P360_02_Ongoing_XMLS3toIDQ/fault"
+                            id="kngt0n6i"
+                            interrupting="true"
+                            name="error">
+                        <link id="koawkksw" targetId="koawkksx" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <container id="kmpew1d2" type="exclusive">
+                  <title>d_CountArrivesFiles</title>
+                  <flow id="kmpew1d6">
+                     <link id="kmpew1d7" targetId="kmpew1d2" type="containerLink"/>
+                  </flow>
+                  <flow id="kmpew1d9">
+                     <eventContainer id="kmqlamb4">
+                        <service id="kmqlamaf">
+                           <title>CT_CreateFileFlagCountFiles</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_CreateFileFlagCountFiles</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000004:SDCAMDMSA01</parameter>
+                              <parameter name="Script Name" source="formula">
+                                 <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"CreateFlagXMLS3.bat")</expression>
+                              </parameter>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9ew81IGCjUshOwChB1zgWT</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_CreateFileFlagCountFiles</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                    <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"CreateFlagXMLS3.bat")</expression>
+                                 </operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.CT_CreateFileFlagCountFiles/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagCountFiles/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagCountFiles/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagCountFiles/output/Exit_Code">Exit Code</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateFileFlagCountFiles/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlagCountFiles/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="kmqlamb6">
+                           <link id="kmqlamb7" targetId="kmqlamb4" type="containerLink"/>
+                        </flow>
+                        <flow id="kmqlamb9">
+                           <assignment id="kod0qnur">
+                              <title>Assign_RetriesCFCount</title>
+                              <operation source="formula" to="temp.vTempRetries">
+                                 <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                              </operation>
+                              <link id="kod0qnya" targetId="kod0qny9"/>
+                           </assignment>
+                           <container id="kod0qny9" type="exclusive">
+                              <title>D_RetriesCreateFlagCNT</title>
+                              <flow id="kod0qnyd">
+                                 <link id="kod0qnye" targetId="kod0qny9" type="containerLink"/>
+                              </flow>
+                              <flow id="kod0qnyg">
+                                 <wait id="kod0qnzw">
+                                    <title>WaitRetriesCreateFlagCNT</title>
+                                    <duration source="formula">
+                                       <function name="duration_expression">
+                                          <arg name="value">5</arg>
+                                          <arg name="scale">M</arg>
+                                          <arg name="businessDays"/>
+                                       </function>
+                                    </duration>
+                                    <link id="kod0qnzx" targetId="kod0qnz7"/>
+                                 </wait>
+                                 <jumpTo id="kod0qnz7">
+                                    <link id="kod0qnz8" targetId="kmqlamb4"/>
+                                 </jumpTo>
+                              </flow>
+                              <link id="kod0qnyc" targetId="kod0qnyd" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="equals">
+                                       <arg name="left">{$temp.vTempRetries}</arg>
+                                       <arg name="right">{$temp.Temp_MaxReintentos }</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="kod0qnyf" targetId="kod0qnyg" type="containerLink"/>
+                              <link id="kod0qnyb" targetId="kmqlamc3"/>
+                           </container>
+                           <throw id="kmqlamc3">
+                              <title>ThrowCreateFlagCOunt</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">temp.CT_CreateFileFlagCountFiles[1]/fault[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">temp.CT_CreateFileFlagCountFiles[1]/fault[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">temp.CT_CreateFileFlagCountFiles[1]/fault[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="kmqlamb5" targetId="kmqlamb6" type="containerLink"/>
+                        <link id="kmqlamag" targetId="kmpew1dn"/>
+                        <events>
+                           <catch faultField="temp.CT_CreateFileFlagCountFiles/fault"
+                                  id="klh1hf0m"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="kmqlamb8" targetId="kmqlamb9" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <end id="kmpew1dn">
+                        <title>End 1</title>
+                     </end>
+                  </flow>
+                  <link id="kmpew1d5" targetId="kmpew1d6" type="containerLink">
+                     <condition source="formula">
+                        <function name="contains">
+                           <arg name="left">{$temp.vTempEventFiles}</arg>
+                           <arg name="right">ARRIVE</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="kmpew1d8" targetId="kmpew1d9" type="containerLink"/>
+                  <link id="kmur4asy" targetId="kjwb866d"/>
+               </container>
+               <container id="kjwb866d" type="exclusive">
+                  <title>d_ArriveFiles</title>
+                  <flow id="kjwb866h">
+                     <assignment id="kk4uizfy">
+                        <title>AssignPathAnDFiles</title>
+                        <operation source="formula" to="temp.vTempERP">
+                           <expression language="XQuery">if (fn:contains(fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]), 'Brazil'))
+then 'Brazil'
+else if (fn:contains(fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]), 'Comex'))
+then 'ComexMDM'
+else if (fn:contains(fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]) , 'QAD'))
+then 'QAD'
+else if (fn:contains(fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]), 'SAPSCM'))
+then 'SAPSCM'
+else if (fn:contains(fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]), 'SAP100'))
+then 'SAP100'
+else if (fn:contains(fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]), 'SAP300'))
+then 'SAP300'
+else if (fn:contains(fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]), 'EMEA'))
+then 'EMEA'
+else if (fn:contains(fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]), 'NA'))
+then 'NA'
+else if (fn:contains(fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]), 'SAPANZ'))
+then 'SAPANZ'
+else ''</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempPath">
+                           <expression language="XQuery">fn:concat('S3\',$temp.vTempERP ,'\',fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]))</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempFileName">
+                           <expression language="XQuery">fn:replace(fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]),'.xml',".out")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempPathProcess">
+                           <expression language="XQuery">fn:concat($temp.vTempERP ,'\',fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles]))</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vEndedFileName">
+                           <expression language="XQuery">fn:normalize-space(fn:tokenize($temp.vTempOrderFiles ,'~')[$temp.remainingcountofarrivefiles])</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vTempFileNameS3">
+                           <expression language="XQuery">if (fn:contains($temp.vEndedFileName,'NOT'))
+then
+fn:concat($temp.vTempNotS3Path,$temp.vEndedFileName)
+else 
+fn:concat($temp.vTempS3Path,$temp.vEndedFileName)</expression>
+                        </operation>
+                        <link id="lduc9e72" targetId="lduc9e8a"/>
+                     </assignment>
+                     <eventContainer id="lduc9e8a">
+                        <service id="lduc9e71">
+                           <title>CT_XMLProcessedToIDQ1</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_XMLProcessedToIDQ1</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000004:SDCAMDMSA01</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9ew81IGCjUshOwChB1zgWT</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                    <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"script_move_fileIDQ_Processed.cmd")</expression>
+                                 </operation>
+                                 <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                                    <expression language="XQuery">fn:concat('"',$temp.vTempPath,'"',',','"',$temp.vTempFileName,'"',',','"',$temp.vEndedFileName,'"',',','"',$temp.vTempPathProcess,'"')</expression>
+                                 </operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.CT_XMLProcessedToIDQ1/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.CT_XMLProcessedToIDQ1/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.CT_XMLProcessedToIDQ1/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.CT_XMLProcessedToIDQ1/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.CT_XMLProcessedToIDQ1/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.CT_XMLProcessedToIDQ1/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="lduc9ec3">
+                           <assignment id="lduc9ecr">
+                              <title>AssignCounters</title>
+                              <operation source="formula" to="temp.current count of arrive files">
+                                 <expression language="XQuery">$temp.currentcountofarrivefiles  + 1</expression>
+                              </operation>
+                              <operation source="formula" to="temp.remaining count of arrive files">
+                                 <expression language="XQuery">$temp.countofarrivefiles -$temp.currentcountofarrivefiles </expression>
+                              </operation>
+                              <link id="lduc9ehq" targetId="lduc9eho"/>
+                           </assignment>
+                           <jumpTo id="lduc9eho">
+                              <link id="lduc9ehp" targetId="kjwb866d"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="lduc9ec6">
+                           <assignment id="lduc9ej5">
+                              <title>AssignErrorVariableIDQ</title>
+                              <operation source="field" to="temp.vTempECodeCT">temp.CT_XMLProcessedToIDQ1[1]/fault[1]/code</operation>
+                              <operation source="formula" to="temp.vTempEDetailCT">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace(fn:replace(fn:replace(fn:replace($temp.CT_XMLProcessedToIDQ1[1]/fault[1]/detail,"\\\\","\\\\\\"),"\[","[ "),"\]"," ]"),'(\r?\n|\r)',""),'[&lt;&gt;,"",;,:]',""),',',"")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempEReasonCT">
+                                 <expression language="XQuery">fn:concat($temp.vEndedFileName , ' ',fn:replace(fn:replace(fn:replace(fn:replace(fn:replace(fn:replace($temp.CT_XMLProcessedToIDQ1[1]/fault[1]/reason,"\\\\","\\\\\\"),"\[","[ "),"\]"," ]"),'(\r?\n|\r)',""),'[&lt;&gt;,"",;,:]',""),',',""))</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vTempRetries">
+                                 <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                              </operation>
+                              <link id="lduc9etr" targetId="lduc9etq"/>
+                           </assignment>
+                           <container id="lduc9etq" type="exclusive">
+                              <title>d_RetriesIDQProcess</title>
+                              <flow id="lduc9ett">
+                                 <eventContainer id="lduc9f00">
+                                    <service id="lduc9eyq">
+                                       <title>CT_GenerateTicketError_SendIDQ1</title>
+                                       <serviceName>ICSExecuteCommandTask</serviceName>
+                                       <serviceGUID/>
+                                       <serviceInput>
+                                          <parameter name="Task Name" source="constant">CT_GenerateTicketError_SendIDQ1</parameter>
+                                          <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                          <parameter name="Runtime Environment" source="constant">010T4725000000000004:SDCAMDMSA01</parameter>
+                                          <parameter name="Script Name" source="constant"/>
+                                          <parameter name="Input Arguments" source="constant"/>
+                                          <parameter name="Work Directory" source="constant"/>
+                                          <parameter name="RuntimeEnvGUID" source="constant">9ew81IGCjUshOwChB1zgWT</parameter>
+                                          <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                                          <parameter name="taskField" source="nested">
+                                             <operation source="field" to="INFA-commandTask">temp.Command Task 1</operation>
+                                             <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                             <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                                <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"script_error_OG_P360.cmd")</expression>
+                                             </operation>
+                                             <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                                                <expression language="XQuery">fn:concat('"',$temp.vEndedFileName,'"',',','"','tf_P360_01_OnGoingXmlToS3Idq','"',',','"','Send XML File to IDQ','"',',','"',$temp.vTempECodeCT,'"',',','"',$temp.vTempEDetailCT,'"',',','"',$temp.vTempEReasonCT,'"',',','"','Send_FileXML_S3','"')</expression>
+                                             </operation>
+                                             <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                          </parameter>
+                                       </serviceInput>
+                                       <serviceOutput>
+                                          <operation source="field" to="temp.CT_GenerateTicketError_SendIDQ1/output/Run_Id">Run Id</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_GenerateTicketError_SendIDQ1/output/Start_Time">Start Time</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_GenerateTicketError_SendIDQ1/output/End_Time">End Time</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_GenerateTicketError_SendIDQ1/output/Exit_Code">Exit Code</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_GenerateTicketError_SendIDQ1/output/Execution_Status">Execution Status</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_GenerateTicketError_SendIDQ1/output/Std_Error">Std Error</operation>
+                                       </serviceOutput>
+                                    </service>
+                                    <flow id="lduc9f5g">
+                                       <assignment id="lduc9far">
+                                          <title>AssignCountersErrorIDQ</title>
+                                          <operation source="formula" to="temp.current count of arrive files">
+                                             <expression language="XQuery">$temp.currentcountofarrivefiles  + 1</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.remaining count of arrive files">
+                                             <expression language="XQuery">$temp.countofarrivefiles -$temp.currentcountofarrivefiles </expression>
+                                          </operation>
+                                       </assignment>
+                                       <link id="lduc9f5h" targetId="lduc9f00" type="containerLink"/>
+                                    </flow>
+                                    <flow id="lduc9f5j">
+                                       <throw id="lduc9f66">
+                                          <title>TFaultErrorSendIDQ</title>
+                                          <throwInput>
+                                             <parameter name="code" source="field" updatable="true">temp.CT_GenerateTicketError_SendIDQ1[1]/fault[1]/code</parameter>
+                                             <parameter name="detail" source="field" updatable="true">temp.CT_GenerateTicketError_SendIDQ1[1]/fault[1]/detail</parameter>
+                                             <parameter name="reason" source="field" updatable="true">temp.CT_GenerateTicketError_SendIDQ1[1]/fault[1]/reason</parameter>
+                                          </throwInput>
+                                       </throw>
+                                    </flow>
+                                    <link id="lduc9f5f" targetId="lduc9f5g" type="containerLink"/>
+                                    <link id="lduc9fgi" targetId="lduc9fgg"/>
+                                    <events>
+                                       <catch faultField="temp.CT_GenerateTicketError_SendIDQ1/fault"
+                                              id="lduc9ezz"
+                                              interrupting="true"
+                                              name="error">
+                                          <link id="lduc9f5i" targetId="lduc9f5j" type="containerLink"/>
+                                       </catch>
+                                    </events>
+                                 </eventContainer>
+                                 <jumpTo id="lduc9fgg">
+                                    <link id="lduc9fgh" targetId="kjwb866d"/>
+                                 </jumpTo>
+                              </flow>
+                              <flow id="lduc9etw">
+                                 <wait id="lduc9ew2">
+                                    <title>WaitRetriesIDQCT</title>
+                                    <duration source="formula">
+                                       <function name="duration_expression">
+                                          <arg name="value">5</arg>
+                                          <arg name="scale">M</arg>
+                                          <arg name="businessDays"/>
+                                       </function>
+                                    </duration>
+                                    <link id="lduc9exp" targetId="lduc9exn"/>
+                                 </wait>
+                                 <jumpTo id="lduc9exn">
+                                    <link id="lduc9exo" targetId="lduc9e8a"/>
+                                 </jumpTo>
+                              </flow>
+                              <link id="lduc9ets" targetId="lduc9ett" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="equals">
+                                       <arg name="left">{$temp.vTempRetries}</arg>
+                                       <arg name="right">{$temp.Temp_MaxReintentos }</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="lduc9etv" targetId="lduc9etw" type="containerLink"/>
+                           </container>
+                        </flow>
+                        <link id="lduc9ec2" targetId="lduc9ec3" type="containerLink"/>
+                        <events>
+                           <catch faultField="temp.CT_XMLProcessedToIDQ1/fault"
+                                  id="lduc9e89"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="lduc9ec5" targetId="lduc9ec6" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                  </flow>
+                  <flow id="kjwb866k">
+                     <eventContainer id="klh1hf0n">
+                        <service id="klh1hf0b">
+                           <title>CT_CreateFileFlag</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_CreateFileFlag</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000004:SDCAMDMSA01</parameter>
+                              <parameter name="Script Name" source="formula">
+                                 <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"CreateFlagXMLS3.bat")</expression>
+                              </parameter>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9ew81IGCjUshOwChB1zgWT</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_CreateFileFlag</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                                    <expression language="XQuery">fn:concat($temp.vRutaIsilonCMD,"CreateFlagXMLS3.bat")</expression>
+                                 </operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.CT_CreateFileFlag/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlag/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlag/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlag/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlag/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.CT_CreateFileFlag/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="km4cpqjx">
+                           <link id="km4cpqjy" targetId="klh1hf0n" type="containerLink"/>
+                        </flow>
+                        <flow id="km4cpqk0">
+                           <assignment id="kod0qo8t">
+                              <title>Assign_RetriesCreateFlag</title>
+                              <operation source="formula" to="temp.vTempRetries">
+                                 <expression language="XQuery">$temp.vTempRetries + 1</expression>
+                              </operation>
+                              <link id="kod0qod3" targetId="kod0qod2"/>
+                           </assignment>
+                           <container id="kod0qod2" type="exclusive">
+                              <title>d_RetriesCreateFlag</title>
+                              <flow id="kod0qod6">
+                                 <link id="kod0qod7" targetId="kod0qod2" type="containerLink"/>
+                              </flow>
+                              <flow id="kod0qod9">
+                                 <wait id="kod0qofd">
+                                    <title>WaiTRetriesCreateFlag</title>
+                                    <duration source="formula">
+                                       <function name="duration_expression">
+                                          <arg name="value">5</arg>
+                                          <arg name="scale">M</arg>
+                                          <arg name="businessDays"/>
+                                       </function>
+                                    </duration>
+                                    <link id="kod0qofe" targetId="kod0qoe1"/>
+                                 </wait>
+                                 <jumpTo id="kod0qoe1">
+                                    <link id="kod0qoe2" targetId="klh1hf0n"/>
+                                 </jumpTo>
+                              </flow>
+                              <link id="kod0qod5" targetId="kod0qod6" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="equals">
+                                       <arg name="left">{$temp.vTempRetries}</arg>
+                                       <arg name="right">{$temp.Temp_MaxReintentos }</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="kod0qod8" targetId="kod0qod9" type="containerLink"/>
+                              <link id="kod0qod4" targetId="km4cpqkb"/>
+                           </container>
+                           <throw id="km4cpqkb">
+                              <title>TFaultCreateFileFlag</title>
+                              <throwInput>
+                                 <parameter name="code" source="field" updatable="true">temp.CT_CreateFileFlag[1]/fault[1]/code</parameter>
+                                 <parameter name="detail" source="field" updatable="true">temp.CT_CreateFileFlag[1]/fault[1]/detail</parameter>
+                                 <parameter name="reason" source="field" updatable="true">temp.CT_CreateFileFlag[1]/fault[1]/reason</parameter>
+                              </throwInput>
+                           </throw>
+                        </flow>
+                        <link id="km4cpqjw" targetId="km4cpqjx" type="containerLink"/>
+                        <events>
+                           <catch faultField="temp.CT_CreateFileFlag/fault"
+                                  id="klh1hf0m"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="km4cpqjz" targetId="km4cpqk0" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="kjwb866l" targetId="kjwb866d" type="containerLink"/>
+                  </flow>
+                  <link id="kjwb866g" targetId="kjwb866h" type="containerLink">
+                     <condition source="formula">
+                        <function name="not-equals">
+                           <arg name="left">{$temp.remainingcountofarrivefiles}</arg>
+                           <arg name="right">{0}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="kjwb866j" targetId="kjwb866k" type="containerLink"/>
+                  <link id="kjwb866p" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="fl-P360-02-Ongoing-XMLS3toIDQ-fnNBm2sGnW1iLR7uIDCS2n"
+                              isByCopy="true"
+                              name="fl-P360-02-Ongoing-XMLS3toIDQ-fnNBm2sGnW1iLR7uIDCS2n">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895">
+                  <description>This process object represents a taskflow specific file task field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Arrived Files"
+                            name="arrivedFiles"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-arrivedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field label="Update Files"
+                            name="updatedFiles"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-updatedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field label="Deleted Files"
+                            name="deletedFiles"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-deletedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-arrivedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-arrivedFiles">
+                  <description>This process object represents a arrivedFiles structure of the file task field.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path"
+                            name="path"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Name"
+                            name="name"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Size"
+                            name="size"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Last Modified"
+                            name="lastModified"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-updatedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-updatedFiles">
+                  <description>This process object represents a updatedFiles structure of the file task field.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path"
+                            name="path"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Name"
+                            name="name"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Size"
+                            name="size"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Last Modified"
+                            name="lastModified"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-deletedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-deletedFiles">
+                  <description>This process object represents file listener task deletedFiles structure.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path"
+                            name="path"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Name"
+                            name="name"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Size"
+                            name="size"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Last Modified"
+                            name="lastModified"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>5G1rkBTiMMSbI2UpwXayUt</types1:GUID>
+      <types1:DisplayName>tf_P360_01_OnGoingXmlToS3Idq</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-04-11T01:07:57.581Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

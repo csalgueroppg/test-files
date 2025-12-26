@@ -1,0 +1,113 @@
+{
+  "objectInfo" : {
+    "id" : "3j0lzAlsHIziZb4ZRjZvCR",
+    "name" : "mt_PDT_01_InsertData_MDM_To_MDM",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000QSF"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Data Base MDM Tgt, @additionalText= This mapping task send the information to MDM view,@sources[@S3_HMDM_V2_HostedAgent], @targets[@ORC_HMDM_WRITE_MATERIALS]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-08-19T21:54:33.789Z",
+  "objectRefs" : [ {
+    "id" : "3kEMqnm5fv1b0XO5SBSOOY",
+    "name" : "ORC_HMDM_WRITE_MATERIALS",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000L0"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "95YOQJiwUc7jyDOsUPhaG8",
+    "name" : "m_PDT_01_InsertData_MDM_To_MDM",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000005G1"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Data Base MDM Tgt, @additionalText= This mapping send the information to MDM view,@sources[@S3_HMDM_V2_HostedAgent], @targets[@ORC_HMDM_WRITE_MATERIALS]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  }, {
+    "id" : "6QkntOpAEzblanc4S2f1cR",
+    "name" : "ip-10-17-246-40.ec2.internal",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000005"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "36Nuzgkr4eDiig0O4C9u6x",
+    "name" : "S3_HMDM_V2_HostedAgent",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B00000000001E"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

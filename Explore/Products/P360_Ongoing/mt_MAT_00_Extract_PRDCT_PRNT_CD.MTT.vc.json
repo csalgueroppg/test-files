@@ -1,0 +1,183 @@
+{
+  "name" : "mt_MAT_00_Extract_PRDCT_PRNT_CD",
+  "description" : "@connectionSource= MDM Hosted, @connectionTarget= S3 Bucket, @transformation= Read PRNT CD table from MDM and write in S3 Bucket, @dataType= Parent Code table, @sources=[@connection1= ORC_HMDM_READ_MATERIALS], @targets=[@connection1= S3_HMDM_V2_HostedAgent], @description= Mapping task for DL Extract",
+  "runtimeEnvironmentId" : "@6QkntOpAEzblanc4S2f1cR",
+  "runtimeEnvironmentName" : "ip-10-17-246-40.ec2.internal",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$Src_MDM_S3$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "Conn_MDM (Conn_MDM)",
+      "uiProperties" : {
+        "cnxtype" : "Oracle",
+        "connectionParameterized" : "true",
+        "paramName" : "Conn_MDM",
+        "paramLabel" : "Conn_MDM",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "Conn_MDM",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objlabel" : "p_Source_S3",
+        "origobjlabel" : "p_Source_S3",
+        "objectParameterized" : "true",
+        "objectParamName" : "p_Source_S3",
+        "objectParamType-mapping" : "DataObject",
+        "flags" : "SUPPORTS_MULTI_SCHEMA",
+        "originalPath" : "Src_MDM_S3"
+      },
+      "sourceConnectionId" : "@3Y631WjzyCkfEoUN5bDgqw",
+      "connectionName" : "ORC_HMDM_READ_MATERIALS",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : false
+      },
+      "runtimeAttrs" : {
+        "Sql Override" : "$$p_Src_MDM"
+      },
+      "customQuery" : "SELECT \nC_BO_PRDCT_MSTR_XREF.PKEY_SRC_OBJECT AS ITEM_SKEY, \nC_BO_PRDCT_PRNT_CD_XREF.PARENT_CODE AS PARENT_CODE,\nC_BO_PRDCT_PRNT_CD_XREF.PARENT_CODE_NAME AS PARENT_CODE_NAME\n\nFROM MATERIALS_HUB.C_BO_PRDCT_MSTR_XREF\nINNER JOIN MATERIALS_HUB.C_BO_PRDCT_PRNT_CD_XREF\nON MATERIALS_HUB.C_BO_PRDCT_MSTR_XREF.ROWID_XREF = MATERIALS_HUB.C_BO_PRDCT_PRNT_CD_XREF.PRDCT_MSTR_FK",
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "runtimeParameterData" : {
+        "connectionParameterName" : "Conn_MDM",
+        "objectParameterName" : "p_Source_S3",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    },
+    {
+      "name" : "$Tgt_DataLake$",
+      "type" : "TARGET",
+      "label" : "Tgt_DataLake",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "objlabel" : "p_Target_S3",
+        "origobjlabel" : "p_Target_S3",
+        "objectParameterized" : "true",
+        "objectParamName" : "p_Target_S3",
+        "objectParamType-mapping" : "DataObject",
+        "supportApplyDDLChanges" : "true",
+        "originalPath" : "Tgt_DataLake"
+      },
+      "targetConnectionId" : "@36Nuzgkr4eDiig0O4C9u6x",
+      "connectionName" : "S3_HMDM_V2_HostedAgent",
+      "targetObject" : "C_BO_PRDCT_PRNT_CD_XREF.csv",
+      "targetObjectLabel" : "C_BO_PRDCT_PRNT_CD_XREF.csv",
+      "newFlatFile" : false,
+      "newObject" : true,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "newObjectName" : "C_BO_PRDCT_PRNT_CD_XREF.csv",
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "runtimeAttrs" : {
+        "File Merge" : "NO"
+      },
+      "oprRuntimeAttrs" : {
+        "stageFileMerging" : "NO"
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "C_BO_PRDCT_PRNT_CD_XREF.csv",
+      "objectLabel" : "C_BO_PRDCT_PRNT_CD_XREF.csv",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "dataFormat" : {
+        "formatId" : "Flat",
+        "dataFormatAttributes" : {
+          "escapeChar" : "\\",
+          "importColumnFromFirstLine" : "true",
+          "headerLineNumber" : "1",
+          "maxRowsToPreview" : "0",
+          "qualifierMode" : "MINIMAL",
+          "firstDataRow" : "2",
+          "generateHeader" : "true",
+          "delimiter" : "֎",
+          "qualifier" : "\"",
+          "targetHeader" : "With Header",
+          "escapeCharacterDataRetained" : "false",
+          "codePage" : "UTF-8",
+          "fixedWidthMode" : "false"
+        }
+      },
+      "runtimeParameterData" : {
+        "objectParameterName" : "p_Target_S3",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "lastRunTime" : 1748457888000,
+  "mappingId" : "@7kulRwSYR08jgJIM31nYGh",
+  "mappingTemplateName" : "m_MAT_00_Extract_MDM_to_S3",
+  "inOutParameters" : [
+    {
+      "name" : "p_Trg_S3",
+      "description" : "p_Trg_S3",
+      "datatype" : "STRING",
+      "precision" : "1000",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "C_BO_PRDCT_PRNT_CD_XREF.csv"
+    },
+    {
+      "name" : "p_Src_MDM",
+      "description" : "p_Src_MDM",
+      "initialValue" : "''",
+      "datatype" : "STRING",
+      "precision" : "2000",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "SELECT C_BO_PRDCT_MSTR_XREF.PKEY_SRC_OBJECT AS ITEM_SKEY, C_BO_PRDCT_PRNT_CD_XREF.PARENT_CODE AS PARENT_CODE, C_BO_PRDCT_PRNT_CD_XREF.PARENT_CODE_NAME AS PARENT_CODE_NAME FROM MATERIALS_HUB.C_BO_PRDCT_MSTR_XREF INNER JOIN MATERIALS_HUB.C_BO_PRDCT_PRNT_CD_XREF ON MATERIALS_HUB.C_BO_PRDCT_MSTR_XREF.ROWID_XREF = MATERIALS_HUB.C_BO_PRDCT_PRNT_CD_XREF.PRDCT_MSTR_FK WHERE C_BO_PRDCT_PRNT_CD_XREF.last_update_date> TO_TIMESTAMP('29-05-25 00:00:00.000','DD-MM-YY HH24:MI.SSXFF')"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : false,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "paramFileType" : "PARAM_FILE_LOCAL",
+  "schemaMode" : "async",
+  "executionEngine" : "SPARK",
+  "valid" : true,
+  "parameterFileEncoding" : "UTF-8",
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2025-05-30 16:29:01 CST"
+}

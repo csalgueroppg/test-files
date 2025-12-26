@@ -1,0 +1,717 @@
+{
+  "content": {
+    "$$IID": "stringIdentity:@3",
+    "$$class": 1,
+    "annotations": [
+      {
+        "$$ID": 1,
+        "$$class": 2,
+        "body": "@connectionSource= MDM Hosted, @transformation= Generic mapping for integration between MDM and DL, @dataType= Materials Data, @connectionTarget= S3 Bucket, @additionalText= The data extracted is loaded to DL, @sources= [@connection1= Conn_MDM], @targets=  [@connection1= Conn_tgt_DL] "
+      },
+      {
+        "$$ID": 2,
+        "$$class": 3,
+        "jsonBlob": "{\"Src_MDM_S3\":{\"x\":50,\"y\":100},\"Exp_Passthrough\":{\"x\":237,\"y\":100},\"Tgt_DataLake\":{\"x\":438.0000284492626,\"y\":100}}",
+        "templateId": ""
+      },
+      {
+        "$$ID": 3,
+        "$$class": 4,
+        "source": "TEMPLATE_SETTINGS",
+        "nameValuePairs": [
+          {
+            "$$ID": 19,
+            "$$class": 13,
+            "name": "UNIQUIFY_MAPPLET_TX_NAMES",
+            "value": {
+              "$$class": 20,
+              "value": "true"
+            }
+          }
+        ]
+      }
+    ],
+    "allowMaxFieldLength": "false",
+    "bigIntConvertType": "ONLY_BIGINT",
+    "documentType": "MAPPING",
+    "ecoSystem": "",
+    "name": "m_MAT_00_Extract_MDM_to_S3",
+    "templateOrigin": "",
+    "links": [
+      {
+        "$$ID": 4,
+        "$$class": 5,
+        "name": "Expression.[object Object]",
+        "fromGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        },
+        "toGroup": {
+          "##ID": 7,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 8,
+          "$$class": 8
+        }
+      },
+      {
+        "$$ID": 9,
+        "$$class": 5,
+        "name": "Source.[object Object]",
+        "fromGroup": {
+          "##ID": 10,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 11,
+          "$$class": 9
+        },
+        "toGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        }
+      }
+    ],
+    "parameters": [
+      {
+        "$$ID": 12,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_MDM",
+        "name": "Conn_MDM",
+        "anonymousType": {
+          "$$ID": 20,
+          "$$class": 14,
+          "name": "",
+          "isVisible": "false",
+          "subType": "TOOLKIT_CCI",
+          "typeSystem": "Oracle",
+          "connectionType": "Oracle"
+        }
+      },
+      {
+        "$$ID": 13,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "p_Source_S3",
+        "name": "p_Source_S3",
+        "anonymousType": {
+          "$$ID": 21,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 14,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_tgt_DL",
+        "name": "Conn_tgt_DL",
+        "anonymousType": {
+          "$$ID": 22,
+          "$$class": 14,
+          "name": "",
+          "isVisible": "false",
+          "subType": "TOOLKIT_CCI",
+          "typeSystem": "TOOLKIT",
+          "connectionType": "Amazon S3 v2"
+        }
+      },
+      {
+        "$$ID": 15,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "true",
+        "expressionVariable": "false",
+        "label": "p_Target_DL",
+        "name": "p_Target_DL",
+        "anonymousType": {
+          "$$ID": 23,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 16,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "p_Target_S3",
+        "name": "p_Target_S3",
+        "anonymousType": {
+          "$$ID": 24,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      }
+    ],
+    "transformations": [
+      {
+        "$$ID": 11,
+        "$$class": 9,
+        "createTime": "2023-03-10T20:12:16.652Z",
+        "name": "Src_MDM_S3",
+        "groups": [
+          {
+            "$$ID": 10,
+            "$$class": 6,
+            "input": "false",
+            "name": "DefaultGroup",
+            "output": "true"
+          }
+        ],
+        "generateFilenamePort": "false",
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 25,
+          "$$class": 16,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 12,
+            "$$class": 10
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 13,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "",
+          "useDynamicFileName": "false",
+          "oprRuntimeAttributes": {
+            "$$ID": 33,
+            "$$class": 21
+          },
+          "readOptions": {
+            "$$ID": 34,
+            "$$class": 22,
+            "commandType": 0,
+            "descending": "false",
+            "filterCondition": "",
+            "flatFileCommand": "",
+            "queryAll": "false",
+            "rowLimit": 0,
+            "selectDistinct": "false",
+            "userDefinedJoin": "",
+            "advancedFilterCondition": "",
+            "requestXml": "",
+            "sortFieldValues": ""
+          },
+          "runtimeAttributes": {
+            "$$ID": 35,
+            "$$class": 21
+          }
+        }
+      },
+      {
+        "$$ID": 8,
+        "$$class": 8,
+        "createTime": "2023-03-10T20:12:16.652Z",
+        "name": "Tgt_DataLake",
+        "advancedProperties": [
+          {
+            "$$ID": 26,
+            "$$class": 17,
+            "name": "Forward Rejected Rows",
+            "value": "true"
+          },
+          {
+            "$$ID": 27,
+            "$$class": 17,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 28,
+            "$$class": 17,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 29,
+            "$$class": 17,
+            "name": "Update Override",
+            "value": ""
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 7,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "false",
+            "rules": [
+              {
+                "$$ID": 36,
+                "$$class": 23,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "createTarget": "false",
+        "fieldMappingMode": "BY_NAME",
+        "inputSorted": "false",
+        "schemaProviderType": "SELECTED_OBJECT",
+        "updateColumns": [],
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 30,
+          "$$class": 16,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "saas:@36Nuzgkr4eDiig0O4C9u6x",
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 16,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "TOOLKIT",
+          "useDynamicFileName": "false",
+          "dataFormat": {
+            "$$ID": 37,
+            "$$class": 24,
+            "compatibleEngine": "",
+            "formatId": "Flat",
+            "fwConfigId": "",
+            "saasHSchemaId": "",
+            "saasISDId": "",
+            "schema": "",
+            "validateHSchema": "false",
+            "attributes": [
+              {
+                "$$ID": 42,
+                "$$class": 26,
+                "name": "delimiter",
+                "value": "֎"
+              },
+              {
+                "$$ID": 43,
+                "$$class": 26,
+                "name": "escapeChar",
+                "value": "\\"
+              },
+              {
+                "$$ID": 44,
+                "$$class": 26,
+                "name": "qualifier",
+                "value": "\""
+              },
+              {
+                "$$ID": 45,
+                "$$class": 26,
+                "name": "qualifierMode",
+                "value": "MINIMAL"
+              },
+              {
+                "$$ID": 46,
+                "$$class": 26,
+                "name": "codePage",
+                "value": "UTF-8"
+              },
+              {
+                "$$ID": 47,
+                "$$class": 26,
+                "name": "headerLineNumber",
+                "value": "1"
+              },
+              {
+                "$$ID": 48,
+                "$$class": 26,
+                "name": "firstDataRow",
+                "value": "2"
+              },
+              {
+                "$$ID": 49,
+                "$$class": 26,
+                "name": "targetHeader",
+                "value": "With Header"
+              },
+              {
+                "$$ID": 50,
+                "$$class": 26,
+                "name": "importColumnFromFirstLine",
+                "value": "true"
+              },
+              {
+                "$$ID": 51,
+                "$$class": 26,
+                "name": "generateHeader",
+                "value": "true"
+              },
+              {
+                "$$ID": 52,
+                "$$class": 26,
+                "name": "distributionColumn",
+                "value": ""
+              },
+              {
+                "$$ID": 53,
+                "$$class": 26,
+                "name": "fixedWidthMode",
+                "value": "false"
+              },
+              {
+                "$$ID": 54,
+                "$$class": 26,
+                "name": "escapeCharacterDataRetained",
+                "value": "false"
+              },
+              {
+                "$$ID": 55,
+                "$$class": 26,
+                "name": "maxRowsToPreview",
+                "value": "0"
+              },
+              {
+                "$$ID": 56,
+                "$$class": 26,
+                "name": "rowDelimiter",
+                "value": ""
+              }
+            ]
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 38,
+            "$$class": 21,
+            "attributes": [
+              {
+                "$$ID": 57,
+                "$$class": 27,
+                "name": "overwriteFileIfExists",
+                "value": "YES"
+              },
+              {
+                "$$ID": 58,
+                "$$class": 27,
+                "name": "S3FolderPath",
+                "value": ""
+              },
+              {
+                "$$ID": 59,
+                "$$class": 27,
+                "name": "targetName",
+                "value": "$$p_Trg_S3"
+              },
+              {
+                "$$ID": 60,
+                "$$class": 27,
+                "name": "S3EncryptionType",
+                "value": "None"
+              },
+              {
+                "$$ID": 61,
+                "$$class": 27,
+                "name": "tempFolderPath",
+                "value": ""
+              },
+              {
+                "$$ID": 62,
+                "$$class": 27,
+                "name": "stageFileMerging",
+                "value": "YES"
+              },
+              {
+                "$$ID": 63,
+                "$$class": 27,
+                "name": "additionalDistCpOptions",
+                "value": ""
+              },
+              {
+                "$$ID": 64,
+                "$$class": 27,
+                "name": "compressionFormat",
+                "value": "None"
+              },
+              {
+                "$$ID": 65,
+                "$$class": 27,
+                "name": "objectTags",
+                "value": ""
+              },
+              {
+                "$$ID": 66,
+                "$$class": 27,
+                "name": "txManagerThreadPoolSize",
+                "value": "10"
+              },
+              {
+                "$$ID": 67,
+                "$$class": 27,
+                "name": "partSize",
+                "value": "5242880"
+              },
+              {
+                "$$ID": 68,
+                "$$class": 27,
+                "name": "mergePartitionFiles",
+                "value": "NO"
+              },
+              {
+                "$$ID": 69,
+                "$$class": 27,
+                "name": "temporaryCredentialDuration",
+                "value": "900"
+              }
+            ]
+          },
+          "runtimeAttributes": {
+            "$$ID": 39,
+            "$$class": 21,
+            "attributes": [
+              {
+                "$$ID": 70,
+                "$$class": 27,
+                "name": "Overwrite File If Exists",
+                "value": "YES"
+              },
+              {
+                "$$ID": 71,
+                "$$class": 27,
+                "name": "Folder Path",
+                "value": ""
+              },
+              {
+                "$$ID": 72,
+                "$$class": 27,
+                "name": "File Name",
+                "value": "$$p_Trg_S3"
+              },
+              {
+                "$$ID": 73,
+                "$$class": 27,
+                "name": "Encryption Type",
+                "value": "None"
+              },
+              {
+                "$$ID": 74,
+                "$$class": 27,
+                "name": "Staging Directory",
+                "value": ""
+              },
+              {
+                "$$ID": 75,
+                "$$class": 27,
+                "name": "File Merge",
+                "value": "YES"
+              },
+              {
+                "$$ID": 76,
+                "$$class": 27,
+                "name": "Hadoop Performance Tuning Options",
+                "value": ""
+              },
+              {
+                "$$ID": 77,
+                "$$class": 27,
+                "name": "Compression Format",
+                "value": "None"
+              },
+              {
+                "$$ID": 78,
+                "$$class": 27,
+                "name": "Object Tags",
+                "value": ""
+              },
+              {
+                "$$ID": 79,
+                "$$class": 27,
+                "name": "TransferManager Thread Pool Size",
+                "value": "10"
+              },
+              {
+                "$$ID": 80,
+                "$$class": 27,
+                "name": "Part Size",
+                "value": "5242880"
+              },
+              {
+                "$$ID": 81,
+                "$$class": 27,
+                "name": "Merge Partition Files",
+                "value": "NO"
+              },
+              {
+                "$$ID": 82,
+                "$$class": 27,
+                "name": "Temporary Credential Duration",
+                "value": "900"
+              }
+            ]
+          },
+          "writeOptions": {
+            "$$ID": 40,
+            "$$class": 25,
+            "batchSize": 0,
+            "bulkApi": "false",
+            "errorFileDirectory": "",
+            "errorFilePrefix": "",
+            "handleDecimalRoundOff": "false",
+            "handleSpecialChars": "false",
+            "operations": [
+              "Insert"
+            ],
+            "setFieldsToNull": "false",
+            "successFileDirectory": "",
+            "successFilePrefix": "",
+            "truncate": "false",
+            "updateStrategyExpression": "",
+            "useErrorFile": "false",
+            "useExactSrcNames": "false",
+            "useSuccessFile": "false"
+          }
+        },
+        "manualMappings": {
+          "$$ID": 31,
+          "$$class": 18
+        }
+      },
+      {
+        "$$ID": 6,
+        "$$class": 7,
+        "createTime": "2023-03-10T20:23:36.552Z",
+        "name": "Exp_Passthrough",
+        "groups": [
+          {
+            "$$ID": 5,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "true",
+            "rules": [
+              {
+                "$$ID": 41,
+                "$$class": 23,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "additionalFields": "",
+        "windowConfigurationEnabled": "false",
+        "windowSpec": {
+          "$$ID": 32,
+          "$$class": 19,
+          "allRowsFollowing": "false",
+          "allRowsPreceding": "false",
+          "endOffset": 0,
+          "startOffset": 0,
+          "partitionKeys": []
+        }
+      }
+    ],
+    "variables": [
+      {
+        "$$ID": 17,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_Trg_S3",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 1000,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": "p_Trg_S3"
+      },
+      {
+        "$$ID": 18,
+        "$$class": 11,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_Src_MDM",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 12
+        },
+        "precision": 2000,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "''",
+        "description": "p_Src_MDM"
+      }
+    ]
+  },
+  "metadata": {
+    "$$classInfo": {
+      "1": "com.informatica.metadata.template.common.Template",
+      "2": "com.informatica.metadata.common.description.Description",
+      "3": "com.informatica.metadata.template.common.layout.LayoutAnnotation",
+      "4": "com.informatica.metadata.common.genericannotation.GenericAnnotation",
+      "5": "com.informatica.metadata.template.common.TmplLink",
+      "6": "com.informatica.metadata.template.common.TmplGroup",
+      "7": "com.informatica.metadata.template.tx.tmplexpression.TmplExpression",
+      "8": "com.informatica.metadata.template.tx.tmpltarget.TmplTarget",
+      "9": "com.informatica.metadata.template.tx.tmplsource.TmplSource",
+      "10": "com.informatica.metadata.template.common.param.TmplParam",
+      "11": "com.informatica.metadata.template.common.SessionVariable",
+      "12": "com.informatica.metadata.common.typesystem.DataType",
+      "13": "com.informatica.metadata.common.genericannotation.NameValuePair",
+      "14": "com.informatica.metadata.template.common.param.ConnectionParamType",
+      "15": "com.informatica.metadata.template.common.param.DataObjectParamType",
+      "16": "com.informatica.metadata.template.ext.da.cloud.common.BaseAdapter",
+      "17": "com.informatica.metadata.template.common.TxAdvancedProperty",
+      "18": "com.informatica.metadata.template.tx.tmpltarget.FieldMappings",
+      "19": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionWindowSpec",
+      "20": "com.informatica.metadata.common.types.BooleanValue",
+      "21": "com.informatica.metadata.template.ext.da.cloud.common.RuntimeAttributes",
+      "22": "com.informatica.metadata.template.ext.da.cloud.common.ReadOptions",
+      "23": "com.informatica.metadata.template.common.rule.TmplAllRule",
+      "24": "com.informatica.metadata.template.ext.da.cloud.common.DataFormat",
+      "25": "com.informatica.metadata.template.ext.da.cloud.common.WriteOptions",
+      "26": "com.informatica.metadata.template.ext.da.cloud.common.Option",
+      "27": "com.informatica.metadata.template.ext.da.cloud.common.RuntimeAttribute"
+    }
+  }
+}

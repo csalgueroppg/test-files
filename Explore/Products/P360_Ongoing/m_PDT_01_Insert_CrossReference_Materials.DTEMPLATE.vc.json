@@ -1,0 +1,1323 @@
+{
+  "content" : {
+    "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Idoc Tgt, @additionalText= This mapping send the information to BAPI,@sources[@S3_HMDM_V2], @targets[@FF_OTP_IN_PDT_CFIN]\t",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_PDT_01_Insert_CrossReference_Materials",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "src_C_BO_PRDCT_MSTR -> exp_Passthrough"
+      },
+      {
+        "link" : "exp_Passthrough -> WS_ZBAPI_UPD_CUSTTABLE",
+        "groupLink" : "DefaultGroup -> DefaultGroup"
+      },
+      {
+        "link" : "WS_ZBAPI_UPD_CUSTTABLE -> exp_Fault",
+        "groupLink" : "FaultGroup -> DefaultGroup"
+      },
+      {
+        "link" : "exp_Fault -> tgt_Fault"
+      },
+      {
+        "link" : "exp_Out_WS -> rt_Succes_Error",
+        "groupLink" : "DefaultGroup -> INPUT"
+      },
+      {
+        "link" : "rt_Succes_Error -> tgt_Succes",
+        "groupLink" : "SuccessGroup -> DefaultGroup"
+      },
+      {
+        "link" : "WS_ZBAPI_UPD_CUSTTABLE -> exp_Out_WS",
+        "groupLink" : "TTP_RETURN -> DefaultGroup"
+      },
+      {
+        "link" : "rt_Succes_Error -> tgt_Error",
+        "groupLink" : "DEFAULT1 -> DefaultGroup"
+      }
+    ],
+    "parameters" : [
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_src_HMDM",
+        "name" : "Conn_src_HMDM"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "src_CrossReference",
+        "name" : "src_CrossReference"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_tgt_Error",
+        "name" : "Conn_tgt_Error",
+        "anonymousType" : {
+          "typeSystem" : "CSVFile",
+          "connectionType" : "CSVFile"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "tgt_Error",
+        "name" : "tgt_Error"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_tgt_Succes",
+        "name" : "Conn_tgt_Succes",
+        "anonymousType" : {
+          "typeSystem" : "CSVFile",
+          "connectionType" : "CSVFile"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "tgt_Succes",
+        "name" : "tgt_Succes"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "tgt_Fault",
+        "name" : "tgt_Fault"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_tgt_Fault",
+        "name" : "Conn_tgt_Fault",
+        "anonymousType" : {
+          "typeSystem" : "CSVFile",
+          "connectionType" : "CSVFile"
+        }
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2023-06-09T15:16:36.506Z",
+        "name" : "src_C_BO_PRDCT_MSTR",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@araNNncX65DkCwK89n23m3",
+          "connectionName" : "S3_HMDM_V2",
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "src_CrossReference"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "dataFormat" : {
+            "formatId" : "Flat",
+            "validateHSchema" : "false",
+            "attributes" : [
+              {
+                "name" : "delimiter",
+                "value" : "֎"
+              },
+              {
+                "name" : "escapeChar",
+                "value" : "\\"
+              },
+              {
+                "name" : "qualifierMode",
+                "value" : "MINIMAL"
+              },
+              {
+                "name" : "disableEscapeChar",
+                "value" : "true"
+              },
+              {
+                "name" : "codePage",
+                "value" : "UTF-8"
+              },
+              {
+                "name" : "headerLineNumber",
+                "value" : "1"
+              },
+              {
+                "name" : "firstDataRow",
+                "value" : "2"
+              },
+              {
+                "name" : "targetHeader",
+                "value" : "With Header"
+              },
+              {
+                "name" : "importColumnFromFirstLine",
+                "value" : "true"
+              },
+              {
+                "name" : "generateHeader",
+                "value" : "true"
+              },
+              {
+                "name" : "fixedWidthMode",
+                "value" : "false"
+              },
+              {
+                "name" : "maxRowsToPreview",
+                "value" : "0"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-06-09T15:46:51.588Z",
+        "name" : "exp_Passthrough",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "ProcessName_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$p_ProcessName\n--'MATERIAL222'"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "Create_Date_Out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SUBSTR(LTRIM(RTRIM(CREATE_DATE)),7,4)||'-'||SUBSTR(LTRIM(RTRIM(CREATE_DATE)),1,2)||'-'||SUBSTR(LTRIM(RTRIM(CREATE_DATE)),4,2)||'T'||SUBSTR(LTRIM(RTRIM(CREATE_DATE)),12,8)"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "LastUpdateDate_Out",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SUBSTR(LTRIM(RTRIM(LAST_UPDATE_DATE)),7,4)||'-'||SUBSTR(LTRIM(RTRIM(LAST_UPDATE_DATE)),1,2)||'-'||SUBSTR(LTRIM(RTRIM(LAST_UPDATE_DATE)),4,2)||'T'||SUBSTR(LTRIM(RTRIM(LAST_UPDATE_DATE)),12,8)"
+          },
+          {
+            "name" : "var",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "var + 1"
+          },
+          {
+            "name" : "count",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "var"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2023-06-16T19:07:11.075Z",
+        "name" : "tgt_Succes",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "YES"
+          },
+          {
+            "name" : "Create Target Directory",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_tgt_Succes"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "tgt_Succes"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-12-26T21:31:17.562Z",
+        "name" : "exp_Out_WS",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "Envelope",
+                "precedingTxName" : "WS_ZBAPI_UPD_CUSTTABLE",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "literal" : "_ws",
+                    "suffix" : "true"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "FIELD"
+                  },
+                  {
+                    "inputName" : "ID"
+                  },
+                  {
+                    "inputName" : "LOG_MSG_NO"
+                  },
+                  {
+                    "inputName" : "LOG_NO"
+                  },
+                  {
+                    "inputName" : "MESSAGE"
+                  },
+                  {
+                    "inputName" : "MESSAGE_V1"
+                  },
+                  {
+                    "inputName" : "MESSAGE_V2"
+                  },
+                  {
+                    "inputName" : "MESSAGE_V3"
+                  },
+                  {
+                    "inputName" : "MESSAGE_V4"
+                  },
+                  {
+                    "inputName" : "NUMBER"
+                  },
+                  {
+                    "inputName" : "PARAMETER"
+                  },
+                  {
+                    "inputName" : "ROW"
+                  },
+                  {
+                    "inputName" : "SYSTEM"
+                  },
+                  {
+                    "inputName" : "TYPE"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2023-12-27T08:47:47.194Z",
+        "name" : "WS_ZBAPI_UPD_CUSTTABLE",
+        "advancedProperties" : [
+          {
+            "name" : "requestXmlSize",
+            "value" : "7680"
+          },
+          {
+            "name" : "responseXmlSize",
+            "value" : "10752"
+          },
+          {
+            "name" : "inputFlush",
+            "value" : "true"
+          },
+          {
+            "name" : "transactionControlCondition",
+            "value" : "IIF(Mod(exp_count, $$p_Batch) = 0, TC_COMMIT_AFTER, TC_CONTINUE_TRANSACTION)"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "All Input"
+          },
+          {
+            "name" : "performanceMode",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "exp_Passthrough",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "literal" : "exp_",
+                    "suffix" : "false"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "FaultGroup",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "Envelope",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "TTP_LOAD_CUSTAB",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "TTP_RETURN",
+            "output" : "true"
+          }
+        ],
+        "operation" : "@0Ummm4ACNAJfxWI1VRIvAc@SIntInsertProductSapCFIN",
+        "serviceDefinitionId" : "@0Ummm4ACNAJfxWI1VRIvAc",
+        "serviceDefinitionName" : "BS_SIntInsertProductSapCFIN",
+        "fieldMap" : {
+          "mappings" : [
+            {
+              "groupName" : "exp_Passthrough",
+              "isRoot" : "false",
+              "xPath" : "/tns0:Envelope",
+              "xfields" : [
+                {
+                  "name" : "exp_ProcessName_o",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 100,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Import/ITP_PROCESS_NAME"
+                },
+                {
+                  "name" : "exp_MTRL_NMBR",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 256,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/TARGET_ID"
+                },
+                {
+                  "name" : "exp_Create_Date_Out",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 19,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/CREATE_DATE"
+                },
+                {
+                  "name" : "exp_LastUpdateDate_Out",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 19,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/LAST_UPDATE_DATE"
+                },
+                {
+                  "name" : "exp_SRC_SYTM_ID",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 256,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/LGCY_SYSTEM"
+                },
+                {
+                  "name" : "exp_MTRL_DSCR",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 256,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/FULL_NM"
+                },
+                {
+                  "name" : "exp_MTRL_IDNTFR",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 256,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINRequest/input/Table_Input/TTP_LOAD_CUSTAB/PKEY_SRC_OBJECT"
+                }
+              ]
+            }
+          ]
+        },
+        "outputFieldMap" : {
+          "denormalized" : "false",
+          "mappings" : [
+            {
+              "groupName" : "FaultGroup",
+              "isRoot" : "false",
+              "xPath" : "/tns:Envelope/tns:Body/tns:Fault",
+              "xfields" : [
+                {
+                  "name" : "faultcode",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns:Envelope/tns:Body/tns:Fault/faultcode"
+                },
+                {
+                  "name" : "faultstring",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns:Envelope/tns:Body/tns:Fault/faultstring"
+                },
+                {
+                  "name" : "faultactor",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns:Envelope/tns:Body/tns:Fault/faultactor"
+                }
+              ]
+            },
+            {
+              "groupName" : "Envelope",
+              "isRoot" : "false",
+              "xPath" : "/tns0:Envelope",
+              "xfields" : [
+                {
+                  "name" : "PK_Envelope",
+                  "platformType" : {
+                    "name" : "bigint"
+                  },
+                  "precision" : 19,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "true"
+                }
+              ]
+            },
+            {
+              "groupName" : "TTP_LOAD_CUSTAB",
+              "isRoot" : "false",
+              "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB",
+              "xfields" : [
+                {
+                  "name" : "FK_Envelope",
+                  "platformType" : {
+                    "name" : "bigint"
+                  },
+                  "precision" : 19,
+                  "scale" : 0,
+                  "foreignKey" : "true",
+                  "primaryKey" : "false"
+                },
+                {
+                  "name" : "PKEY_SRC_OBJECT",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/PKEY_SRC_OBJECT"
+                },
+                {
+                  "name" : "OP_UNIT",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/OP_UNIT"
+                },
+                {
+                  "name" : "TARGET_ID",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/TARGET_ID"
+                },
+                {
+                  "name" : "CREATE_DATE",
+                  "platformType" : {
+                    "name" : "date/time"
+                  },
+                  "precision" : 29,
+                  "scale" : 9,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/CREATE_DATE"
+                },
+                {
+                  "name" : "TAX_NUM",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/TAX_NUM"
+                },
+                {
+                  "name" : "LGCY_SYSTEM",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/LGCY_SYSTEM"
+                },
+                {
+                  "name" : "FULL_NM",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/FULL_NM"
+                },
+                {
+                  "name" : "LAST_UPDATE_DATE",
+                  "platformType" : {
+                    "name" : "date/time"
+                  },
+                  "precision" : 29,
+                  "scale" : 9,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_LOAD_CUSTAB/LAST_UPDATE_DATE"
+                }
+              ]
+            },
+            {
+              "groupName" : "TTP_RETURN",
+              "isRoot" : "false",
+              "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN",
+              "xfields" : [
+                {
+                  "name" : "FK_Envelope",
+                  "platformType" : {
+                    "name" : "bigint"
+                  },
+                  "precision" : 19,
+                  "scale" : 0,
+                  "foreignKey" : "true",
+                  "primaryKey" : "false"
+                },
+                {
+                  "name" : "TYPE",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/TYPE"
+                },
+                {
+                  "name" : "ID",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/ID"
+                },
+                {
+                  "name" : "NUMBER",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/NUMBER"
+                },
+                {
+                  "name" : "MESSAGE",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/MESSAGE"
+                },
+                {
+                  "name" : "LOG_NO",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/LOG_NO"
+                },
+                {
+                  "name" : "LOG_MSG_NO",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/LOG_MSG_NO"
+                },
+                {
+                  "name" : "MESSAGE_V1",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/MESSAGE_V1"
+                },
+                {
+                  "name" : "MESSAGE_V2",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/MESSAGE_V2"
+                },
+                {
+                  "name" : "MESSAGE_V3",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/MESSAGE_V3"
+                },
+                {
+                  "name" : "MESSAGE_V4",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/MESSAGE_V4"
+                },
+                {
+                  "name" : "PARAMETER",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/PARAMETER"
+                },
+                {
+                  "name" : "ROW",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/ROW"
+                },
+                {
+                  "name" : "FIELD",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/FIELD"
+                },
+                {
+                  "name" : "SYSTEM",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/tns0:Envelope/tns0:Body/infans1:SIntInsertProductSapCFINResponse/output/Table_Output/TTP_RETURN/SYSTEM"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2024-01-03T02:36:21.824Z",
+        "name" : "exp_Fault",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "faultactor"
+                  },
+                  {
+                    "inputName" : "faultcode"
+                  },
+                  {
+                    "inputName" : "faultstring"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "v_fault",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 2000,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "faultcode||faultcode||faultstring"
+          },
+          {
+            "name" : "v_numCurrentFault",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "IIF(ISNULL(v_fault),v_numCurrentFault,v_numCurrentFault+1)"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "counterFault_o",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SetCountVariable($$CounterFault_o)"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2024-01-03T02:36:57.650Z",
+        "name" : "tgt_Fault",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_tgt_Fault"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "tgt_Fault"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2024-01-12T00:03:31.572Z",
+        "name" : "rt_Succes_Error",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "INPUT",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "DEFAULT1",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "SuccessGroup",
+            "output" : "true"
+          }
+        ],
+        "groupFilterConditions" : [
+          {
+            "name" : "SuccessGroup",
+            "simpleFilterConditions" : [
+              {
+                "fieldName" : "TYPE",
+                "filterValue" : "S",
+                "operator" : "="
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "createTime" : "2024-01-12T18:59:03.207Z",
+        "name" : "tgt_Error",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Create Target Directory",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_tgt_Error"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "tgt_Error"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      }
+    ],
+    "variables" : [
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_ProcessName",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 30,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0,
+        "defaultValue" : "MATERIAL",
+        "description" : "p_ProcessName_o"
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_Batch",
+        "platformType" : {
+          "name" : "bigint"
+        },
+        "precision" : 19,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "COUNT",
+        "expressionVariable" : "false",
+        "name" : "CounterFault_o",
+        "platformType" : {
+          "name" : "integer"
+        },
+        "precision" : 10,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-08-19 14:54:30 PDT"
+}

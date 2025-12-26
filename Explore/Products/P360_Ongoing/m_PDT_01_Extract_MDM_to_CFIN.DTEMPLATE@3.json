@@ -1,0 +1,1166 @@
+{
+  "content": {
+    "$$IID": "stringIdentity:@3",
+    "$$class": 1,
+    "annotations": [
+      {
+        "$$ID": 1,
+        "$$class": 2,
+        "jsonBlob": "{\"SRC_MTRL_IDL_PCKG\":{\"x\":300,\"y\":100},\"EXP_Passthrow\":{\"x\":500.99999993004565,\"y\":98.99997717822009},\"TGT_MTRL_IDL_PCKG\":{\"x\":700,\"y\":100},\"Lkp_C_LD_MTRL_CRSSWLKS_OUT\":{\"x\":100,\"y\":100}}",
+        "templateId": ""
+      },
+      {
+        "$$ID": 2,
+        "$$class": 3,
+        "source": "TEMPLATE_SETTINGS",
+        "nameValuePairs": [
+          {
+            "$$ID": 23,
+            "$$class": 14,
+            "name": "UNIQUIFY_MAPPLET_TX_NAMES",
+            "value": {
+              "$$class": 24,
+              "value": "true"
+            }
+          }
+        ]
+      },
+      {
+        "$$ID": 3,
+        "$$class": 4,
+        "body": "@connectionSource= Query MDM Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output S3 bucket Tgt, @additionalText= This mapping get all data from MDM,@sources[@ORC_HMDM_READ_MATERIALS], @targets[@S3_HMDM_V2_HostedAgent]"
+      }
+    ],
+    "allowMaxFieldLength": "false",
+    "bigIntConvertType": "ONLY_BIGINT",
+    "documentType": "MAPPING",
+    "ecoSystem": "",
+    "name": "m_PDT_01_Extract_MDM_to_CFIN",
+    "specialCharacterSupport": "false",
+    "templateOrigin": "",
+    "links": [
+      {
+        "$$ID": 4,
+        "$$class": 5,
+        "name": "Expression.[object Object]",
+        "fromGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        },
+        "toGroup": {
+          "##ID": 7,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 8,
+          "$$class": 8
+        }
+      },
+      {
+        "$$ID": 9,
+        "$$class": 5,
+        "name": "Source.[object Object]",
+        "fromGroup": {
+          "##ID": 10,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 11,
+          "$$class": 9
+        },
+        "toGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        }
+      }
+    ],
+    "parameters": [
+      {
+        "$$ID": 12,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "tgt_MTRL_IDL_PCKG",
+        "name": "tgt_MTRL_IDL_PCKG",
+        "anonymousType": {
+          "$$ID": 24,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 13,
+        "$$class": 10,
+        "annotations": [
+          {
+            "$$ID": 25,
+            "$$class": 4,
+            "body": "MDM Oracle Connection"
+          }
+        ],
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_ORC_Read",
+        "name": "Conn_ORC_Read",
+        "anonymousType": {
+          "$$ID": 26,
+          "$$class": 16,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "Oracle",
+          "connectionType": "Oracle"
+        }
+      },
+      {
+        "$$ID": 14,
+        "$$class": 10,
+        "annotations": [
+          {
+            "$$ID": 27,
+            "$$class": 4,
+            "body": "MDM Oracle connection for lookup"
+          }
+        ],
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_ORL_MDM_lkp",
+        "name": "Conn_ORL_MDM_lkp",
+        "anonymousType": {
+          "$$ID": 28,
+          "$$class": 16,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "Oracle",
+          "connectionType": "Oracle"
+        }
+      },
+      {
+        "$$ID": 15,
+        "$$class": 10,
+        "annotations": [
+          {
+            "$$ID": 29,
+            "$$class": 4,
+            "body": "C_LD_MTRL_CRSSWLKS_OUT table"
+          }
+        ],
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "src_CRSSWLKS",
+        "name": "src_CRSSWLKS",
+        "anonymousType": {
+          "$$ID": 30,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 16,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "src_MTRL_IDL_PCKG_view",
+        "name": "src_MTRL_IDL_PCKG_view",
+        "anonymousType": {
+          "$$ID": 31,
+          "$$class": 15,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 17,
+        "$$class": 10,
+        "annotations": [
+          {
+            "$$ID": 32,
+            "$$class": 4,
+            "body": "S3 Bucket"
+          }
+        ],
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "Conn_HMDM_HostedAgent",
+        "name": "Conn_HMDM_HostedAgent",
+        "anonymousType": {
+          "$$ID": 33,
+          "$$class": 16,
+          "name": "",
+          "isVisible": "false",
+          "subType": "",
+          "typeSystem": "",
+          "connectionType": ""
+        }
+      }
+    ],
+    "transformations": [
+      {
+        "$$ID": 11,
+        "$$class": 9,
+        "annotations": [
+          {
+            "$$ID": 34,
+            "$$class": 4,
+            "body": "View from MDM"
+          }
+        ],
+        "createTime": "2023-02-14T16:03:36.288Z",
+        "name": "SRC_MTRL_IDL_PCKG",
+        "advancedProperties": [
+          {
+            "$$ID": 35,
+            "$$class": 17,
+            "name": "Tracing Level",
+            "value": "Normal"
+          },
+          {
+            "$$ID": 36,
+            "$$class": 17,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 37,
+            "$$class": 17,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 38,
+            "$$class": 17,
+            "name": "Sql Override",
+            "value": ""
+          },
+          {
+            "$$ID": 39,
+            "$$class": 17,
+            "name": "Output is deterministic",
+            "value": "false"
+          },
+          {
+            "$$ID": 40,
+            "$$class": 17,
+            "name": "Output is repeatable",
+            "value": ""
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 10,
+            "$$class": 6,
+            "input": "false",
+            "name": "DefaultGroup",
+            "output": "true"
+          }
+        ],
+        "generateFilenamePort": "false",
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 41,
+          "$$class": 18,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 13,
+            "$$class": 10
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 16,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "Oracle",
+          "useDynamicFileName": "false",
+          "oprRuntimeAttributes": {
+            "$$ID": 87,
+            "$$class": 25
+          },
+          "readOptions": {
+            "$$ID": 88,
+            "$$class": 26,
+            "commandType": 0,
+            "descending": "false",
+            "filterCondition": "",
+            "flatFileCommand": "",
+            "queryAll": "false",
+            "rowLimit": 0,
+            "selectDistinct": "false",
+            "userDefinedJoin": "",
+            "advancedFilterCondition": "",
+            "requestXml": "",
+            "sortFieldValues": ""
+          },
+          "runtimeAttributes": {
+            "$$ID": 89,
+            "$$class": 25
+          }
+        }
+      },
+      {
+        "$$ID": 8,
+        "$$class": 8,
+        "createTime": "2023-02-14T16:03:36.288Z",
+        "name": "TGT_MTRL_IDL_PCKG",
+        "advancedProperties": [
+          {
+            "$$ID": 42,
+            "$$class": 17,
+            "name": "Forward Rejected Rows",
+            "value": "true"
+          },
+          {
+            "$$ID": 43,
+            "$$class": 17,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 44,
+            "$$class": 17,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 45,
+            "$$class": 17,
+            "name": "Update Override",
+            "value": ""
+          },
+          {
+            "$$ID": 46,
+            "$$class": 17,
+            "name": "Thousand Separator",
+            "value": "None"
+          },
+          {
+            "$$ID": 47,
+            "$$class": 17,
+            "name": "Decimal Separator",
+            "value": "."
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 7,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "false",
+            "rules": [
+              {
+                "$$ID": 90,
+                "$$class": 27,
+                "bulkRename": "false",
+                "include": "true",
+                "fieldNamesStr": "",
+                "names": [
+                  {
+                    "$$ID": 100,
+                    "$$class": 32,
+                    "inputName": "BS_UNT_MSR_o",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 101,
+                    "$$class": 32,
+                    "inputName": "DVSN",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 102,
+                    "$$class": 32,
+                    "inputName": "HUB_STATE_IND",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 103,
+                    "$$class": 32,
+                    "inputName": "IAN",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 104,
+                    "$$class": 32,
+                    "inputName": "LANG_KEY_o",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 105,
+                    "$$class": 32,
+                    "inputName": "LAST_UPDATE_DATE",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 106,
+                    "$$class": 32,
+                    "inputName": "MTRL_DSCR",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 107,
+                    "$$class": 32,
+                    "inputName": "MTRL_IDNTFR",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 108,
+                    "$$class": 32,
+                    "inputName": "MTRL_NMBR",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 109,
+                    "$$class": 32,
+                    "inputName": "ORGNTNG_ID",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 110,
+                    "$$class": 32,
+                    "inputName": "OVRLL_MTRL_TYP_o",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 111,
+                    "$$class": 32,
+                    "inputName": "PRDCT_CTGR_o",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 112,
+                    "$$class": 32,
+                    "inputName": "SBU_DVSN",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 113,
+                    "$$class": 32,
+                    "inputName": "SRC_SYSTM_ID",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 114,
+                    "$$class": 32,
+                    "inputName": "HSH_CD",
+                    "outputName": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sessionProperties": [
+          {
+            "$$ID": 48,
+            "$$class": 19,
+            "name": "Append if Exists",
+            "value": "NO"
+          },
+          {
+            "$$ID": 49,
+            "$$class": 19,
+            "name": "Header Options",
+            "value": "Output Field Names"
+          },
+          {
+            "$$ID": 50,
+            "$$class": 19,
+            "name": "Header Command",
+            "value": ""
+          },
+          {
+            "$$ID": 51,
+            "$$class": 19,
+            "name": "Footer Command",
+            "value": ""
+          },
+          {
+            "$$ID": 52,
+            "$$class": 19,
+            "name": "Output Type",
+            "value": "File"
+          },
+          {
+            "$$ID": 53,
+            "$$class": 19,
+            "name": "Command",
+            "value": ""
+          },
+          {
+            "$$ID": 54,
+            "$$class": 19,
+            "name": "Output file directory",
+            "value": ""
+          },
+          {
+            "$$ID": 55,
+            "$$class": 19,
+            "name": "Output filename",
+            "value": ""
+          },
+          {
+            "$$ID": 56,
+            "$$class": 19,
+            "name": "Reject file directory",
+            "value": ""
+          },
+          {
+            "$$ID": 57,
+            "$$class": 19,
+            "name": "Reject filename",
+            "value": ""
+          }
+        ],
+        "createTarget": "false",
+        "fieldMappingMode": "BY_NAME",
+        "inputSorted": "false",
+        "schemaProviderType": "SELECTED_OBJECT",
+        "targetFieldsOrdered": "false",
+        "updateColumns": [],
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 58,
+          "$$class": 18,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 17,
+            "$$class": 10
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 12,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "TOOLKIT",
+          "useDynamicFileName": "false",
+          "bulkOptions": {
+            "$$ID": 91,
+            "$$class": 28,
+            "hardDelete": "false",
+            "maxRowsPerRequest": 0,
+            "monitorBulk": "false",
+            "monitorBulkV2": "false",
+            "pkChunkingEnabled": "false",
+            "pkChunkingSize": 0,
+            "pkChunkingStartRowId": "",
+            "serialMode": "false",
+            "useBulkApi": "false",
+            "useBulkApiV2": "false"
+          },
+          "dataFormat": {
+            "$$ID": 92,
+            "$$class": 29,
+            "compatibleEngine": "",
+            "formatId": "Flat",
+            "fwConfigId": "",
+            "saasHSchemaId": "",
+            "saasISDId": "",
+            "schema": "",
+            "validateHSchema": "false",
+            "attributes": [
+              {
+                "$$ID": 115,
+                "$$class": 33,
+                "name": "delimiter",
+                "value": ","
+              },
+              {
+                "$$ID": 116,
+                "$$class": 33,
+                "name": "escapeChar",
+                "value": "\\"
+              },
+              {
+                "$$ID": 117,
+                "$$class": 33,
+                "name": "qualifier",
+                "value": "\""
+              },
+              {
+                "$$ID": 118,
+                "$$class": 33,
+                "name": "qualifierMode",
+                "value": "MINIMAL"
+              },
+              {
+                "$$ID": 119,
+                "$$class": 33,
+                "name": "codePage",
+                "value": "UTF-8"
+              },
+              {
+                "$$ID": 120,
+                "$$class": 33,
+                "name": "headerLineNumber",
+                "value": "1"
+              },
+              {
+                "$$ID": 121,
+                "$$class": 33,
+                "name": "firstDataRow",
+                "value": "2"
+              },
+              {
+                "$$ID": 122,
+                "$$class": 33,
+                "name": "targetHeader",
+                "value": "With Header"
+              },
+              {
+                "$$ID": 123,
+                "$$class": 33,
+                "name": "importColumnFromFirstLine",
+                "value": "true"
+              },
+              {
+                "$$ID": 124,
+                "$$class": 33,
+                "name": "generateHeader",
+                "value": "true"
+              },
+              {
+                "$$ID": 125,
+                "$$class": 33,
+                "name": "distributionColumn",
+                "value": ""
+              },
+              {
+                "$$ID": 126,
+                "$$class": 33,
+                "name": "fixedWidthMode",
+                "value": "false"
+              },
+              {
+                "$$ID": 127,
+                "$$class": 33,
+                "name": "escapeCharacterDataRetained",
+                "value": "false"
+              },
+              {
+                "$$ID": 128,
+                "$$class": 33,
+                "name": "maxRowsToPreview",
+                "value": "0"
+              },
+              {
+                "$$ID": 129,
+                "$$class": 33,
+                "name": "rowDelimiter",
+                "value": ""
+              }
+            ]
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 93,
+            "$$class": 25
+          },
+          "runtimeAttributes": {
+            "$$ID": 94,
+            "$$class": 25
+          },
+          "writeOptions": {
+            "$$ID": 95,
+            "$$class": 30,
+            "batchSize": 0,
+            "bulkApi": "false",
+            "errorFileDirectory": "",
+            "errorFilePrefix": "",
+            "handleDecimalRoundOff": "false",
+            "handleSpecialChars": "false",
+            "operations": [
+              "Insert"
+            ],
+            "setFieldsToNull": "false",
+            "successFileDirectory": "",
+            "successFilePrefix": "",
+            "truncate": "false",
+            "updateStrategyExpression": "",
+            "useErrorFile": "false",
+            "useExactSrcNames": "false",
+            "useSuccessFile": "false",
+            "tgtObjectAttributes": [
+              {
+                "$$ID": 130,
+                "$$class": 33,
+                "name": "parent",
+                "value": ""
+              }
+            ]
+          }
+        },
+        "manualMappings": {
+          "$$ID": 59,
+          "$$class": 20
+        }
+      },
+      {
+        "$$ID": 6,
+        "$$class": 7,
+        "createTime": "2023-02-14T16:03:53.092Z",
+        "name": "EXP_Passthrow",
+        "groups": [
+          {
+            "$$ID": 5,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "true",
+            "rules": [
+              {
+                "$$ID": 96,
+                "$$class": 31,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "additionalFields": "",
+        "windowConfigurationEnabled": "false",
+        "fields": [
+          {
+            "$$ID": 60,
+            "$$class": 21,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "OVRLL_MTRL_TYP_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 13
+            },
+            "precision": 250,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "IIF(ISNULL(:LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(MTRL_TYP, 'MAT TYPE')) OR :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(MTRL_TYP, 'MAT TYPE') = '' ,'', :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(MTRL_TYP, 'MAT TYPE'))",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 61,
+            "$$class": 21,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "PRDCT_CTGR_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 13
+            },
+            "precision": 250,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "BRAND\n--IIF(NOT ISNULL(:LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BRAND, 'PDCT GROUP')) OR :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BRAND, 'PDCT GROUP') != '' , :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BRAND, 'PDCT GROUP'),'')",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 62,
+            "$$class": 21,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "LANG_KEY_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 13
+            },
+            "precision": 250,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "--IIF(NOT ISNULL(:LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(LANG_KEY, 'LANGUAGE')) OR :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(LANG_KEY, 'LANGUAGE') != '' , :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(LANG_KEY, 'LANGUAGE'),'')\n'E'",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          },
+          {
+            "$$ID": 63,
+            "$$class": 21,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "BS_UNT_MSR_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+              "$$class": 13
+            },
+            "precision": 250,
+            "scale": 0,
+            "expFieldType": "OUTPUT",
+            "expression": "BS_UNT_MSR\n--IIF(NOT ISNULL(:LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BS_UNT_MSR, 'BASE UNIT MEASURE')) OR :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BS_UNT_MSR, 'BASE UNIT MEASURE') != '' , :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BS_UNT_MSR, 'BASE UNIT MEASURE'),'')",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          }
+        ],
+        "windowSpec": {
+          "$$ID": 64,
+          "$$class": 22,
+          "allRowsFollowing": "false",
+          "allRowsPreceding": "false",
+          "endOffset": 0,
+          "startOffset": 0,
+          "partitionKeys": []
+        }
+      },
+      {
+        "$$ID": 18,
+        "$$class": 11,
+        "createTime": "2023-02-15T14:25:01.590Z",
+        "name": "Lkp_C_LD_MTRL_CRSSWLKS_OUT",
+        "advancedProperties": [
+          {
+            "$$ID": 65,
+            "$$class": 17,
+            "name": "Tracing Level",
+            "value": "Normal"
+          },
+          {
+            "$$ID": 66,
+            "$$class": 17,
+            "name": "Lookup Sql Override",
+            "value": ""
+          },
+          {
+            "$$ID": 67,
+            "$$class": 17,
+            "name": "Lookup Source Filter",
+            "value": ""
+          },
+          {
+            "$$ID": 68,
+            "$$class": 17,
+            "name": "Lookup caching enabled",
+            "value": "true"
+          },
+          {
+            "$$ID": 69,
+            "$$class": 17,
+            "name": "Lookup cache directory name",
+            "value": "$PMCacheDir"
+          },
+          {
+            "$$ID": 70,
+            "$$class": 17,
+            "name": "Lookup cache persistent",
+            "value": "false"
+          },
+          {
+            "$$ID": 71,
+            "$$class": 17,
+            "name": "Cache File Name Prefix",
+            "value": ""
+          },
+          {
+            "$$ID": 72,
+            "$$class": 17,
+            "name": "Re-cache from lookup source",
+            "value": "false"
+          },
+          {
+            "$$ID": 73,
+            "$$class": 17,
+            "name": "Lookup Data Cache Size",
+            "value": "AUTO"
+          },
+          {
+            "$$ID": 74,
+            "$$class": 17,
+            "name": "Lookup Index Cache Size",
+            "value": "AUTO"
+          },
+          {
+            "$$ID": 75,
+            "$$class": 17,
+            "name": "Dynamic Lookup Cache",
+            "value": "false"
+          },
+          {
+            "$$ID": 76,
+            "$$class": 17,
+            "name": "Output Old Value On Update",
+            "value": "false"
+          },
+          {
+            "$$ID": 77,
+            "$$class": 17,
+            "name": "Synchronize dynamic cache",
+            "value": "false"
+          },
+          {
+            "$$ID": 78,
+            "$$class": 17,
+            "name": "Insert Else Update",
+            "value": "false"
+          },
+          {
+            "$$ID": 79,
+            "$$class": 17,
+            "name": "Lookup source is static",
+            "value": "false"
+          },
+          {
+            "$$ID": 80,
+            "$$class": 17,
+            "name": "Pre-build lookup cache",
+            "value": "AUTO"
+          },
+          {
+            "$$ID": 81,
+            "$$class": 17,
+            "name": "Subsecond Precision",
+            "value": "6"
+          },
+          {
+            "$$ID": 82,
+            "$$class": 17,
+            "name": "Optional",
+            "value": "true"
+          }
+        ],
+        "sessionProperties": [
+          {
+            "$$ID": 83,
+            "$$class": 19,
+            "name": "Schema Name",
+            "value": ""
+          }
+        ],
+        "advancedInputPortNames": "",
+        "associatedFields": "",
+        "lookupCondition": "",
+        "multipleMatchPolicy": "Use Any Value",
+        "returnPortName": "TARGET_CODE",
+        "unconnected": "true",
+        "useLabels": "false",
+        "inputPortNames": [
+          "MDM_VALUE_in",
+          "DOMAIN_in"
+        ],
+        "lookupConditions": [
+          {
+            "$$ID": 85,
+            "$$class": 23,
+            "leftOperand": "MDM_VALUE",
+            "operator": "=",
+            "rightOperand": "MDM_VALUE_in"
+          },
+          {
+            "$$ID": 86,
+            "$$class": 23,
+            "leftOperand": "DOMAIN",
+            "operator": "=",
+            "rightOperand": "DOMAIN_in"
+          }
+        ],
+        "dataAdapter": {
+          "$$ID": 84,
+          "$$class": 18,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "",
+          "connectionId$": {
+            "##ID": 14,
+            "$$class": 10
+          },
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 15,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "Oracle",
+          "useDynamicFileName": "false",
+          "oprRuntimeAttributes": {
+            "$$ID": 97,
+            "$$class": 25
+          },
+          "readOptions": {
+            "$$ID": 98,
+            "$$class": 26,
+            "commandType": 0,
+            "descending": "false",
+            "filterCondition": "",
+            "flatFileCommand": "",
+            "queryAll": "false",
+            "rowLimit": 0,
+            "selectDistinct": "false",
+            "userDefinedJoin": "",
+            "advancedFilterCondition": "",
+            "requestXml": "",
+            "sortFieldValues": ""
+          },
+          "runtimeAttributes": {
+            "$$ID": 99,
+            "$$class": 25
+          }
+        }
+      }
+    ],
+    "variables": [
+      {
+        "$$ID": 19,
+        "$$class": 12,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_Schema",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 13
+        },
+        "precision": 20,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 20,
+        "$$class": 12,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_View",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 13
+        },
+        "precision": 100,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 21,
+        "$$class": 12,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_LKP_Table",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/string",
+          "$$class": 13
+        },
+        "precision": 50,
+        "retentionPolicy": "ON_SUCCESS_OR_WARNING",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      },
+      {
+        "$$ID": 22,
+        "$$class": 12,
+        "aggregationType": "MAX",
+        "expressionVariable": "false",
+        "name": "p_Filter",
+        "platformType": {
+          "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/integer",
+          "$$class": 13
+        },
+        "precision": 10,
+        "retentionPolicy": "NEVER",
+        "scale": 0,
+        "defaultValue": "",
+        "description": ""
+      }
+    ]
+  },
+  "metadata": {
+    "$$classInfo": {
+      "1": "com.informatica.metadata.template.common.Template",
+      "2": "com.informatica.metadata.template.common.layout.LayoutAnnotation",
+      "3": "com.informatica.metadata.common.genericannotation.GenericAnnotation",
+      "4": "com.informatica.metadata.common.description.Description",
+      "5": "com.informatica.metadata.template.common.TmplLink",
+      "6": "com.informatica.metadata.template.common.TmplGroup",
+      "7": "com.informatica.metadata.template.tx.tmplexpression.TmplExpression",
+      "8": "com.informatica.metadata.template.tx.tmpltarget.TmplTarget",
+      "9": "com.informatica.metadata.template.tx.tmplsource.TmplSource",
+      "10": "com.informatica.metadata.template.common.param.TmplParam",
+      "11": "com.informatica.metadata.template.tx.tmpllookup.TmplLookup",
+      "12": "com.informatica.metadata.template.common.SessionVariable",
+      "13": "com.informatica.metadata.common.typesystem.DataType",
+      "14": "com.informatica.metadata.common.genericannotation.NameValuePair",
+      "15": "com.informatica.metadata.template.common.param.DataObjectParamType",
+      "16": "com.informatica.metadata.template.common.param.ConnectionParamType",
+      "17": "com.informatica.metadata.template.common.TxAdvancedProperty",
+      "18": "com.informatica.metadata.template.ext.da.cloud.common.BaseAdapter",
+      "19": "com.informatica.metadata.template.common.TxSessionProperty",
+      "20": "com.informatica.metadata.template.tx.tmpltarget.FieldMappings",
+      "21": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionField",
+      "22": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionWindowSpec",
+      "23": "com.informatica.metadata.template.tx.tmpllookup.LookupCondition",
+      "24": "com.informatica.metadata.common.types.BooleanValue",
+      "25": "com.informatica.metadata.template.ext.da.cloud.common.RuntimeAttributes",
+      "26": "com.informatica.metadata.template.ext.da.cloud.common.ReadOptions",
+      "27": "com.informatica.metadata.template.common.rule.TmplNameRule",
+      "28": "com.informatica.metadata.template.ext.da.cloud.common.BulkOptions",
+      "29": "com.informatica.metadata.template.ext.da.cloud.common.DataFormat",
+      "30": "com.informatica.metadata.template.ext.da.cloud.common.WriteOptions",
+      "31": "com.informatica.metadata.template.common.rule.TmplAllRule",
+      "32": "com.informatica.metadata.template.common.rule.TmplNameRuleEntry",
+      "33": "com.informatica.metadata.template.ext.da.cloud.common.Option"
+    }
+  }
+}

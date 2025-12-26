@@ -1,0 +1,556 @@
+{
+  "content" : {
+    "description" : "@connectionSource= Query MDM Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output S3 bucket Tgt, @additionalText= This mapping get all data from MDM,@sources[@ORC_HMDM_READ_MATERIALS], @targets[@S3_HMDM_V2_HostedAgent]",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_PDT_01_Extract_MDM_to_CFIN",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "EXP_Passthrow -> TGT_MTRL_IDL_PCKG"
+      },
+      {
+        "link" : "SRC_MTRL_IDL_PCKG -> EXP_Passthrow"
+      }
+    ],
+    "parameters" : [
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "tgt_MTRL_IDL_PCKG",
+        "name" : "tgt_MTRL_IDL_PCKG"
+      },
+      {
+        "description" : "MDM Oracle Connection",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_ORC_Read",
+        "name" : "Conn_ORC_Read",
+        "anonymousType" : {
+          "typeSystem" : "Oracle",
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "description" : "MDM Oracle connection for lookup",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_ORL_MDM_lkp",
+        "name" : "Conn_ORL_MDM_lkp",
+        "anonymousType" : {
+          "typeSystem" : "Oracle",
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "description" : "C_LD_MTRL_CRSSWLKS_OUT table",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "src_CRSSWLKS",
+        "name" : "src_CRSSWLKS"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "src_MTRL_IDL_PCKG_view",
+        "name" : "src_MTRL_IDL_PCKG_view"
+      },
+      {
+        "description" : "S3 Bucket",
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "label" : "Conn_HMDM_HostedAgent",
+        "name" : "Conn_HMDM_HostedAgent"
+      }
+    ],
+    "transformations" : [
+      {
+        "description" : "View from MDM",
+        "createTime" : "2023-02-14T16:03:36.288Z",
+        "name" : "SRC_MTRL_IDL_PCKG",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_ORC_Read"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "src_MTRL_IDL_PCKG_view"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-02-14T16:03:36.288Z",
+        "name" : "TGT_MTRL_IDL_PCKG",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "BS_UNT_MSR_o"
+                  },
+                  {
+                    "inputName" : "DVSN"
+                  },
+                  {
+                    "inputName" : "HUB_STATE_IND"
+                  },
+                  {
+                    "inputName" : "IAN"
+                  },
+                  {
+                    "inputName" : "LANG_KEY_o"
+                  },
+                  {
+                    "inputName" : "LAST_UPDATE_DATE"
+                  },
+                  {
+                    "inputName" : "MTRL_DSCR"
+                  },
+                  {
+                    "inputName" : "MTRL_IDNTFR"
+                  },
+                  {
+                    "inputName" : "MTRL_NMBR"
+                  },
+                  {
+                    "inputName" : "ORGNTNG_ID"
+                  },
+                  {
+                    "inputName" : "OVRLL_MTRL_TYP_o"
+                  },
+                  {
+                    "inputName" : "PRDCT_CTGR_o"
+                  },
+                  {
+                    "inputName" : "SBU_DVSN"
+                  },
+                  {
+                    "inputName" : "SRC_SYSTM_ID"
+                  },
+                  {
+                    "inputName" : "HSH_CD"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_HMDM_HostedAgent"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "tgt_MTRL_IDL_PCKG"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "dataFormat" : {
+            "formatId" : "Flat",
+            "validateHSchema" : "false",
+            "attributes" : [
+              {
+                "name" : "delimiter",
+                "value" : ","
+              },
+              {
+                "name" : "escapeChar",
+                "value" : "\\"
+              },
+              {
+                "name" : "qualifier",
+                "value" : "\""
+              },
+              {
+                "name" : "qualifierMode",
+                "value" : "MINIMAL"
+              },
+              {
+                "name" : "codePage",
+                "value" : "UTF-8"
+              },
+              {
+                "name" : "headerLineNumber",
+                "value" : "1"
+              },
+              {
+                "name" : "firstDataRow",
+                "value" : "2"
+              },
+              {
+                "name" : "targetHeader",
+                "value" : "With Header"
+              },
+              {
+                "name" : "importColumnFromFirstLine",
+                "value" : "true"
+              },
+              {
+                "name" : "generateHeader",
+                "value" : "true"
+              },
+              {
+                "name" : "fixedWidthMode",
+                "value" : "false"
+              },
+              {
+                "name" : "escapeCharacterDataRetained",
+                "value" : "false"
+              },
+              {
+                "name" : "maxRowsToPreview",
+                "value" : "0"
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-02-14T16:03:53.092Z",
+        "name" : "EXP_Passthrow",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "OVRLL_MTRL_TYP_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 250,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "IIF(ISNULL(:LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(MTRL_TYP, 'MAT TYPE')) OR :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(MTRL_TYP, 'MAT TYPE') = '' ,'', :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(MTRL_TYP, 'MAT TYPE'))"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "PRDCT_CTGR_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 250,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "BRAND\n--IIF(NOT ISNULL(:LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BRAND, 'PDCT GROUP')) OR :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BRAND, 'PDCT GROUP') != '' , :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BRAND, 'PDCT GROUP'),'')"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "LANG_KEY_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 250,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "--IIF(NOT ISNULL(:LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(LANG_KEY, 'LANGUAGE')) OR :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(LANG_KEY, 'LANGUAGE') != '' , :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(LANG_KEY, 'LANGUAGE'),'')\n'E'"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "BS_UNT_MSR_o",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 250,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "BS_UNT_MSR\n--IIF(NOT ISNULL(:LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BS_UNT_MSR, 'BASE UNIT MEASURE')) OR :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BS_UNT_MSR, 'BASE UNIT MEASURE') != '' , :LKP.Lkp_C_LD_MTRL_CRSSWLKS_OUT(BS_UNT_MSR, 'BASE UNIT MEASURE'),'')"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2023-02-15T14:25:01.590Z",
+        "name" : "Lkp_C_LD_MTRL_CRSSWLKS_OUT",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Synchronize dynamic cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "multipleMatchPolicy" : "Use Any Value",
+        "returnPortName" : "TARGET_CODE",
+        "unconnected" : "true",
+        "useLabels" : "false",
+        "inputPortNames" : [
+          "MDM_VALUE_in",
+          "DOMAIN_in"
+        ],
+        "lookupConditions" : [
+          {
+            "leftOperand" : "MDM_VALUE",
+            "operator" : "=",
+            "rightOperand" : "MDM_VALUE_in"
+          },
+          {
+            "leftOperand" : "DOMAIN",
+            "operator" : "=",
+            "rightOperand" : "DOMAIN_in"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "Conn_ORL_MDM_lkp"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "src_CRSSWLKS"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      }
+    ],
+    "variables" : [
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_Schema",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 20,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_View",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_LKP_Table",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 50,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "p_Filter",
+        "platformType" : {
+          "name" : "integer"
+        },
+        "precision" : 10,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-08-19 14:54:30 PDT"
+}

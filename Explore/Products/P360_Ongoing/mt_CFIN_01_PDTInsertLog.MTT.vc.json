@@ -1,0 +1,160 @@
+{
+  "name" : "mt_CFIN_01_PDTInsertLog",
+  "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Data Base MDM Tgt, @additionalText= This mapping task send the information to MDM view,@sources[@S3_HMDM_V2_HostedAgent], @targets[@FF_OTP_Output]",
+  "runtimeEnvironmentId" : "@jlLTpTCJN0YcDSn9pP6OgK",
+  "runtimeEnvironmentName" : "SDCMMDMSA01",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$src_MDM_S3_MDM_CFIN$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "src_MDM_S3_MDM_CFIN",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objlabel" : "p_src_in_FileS3",
+        "objectParameterized" : "true",
+        "objectParamName" : "p_src_in_FileS3",
+        "objectParamType-mapping" : "DataObject",
+        "originalPath" : "src_MDM_S3_MDM_CFIN"
+      },
+      "sourceConnectionId" : "@36Nuzgkr4eDiig0O4C9u6x",
+      "connectionName" : "S3_HMDM_V2_HostedAgent",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "object" : {
+          "name" : "s3-mdm-ppg-dev-us-east-1/IICS_PDT%2F/MTRL_NGNG_PCKG3.csv",
+          "label" : "MTRL_NGNG_PCKG3.csv",
+          "metadataUpdated" : false
+        },
+        "singleMode" : true,
+        "objects" : [
+          {
+            "name" : "s3-mdm-ppg-dev-us-east-1/IICS_PDT%2F/MTRL_NGNG_PCKG3.csv",
+            "label" : "MTRL_NGNG_PCKG3.csv",
+            "metadataUpdated" : false
+          }
+        ]
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "dataFormat" : {
+        "formatId" : "Flat",
+        "dataFormatAttributes" : {
+          "escapeChar" : "\\",
+          "importColumnFromFirstLine" : "true",
+          "headerLineNumber" : "1",
+          "maxRowsToPreview" : "0",
+          "qualifierMode" : "MINIMAL",
+          "firstDataRow" : "2",
+          "generateHeader" : "true",
+          "delimiter" : "֎",
+          "targetHeader" : "With Header",
+          "disableEscapeChar" : "true",
+          "codePage" : "UTF-8",
+          "fixedWidthMode" : "false"
+        }
+      },
+      "runtimeParameterData" : {
+        "objectParameterName" : "p_src_in_FileS3",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$Tgt_C_LD_MTRL_DELTA_CFIN$",
+      "type" : "TARGET",
+      "label" : "Tgt_C_LD_MTRL_DELTA_CFIN",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "objlabel" : "pFileName",
+        "origobjlabel" : "pFileName",
+        "objectParameterized" : "true",
+        "objectParamName" : "pFileName",
+        "objectParamType-mapping" : "DataObject",
+        "noCreateTarget" : "true",
+        "supportApplyDDLChanges" : "false",
+        "originalPath" : "Tgt_C_LD_MTRL_DELTA_CFIN"
+      },
+      "targetConnectionId" : "@aGki7jmHRRTiFlTNnP18WK",
+      "connectionName" : "FF_OTP_Output_MX",
+      "targetObject" : "Products/SAP_CFIN_Log/TestDummy.csv",
+      "targetObjectLabel" : "Products/SAP_CFIN_Log/TestDummy.csv",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "tgtFFAttrs" : {
+        "delimiter" : "֎",
+        "textQualifier" : "\"",
+        "headerLineNo" : 1,
+        "rowDelimiter" : 0,
+        "consecutiveDelimiter" : false,
+        "multiDelimitersAsAnd" : true
+      },
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "Products/SAP_CFIN_Log/TestDummy.csv",
+      "objectLabel" : "Products/SAP_CFIN_Log/TestDummy.csv",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "runtimeParameterData" : {
+        "objectParameterName" : "pFileName",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "lastRunTime" : 1760575672000,
+  "mappingId" : "@2zIN0ghL4kUktfwetD4Je9",
+  "mappingTemplateName" : "m_CFIN_01_PDTInsertLog",
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : true,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "paramFileType" : "PARAM_FILE_LOCAL",
+  "schemaMode" : "async",
+  "valid" : true,
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "specialCharacterSupport" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2025-10-16 09:53:08 CST"
+}

@@ -1,0 +1,595 @@
+{
+  "content": {
+    "$$IID": "stringIdentity:@3",
+    "$$class": 1,
+    "annotations": [
+      {
+        "$$ID": 1,
+        "$$class": 2,
+        "jsonBlob": "{\"src_MDM_S3_MDM_CFIN\":{\"x\":100,\"y\":100},\"exp_mapValuesInOut\":{\"x\":300,\"y\":100},\"Tgt_C_LD_MTRL_DELTA_CFIN\":{\"x\":500,\"y\":97.99999039891809}}",
+        "templateId": ""
+      },
+      {
+        "$$ID": 2,
+        "$$class": 3,
+        "source": "TEMPLATE_SETTINGS",
+        "nameValuePairs": [
+          {
+            "$$ID": 14,
+            "$$class": 11,
+            "name": "UNIQUIFY_MAPPLET_TX_NAMES_OPTIONS",
+            "value": {
+              "$$class": 20,
+              "valueLiteral": "{\"nonNativeMappletTx\":true}"
+            }
+          },
+          {
+            "$$ID": 15,
+            "$$class": 11,
+            "name": "UNIQUIFY_MAPPLET_TX_NAMES",
+            "value": {
+              "$$class": 21,
+              "value": "true"
+            }
+          }
+        ]
+      },
+      {
+        "$$ID": 3,
+        "$$class": 4,
+        "body": "@connectionSource= File S3 bucket Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Data Base MDM Tgt, @additionalText= This mapping send the information to MDM view,@sources[@S3_HMDM_V2_HostedAgent], @targets[@FF_OTP_Output]"
+      }
+    ],
+    "allowMaxFieldLength": "false",
+    "bigIntConvertType": "ONLY_BIGINT",
+    "documentType": "MAPPING",
+    "ecoSystem": "",
+    "name": "m_PDT_01_InsertLog_MDM_To_MDM",
+    "specialCharacterSupport": "false",
+    "templateOrigin": "",
+    "links": [
+      {
+        "$$ID": 4,
+        "$$class": 5,
+        "name": "Expression.[object Object]",
+        "fromGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        },
+        "toGroup": {
+          "##ID": 7,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 8,
+          "$$class": 8
+        }
+      },
+      {
+        "$$ID": 9,
+        "$$class": 5,
+        "name": "src_MDM_S3_MDM_CFIN.[object Object]",
+        "fromGroup": {
+          "##ID": 10,
+          "$$class": 6
+        },
+        "fromTransformation": {
+          "##ID": 11,
+          "$$class": 9
+        },
+        "toGroup": {
+          "##ID": 5,
+          "$$class": 6
+        },
+        "toTransformation": {
+          "##ID": 6,
+          "$$class": 7
+        }
+      }
+    ],
+    "parameters": [
+      {
+        "$$ID": 12,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "",
+        "name": "p_src_in_FileS3",
+        "anonymousType": {
+          "$$ID": 16,
+          "$$class": 12,
+          "name": "",
+          "isVisible": "false"
+        }
+      },
+      {
+        "$$ID": 13,
+        "$$class": 10,
+        "input": "true",
+        "output": "false",
+        "precision": 0,
+        "scale": 0,
+        "allowRuntimeOverride": "false",
+        "expressionVariable": "false",
+        "label": "pFileName",
+        "name": "pFileName",
+        "anonymousType": {
+          "$$ID": 17,
+          "$$class": 12,
+          "name": "",
+          "isVisible": "false"
+        }
+      }
+    ],
+    "transformations": [
+      {
+        "$$ID": 11,
+        "$$class": 9,
+        "createTime": "2025-03-10T19:49:10.693Z",
+        "name": "src_MDM_S3_MDM_CFIN",
+        "advancedProperties": [
+          {
+            "$$ID": 18,
+            "$$class": 13,
+            "name": "Tracing Level",
+            "value": "Normal"
+          },
+          {
+            "$$ID": 19,
+            "$$class": 13,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 20,
+            "$$class": 13,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 21,
+            "$$class": 13,
+            "name": "Sql Override",
+            "value": ""
+          },
+          {
+            "$$ID": 22,
+            "$$class": 13,
+            "name": "Output is deterministic",
+            "value": "false"
+          },
+          {
+            "$$ID": 23,
+            "$$class": 13,
+            "name": "Output is repeatable",
+            "value": ""
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 10,
+            "$$class": 6,
+            "input": "false",
+            "name": "DefaultGroup",
+            "output": "true"
+          }
+        ],
+        "generateFilenamePort": "false",
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 24,
+          "$$class": 14,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "saas:@36Nuzgkr4eDiig0O4C9u6x",
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 12,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "TOOLKIT",
+          "useDynamicFileName": "false",
+          "dataFormat": {
+            "$$ID": 37,
+            "$$class": 22,
+            "compatibleEngine": "",
+            "formatId": "Flat",
+            "fwConfigId": "",
+            "saasHSchemaId": "",
+            "saasISDId": "",
+            "schema": "",
+            "validateHSchema": "false",
+            "attributes": [
+              {
+                "$$ID": 47,
+                "$$class": 29,
+                "name": "delimiter",
+                "value": "֎"
+              },
+              {
+                "$$ID": 48,
+                "$$class": 29,
+                "name": "escapeChar",
+                "value": "\\"
+              },
+              {
+                "$$ID": 49,
+                "$$class": 29,
+                "name": "qualifier",
+                "value": "\""
+              },
+              {
+                "$$ID": 50,
+                "$$class": 29,
+                "name": "qualifierMode",
+                "value": "MINIMAL"
+              },
+              {
+                "$$ID": 51,
+                "$$class": 29,
+                "name": "disableEscapeChar",
+                "value": "true"
+              },
+              {
+                "$$ID": 52,
+                "$$class": 29,
+                "name": "codePage",
+                "value": "UTF-8"
+              },
+              {
+                "$$ID": 53,
+                "$$class": 29,
+                "name": "headerLineNumber",
+                "value": "1"
+              },
+              {
+                "$$ID": 54,
+                "$$class": 29,
+                "name": "firstDataRow",
+                "value": "2"
+              },
+              {
+                "$$ID": 55,
+                "$$class": 29,
+                "name": "targetHeader",
+                "value": "With Header"
+              },
+              {
+                "$$ID": 56,
+                "$$class": 29,
+                "name": "importColumnFromFirstLine",
+                "value": "true"
+              },
+              {
+                "$$ID": 57,
+                "$$class": 29,
+                "name": "generateHeader",
+                "value": "true"
+              },
+              {
+                "$$ID": 58,
+                "$$class": 29,
+                "name": "distributionColumn",
+                "value": ""
+              },
+              {
+                "$$ID": 59,
+                "$$class": 29,
+                "name": "fixedWidthMode",
+                "value": "false"
+              },
+              {
+                "$$ID": 60,
+                "$$class": 29,
+                "name": "maxRowsToPreview",
+                "value": "0"
+              },
+              {
+                "$$ID": 61,
+                "$$class": 29,
+                "name": "rowDelimiter",
+                "value": ""
+              }
+            ]
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 38,
+            "$$class": 23
+          },
+          "readOptions": {
+            "$$ID": 39,
+            "$$class": 24,
+            "commandType": 0,
+            "descending": "false",
+            "filterCondition": "",
+            "flatFileCommand": "",
+            "queryAll": "false",
+            "rowLimit": 0,
+            "selectDistinct": "false",
+            "userDefinedJoin": "",
+            "advancedFilterCondition": "",
+            "requestXml": "",
+            "sortFieldValues": ""
+          },
+          "runtimeAttributes": {
+            "$$ID": 40,
+            "$$class": 23
+          }
+        }
+      },
+      {
+        "$$ID": 8,
+        "$$class": 8,
+        "createTime": "2025-03-10T19:49:10.693Z",
+        "name": "Tgt_C_LD_MTRL_DELTA_CFIN",
+        "advancedProperties": [
+          {
+            "$$ID": 25,
+            "$$class": 13,
+            "name": "Forward Rejected Rows",
+            "value": "true"
+          },
+          {
+            "$$ID": 26,
+            "$$class": 13,
+            "name": "Pre SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 27,
+            "$$class": 13,
+            "name": "Post SQL",
+            "value": ""
+          },
+          {
+            "$$ID": 28,
+            "$$class": 13,
+            "name": "Update Override",
+            "value": ""
+          }
+        ],
+        "groups": [
+          {
+            "$$ID": 7,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "false",
+            "rules": [
+              {
+                "$$ID": 41,
+                "$$class": 25,
+                "bulkRename": "false",
+                "include": "true",
+                "fieldNamesStr": "",
+                "names": [
+                  {
+                    "$$ID": 62,
+                    "$$class": 30,
+                    "inputName": "MTRL_NMBR",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 63,
+                    "$$class": 30,
+                    "inputName": "LAST_UPDATE_DATE_o",
+                    "outputName": ""
+                  },
+                  {
+                    "$$ID": 64,
+                    "$$class": 30,
+                    "inputName": "HSH_CD",
+                    "outputName": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sessionProperties": [
+          {
+            "$$ID": 29,
+            "$$class": 15,
+            "name": "Reject file directory",
+            "value": ""
+          },
+          {
+            "$$ID": 30,
+            "$$class": 15,
+            "name": "Reject filename",
+            "value": ""
+          },
+          {
+            "$$ID": 31,
+            "$$class": 15,
+            "name": "Schema Name",
+            "value": ""
+          },
+          {
+            "$$ID": 32,
+            "$$class": 15,
+            "name": "Table Name",
+            "value": ""
+          }
+        ],
+        "createTarget": "false",
+        "fieldMappingMode": "MANUAL",
+        "inputSorted": "false",
+        "schemaProviderType": "SELECTED_OBJECT",
+        "targetFieldsOrdered": "false",
+        "updateColumns": [],
+        "useLabels": "false",
+        "useSequenceFields": "false",
+        "dataAdapter": {
+          "$$ID": 33,
+          "$$class": 14,
+          "name": "",
+          "codePage": "",
+          "compatibleEngine": "",
+          "connectionId": "saas:@7TRJTQQuLTglBgsQcawNE8",
+          "excludeDynamicFileNameField": "false",
+          "fwConfigId": "",
+          "multipleObject": "false",
+          "object$": {
+            "##ID": 13,
+            "$$class": 10
+          },
+          "objectType": "PARAMETERIZED",
+          "typeSystem": "CSVFile",
+          "useDynamicFileName": "false",
+          "bulkOptions": {
+            "$$ID": 42,
+            "$$class": 26,
+            "hardDelete": "false",
+            "maxRowsPerRequest": 0,
+            "monitorBulk": "false",
+            "monitorBulkV2": "false",
+            "pkChunkingEnabled": "false",
+            "pkChunkingSize": 0,
+            "pkChunkingStartRowId": "",
+            "serialMode": "false",
+            "useBulkApi": "false",
+            "useBulkApiV2": "false"
+          },
+          "oprRuntimeAttributes": {
+            "$$ID": 43,
+            "$$class": 23
+          },
+          "runtimeAttributes": {
+            "$$ID": 44,
+            "$$class": 23
+          },
+          "writeOptions": {
+            "$$ID": 45,
+            "$$class": 27,
+            "batchSize": 0,
+            "bulkApi": "true",
+            "errorFileDirectory": "",
+            "errorFilePrefix": "",
+            "handleDecimalRoundOff": "false",
+            "handleSpecialChars": "false",
+            "operations": [
+              "Insert"
+            ],
+            "setFieldsToNull": "false",
+            "successFileDirectory": "",
+            "successFilePrefix": "",
+            "truncate": "false",
+            "updateStrategyExpression": "",
+            "useErrorFile": "false",
+            "useExactSrcNames": "false",
+            "useSuccessFile": "false"
+          }
+        },
+        "manualMappings": {
+          "$$ID": 34,
+          "$$class": 16
+        }
+      },
+      {
+        "$$ID": 6,
+        "$$class": 7,
+        "createTime": "2025-03-11T17:42:34.470Z",
+        "name": "exp_mapValuesInOut",
+        "groups": [
+          {
+            "$$ID": 5,
+            "$$class": 6,
+            "input": "true",
+            "name": "DefaultGroup",
+            "output": "true",
+            "rules": [
+              {
+                "$$ID": 46,
+                "$$class": 28,
+                "bulkRename": "false",
+                "include": "true"
+              }
+            ]
+          }
+        ],
+        "additionalFields": "",
+        "windowConfigurationEnabled": "false",
+        "fields": [
+          {
+            "$$ID": 35,
+            "$$class": 17,
+            "defaultValue": "ERROR('transformation error')",
+            "ignoreComparison": "false",
+            "ignoreNullInputs": "false",
+            "isDefaultValueUpdated": "false",
+            "name": "LAST_UPDATE_DATE_o",
+            "platformType": {
+              "##SID": "smd:com.informatica.metadata.seed.platform.Platform.typesystem/date/time",
+              "$$class": 18
+            },
+            "precision": 29,
+            "scale": 9,
+            "expFieldType": "OUTPUT",
+            "expression": "Systimestamp()",
+            "macroOutputPrefix": "",
+            "macroOutputSuffix": "",
+            "selectedMacroInput": "",
+            "variable": "false"
+          }
+        ],
+        "windowSpec": {
+          "$$ID": 36,
+          "$$class": 19,
+          "allRowsFollowing": "false",
+          "allRowsPreceding": "false",
+          "endOffset": 0,
+          "startOffset": 0,
+          "partitionKeys": []
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "$$classInfo": {
+      "1": "com.informatica.metadata.template.common.Template",
+      "2": "com.informatica.metadata.template.common.layout.LayoutAnnotation",
+      "3": "com.informatica.metadata.common.genericannotation.GenericAnnotation",
+      "4": "com.informatica.metadata.common.description.Description",
+      "5": "com.informatica.metadata.template.common.TmplLink",
+      "6": "com.informatica.metadata.template.common.TmplGroup",
+      "7": "com.informatica.metadata.template.tx.tmplexpression.TmplExpression",
+      "8": "com.informatica.metadata.template.tx.tmpltarget.TmplTarget",
+      "9": "com.informatica.metadata.template.tx.tmplsource.TmplSource",
+      "10": "com.informatica.metadata.template.common.param.TmplParam",
+      "11": "com.informatica.metadata.common.genericannotation.NameValuePair",
+      "12": "com.informatica.metadata.template.common.param.DataObjectParamType",
+      "13": "com.informatica.metadata.template.common.TxAdvancedProperty",
+      "14": "com.informatica.metadata.template.ext.da.cloud.common.BaseAdapter",
+      "15": "com.informatica.metadata.template.common.TxSessionProperty",
+      "16": "com.informatica.metadata.template.tx.tmpltarget.FieldMappings",
+      "17": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionField",
+      "18": "com.informatica.metadata.common.typesystem.DataType",
+      "19": "com.informatica.metadata.template.tx.tmplexpression.TmplExpressionWindowSpec",
+      "20": "com.informatica.metadata.common.types.StringValue",
+      "21": "com.informatica.metadata.common.types.BooleanValue",
+      "22": "com.informatica.metadata.template.ext.da.cloud.common.DataFormat",
+      "23": "com.informatica.metadata.template.ext.da.cloud.common.RuntimeAttributes",
+      "24": "com.informatica.metadata.template.ext.da.cloud.common.ReadOptions",
+      "25": "com.informatica.metadata.template.common.rule.TmplNameRule",
+      "26": "com.informatica.metadata.template.ext.da.cloud.common.BulkOptions",
+      "27": "com.informatica.metadata.template.ext.da.cloud.common.WriteOptions",
+      "28": "com.informatica.metadata.template.common.rule.TmplAllRule",
+      "29": "com.informatica.metadata.template.ext.da.cloud.common.Option",
+      "30": "com.informatica.metadata.template.common.rule.TmplNameRuleEntry"
+    }
+  }
+}

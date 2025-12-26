@@ -1,0 +1,30 @@
+{
+  "objectInfo" : {
+    "id" : "2uHF4ikEFPZldcAjblyfGh",
+    "name" : "MATMAS05_Prepare_MappLet",
+    "type" : "MAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470L00000000005A"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@operation=obtain,@object=IDoc MATMAS05, @operationObject=generate, @dataObject=Materials,@additionalText=This mapplet generate the structure for send materials info to CFIN",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-10-07T19:51:21.005Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

@@ -1,0 +1,113 @@
+{
+  "objectInfo" : {
+    "id" : "5XejZvWJbJfltDYPzDYpuK",
+    "name" : "mt_MAT_00_getParameters_DL",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470Z000000000NJ7"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= IICS OnTap, @connectionTarget= IICS OnTap, @transformation= Get parameters, @dataType= Paramaters, @sources=[@connection1= FF_OTP_IN_PDT], @targets=[@connection1= FF_OTP_OUT_PDT]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-05-30T22:29:02.931Z",
+  "objectRefs" : [ {
+    "id" : "9ew81IGCjUshOwChB1zgWT",
+    "name" : "SDCAMDMSA01",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T4725000000000004"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "iRTOYQEHVknkkfEmXlaIOT",
+    "name" : "FF_OTP_IN_PDT",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000JR"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "9w2wW3DevjqlgxoJi0l0Aq",
+    "name" : "FF_OTP_OUT_PDT",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T470B0000000000JS"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "9mpftaF8GNxc6fQ785cSi3",
+    "name" : "m_MAT_00_getParameters_DL",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010T47170000000003OS"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "@connectionSource= IICS OnTap, @connectionTarget= IICS OnTap, @transformation= Set Parameters, @dataType= Paramaters, @sources=[@connection1= Conn_MDM], @targets=[@connection1= Conn_Tgt_S3]",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/P360_Ongoing"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

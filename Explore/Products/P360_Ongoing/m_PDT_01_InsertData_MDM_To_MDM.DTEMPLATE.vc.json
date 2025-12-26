@@ -1,0 +1,389 @@
+{
+  "content" : {
+    "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping,@dataType= Materiales, @connectionTarget= Output Data Base MDM Tgt, @additionalText= This mapping send the information to MDM view,@sources[@S3_HMDM_V2_HostedAgent], @targets[@ORC_HMDM_WRITE_MATERIALS]",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_PDT_01_InsertData_MDM_To_MDM",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "exp_mapValuesInOut -> Tgt_C_LD_MTRL_DELTA_CFIN"
+      },
+      {
+        "link" : "src_MDM_S3_MDM_CFIN -> exp_mapValuesInOut"
+      }
+    ],
+    "parameters" : [
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "name" : "p_src_in_FileS3"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-03-10T19:49:10.693Z",
+        "name" : "src_MDM_S3_MDM_CFIN",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@36Nuzgkr4eDiig0O4C9u6x",
+          "connectionName" : "S3_HMDM_V2_HostedAgent",
+          "excludeDynamicFileNameField" : "false",
+          "object$" : {
+            "name" : "p_src_in_FileS3"
+          },
+          "objectType" : "PARAMETERIZED",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "dataFormat" : {
+            "formatId" : "Flat",
+            "validateHSchema" : "false",
+            "attributes" : [
+              {
+                "name" : "delimiter",
+                "value" : "֎"
+              },
+              {
+                "name" : "escapeChar",
+                "value" : "\\"
+              },
+              {
+                "name" : "qualifier",
+                "value" : "\""
+              },
+              {
+                "name" : "qualifierMode",
+                "value" : "MINIMAL"
+              },
+              {
+                "name" : "disableEscapeChar",
+                "value" : "true"
+              },
+              {
+                "name" : "codePage",
+                "value" : "UTF-8"
+              },
+              {
+                "name" : "headerLineNumber",
+                "value" : "1"
+              },
+              {
+                "name" : "firstDataRow",
+                "value" : "2"
+              },
+              {
+                "name" : "targetHeader",
+                "value" : "With Header"
+              },
+              {
+                "name" : "importColumnFromFirstLine",
+                "value" : "true"
+              },
+              {
+                "name" : "generateHeader",
+                "value" : "true"
+              },
+              {
+                "name" : "fixedWidthMode",
+                "value" : "false"
+              },
+              {
+                "name" : "maxRowsToPreview",
+                "value" : "0"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-03-10T19:49:10.693Z",
+        "name" : "Tgt_C_LD_MTRL_DELTA_CFIN",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "MTRL_NMBR"
+                  },
+                  {
+                    "inputName" : "LAST_UPDATE_DATE_o"
+                  },
+                  {
+                    "inputName" : "HSH_CD"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "SRC_ROWID"
+            },
+            "name" : "SRC_ROWID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LAST_UPDATE_DATE"
+            },
+            "name" : "LAST_UPDATE_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "MTRL_NMBR"
+            },
+            "name" : "MTRL_NMBR",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 160,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "HSH_CD"
+            },
+            "name" : "HSH_CD",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 256,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@3kEMqnm5fv1b0XO5SBSOOY",
+          "connectionName" : "ORC_HMDM_WRITE_MATERIALS",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "C_LD_MTRL_DELTA_CFIN",
+            "label" : "C_LD_MTRL_DELTA_CFIN",
+            "objectName" : "C_LD_MTRL_DELTA_CFIN",
+            "path" : "C_LD_MTRL_DELTA_CFIN",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "SRC_ROWID",
+                "fieldType" : "CONNECTOR",
+                "label" : "SRC_ROWID",
+                "nativeName" : "SRC_ROWID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "C_LD_MTRL_DELTA_CFIN"
+                  }
+                ]
+              },
+              {
+                "name" : "LAST_UPDATE_DATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "LAST_UPDATE_DATE",
+                "nativeName" : "LAST_UPDATE_DATE",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "C_LD_MTRL_DELTA_CFIN"
+                  }
+                ]
+              },
+              {
+                "name" : "MTRL_NMBR",
+                "fieldType" : "CONNECTOR",
+                "label" : "MTRL_NMBR",
+                "nativeName" : "MTRL_NMBR",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 160,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "C_LD_MTRL_DELTA_CFIN"
+                  }
+                ]
+              },
+              {
+                "name" : "HSH_CD",
+                "fieldType" : "CONNECTOR",
+                "label" : "HSH_CD",
+                "nativeName" : "HSH_CD",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 256,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "C_LD_MTRL_DELTA_CFIN"
+                  }
+                ]
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "true",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "LAST_UPDATE_DATE_o",
+              "toField" : {
+                "name" : "LAST_UPDATE_DATE"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "MTRL_NMBR",
+              "toField" : {
+                "name" : "MTRL_NMBR"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "HSH_CD",
+              "toField" : {
+                "name" : "HSH_CD"
+              },
+              "fromFieldNames" : null
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2025-03-11T17:42:34.470Z",
+        "name" : "exp_mapValuesInOut",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "LAST_UPDATE_DATE_o",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "expFieldType" : "OUTPUT",
+            "expression" : "Systimestamp()"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-08-19 14:54:30 PDT"
+}

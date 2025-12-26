@@ -1,0 +1,2612 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>uwn2H0Fdw8jIw8j-gt-2055781-2023-02-27T19:01:38.337Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_PDT_01_Ongoing_MDM_to_CFIN</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description>@source= MDM Src, @operation= send Material from MDM to CFIN, @dataType= Materials, @target= CFIN Tgt, @additionalText= The Tasflow send Material from MDM to CFIN, tfLocalPath= Products/P360_Ongoing</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>JorgeRodriguez.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2023-02-27T19:01:38Z</types1:CreationDate>
+      <types1:ModifiedBy>RPRodriguez.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-10-17T02:58:00Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>RPRodriguez.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-10-17T02:58:10Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_PDT_01_Ongoing_MDM_to_CFIN/tf_PDT_01_Ongoing_MDM_to_CFIN.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_PDT_01_Ongoing_MDM_to_CFIN"
+                   name="tf_PDT_01_Ongoing_MDM_to_CFIN"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>@source= MDM Src, @operation= send Material from MDM to CFIN, @dataType= Materials, @target= CFIN Tgt, @additionalText= The Tasflow send Material from MDM to CFIN, tfLocalPath= Products/P360_Ongoing</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description=""
+                      name="dt_PDT_01_CreateIDoc_MDM_to_CFIN"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-PDT-01-CreateIDoc-MDM-to-CFIN-a1RNrQXf1BkdZQV6w4oDgt</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="dt_PDT_01_Extract_MDM_to_CFIN"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-PDT-01-Extract-MDM-to-CFIN-9zcnCGOU53FfUd0E9klVmH</option>
+                  </options>
+               </field>
+               <field description="" name="Retry_Count" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Max_Retry_Count" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vErrorDetail" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vErrorReason" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Error_Script_Arguments" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Error_Script_Path_and_Name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Condition" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="dt_PDT_01_getParameter_MDM_to_CFIN"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-PDT-01-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Schema" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Table" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_LKP_Table" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_FileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_Env" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tm_LastUdate" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tm_MinTime" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_Path" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_ParamName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_PathISL" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTemp_FileName_Error" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTemp_FileName_Succes" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vtemp_NError_ScriptPath_CFIN" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempERPName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempProccessName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempCodeError" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempReasonError" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="vTempTicketFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="cmd_CreateErrorTicket_ExtractMDM"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="cmd_CreateErrorTicket_InsertCR"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="cmd_CreateErrorTicket_cmdNtickets"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="CT_Move_Logs" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="5" name="vTemp_RetryDelay" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_getParameter"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_Extraction"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_Extraction_02"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_Extraction_3"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_CreateErrorTicket" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_ParamFilePath" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_ParamFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_pathFileNameiDoc" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_pathFileNameXREF" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_pathFileNameBAPI" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_TimeStamp" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_ErrorFile" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_FaultFile" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_SuccessFile" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="dt_PDT_01_getParameter_MDM_to_BAPI"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-PDT-01-getParameter-MDM-to-BAPI-doFoIs1sqKFeyarpe9orQN</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="dt_PDT_01_Extract_MDM_Materials"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-PDT-01-Extract-MDM-Materials-aMqseFP2ZgqgtjeOAHUASl</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="dt_PDT_01_Insert_CrossReference"
+                      type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-PDT-01-Insert-CrossReference-6SSyeOppDqvc6wZ9ERPmSL</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_getParameter_MDM_to_BAPI"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_Extract_MDM_Materials"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_Insert_CrossReference"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="CT_Update_Params" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_Move_Logs"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="dt_PDT_01_InsertData_MDM_To_MDM"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-PDT-01-InsertData-MDM-To-MDM-3j0lzAlsHIziZb4ZRjZvCR</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_Extraction_Insert"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_ErrorPathandName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_FaultPathandName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_TicketFileNameFault" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_ErrorFile_Ticket" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="CT_FaultFile_Ticket" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_FaultFile_Ticket"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_ErrorFile_Ticket"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                  </options>
+               </field>
+               <field description="" name="vTempFileName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Dt_CFIN_01_PDTInsertLog" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-CFIN-01-PDTInsertLog-7RTegfzllMJdn7umHMVD06</option>
+                  </options>
+               </field>
+               <field description=""
+                      name="CT_CreateErrorTicket_Extraction_InsertLog"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="le5t8cpt" targetId="le5t8cps"/>
+               </start>
+               <assignment id="le5t8cps">
+                  <title>Assign_Parameters</title>
+                  <operation source="constant" to="temp.Retry_Count">0</operation>
+                  <operation source="constant" to="temp.Max_Retry_Count">5</operation>
+                  <operation source="constant" to="temp.temp_Env">Dev</operation>
+                  <operation source="formula" to="temp.tmp_TimeStamp">
+                     <expression language="XQuery">fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT6H")),"[Y0001][M01][D01][H01][m01][s01]")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.Error_Script_Path_and_Name">
+                     <expression language="XQuery">fn:concat('//nac.ppg.com/dfs/wu1/nas/it/IICS/', $temp.temp_Env,'/Admin/cmd/Products/script_error_OG_P360.cmd')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTemp_FileName_Error">
+                     <expression language="XQuery">fn:concat('CFIN_MATERIALS_BAPI_Error_', fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT6H")),"[Y0001][M01][D01][H01][m01][s01]"),'.csv')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTemp_FileName_Succes">
+                     <expression language="XQuery">fn:concat('CFIN_MATERIALS_BAPI_Success_', fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT6H")),"[Y0001][M01][D01][H01][m01][s01]"),'.csv')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vtemp_NError_ScriptPath_CFIN">
+                     <expression language="XQuery">fn:concat('//nac.ppg.com/dfs/wu1/nas/it/IICS/', $temp.temp_Env,'/Admin/cmd/Products/PDT_nTickets_Script_Error.cmd')</expression>
+                  </operation>
+                  <operation source="constant" to="temp.vTempCodeError">-1</operation>
+                  <operation source="constant" to="temp.vTempERPName">MATERIALS_MDM_CFIN</operation>
+                  <operation source="constant" to="temp.vTempProccessName">tf_PDT_01_Ongoing_MDM_to_CFIN</operation>
+                  <operation source="constant" to="temp.vTempReasonError">Error in BAPI transaction</operation>
+                  <operation source="formula" to="temp.vTempTicketFileName">
+                     <expression language="XQuery">fn:concat('Log_Ongoing_CFIN_MATERIALS_BAPI_', fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT6H")),"[Y0001][M01][D01][H01][m01][s01]"),'.txt')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.vTemp_RetryDelay">
+                     <expression language="XQuery">5</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_ParamFilePath">
+                     <expression language="XQuery">fn:concat('\\nac.ppg.com\\dfs\\wu1\\nas\\it\\IICS\\', $temp.temp_Env, '\\Admin\\config\\Products\\')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_ParamFileName">
+                     <expression language="XQuery">'getParameter_MDM_to_CFIN.param'</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_pathFileNameiDoc">
+                     <expression language="XQuery">'CreateIDoc_MDM_to_CFIN.param'</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_pathFileNameXREF">
+                     <expression language="XQuery">'getParameter_MDM_to_CFIN_XREX.param'</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_pathFileNameBAPI">
+                     <expression language="XQuery">'Insert_CrossReference.param'</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_ErrorFile">
+                     <expression language="XQuery">fn:concat("CFIN_MATERIALS_BAPI_Error_",$temp.tmp_TimeStamp ,".csv")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_FaultFile">
+                     <expression language="XQuery">fn:concat("CFIN_MATERIALS_BAPI_Fault_",$temp.tmp_TimeStamp ,".csv")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_SuccessFile">
+                     <expression language="XQuery">fn:concat("CFIN_MATERIALS_BAPI_Success_",$temp.tmp_TimeStamp ,".csv") </expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_FaultPathandName">
+                     <expression language="XQuery">fn:concat('//nac.ppg.com/dfs/wu1/nas/it/IICS/', $temp.temp_Env, '/Admin/cmd/Products/PDT_nTickets_Script_Fault.cmd')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_ErrorPathandName">
+                     <expression language="XQuery">fn:concat('//nac.ppg.com/dfs/wu1/nas/it/IICS/', $temp.temp_Env, '/Admin/cmd/Products/PDT_nTickets_Script_Error.cmd')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_TicketFileNameFault">
+                     <expression language="XQuery">fn:concat('Log_Ongoing_CFIN_MATERIALS_BAPI_Fault_', fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT6H")),"[Y0001][M01][D01][H01][m01][s01]"),'.txt')</expression>
+                  </operation>
+                  <link id="leni0gx0" targetId="leni0gxs"/>
+               </assignment>
+               <eventContainer id="leni0gxs">
+                  <service id="leni0gwz">
+                     <title>dt_PDT_01_getParameter_MDM_to_CFIN</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_PDT_01_getParameter_MDM_to_CFIN</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">7xOCHpGbeimg4Mty8RSPWR</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field"
+                                      to="mt-PDT-01-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR">temp.dt_PDT_01_getParameter_MDM_to_CFIN</operation>
+                           <operation source="field"
+                                      to="mt-PDT-01-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR/taskProperties[1]/parameterFileDir">temp.tmp_ParamFilePath</operation>
+                           <operation source="field"
+                                      to="mt-PDT-01-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR/taskProperties[1]/parameterFileName">temp.tmp_ParamFileName</operation>
+                           <operation source="field"
+                                      to="temp.dt_PDT_01_getParameter_MDM_to_CFIN[1]/taskProperties[1]/parameterFileDir">temp.tmp_ParamFilePath</operation>
+                           <operation source="field"
+                                      to="temp.dt_PDT_01_getParameter_MDM_to_CFIN[1]/taskProperties[1]/parameterFileName">temp.tmp_ParamFileName</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Object_Name">Object Name</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Run_Id">Run Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/inout/p_Schema">p_Schema</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/inout/p_View">p_View</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/inout/p_LKP_Table">p_LKP_Table</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/inout/p_FileName">p_FileName</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/inout/p_CR_FileName">p_CR_FileName</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_getParameter_MDM_to_CFIN/inout/p_Filter">p_Filter</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="lennmz8r">
+                     <link id="lennmz8s" targetId="leni0gxs" type="containerLink"/>
+                  </flow>
+                  <flow id="lennmz8u">
+                     <assignment id="lennmz92">
+                        <title>Assign_Cont_Error_getParameter_MDM_to_CFIN</title>
+                        <operation source="formula" to="temp.Retry_Count">
+                           <expression language="XQuery">$temp.Retry_Count + 1</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorDetail">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_getParameter_MDM_to_CFIN[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorReason">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_getParameter_MDM_to_CFIN[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.Error_Script_Arguments">
+                           <expression language="XQuery">fn:concat('"','Ongoing MDM to CFIN ','' , '"', ',','"','dt_PDT_01_getParameter_MDM_to_CFIN','"',',','"','Extract the information from MDM to CFIN - dt_getParameters','"',',','"',fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_getParameter_MDM_to_CFIN[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," "),'"',',','"',$temp.vErrorDetail ,'"',',','"',fn:replace($temp.vErrorReason ,"\\\\","\\") ,'"',',','"','Ongoing MDM to CFIN','"')
+</expression>
+                        </operation>
+                        <link id="ltgc3u5t" targetId="ltgc3u6z"/>
+                     </assignment>
+                     <eventContainer id="ltgc3u6z">
+                        <service id="ltgc3u5s">
+                           <title>CT_CreateErrorTicket_getParameter</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_CreateErrorTicket_getParameter</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_getParameter/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_getParameter/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_getParameter/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_getParameter/output/Exit_Code">Exit Code</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_getParameter/output/Execution_Status">Execution Status</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_getParameter/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="ltgc3u71">
+                           <link id="ltgc3ul5" targetId="ltgc3u6z" type="containerLink"/>
+                        </flow>
+                        <flow id="ltgc3u74">
+                           <assignment id="ltgc3u82">
+                              <title>Assign_Error_Script_cmd_CreateErrorTicket_getParameter</title>
+                              <operation source="formula" to="temp.vTempCodeError">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_getParameter[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_getParameter[1]/fault[1]/detail[1]/errOutputDetail[1]/Std_Error,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_getParameter[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                           </assignment>
+                           <link id="ltgc3unq" targetId="ltgc3u6z" type="containerLink"/>
+                        </flow>
+                        <link id="ltgc3u70" targetId="ltgc3u71" type="containerLink"/>
+                        <link id="ltgc3uns" targetId="ltgc3unr"/>
+                        <events>
+                           <catch faultField="temp.CT_CreateErrorTicket_getParameter/fault"
+                                  id="lennmzfb"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="ltgc3u73" targetId="ltgc3u74" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <end id="ltgc3unr">
+                        <title>EndProcess</title>
+                     </end>
+                  </flow>
+                  <link id="lennmz8q" targetId="lennmz8r" type="containerLink"/>
+                  <link id="lfcnru3t" targetId="le5t8cor"/>
+                  <events>
+                     <catch faultField="temp.dt_PDT_01_getParameter_MDM_to_CFIN/fault"
+                            id="leni0gxq"
+                            interrupting="true"
+                            name="error">
+                        <link id="lennmz8t" targetId="lennmz8u" type="containerLink"/>
+                     </catch>
+                     <catch faultField="temp.dt_PDT_01_getParameter_MDM_to_CFIN/fault"
+                            id="leni0gxr"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="le5t8cor">
+                  <service id="le5t8co3">
+                     <title>dt_PDT_01_Extract_MDM_to_CFIN</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_PDT_01_Extract_MDM_to_CFIN</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">9zcnCGOU53FfUd0E9klVmH</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field"
+                                      to="mt-PDT-01-Extract-MDM-to-CFIN-9zcnCGOU53FfUd0E9klVmH">temp.dt_PDT_01_Extract_MDM_to_CFIN</operation>
+                           <operation source="field"
+                                      to="mt-PDT-01-Extract-MDM-to-CFIN-9zcnCGOU53FfUd0E9klVmH/inout[1]/p_Filter">temp.dt_PDT_01_getParameter_MDM_to_CFIN[1]/inout[1]/p_Filter</operation>
+                           <operation source="field"
+                                      to="mt-PDT-01-Extract-MDM-to-CFIN-9zcnCGOU53FfUd0E9klVmH/inout[1]/p_LKP_Table">temp.dt_PDT_01_getParameter_MDM_to_CFIN[1]/inout[1]/p_LKP_Table</operation>
+                           <operation source="field"
+                                      to="mt-PDT-01-Extract-MDM-to-CFIN-9zcnCGOU53FfUd0E9klVmH/inout[1]/p_Schema">temp.dt_PDT_01_getParameter_MDM_to_CFIN[1]/inout[1]/p_Schema</operation>
+                           <operation source="field"
+                                      to="mt-PDT-01-Extract-MDM-to-CFIN-9zcnCGOU53FfUd0E9klVmH/inout[1]/p_View">temp.dt_PDT_01_getParameter_MDM_to_CFIN[1]/inout[1]/p_View</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.dt_PDT_01_Extract_MDM_to_CFIN/inout/p_Schema">p_Schema</operation>
+                        <operation source="field" to="temp.dt_PDT_01_Extract_MDM_to_CFIN/inout/p_View">p_View</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_Extract_MDM_to_CFIN/inout/p_LKP_Table">p_LKP_Table</operation>
+                        <operation source="field" to="temp.dt_PDT_01_Extract_MDM_to_CFIN/inout/p_Filter">p_Filter</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="le5t8cqj">
+                     <container id="lr8cyj40" type="exclusive">
+                        <title>D_SkipInsert</title>
+                        <flow id="lr8cyj42">
+                           <jumpTo id="lr8cyj6r">
+                              <link id="lr8cyj6s" targetId="ma2wzlza"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="lr8cyj45">
+                           <link id="lr8cyj46" targetId="lr8cyj40" type="containerLink"/>
+                        </flow>
+                        <link id="lr8cyj41" targetId="lr8cyj42" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.dt_PDT_01_Extract_MDM_to_CFIN[1]/output[1]/Success_Source_Rows}</arg>
+                                 <arg name="right">{0}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lr8cyj44" targetId="lr8cyj45" type="containerLink"/>
+                     </container>
+                     <link id="le5t8cqk" targetId="le5t8cor" type="containerLink"/>
+                  </flow>
+                  <flow id="le5t8cqm">
+                     <assignment id="le5t8cqs">
+                        <title>Assign_Error_Extract_MDM_to_CFIN</title>
+                        <operation source="formula" to="temp.Retry_Count">
+                           <expression language="XQuery">$temp.Retry_Count + 1</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorDetail">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_Extract_MDM_to_CFIN[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorReason">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_Extract_MDM_to_CFIN[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.Error_Script_Arguments">
+                           <expression language="XQuery">fn:concat('"','Ongoing MDM to CFIN ','' , '"', ',','"','dt_PDT_01_Extract_MDM_to_CFIN','"',',','"','Extract the information from MDM to CFIN - dt_PDT_01_Extract_MDM_to_CFIN','"',',','"',fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_Extract_MDM_to_CFIN[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," "),'"',',','"',$temp.vErrorDetail ,'"',',','"',fn:replace($temp.vErrorReason ,"\\\\","\\") ,'"',',','"','Ongoing MDM to CFIN','"')
+</expression>
+                        </operation>
+                        <link id="ltgc3ur8" targetId="ltgc3use"/>
+                     </assignment>
+                     <eventContainer id="ltgc3use">
+                        <service id="ltgc3ur7">
+                           <title>CT_CreateErrorTicket_Extraction</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_CreateErrorTicket_Extraction</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.CT_CreateErrorTicket_Extraction/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction/output/Exit_Code">Exit Code</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction/output/Execution_Status">Execution Status</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="ltgc3usg">
+                           <link id="ltgc3uyz" targetId="ltgc3use" type="containerLink"/>
+                        </flow>
+                        <flow id="ltgc3usj">
+                           <assignment id="ltgc3uth">
+                              <title>Assign_Error_Script_cmd_CreateErrorTicket_Extraction</title>
+                              <operation source="formula" to="temp.vTempCodeError">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction[1]/fault[1]/detail[1]/errOutputDetail[1]/Std_Error,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                           </assignment>
+                           <link id="ltgc3usk" targetId="ltgc3use" type="containerLink"/>
+                        </flow>
+                        <link id="ltgc3usf" targetId="ltgc3usg" type="containerLink"/>
+                        <link id="ltgc3uz1" targetId="ltgc3uz0"/>
+                        <events>
+                           <catch faultField="temp.CT_CreateErrorTicket_Extraction/fault"
+                                  id="le5t8cxp"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="ltgc3usi" targetId="ltgc3usj" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <end id="ltgc3uz0">
+                        <title>EndProcess</title>
+                     </end>
+                  </flow>
+                  <link id="le5t8cqi" targetId="le5t8cqj" type="containerLink"/>
+                  <link id="le5t8co5" targetId="ldyx8agv"/>
+                  <events>
+                     <catch faultField="temp.dt_PDT_01_Extract_MDM_to_CFIN/fault"
+                            id="le5t8cop"
+                            interrupting="true"
+                            name="error">
+                        <link id="le5t8cql" targetId="le5t8cqm" type="containerLink"/>
+                     </catch>
+                     <catch faultField="temp.dt_PDT_01_Extract_MDM_to_CFIN/fault"
+                            id="le5t8coq"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="ldyx8agv">
+                  <service id="ldyx8agp">
+                     <title>dt_PDT_01_CreateIDoc_MDM_to_CFIN</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_PDT_01_CreateIDoc_MDM_to_CFIN</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">a1RNrQXf1BkdZQV6w4oDgt</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field"
+                                      to="mt-PDT-01-CreateIDoc-MDM-to-CFIN-a1RNrQXf1BkdZQV6w4oDgt">temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN</operation>
+                           <operation source="field"
+                                      to="mt-PDT-01-CreateIDoc-MDM-to-CFIN-a1RNrQXf1BkdZQV6w4oDgt/taskProperties[1]/parameterFileDir">temp.tmp_ParamFilePath</operation>
+                           <operation source="field"
+                                      to="mt-PDT-01-CreateIDoc-MDM-to-CFIN-a1RNrQXf1BkdZQV6w4oDgt/taskProperties[1]/parameterFileName">temp.tmp_pathFileNameiDoc</operation>
+                           <operation source="field"
+                                      to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN[1]/taskProperties[1]/parameterFileDir">temp.tmp_ParamFilePath</operation>
+                           <operation source="field"
+                                      to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN[1]/taskProperties[1]/parameterFileName">temp.tmp_pathFileNameiDoc</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Log_Id">Log Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Task_Id">Task Id</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Task_Status">Task Status</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Start_Time">Start Time</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/End_Time">End Time</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/Error_Message">Error Message</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field"
+                                   to="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="le5t8d53">
+                     <eventContainer id="ma2wzlza">
+                        <service id="ma2wzlxk">
+                           <title>dt_PDT_01_getParameter_MDM_to_BAPI</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_PDT_01_getParameter_MDM_to_BAPI</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">doFoIs1sqKFeyarpe9orQN</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field"
+                                            to="mt-PDT-01-getParameter-MDM-to-BAPI-doFoIs1sqKFeyarpe9orQN">temp.dt_PDT_01_getParameter_MDM_to_BAPI</operation>
+                                 <operation source="field"
+                                            to="mt-PDT-01-getParameter-MDM-to-BAPI-doFoIs1sqKFeyarpe9orQN/taskProperties[1]/parameterFileDir">temp.tmp_ParamFilePath</operation>
+                                 <operation source="field"
+                                            to="mt-PDT-01-getParameter-MDM-to-BAPI-doFoIs1sqKFeyarpe9orQN/taskProperties[1]/parameterFileName">temp.tmp_pathFileNameXREF</operation>
+                                 <operation source="field"
+                                            to="temp.dt_PDT_01_getParameter_MDM_to_BAPI[1]/taskProperties[1]/parameterFileDir">temp.tmp_ParamFilePath</operation>
+                                 <operation source="field"
+                                            to="temp.dt_PDT_01_getParameter_MDM_to_BAPI[1]/taskProperties[1]/parameterFileName">temp.tmp_pathFileNameXREF</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Object_Name">Object Name</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Log_Id">Log Id</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/inout/p_Schema">p_Schema</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/inout/p_View">p_View</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/inout/p_LKP_Table">p_LKP_Table</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/inout/p_FileName">p_FileName</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/inout/p_CR_FileName">p_CR_FileName</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_getParameter_MDM_to_BAPI/inout/p_Filter">p_Filter</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="ma35nyli">
+                           <link id="ma35nylj" targetId="ma2wzlza" type="containerLink"/>
+                        </flow>
+                        <flow id="ma35nyll">
+                           <assignment id="ma372pre">
+                              <title>Assign_Error_getParameter_MDM_to_BAPI</title>
+                              <operation source="formula" to="temp.Retry_Count">
+                                 <expression language="XQuery">$temp.Retry_Count + 1</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_getParameter_MDM_to_BAPI[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_getParameter_MDM_to_BAPI[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.Error_Script_Arguments">
+                                 <expression language="XQuery">fn:concat('"','Ongoing MDM to CFIN ','' , '"', ',','"','mt_PDT_01_getParameter_MDM_to_BAPI','"',',','"','Create an IDoc from MDM to CFIN - mt_PDT_01_getParameter_MDM_to_BAPI','"',',','"',fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_getParameter_MDM_to_BAPI[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," "),'"',',','"',$temp.vErrorDetail ,'"',',','"',fn:replace($temp.vErrorReason ,"\\\\","\\") ,'"',',','"','Ongoing MDM to CFIN','"')
+</expression>
+                              </operation>
+                              <link id="ma372qbw" targetId="ma372q7c"/>
+                           </assignment>
+                           <eventContainer id="ma372q7c">
+                              <service id="ma372q5x">
+                                 <title>CT_CreateErrorTicket_getParameter_MDM_to_BAPI</title>
+                                 <serviceName>ICSExecuteCommandTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Task Name" source="constant">CT_CreateErrorTicket_getParameter_MDM_to_BAPI</parameter>
+                                    <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                    <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                                    <parameter name="Max Wait" source="constant">86400</parameter>
+                                    <parameter name="Script Name" source="constant"/>
+                                    <parameter name="Input Arguments" source="constant"/>
+                                    <parameter name="Work Directory" source="constant"/>
+                                    <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                                    <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                       <operation source="constant"
+                                                  to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_getParameter_MDM_to_BAPI/output/Run_Id">Run Id</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_getParameter_MDM_to_BAPI/output/Start_Time">Start Time</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_getParameter_MDM_to_BAPI/output/End_Time">End Time</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_getParameter_MDM_to_BAPI/output/Exit_Code">Exit Code</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_getParameter_MDM_to_BAPI/output/Execution_Status">Execution Status</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_getParameter_MDM_to_BAPI/output/Std_Error">Std Error</operation>
+                                 </serviceOutput>
+                              </service>
+                              <flow id="ma372q7e">
+                                 <link id="ma372q7f" targetId="ma372q7c" type="containerLink"/>
+                              </flow>
+                              <flow id="ma372q7h">
+                                 <assignment id="ma372ql2">
+                                    <title>Assign_Error_Script_cmd_CreateErrorTicket_Extraction_02 1</title>
+                                    <operation source="formula" to="temp.vTempCodeError">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_getParameter_MDM_to_BAPI[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vErrorDetail">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_getParameter_MDM_to_BAPI[1]/fault[1]/detail[1]/errOutputDetail[1]/Start_Time,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vErrorReason">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_getParameter_MDM_to_BAPI[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                 </assignment>
+                                 <link id="ma372q7i" targetId="ma372q7c" type="containerLink"/>
+                              </flow>
+                              <link id="ma372q7d" targetId="ma372q7e" type="containerLink"/>
+                              <link id="ma372veu" targetId="ma372vet"/>
+                              <events>
+                                 <catch faultField="temp.CT_CreateErrorTicket_getParameter_MDM_to_BAPI/fault"
+                                        id="le5t8db7"
+                                        interrupting="true"
+                                        name="error">
+                                    <link id="ma372q7g" targetId="ma372q7h" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <end id="ma372vet">
+                              <title>EndProcess</title>
+                           </end>
+                        </flow>
+                        <link id="ma35nylh" targetId="ma35nyli" type="containerLink"/>
+                        <link id="ma2wzmam" targetId="ma2wzmc9"/>
+                        <events>
+                           <catch faultField="temp.dt_PDT_01_getParameter_MDM_to_BAPI/fault"
+                                  id="ma2wzlz8"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="ma35nylk" targetId="ma35nyll" type="containerLink"/>
+                           </catch>
+                           <catch faultField="temp.dt_PDT_01_getParameter_MDM_to_BAPI/fault"
+                                  id="ma2wzlz9"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="ma2wzmc9">
+                        <service id="ma2wzmal">
+                           <title>dt_PDT_01_Extract_MDM_Materials</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_PDT_01_Extract_MDM_Materials</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">aMqseFP2ZgqgtjeOAHUASl</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field"
+                                            to="mt-PDT-01-Extract-MDM-Materials-aMqseFP2ZgqgtjeOAHUASl">temp.dt_PDT_01_Extract_MDM_Materials</operation>
+                                 <operation source="field"
+                                            to="mt-PDT-01-Extract-MDM-Materials-aMqseFP2ZgqgtjeOAHUASl/inout[1]/p_CR_FileName">temp.dt_PDT_01_getParameter_MDM_to_BAPI[1]/inout[1]/p_CR_FileName</operation>
+                                 <operation source="field"
+                                            to="mt-PDT-01-Extract-MDM-Materials-aMqseFP2ZgqgtjeOAHUASl/inout[1]/p_Schema">temp.dt_PDT_01_getParameter_MDM_to_BAPI[1]/inout[1]/p_Schema</operation>
+                                 <operation source="field"
+                                            to="mt-PDT-01-Extract-MDM-Materials-aMqseFP2ZgqgtjeOAHUASl/inout[1]/p_View">temp.dt_PDT_01_getParameter_MDM_to_BAPI[1]/inout[1]/p_View</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.dt_PDT_01_Extract_MDM_Materials/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.dt_PDT_01_Extract_MDM_Materials/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.dt_PDT_01_Extract_MDM_Materials/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.dt_PDT_01_Extract_MDM_Materials/inout/p_Schema">p_Schema</operation>
+                              <operation source="field" to="temp.dt_PDT_01_Extract_MDM_Materials/inout/p_View">p_View</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Extract_MDM_Materials/inout/p_CR_FileName">p_CR_FileName</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="ma35nyn8">
+                           <link id="ma35nyn9" targetId="ma2wzmc9" type="containerLink"/>
+                        </flow>
+                        <flow id="ma35nynb">
+                           <assignment id="ma372qtn">
+                              <title>Assign_Error_Script_cmd_Extract_MDM_Materials</title>
+                              <operation source="formula" to="temp.vTempCodeError">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_Extract_MDM_Materials[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_Extract_MDM_Materials[1]/fault[1]/detail[1]/errOutputDetail[1]/Start_Time,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_Extract_MDM_Materials[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <link id="ma372r4f" targetId="ma372qet"/>
+                           </assignment>
+                           <eventContainer id="ma372qet">
+                              <service id="ma372qdc">
+                                 <title>CT_CreateErrorTicket_Extract_MDM_Materials</title>
+                                 <serviceName>ICSExecuteCommandTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Task Name" source="constant">CT_CreateErrorTicket_Extract_MDM_Materials</parameter>
+                                    <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                    <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                                    <parameter name="Max Wait" source="constant">86400</parameter>
+                                    <parameter name="Script Name" source="constant"/>
+                                    <parameter name="Input Arguments" source="constant"/>
+                                    <parameter name="Work Directory" source="constant"/>
+                                    <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                                    <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                       <operation source="constant"
+                                                  to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Extract_MDM_Materials/output/Run_Id">Run Id</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Extract_MDM_Materials/output/Start_Time">Start Time</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Extract_MDM_Materials/output/End_Time">End Time</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Extract_MDM_Materials/output/Exit_Code">Exit Code</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Extract_MDM_Materials/output/Execution_Status">Execution Status</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Extract_MDM_Materials/output/Std_Error">Std Error</operation>
+                                 </serviceOutput>
+                              </service>
+                              <flow id="ma372qev">
+                                 <link id="ma372qew" targetId="ma372qet" type="containerLink"/>
+                              </flow>
+                              <flow id="ma372qey">
+                                 <assignment id="ma372ra5">
+                                    <title>Assign_Error_Script_cmd_CreateErrorTicket_Extraction_02 2 1</title>
+                                    <operation source="formula" to="temp.vTempCodeError">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extract_MDM_Materials[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vErrorDetail">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extract_MDM_Materials[1]/fault[1]/detail[1]/errOutputDetail[1]/Start_Time,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vErrorReason">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extract_MDM_Materials[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                 </assignment>
+                                 <link id="ma372qez" targetId="ma372qet" type="containerLink"/>
+                              </flow>
+                              <link id="ma372qeu" targetId="ma372qev" type="containerLink"/>
+                              <link id="ma372vhg" targetId="ma372vhf"/>
+                              <events>
+                                 <catch faultField="temp.CT_CreateErrorTicket_Extract_MDM_Materials/fault"
+                                        id="le5t8db7"
+                                        interrupting="true"
+                                        name="error">
+                                    <link id="ma372qex" targetId="ma372qey" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <end id="ma372vhf">
+                              <title>EndProcess</title>
+                           </end>
+                        </flow>
+                        <link id="ma35nyn7" targetId="ma35nyn8" type="containerLink"/>
+                        <link id="ma2wzmg6" targetId="ma2wzmht"/>
+                        <events>
+                           <catch faultField="temp.dt_PDT_01_Extract_MDM_Materials/fault"
+                                  id="ma2wzmc7"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="ma35nyna" targetId="ma35nynb" type="containerLink"/>
+                           </catch>
+                           <catch faultField="temp.dt_PDT_01_Extract_MDM_Materials/fault"
+                                  id="ma2wzmc8"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <eventContainer id="ma2wzmht">
+                        <service id="ma2wzmg5">
+                           <title>dt_PDT_01_Insert_CrossReference</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_PDT_01_Insert_CrossReference</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">6SSyeOppDqvc6wZ9ERPmSL</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field"
+                                            to="mt-PDT-01-Insert-CrossReference-6SSyeOppDqvc6wZ9ERPmSL">temp.dt_PDT_01_Insert_CrossReference</operation>
+                                 <operation source="field"
+                                            to="mt-PDT-01-Insert-CrossReference-6SSyeOppDqvc6wZ9ERPmSL/taskProperties[1]/parameterFileDir">temp.tmp_ParamFilePath</operation>
+                                 <operation source="field"
+                                            to="mt-PDT-01-Insert-CrossReference-6SSyeOppDqvc6wZ9ERPmSL/taskProperties[1]/parameterFileName">temp.tmp_pathFileNameBAPI</operation>
+                                 <operation source="field"
+                                            to="mt-PDT-01-Insert-CrossReference-6SSyeOppDqvc6wZ9ERPmSL/input[1]/target[1]/tgt_Error[1]/object">temp.tmp_ErrorFile</operation>
+                                 <operation source="field"
+                                            to="mt-PDT-01-Insert-CrossReference-6SSyeOppDqvc6wZ9ERPmSL/input[1]/target[1]/tgt_Fault[1]/object">temp.tmp_FaultFile</operation>
+                                 <operation source="field"
+                                            to="mt-PDT-01-Insert-CrossReference-6SSyeOppDqvc6wZ9ERPmSL/input[1]/target[1]/tgt_Succes[1]/object">temp.tmp_SuccessFile</operation>
+                                 <operation source="field"
+                                            to="temp.dt_PDT_01_Insert_CrossReference[1]/taskProperties[1]/parameterFileDir">temp.tmp_ParamFilePath</operation>
+                                 <operation source="field"
+                                            to="temp.dt_PDT_01_Insert_CrossReference[1]/taskProperties[1]/parameterFileName">temp.tmp_pathFileNameBAPI</operation>
+                                 <operation source="field"
+                                            to="temp.dt_PDT_01_Insert_CrossReference[1]/input[1]/target[1]/tgt_Error[1]/object">temp.tmp_ErrorFile</operation>
+                                 <operation source="field"
+                                            to="temp.dt_PDT_01_Insert_CrossReference[1]/input[1]/target[1]/tgt_Fault[1]/object">temp.tmp_FaultFile</operation>
+                                 <operation source="field"
+                                            to="temp.dt_PDT_01_Insert_CrossReference[1]/input[1]/target[1]/tgt_Succes[1]/object">temp.tmp_SuccessFile</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.dt_PDT_01_Insert_CrossReference/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.dt_PDT_01_Insert_CrossReference/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.dt_PDT_01_Insert_CrossReference/output/Task_Id">Task Id</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/inout/p_ProcessName">p_ProcessName</operation>
+                              <operation source="field" to="temp.dt_PDT_01_Insert_CrossReference/inout/p_Batch">p_Batch</operation>
+                              <operation source="field"
+                                         to="temp.dt_PDT_01_Insert_CrossReference/inout/CounterFault_o">CounterFault_o</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="ma372phz">
+                           <link id="ma372pi0" targetId="ma2wzmht" type="containerLink"/>
+                        </flow>
+                        <flow id="ma372pi2">
+                           <assignment id="ma372pxu">
+                              <title>Assign_Error_Insert_CrossReference</title>
+                              <operation source="formula" to="temp.Retry_Count">
+                                 <expression language="XQuery">$temp.Retry_Count + 1</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_Insert_CrossReference[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_Insert_CrossReference[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.Error_Script_Arguments">
+                                 <expression language="XQuery">fn:concat('"','Ongoing MDM to CFIN ','' , '"', ',','"','dt_PDT_01_Insert_CrossReference','"',',','"','Create an IDoc from MDM to CFIN - dt_Insert_CrossReference','"',',','"',fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_Insert_CrossReference[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," "),'"',',','"',$temp.vErrorDetail ,'"',',','"',fn:replace($temp.vErrorReason ,"\\\\","\\") ,'"',',','"','Ongoing MDM to CFIN','"')
+</expression>
+                              </operation>
+                              <link id="ma372tvs" targetId="ma372r7g"/>
+                           </assignment>
+                           <eventContainer id="ma372r7g">
+                              <service id="ma372r5x">
+                                 <title>CT_CreateErrorTicket_Insert_CrossReference</title>
+                                 <serviceName>ICSExecuteCommandTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Task Name" source="constant">CT_CreateErrorTicket_Insert_CrossReference</parameter>
+                                    <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                    <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                                    <parameter name="Max Wait" source="constant">86400</parameter>
+                                    <parameter name="Script Name" source="constant"/>
+                                    <parameter name="Input Arguments" source="constant"/>
+                                    <parameter name="Work Directory" source="constant"/>
+                                    <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                                    <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                       <operation source="constant"
+                                                  to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                       <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Insert_CrossReference/output/Run_Id">Run Id</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Insert_CrossReference/output/Start_Time">Start Time</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Insert_CrossReference/output/End_Time">End Time</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Insert_CrossReference/output/Exit_Code">Exit Code</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Insert_CrossReference/output/Execution_Status">Execution Status</operation>
+                                    <operation source="field"
+                                               to="temp.CT_CreateErrorTicket_Insert_CrossReference/output/Std_Error">Std Error</operation>
+                                 </serviceOutput>
+                              </service>
+                              <flow id="ma372r7i">
+                                 <link id="ma372r7j" targetId="ma372r7g" type="containerLink"/>
+                              </flow>
+                              <flow id="ma372r7l">
+                                 <assignment id="ma372rcm">
+                                    <title>Assign_Error_Script_cmd_CreateErrorTicket_Extraction_02 2</title>
+                                    <operation source="formula" to="temp.vTempCodeError">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Insert_CrossReference[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vErrorDetail">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Insert_CrossReference[1]/fault[1]/detail[1]/errOutputDetail[1]/Start_Time,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vErrorReason">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Insert_CrossReference[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                 </assignment>
+                                 <link id="ma372r7m" targetId="ma372r7g" type="containerLink"/>
+                              </flow>
+                              <link id="ma372r7h" targetId="ma372r7i" type="containerLink"/>
+                              <link id="ma372vj6" targetId="ma372vj5"/>
+                              <events>
+                                 <catch faultField="temp.CT_CreateErrorTicket_Insert_CrossReference/fault"
+                                        id="le5t8db7"
+                                        interrupting="true"
+                                        name="error">
+                                    <link id="ma372r7k" targetId="ma372r7l" type="containerLink"/>
+                                 </catch>
+                              </events>
+                           </eventContainer>
+                           <end id="ma372vj5">
+                              <title>EndProcess</title>
+                           </end>
+                        </flow>
+                        <link id="ma372phy" targetId="ma372phz" type="containerLink"/>
+                        <link id="ma372ugq" targetId="ma372ugp"/>
+                        <events>
+                           <catch faultField="temp.dt_PDT_01_Insert_CrossReference/fault"
+                                  id="ma2wzmhr"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="ma372pi1" targetId="ma372pi2" type="containerLink"/>
+                           </catch>
+                           <catch faultField="temp.dt_PDT_01_Insert_CrossReference/fault"
+                                  id="ma2wzmhs"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <container id="ma372ugp" type="exclusive">
+                        <title>D_Fault</title>
+                        <flow id="ma372ugt">
+                           <assignment id="mgbfl9o6">
+                              <title>AssignFileName</title>
+                              <operation source="formula" to="temp.vTempFileName">
+                                 <expression language="XQuery">concat('Products/SAP_CFIN_Log/','ProductsOngMDMLog_',fn:format-dateTime(fn:adjust-dateTime-to-timezone(fn:current-dateTime(), xs:dayTimeDuration("-PT4H")),"[Y0001][M01][D01]"),'.csv')</expression>
+                              </operation>
+                              <link id="mgbfl9ye" targetId="mgbfla02"/>
+                           </assignment>
+                           <eventContainer id="mgbfla02">
+                              <service id="mgbfl9yd">
+                                 <title>Dt_CFIN_01_PDTInsertLog</title>
+                                 <serviceName>ICSExecuteDataTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                    <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                    <parameter name="Task Name" source="constant" updatable="true">mt_CFIN_01_PDTInsertLog</parameter>
+                                    <parameter name="GUID" source="constant" updatable="true">7RTegfzllMJdn7umHMVD06</parameter>
+                                    <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                    <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="mt-CFIN-01-PDTInsertLog-7RTegfzllMJdn7umHMVD06">temp.Dt_CFIN_01_PDTInsertLog</operation>
+                                       <operation source="field"
+                                                  to="mt-CFIN-01-PDTInsertLog-7RTegfzllMJdn7umHMVD06/input[1]/target[1]/Tgt_C_LD_MTRL_DELTA_CFIN[1]/object">temp.vTempFileName</operation>
+                                       <operation source="field"
+                                                  to="temp.Dt_CFIN_01_PDTInsertLog[1]/input[1]/target[1]/Tgt_C_LD_MTRL_DELTA_CFIN[1]/object">temp.vTempFileName</operation>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.Dt_CFIN_01_PDTInsertLog/output/Object_Name">Object Name</operation>
+                                    <operation source="field" to="temp.Dt_CFIN_01_PDTInsertLog/output/Run_Id">Run Id</operation>
+                                    <operation source="field" to="temp.Dt_CFIN_01_PDTInsertLog/output/Log_Id">Log Id</operation>
+                                    <operation source="field" to="temp.Dt_CFIN_01_PDTInsertLog/output/Task_Id">Task Id</operation>
+                                    <operation source="field" to="temp.Dt_CFIN_01_PDTInsertLog/output/Task_Status">Task Status</operation>
+                                    <operation source="field"
+                                               to="temp.Dt_CFIN_01_PDTInsertLog/output/Success_Source_Rows">Success Source Rows</operation>
+                                    <operation source="field"
+                                               to="temp.Dt_CFIN_01_PDTInsertLog/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                    <operation source="field"
+                                               to="temp.Dt_CFIN_01_PDTInsertLog/output/Success_Target_Rows">Success Target Rows</operation>
+                                    <operation source="field"
+                                               to="temp.Dt_CFIN_01_PDTInsertLog/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                    <operation source="field" to="temp.Dt_CFIN_01_PDTInsertLog/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.Dt_CFIN_01_PDTInsertLog/output/End_Time">End Time</operation>
+                                    <operation source="field" to="temp.Dt_CFIN_01_PDTInsertLog/output/Error_Message">Error Message</operation>
+                                    <operation source="field"
+                                               to="temp.Dt_CFIN_01_PDTInsertLog/output/TotalTransErrors">Total Transformation Errors</operation>
+                                    <operation source="field" to="temp.Dt_CFIN_01_PDTInsertLog/output/FirstErrorCode">First Error Code</operation>
+                                 </serviceOutput>
+                              </service>
+                              <flow id="mgbflac0">
+                                 <link id="mgbflac1" targetId="mgbfla02" type="containerLink"/>
+                              </flow>
+                              <flow id="mgbflac3">
+                                 <assignment id="mgbflad9">
+                                    <title>Assign_InsertLog_Error</title>
+                                    <operation source="formula" to="temp.Retry_Count">
+                                       <expression language="XQuery">$temp.Retry_Count + 1</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vErrorDetail">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.Dt_CFIN_01_PDTInsertLog[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message ,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vErrorReason">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.Dt_CFIN_01_PDTInsertLog[1]/fault[1]/reason ,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.Error_Script_Arguments">
+                                       <expression language="XQuery">fn:concat('"','Ongoing MDM to OnTap ','' , '"', ',','"','Dt_InsertLog_MDM_To_MDM','"',',','"','Create an Log from MDM to OnTap - Dt_InsertLog_MDM_To_MDM','"',',','"',fn:replace(fn:replace(fn:replace($temp.Dt_CFIN_01_PDTInsertLog[1]/fault[1]/code ,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," "),'"',',','"',$temp.vErrorDetail ,'"',',','"',fn:replace($temp.vErrorReason ,"\\\\","\\") ,'"',',','"','Ongoing MDM to OnTap','"')</expression>
+                                    </operation>
+                                    <link id="mgbflb5o" targetId="mgbflb8h"/>
+                                 </assignment>
+                                 <eventContainer id="mgbflb8h">
+                                    <service id="mgbflb5n">
+                                       <title>CT_CreateErrorTicket_Extraction_InsertLog</title>
+                                       <serviceName>ICSExecuteCommandTask</serviceName>
+                                       <serviceGUID/>
+                                       <serviceInput>
+                                          <parameter name="Task Name" source="constant">CT_CreateErrorTicket_Extraction_InsertLog</parameter>
+                                          <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                          <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                                          <parameter name="Max Wait" source="constant">86400</parameter>
+                                          <parameter name="Script Name" source="constant"/>
+                                          <parameter name="Input Arguments" source="constant"/>
+                                          <parameter name="Work Directory" source="constant"/>
+                                          <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                                          <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                                          <parameter name="taskField" source="nested">
+                                             <operation source="field" to="INFA-commandTask">temp.CT_CreateErrorTicket_Extraction_InsertLog</operation>
+                                             <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                             <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                             <operation source="constant"
+                                                        to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                             <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                          </parameter>
+                                       </serviceInput>
+                                       <serviceOutput>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_InsertLog/output/Run_Id">Run Id</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_InsertLog/output/Start_Time">Start Time</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_InsertLog/output/End_Time">End Time</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_InsertLog/output/Exit_Code">Exit Code</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_InsertLog/output/Execution_Status">Execution Status</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_InsertLog/output/Std_Error">Std Error</operation>
+                                       </serviceOutput>
+                                    </service>
+                                    <flow id="mgbflbnv">
+                                       <link id="mgbflbnw" targetId="mgbflb8h" type="containerLink"/>
+                                    </flow>
+                                    <flow id="mgbflbny">
+                                       <assignment id="mgbflbrg">
+                                          <title>Assign_Error_Script_cmd_CreateErrorTicket_Extraction_InsertLog</title>
+                                          <operation source="formula" to="temp.vTempCodeError">
+                                             <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction_InsertLog[1]/fault[1]/code ,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vErrorDetail">
+                                             <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction_InsertLog[1]/fault[1]/detail[1]/errOutputDetail[1]/Start_Time ,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vErrorReason">
+                                             <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction_InsertLog[1]/fault[1]/reason ,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                          </operation>
+                                       </assignment>
+                                       <link id="mgbflbnz" targetId="mgbflb8h" type="containerLink"/>
+                                    </flow>
+                                    <link id="mgbflbnu" targetId="mgbflbnv" type="containerLink"/>
+                                    <link id="mgbflbp7" targetId="mgbflbp6"/>
+                                    <events>
+                                       <catch faultField="temp.CT_CreateErrorTicket_Extraction_InsertLog/fault"
+                                              id="mgbflb8g"
+                                              interrupting="true"
+                                              name="error">
+                                          <link id="mgbflbnx" targetId="mgbflbny" type="containerLink"/>
+                                       </catch>
+                                    </events>
+                                 </eventContainer>
+                                 <end id="mgbflbp6">
+                                    <title>End 1</title>
+                                 </end>
+                              </flow>
+                              <link id="mgbflabz" targetId="mgbflac0" type="containerLink"/>
+                              <link id="mgbfl9yf" targetId="ma372uzs"/>
+                              <events>
+                                 <catch faultField="temp.Dt_CFIN_01_PDTInsertLog/fault"
+                                        id="mgbfla00"
+                                        interrupting="true"
+                                        name="error">
+                                    <link id="mgbflac2" targetId="mgbflac3" type="containerLink"/>
+                                 </catch>
+                                 <catch faultField="temp.Dt_CFIN_01_PDTInsertLog/fault"
+                                        id="mgbfla01"
+                                        interrupting="true"
+                                        name="warning"/>
+                              </events>
+                           </eventContainer>
+                           <eventContainer id="ma372uzs">
+                              <service id="ma372uye">
+                                 <title>dt_PDT_01_InsertData_MDM_To_MDM</title>
+                                 <serviceName>ICSExecuteDataTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                    <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                    <parameter name="Task Name" source="constant" updatable="true">mt_PDT_01_InsertData_MDM_To_MDM</parameter>
+                                    <parameter name="GUID" source="constant" updatable="true">3j0lzAlsHIziZb4ZRjZvCR</parameter>
+                                    <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                    <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field"
+                                                  to="mt-PDT-01-InsertData-MDM-To-MDM-3j0lzAlsHIziZb4ZRjZvCR">temp.dt_PDT_01_InsertData_MDM_To_MDM</operation>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Object_Name">Object Name</operation>
+                                    <operation source="field" to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Run_Id">Run Id</operation>
+                                    <operation source="field" to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Log_Id">Log Id</operation>
+                                    <operation source="field" to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Task_Id">Task Id</operation>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Task_Status">Task Status</operation>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Success_Source_Rows">Success Source Rows</operation>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Success_Target_Rows">Success Target Rows</operation>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Start_Time">Start Time</operation>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/End_Time">End Time</operation>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/Error_Message">Error Message</operation>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/TotalTransErrors">Total Transformation Errors</operation>
+                                    <operation source="field"
+                                               to="temp.dt_PDT_01_InsertData_MDM_To_MDM/output/FirstErrorCode">First Error Code</operation>
+                                 </serviceOutput>
+                              </service>
+                              <flow id="ma372uzu">
+                                 <link id="ma372uzv" targetId="ma372uzs" type="containerLink"/>
+                              </flow>
+                              <flow id="ma372uzx">
+                                 <assignment id="ma372v0w">
+                                    <title>Assign_Count_Error_Insert</title>
+                                    <operation source="formula" to="temp.Retry_Count">
+                                       <expression language="XQuery">$temp.Retry_Count + 1</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vErrorDetail">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_InsertData_MDM_To_MDM[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.vErrorReason">
+                                       <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_InsertData_MDM_To_MDM[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.Error_Script_Arguments">
+                                       <expression language="XQuery">fn:concat('"','Ongoing MDM to CFIN ','' , '"', ',','"','dt_PDT_01_InsertData_MDM_To_MDM','"',',','"','Create an IDoc from MDM to CFIN - dt_PDT_01_InsertData_MDM_To_MDM','"',',','"',fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_InsertData_MDM_To_MDM[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," "),'"',',','"',$temp.vErrorDetail ,'"',',','"',fn:replace($temp.vErrorReason ,"\\\\","\\") ,'"',',','"','Ongoing MDM to CFIN','"')
+</expression>
+                                    </operation>
+                                    <link id="ma372v2u" targetId="ma372v43"/>
+                                 </assignment>
+                                 <eventContainer id="ma372v43">
+                                    <service id="ma372v2t">
+                                       <title>CT_CreateErrorTicket_Extraction_Insert</title>
+                                       <serviceName>ICSExecuteCommandTask</serviceName>
+                                       <serviceGUID/>
+                                       <serviceInput>
+                                          <parameter name="Task Name" source="constant">CT_CreateErrorTicket_Extraction_Insert</parameter>
+                                          <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                          <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                                          <parameter name="Max Wait" source="constant">86400</parameter>
+                                          <parameter name="Script Name" source="constant"/>
+                                          <parameter name="Input Arguments" source="constant"/>
+                                          <parameter name="Work Directory" source="constant"/>
+                                          <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                                          <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                                          <parameter name="taskField" source="nested">
+                                             <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                                             <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                             <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                             <operation source="constant"
+                                                        to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                             <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                                          </parameter>
+                                       </serviceInput>
+                                       <serviceOutput>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_Insert/output/Run_Id">Run Id</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_Insert/output/Start_Time">Start Time</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_Insert/output/End_Time">End Time</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_Insert/output/Exit_Code">Exit Code</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_Insert/output/Execution_Status">Execution Status</operation>
+                                          <operation source="field"
+                                                     to="temp.CT_CreateErrorTicket_Extraction_Insert/output/Std_Error">Std Error</operation>
+                                       </serviceOutput>
+                                    </service>
+                                    <flow id="ma372v45">
+                                       <link id="ma372v46" targetId="ma372v43" type="containerLink"/>
+                                    </flow>
+                                    <flow id="ma372v48">
+                                       <assignment id="ma372v57">
+                                          <title>Assign_Error_Script_cmd_CreateErrorTicket_Extraction_Insert</title>
+                                          <operation source="formula" to="temp.vTempCodeError">
+                                             <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction_Insert[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vErrorDetail">
+                                             <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction_Insert[1]/fault[1]/detail[1]/errOutputDetail[1]/Start_Time,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                          </operation>
+                                          <operation source="formula" to="temp.vErrorReason">
+                                             <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction_Insert[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                                          </operation>
+                                       </assignment>
+                                       <link id="ma372v9w" targetId="ma372v43" type="containerLink"/>
+                                    </flow>
+                                    <link id="ma372v44" targetId="ma372v45" type="containerLink"/>
+                                    <link id="ma372v9y" targetId="ma372v9x"/>
+                                    <events>
+                                       <catch faultField="temp.CT_CreateErrorTicket_Extraction_Insert/fault"
+                                              id="le5t8db7"
+                                              interrupting="true"
+                                              name="error">
+                                          <link id="ma372v47" targetId="ma372v48" type="containerLink"/>
+                                       </catch>
+                                    </events>
+                                 </eventContainer>
+                                 <end id="ma372v9x">
+                                    <title>EndProcess</title>
+                                 </end>
+                              </flow>
+                              <link id="ma372uzt" targetId="ma372uzu" type="containerLink"/>
+                              <events>
+                                 <catch faultField="temp.dt_PDT_01_InsertData_MDM_To_MDM/fault"
+                                        id="m90837yr"
+                                        interrupting="true"
+                                        name="error">
+                                    <link id="ma372uzw" targetId="ma372uzx" type="containerLink"/>
+                                 </catch>
+                                 <catch faultField="temp.dt_PDT_01_InsertData_MDM_To_MDM/fault"
+                                        id="m90837ys"
+                                        interrupting="true"
+                                        name="warning"/>
+                              </events>
+                           </eventContainer>
+                           <link id="ma372ugu" targetId="ma372ugp" type="containerLink"/>
+                        </flow>
+                        <flow id="ma372ugw">
+                           <link id="ma372ugx" targetId="ma372ugp" type="containerLink"/>
+                        </flow>
+                        <link id="ma372ugs" targetId="ma372ugt" type="containerLink">
+                           <condition source="formula">
+                              <function name="equals">
+                                 <arg name="left">{$temp.dt_PDT_01_Insert_CrossReference[1]/inout[1]/CounterFault_o}</arg>
+                                 <arg name="right">{0}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="ma372ugv" targetId="ma372ugw" type="containerLink"/>
+                     </container>
+                     <link id="le5t8d54" targetId="ldyx8agv" type="containerLink"/>
+                  </flow>
+                  <flow id="le5t8d56">
+                     <assignment id="le5t8d5q">
+                        <title>Assign_Error_CreateIDoc_MDM_to_CFIN</title>
+                        <operation source="formula" to="temp.Retry_Count">
+                           <expression language="XQuery">$temp.Retry_Count + 1</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorDetail">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN[1]/fault[1]/detail[1]/errOutputDetail[1]/Error_Message,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorReason">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.Error_Script_Arguments">
+                           <expression language="XQuery">fn:concat('"','Ongoing MDM to CFIN ','' , '"', ',','"','dt_PDT_01_CreateIDoc_MDM_to_CFIN','"',',','"','Create an IDoc from MDM to CFIN - dt_CreateIDoc_MDM_to_CFIN','"',',','"',fn:replace(fn:replace(fn:replace($temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," "),'"',',','"',$temp.vErrorDetail ,'"',',','"',fn:replace($temp.vErrorReason ,"\\\\","\\") ,'"',',','"','Ongoing MDM to CFIN','"')
+</expression>
+                        </operation>
+                        <link id="ma372q4j" targetId="ltgc3v3n"/>
+                     </assignment>
+                     <eventContainer id="ltgc3v3n">
+                        <service id="ltgc3v2g">
+                           <title>CT_CreateErrorTicket_Extraction_02</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_CreateErrorTicket_Extraction_02</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction_02/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction_02/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction_02/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction_02/output/Exit_Code">Exit Code</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction_02/output/Execution_Status">Execution Status</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Extraction_02/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="ltgc3v3p">
+                           <link id="ltgc3v3q" targetId="ltgc3v3n" type="containerLink"/>
+                        </flow>
+                        <flow id="ltgc3v3s">
+                           <assignment id="ltgc3v4q">
+                              <title>Assign_Error_Script_cmd_CreateErrorTicket_Extraction_02</title>
+                              <operation source="formula" to="temp.vTempCodeError">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction_02[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction_02[1]/fault[1]/detail[1]/errOutputDetail[1]/Start_Time,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Extraction_02[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                           </assignment>
+                           <link id="ltgc3va9" targetId="ltgc3v3n" type="containerLink"/>
+                        </flow>
+                        <link id="ltgc3v3o" targetId="ltgc3v3p" type="containerLink"/>
+                        <link id="ltgc3vab" targetId="ltgc3vaa"/>
+                        <events>
+                           <catch faultField="temp.CT_CreateErrorTicket_Extraction_02/fault"
+                                  id="le5t8db7"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="ltgc3v3r" targetId="ltgc3v3s" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <end id="ltgc3vaa">
+                        <title>EndProcess</title>
+                     </end>
+                  </flow>
+                  <link id="le5t8d52" targetId="le5t8d53" type="containerLink"/>
+                  <link id="ma372rro" targetId="lplhyess"/>
+                  <events>
+                     <catch faultField="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/fault"
+                            id="ldyx8agt"
+                            interrupting="true"
+                            name="error">
+                        <link id="le5t8d55" targetId="le5t8d56" type="containerLink"/>
+                     </catch>
+                     <catch faultField="temp.dt_PDT_01_CreateIDoc_MDM_to_CFIN/fault"
+                            id="ldyx8agu"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="lplhyess">
+                  <service id="lplhyern">
+                     <title>CT_Move_Logs</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">CT_Move_Logs</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                        <parameter name="Max Wait" source="constant">86400</parameter>
+                        <parameter name="Script Name" source="constant"/>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="formula" to="INFA-commandTask/input[1]/script-1/scriptName">
+                              <expression language="XQuery">fn:concat('//nac.ppg.com/dfs/wu1/nas/it/IICS/',$temp.temp_Env,'/Admin/cmd/Products/P360_OG_MDM_to_CFIN_MOVE_LOGBAPI.bat')</expression>
+                           </operation>
+                           <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                              <expression language="XQuery">fn:concat('"',$temp.temp_Env ,'"')</expression>
+                           </operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.CT_Move_Logs/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.CT_Move_Logs/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.CT_Move_Logs/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.CT_Move_Logs/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.CT_Move_Logs/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.CT_Move_Logs/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="lqcw6i8m">
+                     <link id="lqcw6i8n" targetId="lplhyess" type="containerLink"/>
+                  </flow>
+                  <flow id="lqcw6i8p">
+                     <assignment id="lqcw6icw">
+                        <title>Assign_Error_Script_cmd_Move_Logs</title>
+                        <operation source="formula" to="temp.vTempCodeError">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_Move_Logs[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorDetail">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_Move_Logs[1]/fault[1]/detail[1]/errOutputDetail[1]/Std_Error,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorReason">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_Move_Logs[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.Error_Script_Arguments">
+                           <expression language="XQuery">fn:concat('"','Ongoing MDM to CFIN ','' , '"', ',','"','cmd_NticketsCFIN','"',',','"','CrossReference from MDM to CFIN - cmd_Move_Log','"',',','"',$temp.vTempCodeError ,'"',',','"',$temp.vErrorDetail ,'"',',','"',fn:replace($temp.vErrorReason ,"\\\\","\\") ,'"',',','"','Ongoing MDM to CFIN','"')</expression>
+                        </operation>
+                        <link id="mar3a4nf" targetId="ma372u18"/>
+                     </assignment>
+                     <eventContainer id="ma372u18">
+                        <service id="ma372u00">
+                           <title>CT_CreateErrorTicket_Move_Logs</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_CreateErrorTicket_Move_Logs</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.CT_CreateErrorTicket_Move_Logs/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Move_Logs/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.CT_CreateErrorTicket_Move_Logs/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Move_Logs/output/Exit_Code">Exit Code</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Move_Logs/output/Execution_Status">Execution Status</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_Move_Logs/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="ma372u1a">
+                           <link id="ma372u1b" targetId="ma372u18" type="containerLink"/>
+                        </flow>
+                        <flow id="ma372u1d">
+                           <assignment id="ma372u5s">
+                              <title>Assign_Error_Script_cmd_CreateErrorTicket_Extraction_Insert 1</title>
+                              <operation source="formula" to="temp.vTempCodeError">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Move_Logs[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Move_Logs[1]/fault[1]/detail[1]/errOutputDetail[1]/Start_Time,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_Move_Logs[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                           </assignment>
+                           <link id="ma372u1e" targetId="ma372u18" type="containerLink"/>
+                        </flow>
+                        <link id="ma372u19" targetId="ma372u1a" type="containerLink"/>
+                        <events>
+                           <catch faultField="temp.CT_CreateErrorTicket_Move_Logs/fault"
+                                  id="le5t8db7"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="ma372u1c" targetId="ma372u1d" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="ma372u8q" targetId="lplhyess" type="containerLink"/>
+                  </flow>
+                  <link id="lqcw6i8l" targetId="lqcw6i8m" type="containerLink"/>
+                  <link id="mar3a2a9" targetId="mar3a2e1"/>
+                  <events>
+                     <catch faultField="temp.CT_Move_Logs/fault"
+                            id="lplhyesr"
+                            interrupting="true"
+                            name="error">
+                        <link id="lqcw6i8o" targetId="lqcw6i8p" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="mar3a2e1">
+                  <service id="mar3a2a8">
+                     <title>CT_ErrorFile_Ticket</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">CT_ErrorFile_Ticket</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                        <parameter name="Max Wait" source="constant">86400</parameter>
+                        <parameter name="Script Name" source="constant"/>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.CT_ErrorFile_Ticket</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="field" to="INFA-commandTask/input[1]/script-1/scriptName">temp.tmp_ErrorPathandName</operation>
+                           <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                              <expression language="XQuery">fn:concat('"',$temp.temp_Env ,'"',',','"',$temp.tmp_ErrorFile  ,'"',',','"',$temp.vTempTicketFileName ,'"',',','"',$temp.vTempERPName ,'"',',','"',$temp.vTempProccessName ,'"',',','"',$temp.vTempCodeError ,'"',',','"',$temp.vTempReasonError,'"')</expression>
+                           </operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.CT_ErrorFile_Ticket/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.CT_ErrorFile_Ticket/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.CT_ErrorFile_Ticket/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.CT_ErrorFile_Ticket/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.CT_ErrorFile_Ticket/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.CT_ErrorFile_Ticket/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="mar3a2e3">
+                     <link id="mar3a2e4" targetId="mar3a2e1" type="containerLink"/>
+                  </flow>
+                  <flow id="mar3a2e6">
+                     <assignment id="mar3a3wr">
+                        <title>Assign_Error_Script_cmd_ErrorFile_Ticket</title>
+                        <operation source="formula" to="temp.vTempCodeError">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_ErrorFile_Ticket[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorDetail">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_ErrorFile_Ticket[1]/fault[1]/detail[1]/errOutputDetail[1]/Std_Error,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorReason">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_ErrorFile_Ticket[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.Error_Script_Arguments">
+                           <expression language="XQuery">fn:concat('"','Ongoing MDM to CFIN ','' , '"', ',','"','cmd_NticketsCFIN','"',',','"','CrossReference from MDM to CFIN - CT_ErrorFile_Ticket','"',',','"',$temp.vTempCodeError ,'"',',','"',$temp.vErrorDetail ,'"',',','"',fn:replace($temp.vErrorReason ,"\\\\","\\") ,'"',',','"','Ongoing MDM to CFIN','"')</expression>
+                        </operation>
+                        <link id="mar3a4sq" targetId="mar3a4u3"/>
+                     </assignment>
+                     <eventContainer id="mar3a4u3">
+                        <service id="mar3a4sp">
+                           <title>CT_CreateErrorTicket_ErrorFile_Ticket</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_CreateErrorTicket_ErrorFile_Ticket</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_ErrorFile_Ticket/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_ErrorFile_Ticket/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_ErrorFile_Ticket/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_ErrorFile_Ticket/output/Exit_Code">Exit Code</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_ErrorFile_Ticket/output/Execution_Status">Execution Status</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_ErrorFile_Ticket/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="mar3a4u5">
+                           <link id="mar3a4u6" targetId="mar3a4u3" type="containerLink"/>
+                        </flow>
+                        <flow id="mar3a4u8">
+                           <assignment id="mar3a59a">
+                              <title>Assign_Error_Script_cmd_CreateErrorTicket_ErrorFile_Ticket</title>
+                              <operation source="formula" to="temp.vTempCodeError">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_ErrorFile_Ticket[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_ErrorFile_Ticket[1]/fault[1]/detail[1]/errOutputDetail[1]/Start_Time,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_ErrorFile_Ticket[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                           </assignment>
+                           <link id="mar3a4u9" targetId="mar3a4u3" type="containerLink"/>
+                        </flow>
+                        <link id="mar3a4u4" targetId="mar3a4u5" type="containerLink"/>
+                        <events>
+                           <catch faultField="temp.CT_CreateErrorTicket_ErrorFile_Ticket/fault"
+                                  id="le5t8db7"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="mar3a4u7" targetId="mar3a4u8" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="mar3a2e7" targetId="mar3a2e1" type="containerLink"/>
+                  </flow>
+                  <link id="mar3a2e2" targetId="mar3a2e3" type="containerLink"/>
+                  <link id="mar3a2bz" targetId="mar3a2fv"/>
+                  <events>
+                     <catch faultField="temp.CT_ErrorFile_Ticket/fault"
+                            id="mar3a2e0"
+                            interrupting="true"
+                            name="error">
+                        <link id="mar3a2e5" targetId="mar3a2e6" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="mar3a2fv">
+                  <service id="mar3a2by">
+                     <title>CT_FaultFile_Ticket</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">CT_FaultFile_Ticket</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                        <parameter name="Max Wait" source="constant">86400</parameter>
+                        <parameter name="Script Name" source="constant"/>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.CT_FaultFile_Ticket</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="field" to="INFA-commandTask/input[1]/script-1/scriptName">temp.tmp_FaultPathandName</operation>
+                           <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                              <expression language="XQuery">fn:concat('"',$temp.temp_Env ,'"',',','"',$temp.tmp_FaultFile  ,'"',',','"',$temp.tmp_TicketFileNameFault ,'"',',','"',$temp.vTempERPName ,'"',',','"',$temp.vTempProccessName ,'"',',','"',$temp.vTempCodeError ,'"',',','"',$temp.vTempReasonError,'"')</expression>
+                           </operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.CT_FaultFile_Ticket/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.CT_FaultFile_Ticket/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.CT_FaultFile_Ticket/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.CT_FaultFile_Ticket/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.CT_FaultFile_Ticket/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.CT_FaultFile_Ticket/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="mar3a2fx">
+                     <link id="mar3a2fy" targetId="mar3a2fv" type="containerLink"/>
+                  </flow>
+                  <flow id="mar3a2g0">
+                     <assignment id="mar3a3uu">
+                        <title>Assign_Error_Script_cmd_FaultFile_Ticket</title>
+                        <operation source="formula" to="temp.vTempCodeError">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_FaultFile_Ticket[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorDetail">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_FaultFile_Ticket[1]/fault[1]/detail[1]/errOutputDetail[1]/Std_Error,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.vErrorReason">
+                           <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_FaultFile_Ticket[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                        </operation>
+                        <operation source="formula" to="temp.Error_Script_Arguments">
+                           <expression language="XQuery">fn:concat('"','Ongoing MDM to CFIN ','' , '"', ',','"','cmd_NticketsCFIN','"',',','"','CrossReference from MDM to CFIN - CT_FaultFile_Ticket','"',',','"',$temp.vTempCodeError ,'"',',','"',$temp.vErrorDetail ,'"',',','"',fn:replace($temp.vErrorReason ,"\\\\","\\") ,'"',',','"','Ongoing MDM to CFIN','"')</expression>
+                        </operation>
+                        <link id="mar3a4q4" targetId="mar3a4rh"/>
+                     </assignment>
+                     <eventContainer id="mar3a4rh">
+                        <service id="mar3a4q3">
+                           <title>CT_CreateErrorTicket_FaultFile_Ticket</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">CT_CreateErrorTicket_FaultFile_Ticket</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">010T4725000000000006:SDCMMDMSA01</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">jlLTpTCJN0YcDSn9pP6OgK</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.CT_Move_Logs</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">{$temp.Error_Script_Path_and_Name}</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments">{$temp.Error_Script_Arguments}</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_FaultFile_Ticket/output/Run_Id">Run Id</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_FaultFile_Ticket/output/Start_Time">Start Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_FaultFile_Ticket/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_FaultFile_Ticket/output/Exit_Code">Exit Code</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_FaultFile_Ticket/output/Execution_Status">Execution Status</operation>
+                              <operation source="field"
+                                         to="temp.CT_CreateErrorTicket_FaultFile_Ticket/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <flow id="mar3a4rj">
+                           <link id="mar3a4rk" targetId="mar3a4rh" type="containerLink"/>
+                        </flow>
+                        <flow id="mar3a4rm">
+                           <assignment id="mar3a576">
+                              <title>Assign_Error_Script_cmd_CreateErrorTicket_FaultFile_Ticket</title>
+                              <operation source="formula" to="temp.vTempCodeError">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_FaultFile_Ticket[1]/fault[1]/code,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorDetail">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_FaultFile_Ticket[1]/fault[1]/detail[1]/errOutputDetail[1]/Start_Time,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                              <operation source="formula" to="temp.vErrorReason">
+                                 <expression language="XQuery">fn:replace(fn:replace(fn:replace($temp.CT_CreateErrorTicket_FaultFile_Ticket[1]/fault[1]/reason,'[&lt;&gt;]',""),'(\r?\n|\r)',""),'(\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\)|")'," ")</expression>
+                              </operation>
+                           </assignment>
+                           <link id="mar3a4rn" targetId="mar3a4rh" type="containerLink"/>
+                        </flow>
+                        <link id="mar3a4ri" targetId="mar3a4rj" type="containerLink"/>
+                        <events>
+                           <catch faultField="temp.CT_CreateErrorTicket_FaultFile_Ticket/fault"
+                                  id="le5t8db7"
+                                  interrupting="true"
+                                  name="error">
+                              <link id="mar3a4rl" targetId="mar3a4rm" type="containerLink"/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="mar3a2g1" targetId="mar3a2fv" type="containerLink"/>
+                  </flow>
+                  <link id="mar3a2fw" targetId="mar3a2fx" type="containerLink"/>
+                  <link id="mar3a2c0" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.CT_FaultFile_Ticket/fault"
+                            id="mar3a2fu"
+                            interrupting="true"
+                            name="error">
+                        <link id="mar3a2fz" targetId="mar3a2g0" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-PDT-01-CreateIDoc-MDM-to-CFIN-a1RNrQXf1BkdZQV6w4oDgt"
+                              isByCopy="true"
+                              name="mt-PDT-01-CreateIDoc-MDM-to-CFIN-a1RNrQXf1BkdZQV6w4oDgt">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-PDT-01-Extract-MDM-to-CFIN-9zcnCGOU53FfUd0E9klVmH"
+                              isByCopy="true"
+                              name="mt-PDT-01-Extract-MDM-to-CFIN-9zcnCGOU53FfUd0E9klVmH">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-PDT-01-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR"
+                              isByCopy="true"
+                              name="mt-PDT-01-getParameter-MDM-to-CFIN-7xOCHpGbeimg4Mty8RSPWR">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-PDT-01-getParameter-MDM-to-BAPI-doFoIs1sqKFeyarpe9orQN"
+                              isByCopy="true"
+                              name="mt-PDT-01-getParameter-MDM-to-BAPI-doFoIs1sqKFeyarpe9orQN">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-PDT-01-Extract-MDM-Materials-aMqseFP2ZgqgtjeOAHUASl"
+                              isByCopy="true"
+                              name="mt-PDT-01-Extract-MDM-Materials-aMqseFP2ZgqgtjeOAHUASl">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-PDT-01-Insert-CrossReference-6SSyeOppDqvc6wZ9ERPmSL"
+                              isByCopy="true"
+                              name="mt-PDT-01-Insert-CrossReference-6SSyeOppDqvc6wZ9ERPmSL">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-PDT-01-InsertData-MDM-To-MDM-3j0lzAlsHIziZb4ZRjZvCR"
+                              isByCopy="true"
+                              name="mt-PDT-01-InsertData-MDM-To-MDM-3j0lzAlsHIziZb4ZRjZvCR">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-CFIN-01-PDTInsertLog-7RTegfzllMJdn7umHMVD06"
+                              isByCopy="true"
+                              name="mt-CFIN-01-PDTInsertLog-7RTegfzllMJdn7umHMVD06">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>1x2c1fUvl0ZhRBNMYp1zQ0</types1:GUID>
+      <types1:DisplayName>tf_PDT_01_Ongoing_MDM_to_CFIN</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-10-17T02:58:24.589Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

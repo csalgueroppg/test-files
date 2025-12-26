@@ -1,0 +1,297 @@
+{
+  "name" : "mt_PDT_01_CreateIDoc_MDM_to_CFIN",
+  "description" : "@connectionSource= File S3 bucket Src , @transformation= Mapping Task,@dataType= Materiales, @connectionTarget= Output Idoc Tgt, @additionalText= This mapping task send the information to CFIN,@sources[@S3_HMDM_V2], @targets[@FF_OTP_IN_PDT_CFIN, @SAP_Items_iDocWriter_CFIN]\t",
+  "runtimeEnvironmentId" : "@jlLTpTCJN0YcDSn9pP6OgK",
+  "runtimeEnvironmentName" : "SDCMMDMSA01",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$SQ_FF_MTRL_IDL_PCKG$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "Conn_src_HMDM (Conn_src_HMDM)",
+      "uiProperties" : {
+        "connectionParameterized" : "true",
+        "paramName" : "Conn_src_HMDM",
+        "paramLabel" : "Conn_src_HMDM",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "Conn_src_HMDM",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objlabel" : "src_MTRL_IDL_PCKG",
+        "origobjlabel" : "src_MTRL_IDL_PCKG",
+        "objectParameterized" : "true",
+        "objectParamName" : "src_MTRL_IDL_PCKG",
+        "objectParamType-mapping" : "DataObject",
+        "originalPath" : "SQ_FF_MTRL_IDL_PCKG"
+      },
+      "sourceConnectionId" : "@araNNncX65DkCwK89n23m3",
+      "connectionName" : "S3_HMDM_V2",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "object" : {
+          "name" : "s3-mdm-ppg-dev-us-east-1/IICS_PDT%2F/MTRL_NGNG_PCKG3.csv",
+          "label" : "MTRL_NGNG_PCKG3.csv",
+          "metadataUpdated" : false
+        },
+        "singleMode" : true,
+        "objects" : [
+          {
+            "name" : "s3-mdm-ppg-dev-us-east-1/IICS_PDT%2F/MTRL_NGNG_PCKG3.csv",
+            "label" : "MTRL_NGNG_PCKG3.csv",
+            "metadataUpdated" : false
+          }
+        ]
+      },
+      "runtimeAttrs" : {
+        "File Name" : "$$p_FileName",
+        "Enable Recursive Read" : "NO",
+        "Allow Wildcard Characters" : "NO",
+        "Incremental File Load" : "NO"
+      },
+      "oprRuntimeAttrs" : {
+        "enableIncrementalLoad" : "NO",
+        "targetName" : "$$p_FileName",
+        "enableRecursiveRead" : "NO",
+        "enableWildChar" : "NO"
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "dataFormat" : {
+        "formatId" : "Flat",
+        "dataFormatAttributes" : {
+          "escapeChar" : "\\",
+          "importColumnFromFirstLine" : "true",
+          "headerLineNumber" : "1",
+          "maxRowsToPreview" : "0",
+          "qualifierMode" : "MINIMAL",
+          "firstDataRow" : "2",
+          "generateHeader" : "true",
+          "delimiter" : "֎",
+          "qualifier" : "\"",
+          "targetHeader" : "With Header",
+          "disableEscapeChar" : "true",
+          "escapeCharacterDataRetained" : "false",
+          "codePage" : "UTF-8",
+          "fixedWidthMode" : "false"
+        }
+      },
+      "runtimeParameterData" : {
+        "connectionParameterName" : "Conn_src_HMDM",
+        "objectParameterName" : "src_MTRL_IDL_PCKG",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$Tgt_2$",
+      "type" : "TARGET",
+      "label" : "Conn_ISL_Common (Conn_ISL_Common)",
+      "uiProperties" : {
+        "connectionParameterized" : "true",
+        "paramName" : "Conn_ISL_Common",
+        "paramLabel" : "Conn_ISL_Common",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "Conn_ISL_Common",
+        "objlabel" : "Tgt_Idoc_Temp",
+        "origobjlabel" : "Tgt_Idoc_Temp",
+        "objectParameterized" : "true",
+        "objectParamName" : "Tgt_Idoc_Temp",
+        "objectParamType-mapping" : "DataObject",
+        "supportApplyDDLChanges" : "true",
+        "originalPath" : "Tgt_2"
+      },
+      "targetConnectionId" : "@62jVIP7JDOql0rfpp5aOMJ",
+      "connectionName" : "FF_OTP_IN_PDT_CFIN",
+      "targetObject" : "$Tgt_2",
+      "targetObjectLabel" : "SapMDMtoCFIN_%Y%m%d%H%M%S.csv",
+      "newFlatFile" : false,
+      "newObject" : true,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "newObjectName" : "$Tgt_2",
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "tgtFFAttrs" : {
+        "delimiter" : "֎",
+        "textQualifier" : "none",
+        "headerLineNo" : 1,
+        "rowDelimiter" : 0,
+        "consecutiveDelimiter" : false,
+        "multiDelimitersAsAnd" : true
+      },
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : true,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "$Tgt_2",
+      "objectLabel" : "SapMDMtoCFIN_%Y%m%d%H%M%S.csv",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "runtimeParameterData" : {
+        "connectionParameterName" : "Conn_ISL_Common",
+        "objectParameterName" : "Tgt_Idoc_Temp",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$Tgt_SAP_CFIN$",
+      "type" : "TARGET",
+      "label" : "Conn_IDoc_PSD205 (Conn_IDoc_PSD205)",
+      "uiProperties" : {
+        "connectionParameterized" : "true",
+        "paramName" : "Conn_IDoc_PSD205",
+        "paramLabel" : "Conn_IDoc_PSD205",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "Conn_IDoc_PSD205",
+        "objlabel" : "tgt_SAPCFIN",
+        "origobjlabel" : "tgt_SAPCFIN",
+        "objectParameterized" : "true",
+        "objectParamName" : "tgt_SAPCFIN",
+        "objectParamType-mapping" : "DataObject",
+        "supportApplyDDLChanges" : "true",
+        "originalPath" : "Tgt_SAP_CFIN"
+      },
+      "targetConnectionId" : "@0ggkxBGF1AXhkE9UD1YIui",
+      "connectionName" : "SAP_Items_iDocWriter_CFIN",
+      "targetObject" : "IDoc_Writer_Object",
+      "targetObjectLabel" : "IDoc_Writer_Object",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "runtimeAttrs" : {
+        "Packet Size" : "200"
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "IDoc_Writer_Object",
+      "objectLabel" : "IDoc_Writer_Object",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "runtimeParameterData" : {
+        "connectionParameterName" : "Conn_IDoc_PSD205",
+        "objectParameterName" : "tgt_SAPCFIN",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$Mpt_MatMas$",
+      "type" : "MAPPLET",
+      "label" : "MATMAS05_Prepare_MappLet",
+      "uiProperties" : {
+        "visible" : "false",
+        "originalPath" : "Mpt_MatMas"
+      },
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : {
+        "customFuncId" : "@2uHF4ikEFPZldcAjblyfGh",
+        "customFuncName" : "MATMAS05_Prepare_MappLet"
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "lastRunTime" : 1759865677000,
+  "mappingId" : "@jIANp3xE7UckyfcCxfhPMI",
+  "mappingTemplateName" : "m_PDT_01_CreateIDoc_MDM_to_CFIN",
+  "sequences" : [
+    {
+      "txName" : "Seq_MAKT",
+      "initialValue" : "1",
+      "currentValue" : "9008322"
+    },
+    {
+      "txName" : "Seq_Control",
+      "initialValue" : "1",
+      "currentValue" : "1"
+    },
+    {
+      "txName" : "Seq_Mara",
+      "initialValue" : "1",
+      "currentValue" : "9008322"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : false,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "paramFileType" : "PARAM_FILE_LOCAL",
+  "schemaMode" : "async",
+  "valid" : true,
+  "parameterFileEncoding" : "UTF-8",
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "specialCharacterSupport" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2025-10-07 13:51:19 CST"
+}
