@@ -1,0 +1,87 @@
+{
+  "objectInfo" : {
+    "id" : "anHHUMJPNGxhtB5lCGgpM9",
+    "name" : "SIntMaterialsAemMdmIdq",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Hv4nzCZcjKsJlv5-gt-156715677-2024-06-27T23:42:38.532Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-02-05T18:30:58.521Z",
+  "objectRefs" : [ {
+    "id" : "k12x6eMy6uMd9eAgj2MNiy",
+    "name" : "Conn-AMQP-IDQ-ConnectPPG-PDT",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "QykPaaaaaaaaa-gt-25429412-2024-05-07T23:41:31.688Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Connect_S4_OG_MDM_PIM"
+  }, {
+    "id" : "0l3cxIbzC3ndLsIKgnvbqc",
+    "name" : "PRC-InsertIDQ",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "SjrabcmWR7hsAVR-gt-101073724-2024-05-21T08:27:50.715Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Connect_S4_OG_MDM_PIM"
+  }, {
+    "id" : "9JYb6cT1Be8hPSeN0fV5kS",
+    "name" : "Conn-File-WriteTicket-Azure",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "7GbeECIeDmUhGdw-gt-115808042-2024-06-13T20:02:07.946Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Utilities"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

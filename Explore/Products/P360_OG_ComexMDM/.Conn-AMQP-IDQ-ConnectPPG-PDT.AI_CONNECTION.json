@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "k12x6eMy6uMd9eAgj2MNiy",
+    "name" : "Conn-AMQP-IDQ-ConnectPPG-PDT",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "QykPaaaaaaaaa-gt-25429412-2024-05-07T23:41:31.688Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-08-25T22:43:15.697Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

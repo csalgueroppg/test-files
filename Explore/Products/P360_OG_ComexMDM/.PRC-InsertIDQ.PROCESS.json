@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "0l3cxIbzC3ndLsIKgnvbqc",
+    "name" : "PRC-InsertIDQ",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "SjrabcmWR7hsAVR-gt-101073724-2024-05-21T08:27:50.715Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-01-03T14:07:12.372Z",
+  "objectRefs" : [ {
+    "id" : "8jdKeI95CQ2jim0SeRpmUX",
+    "name" : "Conn-SC-SDasMaterialsConnectPPG",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "IKjtmuOSSHCwkNm-gt-71902916-2024-05-15T23:00:57.562Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Connect_S4_OG_MDM_PIM"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

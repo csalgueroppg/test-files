@@ -1,0 +1,87 @@
+{
+  "objectInfo" : {
+    "id" : "04m6oaqy8AaeuXHFowhuSL",
+    "name" : "SIntMaterialsMdmAemP360",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "AWtHww43dtQR6kb-gt-29333694-2024-05-08T15:17:01.942Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-10-24T19:06:19.790Z",
+  "objectRefs" : [ {
+    "id" : "036aGNwIB2BdBPcNjNcd20",
+    "name" : "Conn-SC-SDasMaterialsAemAPIs",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "VFSJsJGD4ARW8UB-gt-76913684-2024-05-16T17:49:03.376Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Connect_S4_OG_MDM_PIM"
+  }, {
+    "id" : "4dxXMEsjQkFkyirYTv57GX",
+    "name" : "PRC-MaterialsSendTicket",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "NXHVOJ2oTVMTonQ-gt-85071919-2024-05-18T00:03:26.308Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Connect_S4_OG_MDM_PIM"
+  }, {
+    "id" : "267ClYK31UekcqfgvY4Dew",
+    "name" : "Conn-AmazonS3-Hst-ConnectPPG-PDT",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "pbgchwAQlBWlD2p-gt-85036662-2024-05-17T23:56:02.824Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Utilities"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

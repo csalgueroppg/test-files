@@ -1,0 +1,87 @@
+{
+  "objectInfo" : {
+    "id" : "c5FQZ1UyssZb5etGVJGkEn",
+    "name" : "SIntMaterialsAemPIM",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "rlAXhNUdyOoMdtl-gt-163009505-2024-07-08T15:16:47.286Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@source= SAPS4, @operation= CreateUpdate Materials, @dataType=Materials, @target= PIM System, @additionalText= Process forConnectPPG Materials, @prcRunOn= SDCAMDMSA01",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-08-25T14:51:04.338Z",
+  "objectRefs" : [ {
+    "id" : "0nY3O60JnFpbRF2JQksYag",
+    "name" : "PRC-SendMDMtoPIM",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "fP4tciSrZMSPfXB-gt-163274286-2024-07-08T22:48:40.081Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@source= SAPS4 and MDM, @operation= CreateUpdate Materials, @dataType=Materials, @target= PIM System, @additionalText= Process forConnectPPG Materials, @prcRunOn= SDCAMDMSA01",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Connect_S4_OG_MDM_PIM"
+  }, {
+    "id" : "5XZKiT63Ss2jDY7v5GA1Ic",
+    "name" : "Conn-AMQP-P360-ConnectPPG-PDT",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "SWYzr3tfUbbf5ZK-gt-58493270-2024-05-13T22:06:57.12Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Connect_S4_OG_MDM_PIM"
+  }, {
+    "id" : "4WzWLnncDjdidHBxT8fUQp",
+    "name" : "PRC-SendS4toPIM",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "s8NTYglxbdypKwK-gt-274396-2024-07-23T15:25:51.299Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@source= SAPS4, @operation= Update Materials, @dataType=Materials, @target= PIM System, @additionalText= Process forConnectPPG Materials, @prcRunOn= SDCAMDMSA01",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Connect_S4_OG_MDM_PIM"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

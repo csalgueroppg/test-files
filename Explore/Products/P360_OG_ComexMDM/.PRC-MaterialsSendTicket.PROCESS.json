@@ -1,0 +1,45 @@
+{
+  "objectInfo" : {
+    "id" : "4dxXMEsjQkFkyirYTv57GX",
+    "name" : "PRC-MaterialsSendTicket",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "NXHVOJ2oTVMTonQ-gt-85071919-2024-05-18T00:03:26.308Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-09-11T01:21:42.469Z",
+  "objectRefs" : [ {
+    "id" : "267ClYK31UekcqfgvY4Dew",
+    "name" : "Conn-AmazonS3-Hst-ConnectPPG-PDT",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "pbgchwAQlBWlD2p-gt-85036662-2024-05-17T23:56:02.824Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Utilities"
+  } ]
+}

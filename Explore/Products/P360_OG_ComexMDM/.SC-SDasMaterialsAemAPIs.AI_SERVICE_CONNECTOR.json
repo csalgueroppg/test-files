@@ -1,0 +1,25 @@
+{
+  "objectInfo" : {
+    "id" : "2uoWLpGRP9TenzippnTWI1",
+    "name" : "SC-SDasMaterialsAemAPIs",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "P38nXxpr1Iw8jIw-gt-76806110-2024-05-16T17:24:37.66Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-09-11T01:21:42.469Z",
+  "objectRefs" : [ ]
+}

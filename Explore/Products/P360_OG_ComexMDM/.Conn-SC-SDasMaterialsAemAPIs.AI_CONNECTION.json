@@ -1,0 +1,45 @@
+{
+  "objectInfo" : {
+    "id" : "036aGNwIB2BdBPcNjNcd20",
+    "name" : "Conn-SC-SDasMaterialsAemAPIs",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "VFSJsJGD4ARW8UB-gt-76913684-2024-05-16T17:49:03.376Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-09-11T01:21:42.469Z",
+  "objectRefs" : [ {
+    "id" : "2uoWLpGRP9TenzippnTWI1",
+    "name" : "SC-SDasMaterialsAemAPIs",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "P38nXxpr1Iw8jIw-gt-76806110-2024-05-16T17:24:37.66Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Connect_S4_OG_MDM_PIM"
+  } ]
+}

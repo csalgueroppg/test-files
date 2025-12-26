@@ -1,0 +1,65 @@
+{
+  "objectInfo" : {
+    "id" : "adLk5t0E5nEk49bt97rEsK",
+    "name" : "SIntMaterialsMdmAemP360_Tikets",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "dvwhz5chspiRASm-gt-103659143-2024-05-21T19:32:27.059Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-09-11T01:21:42.468Z",
+  "objectRefs" : [ {
+    "id" : "5Yw6U5jD4BjitLTZfuTpSR",
+    "name" : "Conn-File-WriteTicket",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "r9clzHfSTu0kMVX-gt-84355777-2024-05-17T21:04:06.282Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Utilities"
+  }, {
+    "id" : "eyXTPCbACc9c4tEmmjPjyA",
+    "name" : "Conn-AmazonS3-Grp-ConnectPPG-PDT",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "AuQgabcjk91pqrz-gt-103590054-2024-05-21T19:14:22.428Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Products/Utilities"
+  } ]
+}

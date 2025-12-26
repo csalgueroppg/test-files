@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "5XZKiT63Ss2jDY7v5GA1Ic",
+    "name" : "Conn-AMQP-P360-ConnectPPG-PDT",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "SWYzr3tfUbbf5ZK-gt-58493270-2024-05-13T22:06:57.12Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-01-31T19:41:07.033Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

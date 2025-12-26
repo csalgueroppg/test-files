@@ -1,0 +1,44 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>IKjtmuOSSHCwkNm-gt-71902916-2024-05-15T23:00:57.562Z::conn.xml</types1:EntryId>
+      <types1:Name>Conn-SC-SDasMaterialsConnectPPG</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>JARangel.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-05-15T23:00:58Z</types1:CreationDate>
+      <types1:ModifiedBy>OGalicia.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-12-26T21:05:25Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>OGalicia.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-12-26T21:05:39Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Conn-SC-SDasMaterialsConnectPPG/Conn-SC-SDasMaterialsConnectPPG.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Conn-SC-SDasMaterialsConnectPPG"
+                     label="Conn-SC-SDasMaterialsConnectPPG"
+                     name="Conn-SC-SDasMaterialsConnectPPG">
+            <description/>
+            <tags>.agent:SDCAMDMSA01</tags>
+            <agent>SDCAMDMSA01</agent>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SC_SDasMaterialsConnectPPG/SC_SDasMaterialsConnectPPG_svcDef.xml"
+                               guid="kz2YQ1IdkS3l0vSXbzUlya"
+                               name="SC-SDasMaterialsConnectPPG"
+                               supportsConnectionTest="false"
+                               uuid="701bc879-2d09-4325-aedf-434817931e99">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>8jdKeI95CQ2jim0SeRpmUX</types1:GUID>
+      <types1:DisplayName>Conn-SC-SDasMaterialsConnectPPG</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-01-03T14:07:09.95Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

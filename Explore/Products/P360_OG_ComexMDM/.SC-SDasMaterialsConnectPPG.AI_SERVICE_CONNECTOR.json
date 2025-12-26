@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "kz2YQ1IdkS3l0vSXbzUlya",
+    "name" : "SC-SDasMaterialsConnectPPG",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "sWOVGuDoWn2sqeE-gt-70801439-2024-05-15T18:49:50.296Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-01-03T14:09:44.739Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

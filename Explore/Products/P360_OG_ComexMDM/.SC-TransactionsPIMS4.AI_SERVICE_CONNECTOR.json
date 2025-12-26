@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "54EVqmD2PMViwyWuCZqSkB",
+    "name" : "SC-TransactionsPIMS4",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "HH0thJ6gaabclvA-gt-161452962-2024-07-04T16:36:30.534Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "@scType=DAS, @application=PIM/S4",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-08-26T19:52:56.714Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

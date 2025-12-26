@@ -1,0 +1,75 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>SWYzr3tfUbbf5ZK-gt-58493270-2024-05-13T22:06:57.12Z::conn.xml</types1:EntryId>
+      <types1:Name>Conn-AMQP-P360-ConnectPPG-PDT</types1:Name>
+      <types1:ParentFlowIds>lHV8F4MTD86CjqF-gt-2028114-2024-12-13T18:36:50.188Z::pd.xml,rlAXhNUdyOoMdtl-gt-163009505-2024-07-08T15:16:47.286Z::pd.xml,V60S24FsWTzIf6r-gt-170215162-2024-07-17T06:16:54.761Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:SDCAMDMSA01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>OGalicia.dev@ppg.com</types1:CreatedBy>
+      <types1:CreationDate>2024-05-13T22:06:57Z</types1:CreationDate>
+      <types1:ModifiedBy>giovaniperez.dev@ppg.com</types1:ModifiedBy>
+      <types1:ModificationDate>2025-01-31T19:39:29Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>giovaniperez.dev@ppg.com</types1:PublishedBy>
+      <types1:PublicationDate>2025-01-31T19:40:18Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Conn-AMQP-P360-ConnectPPG-PDT/Conn-AMQP-P360-ConnectPPG-PDT.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Conn-AMQP-P360-ConnectPPG-PDT"
+                     label="Conn-AMQP-P360-ConnectPPG-PDT"
+                     name="Conn-AMQP-P360-ConnectPPG-PDT">
+            <description/>
+            <tags>.agent:SDCAMDMSA01</tags>
+            <agent>SDCAMDMSA01</agent>
+            <attributes>
+               <attribute encrypted="false" name="User Name" value="iicsdev_service1"/>
+               <attribute encrypted="true" name="Password" value=""/>
+               <attribute encrypted="false" name="Virtual Host" value=""/>
+               <attribute encrypted="false"
+                          name="Host"
+                          value="ppgaemsdprv.messaging.solace.cloud"/>
+               <attribute encrypted="false" name="Port" value="5671"/>
+               <attribute encrypted="false" name="Use SSL" value="true"/>
+               <attribute encrypted="false" name="Query Parameters" value=""/>
+            </attributes>
+            <consumers>
+               <consumer enabled="false" name="dequeueP360Message" typeName="AMQP Source">
+                  <description/>
+                  <attributes>
+                     <attribute encrypted="false" name="loadBalance" value="true"/>
+                     <attribute encrypted="false" name="customMessageIdField" value=""/>
+                     <attribute encrypted="false" name="Destination Type" value="queue"/>
+                     <attribute encrypted="false" name="Destination" value="q/out/p360/iics"/>
+                     <attribute encrypted="false" name="Payload Format" value="Text"/>
+                     <attribute encrypted="false" name="Objectlist Field Name" value="object"/>
+                     <attribute encrypted="false" name="Dead Letter Queue Name" value=""/>
+                     <attribute encrypted="false" name="Other Attributes" value=""/>
+                     <attribute encrypted="false" name="Enable Load Balancing" value="false"/>
+                  </attributes>
+               </consumer>
+            </consumers>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="true"
+                           cloudOnly="false"
+                           plugin="Camel"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="false"
+                           supportsOData="false"
+                           supportsPublishSkipMetadataRefresh="false"
+                           type="AMQP"
+                           uuid="59b13626-0180-4d48-a749-38f8f33f7b18">
+               <description>Provides connections to AMQP brokers.</description>
+            </javaConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>5XZKiT63Ss2jDY7v5GA1Ic</types1:GUID>
+      <types1:DisplayName>Conn-AMQP-P360-ConnectPPG-PDT</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-01-31T19:41:06.786Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
